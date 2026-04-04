@@ -1,0 +1,37 @@
+{
+  "id": "epcos-100k-b57560g104f",
+  "name": "EPCOS 100K B57560G104F",
+  "manufacturer": "EPCOS (TDK)",
+  "description": "The EPCOS B57560G104F is a glass bead NTC thermistor with a nominal resistance of 100kΩ at 25°C and a beta value of 4066K. It is one of the most widely used thermistors in 3D printing, offering good accuracy and reliability across typical hotend and heated bed operating ranges. It is supported natively in Klipper with a dedicated sensor type.",
+  "sensorType": "NTC",
+  "sensingSpecs": {
+    "resistanceAt25C": 100000,
+    "betaValue": 4066,
+    "temperatureRange": "-55 to 200°C",
+    "accuracy": "±1%",
+    "responseTime": "~10s in still air"
+  },
+  "klipperSpecs": {
+    "sensorType": "EPCOS 100K B57560G104F",
+    "requiresAmplifier": false,
+    "pullupResistor": 4700
+  },
+  "physicalSpecs": {
+    "packageType": "glass bead",
+    "dimensions": "2.3mm × 4.1mm",
+    "leadType": "dumet wire (copper-clad FeNi)"
+  },
+  "unverified": ["responseTime"],
+  "references": [
+    {
+      "label": "TDK/EPCOS Product Page",
+      "url": "https://www.tdk-electronics.tdk.com/en/1376532/products/product-catalog/temperature-sensors/ntc-thermistors/b57560g-series",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Config Reference - Thermistors",
+      "url": "https://www.klipper3d.org/Config_Reference.html#temperature-sensors",
+      "type": "documentation"
+    }
+  ]
+}

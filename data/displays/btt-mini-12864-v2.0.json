@@ -1,0 +1,37 @@
+{
+  "id": "btt-mini-12864-v2.0",
+  "name": "Mini 12864 V2.0",
+  "manufacturer": "BigTreeTech",
+  "description": "An updated 128x64 monochrome LCD display with rotary encoder and neopixel RGB backlighting for Klipper's native display support. Connects via standard EXP1/EXP2 ribbon cables.",
+  "displayType": "klipper-native",
+  "screenSpecs": {
+    "size": "2.4 inch",
+    "resolution": "128x64",
+    "panelType": "monochrome LCD",
+    "touchscreen": false,
+    "driver": "UC1701"
+  },
+  "connectionSpecs": {
+    "interface": "SPI (EXP1/EXP2)",
+    "connector": "EXP1 + EXP2 ribbon cables"
+  },
+  "klipperIntegration": {
+    "method": "Klipper [display] section",
+    "klipperDisplayType": "uc1701",
+    "requiresSbc": false
+  },
+  "features": [
+    "Klipper native display support",
+    "Neopixel RGB backlight",
+    "Rotary encoder with push button",
+    "Standard EXP1/EXP2 interface"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "GitHub - BTT Mini 12864",
+      "url": "https://github.com/bigtreetech/MINI-12864",
+      "type": "github"
+    }
+  ]
+}

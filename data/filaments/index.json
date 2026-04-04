@@ -1,0 +1,19 @@
+{
+  "filaments": [
+    { "id": "generic-pla", "name": "PLA", "manufacturer": "Generic", "filamentType": "PLA" },
+    { "id": "generic-petg", "name": "PETG", "manufacturer": "Generic", "filamentType": "PETG" },
+    { "id": "generic-abs", "name": "ABS", "manufacturer": "Generic", "filamentType": "ABS" },
+    { "id": "generic-asa", "name": "ASA", "manufacturer": "Generic", "filamentType": "ASA" },
+    { "id": "generic-tpu-95a", "name": "TPU 95A", "manufacturer": "Generic", "filamentType": "TPU" },
+    { "id": "generic-pa-nylon", "name": "PA (Nylon)", "manufacturer": "Generic", "filamentType": "PA" },
+    { "id": "generic-pc", "name": "PC (Polycarbonate)", "manufacturer": "Generic", "filamentType": "PC" },
+    { "id": "generic-pva", "name": "PVA", "manufacturer": "Generic", "filamentType": "PVA" },
+    { "id": "generic-hips", "name": "HIPS", "manufacturer": "Generic", "filamentType": "HIPS" },
+    { "id": "generic-pa-cf", "name": "PA-CF (Nylon Carbon Fiber)", "manufacturer": "Generic", "filamentType": "PA-CF" },
+    { "id": "generic-pa-gf", "name": "PA-GF (Nylon Glass Fiber)", "manufacturer": "Generic", "filamentType": "PA-GF" },
+    { "id": "generic-petg-cf", "name": "PETG-CF (Carbon Fiber)", "manufacturer": "Generic", "filamentType": "PETG-CF" },
+    { "id": "generic-pla-cf", "name": "PLA-CF (Carbon Fiber)", "manufacturer": "Generic", "filamentType": "PLA-CF" },
+    { "id": "generic-pc-cf", "name": "PC-CF (Carbon Fiber)", "manufacturer": "Generic", "filamentType": "PC-CF" },
+    { "id": "generic-asa-cf", "name": "ASA-CF (Carbon Fiber)", "manufacturer": "Generic", "filamentType": "ASA-CF" }
+  ]
+}

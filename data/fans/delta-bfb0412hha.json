@@ -1,0 +1,36 @@
+{
+  "id": "delta-bfb0412hha",
+  "name": "BFB0412HHA",
+  "manufacturer": "Delta",
+  "description": "The Delta BFB0412HHA is a 40×10mm blower fan from a well-established industrial fan manufacturer. It delivers focused airflow through its single outlet and has been used as a part-cooling blower in compact hotend assemblies. Delta publishes detailed datasheets for this product.",
+  "fanType": "blower",
+  "size": "4010",
+  "airflowSpecs": {
+    "airflow": 3.0,
+    "staticPressure": 14.33,
+    "rpm": 8500
+  },
+  "electricalSpecs": {
+    "voltage": 12,
+    "current": 0.08,
+    "power": 0.96,
+    "pwmCapable": false,
+    "tachoSignal": false
+  },
+  "noiseSpecs": {
+    "noiseLevel": 34.5
+  },
+  "physicalSpecs": {
+    "dimensions": "40×40×10mm",
+    "weight": 12,
+    "bearingType": "Dual Ball Bearing"
+  },
+  "references": [
+    {
+      "label": "Delta BFB0412HHA-A Datasheet",
+      "url": "https://www.digikey.com/en/products/detail/delta-electronics/BFB0412HHA-A117/5022816",
+      "type": "datasheet"
+    }
+  ],
+  "unverified": []
+}

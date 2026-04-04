@@ -1,0 +1,35 @@
+{
+  "id": "honeywell-100k",
+  "name": "Honeywell 135-104LAG-J01",
+  "manufacturer": "Honeywell",
+  "description": "The Honeywell 135-104LAG-J01 is a glass bead NTC thermistor with a nominal resistance of 100kΩ at 25°C and a beta value of 3974K. It is an industrial thermistor sometimes used in 3D printer hotends. Klipper includes built-in support for this specific part number.",
+  "sensorType": "NTC",
+  "sensingSpecs": {
+    "resistanceAt25C": 100000,
+    "betaValue": 3974,
+    "temperatureRange": "-60 to 300°C",
+    "accuracy": "±10%"
+  },
+  "klipperSpecs": {
+    "sensorType": "Honeywell 100K 135-104LAG-J01",
+    "requiresAmplifier": false,
+    "pullupResistor": 4700
+  },
+  "physicalSpecs": {
+    "packageType": "glass bead",
+    "leadType": "tinned copper-clad steel"
+  },
+  "unverified": [],
+  "references": [
+    {
+      "label": "Honeywell Sensing Product Page",
+      "url": "https://sensing.honeywell.com/135-104LAG-J01-thermistors",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Config Reference - Thermistors",
+      "url": "https://www.klipper3d.org/Config_Reference.html#temperature-sensors",
+      "type": "documentation"
+    }
+  ]
+}

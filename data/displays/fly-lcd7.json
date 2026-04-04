@@ -1,0 +1,42 @@
+{
+  "id": "fly-lcd7",
+  "name": "FLY-LCD7",
+  "manufacturer": "Mellow",
+  "description": "A modular 7 inch display with swappable HDMI core board. The 7 inch variant only supports the HDMI core board (not DSI). Features 10-level brightness, 180-degree flip, and power-off memory.",
+  "displayType": "klipperscreen",
+  "screenSpecs": {
+    "size": "7 inch",
+    "resolution": "1024x600",
+    "panelType": "IPS TFT",
+    "touchscreen": true
+  },
+  "connectionSpecs": {
+    "interface": "HDMI (swappable core board)",
+    "connector": "HDMI core board (sold separately)"
+  },
+  "klipperIntegration": {
+    "method": "KlipperScreen",
+    "requiresSbc": true,
+    "softwareRequired": "KlipperScreen"
+  },
+  "features": [
+    "Modular design with swappable HDMI core board",
+    "HDMI interface only (no DSI for 7 inch)",
+    "10-level brightness adjustment",
+    "180-degree display flip",
+    "Power-off memory for settings"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "GitHub - FLY-LCD",
+      "url": "https://github.com/Mellow-3D/FLY-LCD",
+      "type": "github"
+    },
+    {
+      "label": "Mellow FLY LCD Documentation",
+      "url": "https://mellow.klipper.cn/en/docs/ProductDoc/Screen/fly-lcd/",
+      "type": "documentation"
+    }
+  ]
+}

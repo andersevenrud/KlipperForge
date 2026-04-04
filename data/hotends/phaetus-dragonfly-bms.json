@@ -1,0 +1,52 @@
+{
+  "id": "phaetus-dragonfly-bms",
+  "name": "Dragonfly BMS",
+  "manufacturer": "Phaetus",
+  "description": "The Phaetus Dragonfly BMS (Bi-Metallic Standard) is a compact, lightweight all-metal hotend featuring a bi-metallic heatbreak for excellent thermal separation. Its small form factor and Dragon-style direct mount (M3 bolt pattern) make it popular for weight-sensitive toolhead designs like Voron builds. The bi-metallic heatbreak combines a stainless steel upper section with a copper lower section, allowing a sharper thermal gradient and better high-temperature performance than traditional all-metal heatbreaks. Heater cartridge and thermistor are sold separately.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 500,
+    "heaterType": "cartridge (not included, user-supplied)",
+    "thermistorType": "not included (user-supplied, typically NTC 100K or PT1000)"
+  },
+  "heatBreakSpecs": {
+    "type": "bi-metallic",
+    "material": "stainless steel / copper composite",
+    "retraction": "0.5-2mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D V6 brass nozzles",
+      "E3D V6 hardened steel nozzles",
+      "third-party M6 V6-style nozzles"
+    ],
+    "maxFlowRate": "~18mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "weight": 18,
+    "mountType": "Dragon-style direct mount (M3 bolt pattern)"
+  },
+  "features": [
+    "500°C maximum temperature rating",
+    "Bi-metallic heatbreak for superior thermal gradient",
+    "Compact and lightweight design",
+    "Wide V6 nozzle ecosystem compatibility",
+    "Dragon-style M3 bolt mount for Voron and other direct-drive setups"
+  ],
+  "references": [
+    {
+      "label": "Phaetus Dragonfly BMS Product Page",
+      "url": "https://www.phaetus.com/dragonfly-bms/",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "maxFlowRate", "retraction"]
+}

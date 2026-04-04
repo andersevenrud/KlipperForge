@@ -1,0 +1,34 @@
+{
+  "name": "klipperforge-monorepo",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "build:indices": "bun run scripts/build-doc-indices.ts",
+    "generate:og": "bun run scripts/generate-og-image.ts",
+    "dev": "bun run build:indices && bun run --filter @klipperforge/app --filter @klipperforge/pcb-editor --filter @klipperforge/firmware --filter @klipperforge/configs dev",
+    "build": "bun run build:indices && bun run --filter @klipperforge/app --elide-lines=0 build && bun run --filter @klipperforge/pcb-editor build",
+    "preview": "bun run --filter @klipperforge/app preview",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "typecheck": "tsc -b packages/configparser packages/klipper-config packages/printer-data packages/dfu packages/editor && tsc --noEmit -p apps/klipperforge && tsc --noEmit -p apps/pcb",
+    "firmware:dev": "bun run --filter @klipperforge/firmware dev",
+    "test": "vitest run",
+    "test:e2e": "bun run --filter @klipperforge/app test:e2e",
+    "knip": "knip",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.0",
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "husky": "^9.0.0",
+    "knip": "^5.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "dependencies": {
+    "react-router": "^7.13.1"
+  }
+}

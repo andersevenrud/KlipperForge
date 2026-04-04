@@ -1,0 +1,42 @@
+{
+  "id": "btt-k-touch",
+  "name": "K-Touch",
+  "manufacturer": "BigTreeTech",
+  "description": "A standalone 5 inch IPS WiFi touchscreen display for Klipper. Features an ESP32-S3 processor and built-in battery, connecting wirelessly to Klipper printers via Moonraker API. Can manage up to 50 printers.",
+  "displayType": "standalone",
+  "screenSpecs": {
+    "size": "5 inch",
+    "resolution": "800x480",
+    "panelType": "IPS TFT",
+    "touchscreen": true
+  },
+  "connectionSpecs": {
+    "interface": "WiFi",
+    "connector": "USB-C (charging)"
+  },
+  "klipperIntegration": {
+    "method": "WiFi via Moonraker API",
+    "requiresSbc": false
+  },
+  "computeSpecs": {
+    "processor": "ESP32-S3",
+    "wifi": true,
+    "battery": true
+  },
+  "features": [
+    "Standalone WiFi display",
+    "Built-in battery",
+    "Connects to up to 50 Klipper printers",
+    "ESP32-S3 processor",
+    "Capacitive touchscreen",
+    "Portable and wireless"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "GitHub - BTT K-Touch",
+      "url": "https://github.com/bigtreetech/K-Touch",
+      "type": "github"
+    }
+  ]
+}

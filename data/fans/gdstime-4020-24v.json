@@ -1,0 +1,35 @@
+{
+  "id": "gdstime-4020-24v",
+  "name": "4020 24V",
+  "manufacturer": "GDSTime",
+  "description": "The GDSTime 4020 24V is a budget 40×20mm axial fan used as a hotend or electronics cooling fan on 24V 3D printers. Its additional depth compared to the 4010 variant provides higher static pressure. As with other GDSTime products, detailed performance specifications are not reliably published and may vary between production runs.",
+  "fanType": "axial",
+  "size": "4020",
+  "airflowSpecs": {
+    "airflow": 9.12,
+    "rpm": 7000
+  },
+  "electricalSpecs": {
+    "voltage": 24,
+    "current": 0.05,
+    "power": 1.2,
+    "pwmCapable": false,
+    "tachoSignal": false
+  },
+  "noiseSpecs": {
+    "noiseLevel": 25.26
+  },
+  "physicalSpecs": {
+    "dimensions": "40×40×20mm",
+    "bearingType": "Dual Ball Bearing",
+    "connectorType": "XH2.54-2P"
+  },
+  "references": [
+    {
+      "label": "GDSTime GDA4020 24V Product Page (3D Lab Tech)",
+      "url": "https://www.3dlabtech.ca/product/gdstime-4020-ball-bearing-axial-fan-24v-dc/",
+      "type": "product"
+    }
+  ],
+  "unverified": ["airflow", "staticPressure", "rpm", "noiseLevel", "weight"]
+}

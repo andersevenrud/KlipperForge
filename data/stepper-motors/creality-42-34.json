@@ -1,0 +1,21 @@
+{
+  "id": "creality-42-34",
+  "name": "42-34",
+  "manufacturer": "Creality",
+  "description": "Stock Ender 3 Z axis stepper motor. Short 34mm body for compact Z assemblies.",
+  "nemaSize": 17,
+  "electricalSpecs": {
+    "ratedCurrent": 0.8,
+    "holdingTorque": 40,
+    "stepAngle": 1.8,
+    "phaseResistance": 6.0,
+    "phaseInductance": 6.0
+  },
+  "physicalSpecs": {
+    "bodyLength": 34,
+    "weight": 220,
+    "shaftDiameter": 5,
+    "shaftLength": 22
+  },
+  "connectorType": "JST-XH 4-pin"
+}

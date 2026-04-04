@@ -1,0 +1,54 @@
+{
+  "id": "bondtech-copperhead",
+  "name": "CopperHead",
+  "manufacturer": "Bondtech",
+  "description": "The Bondtech CopperHead is a precision all-metal hotend featuring a bi-metallic heatbreak and a copper alloy heat block for superior thermal performance. Bondtech, primarily known for their extruder systems, designed the CopperHead to complement their BMG and LGX extruders in high-performance direct-drive setups. The V6 threaded nozzle interface ensures wide compatibility, and the copper heat block provides faster and more even temperature distribution than standard aluminium blocks.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 450,
+    "heaterType": "cartridge",
+    "heaterPower": 50,
+    "thermistorType": "NTC 100K (ATC Semitec 104NT-4-R025H42G)",
+    "thermistorId": "atc-semitec-104nt-4"
+  },
+  "heatBreakSpecs": {
+    "type": "bi-metallic",
+    "material": "stainless steel / copper alloy composite (Slice Engineering Copperhead)",
+    "retraction": "1-2mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D V6 brass nozzles",
+      "E3D V6 hardened steel nozzles",
+      "third-party M6 V6-style nozzles"
+    ],
+    "maxFlowRate": "~19mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "weight": 24,
+    "mountType": "V6 groove mount compatible"
+  },
+  "features": [
+    "Copper alloy heat block for superior thermal conductivity",
+    "Bi-metallic heatbreak for improved thermal gradient",
+    "Precision machined for tight tolerances",
+    "V6 nozzle ecosystem compatibility",
+    "Designed to pair with Bondtech BMG and LGX extruders"
+  ],
+  "references": [
+    {
+      "label": "Bondtech CopperHead Product Page",
+      "url": "https://www.bondtech.se/product/copperhead/",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "retraction", "heaterPower", "thermistorType"]
+}

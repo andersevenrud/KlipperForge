@@ -1,0 +1,40 @@
+{
+  "id": "fly-wiscreen-7",
+  "name": "FLY-WiScreen 7\"",
+  "manufacturer": "Mellow",
+  "description": "A standalone 7 inch IPS WiFi display for Klipper control. Features an Allwinner T113-S3 processor with WiFi connectivity, operating as an independent Klipper control screen without requiring a direct connection to the host.",
+  "displayType": "standalone",
+  "screenSpecs": {
+    "size": "7 inch",
+    "resolution": "1024x600",
+    "panelType": "IPS TFT",
+    "touchscreen": true
+  },
+  "connectionSpecs": {
+    "interface": "WiFi",
+    "connector": "USB-C (power)"
+  },
+  "klipperIntegration": {
+    "method": "WiFi via Moonraker API",
+    "requiresSbc": false
+  },
+  "computeSpecs": {
+    "processor": "Allwinner T113-S3",
+    "wifi": true
+  },
+  "features": [
+    "Standalone WiFi display",
+    "7 inch IPS touchscreen",
+    "Allwinner T113-S3 processor",
+    "No direct connection to host required",
+    "Dedicated Klipper control screen"
+  ],
+  "unverified": ["dimensions", "weight", "ram"],
+  "references": [
+    {
+      "label": "Mellow FLY Documentation",
+      "url": "https://mellow.klipper.cn/en/",
+      "type": "documentation"
+    }
+  ]
+}

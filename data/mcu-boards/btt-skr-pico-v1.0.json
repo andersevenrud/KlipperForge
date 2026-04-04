@@ -1,0 +1,103 @@
+{
+    "id": "btt-skr-pico-v1.0",
+    "name": "Bigtreetech SKR Pico V1.0",
+    "mcu": "RP2040",
+    "pins": [
+        "gpio0",
+        "gpio1",
+        "gpio2",
+        "gpio3",
+        "gpio4",
+        "gpio5",
+        "gpio6",
+        "gpio7",
+        "gpio8",
+        "gpio9",
+        "gpio10",
+        "gpio11",
+        "gpio12",
+        "gpio13",
+        "gpio14",
+        "gpio15",
+        "gpio16",
+        "gpio17",
+        "gpio18",
+        "gpio19",
+        "gpio20",
+        "gpio21",
+        "gpio22",
+        "gpio23",
+        "gpio24",
+        "gpio25",
+        "gpio26",
+        "gpio27",
+        "gpio28",
+        "gpio29"
+    ],
+    "aliases": {
+        "DRIVER_X_STEP": "gpio11",
+        "DRIVER_X_DIR": "gpio10",
+        "DRIVER_X_EN": "gpio12",
+        "DRIVER_Y_STEP": "gpio6",
+        "DRIVER_Y_DIR": "gpio5",
+        "DRIVER_Y_EN": "gpio7",
+        "DRIVER_Z_STEP": "gpio19",
+        "DRIVER_Z_DIR": "gpio28",
+        "DRIVER_Z_EN": "gpio2",
+        "DRIVER_E_STEP": "gpio14",
+        "DRIVER_E_DIR": "gpio13",
+        "DRIVER_E_EN": "gpio15",
+        "DRIVER_UART_RX": "gpio9",
+        "DRIVER_UART_TX": "gpio8",
+        "HE0": "gpio23",
+        "HB": "gpio21",
+        "TH0": "gpio27",
+        "THB": "gpio26",
+        "FAN0": "gpio17",
+        "FAN1": "gpio18",
+        "FAN2": "gpio20",
+        "XSTOP": "gpio4",
+        "YSTOP": "gpio3",
+        "ZSTOP": "gpio25",
+        "PROBE_SENSOR": "gpio22",
+        "PROBE_SERVO": "gpio29",
+        "FILAMENT_SWITCH": "gpio16",
+        "NEOPIXEL": "gpio24"
+    },
+    "references": [
+        {
+            "label": "GitHub Repository",
+            "url": "https://github.com/bigtreetech/SKR-Pico",
+            "type": "github"
+        },
+        {
+            "label": "Wiki",
+            "url": "https://global.bttwiki.com/SKR%20Pico.html",
+            "type": "wiki"
+        },
+        {
+            "label": "Pinout Diagram",
+            "url": "https://github.com/bigtreetech/SKR-Pico/blob/master/Hardware/BTT%20SKR%20Pico%20V1.0-PIN.pdf",
+            "type": "pinout"
+        },
+        {
+            "label": "Schematic",
+            "url": "https://github.com/bigtreetech/SKR-Pico/blob/master/Hardware/BTT%20SKR%20Pico%20V1.0-SCH.pdf",
+            "type": "schematic"
+        },
+        {
+            "label": "User Manual",
+            "url": "https://github.com/bigtreetech/SKR-Pico/blob/master/BTT%20SKR%20Pico%20V1.0%20Instruction%20Manual.pdf",
+            "type": "manual"
+        }
+    ],
+    "drivers": {
+        "count": 4,
+        "model": "TMC2209"
+    },
+    "dimensions": {
+        "width": 85,
+        "height": 56
+    },
+    "maxMotorVoltage": 24
+}

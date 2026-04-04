@@ -1,0 +1,25 @@
+{
+  "id": "ldo-42sth25-1004ac",
+  "name": "LDO-42STH25-1004AC",
+  "manufacturer": "LDO",
+  "description": "Compact 25mm NEMA17 pancake stepper for extruder applications. Good torque-to-size ratio.",
+  "nemaSize": 17,
+  "electricalSpecs": {
+    "ratedCurrent": 1.0,
+    "holdingTorque": 20,
+    "stepAngle": 1.8,
+    "phaseResistance": 5.5,
+    "phaseInductance": 7.0,
+    "ratedVoltage": 5.5
+  },
+  "physicalSpecs": {
+    "bodyLength": 25,
+    "weight": 160,
+    "shaftDiameter": 5,
+    "shaftLength": 24
+  },
+  "connectorType": "JST-PH 4-pin",
+  "references": [
+    { "label": "LDO 42mm Hybrid Stepper Series", "url": "http://ldomotors.com/products/show/42mm-hybrid-stepper-series", "type": "product" }
+  ]
+}

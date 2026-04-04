@@ -1,0 +1,51 @@
+{
+  "id": "bambu-lab-hotend",
+  "name": "Bambu Lab Hotend",
+  "manufacturer": "Bambu Lab",
+  "description": "The Bambu Lab hotend is the factory-installed all-metal hotend used across the X1, P1, and A1 series printers. It features a bi-metallic heatbreak and proprietary Bambu-specific nozzle threading. While tightly integrated into the Bambu ecosystem, third-party vendors have created compatible nozzles and aftermarket hotend assemblies. Not typically installed on non-Bambu machines.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 300,
+    "heaterType": "ceramic (48W, proprietary connector)",
+    "heaterPower": 48,
+    "thermistorType": "NTC 100K (proprietary connector)"
+  },
+  "heatBreakSpecs": {
+    "type": "bi-metallic",
+    "material": "stainless steel / copper composite",
+    "retraction": "0.4-1mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "Bambu Lab proprietary (M6 thread, Bambu-spec)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "Bambu Lab brass nozzles",
+      "Bambu Lab hardened steel nozzles",
+      "third-party Bambu-compatible nozzles"
+    ],
+    "maxFlowRate": "~35mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "mountType": "Bambu Lab toolhead mount (proprietary)"
+  },
+  "features": [
+    "Designed for Bambu X1, P1, and A1 series printers",
+    "High-flow bi-metallic design",
+    "Proprietary quick-swap nozzle interface",
+    "Not a standard drop-in for other printers"
+  ],
+  "references": [
+    {
+      "label": "Bambu Lab Hotend Store",
+      "url": "https://store.bambulab.com/collections/hotend",
+      "type": "product"
+    },
+    {
+      "label": "Bambu Lab Wiki — Hotend",
+      "url": "https://wiki.bambulab.com/t/hotend",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["maxFlowRate", "retraction", "thermistorType"]
+}

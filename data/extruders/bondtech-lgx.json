@@ -1,0 +1,42 @@
+{
+  "id": "bondtech-lgx",
+  "name": "Bondtech LGX",
+  "manufacturer": "Bondtech",
+  "description": "The Bondtech LGX (Large Gears eXtruder) features oversized drive gears for improved filament grip and a two-stage 44:14, 37:17 gear reduction. Its large contact area with the filament reduces the chance of slipping during high-speed or high-flow printing. The LGX is designed for direct drive use and ships with a custom LDO NEMA17 25mm pancake stepper motor with 14T motor gear.",
+  "driveType": "direct",
+  "mechanicalSpecs": {
+    "gearRatio": "44:14, 37:17",
+    "filamentDiameter": 1.75,
+    "gripType": "dual drive",
+    "maxFeedRate": 30
+  },
+  "motorSpecs": {
+    "includedMotor": true,
+    "motorType": "NEMA17 25mm pancake (LDO custom)",
+    "compatibleMotors": "NEMA17 pancake (25mm, 14T motor gear)"
+  },
+  "physicalSpecs": {
+    "weight": 219,
+    "dimensions": "52 × 52 × 35mm",
+    "mountPattern": "NEMA17 face mount"
+  },
+  "features": [
+    "Large diameter dual drive gears for high grip surface area",
+    "High gear ratio for precise filament control",
+    "Compatible with many direct drive toolhead mounts",
+    "Suitable for flexible filaments"
+  ],
+  "references": [
+    {
+      "label": "Bondtech LGX Product Page",
+      "url": "https://www.bondtech.se/product/lgx-large-gears-extruder/",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration Reference",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["dimensions", "maxFeedRate"]
+}

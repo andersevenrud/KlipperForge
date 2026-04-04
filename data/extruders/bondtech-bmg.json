@@ -1,0 +1,41 @@
+{
+  "id": "bondtech-bmg",
+  "name": "Bondtech BMG",
+  "manufacturer": "Bondtech",
+  "description": "The Bondtech BMG (Btech Mini Geared) is one of the most popular dual-drive extruders in the 3D printing community. It uses two hardened steel drive gears to grip filament from both sides, providing excellent traction and reduced slipping. Its compact size and proven 50:17 gear ratio (approximately 3:1) make it compatible with a wide range of direct drive and bowden setups.",
+  "driveType": "both",
+  "mechanicalSpecs": {
+    "gearRatio": "50:17",
+    "filamentDiameter": 1.75,
+    "gripType": "dual drive",
+    "maxFeedRate": 25
+  },
+  "motorSpecs": {
+    "includedMotor": false,
+    "compatibleMotors": "NEMA17 (standard and pancake)"
+  },
+  "physicalSpecs": {
+    "weight": 75,
+    "dimensions": "32 × 43 × 35mm",
+    "mountPattern": "NEMA17 face mount"
+  },
+  "features": [
+    "Hardened steel dual drive gears",
+    "Available in left-hand and right-hand versions",
+    "Reversible motor mount",
+    "Compatible with 1.75mm and 2.85mm filament (separate models)"
+  ],
+  "references": [
+    {
+      "label": "Bondtech BMG Product Page",
+      "url": "https://www.bondtech.se/product/bmg-extruder/",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration Reference",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["dimensions", "maxFeedRate"]
+}

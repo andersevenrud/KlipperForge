@@ -1,0 +1,38 @@
+{
+  "id": "fly-wiscreen-5",
+  "name": "FLY-WiScreen 5\"",
+  "manufacturer": "Mellow",
+  "description": "A standalone 5 inch WiFi display for Klipper control. Connects wirelessly to the Klipper host via Moonraker API.",
+  "displayType": "standalone",
+  "screenSpecs": {
+    "size": "5 inch",
+    "resolution": "800x480",
+    "panelType": "IPS TFT",
+    "touchscreen": true
+  },
+  "connectionSpecs": {
+    "interface": "WiFi",
+    "connector": "USB-C (power)"
+  },
+  "klipperIntegration": {
+    "method": "WiFi via Moonraker API",
+    "requiresSbc": false
+  },
+  "computeSpecs": {
+    "processor": "Allwinner T113-S3 (dual-core Cortex-A7)",
+    "wifi": true
+  },
+  "features": [
+    "Standalone WiFi display",
+    "5 inch touchscreen",
+    "No direct connection to host required"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "Mellow FLY Documentation",
+      "url": "https://mellow.klipper.cn/en/",
+      "type": "documentation"
+    }
+  ]
+}

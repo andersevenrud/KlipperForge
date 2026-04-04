@@ -1,0 +1,41 @@
+{
+  "id": "creality-sprite-pro",
+  "name": "Creality Sprite Pro",
+  "manufacturer": "Creality",
+  "description": "The Creality Sprite Pro is an all-metal direct drive extruder and hotend assembly designed as a factory upgrade for Creality printers such as the Ender 3 S1 Pro. It features dual drive gears, a 3.5:1 gear ratio, an all-metal hotend capable of printing high-temperature filaments, and an integrated stepper motor. It replaces the stock Bowden setup with a compact direct drive system.",
+  "driveType": "direct",
+  "mechanicalSpecs": {
+    "gearRatio": "3.5:1",
+    "filamentDiameter": 1.75,
+    "gripType": "dual drive",
+    "maxFeedRate": 20
+  },
+  "motorSpecs": {
+    "includedMotor": true,
+    "motorType": "Integrated stepper motor (Creality proprietary)"
+  },
+  "physicalSpecs": {
+    "weight": 288,
+    "dimensions": "54 × 50 × 64.3mm",
+    "mountPattern": "Creality Sprite standard mount (Ender 3 S1 series)"
+  },
+  "features": [
+    "All-metal hotend for high-temperature filament printing",
+    "Dual drive gears for improved filament grip",
+    "Integrated motor and hotend in one assembly",
+    "Designed as a factory upgrade for Creality printers"
+  ],
+  "references": [
+    {
+      "label": "Creality Sprite Pro Product Page",
+      "url": "https://www.creality.com/products/sprite-extruder-pro-kit",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration Reference",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["maxFeedRate"]
+}

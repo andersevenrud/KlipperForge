@@ -1,0 +1,147 @@
+{
+  "id": "prusa-mini",
+  "name": "Prusa Mini+",
+  "manufacturer": "Prusa Research",
+  "kinematics": "cartesian",
+  "description": "Compact cartesian 3D printer with Buddy board (STM32F407, TMC2209 UART drivers), Bowden extruder, SuperPINDA probe, and sensorless homing. Pin mappings verified from official Klipper config (printer-prusa-mini-plus-2020.cfg). Also covers the original Prusa Mini which shares the same board.",
+  "bedSize": { "x": 180, "y": 180, "z": 180 },
+  "equipment": [
+    { "category": "mcu-boards", "id": "prusa-buddy", "label": "Prusa Buddy Board", "role": "Main MCU" },
+    { "category": "hotends", "label": "Stock PTFE-lined Hotend", "role": "Hotend" },
+    { "category": "extruders", "label": "Bowden Extruder", "role": "Extruder" },
+    { "category": "probes", "id": "superpinda", "label": "SuperPINDA", "role": "Bed Probe" }
+  ],
+  "defaults": {
+    "sections": [
+      {
+        "definitionId": "printer",
+        "data": {
+          "kinematics": "cartesian",
+          "max_velocity": 180,
+          "max_accel": 1250,
+          "max_z_velocity": 12,
+          "max_z_accel": 400
+        }
+      },
+      {
+        "definitionId": "mcu",
+        "data": {
+          "serial": "/dev/serial/by-id/usb-Prusa_Research__a.s._Original_Prusa_MINI_placeholder"
+        }
+      },
+      {
+        "definitionId": "stepper",
+        "instanceName": "x",
+        "data": {
+          "step_pin": "PD1",
+          "dir_pin": "PD0",
+          "enable_pin": "!PD3",
+          "microsteps": 16,
+          "rotation_distance": 32,
+          "endstop_pin": "tmc2209_stepper_x:virtual_endstop",
+          "position_endstop": 180.4,
+          "position_min": -2,
+          "position_max": 180.4,
+          "homing_speed": 50,
+          "homing_retract_dist": 0
+        }
+      },
+      {
+        "definitionId": "stepper",
+        "instanceName": "y",
+        "data": {
+          "step_pin": "PD13",
+          "dir_pin": "PD12",
+          "enable_pin": "!PD14",
+          "microsteps": 16,
+          "rotation_distance": 32,
+          "endstop_pin": "tmc2209_stepper_y:virtual_endstop",
+          "position_endstop": -3,
+          "position_min": -3,
+          "position_max": 180,
+          "homing_speed": 50,
+          "homing_retract_dist": 0
+        }
+      },
+      {
+        "definitionId": "stepper",
+        "instanceName": "z",
+        "data": {
+          "step_pin": "PD4",
+          "dir_pin": "!PD15",
+          "enable_pin": "!PD2",
+          "microsteps": 16,
+          "rotation_distance": 4,
+          "endstop_pin": "probe:z_virtual_endstop",
+          "position_min": 0,
+          "position_max": 185,
+          "homing_speed": 6
+        }
+      },
+      {
+        "definitionId": "extruder",
+        "data": {
+          "step_pin": "PD9",
+          "dir_pin": "!PD8",
+          "enable_pin": "!PD10",
+          "microsteps": 16,
+          "rotation_distance": 26.2564,
+          "gear_ratio": "48:18",
+          "nozzle_diameter": 0.4,
+          "filament_diameter": 1.75,
+          "heater_pin": "PB1",
+          "sensor_type": "ATC Semitec 104GT-2",
+          "sensor_pin": "PC0",
+          "min_temp": 10,
+          "max_temp": 305,
+          "control": "pid",
+          "pid_kp": 7,
+          "pid_ki": 0.5,
+          "pid_kd": 45
+        }
+      },
+      {
+        "definitionId": "heater_bed",
+        "data": {
+          "heater_pin": "PB0",
+          "sensor_type": "EPCOS 100K B57560G104F",
+          "sensor_pin": "PA4",
+          "min_temp": 10,
+          "max_temp": 110,
+          "control": "pid",
+          "pid_kp": 120,
+          "pid_ki": 1.5,
+          "pid_kd": 600
+        }
+      },
+      {
+        "definitionId": "fan",
+        "data": {
+          "pin": "PE11"
+        }
+      }
+    ]
+  },
+  "references": [
+    {
+      "label": "Prusa Mini+ Product Page",
+      "url": "https://www.prusa3d.com/product/original-prusa-mini-semi-assembled-3d-printer-enclosure-bundle-5/",
+      "type": "product"
+    },
+    {
+      "label": "Official Klipper Config (printer-prusa-mini-plus-2020.cfg)",
+      "url": "https://github.com/Klipper3d/klipper/blob/master/config/printer-prusa-mini-plus-2020.cfg",
+      "type": "github"
+    },
+    {
+      "label": "Klipper Generic Prusa Buddy Config",
+      "url": "https://github.com/Klipper3d/klipper/blob/master/config/generic-prusa-buddy.cfg",
+      "type": "github"
+    },
+    {
+      "label": "Prusa Firmware Buddy Source",
+      "url": "https://github.com/prusa3d/Prusa-Firmware-Buddy",
+      "type": "github"
+    }
+  ]
+}

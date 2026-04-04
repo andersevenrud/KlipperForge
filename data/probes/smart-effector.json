@@ -1,0 +1,50 @@
+{
+  "id": "smart-effector",
+  "name": "Duet Smart Effector",
+  "manufacturer": "Duet3D",
+  "description": "The Duet Smart Effector is a strain-gauge based Z probe designed for delta 3D printers. It replaces the standard effector plate and uses an array of resistive strain gauges to detect when the nozzle contacts the bed surface. This provides zero XY offset probing with excellent repeatability, purpose-built for delta kinematics.",
+  "probeType": "strain-gauge",
+  "electricalSpecs": {
+    "operatingVoltage": "3.3-5V DC",
+    "signalType": "digital (strain gauge array with onboard processing)",
+    "currentDraw": "25mA"
+  },
+  "performanceSpecs": {
+    "repeatability": "±0.005mm",
+    "triggerDistance": "contact-based (nozzle touch)",
+    "bedCompatibility": [
+      "glass",
+      "PEI",
+      "textured PEI",
+      "magnetic flex plates",
+      "BuildTak",
+      "aluminum",
+      "any solid surface"
+    ],
+    "temperatureCompensation": false
+  },
+  "physicalSpecs": {
+    "dimensions": "92.0mm diameter (circular PCB)",
+    "weight": 20,
+    "mountType": "replaces delta effector plate (3x ball joint mount)"
+  },
+  "klipperSection": "probe",
+  "unverified": ["currentDraw", "weight", "dimensions"],
+  "references": [
+    {
+      "label": "Duet3D Smart Effector Product Page",
+      "url": "https://www.duet3d.com/deltasmarteffector",
+      "type": "product"
+    },
+    {
+      "label": "Duet3D Smart Effector Documentation",
+      "url": "https://docs.duet3d.com/en/Duet3D_hardware/Accessories/Smart_Effector",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Probe Documentation",
+      "url": "https://www.klipper3d.org/Config_Reference.html#probe",
+      "type": "documentation"
+    }
+  ]
+}

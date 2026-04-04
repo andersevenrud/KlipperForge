@@ -1,0 +1,26 @@
+{
+  "id": "ldo-36sth20-1004ahg",
+  "name": "LDO-36STH20-1004AHG",
+  "manufacturer": "LDO",
+  "description": "Standard round NEMA14 stepper for modern compact extruders (Orbiter, Clockwork 2, Galileo 2). High-temp Class H insulation with integrated gear.",
+  "nemaSize": 14,
+  "electricalSpecs": {
+    "ratedCurrent": 1.0,
+    "holdingTorque": 10,
+    "stepAngle": 1.8,
+    "phaseResistance": 2.1,
+    "phaseInductance": 1.6,
+    "ratedVoltage": 2.1
+  },
+  "physicalSpecs": {
+    "bodyLength": 20,
+    "weight": 80,
+    "shaftDiameter": 5,
+    "shaftLength": 24
+  },
+  "connectorType": "JST-PH 4-pin",
+  "temperatureRating": 180,
+  "references": [
+    { "label": "LDO 35mm Hybrid Stepper Series", "url": "http://ldomotors.com/products/show/35mm-hybrid-stepper-series", "type": "product" }
+  ]
+}

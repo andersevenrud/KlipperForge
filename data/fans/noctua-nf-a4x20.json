@@ -1,0 +1,37 @@
+{
+  "id": "noctua-nf-a4x20",
+  "name": "NF-A4x20 FLX",
+  "manufacturer": "Noctua",
+  "description": "The Noctua NF-A4x20 FLX is a premium 40×20mm axial fan offering significantly higher static pressure than the thinner 4010 variant, making it better suited for restricted airflow paths such as hotend heat sinks or enclosed electronics bays. It uses Noctua's SSO2 bearing for long service life and low operating noise.",
+  "fanType": "axial",
+  "size": "4020",
+  "airflowSpecs": {
+    "airflow": 5.53,
+    "staticPressure": 2.26,
+    "rpm": 5000
+  },
+  "electricalSpecs": {
+    "voltage": 12,
+    "current": 0.05,
+    "power": 0.6,
+    "pwmCapable": false,
+    "tachoSignal": true
+  },
+  "noiseSpecs": {
+    "noiseLevel": 14.9
+  },
+  "physicalSpecs": {
+    "dimensions": "40×40×20mm",
+    "weight": 14,
+    "bearingType": "SSO2 (Self-Stabilising Oil-pressure Bearing 2)",
+    "connectorType": "3-pin"
+  },
+  "references": [
+    {
+      "label": "Noctua NF-A4x20 FLX Product Page",
+      "url": "https://noctua.at/en/nf-a4x20-flx",
+      "type": "product"
+    }
+  ],
+  "unverified": []
+}

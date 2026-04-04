@@ -1,0 +1,42 @@
+{
+  "id": "fly-halo",
+  "name": "FLY-Halo",
+  "manufacturer": "Mellow",
+  "description": "A 1.28 inch round WiFi display with ESP32-S3 processor, similar in concept to the BTT KNOMI. Shows real-time print status via WiFi connection to the Klipper host.",
+  "displayType": "standalone",
+  "screenSpecs": {
+    "size": "1.28 inch",
+    "resolution": "240x240",
+    "panelType": "IPS TFT",
+    "touchscreen": true,
+    "driver": "GC9A01"
+  },
+  "connectionSpecs": {
+    "interface": "WiFi",
+    "connector": "DC 12-24V power input + FPC data cable"
+  },
+  "klipperIntegration": {
+    "method": "WiFi via Moonraker API",
+    "requiresSbc": false
+  },
+  "computeSpecs": {
+    "processor": "ESP32-S3",
+    "wifi": true
+  },
+  "features": [
+    "Round display for toolhead or printer mounting",
+    "WiFi connectivity to Klipper",
+    "ESP32-S3 processor",
+    "Real-time print status display",
+    "Capacitive touch (CST816D controller)",
+    "AS5047D magnetic encoder (rotary knob)"
+  ],
+  "unverified": ["dimensions", "weight", "touchController"],
+  "references": [
+    {
+      "label": "GitHub - FLY-Halo",
+      "url": "https://github.com/Mellow-3D/FLY-Halo",
+      "type": "github"
+    }
+  ]
+}

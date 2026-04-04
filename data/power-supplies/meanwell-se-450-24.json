@@ -1,0 +1,50 @@
+{
+  "id": "meanwell-se-450-24",
+  "name": "SE-450-24",
+  "manufacturer": "MeanWell",
+  "description": "450W enclosed power supply from MeanWell's SE series. Features forced-air cooling and a taller profile than the LRS series. Popular in the BLV MGN Cube build and other large DIY printers that need more power than the LRS-350 can provide. The SE series is an older but proven design with wide community adoption.",
+  "voltage": 24,
+  "wattage": 451,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 24,
+    "outputCurrent": 18.8,
+    "outputPower": 451.2,
+    "inputVoltageRange": "90-132VAC / 180-264VAC",
+    "efficiency": 86,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "225x124x50mm",
+    "weight": 1590,
+    "coolingMethod": "forced-air",
+    "hasFan": true
+  },
+  "certifications": ["UL", "CE", "BSMI", "EAC"],
+  "protections": ["short-circuit", "overload", "overvoltage"],
+  "operatingTemperature": "-10 to +60C",
+  "typicalUseCases": [
+    "BLV MGN Cube (specified in BOM)",
+    "Large DIY 3D printers with DC heated beds",
+    "Builds needing 400W+ from a single PSU"
+  ],
+  "communityRecommendation": "recommended",
+  "references": [
+    {
+      "label": "MeanWell SE-450 Datasheet",
+      "url": "https://www.meanwell.com/Upload/PDF/SE-450/SE-450-SPEC.PDF",
+      "type": "datasheet"
+    },
+    {
+      "label": "Amazon Product Page (BLV MGN Cube)",
+      "url": "https://www.amazon.com/Quality-Printer-Geniune-Meanwell-SE-450-24/dp/B0894RZQD1",
+      "type": "product"
+    },
+    {
+      "label": "StepperOnline Product Page",
+      "url": "https://www.omc-stepperonline.com/se-450-24-mean-well-451-2w-18-8a-24v-single-output-power-supply-se-450-24",
+      "type": "product"
+    }
+  ],
+  "unverified": []
+}

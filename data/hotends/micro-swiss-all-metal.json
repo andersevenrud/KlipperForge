@@ -1,0 +1,53 @@
+{
+  "id": "micro-swiss-all-metal",
+  "name": "All Metal Hotend Kit",
+  "manufacturer": "Micro Swiss",
+  "description": "The Micro Swiss All Metal Hotend Kit is one of the most popular all-metal upgrades for Creality Ender 3, CR-10, and other machines using the stock MK8-style hotend. It replaces the PTFE-lined thermal barrier with a full all-metal heatbreak, allowing sustained printing at higher temperatures for engineering filaments. The kit is designed as a drop-in replacement requiring no additional machining or adapter parts.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 300,
+    "heaterType": "cartridge",
+    "heaterPower": 40,
+    "heatUpTime": "~90s to 200°C",
+    "thermistorType": "NTC 100K"
+  },
+  "heatBreakSpecs": {
+    "type": "all-metal",
+    "material": "titanium alloy",
+    "retraction": "1-2mm (direct drive), 4-7mm (Bowden)"
+  },
+  "nozzleSpecs": {
+    "system": "MK8 threaded (M6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "MK8 brass nozzles",
+      "MK8 hardened steel nozzles",
+      "third-party M6 MK8-style nozzles"
+    ],
+    "maxFlowRate": "~10mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "weight": 30,
+    "mountType": "MK8 compatible (Creality Ender 3, CR-10 series)"
+  },
+  "features": [
+    "Drop-in replacement for stock Creality MK8 PTFE-lined hotend",
+    "All-metal heatbreak enables sustained high-temperature printing",
+    "Compatible with ABS, ASA, nylon, and other engineering filaments",
+    "Includes plated copper heat block for improved thermal performance"
+  ],
+  "references": [
+    {
+      "label": "Micro Swiss All Metal Hotend Kit Product Page",
+      "url": "https://store.micro-swiss.com/products/all-metal-hotend-kit-for-cr-10",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "heatUpTime", "maxFlowRate", "retraction", "thermistorType"]
+}

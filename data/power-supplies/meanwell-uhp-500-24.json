@@ -1,0 +1,50 @@
+{
+  "id": "meanwell-uhp-500-24",
+  "name": "UHP-500-24",
+  "manufacturer": "MeanWell",
+  "description": "The largest UHP-series slim fanless PSU at 500W. Provides enough power for printers with DC heated beds while maintaining the slim profile and silent operation of the UHP line. Ideal for large-format DIY printers that need substantial power in a compact form factor.",
+  "voltage": 24,
+  "wattage": 502,
+  "formFactor": "enclosed-slim",
+  "electricalSpecs": {
+    "outputVoltage": 24,
+    "outputCurrent": 20.9,
+    "outputPower": 501.6,
+    "inputVoltageRange": "90-264VAC",
+    "efficiency": 94,
+    "powerFactorCorrection": true
+  },
+  "physicalSpecs": {
+    "dimensions": "232x81x31mm",
+    "weight": 905,
+    "coolingMethod": "convection",
+    "hasFan": false
+  },
+  "certifications": ["UL", "CE", "CB", "CCC", "BSMI", "EAC", "TUV"],
+  "protections": ["short-circuit", "overload", "overvoltage", "overtemperature"],
+  "operatingTemperature": "-30 to +70C",
+  "typicalUseCases": [
+    "Large-format 3D printers with DC heated beds",
+    "High-power DIY builds needing silent operation",
+    "Builds where a single PSU must power bed and electronics"
+  ],
+  "communityRecommendation": "recommended",
+  "references": [
+    {
+      "label": "MeanWell UHP-500 Product Page",
+      "url": "https://www.meanwell.com/webapp/product/search.aspx?prod=UHP-500(R)",
+      "type": "product"
+    },
+    {
+      "label": "MeanWell UHP-500-24 Product Page",
+      "url": "https://meanwell-ps.com/products/uhp-500-24",
+      "type": "product"
+    },
+    {
+      "label": "Amazon Product Page",
+      "url": "https://www.amazon.com/MEAN-WELL-UHP-500-24-Switching-Encapsulated/dp/B0796WZBBX",
+      "type": "product"
+    }
+  ],
+  "unverified": ["weight"]
+}

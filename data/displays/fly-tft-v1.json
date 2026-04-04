@@ -1,0 +1,36 @@
+{
+  "id": "fly-tft-v1",
+  "name": "FLY-TFT-V1",
+  "manufacturer": "Mellow",
+  "description": "A 3.5 inch SPI TFT display with resistive touchscreen for Raspberry Pi and FLY host boards. The predecessor to the FLY-TFT-V2, supporting KlipperScreen at up to 50fps via SPI.",
+  "displayType": "klipperscreen",
+  "screenSpecs": {
+    "size": "3.5 inch",
+    "resolution": "480x320",
+    "panelType": "TFT",
+    "touchscreen": true
+  },
+  "connectionSpecs": {
+    "interface": "SPI",
+    "connector": "Raspberry Pi GPIO header"
+  },
+  "klipperIntegration": {
+    "method": "KlipperScreen",
+    "requiresSbc": true,
+    "softwareRequired": "KlipperScreen"
+  },
+  "features": [
+    "SPI connection to Raspberry Pi",
+    "KlipperScreen compatible",
+    "Resistive touchscreen",
+    "Up to 50fps via SPI"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "GitHub - FLY-TFT",
+      "url": "https://github.com/Mellow-3D/FLY-TFT",
+      "type": "github"
+    }
+  ]
+}

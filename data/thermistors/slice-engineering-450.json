@@ -1,0 +1,34 @@
+{
+  "id": "slice-engineering-450",
+  "name": "Slice Engineering 450°C",
+  "manufacturer": "Slice Engineering",
+  "description": "The Slice Engineering 450°C thermistor is a specially designed high-temperature NTC thermistor intended for use in the Slice Engineering Mosquito and Copperhead hotends. It is rated for continuous operation up to 450°C, enabling reliable temperature measurement for high-temperature filaments such as PEEK, PEI, and other engineering materials. Klipper supports it natively with the 'SliceEngineering 450' sensor type.",
+  "sensorType": "NTC",
+  "sensingSpecs": {
+    "resistanceAt25C": 500000,
+    "temperatureRange": "0 to 450°C",
+    "accuracy": "±2°C"
+  },
+  "klipperSpecs": {
+    "sensorType": "SliceEngineering 450",
+    "requiresAmplifier": false,
+    "pullupResistor": 4700
+  },
+  "physicalSpecs": {
+    "packageType": "cartridge",
+    "dimensions": "3mm diameter × 6.35mm length"
+  },
+  "unverified": ["accuracy", "dimensions"],
+  "references": [
+    {
+      "label": "Slice Engineering Product Page",
+      "url": "https://www.sliceengineering.com/products/thermistor-high-temperature",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Config Reference - Thermistors",
+      "url": "https://www.klipper3d.org/Config_Reference.html#temperature-sensors",
+      "type": "documentation"
+    }
+  ]
+}

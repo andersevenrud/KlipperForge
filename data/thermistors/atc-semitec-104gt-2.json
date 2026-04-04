@@ -1,0 +1,36 @@
+{
+  "id": "atc-semitec-104gt-2",
+  "name": "ATC Semitec 104GT-2",
+  "manufacturer": "ATC Semitec",
+  "description": "The ATC Semitec 104GT-2 is a high-quality glass bead NTC thermistor commonly used in premium hotends such as those from E3D. With a nominal resistance of 100kΩ at 25°C and a beta value of 4267K, it offers accurate temperature readings up to 300°C, making it well-suited for high-temperature 3D printing. It is a direct drop-in for many E3D hotend designs.",
+  "sensorType": "NTC",
+  "sensingSpecs": {
+    "resistanceAt25C": 100000,
+    "betaValue": 4267,
+    "temperatureRange": "-50 to 300°C",
+    "accuracy": "±3%"
+  },
+  "klipperSpecs": {
+    "sensorType": "ATC Semitec 104GT-2",
+    "requiresAmplifier": false,
+    "pullupResistor": 4700
+  },
+  "physicalSpecs": {
+    "packageType": "glass bead",
+    "dimensions": "1.35mm × 2.0mm glass bead",
+    "leadType": "tinned copper"
+  },
+  "unverified": ["dimensions"],
+  "references": [
+    {
+      "label": "ATC Semitec 104GT-2 Datasheet",
+      "url": "https://www.atcsemitec.co.uk/gt-2-glass-thermistors.html",
+      "type": "datasheet"
+    },
+    {
+      "label": "Klipper Config Reference - Thermistors",
+      "url": "https://www.klipper3d.org/Config_Reference.html#temperature-sensors",
+      "type": "documentation"
+    }
+  ]
+}

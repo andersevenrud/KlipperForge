@@ -1,0 +1,4919 @@
+{
+	"byFile": {
+		"ad5206": {
+			"scale": {
+				"kind": "number",
+				"above": 0,
+				"default": 1
+			}
+		},
+		"adc_scaled": {
+			"smooth_time": {
+				"kind": "number",
+				"above": 0,
+				"default": 2
+			}
+		},
+		"adc_temperature": {
+			"sensor_pin": {
+				"kind": "string"
+			},
+			"adc_voltage": {
+				"kind": "number",
+				"above": 0,
+				"default": 5
+			},
+			"voltage_offset": {
+				"kind": "number",
+				"default": 0
+			},
+			"pullup_resistor": {
+				"kind": "number",
+				"above": 0,
+				"default": 4700
+			},
+			"resistance1": {
+				"kind": "string"
+			}
+		},
+		"ads1220": {
+			"gain": {
+				"kind": "choice"
+			},
+			"sample_rate": {
+				"kind": "choice"
+			},
+			"input_mux": {
+				"kind": "choice"
+			},
+			"pga_bypass": {
+				"kind": "boolean"
+			},
+			"vref": {
+				"kind": "choice"
+			},
+			"data_ready_pin": {
+				"kind": "string"
+			}
+		},
+		"ads1x1x": {
+			"chip": {
+				"kind": "choice"
+			},
+			"address_pin": {
+				"kind": "choice"
+			},
+			"pga": {
+				"kind": "choice"
+			},
+			"adc_voltage": {
+				"kind": "number",
+				"above": 0
+			}
+		},
+		"adxl345": {
+			"rate": {
+				"kind": "number",
+				"integer": true,
+				"default": 3200
+			}
+		},
+		"aht10": {
+			"aht10_report_time": {
+				"kind": "number",
+				"integer": true,
+				"min": 5,
+				"default": 30
+			}
+		},
+		"angle": {
+			"stepper": {
+				"kind": "string"
+			},
+			"calibrate": {
+				"kind": "string"
+			},
+			"sample_period": {
+				"kind": "number",
+				"above": 0
+			},
+			"sensor_type": {
+				"kind": "choice"
+			}
+		},
+		"axis_twist_compensation": {
+			"horizontal_move_z": {
+				"kind": "number"
+			},
+			"speed": {
+				"kind": "number"
+			},
+			"calibrate_start_x": {
+				"kind": "number"
+			},
+			"calibrate_end_x": {
+				"kind": "number"
+			},
+			"calibrate_y": {
+				"kind": "number"
+			},
+			"compensation_start_x": {
+				"kind": "number"
+			},
+			"compensation_end_x": {
+				"kind": "number"
+			},
+			"calibrate_start_y": {
+				"kind": "number"
+			},
+			"calibrate_end_y": {
+				"kind": "number"
+			},
+			"calibrate_x": {
+				"kind": "number"
+			},
+			"compensation_start_y": {
+				"kind": "number"
+			},
+			"compensation_end_y": {
+				"kind": "number"
+			}
+		},
+		"bed_mesh": {
+			"horizontal_move_z": {
+				"kind": "number",
+				"default": 5
+			},
+			"fade_start": {
+				"kind": "number",
+				"default": 1
+			},
+			"fade_end": {
+				"kind": "number",
+				"default": 0
+			},
+			"fade_target": {
+				"kind": "number"
+			},
+			"adaptive_margin": {
+				"kind": "number",
+				"default": 0
+			},
+			"mesh_radius": {
+				"kind": "number",
+				"above": 0
+			},
+			"round_probe_count": {
+				"kind": "number",
+				"integer": true,
+				"min": 3,
+				"default": 5
+			},
+			"algorithm": {
+				"kind": "string",
+				"default": "lagrange"
+			},
+			"bicubic_tension": {
+				"kind": "number",
+				"min": 0,
+				"max": 2
+			},
+			"scan_overshoot": {
+				"kind": "number",
+				"min": 1,
+				"default": 0
+			},
+			"speed": {
+				"kind": "number",
+				"above": 0,
+				"default": 50
+			},
+			"split_delta_z": {
+				"kind": "number",
+				"min": 0.01
+			},
+			"move_check_distance": {
+				"kind": "number",
+				"min": 3,
+				"default": 5
+			}
+		},
+		"bed_screws": {
+			"speed": {
+				"kind": "number",
+				"above": 0,
+				"default": 50
+			},
+			"probe_speed": {
+				"kind": "number",
+				"above": 0,
+				"default": 5
+			},
+			"horizontal_move_z": {
+				"kind": "number",
+				"default": 5
+			},
+			"probe_height": {
+				"kind": "number",
+				"default": 0
+			}
+		},
+		"bed_tilt": {
+			"x_adjust": {
+				"kind": "number",
+				"default": 0
+			},
+			"y_adjust": {
+				"kind": "number",
+				"default": 0
+			},
+			"z_adjust": {
+				"kind": "number",
+				"default": 0
+			},
+			"points": {
+				"kind": "string"
+			}
+		},
+		"bltouch": {
+			"z_offset": {
+				"kind": "number",
+				"min": 0
+			},
+			"stow_on_each_sample": {
+				"kind": "boolean",
+				"default": true
+			},
+			"probe_with_touch_mode": {
+				"kind": "boolean",
+				"default": false
+			},
+			"control_pin": {
+				"kind": "string"
+			},
+			"sensor_pin": {
+				"kind": "string"
+			},
+			"set_output_mode": {
+				"kind": "choice"
+			},
+			"pin_up_reports_not_triggered": {
+				"kind": "boolean",
+				"default": true
+			},
+			"pin_up_touch_mode_reports_triggered": {
+				"kind": "boolean",
+				"default": true
+			},
+			"pin_move_time": {
+				"kind": "number",
+				"above": 0,
+				"default": 0.68
+			}
+		},
+		"bme280": {
+			"bme280_iir_filter": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"bme280_oversample_temp": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"bme280_oversample_hum": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"bme280_oversample_pressure": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"bme280_gas_target_temp": {
+				"kind": "number",
+				"integer": true,
+				"default": 320
+			},
+			"bme280_gas_heat_duration": {
+				"kind": "number",
+				"integer": true,
+				"default": 150
+			}
+		},
+		"bmi160": {
+			"cs_pin": {
+				"kind": "string"
+			}
+		},
+		"bus": {
+			"spi_speed": {
+				"kind": "number",
+				"integer": true,
+				"min": 100000
+			},
+			"spi_software_sclk_pin": {
+				"kind": "string"
+			},
+			"spi_bus": {
+				"kind": "string"
+			},
+			"i2c_mcu": {
+				"kind": "string",
+				"default": "mcu"
+			},
+			"i2c_speed": {
+				"kind": "number",
+				"integer": true,
+				"min": 100000
+			},
+			"i2c_address": {
+				"kind": "number",
+				"integer": true,
+				"min": 0,
+				"max": 127
+			},
+			"i2c_software_scl_pin": {
+				"kind": "string"
+			},
+			"i2c_bus": {
+				"kind": "string"
+			}
+		},
+		"buttons": {
+			"debounce_delay": {
+				"kind": "number",
+				"min": 0,
+				"default": 0
+			}
+		},
+		"controller_fan": {
+			"fan_speed": {
+				"kind": "number",
+				"min": 0,
+				"max": 1
+			},
+			"idle_speed": {
+				"kind": "number",
+				"min": 0,
+				"max": 1
+			},
+			"idle_timeout": {
+				"kind": "number",
+				"integer": true,
+				"min": 0
+			}
+		},
+		"dac084S085": {
+			"scale": {
+				"kind": "number",
+				"above": 0,
+				"default": 1
+			}
+		},
+		"delayed_gcode": {
+			"initial_duration": {
+				"kind": "number",
+				"min": 0,
+				"default": 0
+			}
+		},
+		"delta_calibrate": {
+			"radius": {
+				"kind": "number",
+				"above": 0
+			}
+		},
+		"dotstar": {
+			"data_pin": {
+				"kind": "string"
+			},
+			"clock_pin": {
+				"kind": "string"
+			},
+			"chain_count": {
+				"kind": "number",
+				"integer": true,
+				"min": 1,
+				"default": 1
+			}
+		},
+		"ds18b20": {
+			"serial_no": {
+				"kind": "string"
+			},
+			"ds18_report_time": {
+				"kind": "number"
+			},
+			"sensor_mcu": {
+				"kind": "string"
+			}
+		},
+		"endstop_phase": {
+			"trigger_phase": {
+				"kind": "string"
+			},
+			"endstop_align_zero": {
+				"kind": "boolean",
+				"default": false
+			},
+			"endstop_accuracy": {
+				"kind": "number",
+				"above": 0
+			}
+		},
+		"extruder_stepper": {
+			"extruder": {
+				"kind": "string"
+			}
+		},
+		"fan": {
+			"max_power": {
+				"kind": "number",
+				"max": 1,
+				"above": 0,
+				"default": 1
+			},
+			"kick_start_time": {
+				"kind": "number",
+				"min": 0,
+				"default": 0.1
+			},
+			"off_below": {
+				"kind": "number",
+				"min": 0,
+				"max": 1
+			},
+			"cycle_time": {
+				"kind": "number",
+				"above": 0,
+				"default": 0.01
+			},
+			"hardware_pwm": {
+				"kind": "boolean",
+				"default": false
+			},
+			"shutdown_speed": {
+				"kind": "number",
+				"min": 0,
+				"max": 1
+			},
+			"pin": {
+				"kind": "string"
+			},
+			"enable_pin": {
+				"kind": "string"
+			},
+			"tachometer_pin": {
+				"kind": "string"
+			},
+			"tachometer_ppr": {
+				"kind": "number",
+				"integer": true,
+				"min": 1,
+				"default": 2
+			},
+			"tachometer_poll_interval": {
+				"kind": "number",
+				"above": 0,
+				"default": 0.0015
+			}
+		},
+		"filament_motion_sensor": {
+			"switch_pin": {
+				"kind": "string"
+			},
+			"extruder": {
+				"kind": "string"
+			},
+			"detection_length": {
+				"kind": "number",
+				"above": 0,
+				"default": 7
+			}
+		},
+		"filament_switch_sensor": {
+			"pause_on_runout": {
+				"kind": "boolean",
+				"default": true
+			},
+			"runout_gcode": {
+				"kind": "string"
+			},
+			"insert_gcode": {
+				"kind": "string"
+			},
+			"pause_delay": {
+				"kind": "number"
+			},
+			"event_delay": {
+				"kind": "number",
+				"default": 3
+			},
+			"switch_pin": {
+				"kind": "string"
+			}
+		},
+		"firmware_retraction": {
+			"retract_length": {
+				"kind": "number",
+				"min": 0,
+				"default": 0
+			},
+			"retract_speed": {
+				"kind": "number",
+				"min": 1,
+				"default": 20
+			},
+			"unretract_extra_length": {
+				"kind": "number",
+				"min": 0,
+				"default": 0
+			},
+			"unretract_speed": {
+				"kind": "number",
+				"min": 1,
+				"default": 10
+			}
+		},
+		"force_move": {
+			"enable_force_move": {
+				"kind": "boolean",
+				"default": false
+			}
+		},
+		"gcode_arcs": {
+			"resolution": {
+				"kind": "number",
+				"above": 0,
+				"default": 1
+			}
+		},
+		"gcode_button": {
+			"pin": {
+				"kind": "string"
+			},
+			"analog_range": {
+				"kind": "string"
+			},
+			"analog_pullup_resistor": {
+				"kind": "number",
+				"above": 0,
+				"default": 4700
+			}
+		},
+		"gcode_macro": {
+			"rename_existing": {
+				"kind": "string"
+			},
+			"description": {
+				"kind": "string",
+				"default": "G-Code macro"
+			}
+		},
+		"hall_filament_width_sensor": {
+			"adc1": {
+				"kind": "string"
+			},
+			"adc2": {
+				"kind": "string"
+			},
+			"cal_dia1": {
+				"kind": "number",
+				"default": 1.5
+			},
+			"cal_dia2": {
+				"kind": "number",
+				"default": 2
+			},
+			"raw_dia1": {
+				"kind": "number",
+				"integer": true,
+				"default": 9500
+			},
+			"raw_dia2": {
+				"kind": "number",
+				"integer": true,
+				"default": 10500
+			},
+			"measurement_interval": {
+				"kind": "number",
+				"integer": true,
+				"default": 10
+			},
+			"default_nominal_filament_diameter": {
+				"kind": "number",
+				"above": 1
+			},
+			"measurement_delay": {
+				"kind": "number",
+				"above": 0
+			},
+			"max_difference": {
+				"kind": "number",
+				"default": 0.2
+			},
+			"enable": {
+				"kind": "boolean",
+				"default": false
+			},
+			"min_diameter": {
+				"kind": "number",
+				"default": 1
+			},
+			"max_diameter": {
+				"kind": "number"
+			},
+			"logging": {
+				"kind": "boolean",
+				"default": false
+			},
+			"use_current_dia_while_delay": {
+				"kind": "boolean",
+				"default": false
+			}
+		},
+		"heater_fan": {
+			"heater_temp": {
+				"kind": "number",
+				"default": 50
+			},
+			"fan_speed": {
+				"kind": "number",
+				"min": 0,
+				"max": 1,
+				"default": 1
+			}
+		},
+		"extruder": {
+			"min_temp": {
+				"kind": "number"
+			},
+			"max_temp": {
+				"kind": "number"
+			},
+			"min_extrude_temp": {
+				"kind": "number",
+				"default": 170
+			},
+			"max_power": {
+				"kind": "number",
+				"max": 1,
+				"above": 0,
+				"default": 1
+			},
+			"smooth_time": {
+				"kind": "number",
+				"above": 0,
+				"default": 1
+			},
+			"control": {
+				"kind": "choice"
+			},
+			"heater_pin": {
+				"kind": "string"
+			},
+			"pwm_cycle_time": {
+				"kind": "number",
+				"above": 0,
+				"default": 0.1
+			},
+			"max_delta": {
+				"kind": "number",
+				"above": 0,
+				"default": 2
+			},
+			"pid_kp": {
+				"kind": "number"
+			},
+			"pid_ki": {
+				"kind": "number"
+			},
+			"pid_kd": {
+				"kind": "number"
+			},
+			"sensor_type": {
+				"kind": "string"
+			},
+			"gcode_id": {
+				"kind": "string"
+			}
+		},
+		"heater_generic": {
+			"min_temp": {
+				"kind": "number"
+			},
+			"max_temp": {
+				"kind": "number"
+			},
+			"min_extrude_temp": {
+				"kind": "number",
+				"default": 170
+			},
+			"max_power": {
+				"kind": "number",
+				"max": 1,
+				"above": 0,
+				"default": 1
+			},
+			"smooth_time": {
+				"kind": "number",
+				"above": 0,
+				"default": 1
+			},
+			"control": {
+				"kind": "choice"
+			},
+			"heater_pin": {
+				"kind": "string"
+			},
+			"pwm_cycle_time": {
+				"kind": "number",
+				"above": 0,
+				"default": 0.1
+			},
+			"max_delta": {
+				"kind": "number",
+				"above": 0,
+				"default": 2
+			},
+			"pid_kp": {
+				"kind": "number"
+			},
+			"pid_ki": {
+				"kind": "number"
+			},
+			"pid_kd": {
+				"kind": "number"
+			},
+			"sensor_type": {
+				"kind": "string"
+			},
+			"gcode_id": {
+				"kind": "string"
+			}
+		},
+		"heater_bed": {
+			"min_temp": {
+				"kind": "number"
+			},
+			"max_temp": {
+				"kind": "number"
+			},
+			"min_extrude_temp": {
+				"kind": "number",
+				"default": 170
+			},
+			"max_power": {
+				"kind": "number",
+				"max": 1,
+				"above": 0,
+				"default": 1
+			},
+			"smooth_time": {
+				"kind": "number",
+				"above": 0,
+				"default": 1
+			},
+			"control": {
+				"kind": "choice"
+			},
+			"heater_pin": {
+				"kind": "string"
+			},
+			"pwm_cycle_time": {
+				"kind": "number",
+				"above": 0,
+				"default": 0.1
+			},
+			"max_delta": {
+				"kind": "number",
+				"above": 0,
+				"default": 2
+			},
+			"pid_kp": {
+				"kind": "number"
+			},
+			"pid_ki": {
+				"kind": "number"
+			},
+			"pid_kd": {
+				"kind": "number"
+			},
+			"sensor_type": {
+				"kind": "string"
+			},
+			"gcode_id": {
+				"kind": "string"
+			}
+		},
+		"homing_override": {
+			"axes": {
+				"kind": "string",
+				"default": "XYZ"
+			}
+		},
+		"htu21d": {
+			"htu21d_hold_master": {
+				"kind": "boolean",
+				"default": false
+			},
+			"htu21d_resolution": {
+				"kind": "string",
+				"default": "TEMP12_HUM08"
+			},
+			"htu21d_report_time": {
+				"kind": "number",
+				"integer": true,
+				"min": 5,
+				"default": 30
+			},
+			"sensor_type": {
+				"kind": "string"
+			}
+		},
+		"hx71x": {
+			"dout_pin": {
+				"kind": "string"
+			},
+			"sclk_pin": {
+				"kind": "string"
+			},
+			"sample_rate": {
+				"kind": "choice"
+			},
+			"gain": {
+				"kind": "choice"
+			}
+		},
+		"icm20948": {
+			"rate": {
+				"kind": "number",
+				"integer": true,
+				"default": 4500
+			}
+		},
+		"idle_timeout": {
+			"timeout": {
+				"kind": "number",
+				"above": 0,
+				"default": 600
+			}
+		},
+		"input_shaper": {
+			"shaper_type": {
+				"kind": "string",
+				"default": "mzv"
+			},
+			"damping_ratio_x": {
+				"kind": "number",
+				"min": 0
+			},
+			"damping_ratio_y": {
+				"kind": "number",
+				"min": 0
+			},
+			"damping_ratio_z": {
+				"kind": "number",
+				"min": 0
+			},
+			"shaper_freq_x": {
+				"kind": "number",
+				"min": 0
+			},
+			"shaper_freq_y": {
+				"kind": "number",
+				"min": 0
+			},
+			"shaper_freq_z": {
+				"kind": "number",
+				"min": 0
+			}
+		},
+		"ldc1612": {
+			"reg_drive_current": {
+				"kind": "number",
+				"integer": true,
+				"min": 0,
+				"max": 31
+			},
+			"frequency": {
+				"kind": "number",
+				"integer": true
+			},
+			"intb_pin": {
+				"kind": "string"
+			}
+		},
+		"led": {
+			"initial_red": {
+				"kind": "number",
+				"min": 0,
+				"max": 1,
+				"default": 0
+			},
+			"initial_green": {
+				"kind": "number",
+				"min": 0,
+				"max": 1,
+				"default": 0
+			},
+			"initial_blue": {
+				"kind": "number",
+				"min": 0,
+				"max": 1,
+				"default": 0
+			},
+			"initial_white": {
+				"kind": "number",
+				"min": 0,
+				"max": 1,
+				"default": 0
+			},
+			"cycle_time": {
+				"kind": "number",
+				"above": 0,
+				"default": 0.01
+			},
+			"hardware_pwm": {
+				"kind": "boolean",
+				"default": false
+			}
+		},
+		"lis2dw": {
+			"cs_pin": {
+				"kind": "string"
+			}
+		},
+		"lm75": {
+			"lm75_report_time": {
+				"kind": "number"
+			}
+		},
+		"load_cell": {
+			"reference_tare_counts": {
+				"kind": "number",
+				"integer": true
+			},
+			"counts_per_gram": {
+				"kind": "number"
+			},
+			"sensor_orientation": {
+				"kind": "choice"
+			},
+			"sensor_type": {
+				"kind": "choice"
+			}
+		},
+		"load_cell_probe": {
+			"sensor_type": {
+				"kind": "choice"
+			}
+		},
+		"manual_stepper": {
+			"endstop_pin": {
+				"kind": "string"
+			},
+			"velocity": {
+				"kind": "number",
+				"above": 0,
+				"default": 5
+			},
+			"accel": {
+				"kind": "number",
+				"min": 0,
+				"default": 0
+			},
+			"position_min": {
+				"kind": "number"
+			},
+			"position_max": {
+				"kind": "number"
+			}
+		},
+		"mcp4018": {
+			"scale": {
+				"kind": "number",
+				"above": 0,
+				"default": 1
+			},
+			"wiper": {
+				"kind": "number",
+				"min": 0
+			}
+		},
+		"mcp4451": {
+			"scale": {
+				"kind": "number",
+				"above": 0,
+				"default": 1
+			}
+		},
+		"mcp4728": {
+			"scale": {
+				"kind": "number",
+				"above": 0,
+				"default": 1
+			}
+		},
+		"mpu9250": {
+			"rate": {
+				"kind": "number",
+				"integer": true,
+				"default": 4000
+			}
+		},
+		"neopixel": {
+			"pin": {
+				"kind": "string"
+			},
+			"chain_count": {
+				"kind": "number",
+				"integer": true,
+				"min": 1,
+				"default": 1
+			}
+		},
+		"output_pin": {
+			"pwm": {
+				"kind": "boolean",
+				"default": false
+			},
+			"pin": {
+				"kind": "string"
+			},
+			"cycle_time": {
+				"kind": "number",
+				"above": 0,
+				"default": 0.1
+			},
+			"hardware_pwm": {
+				"kind": "boolean",
+				"default": false
+			},
+			"scale": {
+				"kind": "number",
+				"above": 0,
+				"default": 1
+			},
+			"value": {
+				"kind": "number",
+				"min": 0,
+				"default": 0
+			},
+			"shutdown_value": {
+				"kind": "number",
+				"min": 0,
+				"default": 0
+			}
+		},
+		"palette2": {
+			"serial": {
+				"kind": "string"
+			},
+			"baud": {
+				"kind": "number",
+				"integer": true
+			},
+			"feedrate_splice": {
+				"kind": "number",
+				"min": 0,
+				"max": 1
+			},
+			"feedrate_normal": {
+				"kind": "number",
+				"min": 0,
+				"max": 1
+			},
+			"auto_load_speed": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"auto_cancel_variation": {
+				"kind": "number",
+				"min": 0.01,
+				"max": 0.2
+			}
+		},
+		"pause_resume": {
+			"recover_velocity": {
+				"kind": "number",
+				"default": 50
+			}
+		},
+		"pca9632": {
+			"color_order": {
+				"kind": "string",
+				"default": "RGBW"
+			}
+		},
+		"probe": {
+			"speed": {
+				"kind": "number",
+				"above": 0,
+				"default": 50
+			},
+			"lift_speed": {
+				"kind": "number",
+				"above": 0
+			},
+			"samples": {
+				"kind": "number",
+				"integer": true,
+				"min": 1,
+				"default": 1
+			},
+			"sample_retract_dist": {
+				"kind": "number",
+				"above": 0,
+				"default": 2
+			},
+			"samples_result": {
+				"kind": "choice"
+			},
+			"samples_tolerance": {
+				"kind": "number",
+				"min": 0,
+				"default": 0.1
+			},
+			"samples_tolerance_retries": {
+				"kind": "number",
+				"integer": true,
+				"min": 0,
+				"default": 0
+			},
+			"x_offset": {
+				"kind": "number",
+				"default": 0
+			},
+			"y_offset": {
+				"kind": "number",
+				"default": 0
+			},
+			"z_offset": {
+				"kind": "number"
+			},
+			"points": {
+				"kind": "string"
+			},
+			"horizontal_move_z": {
+				"kind": "number",
+				"default": 5
+			},
+			"deactivate_on_each_sample": {
+				"kind": "boolean",
+				"default": true
+			},
+			"pin": {
+				"kind": "string"
+			}
+		},
+		"probe_eddy_current": {
+			"calibrate": {
+				"kind": "string"
+			},
+			"tap_threshold": {
+				"kind": "number",
+				"above": 0,
+				"default": 0
+			},
+			"sensor_type": {
+				"kind": "choice"
+			}
+		},
+		"pwm_cycle_time": {
+			"scale": {
+				"kind": "number",
+				"above": 0,
+				"default": 1
+			},
+			"value": {
+				"kind": "number",
+				"min": 0,
+				"default": 0
+			},
+			"shutdown_value": {
+				"kind": "number",
+				"min": 0,
+				"default": 0
+			},
+			"pin": {
+				"kind": "string"
+			},
+			"cycle_time": {
+				"kind": "number",
+				"above": 0,
+				"default": 0.1
+			}
+		},
+		"pwm_tool": {
+			"pin": {
+				"kind": "string"
+			},
+			"cycle_time": {
+				"kind": "number",
+				"above": 0,
+				"default": 0.1
+			},
+			"hardware_pwm": {
+				"kind": "boolean",
+				"default": false
+			},
+			"scale": {
+				"kind": "number",
+				"above": 0,
+				"default": 1
+			},
+			"maximum_mcu_duration": {
+				"kind": "number",
+				"min": 0.5,
+				"default": 0
+			},
+			"value": {
+				"kind": "number",
+				"min": 0,
+				"default": 0
+			},
+			"shutdown_value": {
+				"kind": "number",
+				"min": 0,
+				"default": 0
+			}
+		},
+		"quad_gantry_level": {
+			"max_adjust": {
+				"kind": "number",
+				"above": 0,
+				"default": 4
+			},
+			"horizontal_move_z": {
+				"kind": "number",
+				"default": 5
+			}
+		},
+		"replicape": {
+			"revision": {
+				"kind": "choice"
+			},
+			"host_mcu": {
+				"kind": "string"
+			},
+			"enable_pin": {
+				"kind": "string",
+				"default": "!gpio0_20"
+			},
+			"standstill_power_down": {
+				"kind": "boolean",
+				"default": false
+			}
+		},
+		"resonance_tester": {
+			"min_freq": {
+				"kind": "number",
+				"min": 1,
+				"default": 5
+			},
+			"max_freq": {
+				"kind": "number",
+				"max": 300,
+				"default": 135
+			},
+			"max_freq_z": {
+				"kind": "number",
+				"max": 300,
+				"default": 100
+			},
+			"accel_per_hz": {
+				"kind": "number",
+				"above": 0,
+				"default": 60
+			},
+			"accel_per_hz_z": {
+				"kind": "number",
+				"above": 0,
+				"default": 15
+			},
+			"hz_per_sec": {
+				"kind": "number",
+				"min": 0.1,
+				"max": 2,
+				"default": 1
+			},
+			"sweeping_accel": {
+				"kind": "number",
+				"above": 0,
+				"default": 400
+			},
+			"sweeping_accel_z": {
+				"kind": "number",
+				"above": 0,
+				"default": 50
+			},
+			"sweeping_period": {
+				"kind": "number",
+				"min": 0,
+				"default": 1.2
+			},
+			"move_speed": {
+				"kind": "number",
+				"above": 0,
+				"default": 50
+			},
+			"accel_chip_x": {
+				"kind": "string"
+			},
+			"accel_chip": {
+				"kind": "string"
+			},
+			"accel_chip_z": {
+				"kind": "string",
+				"default": ""
+			},
+			"accel_chip_y": {
+				"kind": "string"
+			},
+			"max_smoothing": {
+				"kind": "number",
+				"min": 0.05
+			}
+		},
+		"respond": {
+			"default_type": {
+				"kind": "choice"
+			},
+			"default_prefix": {
+				"kind": "string"
+			}
+		},
+		"safe_z_home": {
+			"z_hop": {
+				"kind": "number"
+			},
+			"z_hop_speed": {
+				"kind": "number",
+				"above": 0,
+				"default": 15
+			},
+			"speed": {
+				"kind": "number",
+				"above": 0,
+				"default": 50
+			},
+			"move_to_previous": {
+				"kind": "boolean",
+				"default": false
+			}
+		},
+		"samd_sercom": {
+			"sercom": {
+				"kind": "string"
+			},
+			"tx_pin": {
+				"kind": "string"
+			},
+			"rx_pin": {
+				"kind": "string"
+			},
+			"clk_pin": {
+				"kind": "string"
+			}
+		},
+		"save_variables": {
+			"filename": {
+				"kind": "string"
+			}
+		},
+		"screws_tilt_adjust": {
+			"screw_thread": {
+				"kind": "choice"
+			}
+		},
+		"servo": {
+			"minimum_pulse_width": {
+				"kind": "number",
+				"above": 0
+			},
+			"maximum_pulse_width": {
+				"kind": "number"
+			},
+			"maximum_servo_angle": {
+				"kind": "number",
+				"default": 180
+			},
+			"initial_angle": {
+				"kind": "number",
+				"min": 0,
+				"max": 360
+			},
+			"initial_pulse_width": {
+				"kind": "number",
+				"min": 0,
+				"default": 0
+			},
+			"pin": {
+				"kind": "string"
+			}
+		},
+		"sht3x": {
+			"sht3x_report_time": {
+				"kind": "number",
+				"integer": true,
+				"min": 1,
+				"default": 1
+			},
+			"sensor_type": {
+				"kind": "string"
+			}
+		},
+		"smart_effector": {
+			"probe_accel": {
+				"kind": "number",
+				"min": 0,
+				"default": 0
+			},
+			"recovery_time": {
+				"kind": "number",
+				"min": 0,
+				"default": 0.4
+			},
+			"control_pin": {
+				"kind": "string"
+			}
+		},
+		"spi_temperature": {
+			"tc_use_50hz_filter": {
+				"kind": "boolean",
+				"default": false
+			},
+			"tc_type": {
+				"kind": "choice"
+			},
+			"tc_averaging_count": {
+				"kind": "choice"
+			},
+			"rtd_nominal_r": {
+				"kind": "number",
+				"above": 0,
+				"default": 100
+			},
+			"rtd_reference_r": {
+				"kind": "number",
+				"above": 0,
+				"default": 430
+			},
+			"rtd_use_50hz_filter": {
+				"kind": "boolean",
+				"default": false
+			},
+			"rtd_num_of_wires": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			}
+		},
+		"static_pwm_clock": {
+			"pin": {
+				"kind": "string"
+			},
+			"frequency": {
+				"kind": "number",
+				"max": 520000000,
+				"default": 100
+			}
+		},
+		"stepper_enable": {
+			"enable_pin": {
+				"kind": "string"
+			}
+		},
+		"temperature_combined": {
+			"maximum_deviation": {
+				"kind": "number",
+				"above": 0
+			},
+			"combination_method": {
+				"kind": "choice"
+			}
+		},
+		"temperature_fan": {
+			"min_temp": {
+				"kind": "number"
+			},
+			"max_temp": {
+				"kind": "number"
+			},
+			"max_speed": {
+				"kind": "number",
+				"max": 1,
+				"above": 0,
+				"default": 1
+			},
+			"min_speed": {
+				"kind": "number",
+				"min": 0,
+				"max": 1,
+				"default": 0.3
+			},
+			"target_temp": {
+				"kind": "number"
+			},
+			"control": {
+				"kind": "choice"
+			},
+			"max_delta": {
+				"kind": "number",
+				"above": 0,
+				"default": 2
+			},
+			"pid_kp": {
+				"kind": "number"
+			},
+			"pid_ki": {
+				"kind": "number"
+			},
+			"pid_kd": {
+				"kind": "number"
+			},
+			"pid_deriv_time": {
+				"kind": "number",
+				"above": 0,
+				"default": 2
+			}
+		},
+		"temperature_host": {
+			"sensor_path": {
+				"kind": "string"
+			}
+		},
+		"temperature_mcu": {
+			"sensor_mcu": {
+				"kind": "string",
+				"default": "mcu"
+			},
+			"sensor_temperature1": {
+				"kind": "number"
+			},
+			"sensor_adc1": {
+				"kind": "number",
+				"min": 0,
+				"max": 1
+			},
+			"sensor_temperature2": {
+				"kind": "number"
+			},
+			"sensor_adc2": {
+				"kind": "number",
+				"min": 0,
+				"max": 1
+			}
+		},
+		"temperature_probe": {
+			"speed": {
+				"kind": "number",
+				"above": 0
+			},
+			"horizontal_move_z": {
+				"kind": "number",
+				"above": 0,
+				"default": 2
+			},
+			"resting_z": {
+				"kind": "number",
+				"above": 0
+			},
+			"calibration_bed_temp": {
+				"kind": "number",
+				"above": 50
+			},
+			"calibration_extruder_temp": {
+				"kind": "number",
+				"above": 50
+			},
+			"extruder_heating_z": {
+				"kind": "number",
+				"above": 0,
+				"default": 50
+			},
+			"smooth_time": {
+				"kind": "number",
+				"above": 0,
+				"default": 2
+			},
+			"min_temp": {
+				"kind": "number"
+			},
+			"max_temp": {
+				"kind": "number",
+				"default": 99999999.9
+			},
+			"calibration_temp": {
+				"kind": "number",
+				"default": 0
+			},
+			"max_validation_temp": {
+				"kind": "number",
+				"default": 60
+			},
+			"drift_calibration_min_temp": {
+				"kind": "number",
+				"default": 0
+			}
+		},
+		"temperature_sensor": {
+			"min_temp": {
+				"kind": "number"
+			},
+			"max_temp": {
+				"kind": "number",
+				"default": 99999999.9
+			}
+		},
+		"thermistor": {
+			"pullup_resistor": {
+				"kind": "number",
+				"above": 0,
+				"default": 4700
+			},
+			"inline_resistor": {
+				"kind": "number",
+				"min": 0,
+				"default": 0
+			},
+			"temperature1": {
+				"kind": "number"
+			},
+			"resistance1": {
+				"kind": "number",
+				"min": 0
+			},
+			"beta": {
+				"kind": "number",
+				"above": 0
+			},
+			"temperature2": {
+				"kind": "number"
+			},
+			"resistance2": {
+				"kind": "number",
+				"min": 0
+			},
+			"temperature3": {
+				"kind": "number"
+			},
+			"resistance3": {
+				"kind": "number",
+				"min": 0
+			}
+		},
+		"tmc2130": {
+			"diag0_pin": {
+				"kind": "string"
+			},
+			"diag1_pin": {
+				"kind": "string"
+			},
+			"diag_pin": {
+				"kind": "string"
+			},
+			"driver_mslut0": {
+				"kind": "number",
+				"integer": true,
+				"default": 2863314260
+			},
+			"driver_mslut1": {
+				"kind": "number",
+				"integer": true,
+				"default": 1251300522
+			},
+			"driver_mslut2": {
+				"kind": "number",
+				"integer": true,
+				"default": 608774441
+			},
+			"driver_mslut3": {
+				"kind": "number",
+				"integer": true,
+				"default": 269500962
+			},
+			"driver_mslut4": {
+				"kind": "number",
+				"integer": true,
+				"default": 4227858431
+			},
+			"driver_mslut5": {
+				"kind": "number",
+				"integer": true,
+				"default": 3048961917
+			},
+			"driver_mslut6": {
+				"kind": "number",
+				"integer": true,
+				"default": 1227445590
+			},
+			"driver_mslut7": {
+				"kind": "number",
+				"integer": true,
+				"default": 4211234
+			},
+			"driver_w0": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"driver_w1": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_w2": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_w3": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_x1": {
+				"kind": "number",
+				"integer": true,
+				"default": 128
+			},
+			"driver_x2": {
+				"kind": "number",
+				"integer": true,
+				"default": 255
+			},
+			"driver_x3": {
+				"kind": "number",
+				"integer": true,
+				"default": 255
+			},
+			"driver_start_sin": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_start_sin90": {
+				"kind": "number",
+				"integer": true,
+				"default": 247
+			},
+			"interpolate": {
+				"kind": "boolean",
+				"default": true
+			},
+			"stealthchop_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"coolstep_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"high_velocity_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"run_current": {
+				"kind": "number",
+				"above": 0
+			},
+			"hold_current": {
+				"kind": "number",
+				"above": 0
+			},
+			"sense_resistor": {
+				"kind": "number",
+				"above": 0,
+				"default": 0.11
+			},
+			"chain_length": {
+				"kind": "number",
+				"integer": true,
+				"min": 2
+			},
+			"cs_pin": {
+				"kind": "string"
+			},
+			"chain_position": {
+				"kind": "number",
+				"integer": true,
+				"min": 1
+			},
+			"driver_toff": {
+				"kind": "number",
+				"integer": true,
+				"default": 4
+			},
+			"driver_hstrt": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_hend": {
+				"kind": "number",
+				"integer": true,
+				"default": 7
+			},
+			"driver_tbl": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_vhighfs": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_vhighchm": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_semin": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_seup": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_semax": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_sedn": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_seimin": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_sgt": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_sfilt": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_iholddelay": {
+				"kind": "number",
+				"integer": true,
+				"default": 8
+			},
+			"driver_pwm_ampl": {
+				"kind": "number",
+				"integer": true,
+				"default": 128
+			},
+			"driver_pwm_grad": {
+				"kind": "number",
+				"integer": true,
+				"default": 4
+			},
+			"driver_pwm_freq": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_pwm_autoscale": {
+				"kind": "boolean",
+				"default": true
+			},
+			"driver_freewheel": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_tpowerdown": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			}
+		},
+		"tmc2208": {
+			"diag0_pin": {
+				"kind": "string"
+			},
+			"diag1_pin": {
+				"kind": "string"
+			},
+			"diag_pin": {
+				"kind": "string"
+			},
+			"driver_mslut0": {
+				"kind": "number",
+				"integer": true,
+				"default": 2863314260
+			},
+			"driver_mslut1": {
+				"kind": "number",
+				"integer": true,
+				"default": 1251300522
+			},
+			"driver_mslut2": {
+				"kind": "number",
+				"integer": true,
+				"default": 608774441
+			},
+			"driver_mslut3": {
+				"kind": "number",
+				"integer": true,
+				"default": 269500962
+			},
+			"driver_mslut4": {
+				"kind": "number",
+				"integer": true,
+				"default": 4227858431
+			},
+			"driver_mslut5": {
+				"kind": "number",
+				"integer": true,
+				"default": 3048961917
+			},
+			"driver_mslut6": {
+				"kind": "number",
+				"integer": true,
+				"default": 1227445590
+			},
+			"driver_mslut7": {
+				"kind": "number",
+				"integer": true,
+				"default": 4211234
+			},
+			"driver_w0": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"driver_w1": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_w2": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_w3": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_x1": {
+				"kind": "number",
+				"integer": true,
+				"default": 128
+			},
+			"driver_x2": {
+				"kind": "number",
+				"integer": true,
+				"default": 255
+			},
+			"driver_x3": {
+				"kind": "number",
+				"integer": true,
+				"default": 255
+			},
+			"driver_start_sin": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_start_sin90": {
+				"kind": "number",
+				"integer": true,
+				"default": 247
+			},
+			"interpolate": {
+				"kind": "boolean",
+				"default": true
+			},
+			"stealthchop_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"coolstep_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"high_velocity_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"driver_multistep_filt": {
+				"kind": "boolean",
+				"default": true
+			},
+			"driver_toff": {
+				"kind": "number",
+				"integer": true,
+				"default": 3
+			},
+			"driver_hstrt": {
+				"kind": "number",
+				"integer": true,
+				"default": 5
+			},
+			"driver_hend": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_tbl": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"driver_iholddelay": {
+				"kind": "number",
+				"integer": true,
+				"default": 8
+			},
+			"driver_pwm_ofs": {
+				"kind": "number",
+				"integer": true,
+				"default": 36
+			},
+			"driver_pwm_grad": {
+				"kind": "number",
+				"integer": true,
+				"default": 14
+			},
+			"driver_pwm_freq": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_pwm_autoscale": {
+				"kind": "boolean",
+				"default": true
+			},
+			"driver_pwm_autograd": {
+				"kind": "boolean",
+				"default": true
+			},
+			"driver_freewheel": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_pwm_reg": {
+				"kind": "number",
+				"integer": true,
+				"default": 8
+			},
+			"driver_pwm_lim": {
+				"kind": "number",
+				"integer": true,
+				"default": 12
+			},
+			"driver_tpowerdown": {
+				"kind": "number",
+				"integer": true,
+				"default": 20
+			}
+		},
+		"tmc2209": {
+			"diag0_pin": {
+				"kind": "string"
+			},
+			"diag1_pin": {
+				"kind": "string"
+			},
+			"diag_pin": {
+				"kind": "string"
+			},
+			"driver_mslut0": {
+				"kind": "number",
+				"integer": true,
+				"default": 2863314260
+			},
+			"driver_mslut1": {
+				"kind": "number",
+				"integer": true,
+				"default": 1251300522
+			},
+			"driver_mslut2": {
+				"kind": "number",
+				"integer": true,
+				"default": 608774441
+			},
+			"driver_mslut3": {
+				"kind": "number",
+				"integer": true,
+				"default": 269500962
+			},
+			"driver_mslut4": {
+				"kind": "number",
+				"integer": true,
+				"default": 4227858431
+			},
+			"driver_mslut5": {
+				"kind": "number",
+				"integer": true,
+				"default": 3048961917
+			},
+			"driver_mslut6": {
+				"kind": "number",
+				"integer": true,
+				"default": 1227445590
+			},
+			"driver_mslut7": {
+				"kind": "number",
+				"integer": true,
+				"default": 4211234
+			},
+			"driver_w0": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"driver_w1": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_w2": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_w3": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_x1": {
+				"kind": "number",
+				"integer": true,
+				"default": 128
+			},
+			"driver_x2": {
+				"kind": "number",
+				"integer": true,
+				"default": 255
+			},
+			"driver_x3": {
+				"kind": "number",
+				"integer": true,
+				"default": 255
+			},
+			"driver_start_sin": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_start_sin90": {
+				"kind": "number",
+				"integer": true,
+				"default": 247
+			},
+			"interpolate": {
+				"kind": "boolean",
+				"default": true
+			},
+			"stealthchop_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"coolstep_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"high_velocity_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"driver_multistep_filt": {
+				"kind": "boolean",
+				"default": true
+			},
+			"driver_toff": {
+				"kind": "number",
+				"integer": true,
+				"default": 3
+			},
+			"driver_hstrt": {
+				"kind": "number",
+				"integer": true,
+				"default": 5
+			},
+			"driver_hend": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_tbl": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"driver_semin": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_seup": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_semax": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_sedn": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_seimin": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_iholddelay": {
+				"kind": "number",
+				"integer": true,
+				"default": 8
+			},
+			"driver_pwm_ofs": {
+				"kind": "number",
+				"integer": true,
+				"default": 36
+			},
+			"driver_pwm_grad": {
+				"kind": "number",
+				"integer": true,
+				"default": 14
+			},
+			"driver_pwm_freq": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_pwm_autoscale": {
+				"kind": "boolean",
+				"default": true
+			},
+			"driver_pwm_autograd": {
+				"kind": "boolean",
+				"default": true
+			},
+			"driver_freewheel": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_pwm_reg": {
+				"kind": "number",
+				"integer": true,
+				"default": 8
+			},
+			"driver_pwm_lim": {
+				"kind": "number",
+				"integer": true,
+				"default": 12
+			},
+			"driver_tpowerdown": {
+				"kind": "number",
+				"integer": true,
+				"default": 20
+			},
+			"driver_sgthrs": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			}
+		},
+		"tmc2660": {
+			"diag0_pin": {
+				"kind": "string"
+			},
+			"diag1_pin": {
+				"kind": "string"
+			},
+			"diag_pin": {
+				"kind": "string"
+			},
+			"driver_mslut0": {
+				"kind": "number",
+				"integer": true,
+				"default": 2863314260
+			},
+			"driver_mslut1": {
+				"kind": "number",
+				"integer": true,
+				"default": 1251300522
+			},
+			"driver_mslut2": {
+				"kind": "number",
+				"integer": true,
+				"default": 608774441
+			},
+			"driver_mslut3": {
+				"kind": "number",
+				"integer": true,
+				"default": 269500962
+			},
+			"driver_mslut4": {
+				"kind": "number",
+				"integer": true,
+				"default": 4227858431
+			},
+			"driver_mslut5": {
+				"kind": "number",
+				"integer": true,
+				"default": 3048961917
+			},
+			"driver_mslut6": {
+				"kind": "number",
+				"integer": true,
+				"default": 1227445590
+			},
+			"driver_mslut7": {
+				"kind": "number",
+				"integer": true,
+				"default": 4211234
+			},
+			"driver_w0": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"driver_w1": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_w2": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_w3": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_x1": {
+				"kind": "number",
+				"integer": true,
+				"default": 128
+			},
+			"driver_x2": {
+				"kind": "number",
+				"integer": true,
+				"default": 255
+			},
+			"driver_x3": {
+				"kind": "number",
+				"integer": true,
+				"default": 255
+			},
+			"driver_start_sin": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_start_sin90": {
+				"kind": "number",
+				"integer": true,
+				"default": 247
+			},
+			"interpolate": {
+				"kind": "boolean",
+				"default": true
+			},
+			"stealthchop_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"coolstep_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"high_velocity_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"run_current": {
+				"kind": "number",
+				"min": 0.1
+			},
+			"sense_resistor": {
+				"kind": "number"
+			},
+			"idle_current_percent": {
+				"kind": "number",
+				"integer": true,
+				"min": 0,
+				"max": 100
+			},
+			"driver_tbl": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"driver_rndtf": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_hdec": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_chm": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_hend": {
+				"kind": "number",
+				"integer": true,
+				"default": 3
+			},
+			"driver_hstrt": {
+				"kind": "number",
+				"integer": true,
+				"default": 3
+			},
+			"driver_toff": {
+				"kind": "number",
+				"integer": true,
+				"default": 4
+			},
+			"driver_seimin": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_sedn": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_semax": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_seup": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_semin": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_sfilt": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_sgt": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_slph": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_slpl": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_diss2g": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_ts2g": {
+				"kind": "number",
+				"integer": true,
+				"default": 3
+			}
+		},
+		"tmc2240": {
+			"diag0_pin": {
+				"kind": "string"
+			},
+			"diag1_pin": {
+				"kind": "string"
+			},
+			"diag_pin": {
+				"kind": "string"
+			},
+			"driver_mslut0": {
+				"kind": "number",
+				"integer": true,
+				"default": 2863314260
+			},
+			"driver_mslut1": {
+				"kind": "number",
+				"integer": true,
+				"default": 1251300522
+			},
+			"driver_mslut2": {
+				"kind": "number",
+				"integer": true,
+				"default": 608774441
+			},
+			"driver_mslut3": {
+				"kind": "number",
+				"integer": true,
+				"default": 269500962
+			},
+			"driver_mslut4": {
+				"kind": "number",
+				"integer": true,
+				"default": 4227858431
+			},
+			"driver_mslut5": {
+				"kind": "number",
+				"integer": true,
+				"default": 3048961917
+			},
+			"driver_mslut6": {
+				"kind": "number",
+				"integer": true,
+				"default": 1227445590
+			},
+			"driver_mslut7": {
+				"kind": "number",
+				"integer": true,
+				"default": 4211234
+			},
+			"driver_w0": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"driver_w1": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_w2": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_w3": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_x1": {
+				"kind": "number",
+				"integer": true,
+				"default": 128
+			},
+			"driver_x2": {
+				"kind": "number",
+				"integer": true,
+				"default": 255
+			},
+			"driver_x3": {
+				"kind": "number",
+				"integer": true,
+				"default": 255
+			},
+			"driver_start_sin": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_start_sin90": {
+				"kind": "number",
+				"integer": true,
+				"default": 247
+			},
+			"interpolate": {
+				"kind": "boolean",
+				"default": true
+			},
+			"stealthchop_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"coolstep_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"high_velocity_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"rref": {
+				"kind": "number",
+				"min": 12000,
+				"max": 60000,
+				"default": 12000
+			},
+			"run_current": {
+				"kind": "number",
+				"above": 0
+			},
+			"hold_current": {
+				"kind": "number",
+				"above": 0
+			},
+			"uart_pin": {
+				"kind": "string"
+			},
+			"driver_offset_sin90": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_multistep_filt": {
+				"kind": "boolean",
+				"default": true
+			},
+			"driver_toff": {
+				"kind": "number",
+				"integer": true,
+				"default": 3
+			},
+			"driver_hstrt": {
+				"kind": "number",
+				"integer": true,
+				"default": 5
+			},
+			"driver_hend": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"driver_fd3": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_disfdcc": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_chm": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_tbl": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"driver_vhighfs": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_vhighchm": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_tpfd": {
+				"kind": "number",
+				"integer": true,
+				"default": 4
+			},
+			"driver_diss2g": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_diss2vs": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_semin": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_seup": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_semax": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_sedn": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_seimin": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_sgt": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_sfilt": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_iholddelay": {
+				"kind": "number",
+				"integer": true,
+				"default": 6
+			},
+			"driver_irundelay": {
+				"kind": "number",
+				"integer": true,
+				"default": 4
+			},
+			"driver_pwm_ofs": {
+				"kind": "number",
+				"integer": true,
+				"default": 29
+			},
+			"driver_pwm_grad": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_pwm_freq": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_pwm_autoscale": {
+				"kind": "boolean",
+				"default": true
+			},
+			"driver_pwm_autograd": {
+				"kind": "boolean",
+				"default": true
+			},
+			"driver_freewheel": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_pwm_reg": {
+				"kind": "number",
+				"integer": true,
+				"default": 4
+			},
+			"driver_pwm_lim": {
+				"kind": "number",
+				"integer": true,
+				"default": 12
+			},
+			"driver_tpowerdown": {
+				"kind": "number",
+				"integer": true,
+				"default": 10
+			},
+			"driver_sg4_thrs": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_sg4_angle_offset": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_slope_control": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			}
+		},
+		"tmc5160": {
+			"diag0_pin": {
+				"kind": "string"
+			},
+			"diag1_pin": {
+				"kind": "string"
+			},
+			"diag_pin": {
+				"kind": "string"
+			},
+			"driver_mslut0": {
+				"kind": "number",
+				"integer": true,
+				"default": 2863314260
+			},
+			"driver_mslut1": {
+				"kind": "number",
+				"integer": true,
+				"default": 1251300522
+			},
+			"driver_mslut2": {
+				"kind": "number",
+				"integer": true,
+				"default": 608774441
+			},
+			"driver_mslut3": {
+				"kind": "number",
+				"integer": true,
+				"default": 269500962
+			},
+			"driver_mslut4": {
+				"kind": "number",
+				"integer": true,
+				"default": 4227858431
+			},
+			"driver_mslut5": {
+				"kind": "number",
+				"integer": true,
+				"default": 3048961917
+			},
+			"driver_mslut6": {
+				"kind": "number",
+				"integer": true,
+				"default": 1227445590
+			},
+			"driver_mslut7": {
+				"kind": "number",
+				"integer": true,
+				"default": 4211234
+			},
+			"driver_w0": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"driver_w1": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_w2": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_w3": {
+				"kind": "number",
+				"integer": true,
+				"default": 1
+			},
+			"driver_x1": {
+				"kind": "number",
+				"integer": true,
+				"default": 128
+			},
+			"driver_x2": {
+				"kind": "number",
+				"integer": true,
+				"default": 255
+			},
+			"driver_x3": {
+				"kind": "number",
+				"integer": true,
+				"default": 255
+			},
+			"driver_start_sin": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_start_sin90": {
+				"kind": "number",
+				"integer": true,
+				"default": 247
+			},
+			"interpolate": {
+				"kind": "boolean",
+				"default": true
+			},
+			"stealthchop_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"coolstep_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"high_velocity_threshold": {
+				"kind": "number",
+				"min": 0
+			},
+			"run_current": {
+				"kind": "number",
+				"above": 0
+			},
+			"hold_current": {
+				"kind": "number",
+				"above": 0
+			},
+			"sense_resistor": {
+				"kind": "number",
+				"above": 0,
+				"default": 0.075
+			},
+			"driver_multistep_filt": {
+				"kind": "boolean",
+				"default": true
+			},
+			"driver_toff": {
+				"kind": "number",
+				"integer": true,
+				"default": 3
+			},
+			"driver_hstrt": {
+				"kind": "number",
+				"integer": true,
+				"default": 5
+			},
+			"driver_hend": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"driver_fd3": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_disfdcc": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_chm": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_tbl": {
+				"kind": "number",
+				"integer": true,
+				"default": 2
+			},
+			"driver_vhighfs": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_vhighchm": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_tpfd": {
+				"kind": "number",
+				"integer": true,
+				"default": 4
+			},
+			"driver_diss2g": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_diss2vs": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_semin": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_seup": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_semax": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_sedn": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_seimin": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_sgt": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_sfilt": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_drvstrength": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_bbmclks": {
+				"kind": "number",
+				"integer": true,
+				"default": 4
+			},
+			"driver_bbmtime": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_filt_isense": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_iholddelay": {
+				"kind": "number",
+				"integer": true,
+				"default": 6
+			},
+			"driver_pwm_ofs": {
+				"kind": "number",
+				"integer": true,
+				"default": 30
+			},
+			"driver_pwm_grad": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_pwm_freq": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_pwm_autoscale": {
+				"kind": "boolean",
+				"default": true
+			},
+			"driver_pwm_autograd": {
+				"kind": "boolean",
+				"default": true
+			},
+			"driver_freewheel": {
+				"kind": "number",
+				"integer": true,
+				"default": 0
+			},
+			"driver_pwm_reg": {
+				"kind": "number",
+				"integer": true,
+				"default": 4
+			},
+			"driver_pwm_lim": {
+				"kind": "number",
+				"integer": true,
+				"default": 12
+			},
+			"driver_tpowerdown": {
+				"kind": "number",
+				"integer": true,
+				"default": 10
+			}
+		},
+		"tmc_uart": {
+			"uart_pin": {
+				"kind": "string"
+			},
+			"tx_pin": {
+				"kind": "string"
+			},
+			"uart_address": {
+				"kind": "number",
+				"integer": true,
+				"min": 0,
+				"default": 0
+			}
+		},
+		"tsl1401cl_filament_width_sensor": {
+			"pin": {
+				"kind": "string"
+			},
+			"default_nominal_filament_diameter": {
+				"kind": "number",
+				"above": 1
+			},
+			"measurement_delay": {
+				"kind": "number",
+				"above": 0
+			},
+			"max_difference": {
+				"kind": "number",
+				"above": 0
+			}
+		},
+		"verify_heater": {
+			"hysteresis": {
+				"kind": "number",
+				"min": 0,
+				"default": 5
+			},
+			"max_error": {
+				"kind": "number",
+				"min": 0,
+				"default": 120
+			},
+			"heating_gain": {
+				"kind": "number",
+				"above": 0,
+				"default": 2
+			},
+			"check_gain_time": {
+				"kind": "number",
+				"min": 1
+			}
+		},
+		"virtual_sdcard": {
+			"path": {
+				"kind": "string"
+			}
+		},
+		"z_thermal_adjust": {
+			"temp_coeff": {
+				"kind": "number",
+				"min": -1,
+				"max": 1
+			},
+			"z_adjust_off_above": {
+				"kind": "number",
+				"default": 99999999
+			},
+			"max_z_adjustment": {
+				"kind": "number",
+				"default": 99999999
+			},
+			"smooth_time": {
+				"kind": "number",
+				"above": 0,
+				"default": 2
+			},
+			"min_temp": {
+				"kind": "number"
+			},
+			"max_temp": {
+				"kind": "number"
+			}
+		},
+		"z_tilt": {
+			"retries": {
+				"kind": "number",
+				"integer": true,
+				"min": 0,
+				"default": 0
+			},
+			"retry_tolerance": {
+				"kind": "number",
+				"above": 0,
+				"default": 0
+			}
+		},
+		"stepper": {
+			"step_pin": {
+				"kind": "string"
+			},
+			"dir_pin": {
+				"kind": "string"
+			},
+			"step_pulse_duration": {
+				"kind": "number",
+				"min": 0
+			},
+			"rotation_distance": {
+				"kind": "number",
+				"above": 0
+			},
+			"gear_ratio": {
+				"kind": "string"
+			},
+			"microsteps": {
+				"kind": "number",
+				"integer": true,
+				"min": 1
+			},
+			"full_steps_per_rotation": {
+				"kind": "number",
+				"integer": true,
+				"min": 1,
+				"default": 200
+			},
+			"endstop_pin": {
+				"kind": "string"
+			},
+			"position_endstop": {
+				"kind": "number"
+			},
+			"position_min": {
+				"kind": "number",
+				"default": 0
+			},
+			"position_max": {
+				"kind": "number"
+			},
+			"homing_speed": {
+				"kind": "number",
+				"above": 0,
+				"default": 5
+			},
+			"second_homing_speed": {
+				"kind": "number",
+				"above": 0
+			},
+			"homing_retract_speed": {
+				"kind": "number",
+				"above": 0
+			},
+			"homing_retract_dist": {
+				"kind": "number",
+				"min": 0,
+				"default": 5
+			},
+			"homing_positive_dir": {
+				"kind": "boolean"
+			}
+		},
+		"toolhead": {
+			"max_velocity": {
+				"kind": "number",
+				"above": 0
+			},
+			"max_accel": {
+				"kind": "number",
+				"above": 0
+			},
+			"minimum_cruise_ratio": {
+				"kind": "number",
+				"min": 0,
+				"below": 1,
+				"default": 0.5
+			},
+			"square_corner_velocity": {
+				"kind": "number",
+				"min": 0,
+				"default": 5
+			},
+			"kinematics": {
+				"kind": "string"
+			}
+		},
+		"mcu": {
+			"restart_method": {
+				"kind": "choice"
+			},
+			"canbus_uuid": {
+				"kind": "string"
+			},
+			"canbus_interface": {
+				"kind": "string",
+				"default": "can0"
+			},
+			"serial": {
+				"kind": "string"
+			},
+			"baud": {
+				"kind": "number",
+				"integer": true,
+				"min": 2400,
+				"default": 250000
+			}
+		}
+	},
+	"byParam": {
+		"scale": {
+			"kind": "number",
+			"above": 0,
+			"default": 1
+		},
+		"smooth_time": {
+			"kind": "number",
+			"above": 0,
+			"default": 2
+		},
+		"sensor_pin": {
+			"kind": "string"
+		},
+		"adc_voltage": {
+			"kind": "number",
+			"above": 0,
+			"default": 5
+		},
+		"voltage_offset": {
+			"kind": "number",
+			"default": 0
+		},
+		"pullup_resistor": {
+			"kind": "number",
+			"above": 0,
+			"default": 4700
+		},
+		"resistance1": {
+			"kind": "string"
+		},
+		"gain": {
+			"kind": "choice"
+		},
+		"sample_rate": {
+			"kind": "choice"
+		},
+		"input_mux": {
+			"kind": "choice"
+		},
+		"pga_bypass": {
+			"kind": "boolean"
+		},
+		"vref": {
+			"kind": "choice"
+		},
+		"data_ready_pin": {
+			"kind": "string"
+		},
+		"chip": {
+			"kind": "choice"
+		},
+		"address_pin": {
+			"kind": "choice"
+		},
+		"pga": {
+			"kind": "choice"
+		},
+		"rate": {
+			"kind": "number",
+			"integer": true,
+			"default": 3200
+		},
+		"aht10_report_time": {
+			"kind": "number",
+			"integer": true,
+			"min": 5,
+			"default": 30
+		},
+		"stepper": {
+			"kind": "string"
+		},
+		"calibrate": {
+			"kind": "string"
+		},
+		"sample_period": {
+			"kind": "number",
+			"above": 0
+		},
+		"sensor_type": {
+			"kind": "choice"
+		},
+		"horizontal_move_z": {
+			"kind": "number"
+		},
+		"speed": {
+			"kind": "number"
+		},
+		"calibrate_start_x": {
+			"kind": "number"
+		},
+		"calibrate_end_x": {
+			"kind": "number"
+		},
+		"calibrate_y": {
+			"kind": "number"
+		},
+		"compensation_start_x": {
+			"kind": "number"
+		},
+		"compensation_end_x": {
+			"kind": "number"
+		},
+		"calibrate_start_y": {
+			"kind": "number"
+		},
+		"calibrate_end_y": {
+			"kind": "number"
+		},
+		"calibrate_x": {
+			"kind": "number"
+		},
+		"compensation_start_y": {
+			"kind": "number"
+		},
+		"compensation_end_y": {
+			"kind": "number"
+		},
+		"fade_start": {
+			"kind": "number",
+			"default": 1
+		},
+		"fade_end": {
+			"kind": "number",
+			"default": 0
+		},
+		"fade_target": {
+			"kind": "number"
+		},
+		"adaptive_margin": {
+			"kind": "number",
+			"default": 0
+		},
+		"mesh_radius": {
+			"kind": "number",
+			"above": 0
+		},
+		"round_probe_count": {
+			"kind": "number",
+			"integer": true,
+			"min": 3,
+			"default": 5
+		},
+		"algorithm": {
+			"kind": "string",
+			"default": "lagrange"
+		},
+		"bicubic_tension": {
+			"kind": "number",
+			"min": 0,
+			"max": 2
+		},
+		"scan_overshoot": {
+			"kind": "number",
+			"min": 1,
+			"default": 0
+		},
+		"split_delta_z": {
+			"kind": "number",
+			"min": 0.01
+		},
+		"move_check_distance": {
+			"kind": "number",
+			"min": 3,
+			"default": 5
+		},
+		"probe_speed": {
+			"kind": "number",
+			"above": 0,
+			"default": 5
+		},
+		"probe_height": {
+			"kind": "number",
+			"default": 0
+		},
+		"x_adjust": {
+			"kind": "number",
+			"default": 0
+		},
+		"y_adjust": {
+			"kind": "number",
+			"default": 0
+		},
+		"z_adjust": {
+			"kind": "number",
+			"default": 0
+		},
+		"points": {
+			"kind": "string"
+		},
+		"z_offset": {
+			"kind": "number",
+			"min": 0
+		},
+		"stow_on_each_sample": {
+			"kind": "boolean",
+			"default": true
+		},
+		"probe_with_touch_mode": {
+			"kind": "boolean",
+			"default": false
+		},
+		"control_pin": {
+			"kind": "string"
+		},
+		"set_output_mode": {
+			"kind": "choice"
+		},
+		"pin_up_reports_not_triggered": {
+			"kind": "boolean",
+			"default": true
+		},
+		"pin_up_touch_mode_reports_triggered": {
+			"kind": "boolean",
+			"default": true
+		},
+		"pin_move_time": {
+			"kind": "number",
+			"above": 0,
+			"default": 0.68
+		},
+		"bme280_iir_filter": {
+			"kind": "number",
+			"integer": true,
+			"default": 1
+		},
+		"bme280_oversample_temp": {
+			"kind": "number",
+			"integer": true,
+			"default": 2
+		},
+		"bme280_oversample_hum": {
+			"kind": "number",
+			"integer": true,
+			"default": 2
+		},
+		"bme280_oversample_pressure": {
+			"kind": "number",
+			"integer": true,
+			"default": 2
+		},
+		"bme280_gas_target_temp": {
+			"kind": "number",
+			"integer": true,
+			"default": 320
+		},
+		"bme280_gas_heat_duration": {
+			"kind": "number",
+			"integer": true,
+			"default": 150
+		},
+		"cs_pin": {
+			"kind": "string"
+		},
+		"spi_speed": {
+			"kind": "number",
+			"integer": true,
+			"min": 100000
+		},
+		"spi_software_sclk_pin": {
+			"kind": "string"
+		},
+		"spi_bus": {
+			"kind": "string"
+		},
+		"i2c_mcu": {
+			"kind": "string",
+			"default": "mcu"
+		},
+		"i2c_speed": {
+			"kind": "number",
+			"integer": true,
+			"min": 100000
+		},
+		"i2c_address": {
+			"kind": "number",
+			"integer": true,
+			"min": 0,
+			"max": 127
+		},
+		"i2c_software_scl_pin": {
+			"kind": "string"
+		},
+		"i2c_bus": {
+			"kind": "string"
+		},
+		"debounce_delay": {
+			"kind": "number",
+			"min": 0,
+			"default": 0
+		},
+		"fan_speed": {
+			"kind": "number",
+			"min": 0,
+			"max": 1
+		},
+		"idle_speed": {
+			"kind": "number",
+			"min": 0,
+			"max": 1
+		},
+		"idle_timeout": {
+			"kind": "number",
+			"integer": true,
+			"min": 0
+		},
+		"initial_duration": {
+			"kind": "number",
+			"min": 0,
+			"default": 0
+		},
+		"radius": {
+			"kind": "number",
+			"above": 0
+		},
+		"data_pin": {
+			"kind": "string"
+		},
+		"clock_pin": {
+			"kind": "string"
+		},
+		"chain_count": {
+			"kind": "number",
+			"integer": true,
+			"min": 1,
+			"default": 1
+		},
+		"serial_no": {
+			"kind": "string"
+		},
+		"ds18_report_time": {
+			"kind": "number"
+		},
+		"sensor_mcu": {
+			"kind": "string"
+		},
+		"trigger_phase": {
+			"kind": "string"
+		},
+		"endstop_align_zero": {
+			"kind": "boolean",
+			"default": false
+		},
+		"endstop_accuracy": {
+			"kind": "number",
+			"above": 0
+		},
+		"extruder": {
+			"kind": "string"
+		},
+		"max_power": {
+			"kind": "number",
+			"max": 1,
+			"above": 0,
+			"default": 1
+		},
+		"kick_start_time": {
+			"kind": "number",
+			"min": 0,
+			"default": 0.1
+		},
+		"off_below": {
+			"kind": "number",
+			"min": 0,
+			"max": 1
+		},
+		"cycle_time": {
+			"kind": "number",
+			"above": 0,
+			"default": 0.01
+		},
+		"hardware_pwm": {
+			"kind": "boolean",
+			"default": false
+		},
+		"shutdown_speed": {
+			"kind": "number",
+			"min": 0,
+			"max": 1
+		},
+		"pin": {
+			"kind": "string"
+		},
+		"enable_pin": {
+			"kind": "string"
+		},
+		"tachometer_pin": {
+			"kind": "string"
+		},
+		"tachometer_ppr": {
+			"kind": "number",
+			"integer": true,
+			"min": 1,
+			"default": 2
+		},
+		"tachometer_poll_interval": {
+			"kind": "number",
+			"above": 0,
+			"default": 0.0015
+		},
+		"switch_pin": {
+			"kind": "string"
+		},
+		"detection_length": {
+			"kind": "number",
+			"above": 0,
+			"default": 7
+		},
+		"pause_on_runout": {
+			"kind": "boolean",
+			"default": true
+		},
+		"runout_gcode": {
+			"kind": "string"
+		},
+		"insert_gcode": {
+			"kind": "string"
+		},
+		"pause_delay": {
+			"kind": "number"
+		},
+		"event_delay": {
+			"kind": "number",
+			"default": 3
+		},
+		"retract_length": {
+			"kind": "number",
+			"min": 0,
+			"default": 0
+		},
+		"retract_speed": {
+			"kind": "number",
+			"min": 1,
+			"default": 20
+		},
+		"unretract_extra_length": {
+			"kind": "number",
+			"min": 0,
+			"default": 0
+		},
+		"unretract_speed": {
+			"kind": "number",
+			"min": 1,
+			"default": 10
+		},
+		"enable_force_move": {
+			"kind": "boolean",
+			"default": false
+		},
+		"resolution": {
+			"kind": "number",
+			"above": 0,
+			"default": 1
+		},
+		"analog_range": {
+			"kind": "string"
+		},
+		"analog_pullup_resistor": {
+			"kind": "number",
+			"above": 0,
+			"default": 4700
+		},
+		"rename_existing": {
+			"kind": "string"
+		},
+		"description": {
+			"kind": "string",
+			"default": "G-Code macro"
+		},
+		"adc1": {
+			"kind": "string"
+		},
+		"adc2": {
+			"kind": "string"
+		},
+		"cal_dia1": {
+			"kind": "number",
+			"default": 1.5
+		},
+		"cal_dia2": {
+			"kind": "number",
+			"default": 2
+		},
+		"raw_dia1": {
+			"kind": "number",
+			"integer": true,
+			"default": 9500
+		},
+		"raw_dia2": {
+			"kind": "number",
+			"integer": true,
+			"default": 10500
+		},
+		"measurement_interval": {
+			"kind": "number",
+			"integer": true,
+			"default": 10
+		},
+		"default_nominal_filament_diameter": {
+			"kind": "number",
+			"above": 1
+		},
+		"measurement_delay": {
+			"kind": "number",
+			"above": 0
+		},
+		"max_difference": {
+			"kind": "number",
+			"default": 0.2
+		},
+		"enable": {
+			"kind": "boolean",
+			"default": false
+		},
+		"min_diameter": {
+			"kind": "number",
+			"default": 1
+		},
+		"max_diameter": {
+			"kind": "number"
+		},
+		"logging": {
+			"kind": "boolean",
+			"default": false
+		},
+		"use_current_dia_while_delay": {
+			"kind": "boolean",
+			"default": false
+		},
+		"heater_temp": {
+			"kind": "number",
+			"default": 50
+		},
+		"min_temp": {
+			"kind": "number"
+		},
+		"max_temp": {
+			"kind": "number"
+		},
+		"min_extrude_temp": {
+			"kind": "number",
+			"default": 170
+		},
+		"control": {
+			"kind": "choice"
+		},
+		"heater_pin": {
+			"kind": "string"
+		},
+		"pwm_cycle_time": {
+			"kind": "number",
+			"above": 0,
+			"default": 0.1
+		},
+		"max_delta": {
+			"kind": "number",
+			"above": 0,
+			"default": 2
+		},
+		"pid_kp": {
+			"kind": "number"
+		},
+		"pid_ki": {
+			"kind": "number"
+		},
+		"pid_kd": {
+			"kind": "number"
+		},
+		"gcode_id": {
+			"kind": "string"
+		},
+		"axes": {
+			"kind": "string",
+			"default": "XYZ"
+		},
+		"htu21d_hold_master": {
+			"kind": "boolean",
+			"default": false
+		},
+		"htu21d_resolution": {
+			"kind": "string",
+			"default": "TEMP12_HUM08"
+		},
+		"htu21d_report_time": {
+			"kind": "number",
+			"integer": true,
+			"min": 5,
+			"default": 30
+		},
+		"dout_pin": {
+			"kind": "string"
+		},
+		"sclk_pin": {
+			"kind": "string"
+		},
+		"timeout": {
+			"kind": "number",
+			"above": 0,
+			"default": 600
+		},
+		"shaper_type": {
+			"kind": "string",
+			"default": "mzv"
+		},
+		"damping_ratio_x": {
+			"kind": "number",
+			"min": 0
+		},
+		"damping_ratio_y": {
+			"kind": "number",
+			"min": 0
+		},
+		"damping_ratio_z": {
+			"kind": "number",
+			"min": 0
+		},
+		"shaper_freq_x": {
+			"kind": "number",
+			"min": 0
+		},
+		"shaper_freq_y": {
+			"kind": "number",
+			"min": 0
+		},
+		"shaper_freq_z": {
+			"kind": "number",
+			"min": 0
+		},
+		"reg_drive_current": {
+			"kind": "number",
+			"integer": true,
+			"min": 0,
+			"max": 31
+		},
+		"frequency": {
+			"kind": "number",
+			"integer": true
+		},
+		"intb_pin": {
+			"kind": "string"
+		},
+		"initial_red": {
+			"kind": "number",
+			"min": 0,
+			"max": 1,
+			"default": 0
+		},
+		"initial_green": {
+			"kind": "number",
+			"min": 0,
+			"max": 1,
+			"default": 0
+		},
+		"initial_blue": {
+			"kind": "number",
+			"min": 0,
+			"max": 1,
+			"default": 0
+		},
+		"initial_white": {
+			"kind": "number",
+			"min": 0,
+			"max": 1,
+			"default": 0
+		},
+		"lm75_report_time": {
+			"kind": "number"
+		},
+		"reference_tare_counts": {
+			"kind": "number",
+			"integer": true
+		},
+		"counts_per_gram": {
+			"kind": "number"
+		},
+		"sensor_orientation": {
+			"kind": "choice"
+		},
+		"endstop_pin": {
+			"kind": "string"
+		},
+		"velocity": {
+			"kind": "number",
+			"above": 0,
+			"default": 5
+		},
+		"accel": {
+			"kind": "number",
+			"min": 0,
+			"default": 0
+		},
+		"position_min": {
+			"kind": "number"
+		},
+		"position_max": {
+			"kind": "number"
+		},
+		"wiper": {
+			"kind": "number",
+			"min": 0
+		},
+		"pwm": {
+			"kind": "boolean",
+			"default": false
+		},
+		"value": {
+			"kind": "number",
+			"min": 0,
+			"default": 0
+		},
+		"shutdown_value": {
+			"kind": "number",
+			"min": 0,
+			"default": 0
+		},
+		"serial": {
+			"kind": "string"
+		},
+		"baud": {
+			"kind": "number",
+			"integer": true
+		},
+		"feedrate_splice": {
+			"kind": "number",
+			"min": 0,
+			"max": 1
+		},
+		"feedrate_normal": {
+			"kind": "number",
+			"min": 0,
+			"max": 1
+		},
+		"auto_load_speed": {
+			"kind": "number",
+			"integer": true,
+			"default": 2
+		},
+		"auto_cancel_variation": {
+			"kind": "number",
+			"min": 0.01,
+			"max": 0.2
+		},
+		"recover_velocity": {
+			"kind": "number",
+			"default": 50
+		},
+		"color_order": {
+			"kind": "string",
+			"default": "RGBW"
+		},
+		"lift_speed": {
+			"kind": "number",
+			"above": 0
+		},
+		"samples": {
+			"kind": "number",
+			"integer": true,
+			"min": 1,
+			"default": 1
+		},
+		"sample_retract_dist": {
+			"kind": "number",
+			"above": 0,
+			"default": 2
+		},
+		"samples_result": {
+			"kind": "choice"
+		},
+		"samples_tolerance": {
+			"kind": "number",
+			"min": 0,
+			"default": 0.1
+		},
+		"samples_tolerance_retries": {
+			"kind": "number",
+			"integer": true,
+			"min": 0,
+			"default": 0
+		},
+		"x_offset": {
+			"kind": "number",
+			"default": 0
+		},
+		"y_offset": {
+			"kind": "number",
+			"default": 0
+		},
+		"deactivate_on_each_sample": {
+			"kind": "boolean",
+			"default": true
+		},
+		"tap_threshold": {
+			"kind": "number",
+			"above": 0,
+			"default": 0
+		},
+		"maximum_mcu_duration": {
+			"kind": "number",
+			"min": 0.5,
+			"default": 0
+		},
+		"max_adjust": {
+			"kind": "number",
+			"above": 0,
+			"default": 4
+		},
+		"revision": {
+			"kind": "choice"
+		},
+		"host_mcu": {
+			"kind": "string"
+		},
+		"standstill_power_down": {
+			"kind": "boolean",
+			"default": false
+		},
+		"min_freq": {
+			"kind": "number",
+			"min": 1,
+			"default": 5
+		},
+		"max_freq": {
+			"kind": "number",
+			"max": 300,
+			"default": 135
+		},
+		"max_freq_z": {
+			"kind": "number",
+			"max": 300,
+			"default": 100
+		},
+		"accel_per_hz": {
+			"kind": "number",
+			"above": 0,
+			"default": 60
+		},
+		"accel_per_hz_z": {
+			"kind": "number",
+			"above": 0,
+			"default": 15
+		},
+		"hz_per_sec": {
+			"kind": "number",
+			"min": 0.1,
+			"max": 2,
+			"default": 1
+		},
+		"sweeping_accel": {
+			"kind": "number",
+			"above": 0,
+			"default": 400
+		},
+		"sweeping_accel_z": {
+			"kind": "number",
+			"above": 0,
+			"default": 50
+		},
+		"sweeping_period": {
+			"kind": "number",
+			"min": 0,
+			"default": 1.2
+		},
+		"move_speed": {
+			"kind": "number",
+			"above": 0,
+			"default": 50
+		},
+		"accel_chip_x": {
+			"kind": "string"
+		},
+		"accel_chip": {
+			"kind": "string"
+		},
+		"accel_chip_z": {
+			"kind": "string",
+			"default": ""
+		},
+		"accel_chip_y": {
+			"kind": "string"
+		},
+		"max_smoothing": {
+			"kind": "number",
+			"min": 0.05
+		},
+		"default_type": {
+			"kind": "choice"
+		},
+		"default_prefix": {
+			"kind": "string"
+		},
+		"z_hop": {
+			"kind": "number"
+		},
+		"z_hop_speed": {
+			"kind": "number",
+			"above": 0,
+			"default": 15
+		},
+		"move_to_previous": {
+			"kind": "boolean",
+			"default": false
+		},
+		"sercom": {
+			"kind": "string"
+		},
+		"tx_pin": {
+			"kind": "string"
+		},
+		"rx_pin": {
+			"kind": "string"
+		},
+		"clk_pin": {
+			"kind": "string"
+		},
+		"filename": {
+			"kind": "string"
+		},
+		"screw_thread": {
+			"kind": "choice"
+		},
+		"minimum_pulse_width": {
+			"kind": "number",
+			"above": 0
+		},
+		"maximum_pulse_width": {
+			"kind": "number"
+		},
+		"maximum_servo_angle": {
+			"kind": "number",
+			"default": 180
+		},
+		"initial_angle": {
+			"kind": "number",
+			"min": 0,
+			"max": 360
+		},
+		"initial_pulse_width": {
+			"kind": "number",
+			"min": 0,
+			"default": 0
+		},
+		"sht3x_report_time": {
+			"kind": "number",
+			"integer": true,
+			"min": 1,
+			"default": 1
+		},
+		"probe_accel": {
+			"kind": "number",
+			"min": 0,
+			"default": 0
+		},
+		"recovery_time": {
+			"kind": "number",
+			"min": 0,
+			"default": 0.4
+		},
+		"tc_use_50hz_filter": {
+			"kind": "boolean",
+			"default": false
+		},
+		"tc_type": {
+			"kind": "choice"
+		},
+		"tc_averaging_count": {
+			"kind": "choice"
+		},
+		"rtd_nominal_r": {
+			"kind": "number",
+			"above": 0,
+			"default": 100
+		},
+		"rtd_reference_r": {
+			"kind": "number",
+			"above": 0,
+			"default": 430
+		},
+		"rtd_use_50hz_filter": {
+			"kind": "boolean",
+			"default": false
+		},
+		"rtd_num_of_wires": {
+			"kind": "number",
+			"integer": true,
+			"default": 2
+		},
+		"maximum_deviation": {
+			"kind": "number",
+			"above": 0
+		},
+		"combination_method": {
+			"kind": "choice"
+		},
+		"max_speed": {
+			"kind": "number",
+			"max": 1,
+			"above": 0,
+			"default": 1
+		},
+		"min_speed": {
+			"kind": "number",
+			"min": 0,
+			"max": 1,
+			"default": 0.3
+		},
+		"target_temp": {
+			"kind": "number"
+		},
+		"pid_deriv_time": {
+			"kind": "number",
+			"above": 0,
+			"default": 2
+		},
+		"sensor_path": {
+			"kind": "string"
+		},
+		"sensor_temperature1": {
+			"kind": "number"
+		},
+		"sensor_adc1": {
+			"kind": "number",
+			"min": 0,
+			"max": 1
+		},
+		"sensor_temperature2": {
+			"kind": "number"
+		},
+		"sensor_adc2": {
+			"kind": "number",
+			"min": 0,
+			"max": 1
+		},
+		"resting_z": {
+			"kind": "number",
+			"above": 0
+		},
+		"calibration_bed_temp": {
+			"kind": "number",
+			"above": 50
+		},
+		"calibration_extruder_temp": {
+			"kind": "number",
+			"above": 50
+		},
+		"extruder_heating_z": {
+			"kind": "number",
+			"above": 0,
+			"default": 50
+		},
+		"calibration_temp": {
+			"kind": "number",
+			"default": 0
+		},
+		"max_validation_temp": {
+			"kind": "number",
+			"default": 60
+		},
+		"drift_calibration_min_temp": {
+			"kind": "number",
+			"default": 0
+		},
+		"inline_resistor": {
+			"kind": "number",
+			"min": 0,
+			"default": 0
+		},
+		"temperature1": {
+			"kind": "number"
+		},
+		"beta": {
+			"kind": "number",
+			"above": 0
+		},
+		"temperature2": {
+			"kind": "number"
+		},
+		"resistance2": {
+			"kind": "number",
+			"min": 0
+		},
+		"temperature3": {
+			"kind": "number"
+		},
+		"resistance3": {
+			"kind": "number",
+			"min": 0
+		},
+		"diag0_pin": {
+			"kind": "string"
+		},
+		"diag1_pin": {
+			"kind": "string"
+		},
+		"diag_pin": {
+			"kind": "string"
+		},
+		"driver_mslut0": {
+			"kind": "number",
+			"integer": true,
+			"default": 2863314260
+		},
+		"driver_mslut1": {
+			"kind": "number",
+			"integer": true,
+			"default": 1251300522
+		},
+		"driver_mslut2": {
+			"kind": "number",
+			"integer": true,
+			"default": 608774441
+		},
+		"driver_mslut3": {
+			"kind": "number",
+			"integer": true,
+			"default": 269500962
+		},
+		"driver_mslut4": {
+			"kind": "number",
+			"integer": true,
+			"default": 4227858431
+		},
+		"driver_mslut5": {
+			"kind": "number",
+			"integer": true,
+			"default": 3048961917
+		},
+		"driver_mslut6": {
+			"kind": "number",
+			"integer": true,
+			"default": 1227445590
+		},
+		"driver_mslut7": {
+			"kind": "number",
+			"integer": true,
+			"default": 4211234
+		},
+		"driver_w0": {
+			"kind": "number",
+			"integer": true,
+			"default": 2
+		},
+		"driver_w1": {
+			"kind": "number",
+			"integer": true,
+			"default": 1
+		},
+		"driver_w2": {
+			"kind": "number",
+			"integer": true,
+			"default": 1
+		},
+		"driver_w3": {
+			"kind": "number",
+			"integer": true,
+			"default": 1
+		},
+		"driver_x1": {
+			"kind": "number",
+			"integer": true,
+			"default": 128
+		},
+		"driver_x2": {
+			"kind": "number",
+			"integer": true,
+			"default": 255
+		},
+		"driver_x3": {
+			"kind": "number",
+			"integer": true,
+			"default": 255
+		},
+		"driver_start_sin": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_start_sin90": {
+			"kind": "number",
+			"integer": true,
+			"default": 247
+		},
+		"interpolate": {
+			"kind": "boolean",
+			"default": true
+		},
+		"stealthchop_threshold": {
+			"kind": "number",
+			"min": 0
+		},
+		"coolstep_threshold": {
+			"kind": "number",
+			"min": 0
+		},
+		"high_velocity_threshold": {
+			"kind": "number",
+			"min": 0
+		},
+		"run_current": {
+			"kind": "number",
+			"above": 0
+		},
+		"hold_current": {
+			"kind": "number",
+			"above": 0
+		},
+		"sense_resistor": {
+			"kind": "number",
+			"above": 0,
+			"default": 0.11
+		},
+		"chain_length": {
+			"kind": "number",
+			"integer": true,
+			"min": 2
+		},
+		"chain_position": {
+			"kind": "number",
+			"integer": true,
+			"min": 1
+		},
+		"driver_toff": {
+			"kind": "number",
+			"integer": true,
+			"default": 4
+		},
+		"driver_hstrt": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_hend": {
+			"kind": "number",
+			"integer": true,
+			"default": 7
+		},
+		"driver_tbl": {
+			"kind": "number",
+			"integer": true,
+			"default": 1
+		},
+		"driver_vhighfs": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_vhighchm": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_semin": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_seup": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_semax": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_sedn": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_seimin": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_sgt": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_sfilt": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_iholddelay": {
+			"kind": "number",
+			"integer": true,
+			"default": 8
+		},
+		"driver_pwm_ampl": {
+			"kind": "number",
+			"integer": true,
+			"default": 128
+		},
+		"driver_pwm_grad": {
+			"kind": "number",
+			"integer": true,
+			"default": 4
+		},
+		"driver_pwm_freq": {
+			"kind": "number",
+			"integer": true,
+			"default": 1
+		},
+		"driver_pwm_autoscale": {
+			"kind": "boolean",
+			"default": true
+		},
+		"driver_freewheel": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_tpowerdown": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_multistep_filt": {
+			"kind": "boolean",
+			"default": true
+		},
+		"driver_pwm_ofs": {
+			"kind": "number",
+			"integer": true,
+			"default": 36
+		},
+		"driver_pwm_autograd": {
+			"kind": "boolean",
+			"default": true
+		},
+		"driver_pwm_reg": {
+			"kind": "number",
+			"integer": true,
+			"default": 8
+		},
+		"driver_pwm_lim": {
+			"kind": "number",
+			"integer": true,
+			"default": 12
+		},
+		"driver_sgthrs": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"rref": {
+			"kind": "number",
+			"min": 12000,
+			"max": 60000,
+			"default": 12000
+		},
+		"uart_pin": {
+			"kind": "string"
+		},
+		"driver_offset_sin90": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_fd3": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_disfdcc": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_chm": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_tpfd": {
+			"kind": "number",
+			"integer": true,
+			"default": 4
+		},
+		"driver_diss2g": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_diss2vs": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_irundelay": {
+			"kind": "number",
+			"integer": true,
+			"default": 4
+		},
+		"driver_sg4_thrs": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_sg4_angle_offset": {
+			"kind": "number",
+			"integer": true,
+			"default": 1
+		},
+		"driver_slope_control": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"idle_current_percent": {
+			"kind": "number",
+			"integer": true,
+			"min": 0,
+			"max": 100
+		},
+		"driver_rndtf": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_hdec": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_slph": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_slpl": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_ts2g": {
+			"kind": "number",
+			"integer": true,
+			"default": 3
+		},
+		"driver_drvstrength": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_bbmclks": {
+			"kind": "number",
+			"integer": true,
+			"default": 4
+		},
+		"driver_bbmtime": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"driver_filt_isense": {
+			"kind": "number",
+			"integer": true,
+			"default": 0
+		},
+		"uart_address": {
+			"kind": "number",
+			"integer": true,
+			"min": 0,
+			"default": 0
+		},
+		"hysteresis": {
+			"kind": "number",
+			"min": 0,
+			"default": 5
+		},
+		"max_error": {
+			"kind": "number",
+			"min": 0,
+			"default": 120
+		},
+		"heating_gain": {
+			"kind": "number",
+			"above": 0,
+			"default": 2
+		},
+		"check_gain_time": {
+			"kind": "number",
+			"min": 1
+		},
+		"path": {
+			"kind": "string"
+		},
+		"temp_coeff": {
+			"kind": "number",
+			"min": -1,
+			"max": 1
+		},
+		"z_adjust_off_above": {
+			"kind": "number",
+			"default": 99999999
+		},
+		"max_z_adjustment": {
+			"kind": "number",
+			"default": 99999999
+		},
+		"retries": {
+			"kind": "number",
+			"integer": true,
+			"min": 0,
+			"default": 0
+		},
+		"retry_tolerance": {
+			"kind": "number",
+			"above": 0,
+			"default": 0
+		},
+		"step_pin": {
+			"kind": "string"
+		},
+		"dir_pin": {
+			"kind": "string"
+		},
+		"step_pulse_duration": {
+			"kind": "number",
+			"min": 0
+		},
+		"rotation_distance": {
+			"kind": "number",
+			"above": 0
+		},
+		"gear_ratio": {
+			"kind": "string"
+		},
+		"microsteps": {
+			"kind": "number",
+			"integer": true,
+			"min": 1
+		},
+		"full_steps_per_rotation": {
+			"kind": "number",
+			"integer": true,
+			"min": 1,
+			"default": 200
+		},
+		"position_endstop": {
+			"kind": "number"
+		},
+		"homing_speed": {
+			"kind": "number",
+			"above": 0,
+			"default": 5
+		},
+		"second_homing_speed": {
+			"kind": "number",
+			"above": 0
+		},
+		"homing_retract_speed": {
+			"kind": "number",
+			"above": 0
+		},
+		"homing_retract_dist": {
+			"kind": "number",
+			"min": 0,
+			"default": 5
+		},
+		"homing_positive_dir": {
+			"kind": "boolean"
+		},
+		"max_velocity": {
+			"kind": "number",
+			"above": 0
+		},
+		"max_accel": {
+			"kind": "number",
+			"above": 0
+		},
+		"minimum_cruise_ratio": {
+			"kind": "number",
+			"min": 0,
+			"below": 1,
+			"default": 0.5
+		},
+		"square_corner_velocity": {
+			"kind": "number",
+			"min": 0,
+			"default": 5
+		},
+		"kinematics": {
+			"kind": "string"
+		},
+		"restart_method": {
+			"kind": "choice"
+		},
+		"canbus_uuid": {
+			"kind": "string"
+		},
+		"canbus_interface": {
+			"kind": "string",
+			"default": "can0"
+		}
+	}
+}

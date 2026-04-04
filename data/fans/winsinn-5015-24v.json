@@ -1,0 +1,35 @@
+{
+  "id": "winsinn-5015-24v",
+  "name": "5015 24V Blower",
+  "manufacturer": "WINSINN",
+  "description": "The WINSINN 5015 24V is a budget radial blower fan popular among 3D printer builders for part cooling on 24V machines. It is widely available through online retailers. Detailed performance specifications are not reliably published, and actual performance may vary between production batches.",
+  "fanType": "blower",
+  "size": "5015",
+  "airflowSpecs": {
+    "airflow": 3.23,
+    "rpm": 5500
+  },
+  "electricalSpecs": {
+    "voltage": 24,
+    "current": 0.1,
+    "power": 2.4,
+    "pwmCapable": false,
+    "tachoSignal": false
+  },
+  "noiseSpecs": {
+    "noiseLevel": 40
+  },
+  "physicalSpecs": {
+    "dimensions": "50×50×15mm",
+    "bearingType": "Dual Ball Bearing",
+    "connectorType": "XH2.54-2P"
+  },
+  "references": [
+    {
+      "label": "WINSINN 5015 Blower Fan Product Page",
+      "url": "https://winsinn.com/50mm-blower-fan-5015/",
+      "type": "product"
+    }
+  ],
+  "unverified": ["airflow", "staticPressure", "rpm", "noiseLevel", "weight"]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "usongshine-17hs4023",
+  "name": "17HS4023",
+  "manufacturer": "Usongshine",
+  "description": "Budget 23mm pancake NEMA17 stepper. Low cost option for basic extruder builds.",
+  "nemaSize": 17,
+  "electricalSpecs": {
+    "ratedCurrent": 0.7,
+    "holdingTorque": 14,
+    "stepAngle": 1.8,
+    "phaseResistance": 4.0,
+    "phaseInductance": 3.2,
+    "ratedVoltage": 2.8
+  },
+  "physicalSpecs": {
+    "bodyLength": 23,
+    "weight": 132,
+    "shaftDiameter": 5,
+    "shaftLength": 21
+  }
+}

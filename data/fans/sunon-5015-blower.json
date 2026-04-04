@@ -1,0 +1,40 @@
+{
+  "id": "sunon-5015-blower",
+  "name": "MF50151VX-B00U-A99",
+  "manufacturer": "Sunon",
+  "description": "The Sunon MF50151VX-B00U-A99 is a 50×15mm radial blower fan that is widely used as a part-cooling fan in 3D printers. Its centrifugal design channels airflow through a single outlet, making it effective at directing concentrated airflow onto the print. The Vapo bearing contributes to a longer service life compared to sleeve-bearing alternatives.",
+  "fanType": "blower",
+  "size": "5015",
+  "airflowSpecs": {
+    "airflow": 5.4,
+    "staticPressure": 24.64,
+    "rpm": 6000
+  },
+  "electricalSpecs": {
+    "voltage": 12,
+    "current": 0.17,
+    "power": 2.04,
+    "pwmCapable": false,
+    "tachoSignal": false
+  },
+  "noiseSpecs": {
+    "noiseLevel": 42.2
+  },
+  "physicalSpecs": {
+    "dimensions": "51.7×51.6×15mm",
+    "bearingType": "Vapo (Vapour Bearing)"
+  },
+  "references": [
+    {
+      "label": "Sunon MF50151VX-B00U-A99 Product Page (DigiKey)",
+      "url": "https://www.digikey.com/en/products/detail/sunon-fans/MF50151VX-B00U-A99/7691033",
+      "type": "product"
+    },
+    {
+      "label": "Sunon MF50151VX-B00U-A99 Datasheet (TME)",
+      "url": "https://www.tme.eu/Document/b30ea71fee61d11101012e50df6ac0ad/MF50151VX-A99-DTE.pdf",
+      "type": "datasheet"
+    }
+  ],
+  "unverified": ["weight"]
+}

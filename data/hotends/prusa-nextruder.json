@@ -1,0 +1,58 @@
+{
+  "id": "prusa-nextruder",
+  "name": "Prusa Nextruder Hotend",
+  "manufacturer": "Prusa Research",
+  "description": "All-metal hotend integrated into the Prusa Nextruder system, used in MK3.9, MK4, MK4S, XL, and CORE One printers. Features the proprietary Prusa Nozzle format that combines the nozzle and heatbreak into a single hot-swappable unit. The hotend uses a 24V 40W heater cartridge and supports temperatures up to 290C (305C firmware limit). E3D V6 nozzles can be used via an adapter.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 290,
+    "heaterType": "24V cartridge",
+    "heaterPower": 40,
+    "thermistorType": "ATC Semitec 104NT-4-R025H42G",
+    "thermistorId": "atc-semitec-104nt-4"
+  },
+  "heatBreakSpecs": {
+    "type": "all-metal integrated",
+    "material": "Stainless steel",
+    "retraction": "Minimal (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "Prusa Nozzle (proprietary, hot-swappable)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "Prusa Nozzle brass",
+      "Prusa Nozzle high-flow brass (CHT-style)",
+      "E3D ObXidian Nextruder Nozzle",
+      "E3D V6 (via adapter)"
+    ]
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "mountType": "Prusa Nextruder proprietary"
+  },
+  "features": [
+    "Hot-swappable nozzle/heatbreak unit",
+    "Integrated heatbreak thermistor for heat creep detection",
+    "Silicone sock included (MK4S, CORE One)",
+    "Load cell integration for bed probing",
+    "E3D V6 nozzle compatibility via adapter"
+  ],
+  "references": [
+    {
+      "label": "Prusa Nozzle Types for Nextruder (Knowledge Base)",
+      "url": "https://help.prusa3d.com/article/prusa-nozzle-types-for-nextruder-printers_928993",
+      "type": "documentation"
+    },
+    {
+      "label": "Changing or Replacing the Nextruder Hotend (Knowledge Base)",
+      "url": "https://help.prusa3d.com/article/changing-or-replacing-the-nextruder-hotend_768975",
+      "type": "documentation"
+    },
+    {
+      "label": "E3D ObXidian Nextruder Nozzle Datasheet",
+      "url": "https://e3d-online.com/pages/prusa-nextrduder-nozzle-datasheet",
+      "type": "datasheet"
+    }
+  ],
+  "unverified": ["heatUpTime"]
+}

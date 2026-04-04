@@ -1,0 +1,32 @@
+{
+  "workspaces": {
+    ".": {
+      "entry": [],
+      "project": ["*.ts", "*.config.ts"]
+    },
+    "apps/klipperforge": {
+      "project": ["src/**/*.{ts,tsx}", "e2e/**/*.ts"],
+      "ignore": ["src/components/ui/**"],
+      "ignoreDependencies": ["tailwindcss"]
+    },
+    "packages/configparser": {
+      "project": ["src/**/*.ts"]
+    },
+    "packages/klipper-config": {
+      "project": ["src/**/*.ts"],
+      "ignore": ["src/sections/generated/**"]
+    },
+    "packages/printer-data": {
+      "project": ["src/**/*.ts"]
+    },
+    "packages/editor": {
+      "project": ["src/**/*.{ts,tsx}"]
+    },
+    "apps/firmware": {
+      "project": ["src/**/*.ts"]
+    },
+    "apps/configs": {
+      "project": ["src/**/*.ts"]
+    }
+  }
+}

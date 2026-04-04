@@ -1,0 +1,52 @@
+{
+  "id": "creality-mk8",
+  "name": "Creality MK8",
+  "manufacturer": "Creality",
+  "description": "The Creality MK8 is the standard PTFE-lined hotend shipped with the Ender 3 and many other entry-level Creality printers. Its PTFE-lined heatbreak allows smooth filament feeding but limits maximum temperature to around 240°C, making it suitable for PLA, PETG, and TPU but not high-temperature engineering materials. Widely cloned and inexpensive to replace.",
+  "hotendType": "ptfe-lined",
+  "thermalSpecs": {
+    "maxTemperature": 240,
+    "heaterType": "cartridge",
+    "heaterPower": 40,
+    "thermistorType": "NTC 100K (Generic 3950)",
+    "thermistorId": "generic-3950"
+  },
+  "heatBreakSpecs": {
+    "type": "PTFE-lined",
+    "material": "aluminum / PTFE tube",
+    "retraction": "5-7mm (Bowden), 0.5-2mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "MK8 threaded (M6, shorter than V6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "MK8 brass nozzles",
+      "MK8 hardened steel nozzles",
+      "third-party MK8-style nozzles"
+    ],
+    "maxFlowRate": "~8mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "mountType": "Creality standard (MK8 compatible)"
+  },
+  "features": [
+    "Budget-friendly and widely available",
+    "Compatible with PLA, PETG, and flexible filaments",
+    "PTFE-lined for smooth feeding",
+    "Not suitable for ABS, ASA, PA, or PC above 240°C"
+  ],
+  "references": [
+    {
+      "label": "Creality Official Store",
+      "url": "https://www.creality.com/",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["maxFlowRate", "retraction", "thermistorType", "heaterPower", "maxTemperature"]
+}

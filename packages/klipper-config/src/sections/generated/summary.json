@@ -1,0 +1,518 @@
+[
+	{
+		"name": "mcu",
+		"category": "mcu",
+		"paramCount": 5,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "printer",
+		"category": "motion",
+		"paramCount": 5,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "stepper",
+		"category": "motion",
+		"paramCount": 17,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "extruder",
+		"category": "heating",
+		"paramCount": 30,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "heater_bed",
+		"category": "heating",
+		"paramCount": 15,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "bed_mesh",
+		"category": "leveling",
+		"paramCount": 21,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "bed_tilt",
+		"category": "leveling",
+		"paramCount": 6,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "bed_screws",
+		"category": "leveling",
+		"paramCount": 10,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "screws_tilt_adjust",
+		"category": "leveling",
+		"paramCount": 7,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "z_tilt",
+		"category": "leveling",
+		"paramCount": 6,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "quad_gantry_level",
+		"category": "leveling",
+		"paramCount": 7,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "skew_correction",
+		"category": "tuning",
+		"paramCount": 0,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "z_thermal_adjust",
+		"category": "leveling",
+		"paramCount": 9,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "safe_z_home",
+		"category": "homing",
+		"paramCount": 5,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "homing_override",
+		"category": "homing",
+		"paramCount": 5,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "endstop_phase",
+		"category": "homing",
+		"paramCount": 3,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "gcode_macro",
+		"category": "macros",
+		"paramCount": 3,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "delayed_gcode",
+		"category": "macros",
+		"paramCount": 2,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "save_variables",
+		"category": "misc",
+		"paramCount": 1,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "idle_timeout",
+		"category": "misc",
+		"paramCount": 2,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "virtual_sdcard",
+		"category": "misc",
+		"paramCount": 2,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "force_move",
+		"category": "misc",
+		"paramCount": 1,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "pause_resume",
+		"category": "misc",
+		"paramCount": 1,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "firmware_retraction",
+		"category": "misc",
+		"paramCount": 4,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "gcode_arcs",
+		"category": "macros",
+		"paramCount": 1,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "respond",
+		"category": "misc",
+		"paramCount": 2,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "exclude_object",
+		"category": "misc",
+		"paramCount": 0,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "input_shaper",
+		"category": "tuning",
+		"paramCount": 10,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "adxl345",
+		"category": "sensors",
+		"paramCount": 8,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "icm20948",
+		"category": "sensors",
+		"paramCount": 7,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "lis2dw",
+		"category": "sensors",
+		"paramCount": 13,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "lis3dh",
+		"category": "sensors",
+		"paramCount": 13,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "bmi160",
+		"category": "sensors",
+		"paramCount": 11,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "mpu9250",
+		"category": "sensors",
+		"paramCount": 7,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "resonance_tester",
+		"category": "tuning",
+		"paramCount": 16,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "probe",
+		"category": "probing",
+		"paramCount": 14,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "bltouch",
+		"category": "probing",
+		"paramCount": 18,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "smart_effector",
+		"category": "probing",
+		"paramCount": 16,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "probe_eddy_current",
+		"category": "probing",
+		"paramCount": 20,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "axis_twist_compensation",
+		"category": "probing",
+		"paramCount": 8,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "dual_carriage",
+		"category": "motion",
+		"paramCount": 11,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "extruder_stepper",
+		"category": "motion",
+		"paramCount": 6,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "manual_stepper",
+		"category": "motion",
+		"paramCount": 13,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "verify_heater",
+		"category": "heating",
+		"paramCount": 4,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "homing_heaters",
+		"category": "heating",
+		"paramCount": 2,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "thermistor",
+		"category": "heating",
+		"paramCount": 7,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "adc_temperature",
+		"category": "heating",
+		"paramCount": 8,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "heater_generic",
+		"category": "heating",
+		"paramCount": 13,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "temperature_sensor",
+		"category": "sensors",
+		"paramCount": 5,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "temperature_probe",
+		"category": "sensors",
+		"paramCount": 14,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "fan",
+		"category": "fans",
+		"paramCount": 11,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "heater_fan",
+		"category": "fans",
+		"paramCount": 14,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "controller_fan",
+		"category": "fans",
+		"paramCount": 16,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "temperature_fan",
+		"category": "fans",
+		"paramCount": 42,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "fan_generic",
+		"category": "fans",
+		"paramCount": 11,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "led",
+		"category": "output",
+		"paramCount": 10,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "neopixel",
+		"category": "output",
+		"paramCount": 7,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "dotstar",
+		"category": "output",
+		"paramCount": 6,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "pca9533",
+		"category": "output",
+		"paramCount": 10,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "pca9632",
+		"category": "output",
+		"paramCount": 11,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "servo",
+		"category": "output",
+		"paramCount": 6,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "gcode_button",
+		"category": "macros",
+		"paramCount": 6,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "output_pin",
+		"category": "output",
+		"paramCount": 9,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "pwm_tool",
+		"category": "output",
+		"paramCount": 7,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "pwm_cycle_time",
+		"category": "output",
+		"paramCount": 5,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "multi_pin",
+		"category": "output",
+		"paramCount": 1,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "tmc2130",
+		"category": "drivers",
+		"paramCount": 54,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "tmc2208",
+		"category": "drivers",
+		"paramCount": 23,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "tmc2209",
+		"category": "drivers",
+		"paramCount": 32,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "tmc2660",
+		"category": "drivers",
+		"paramCount": 28,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "tmc2240",
+		"category": "drivers",
+		"paramCount": 69,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "tmc5160",
+		"category": "drivers",
+		"paramCount": 67,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "ad5206",
+		"category": "drivers",
+		"paramCount": 13,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "mcp4451",
+		"category": "drivers",
+		"paramCount": 11,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "mcp4728",
+		"category": "drivers",
+		"paramCount": 11,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "mcp4018",
+		"category": "drivers",
+		"paramCount": 8,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "filament_switch_sensor",
+		"category": "sensors",
+		"paramCount": 7,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "filament_motion_sensor",
+		"category": "sensors",
+		"paramCount": 7,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "tsl1401cl_filament_width_sensor",
+		"category": "sensors",
+		"paramCount": 4,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "hall_filament_width_sensor",
+		"category": "sensors",
+		"paramCount": 19,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "load_cell",
+		"category": "sensors",
+		"paramCount": 4,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "load_cell_probe",
+		"category": "sensors",
+		"paramCount": 23,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "sx1509",
+		"category": "misc",
+		"paramCount": 6,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "ads1x1x",
+		"category": "sensors",
+		"paramCount": 6,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "angle",
+		"category": "sensors",
+		"paramCount": 9,
+		"namingKind": "fixed"
+	},
+	{
+		"name": "display_status",
+		"category": "misc",
+		"paramCount": 0,
+		"namingKind": "fixed"
+	}
+]

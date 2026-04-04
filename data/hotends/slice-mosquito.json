@@ -1,0 +1,57 @@
+{
+  "id": "slice-mosquito",
+  "name": "Mosquito",
+  "manufacturer": "Slice Engineering",
+  "description": "The Slice Engineering Mosquito is a precision all-metal hotend with a unique plated copper heater block and proprietary two-piece heatbreak design. Its modular construction makes it easy to service, and the copper heater block provides excellent thermal performance. Capable of reaching 500°C for high-temperature engineering materials.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 500,
+    "heaterType": "cartridge",
+    "heaterPower": 50,
+    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G, Slice Engineering 300°C thermistor)"
+  },
+  "heatBreakSpecs": {
+    "type": "two-piece proprietary",
+    "material": "stainless steel with proprietary liner",
+    "retraction": "0.5-1.5mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "Mosquito proprietary (M6 thread, Mosquito-spec bore)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "Slice Engineering Vanadium nozzles",
+      "Slice Engineering brass nozzles",
+      "select third-party Mosquito-compatible nozzles"
+    ],
+    "maxFlowRate": "~20mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "weight": 11,
+    "mountType": "Mosquito standard mount (proprietary, widely adopted by toolhead designers)"
+  },
+  "features": [
+    "500°C maximum temperature (block rated to 500°C)",
+    "Plated copper heater block for superior thermal conductivity",
+    "Modular two-piece design for easy maintenance",
+    "Widely supported by third-party toolhead designs"
+  ],
+  "references": [
+    {
+      "label": "Slice Engineering Mosquito Product Page",
+      "url": "https://www.sliceengineering.com/products/the-mosquito-hotend",
+      "type": "product"
+    },
+    {
+      "label": "Slice Engineering Documentation",
+      "url": "https://www.sliceengineering.com/pages/documentation",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "maxFlowRate", "retraction"]
+}

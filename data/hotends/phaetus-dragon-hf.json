@@ -1,0 +1,51 @@
+{
+  "id": "phaetus-dragon-hf",
+  "name": "Dragon High Flow",
+  "manufacturer": "Phaetus",
+  "description": "The Phaetus Dragon High Flow is the high-throughput variant of the Dragon hotend, designed for fast printing and large nozzle diameters. It shares the 500°C maximum temperature and bi-metallic heatbreak of the standard Dragon but features a larger melt zone and widened nozzle bore to support volumetric flow rates up to ~30mm³/s.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 500,
+    "heaterType": "cartridge",
+    "heaterPower": 40,
+    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G)"
+  },
+  "heatBreakSpecs": {
+    "type": "bi-metallic",
+    "material": "stainless steel / copper composite",
+    "retraction": "0.4-2mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D V6 brass",
+      "E3D V6 hardened steel",
+      "third-party M6 V6-style nozzles"
+    ],
+    "maxFlowRate": "~30mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "mountType": "V6 groove mount compatible"
+  },
+  "features": [
+    "500°C maximum temperature for engineering materials",
+    "High-flow enlarged melt zone",
+    "Bi-metallic heatbreak",
+    "Optimized for high-speed printing"
+  ],
+  "references": [
+    {
+      "label": "Phaetus Dragon HF Product Page",
+      "url": "https://www.phaetus.com/dragon-hotend/",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["heaterPower", "maxFlowRate", "retraction", "thermistorType"]
+}

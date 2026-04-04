@@ -1,0 +1,61 @@
+{
+  "id": "generic-abs",
+  "name": "ABS",
+  "manufacturer": "Generic",
+  "description": "Acrylonitrile butadiene styrene (ABS) is a tough engineering thermoplastic with good heat resistance and impact strength. Requires an enclosure to prevent warping. Widely used for functional parts, automotive components, and electronics housings.",
+  "filamentType": "ABS",
+  "ratings": {
+    "strength": 3,
+    "stiffness": 3,
+    "durability": 4,
+    "printability": 2,
+    "heatResistance": 3
+  },
+  "printSpecs": {
+    "nozzleTempRange": "220–250°C",
+    "bedTempRange": "95–110°C",
+    "printSpeedRange": "40–60 mm/s",
+    "coolingFan": "None/low",
+    "enclosureRequired": true,
+    "firstLayerTemp": "240–245°C"
+  },
+  "mechanicalSpecs": {
+    "tensileStrength": 40,
+    "heatDeflectionTemp": 98,
+    "elongationAtBreak": 25,
+    "impactStrength": "High"
+  },
+  "environmentalSpecs": {
+    "moistureSensitivity": "Moderate",
+    "uvResistance": "Poor",
+    "foodSafe": false,
+    "dryingTemp": 80,
+    "dryingTime": 4
+  },
+  "physicalSpecs": {
+    "diameter": 1.75,
+    "density": 1.04,
+    "glassTransitionTemp": 105,
+    "meltingPoint": 230
+  },
+  "features": [
+    "High impact resistance",
+    "Good heat resistance",
+    "Can be acetone smoothed",
+    "Excellent machinability and sanding",
+    "Strong interlayer adhesion with enclosure",
+    "Widely available and affordable"
+  ],
+  "references": [
+    {
+      "label": "Simplify3D — ABS Material Guide",
+      "url": "https://www.simplify3d.com/resources/materials-guide/abs/",
+      "type": "documentation"
+    },
+    {
+      "label": "MatterHackers — ABS Filament Guide",
+      "url": "https://www.matterhackers.com/3d-printer-filament-compare",
+      "type": "documentation"
+    }
+  ]
+}

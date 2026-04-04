@@ -1,0 +1,46 @@
+{
+  "id": "pinda-v2",
+  "name": "PINDA V2",
+  "manufacturer": "Prusa",
+  "description": "The PINDA V2 is an inductive proximity sensor used in Prusa MK3 series printers. It includes an integrated thermistor for software-based temperature compensation of the trigger distance drift. It requires a metallic surface beneath the print bed to function.",
+  "probeType": "inductive",
+  "electricalSpecs": {
+    "operatingVoltage": "5V DC",
+    "signalType": "digital (NPN normally-closed, open-collector)",
+    "currentDraw": "15mA"
+  },
+  "performanceSpecs": {
+    "repeatability": "±0.01mm",
+    "triggerDistance": "~2mm (to steel sheet)",
+    "bedCompatibility": [
+      "spring steel sheet",
+      "aluminum",
+      "metallic surfaces"
+    ],
+    "temperatureCompensation": true
+  },
+  "physicalSpecs": {
+    "dimensions": "8mm diameter × 35mm length",
+    "weight": 6,
+    "mountType": "M8 threaded barrel"
+  },
+  "klipperSection": "probe",
+  "unverified": ["currentDraw", "repeatability"],
+  "references": [
+    {
+      "label": "Prusa SuperPINDA Spare Part (PINDA V2 replacement)",
+      "url": "https://www.prusa3d.com/product/superpinda/",
+      "type": "product"
+    },
+    {
+      "label": "Prusa Knowledge Base - PINDA/SuperPINDA",
+      "url": "https://help.prusa3d.com/article/p-i-n-d-a-superpinda-sensor-testing_2091",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Probe Documentation",
+      "url": "https://www.klipper3d.org/Config_Reference.html#probe",
+      "type": "documentation"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "mcuFamily": "LPC1769",
+  "mcuPatterns": ["LPC1769"],
+  "outputFile": "klipper.bin",
+  "flashMethods": ["serial"],
+  "base": {
+    "CONFIG_MACH_LPC176X": "y",
+    "CONFIG_MACH_LPC1769": "y"
+  },
+  "interfaces": {
+    "usb": {
+      "label": "USB",
+      "config": { "CONFIG_LPC_USB": "y", "CONFIG_USB": "y" }
+    },
+    "serial": {
+      "label": "Serial (on UART0 P0.3/P0.2)",
+      "config": { "CONFIG_LPC_SERIAL_UART0_P03_P02": "y", "CONFIG_SERIAL": "y" }
+    }
+  },
+  "bootloaderOffsets": {
+    "none": {
+      "label": "No bootloader",
+      "flashAddress": "0x00000000",
+      "config": { "CONFIG_LPC_FLASH_START_0000": "y" }
+    },
+    "16KiB": {
+      "label": "16KiB bootloader (Smoothieware compatible)",
+      "flashAddress": "0x00004000",
+      "config": { "CONFIG_LPC_FLASH_START_4000": "y" }
+    }
+  },
+  "clockRefs": {}
+}

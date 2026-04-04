@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+*.tsbuildinfo
+.playwright-mcp/
+
+# Environment
+.vite/
+.env
+.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# SQLite database and runtime files
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Bun
+bun.lockb
+
+# Beads
+.beads/
+
+# Generated
+data/doc-indices.json
+
+# Playwright
+test-results/
+playwright-report/
+
+# Other
+_docs/
+.claude/

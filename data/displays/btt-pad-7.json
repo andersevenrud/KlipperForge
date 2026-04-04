@@ -1,0 +1,44 @@
+{
+  "id": "btt-pad-7",
+  "name": "Pad 7",
+  "manufacturer": "BigTreeTech",
+  "description": "A 7 inch all-in-one touchscreen tablet for Klipper with an interchangeable CB1 compute module (Allwinner H616 quad-core) that can also be swapped for a Raspberry Pi CM4, plus 1GB RAM. Comes pre-installed with Klipper, Moonraker, and KlipperScreen, eliminating the need for a separate Raspberry Pi.",
+  "displayType": "all-in-one",
+  "screenSpecs": {
+    "size": "7 inch",
+    "resolution": "1024x600",
+    "panelType": "IPS TFT",
+    "touchscreen": true
+  },
+  "connectionSpecs": {
+    "interface": "Integrated",
+    "connector": "USB, Ethernet, WiFi"
+  },
+  "klipperIntegration": {
+    "method": "Pre-installed KlipperScreen",
+    "requiresSbc": false,
+    "softwareRequired": "KlipperScreen (pre-installed)"
+  },
+  "computeSpecs": {
+    "processor": "CB1 module: Allwinner H616 (quad-core Cortex-A53)",
+    "ram": "1GB",
+    "wifi": true
+  },
+  "features": [
+    "All-in-one Klipper host and display",
+    "Pre-installed Klipper, Moonraker, KlipperScreen",
+    "Interchangeable CB1 module (Allwinner H616) or Raspberry Pi CM4",
+    "1GB RAM",
+    "WiFi and Ethernet connectivity",
+    "USB ports for MCU connection",
+    "No separate SBC required"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "GitHub - BTT Pad 7",
+      "url": "https://github.com/bigtreetech/Pad7",
+      "type": "github"
+    }
+  ]
+}

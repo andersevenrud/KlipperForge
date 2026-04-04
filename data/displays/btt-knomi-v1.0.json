@@ -1,0 +1,43 @@
+{
+  "id": "btt-knomi-v1.0",
+  "name": "KNOMI V1.0",
+  "manufacturer": "BigTreeTech",
+  "description": "A 1.28 inch round LCD display module with WiFi connectivity, designed to mount in the Voron StealthBurner toolhead. Shows real-time print status and animations via Klipper integration over WiFi.",
+  "displayType": "standalone",
+  "screenSpecs": {
+    "size": "1.28 inch",
+    "resolution": "240x240",
+    "panelType": "IPS TFT",
+    "touchscreen": false,
+    "driver": "GC9A01"
+  },
+  "connectionSpecs": {
+    "interface": "WiFi",
+    "connector": "USB-C + MX1.25 (power/programming)"
+  },
+  "klipperIntegration": {
+    "method": "WiFi via Moonraker API",
+    "requiresSbc": false
+  },
+  "computeSpecs": {
+    "wifi": true
+  },
+  "physicalSpecs": {
+    "mountType": "Voron StealthBurner"
+  },
+  "features": [
+    "Round display for toolhead mounting",
+    "WiFi connectivity to Klipper",
+    "Real-time print status animations",
+    "DC 5-24V powered via USB-C or MX1.25",
+    "Designed for Voron StealthBurner"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "GitHub - BTT KNOMI",
+      "url": "https://github.com/bigtreetech/KNOMI",
+      "type": "github"
+    }
+  ]
+}

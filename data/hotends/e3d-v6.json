@@ -1,0 +1,60 @@
+{
+  "id": "e3d-v6",
+  "name": "E3D V6",
+  "manufacturer": "E3D",
+  "description": "The E3D V6 is the classic all-metal hotend that became an industry standard for 3D printing. Its open-source design spawned countless clones and is compatible with a vast ecosystem of nozzles, heatblocks, and heaterblocks. The groove mount interface is widely used by Bowden and direct-drive machines alike.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 300,
+    "heaterType": "cartridge",
+    "heaterPower": 30,
+    "heatUpTime": "~90s to 200°C",
+    "thermistorType": "NTC 100K (Semitec 104GT-2)",
+    "thermistorId": "atc-semitec-104gt-2"
+  },
+  "heatBreakSpecs": {
+    "type": "all-metal",
+    "material": "titanium alloy",
+    "retraction": "1-2mm (direct drive), 3-6mm (Bowden)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D V6 brass",
+      "E3D V6 hardened steel",
+      "E3D V6 nozzle X",
+      "third-party M6 V6-style nozzles"
+    ],
+    "maxFlowRate": "~11mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "weight": 27,
+    "mountType": "groove mount (16mm OD, 3.7mm groove depth)"
+  },
+  "features": [
+    "Open-source design",
+    "Massive nozzle and accessory ecosystem",
+    "Bowden and direct-drive compatible",
+    "Widely cloned — verify quality when buying third-party"
+  ],
+  "references": [
+    {
+      "label": "E3D V6 Product Page",
+      "url": "https://e3d-online.com/products/v6-all-metal-hotend",
+      "type": "product"
+    },
+    {
+      "label": "E3D V6 Support",
+      "url": "https://e3d-online.com/pages/e3d-classics-support-v6-nozzle",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "heatUpTime", "maxFlowRate"]
+}

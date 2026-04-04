@@ -1,0 +1,40 @@
+{
+  "id": "stepperonline-le-350-48",
+  "name": "LE-350-48",
+  "manufacturer": "StepperOnline",
+  "description": "350W 48V switching power supply from StepperOnline's LE series. The LE series is a newer, more efficient line compared to the older S series. Features improved circuitry and is designed for industrial automation, CNC, and 3D printer applications requiring stable 48V output.",
+  "voltage": 48,
+  "wattage": 350,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 48,
+    "outputCurrent": 7.3,
+    "outputPower": 350.4,
+    "inputVoltageRange": "93-132VAC / 176-264VAC",
+    "efficiency": 87,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "215x115x30mm",
+    "weight": 720,
+    "coolingMethod": "forced-air",
+    "hasFan": true
+  },
+  "certifications": ["CE", "RoHS"],
+  "protections": ["short-circuit", "overload", "overvoltage"],
+  "operatingTemperature": "-10 to +50C",
+  "typicalUseCases": [
+    "48V 3D printer builds",
+    "High-voltage stepper systems with TMC5160 drivers",
+    "CNC and industrial automation"
+  ],
+  "communityRecommendation": "standard",
+  "references": [
+    {
+      "label": "StepperOnline Product Page",
+      "url": "https://www.omc-stepperonline.com/350w-48v-7-3a-115-230v-switching-power-supply-stepper-motor-cnc-router-kits-le-350-48",
+      "type": "product"
+    }
+  ],
+  "unverified": ["efficiency", "operatingTemperature"]
+}

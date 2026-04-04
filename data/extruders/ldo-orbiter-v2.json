@@ -1,0 +1,43 @@
+{
+  "id": "ldo-orbiter-v2",
+  "name": "LDO Orbiter v2.0",
+  "manufacturer": "LDO Motors",
+  "description": "The LDO Orbiter v2.0 is a compact, lightweight direct drive extruder featuring a planetary gear system with a 7.5:1 reduction ratio. It ships with an integrated NEMA14 36mm pancake stepper motor and dual drive gears for reliable filament grip. Its low weight and small footprint make it a popular choice for high-speed Voron-style printers.",
+  "driveType": "direct",
+  "mechanicalSpecs": {
+    "gearRatio": "7.5:1",
+    "filamentDiameter": 1.75,
+    "gripType": "dual drive",
+    "maxFeedRate": 35
+  },
+  "motorSpecs": {
+    "includedMotor": true,
+    "motorType": "NEMA14 36mm pancake stepper",
+    "compatibleMotors": "Dedicated LDO NEMA14 36mm pancake"
+  },
+  "physicalSpecs": {
+    "weight": 135,
+    "dimensions": "44 × 44 × 54mm",
+    "mountPattern": "Orbiter v2 standard mount"
+  },
+  "features": [
+    "Planetary gear reduction for smooth torque delivery",
+    "Ships with matched NEMA14 motor",
+    "Lightweight for reduced toolhead inertia",
+    "Integrated filament sensor support",
+    "Compatible with many Voron toolhead designs"
+  ],
+  "references": [
+    {
+      "label": "Orbiter Projects Website",
+      "url": "https://www.orbiterprojects.com/orbiter-v2-0/",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Extruder Configuration Reference",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["dimensions", "maxFeedRate"]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "generic-pla-cf",
+  "name": "PLA-CF (Carbon Fiber)",
+  "manufacturer": "Generic",
+  "description": "PLA reinforced with chopped carbon fibers, providing increased rigidity and a professional matte finish while maintaining most of PLA's ease of printing. The carbon fiber filler improves stiffness and reduces stringing but makes the material more brittle. The easiest CF filament to print, though still requires a hardened nozzle.",
+  "filamentType": "PLA-CF",
+  "ratings": {
+    "strength": 2,
+    "stiffness": 4,
+    "durability": 2,
+    "printability": 4,
+    "heatResistance": 1
+  },
+  "printSpecs": {
+    "nozzleTempRange": "200–230°C",
+    "bedTempRange": "55–65°C",
+    "printSpeedRange": "30–60 mm/s",
+    "coolingFan": "High (80–100%)",
+    "enclosureRequired": false,
+    "firstLayerTemp": "210–220°C"
+  },
+  "mechanicalSpecs": {
+    "tensileStrength": 50,
+    "heatDeflectionTemp": 55,
+    "elongationAtBreak": 3,
+    "impactStrength": "Low"
+  },
+  "environmentalSpecs": {
+    "moistureSensitivity": "Low",
+    "uvResistance": "Poor",
+    "foodSafe": false,
+    "dryingTemp": 50,
+    "dryingTime": 4
+  },
+  "physicalSpecs": {
+    "diameter": 1.75,
+    "density": 1.29,
+    "glassTransitionTemp": 60,
+    "meltingPoint": 165
+  },
+  "features": [
+    "Easiest carbon fiber filament to print",
+    "Professional matte surface finish",
+    "Improved stiffness over plain PLA",
+    "Reduced stringing during printing",
+    "More brittle than standard PLA",
+    "Requires hardened steel nozzle (abrasive)"
+  ],
+  "references": [
+    {
+      "label": "IEMAI CF-PLA TDS",
+      "url": "https://www.iemai3d.com/wp-content/uploads/2020/12/CF-PLA_TDS.pdf",
+      "type": "datasheet"
+    }
+  ],
+  "unverified": ["tensileStrength", "heatDeflectionTemp"]
+}

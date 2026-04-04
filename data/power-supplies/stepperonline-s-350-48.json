@@ -1,0 +1,45 @@
+{
+  "id": "stepperonline-s-350-48",
+  "name": "S-350-48",
+  "manufacturer": "StepperOnline",
+  "description": "350W 48V switching power supply from StepperOnline's S series. A cost-effective alternative to MeanWell for 48V stepper motor power in high-voltage 3D printer builds. Features forced-air cooling and voltage selector switch. Commonly paired with TMC5160 stepper drivers for high-speed printing.",
+  "voltage": 48,
+  "wattage": 350,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 48,
+    "outputCurrent": 7.3,
+    "outputPower": 350.4,
+    "inputVoltageRange": "93-132VAC / 176-264VAC",
+    "efficiency": 86,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "215x115x50mm",
+    "weight": 1100,
+    "coolingMethod": "forced-air",
+    "hasFan": true
+  },
+  "certifications": ["CE", "RoHS"],
+  "protections": ["short-circuit", "overload", "overvoltage", "overtemperature"],
+  "operatingTemperature": "-10 to +50C",
+  "typicalUseCases": [
+    "48V 3D printer builds with TMC5160 drivers",
+    "CNC stepper motor systems",
+    "Budget 48V supply for high-voltage motion systems"
+  ],
+  "communityRecommendation": "standard",
+  "references": [
+    {
+      "label": "StepperOnline Product Page",
+      "url": "https://www.omc-stepperonline.com/350w-48v-7-3a-115-230v-switching-power-supply-stepper-motor-cnc-router-kits-s-350-48",
+      "type": "product"
+    },
+    {
+      "label": "Amazon Product Page",
+      "url": "https://www.amazon.com/STEPPERONLINE-Switching-Supply-Router-S-350-48/dp/B00XTHKIGM",
+      "type": "product"
+    }
+  ],
+  "unverified": []
+}

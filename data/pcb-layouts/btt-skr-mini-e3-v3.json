@@ -1,0 +1,387 @@
+{
+	"boardId": "btt-skr-mini-e3-v3",
+	"name": "BTT SKR Mini E3 V3",
+	"viewBox": {
+		"width": 205.64,
+		"height": 139.95
+	},
+	"image": "/data/pcb-layouts/btt-skr-mini-e3.png",
+	"imageOffset": { "x": 3 },
+	"connectors": [
+		{
+			"name": "FAN2",
+			"category": "fan",
+			"x": 80.44,
+			"y": 127.69,
+			"width": 16.06,
+			"height": 11.99,
+			"pins": [
+				"<24V>",
+				"PB15"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "FAN0",
+			"category": "fan",
+			"x": 97.05,
+			"y": 127.69,
+			"width": 16.06,
+			"height": 11.99,
+			"pins": [
+				"<24V>",
+				"PC6"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "XSTOP",
+			"category": "endstop",
+			"x": 113.67,
+			"y": 127.69,
+			"width": 16.06,
+			"height": 11.99,
+			"pins": [
+				"<GND>",
+				"PC0"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "YSTOP",
+			"category": "endstop",
+			"x": 130.32,
+			"y": 127.69,
+			"width": 16.06,
+			"height": 11.99,
+			"pins": [
+				"<GND>",
+				"PC1"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "ZSTOP",
+			"category": "endstop",
+			"x": 146.88,
+			"y": 127.69,
+			"width": 16.06,
+			"height": 11.99,
+			"pins": [
+				"<GND>",
+				"PC2"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "THB",
+			"category": "thermistor",
+			"x": 163.43,
+			"y": 127.69,
+			"width": 16.06,
+			"height": 11.99,
+			"pins": [
+				"<GND>",
+				"PC4"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "TH0",
+			"category": "thermistor",
+			"x": 179.76,
+			"y": 127.71,
+			"width": 16.06,
+			"height": 11.99,
+			"pins": [
+				"<GND>",
+				"PA0"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "EXP1",
+			"category": "communication",
+			"x": 189.55,
+			"y": 86.02,
+			"width": 15.83,
+			"height": 39.17,
+			"pins": [
+				"PB5",
+				"TX1",
+				"RX1",
+				"PB8",
+				"<GND>",
+				"PA15",
+				"<RST>",
+				"PB9",
+				"PD6",
+				"<5V>"
+			],
+			"orientation": "vertical",
+			"rows": 2
+		},
+		{
+			"name": "ZPROBE",
+			"category": "probe",
+			"x": 174.49,
+			"y": 83.63,
+			"width": 11.43,
+			"height": 30.12,
+			"pins": [
+				"PC14",
+				"<GND>",
+				"PA1",
+				"<PWR>",
+				"<GND>"
+			],
+			"orientation": "vertical",
+			"rows": 1
+		},
+		{
+			"name": "NEOPIXEL",
+			"category": "misc",
+			"x": 151.21,
+			"y": 79.59,
+			"width": 19.88,
+			"height": 11.43,
+			"pins": [
+				"<GND>",
+				"PA8",
+				"<PWR>"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "ESTOP",
+			"category": "endstop",
+			"x": 151.51,
+			"y": 101.97,
+			"width": 19.88,
+			"height": 11.43,
+			"pins": [
+				"PC15",
+				"<GND>",
+				"<5V>"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "PWR_DET",
+			"category": "misc",
+			"x": 130.34,
+			"y": 101.97,
+			"width": 19.88,
+			"height": 11.43,
+			"pins": [
+				"PC12",
+				"<GND>",
+				"<NC>"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "PS_ON",
+			"category": "misc",
+			"x": 113.96,
+			"y": 101.94,
+			"width": 15.06,
+			"height": 11.49,
+			"pins": [
+				"<GND>",
+				"PC13"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "FAN1",
+			"category": "fan",
+			"x": 97.61,
+			"y": 101.94,
+			"width": 15.06,
+			"height": 11.49,
+			"pins": [
+				"<24V>",
+				"PC7"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "IO",
+			"category": "communication",
+			"x": 157.94,
+			"y": 44.11,
+			"width": 26.37,
+			"height": 6.07,
+			"pins": [
+				"PD0",
+				"PD2",
+				"PD3",
+				"PD4",
+				"PD5"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "XM",
+			"category": "stepper",
+			"x": 14.33,
+			"y": 1.54,
+			"width": 24.88,
+			"height": 12.14,
+			"pins": [
+				"PB14",
+				"PB13",
+				"PB12",
+				"PC11",
+				"PC10"
+			],
+			"pinHints": [
+				"EN",
+				"STEP",
+				"DIR",
+				"RX",
+				"TX"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "YM",
+			"category": "stepper",
+			"x": 53.82,
+			"y": 1.54,
+			"width": 24.88,
+			"height": 12.14,
+			"pins": [
+				"PB11",
+				"PB10",
+				"PB2",
+				"PC11",
+				"PC10"
+			],
+			"pinHints": [
+				"EN",
+				"STEP",
+				"DIR",
+				"RX",
+				"TX"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "ZAM",
+			"category": "stepper",
+			"x": 80.58,
+			"y": 1.54,
+			"width": 24.88,
+			"height": 12.14,
+			"pins": [
+				"PB1",
+				"PB0",
+				"PC5",
+				"PC11",
+				"PC10"
+			],
+			"pinHints": [
+				"EN",
+				"STEP",
+				"DIR",
+				"RX",
+				"TX"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "ZBM",
+			"category": "stepper",
+			"x": 107.27,
+			"y": 1.54,
+			"width": 24.88,
+			"height": 12.14,
+			"pins": [
+				"PB1",
+				"PB0",
+				"PC5",
+				"PC11",
+				"PC10"
+			],
+			"pinHints": [
+				"EN",
+				"STEP",
+				"DIR",
+				"RX",
+				"TX"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "EM",
+			"category": "stepper",
+			"x": 134.27,
+			"y": 1.54,
+			"width": 24.88,
+			"height": 12.14,
+			"pins": [
+				"PD1",
+				"PB3",
+				"PB4",
+				"PC11",
+				"PC10"
+			],
+			"pinHints": [
+				"EN",
+				"STEP",
+				"DIR",
+				"RX",
+				"TX"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "HB",
+			"category": "heater",
+			"x": 32.06,
+			"y": 118.09,
+			"width": 20.67,
+			"height": 20.19,
+			"pins": [
+				"PC6",
+				"<24V>"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		},
+		{
+			"name": "E0",
+			"category": "heater",
+			"x": 53.77,
+			"y": 118.09,
+			"width": 20.67,
+			"height": 20.19,
+			"pins": [
+				"PC9",
+				"<24V>"
+			],
+			"orientation": "horizontal",
+			"rows": 1
+		}
+	]
+}

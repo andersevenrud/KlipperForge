@@ -1,0 +1,16 @@
+export const config = {
+  port: Number(process.env.PORT ?? 3002),
+  dbPath: process.env.DB_PATH ?? "./data/db/configs.sqlite",
+  githubClientId: process.env.GITHUB_CLIENT_ID ?? "",
+  githubClientSecret: process.env.GITHUB_CLIENT_SECRET ?? "",
+  githubCallbackUrl: process.env.GITHUB_CALLBACK_URL ?? "http://localhost:5173/api/auth/github/callback",
+  appUrl: process.env.APP_URL ?? "http://localhost:5173",
+  sessionSecret: process.env.SESSION_SECRET ?? "",
+  sessionMaxAgeDays: Number(process.env.SESSION_MAX_AGE_DAYS ?? 30),
+  trustProxy: process.env.TRUST_PROXY === "true",
+  rateLimitMaxRequests: Number(process.env.RATE_LIMIT_MAX_REQUESTS ?? 30),
+  rateLimitWindowSeconds: Number(process.env.RATE_LIMIT_WINDOW_SECONDS ?? 60),
+  maxConfigsPerUser: Number(process.env.MAX_CONFIGS_PER_USER ?? 50),
+  maxRevisionsPerConfig: Number(process.env.MAX_REVISIONS_PER_CONFIG ?? 100),
+  maxDocumentSizeBytes: Number(process.env.MAX_DOCUMENT_SIZE_BYTES ?? 65_536),
+};

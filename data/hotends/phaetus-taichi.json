@@ -1,0 +1,56 @@
+{
+  "id": "phaetus-taichi",
+  "name": "Taichi",
+  "manufacturer": "Phaetus",
+  "description": "The Phaetus Taichi is a two-in-one dual filament hotend from Phaetus featuring a conical bi-metallic heatbreak (0.25mm wall thickness) and a nickel-plated copper heater block. It supports double filament feed for multi-colour and multi-material printing. The V6-compatible nozzle interface supports one-handed nozzle changes via titanium alloy support screws with very low heat conduction. Rated to 500°C for engineering filaments including PEEK and PEI.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 500,
+    "heaterType": "cartridge",
+    "heaterPower": 60,
+    "heatUpTime": "~55s to 200°C",
+    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G)"
+  },
+  "heatBreakSpecs": {
+    "type": "bi-metallic",
+    "material": "stainless steel / copper composite",
+    "retraction": "0.5-2mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "Phaetus plated copper V6 nozzles",
+      "Phaetus hardened steel V6 nozzles",
+      "E3D V6 brass nozzles",
+      "third-party M6 V6-style nozzles"
+    ],
+    "maxFlowRate": "~25mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "weight": 22,
+    "mountType": "V6 groove mount compatible"
+  },
+  "features": [
+    "Two-in-one dual filament feed for multi-colour/multi-material printing",
+    "One-handed V6 nozzle changes via titanium alloy support screws",
+    "Conical bi-metallic heatbreak (0.25mm wall) for high-temperature performance",
+    "Nickel-plated copper heater block",
+    "500°C max printing temperature",
+    "V6 nozzle ecosystem compatibility"
+  ],
+  "references": [
+    {
+      "label": "Phaetus Taichi Product Page",
+      "url": "https://www.phaetus.com/taichi/",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "heatUpTime", "maxFlowRate", "retraction", "heaterPower", "thermistorType"]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "sunon-maglev-4010",
+  "name": "MagLev MF40101V1-1000U-A99",
+  "manufacturer": "Sunon",
+  "description": "The Sunon MF40101V1-1000U-A99 is a 40×10mm axial fan using Sunon's Vapo bearing technology for extended service life and low friction. It is a popular hotend cooling choice in 3D printers requiring a compact 12V fan.",
+  "fanType": "axial",
+  "size": "4010",
+  "airflowSpecs": {
+    "airflow": 8.0,
+    "staticPressure": 4.83,
+    "rpm": 7000
+  },
+  "electricalSpecs": {
+    "voltage": 12,
+    "current": 0.051,
+    "power": 0.62,
+    "pwmCapable": false,
+    "tachoSignal": false
+  },
+  "noiseSpecs": {
+    "noiseLevel": 27.3
+  },
+  "physicalSpecs": {
+    "dimensions": "40×40×10mm",
+    "bearingType": "Vapo (Vapour Bearing)"
+  },
+  "references": [
+    {
+      "label": "Sunon MF40101V1-1000U-A99 Product Page (DigiKey)",
+      "url": "https://www.digikey.com/en/products/detail/sunon-fans/MF40101V1-1000U-A99/6198734",
+      "type": "product"
+    },
+    {
+      "label": "Sunon MF40101V1-1000U-A99 Datasheet (TME)",
+      "url": "https://www.tme.eu/en/details/mf40101v1-a99-a/dc12v-fans/sunon/mf40101v1-1000u-a99/",
+      "type": "datasheet"
+    }
+  ],
+  "unverified": ["weight"]
+}

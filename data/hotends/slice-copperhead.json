@@ -1,0 +1,57 @@
+{
+  "id": "slice-copperhead",
+  "name": "Copperhead",
+  "manufacturer": "Slice Engineering",
+  "description": "The Slice Engineering Copperhead features a bimetallic heatbreak made from copper and stainless steel, providing exceptional thermal conductivity in the melt zone while maintaining a sharp thermal gradient in the cold zone. This design allows higher sustained flow rates compared to traditional all-metal titanium heatbreaks. Compatible with Mosquito-spec mounts and rated to 450°C, it is suited for high-temperature engineering filaments including PEEK and PEI.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 450,
+    "heaterType": "cartridge",
+    "heaterPower": 50,
+    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G, Slice Engineering 300°C thermistor)"
+  },
+  "heatBreakSpecs": {
+    "type": "bimetallic",
+    "material": "stainless steel surgical tubing / copper alloy composite",
+    "retraction": "0.5-1.5mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6 x 1, 12.5mm length, compatible with E3D V6 and RepRap components)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "Slice Engineering Vanadium nozzles",
+      "Slice Engineering brass nozzles",
+      "select third-party Mosquito-compatible nozzles"
+    ],
+    "maxFlowRate": "~22mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "weight": 12,
+    "mountType": "Groove mount or Mosquito screw mount (M2.5, both variants available)"
+  },
+  "features": [
+    "450°C maximum temperature for engineering filaments",
+    "Bimetallic copper heatbreak for high thermal conductivity",
+    "Higher sustained flow than titanium all-metal heatbreaks",
+    "Mosquito-compatible mount for broad toolhead support"
+  ],
+  "references": [
+    {
+      "label": "Slice Engineering Copperhead Product Page",
+      "url": "https://www.sliceengineering.com/products/copperhead",
+      "type": "product"
+    },
+    {
+      "label": "Slice Engineering Documentation",
+      "url": "https://www.sliceengineering.com/pages/documentation",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "maxFlowRate", "retraction", "heaterPower"]
+}

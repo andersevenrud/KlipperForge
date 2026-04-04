@@ -1,0 +1,52 @@
+{
+  "id": "phaetus-rapido-uhf",
+  "name": "Rapido UHF",
+  "manufacturer": "Phaetus",
+  "description": "The Phaetus Rapido UHF (Rapido 2, Ultra High Flow) is designed for extremely high volumetric output, targeting flow rates up to ~75mm³/s. It uses the same 90W ceramic heater plate and bi-metallic heatbreak as the Rapido HF but features a substantially larger melt zone and is optimized for larger nozzle diameters. The standard variant with 104NT thermistor is rated to 290°C; the Plus variant with PT1000 reaches 350°C. Ideal for rapid draft printing and large-format machines.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 290,
+    "heaterType": "ceramic heater plate",
+    "heaterPower": 90,
+    "thermistorType": "NTC 100K (104NT) or PT1000 (Plus variant)"
+  },
+  "heatBreakSpecs": {
+    "type": "bi-metallic",
+    "material": "stainless steel / copper composite",
+    "retraction": "0.4-1mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "Phaetus plated copper V6 nozzles",
+      "Phaetus hardened steel V6 nozzles",
+      "E3D V6 brass nozzles",
+      "third-party M6 V6-style nozzles"
+    ],
+    "maxFlowRate": "~75mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "mountType": "V6 groove mount compatible"
+  },
+  "features": [
+    "Ultra-high volumetric flow rate (~75mm³/s)",
+    "90W ceramic heater plate for rapid heat-up",
+    "Enlarged melt zone for maximum throughput",
+    "Best suited for 0.6mm+ nozzle diameters"
+  ],
+  "references": [
+    {
+      "label": "Phaetus Rapido UHF Product Page",
+      "url": "https://www.phaetus.com/rapido/",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["maxFlowRate", "retraction"]
+}

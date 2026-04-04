@@ -1,0 +1,42 @@
+{
+  "id": "fly-lcd5",
+  "name": "FLY-LCD5",
+  "manufacturer": "Mellow",
+  "description": "A modular 5 inch display with swappable core boards. Supports both HDMI and DSI (MIPI) core boards, allowing flexible connection options. Features 10-level brightness, 180-degree flip, and power-off memory.",
+  "displayType": "klipperscreen",
+  "screenSpecs": {
+    "size": "5 inch",
+    "resolution": "800x480",
+    "panelType": "IPS TFT",
+    "touchscreen": true
+  },
+  "connectionSpecs": {
+    "interface": "HDMI or DSI (swappable core board)",
+    "connector": "HDMI core board or DSI core board (sold separately)"
+  },
+  "klipperIntegration": {
+    "method": "KlipperScreen",
+    "requiresSbc": true,
+    "softwareRequired": "KlipperScreen"
+  },
+  "features": [
+    "Modular design with swappable core boards",
+    "Supports both HDMI and DSI interfaces",
+    "10-level brightness adjustment",
+    "180-degree display flip",
+    "Power-off memory for settings"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "GitHub - FLY-LCD",
+      "url": "https://github.com/Mellow-3D/FLY-LCD",
+      "type": "github"
+    },
+    {
+      "label": "Mellow FLY LCD Documentation",
+      "url": "https://mellow.klipper.cn/en/docs/ProductDoc/Screen/fly-lcd/",
+      "type": "documentation"
+    }
+  ]
+}

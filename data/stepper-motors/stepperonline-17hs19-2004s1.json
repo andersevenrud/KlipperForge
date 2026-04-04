@@ -1,0 +1,25 @@
+{
+  "id": "stepperonline-17hs19-2004s1",
+  "name": "17HS19-2004S1",
+  "manufacturer": "StepperOnline",
+  "description": "Popular budget NEMA17 stepper for XY and Z axes. High torque at 59Ncm with 47mm body length.",
+  "nemaSize": 17,
+  "electricalSpecs": {
+    "ratedCurrent": 2.0,
+    "holdingTorque": 59,
+    "stepAngle": 1.8,
+    "phaseResistance": 1.4,
+    "phaseInductance": 3.0,
+    "ratedVoltage": 2.8
+  },
+  "physicalSpecs": {
+    "bodyLength": 47,
+    "weight": 390,
+    "shaftDiameter": 5,
+    "shaftLength": 24
+  },
+  "connectorType": "JST-PH 6-pin",
+  "references": [
+    { "label": "StepperOnline product page", "url": "https://www.omc-stepperonline.com/nema-17-bipolar-59ncm-84oz-in-2a-42x48mm-4-wires-w-1m-cable-connector-17hs19-2004s1", "type": "product" }
+  ]
+}

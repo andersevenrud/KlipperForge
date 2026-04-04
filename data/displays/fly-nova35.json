@@ -1,0 +1,41 @@
+{
+  "id": "fly-nova35",
+  "name": "FLY-Nova35",
+  "manufacturer": "Mellow",
+  "description": "A 3.5 inch IPS display with its own SSD210 processor, connecting via simple 4-wire UART serial. Runs its own Linux system with a dedicated UI, reducing CPU load on the Klipper host. Features capacitive multi-touch and a 170-degree viewing angle.",
+  "displayType": "standalone",
+  "screenSpecs": {
+    "size": "3.5 inch",
+    "resolution": "480x320",
+    "panelType": "IPS TFT",
+    "touchscreen": true,
+    "driver": "ST7796S"
+  },
+  "connectionSpecs": {
+    "interface": "UART",
+    "connector": "4-wire serial (TX, RX, VCC, GND)"
+  },
+  "klipperIntegration": {
+    "method": "UART serial to Klipper host",
+    "requiresSbc": false
+  },
+  "computeSpecs": {
+    "processor": "SSD210"
+  },
+  "features": [
+    "Built-in SSD210 processor runs own Linux",
+    "Simple 4-wire UART connection",
+    "Reduces CPU load on Klipper host",
+    "Capacitive multi-touch (FT6336U)",
+    "170-degree viewing angle",
+    "No USB or HDMI required"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "Mellow FLY Nova35 Documentation",
+      "url": "https://mellow.klipper.cn/en/docs/ProductDoc/Screen/nova35/",
+      "type": "documentation"
+    }
+  ]
+}

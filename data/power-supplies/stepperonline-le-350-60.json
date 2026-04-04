@@ -1,0 +1,40 @@
+{
+  "id": "stepperonline-le-350-60",
+  "name": "LE-350-60",
+  "manufacturer": "StepperOnline",
+  "description": "350W 60V switching power supply from StepperOnline's LE series. The highest voltage option commonly used in 3D printing applications. Designed for maximum stepper motor performance with TMC5160 Pro drivers and 60V-rated controller boards like the BTT Octopus Pro. The LE series offers improved efficiency over the older S series.",
+  "voltage": 60,
+  "wattage": 350,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 60,
+    "outputCurrent": 5.8,
+    "outputPower": 348,
+    "inputVoltageRange": "93-132VAC / 176-264VAC",
+    "efficiency": 87,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "215x115x30mm",
+    "weight": 720,
+    "coolingMethod": "forced-air",
+    "hasFan": true
+  },
+  "certifications": ["CE", "RoHS"],
+  "protections": ["short-circuit", "overload", "overvoltage"],
+  "operatingTemperature": "-10 to +50C",
+  "typicalUseCases": [
+    "60V 3D printer builds with BTT Octopus Pro",
+    "Maximum performance stepper motor systems",
+    "CNC applications requiring 60V stepper power"
+  ],
+  "communityRecommendation": "standard",
+  "references": [
+    {
+      "label": "StepperOnline Product Page",
+      "url": "https://www.omc-stepperonline.com/350w-60v-5-8a-115-230v-switching-power-supply-stepper-motor-cnc-router-kits-le-350-60",
+      "type": "product"
+    }
+  ],
+  "unverified": ["efficiency", "operatingTemperature"]
+}

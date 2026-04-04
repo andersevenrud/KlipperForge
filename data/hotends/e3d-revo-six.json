@@ -1,0 +1,52 @@
+{
+  "id": "e3d-revo-six",
+  "name": "Revo Six",
+  "manufacturer": "E3D",
+  "description": "The E3D Revo Six is the V6 form-factor successor in the Revo ecosystem. It uses the same groove mount as the original V6, making it a drop-in upgrade for many printers. The Revo quick-swap nozzle system allows cold, tool-free nozzle changes in seconds. Available with 40W or 60W ObXidian HeatCore options.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 300,
+    "heaterType": "RapidChange HeatCore (integrated heater + thermistor)",
+    "heaterPower": 60,
+    "heatUpTime": "~60s to 200°C",
+    "thermistorType": "integrated in HeatCore (104NT)"
+  },
+  "heatBreakSpecs": {
+    "type": "all-metal",
+    "material": "titanium alloy",
+    "retraction": "0.4-1mm (direct drive), 3-5mm (Bowden)"
+  },
+  "nozzleSpecs": {
+    "system": "Revo quick-swap (tool-free cold swap)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "Revo brass nozzles",
+      "Revo ObXidian nozzles",
+      "Revo high-flow nozzles"
+    ],
+    "maxFlowRate": "~11mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "mountType": "groove mount (16mm OD, V6-compatible)"
+  },
+  "features": [
+    "Drop-in V6 groove mount replacement",
+    "Tool-free cold nozzle swapping",
+    "Available in 40W and 60W HeatCore variants",
+    "Compatible with Bowden and direct-drive setups"
+  ],
+  "references": [
+    {
+      "label": "E3D Revo Six Product Page",
+      "url": "https://e3d-online.com/products/revo-six",
+      "type": "product"
+    },
+    {
+      "label": "E3D Revo Support",
+      "url": "https://e3d-online.com/pages/revo-support",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["heatUpTime", "maxFlowRate", "retraction"]
+}

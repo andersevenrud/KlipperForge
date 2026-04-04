@@ -1,0 +1,49 @@
+{
+  "id": "biqu-microprobe-v2",
+  "name": "MicroProbe V2",
+  "manufacturer": "BIQU",
+  "description": "The BIQU MicroProbe V2 is an ultra-compact auto bed leveling sensor that uses a servo-deployed probe pin with optical endpoint detection. Its tiny form factor (11.5 × 26mm) makes it ideal for toolhead designs where space is limited, such as the Voron StealthBurner.",
+  "probeType": "servo",
+  "electricalSpecs": {
+    "operatingVoltage": "5V DC",
+    "signalType": "digital (servo PWM + optical endpoint)",
+    "currentDraw": "25mA (idle), 200mA (peak during deploy)"
+  },
+  "performanceSpecs": {
+    "repeatability": "±0.001mm (24°C), ±0.003mm (60°C)",
+    "triggerDistance": "contact-based",
+    "bedCompatibility": [
+      "glass",
+      "PEI",
+      "textured PEI",
+      "magnetic flex plates",
+      "BuildTak",
+      "aluminum"
+    ],
+    "temperatureCompensation": false
+  },
+  "physicalSpecs": {
+    "dimensions": "21.9 × 15.6 × 28.1mm",
+    "weight": 6,
+    "mountType": "2x M2 screw (custom compact mount)"
+  },
+  "klipperSection": "bltouch",
+  "unverified": ["currentDraw"],
+  "references": [
+    {
+      "label": "BIQU MicroProbe V2 Product Page",
+      "url": "https://biqu.equipment/products/microprobe-v1-0-for-b1-printers-h2-extruders-ender-3",
+      "type": "product"
+    },
+    {
+      "label": "BIQU MicroProbe GitHub Repository",
+      "url": "https://github.com/bigtreetech/MicroProbe",
+      "type": "github"
+    },
+    {
+      "label": "Klipper BLTouch Documentation",
+      "url": "https://www.klipper3d.org/BLTouch.html",
+      "type": "documentation"
+    }
+  ]
+}

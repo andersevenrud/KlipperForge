@@ -1,0 +1,44 @@
+{
+  "id": "fly-mini-pad",
+  "name": "FLY-MINI-Pad",
+  "manufacturer": "Mellow",
+  "description": "A compact all-in-one Klipper host with integrated 3.5 inch touchscreen display. Features an Allwinner H3 processor and 512MB RAM with a pre-installed Klipper software stack.",
+  "displayType": "all-in-one",
+  "screenSpecs": {
+    "size": "3.5 inch",
+    "resolution": "320x480",
+    "panelType": "TFT",
+    "touchscreen": true
+  },
+  "connectionSpecs": {
+    "interface": "Integrated",
+    "connector": "USB, WiFi"
+  },
+  "klipperIntegration": {
+    "method": "Pre-installed KlipperScreen",
+    "requiresSbc": false,
+    "softwareRequired": "KlipperScreen (pre-installed)"
+  },
+  "computeSpecs": {
+    "processor": "Allwinner H3 (quad-core Cortex-A7)",
+    "ram": "512MB",
+    "wifi": true
+  },
+  "features": [
+    "All-in-one Klipper host and display",
+    "Pre-installed Klipper software stack",
+    "Allwinner H3 quad-core processor",
+    "512MB RAM",
+    "WiFi connectivity",
+    "Compact form factor",
+    "No separate SBC required"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "Mellow FLY Documentation",
+      "url": "https://mellow.klipper.cn/en/",
+      "type": "documentation"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "stepperonline-le-250-48",
+  "name": "LE-250-48",
+  "manufacturer": "StepperOnline",
+  "description": "250W 48V switching power supply from StepperOnline's LE series. A mid-range 48V option suitable for builds with fewer stepper motors at high voltage. Provides adequate current for 3-4 stepper motors running on TMC5160 drivers at 48V.",
+  "voltage": 48,
+  "wattage": 250,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 48,
+    "outputCurrent": 5.2,
+    "outputPower": 249.6,
+    "inputVoltageRange": "93-132VAC / 176-264VAC",
+    "efficiency": 87,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "215x115x30mm",
+    "weight": 720,
+    "coolingMethod": "forced-air",
+    "hasFan": true
+  },
+  "certifications": ["CE", "RoHS"],
+  "protections": ["short-circuit", "overload", "overvoltage"],
+  "operatingTemperature": "-10 to +50C",
+  "typicalUseCases": [
+    "48V 3D printer builds with limited stepper count",
+    "Auxiliary 48V supply for high-voltage stepper drivers",
+    "CNC systems"
+  ],
+  "communityRecommendation": "standard",
+  "references": [
+    {
+      "label": "StepperOnline Product Page",
+      "url": "https://www.omc-stepperonline.com/250w-48v-5-2a-115-230v-switching-power-supply-stepper-motor-cnc-router-kits-le-250-48",
+      "type": "product"
+    }
+  ],
+  "unverified": ["efficiency", "operatingTemperature"]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "generic-tpu-95a",
+  "name": "TPU 95A",
+  "manufacturer": "Generic",
+  "description": "Thermoplastic polyurethane (TPU) 95A is a flexible, rubber-like filament with excellent abrasion resistance and elasticity. The 95A shore hardness rating makes it semi-flexible — firm enough to print reliably while still offering good flex. Best for phone cases, gaskets, vibration dampeners, and grip surfaces.",
+  "filamentType": "TPU",
+  "ratings": {
+    "strength": 2,
+    "stiffness": 1,
+    "durability": 5,
+    "printability": 2,
+    "heatResistance": 1
+  },
+  "printSpecs": {
+    "nozzleTempRange": "225–245°C",
+    "bedTempRange": "45–60°C",
+    "printSpeedRange": "15–30 mm/s",
+    "coolingFan": "Low (30%)",
+    "enclosureRequired": false,
+    "firstLayerTemp": "230–240°C"
+  },
+  "mechanicalSpecs": {
+    "tensileStrength": 39,
+    "heatDeflectionTemp": 60,
+    "elongationAtBreak": 580,
+    "shoreHardness": "95A",
+    "impactStrength": "Very high"
+  },
+  "environmentalSpecs": {
+    "moistureSensitivity": "High",
+    "uvResistance": "Moderate",
+    "foodSafe": false,
+    "dryingTemp": 50,
+    "dryingTime": 6
+  },
+  "physicalSpecs": {
+    "diameter": 1.75,
+    "density": 1.22,
+    "glassTransitionTemp": -24,
+    "meltingPoint": 220
+  },
+  "features": [
+    "Flexible and elastic",
+    "Excellent abrasion resistance",
+    "Good vibration dampening",
+    "High elongation at break",
+    "Chemical resistant to oils and greases",
+    "Direct drive extruder recommended"
+  ],
+  "references": [
+    {
+      "label": "Simplify3D — Flexible Filament Guide",
+      "url": "https://www.simplify3d.com/resources/materials-guide/flexible/",
+      "type": "documentation"
+    },
+    {
+      "label": "Ultimaker TPU 95A TDS",
+      "url": "https://um-support-files.ultimaker.com/materials/2.85mm/tds/TPU-95A/Ultimaker-TPU95A-TDS-v5.00.pdf",
+      "type": "datasheet"
+    }
+  ]
+}

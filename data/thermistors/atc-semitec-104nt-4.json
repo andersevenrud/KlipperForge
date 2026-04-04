@@ -1,0 +1,35 @@
+{
+  "id": "atc-semitec-104nt-4",
+  "name": "ATC Semitec 104NT-4",
+  "manufacturer": "ATC Semitec",
+  "description": "The ATC Semitec 104NT-4-R025H42G is a glass bead NTC thermistor with a nominal resistance of 100kΩ at 25°C and a beta value of 4267K. It is increasingly used in modern hotend designs where accuracy at elevated temperatures is critical. Klipper references the full part number 104NT-4-R025H42G as the sensor type string.",
+  "sensorType": "NTC",
+  "sensingSpecs": {
+    "resistanceAt25C": 100000,
+    "betaValue": 4267,
+    "temperatureRange": "-50 to 300°C",
+    "accuracy": "±3%"
+  },
+  "klipperSpecs": {
+    "sensorType": "ATC Semitec 104NT-4-R025H42G",
+    "requiresAmplifier": false,
+    "pullupResistor": 4700
+  },
+  "physicalSpecs": {
+    "packageType": "glass bead",
+    "leadType": "tinned copper"
+  },
+  "unverified": [],
+  "references": [
+    {
+      "label": "ATC Semitec NT-4 Datasheet (PDF)",
+      "url": "https://atcsemitec.co.uk/wp-content/uploads/2019/01/Semitec-NT-4-Glass-NTC-Thermistor.pdf",
+      "type": "datasheet"
+    },
+    {
+      "label": "Klipper Config Reference - Thermistors",
+      "url": "https://www.klipper3d.org/Config_Reference.html#temperature-sensors",
+      "type": "documentation"
+    }
+  ]
+}

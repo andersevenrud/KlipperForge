@@ -1,0 +1,46 @@
+{
+  "id": "superpinda",
+  "name": "SuperPINDA",
+  "manufacturer": "Prusa",
+  "description": "The SuperPINDA is an improved inductive proximity sensor with built-in hardware temperature compensation, eliminating the need for an external thermistor or software calibration tables. It is a drop-in upgrade for the PINDA V2 on Prusa MK3/MK3S+ printers.",
+  "probeType": "inductive",
+  "electricalSpecs": {
+    "operatingVoltage": "5V DC",
+    "signalType": "digital (NPN normally-closed, open-collector)",
+    "currentDraw": "12mA"
+  },
+  "performanceSpecs": {
+    "repeatability": "±0.005mm",
+    "triggerDistance": "~2mm (to steel sheet)",
+    "bedCompatibility": [
+      "spring steel sheet",
+      "aluminum",
+      "metallic surfaces"
+    ],
+    "temperatureCompensation": true
+  },
+  "physicalSpecs": {
+    "dimensions": "8mm diameter × 35mm length",
+    "weight": 6,
+    "mountType": "M8 threaded barrel"
+  },
+  "klipperSection": "probe",
+  "unverified": ["currentDraw", "repeatability", "triggerDistance"],
+  "references": [
+    {
+      "label": "Prusa SuperPINDA Spare Part",
+      "url": "https://www.prusa3d.com/product/superpinda/",
+      "type": "product"
+    },
+    {
+      "label": "Prusa Knowledge Base - PINDA/SuperPINDA",
+      "url": "https://help.prusa3d.com/article/p-i-n-d-a-superpinda-sensor-testing_2091",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Probe Documentation",
+      "url": "https://www.klipper3d.org/Config_Reference.html#probe",
+      "type": "documentation"
+    }
+  ]
+}

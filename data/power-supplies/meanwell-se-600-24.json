@@ -1,0 +1,50 @@
+{
+  "id": "meanwell-se-600-24",
+  "name": "SE-600-24",
+  "manufacturer": "MeanWell",
+  "description": "High-power 600W enclosed power supply from MeanWell's SE series. The largest commonly-used MeanWell PSU in 3D printing. Features forced-air cooling with a significantly larger form factor than the LRS series. Used in large-format printers like the Ender 5 Plus and custom builds with large DC heated beds requiring substantial current delivery.",
+  "voltage": 24,
+  "wattage": 600,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 24,
+    "outputCurrent": 25,
+    "outputPower": 600,
+    "inputVoltageRange": "90-132VAC / 180-264VAC",
+    "efficiency": 87,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "247x127x63.5mm",
+    "weight": 2500,
+    "coolingMethod": "forced-air",
+    "hasFan": true
+  },
+  "certifications": ["UL", "CE", "RoHS"],
+  "protections": ["short-circuit", "overload", "overvoltage"],
+  "operatingTemperature": "-20 to +60C",
+  "typicalUseCases": [
+    "Creality Ender 5 Plus upgrade",
+    "Large-format 3D printers with DC heated beds",
+    "Custom builds with 300mm+ heated beds on DC power"
+  ],
+  "communityRecommendation": "standard",
+  "references": [
+    {
+      "label": "MeanWell SE-600 Datasheet",
+      "url": "https://www.meanwell.com/Upload/PDF/SE-600/SE-600-SPEC.PDF",
+      "type": "datasheet"
+    },
+    {
+      "label": "DigiKey Product Page",
+      "url": "https://www.digikey.com/en/products/detail/mean-well-usa-inc/SE-600-24/7706615",
+      "type": "product"
+    },
+    {
+      "label": "Amazon Product Page",
+      "url": "https://www.amazon.com/MEAN-WELL-SE-600-24-Supply-Single/dp/B00DEDB2U2",
+      "type": "product"
+    }
+  ],
+  "unverified": ["weight"]
+}

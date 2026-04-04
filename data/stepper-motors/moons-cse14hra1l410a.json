@@ -1,0 +1,24 @@
+{
+  "id": "moons-cse14hra1l410a",
+  "name": "CSE14HRA1L410A",
+  "manufacturer": "Moons'",
+  "description": "Round NEMA14 stepper commonly used as the Sherpa Mini standard motor. 1.0A current with 10Ncm holding torque.",
+  "nemaSize": 14,
+  "electricalSpecs": {
+    "ratedCurrent": 1.0,
+    "holdingTorque": 10,
+    "stepAngle": 1.8,
+    "phaseResistance": 1.9,
+    "phaseInductance": 1.41,
+    "ratedVoltage": 1.9
+  },
+  "physicalSpecs": {
+    "bodyLength": 20,
+    "weight": 85,
+    "shaftDiameter": 5,
+    "shaftLength": 24
+  },
+  "references": [
+    { "label": "Moons' product page", "url": "https://www.moonsindustries.com/series/cse14hr-encapsulated-hybrid-stepper-motors-b02010501", "type": "product" }
+  ]
+}

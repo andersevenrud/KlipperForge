@@ -1,0 +1,59 @@
+{
+  "id": "e3d-revo-micro",
+  "name": "Revo Micro",
+  "manufacturer": "E3D",
+  "description": "The E3D Revo Micro is the ultra-compact member of the Revo ecosystem, engineered for lightweight toolheads where mass is at a premium. Originally designed in collaboration with the Voron community for the Voron V0, it brings the Revo RapidChange nozzle system to the smallest possible footprint. The integrated HeatCore combines heater and thermistor into a single component, reducing wiring complexity and enabling tool-free nozzle swaps without waiting for the hotend to cool.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 300,
+    "heaterType": "RapidChange HeatCore (integrated heater + thermistor)",
+    "heaterPower": 40,
+    "heatUpTime": "~65s to 200°C",
+    "thermistorType": "Revo integrated (104NT, Semitec 104NT-4-R025H42G)"
+  },
+  "heatBreakSpecs": {
+    "type": "all-metal",
+    "material": "titanium alloy",
+    "retraction": "0.5-1.5mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "Revo quick-change (tool-free, no hot-tightening required)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D Revo brass nozzles",
+      "E3D Revo hardened steel nozzles",
+      "E3D Revo high-flow nozzles"
+    ],
+    "maxFlowRate": "~11mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "weight": 18,
+    "mountType": "Revo Micro mount (Voron V0 compatible, various third-party mounts)"
+  },
+  "features": [
+    "Tool-free nozzle changes at operating temperature",
+    "Ultra-compact form factor for lightweight toolheads",
+    "Designed for Voron V0 and similar compact printers",
+    "Integrated HeatCore simplifies wiring",
+    "Part of the broader Revo ecosystem with shared nozzles"
+  ],
+  "references": [
+    {
+      "label": "E3D Revo Micro Product Page",
+      "url": "https://e3d-online.com/products/revo-micro",
+      "type": "product"
+    },
+    {
+      "label": "E3D Revo Support",
+      "url": "https://e3d-online.com/pages/revo-support",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "heatUpTime", "maxFlowRate", "retraction"]
+}

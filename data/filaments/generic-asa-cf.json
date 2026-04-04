@@ -1,0 +1,57 @@
+{
+  "id": "generic-asa-cf",
+  "name": "ASA-CF (Carbon Fiber)",
+  "manufacturer": "Generic",
+  "description": "ASA reinforced with chopped carbon fibers, combining ASA's excellent UV and weather resistance with improved stiffness and dimensional stability from carbon fiber. Ideal for outdoor functional parts that need rigidity — automotive trim, drone frames, and equipment housings exposed to sun. Requires an enclosure and a hardened nozzle.",
+  "filamentType": "ASA-CF",
+  "ratings": {
+    "strength": 3,
+    "stiffness": 4,
+    "durability": 4,
+    "printability": 2,
+    "heatResistance": 3
+  },
+  "printSpecs": {
+    "nozzleTempRange": "250–280°C",
+    "bedTempRange": "80–100°C",
+    "printSpeedRange": "30–60 mm/s",
+    "coolingFan": "Low",
+    "enclosureRequired": true,
+    "firstLayerTemp": "260–270°C"
+  },
+  "mechanicalSpecs": {
+    "tensileStrength": 34,
+    "heatDeflectionTemp": 102,
+    "elongationAtBreak": 10,
+    "impactStrength": "Moderate"
+  },
+  "environmentalSpecs": {
+    "moistureSensitivity": "Low",
+    "uvResistance": "Excellent",
+    "foodSafe": false,
+    "dryingTemp": 80,
+    "dryingTime": 8
+  },
+  "physicalSpecs": {
+    "diameter": 1.75,
+    "density": 1.11,
+    "glassTransitionTemp": 108,
+    "meltingPoint": 240
+  },
+  "features": [
+    "Excellent UV and weather resistance with added stiffness",
+    "Best CF filament for outdoor applications",
+    "Better color stability than ABS-CF",
+    "Reduced warping compared to plain ASA",
+    "Matte professional surface finish",
+    "Requires hardened steel nozzle (abrasive)"
+  ],
+  "references": [
+    {
+      "label": "Bambu Lab ASA-CF TDS",
+      "url": "https://wiki.bambulab.com/filament-acc/asacf-pahtcf/bambus_asa-cf_technical_data_sheet.pdf",
+      "type": "datasheet"
+    }
+  ],
+  "unverified": ["tensileStrength", "density"]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "generic-pc",
+  "name": "PC (Polycarbonate)",
+  "manufacturer": "Generic",
+  "description": "Polycarbonate (PC) is one of the strongest FDM filaments, offering exceptional heat resistance, impact strength, and optical clarity. Requires very high temperatures and an enclosure. Used for high-performance functional parts, transparent components, and heat-resistant applications.",
+  "filamentType": "PC",
+  "ratings": {
+    "strength": 5,
+    "stiffness": 4,
+    "durability": 5,
+    "printability": 1,
+    "heatResistance": 5
+  },
+  "printSpecs": {
+    "nozzleTempRange": "260–310°C",
+    "bedTempRange": "90–120°C",
+    "printSpeedRange": "30–50 mm/s",
+    "coolingFan": "None",
+    "enclosureRequired": true,
+    "firstLayerTemp": "275–290°C"
+  },
+  "mechanicalSpecs": {
+    "tensileStrength": 65,
+    "heatDeflectionTemp": 140,
+    "elongationAtBreak": 110,
+    "impactStrength": "Very high"
+  },
+  "environmentalSpecs": {
+    "moistureSensitivity": "High",
+    "uvResistance": "Moderate",
+    "foodSafe": false,
+    "dryingTemp": 80,
+    "dryingTime": 8
+  },
+  "physicalSpecs": {
+    "diameter": 1.75,
+    "density": 1.20,
+    "glassTransitionTemp": 147,
+    "meltingPoint": 270
+  },
+  "features": [
+    "Highest heat resistance of common FDM filaments",
+    "Excellent impact strength and toughness",
+    "Optical clarity in natural form",
+    "Requires all-metal hotend (260°C+)",
+    "Strong warping tendency without enclosure",
+    "Good dimensional stability"
+  ],
+  "references": [
+    {
+      "label": "Simplify3D — Polycarbonate Material Guide",
+      "url": "https://www.simplify3d.com/resources/materials-guide/polycarbonate/",
+      "type": "documentation"
+    },
+    {
+      "label": "Stratasys PC FDM Material Data Sheet",
+      "url": "https://www.stratasys.com/siteassets/materials/materials-catalog/fdm-materials/pc/mds_fdm_pc_0422a.pdf",
+      "type": "datasheet"
+    }
+  ]
+}

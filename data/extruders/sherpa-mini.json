@@ -1,0 +1,45 @@
+{
+  "id": "sherpa-mini",
+  "name": "Sherpa Mini",
+  "manufacturer": "Annex Engineering",
+  "description": "The Sherpa Mini is an open source, community-designed compact direct drive extruder from Annex Engineering. It uses a 50:8 gear ratio (6.25:1) with dual drive gears when paired with the recommended LDO 8-tooth NEMA14 motor. Its small size and lightweight design make it well-suited for high-acceleration printers, and the fully open source design has spawned many community remixes and toolhead integrations.",
+  "driveType": "direct",
+  "mechanicalSpecs": {
+    "gearRatio": "50:8",
+    "filamentDiameter": 1.75,
+    "gripType": "dual drive",
+    "maxFeedRate": 30
+  },
+  "motorSpecs": {
+    "includedMotor": false,
+    "motorType": "NEMA14",
+    "compatibleMotors": "NEMA14 (36mm pancake recommended)"
+  },
+  "physicalSpecs": {
+    "mountPattern": "NEMA14 face mount"
+  },
+  "features": [
+    "Fully open source design (CAD and BOM available)",
+    "Lightweight for minimal toolhead inertia",
+    "Wide ecosystem of community toolhead integrations",
+    "Designed for high-speed, high-acceleration printers"
+  ],
+  "references": [
+    {
+      "label": "Annex Engineering Sherpa Mini GitHub",
+      "url": "https://github.com/Annex-Engineering/Sherpa_Mini-Extruder",
+      "type": "github"
+    },
+    {
+      "label": "Annex Engineering Website",
+      "url": "https://annex.engineering/",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration Reference",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "dimensions", "maxFeedRate"]
+}

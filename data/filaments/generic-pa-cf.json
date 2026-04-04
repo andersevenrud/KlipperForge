@@ -1,0 +1,61 @@
+{
+  "id": "generic-pa-cf",
+  "name": "PA-CF (Nylon Carbon Fiber)",
+  "manufacturer": "Generic",
+  "description": "Nylon reinforced with chopped carbon fibers, combining the toughness and wear resistance of PA with dramatically increased stiffness and dimensional stability. The carbon fiber filler reduces warping, shrinkage, and moisture absorption compared to plain nylon. Requires a hardened steel nozzle due to the abrasive fibers. Ideal for structural brackets, jigs, fixtures, and lightweight load-bearing parts.",
+  "filamentType": "PA-CF",
+  "ratings": {
+    "strength": 5,
+    "stiffness": 5,
+    "durability": 4,
+    "printability": 1,
+    "heatResistance": 5
+  },
+  "printSpecs": {
+    "nozzleTempRange": "270–300°C",
+    "bedTempRange": "50–80°C",
+    "printSpeedRange": "30–60 mm/s",
+    "coolingFan": "None",
+    "enclosureRequired": true,
+    "firstLayerTemp": "280–290°C"
+  },
+  "mechanicalSpecs": {
+    "tensileStrength": 105,
+    "heatDeflectionTemp": 173,
+    "elongationAtBreak": 3,
+    "impactStrength": "Moderate"
+  },
+  "environmentalSpecs": {
+    "moistureSensitivity": "High",
+    "uvResistance": "Moderate",
+    "foodSafe": false,
+    "dryingTemp": 80,
+    "dryingTime": 12
+  },
+  "physicalSpecs": {
+    "diameter": 1.75,
+    "density": 1.17,
+    "glassTransitionTemp": 74,
+    "meltingPoint": 220
+  },
+  "features": [
+    "Very high stiffness-to-weight ratio",
+    "Reduced warping compared to plain nylon",
+    "Lower moisture absorption than unfilled PA",
+    "Excellent dimensional stability",
+    "Requires hardened steel or ruby nozzle (abrasive)",
+    "Matte surface finish from carbon fibers"
+  ],
+  "references": [
+    {
+      "label": "Polymaker PolyMide PA6-CF TDS",
+      "url": "https://polymaker.com/wp-content/uploads/lana-downloads/PolyMide_PA6_CF_TDS_V5.2.pdf",
+      "type": "datasheet"
+    },
+    {
+      "label": "Bambu Lab PA6-CF Product Page",
+      "url": "https://us.store.bambulab.com/products/pa6-cf",
+      "type": "product"
+    }
+  ]
+}

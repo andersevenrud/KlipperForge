@@ -1,0 +1,26 @@
+{
+  "id": "ldo-42sth40-2004mah",
+  "name": "LDO-42STH40-2004MAH",
+  "manufacturer": "LDO",
+  "description": "High-temperature 40mm NEMA17 stepper for Voron XY axes. Class H insulation with Teflon wires for enclosed printer environments.",
+  "nemaSize": 17,
+  "electricalSpecs": {
+    "ratedCurrent": 2.0,
+    "holdingTorque": 35,
+    "stepAngle": 0.9,
+    "phaseResistance": 1.1,
+    "phaseInductance": 2.8,
+    "ratedVoltage": 2.2
+  },
+  "physicalSpecs": {
+    "bodyLength": 40,
+    "weight": 280,
+    "shaftDiameter": 5,
+    "shaftLength": 24
+  },
+  "connectorType": "JST-PH 4-pin",
+  "temperatureRating": 180,
+  "references": [
+    { "label": "LDO 42mm Hybrid Stepper Series", "url": "http://ldomotors.com/products/show/42mm-hybrid-stepper-series", "type": "product" }
+  ]
+}

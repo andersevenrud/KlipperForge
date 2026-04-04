@@ -1,0 +1,51 @@
+{
+  "id": "meanwell-rs-25-5",
+  "name": "RS-25-5",
+  "manufacturer": "MeanWell",
+  "description": "Compact 25W 5V auxiliary power supply specified in the Voron 2.4 and Voron Trident BOMs. Provides a dedicated 5V rail for Raspberry Pi, LEDs, and other 5V accessories. Paired with an LRS-200-24 as the standard Voron PSU combo. The RS-25-5 eliminates the need for a buck converter from the 24V rail, providing cleaner power for sensitive electronics.",
+  "voltage": 5,
+  "wattage": 25,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 5,
+    "outputCurrent": 5,
+    "outputPower": 25,
+    "inputVoltageRange": "88-264VAC",
+    "efficiency": 78.5,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "78x51x28mm",
+    "weight": 200,
+    "coolingMethod": "convection",
+    "hasFan": false
+  },
+  "certifications": ["UL 62368-1", "CE", "CB", "TUV"],
+  "protections": ["short-circuit", "overload", "overvoltage"],
+  "operatingTemperature": "-20 to +70C",
+  "typicalUseCases": [
+    "Voron 2.4 (official BOM - 5V auxiliary)",
+    "Voron Trident (official BOM - 5V auxiliary)",
+    "Raspberry Pi power supply in printer builds",
+    "LED strip power in enclosed printers"
+  ],
+  "communityRecommendation": "highly-recommended",
+  "references": [
+    {
+      "label": "MeanWell RS-25 Datasheet",
+      "url": "https://www.meanwell.com/Upload/PDF/RS-25/RS-25-SPEC.PDF",
+      "type": "datasheet"
+    },
+    {
+      "label": "DigiKey Product Page",
+      "url": "https://www.digikey.com/en/products/detail/mean-well-usa-inc/RS-25-5/7706180",
+      "type": "product"
+    },
+    {
+      "label": "KB-3D Product Page",
+      "url": "https://kb-3d.com/store/power-supplies-converters/186-meanwell-rs-25-5-power-supply-5v-25w.html",
+      "type": "product"
+    }
+  ],
+  "unverified": []
+}

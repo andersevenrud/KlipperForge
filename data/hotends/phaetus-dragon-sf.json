@@ -1,0 +1,51 @@
+{
+  "id": "phaetus-dragon-sf",
+  "name": "Dragon Standard Flow",
+  "manufacturer": "Phaetus",
+  "description": "The Phaetus Dragon Standard Flow is a high-performance all-metal hotend capable of reaching 500°C for engineering-grade materials. It features a bi-metallic heatbreak that combines a stainless steel cold side with a copper hot side for excellent thermal separation and fast heat-up. It uses the V6 nozzle threading standard, giving access to a large nozzle ecosystem.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 500,
+    "heaterType": "cartridge",
+    "heaterPower": 40,
+    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G)"
+  },
+  "heatBreakSpecs": {
+    "type": "bi-metallic",
+    "material": "stainless steel / copper composite",
+    "retraction": "0.4-2mm (direct drive), 3-6mm (Bowden)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D V6 brass",
+      "E3D V6 hardened steel",
+      "third-party M6 V6-style nozzles"
+    ],
+    "maxFlowRate": "~20mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "mountType": "V6 groove mount compatible"
+  },
+  "features": [
+    "500°C maximum temperature for engineering materials",
+    "Bi-metallic heatbreak for superior thermal performance",
+    "V6 nozzle compatibility",
+    "Suitable for PLA, PETG, ABS, ASA, PA, PC, and more"
+  ],
+  "references": [
+    {
+      "label": "Phaetus Dragon SF Product Page",
+      "url": "https://www.phaetus.com/dragon-hotend/",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["heaterPower", "maxFlowRate", "retraction", "thermistorType"]
+}

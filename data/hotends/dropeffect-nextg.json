@@ -1,0 +1,55 @@
+{
+  "id": "dropeffect-nextg",
+  "name": "neXt-G",
+  "manufacturer": "DropEffect / Phaetus",
+  "description": "The DropEffect neXt-G is a high-flow, high-performance hotend engineered for extreme-speed 3D printing, made in collaboration with Phaetus. It features a ceramic heater plate for rapid, even heating and a rigid kinematic-coupling architecture with a long melt zone. The neXt-G uses V6-compatible nozzles (M6 thread) and has the same dimensions as the Dragon hotend, making it compatible with Dragon-style toolhead mounts. It targets the growing category of printers capable of 300mm/s+ print speeds.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 320,
+    "heaterType": "ceramic heater plate",
+    "heaterPower": 90,
+    "thermistorType": "NTC 100K (104NT) or PT1000"
+  },
+  "heatBreakSpecs": {
+    "type": "bi-metallic",
+    "material": "stainless steel / copper composite",
+    "retraction": "0.4-2mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D V6 brass nozzles",
+      "E3D V6 hardened steel nozzles",
+      "third-party M6 V6-style nozzles"
+    ],
+    "maxFlowRate": "~45mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "weight": 40,
+    "mountType": "Dragon-compatible mount (Voron Stealthburner compatible)"
+  },
+  "features": [
+    "~45mm³/s maximum volumetric flow for extreme-speed printing",
+    "Ceramic heater plate for rapid, even heating",
+    "Rigid kinematic-coupling architecture",
+    "V6 nozzle compatibility",
+    "Dragon-compatible mount dimensions",
+    "Uses Rapido2 replacement parts for easy maintenance",
+    "Designed for 300mm/s+ capable printer platforms"
+  ],
+  "references": [
+    {
+      "label": "DropEffect neXtG on 3DJake",
+      "url": "https://www.3djake.com/dropeffect/nextg-hotend",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "retraction", "heaterPower", "maxFlowRate"]
+}

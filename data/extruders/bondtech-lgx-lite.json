@@ -1,0 +1,42 @@
+{
+  "id": "bondtech-lgx-lite",
+  "name": "Bondtech LGX Lite",
+  "manufacturer": "Bondtech",
+  "description": "The Bondtech LGX Lite is a lighter, more compact version of the LGX extruder designed specifically for direct drive applications where minimizing toolhead mass is important. It uses a two-stage 44:10, 37:17 gear reduction with large dual drive gears and is redesigned to mount a NEMA14 motor, reducing overall weight significantly.",
+  "driveType": "direct",
+  "mechanicalSpecs": {
+    "gearRatio": "44:10, 37:17",
+    "filamentDiameter": 1.75,
+    "gripType": "dual drive",
+    "maxFeedRate": 30
+  },
+  "motorSpecs": {
+    "includedMotor": true,
+    "motorType": "NEMA14 36mm round stepper (20mm pancake)",
+    "compatibleMotors": "NEMA14 36mm round stepper with 10T motor gear"
+  },
+  "physicalSpecs": {
+    "weight": 122,
+    "dimensions": "41 × 41 × 35mm",
+    "mountPattern": "NEMA14 face mount"
+  },
+  "features": [
+    "Lighter than standard LGX for reduced toolhead inertia",
+    "Large dual drive gears for high filament grip",
+    "Optimized for high-speed direct drive printers",
+    "Popular choice for Voron toolheads"
+  ],
+  "references": [
+    {
+      "label": "Bondtech LGX Lite Product Page",
+      "url": "https://www.bondtech.se/product/lgx-lite-large-gears-extruder/",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration Reference",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["dimensions", "maxFeedRate"]
+}

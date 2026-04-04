@@ -1,0 +1,26 @@
+{
+  "id": "ldo-42sth25-1404mah",
+  "name": "LDO-42STH25-1404MAH",
+  "manufacturer": "LDO",
+  "description": "High-resolution high-temperature 0.9° pancake stepper for geared extruders in enclosed printers. Class H insulation with Teflon wires.",
+  "nemaSize": 17,
+  "electricalSpecs": {
+    "ratedCurrent": 1.4,
+    "holdingTorque": 18,
+    "stepAngle": 0.9,
+    "phaseResistance": 2.4,
+    "phaseInductance": 5.5,
+    "ratedVoltage": 3.36
+  },
+  "physicalSpecs": {
+    "bodyLength": 25,
+    "weight": 165,
+    "shaftDiameter": 5,
+    "shaftLength": 24
+  },
+  "connectorType": "JST-PH 4-pin",
+  "temperatureRating": 180,
+  "references": [
+    { "label": "LDO 42mm Hybrid Stepper Series", "url": "http://ldomotors.com/products/show/42mm-hybrid-stepper-series", "type": "product" }
+  ]
+}

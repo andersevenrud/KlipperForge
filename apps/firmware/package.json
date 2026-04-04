@@ -1,0 +1,19 @@
+{
+  "name": "@klipperforge/firmware",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts"
+  },
+  "dependencies": {
+    "@klipperforge/printer-data": "workspace:*",
+    "dockerode": "^4.0.4",
+    "hono": "^4.7.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.10",
+    "@types/dockerode": "^3.3.34"
+  }
+}

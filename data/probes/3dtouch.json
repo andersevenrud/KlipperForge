@@ -1,0 +1,44 @@
+{
+  "id": "3dtouch",
+  "name": "3DTouch",
+  "manufacturer": "TriangleLab",
+  "description": "The 3DTouch is a BLTouch-compatible auto bed leveling sensor by TriangleLab. It uses a servo-deployed probe pin with a mechanical switch for endpoint detection. It offers a cost-effective alternative to the original BLTouch with slightly lower repeatability.",
+  "probeType": "servo",
+  "electricalSpecs": {
+    "operatingVoltage": "5V DC",
+    "signalType": "digital (servo PWM + switch output)",
+    "currentDraw": "15mA (idle), 300mA (peak during deploy)"
+  },
+  "performanceSpecs": {
+    "repeatability": "±0.005mm",
+    "triggerDistance": "contact-based",
+    "bedCompatibility": [
+      "glass",
+      "PEI",
+      "textured PEI",
+      "magnetic flex plates",
+      "BuildTak",
+      "aluminum"
+    ],
+    "temperatureCompensation": false
+  },
+  "physicalSpecs": {
+    "dimensions": "11.5 × 18.0 × 37.0mm",
+    "weight": 10,
+    "mountType": "BLTouch-compatible (2x M3 screw, 18mm spacing)"
+  },
+  "klipperSection": "bltouch",
+  "unverified": ["dimensions"],
+  "references": [
+    {
+      "label": "TriangleLab 3DTouch Product Page",
+      "url": "https://trianglelab.net/products/3d-touch",
+      "type": "product"
+    },
+    {
+      "label": "Klipper BLTouch Documentation",
+      "url": "https://www.klipper3d.org/BLTouch.html",
+      "type": "documentation"
+    }
+  ]
+}

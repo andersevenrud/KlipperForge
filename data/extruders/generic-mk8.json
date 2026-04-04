@@ -1,0 +1,34 @@
+{
+  "id": "generic-mk8",
+  "name": "Generic MK8",
+  "manufacturer": "Generic",
+  "description": "The MK8-style extruder is a single-drive design that originated with the Makerbot MK8 and has since been widely cloned and sold by many manufacturers. It uses a hobbed pulley with a 1:1 gear ratio driven directly from a NEMA17 stepper. While inexpensive and extremely common on budget printers, it offers limited grip and torque compared to geared designs. Specifications vary significantly between vendors and revisions.",
+  "driveType": "both",
+  "mechanicalSpecs": {
+    "gearRatio": "1:1",
+    "filamentDiameter": 1.75,
+    "gripType": "single drive",
+    "maxFeedRate": 15
+  },
+  "motorSpecs": {
+    "includedMotor": false,
+    "compatibleMotors": "NEMA17 (standard)"
+  },
+  "physicalSpecs": {
+    "mountPattern": "NEMA17 face mount"
+  },
+  "features": [
+    "Simple single-drive design",
+    "Very low cost and widely available",
+    "Compatible with direct drive and Bowden setups",
+    "Found on many entry-level FDM printers"
+  ],
+  "references": [
+    {
+      "label": "Klipper Extruder Configuration Reference",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "dimensions", "maxFeedRate", "gearRatio", "gripType", "mountPattern"]
+}

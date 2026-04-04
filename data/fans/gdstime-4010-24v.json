@@ -1,0 +1,36 @@
+{
+  "id": "gdstime-4010-24v",
+  "name": "4010 24V",
+  "manufacturer": "GDSTime",
+  "description": "The GDSTime 4010 24V is a budget 40×10mm axial fan commonly used as a hotend cooling fan on 24V 3D printers. It uses a dual ball bearing for improved longevity over sleeve-bearing variants. Exact performance specifications vary between production batches and are not consistently published by the manufacturer.",
+  "fanType": "axial",
+  "size": "4010",
+  "airflowSpecs": {
+    "airflow": 8.29,
+    "rpm": 7500
+  },
+  "electricalSpecs": {
+    "voltage": 24,
+    "current": 0.04,
+    "power": 0.7,
+    "pwmCapable": false,
+    "tachoSignal": false
+  },
+  "noiseSpecs": {
+    "noiseLevel": 29.8
+  },
+  "physicalSpecs": {
+    "dimensions": "40×40×10mm",
+    "weight": 15,
+    "bearingType": "Dual Ball Bearing",
+    "connectorType": "XH2.54-2P"
+  },
+  "references": [
+    {
+      "label": "GDSTime GDA4010 24V Product Page (West3D)",
+      "url": "https://west3d.com/products/gdstime-dc-24v-40x40x10-axial-fan-gda4010-9-blades-dual-ball-bearing-7500rpm-9w-04a-xh2-54",
+      "type": "product"
+    }
+  ],
+  "unverified": ["airflow", "staticPressure", "rpm", "noiseLevel", "power"]
+}

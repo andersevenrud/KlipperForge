@@ -1,0 +1,149 @@
+import { useCallback, useEffect, useState } from "react";
+import { Canvas } from "./components/Canvas";
+import { ConnectorList } from "./components/ConnectorList";
+import { PropertiesPanel } from "./components/PropertiesPanel";
+import { Toolbar } from "./components/Toolbar";
+import { parseJson, parseSvg } from "./export/import-svg";
+import { downloadSvg, generateSvg } from "./export/svg";
+import { useCanvasState } from "./hooks/useCanvasState";
+import { useGrid } from "./hooks/useGrid";
+import type { CanvasMode, GridConfig } from "./types";
+
+export function App() {
+  const [image, setImage] = useState<HTMLImageElement | null>(null);
+  const [zoom, setZoom] = useState(1);
+  const [mode, setMode] = useState<CanvasMode>("draw");
+  const [grid, setGrid] = useState<GridConfig>({ enabled: true, size: 10 });
+
+  const {
+    connectors,
+    selected,
+    selectedId,
+    addConnector,
+    updateConnector,
+    deleteConnector,
+    duplicateConnector,
+    selectConnector,
+    findConnectorAt,
+    importConnectors,
+  } = useCanvasState();
+
+  const { snap } = useGrid(grid);
+
+  // Load background image from URL param (e.g. ?image=/data/mcu-boards/images/board.png)
+  useEffect(function loadImageFromUrlEffect() {
+    const params = new URLSearchParams(window.location.search);
+    const imageUrl = params.get("image");
+    if (!imageUrl) return;
+
+    const img = new Image();
+    img.onload = () => setImage(img);
+    img.src = imageUrl;
+  }, []);
+
+  const handleExport = useCallback(() => {
+    if (!image) return;
+    const svg = generateSvg(connectors, image.naturalWidth, image.naturalHeight);
+    downloadSvg(svg, "pcb-layout.svg");
+  }, [connectors, image]);
+
+  const handleImport = useCallback(
+    (text: string) => {
+      const trimmed = text.trimStart();
+      const result = trimmed.startsWith("{") ? parseJson(trimmed) : parseSvg(trimmed);
+
+      if (image && result.viewBoxWidth > 0 && result.viewBoxHeight > 0) {
+        const scaleX = image.naturalWidth / result.viewBoxWidth;
+        const scaleY = image.naturalHeight / result.viewBoxHeight;
+        for (const c of result.connectors) {
+          c.x = Math.round(c.x * scaleX * 100) / 100;
+          c.y = Math.round(c.y * scaleY * 100) / 100;
+          c.width = Math.round(c.width * scaleX * 100) / 100;
+          c.height = Math.round(c.height * scaleY * 100) / 100;
+        }
+      }
+
+      importConnectors(result.connectors);
+    },
+    [importConnectors, image],
+  );
+
+  // Keyboard shortcuts
+  useEffect(
+    function keyboardShortcutsEffect() {
+      function handleKeyDown(e: KeyboardEvent) {
+        if (e.target instanceof HTMLInputElement || e.target instanceof HTMLSelectElement) return;
+
+        switch (e.key) {
+          case "Delete":
+          case "Backspace":
+            if (selectedId) {
+              e.preventDefault();
+              deleteConnector(selectedId);
+            }
+            break;
+          case "Escape":
+            selectConnector(null);
+            break;
+          case "d":
+            if (selectedId) {
+              duplicateConnector(selectedId);
+            }
+            break;
+          case "g":
+            setGrid((prev) => ({ ...prev, enabled: !prev.enabled }));
+            break;
+          case "v":
+            setMode("select");
+            break;
+          case "r":
+            setMode("draw");
+            break;
+        }
+      }
+
+      window.addEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    },
+    [selectedId, deleteConnector, selectConnector, duplicateConnector],
+  );
+
+  return (
+    <div className="h-screen flex flex-col bg-zinc-950 text-white">
+      <Toolbar
+        grid={grid}
+        zoom={zoom}
+        mode={mode}
+        connectorCount={connectors.length}
+        onGridChange={setGrid}
+        onZoomChange={setZoom}
+        onModeChange={setMode}
+        onImageLoad={setImage}
+        onImportSvg={handleImport}
+        onExport={handleExport}
+      />
+      <div className="flex-1 flex overflow-hidden">
+        <ConnectorList connectors={connectors} selectedId={selectedId} onSelect={selectConnector} />
+        <Canvas
+          image={image}
+          connectors={connectors}
+          selectedId={selectedId}
+          grid={grid}
+          zoom={zoom}
+          mode={mode}
+          onAddConnector={addConnector}
+          onSelectConnector={selectConnector}
+          onUpdateConnector={updateConnector}
+          onFindConnectorAt={findConnectorAt}
+          snap={snap}
+        />
+        <PropertiesPanel
+          connector={selected}
+          onUpdate={updateConnector}
+          onDelete={deleteConnector}
+          onDuplicate={duplicateConnector}
+        />
+      </div>
+    </div>
+  );
+}

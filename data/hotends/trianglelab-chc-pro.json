@@ -1,0 +1,54 @@
+{
+  "id": "trianglelab-chc-pro",
+  "name": "CHC Pro",
+  "manufacturer": "TriangleLab",
+  "description": "The TriangleLab CHC Pro (Ceramic Heating Core Pro) replaces the traditional cartridge heater with a ceramic heating element integrated directly into the heat block, delivering up to 115W of power with faster and more uniform 360-degree heat distribution. This ceramic core design significantly reduces heat-up time compared to conventional cartridge heaters. The CHC Pro uses standard V6 threading for wide nozzle compatibility and is a popular performance upgrade for V6-based toolheads.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 300,
+    "heaterType": "ceramic heating core",
+    "heaterPower": 115,
+    "heatUpTime": "~45s to 200°C",
+    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G)",
+    "thermistorId": "atc-semitec-104nt-4"
+  },
+  "heatBreakSpecs": {
+    "type": "all-metal",
+    "material": "titanium alloy",
+    "retraction": "1-2mm (direct drive), 3-6mm (Bowden)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D V6 brass nozzles",
+      "E3D V6 hardened steel nozzles",
+      "third-party M6 V6-style nozzles"
+    ],
+    "maxFlowRate": "~15mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "weight": 25,
+    "mountType": "V6 groove mount compatible"
+  },
+  "features": [
+    "115W ceramic heating core for fast, uniform 360° heat distribution",
+    "Significantly faster heat-up than traditional cartridge heaters",
+    "V6 nozzle ecosystem compatibility",
+    "Drop-in upgrade for existing V6-based hotend setups"
+  ],
+  "references": [
+    {
+      "label": "TriangleLab CHC Pro Product Page",
+      "url": "https://trianglelab.net/products/chc-pro-hotend",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "heatUpTime", "maxFlowRate", "retraction"]
+}

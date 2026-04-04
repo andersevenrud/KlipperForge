@@ -1,0 +1,21 @@
+{
+  "id": "creality-42-40",
+  "name": "42-40",
+  "manufacturer": "Creality",
+  "description": "Stock Ender 3 XY axis stepper motor. 40mm body with 1.0A rated current.",
+  "nemaSize": 17,
+  "electricalSpecs": {
+    "ratedCurrent": 1.0,
+    "holdingTorque": 48,
+    "stepAngle": 1.8,
+    "phaseResistance": 3.6,
+    "phaseInductance": 8.0
+  },
+  "physicalSpecs": {
+    "bodyLength": 40,
+    "weight": 280,
+    "shaftDiameter": 5,
+    "shaftLength": 22
+  },
+  "connectorType": "JST-XH 4-pin"
+}

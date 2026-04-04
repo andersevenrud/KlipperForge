@@ -1,0 +1,54 @@
+{
+  "mcuFamily": "STM32F405",
+  "mcuPatterns": ["STM32F405"],
+  "outputFile": "klipper.bin",
+  "flashMethods": ["dfu", "serial"],
+  "base": {
+    "CONFIG_MACH_STM32": "y",
+    "CONFIG_MACH_STM32F405": "y",
+    "CONFIG_STM32_CLOCK_REF_8M": "y"
+  },
+  "interfaces": {
+    "usb": {
+      "label": "USB (on PA11/PA12)",
+      "config": {
+        "CONFIG_STM32_USB_PA11_PA12": "y",
+        "CONFIG_USB": "y"
+      }
+    }
+  },
+  "bootloaderOffsets": {
+    "none": {
+      "label": "No bootloader",
+      "flashAddress": "0x08000000",
+      "config": {
+        "CONFIG_STM32_FLASH_START_0000": "y"
+      }
+    },
+    "32KiB": {
+      "label": "32KiB bootloader",
+      "flashAddress": "0x08008000",
+      "config": {
+        "CONFIG_STM32_FLASH_START_8000": "y"
+      }
+    },
+    "64KiB": {
+      "label": "64KiB bootloader",
+      "flashAddress": "0x08010000",
+      "config": {
+        "CONFIG_STM32_FLASH_START_10000": "y"
+      }
+    }
+  },
+  "clockRefs": {
+    "8MHz": {
+      "label": "8MHz crystal"
+    },
+    "12MHz": {
+      "label": "12MHz crystal",
+      "config": {
+        "CONFIG_STM32_CLOCK_REF_12M": "y"
+      }
+    }
+  }
+}

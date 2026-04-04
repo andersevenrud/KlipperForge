@@ -1,0 +1,52 @@
+{
+  "id": "meanwell-lrs-200-24",
+  "name": "LRS-200-24",
+  "manufacturer": "MeanWell",
+  "description": "The LRS-200-24 is the standard power supply specified in the official Voron 2.4 and Voron Trident BOMs. Fanless convection-cooled design at 30mm height makes it quiet and compact. Paired with an RS-25-5 for 5V, this is the go-to PSU combo for Voron builds with AC heated beds. Also widely used as a reliable upgrade for Creality and other consumer printers.",
+  "voltage": 24,
+  "wattage": 211,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 24,
+    "outputCurrent": 8.8,
+    "outputPower": 211.2,
+    "inputVoltageRange": "90-132VAC / 180-264VAC",
+    "efficiency": 89.5,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "215x115x30mm",
+    "weight": 660,
+    "coolingMethod": "convection",
+    "hasFan": false
+  },
+  "certifications": ["UL 62368-1", "CE", "CB"],
+  "protections": ["short-circuit", "overload", "overvoltage"],
+  "operatingTemperature": "-25 to +70C",
+  "typicalUseCases": [
+    "Voron 2.4 (official BOM)",
+    "Voron Trident (official BOM)",
+    "Voron Switchwire",
+    "Creality Ender 3 / Ender 5 upgrade",
+    "Printers with AC heated beds needing 24V electronics supply"
+  ],
+  "communityRecommendation": "highly-recommended",
+  "references": [
+    {
+      "label": "MeanWell LRS-200-24 Datasheet",
+      "url": "https://www.meanwell.com/Upload/PDF/LRS-200/LRS-200-SPEC.PDF",
+      "type": "datasheet"
+    },
+    {
+      "label": "DigiKey Product Page",
+      "url": "https://www.digikey.com/en/products/detail/mean-well-usa-inc/LRS-200-24/7705026",
+      "type": "product"
+    },
+    {
+      "label": "Fabreeko (Voron vendor)",
+      "url": "https://www.fabreeko.com/products/mean-well-lrs-200-24-power-supply",
+      "type": "product"
+    }
+  ],
+  "unverified": []
+}

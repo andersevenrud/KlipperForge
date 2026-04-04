@@ -1,0 +1,49 @@
+{
+  "id": "btt-eddy-coil",
+  "name": "BTT Eddy Coil",
+  "manufacturer": "BigTreeTech",
+  "description": "The BTT Eddy Coil is a compact eddy current sensor that connects to a printer's existing MCU via I2C rather than using its own USB connection. This makes it lighter and simpler to wire, though it relies on the host MCU for signal processing. It is designed to be mounted directly on the toolhead PCB or carriage.",
+  "probeType": "eddy-current",
+  "electricalSpecs": {
+    "operatingVoltage": "3.3V DC (I2C from MCU)",
+    "signalType": "I2C",
+    "currentDraw": "30mA"
+  },
+  "performanceSpecs": {
+    "repeatability": "±0.0005mm",
+    "triggerDistance": "0.5-5mm (configurable)",
+    "bedCompatibility": [
+      "spring steel sheet",
+      "PEI on spring steel",
+      "textured PEI on spring steel",
+      "aluminum"
+    ],
+    "bedCompatibilityNote": "Eddy current probes require a conductive surface. They cannot detect non-conductive materials like bare glass or G10/FR4 without a conductive layer underneath.",
+    "temperatureCompensation": false,
+    "multiPoint": true
+  },
+  "physicalSpecs": {
+    "dimensions": "20.0 × 20.0 × 3.0mm",
+    "weight": 2,
+    "mountType": "adhesive or screw mount"
+  },
+  "klipperSection": "probe_eddy_current",
+  "unverified": ["weight", "dimensions"],
+  "references": [
+    {
+      "label": "BigTreeTech Eddy Product Page",
+      "url": "https://biqu.equipment/products/bigtreetech-eddy",
+      "type": "product"
+    },
+    {
+      "label": "BigTreeTech Eddy GitHub Repository",
+      "url": "https://github.com/bigtreetech/Eddy",
+      "type": "github"
+    },
+    {
+      "label": "Klipper Eddy Current Probe Documentation",
+      "url": "https://www.klipper3d.org/Config_Reference.html#probe_eddy_current",
+      "type": "documentation"
+    }
+  ]
+}

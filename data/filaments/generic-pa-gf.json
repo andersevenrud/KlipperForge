@@ -1,0 +1,57 @@
+{
+  "id": "generic-pa-gf",
+  "name": "PA-GF (Nylon Glass Fiber)",
+  "manufacturer": "Generic",
+  "description": "Nylon reinforced with chopped glass fibers, offering increased stiffness, heat resistance, and dimensional stability over plain nylon at a lower cost than carbon fiber variants. Glass fiber reinforcement provides better impact resistance than carbon fiber while still significantly improving rigidity. Requires a hardened nozzle. Suitable for housings, enclosures, and structural components.",
+  "filamentType": "PA-GF",
+  "ratings": {
+    "strength": 4,
+    "stiffness": 4,
+    "durability": 4,
+    "printability": 1,
+    "heatResistance": 4
+  },
+  "printSpecs": {
+    "nozzleTempRange": "250–275°C",
+    "bedTempRange": "60–90°C",
+    "printSpeedRange": "30–50 mm/s",
+    "coolingFan": "None/low",
+    "enclosureRequired": true,
+    "firstLayerTemp": "255–265°C"
+  },
+  "mechanicalSpecs": {
+    "tensileStrength": 75,
+    "heatDeflectionTemp": 110,
+    "elongationAtBreak": 12,
+    "impactStrength": "Moderate-high"
+  },
+  "environmentalSpecs": {
+    "moistureSensitivity": "High",
+    "uvResistance": "Moderate",
+    "foodSafe": false,
+    "dryingTemp": 80,
+    "dryingTime": 12
+  },
+  "physicalSpecs": {
+    "diameter": 1.75,
+    "density": 1.25,
+    "glassTransitionTemp": 72,
+    "meltingPoint": 220
+  },
+  "features": [
+    "Good stiffness at lower cost than CF variants",
+    "Better impact resistance than carbon fiber fill",
+    "Reduced warping compared to plain nylon",
+    "Lower moisture absorption than unfilled PA",
+    "Requires hardened steel nozzle (abrasive)",
+    "Slightly rougher surface finish than CF"
+  ],
+  "references": [
+    {
+      "label": "Bambu Lab ABS-GF / PA6-GF TDS",
+      "url": "https://wiki.bambulab.com/filament-acc/absgf-pa6gf/2450f3fe0251448c91c5a191b7cb6a1e.pdf",
+      "type": "datasheet"
+    }
+  ],
+  "unverified": ["tensileStrength", "heatDeflectionTemp", "elongationAtBreak"]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "galileo-2-g2e",
+  "name": "Galileo 2 G2E",
+  "manufacturer": "LDO Motors",
+  "description": "The Galileo 2 G2E (Galileo 2 Extruder) is designed as a drop-in replacement for the Clockwork 2 (CW2) extruder on the Voron StealthBurner toolhead. It uses a custom-designed 9:1 planetary gear system with dual drive gears, offering high torque and smooth extrusion free of gear-meshing noise. The design was created and open-sourced by JaredC01.",
+  "driveType": "direct",
+  "mechanicalSpecs": {
+    "gearRatio": "9:1",
+    "filamentDiameter": 1.75,
+    "gripType": "dual drive"
+  },
+  "motorSpecs": {
+    "includedMotor": false,
+    "motorType": "NEMA14",
+    "compatibleMotors": "NEMA14 36mm pancake with 9T pinion (LDO-36STH20-1004AHG-9T recommended)"
+  },
+  "physicalSpecs": {
+    "mountPattern": "Voron StealthBurner integrated (CW2 replacement)"
+  },
+  "features": [
+    "Drop-in replacement for Clockwork 2 in Voron StealthBurner",
+    "Same planetary gear internals as Galileo 2 SA",
+    "Open source design files available",
+    "Supports integrated filament runout sensor",
+    "Compatible with all current Stealthburner toolhead boards"
+  ],
+  "references": [
+    {
+      "label": "Galileo 2 GitHub Repository",
+      "url": "https://github.com/JaredC01/Galileo2",
+      "type": "github"
+    },
+    {
+      "label": "Klipper Extruder Configuration Reference",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "dimensions", "maxFeedRate"]
+}

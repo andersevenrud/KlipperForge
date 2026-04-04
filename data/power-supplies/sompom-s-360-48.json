@@ -1,0 +1,33 @@
+{
+  "id": "sompom-s-360-48",
+  "name": "S-360-48",
+  "manufacturer": "Sompom",
+  "description": "360W 48V budget switching power supply from Sompom. A cost-effective option for 48V 3D printer builds using TMC5160 or similar high-voltage stepper drivers. Shares the same chassis and feature set as the S-360-24 but with 48V output. Suitable for builders on a budget who want to experiment with 48V systems without investing in a MeanWell UHP or LRS unit.",
+  "voltage": 48,
+  "wattage": 360,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 48,
+    "outputCurrent": 7.5,
+    "outputPower": 360,
+    "inputVoltageRange": "85-264VAC",
+    "efficiency": 85,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "215x112x50mm",
+    "weight": 900,
+    "coolingMethod": "forced-air",
+    "hasFan": true
+  },
+  "certifications": ["CE", "RoHS", "FCC", "ISO9001"],
+  "protections": ["short-circuit", "overload", "overvoltage", "overtemperature"],
+  "operatingTemperature": "-10 to +60C",
+  "typicalUseCases": [
+    "Budget 48V 3D printer builds",
+    "48V stepper driver setups (TMC5160)"
+  ],
+  "communityRecommendation": "budget",
+  "references": [],
+  "unverified": []
+}

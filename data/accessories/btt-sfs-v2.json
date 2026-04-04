@@ -1,0 +1,34 @@
+{
+  "id": "btt-sfs-v2",
+  "name": "Smart Filament Sensor V2.0",
+  "manufacturer": "BIGTREETECH",
+  "description": "Smart filament sensor detecting runout, breakage, clogging, and tangling.",
+  "accessoryType": "filament-sensor",
+  "electricalSpecs": {
+    "voltage": "3.3V–5V"
+  },
+  "physicalSpecs": {
+    "dimensions": "53.1 x 30.3 x 27.3 mm",
+    "weight": 36,
+    "filamentDiameter": 1.75
+  },
+  "firmware": ["Klipper", "Marlin", "RRF"],
+  "features": [
+    "Bi-directional feeding (no inlet/outlet)",
+    "Encoder + microswitch detection",
+    "2.88mm detection length"
+  ],
+  "references": [
+    {
+      "label": "BIQU Store - SFS V2.0",
+      "url": "https://biqu.equipment/products/btt-sfs-v2-0-smart-filament-sensor",
+      "type": "product"
+    },
+    {
+      "label": "GitHub - Smart Filament Detection Module",
+      "url": "https://github.com/bigtreetech/smart-filament-detection-module",
+      "type": "github"
+    }
+  ],
+  "unverified": []
+}

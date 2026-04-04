@@ -1,0 +1,50 @@
+{
+  "id": "euclid-probe",
+  "name": "Euclid Probe",
+  "manufacturer": "Community (nionio6915)",
+  "description": "The Euclid Probe is a magnetically-coupled mechanical Z probe that uses precision microswitches for highly repeatable bed probing. It features a professionally designed PCB with gold-plated contacts and is picked up from a magnetic dock during probing. Its open-source design supports a wide range of printer kinematics.",
+  "probeType": "mechanical",
+  "electricalSpecs": {
+    "operatingVoltage": "3.3-5V DC",
+    "signalType": "digital (microswitch)",
+    "currentDraw": "< 1mA"
+  },
+  "performanceSpecs": {
+    "repeatability": "±0.005mm",
+    "triggerDistance": "contact-based (switch actuation)",
+    "bedCompatibility": [
+      "glass",
+      "PEI",
+      "textured PEI",
+      "magnetic flex plates",
+      "BuildTak",
+      "aluminum",
+      "any solid surface"
+    ],
+    "temperatureCompensation": false
+  },
+  "physicalSpecs": {
+    "dimensions": "24.0 × 16.0 × 8.0mm (PCB body)",
+    "weight": 3,
+    "mountType": "magnetic dock (6mm magnets)"
+  },
+  "klipperSection": "probe",
+  "unverified": ["currentDraw", "weight", "dimensions", "repeatability"],
+  "references": [
+    {
+      "label": "Euclid Probe GitHub Repository",
+      "url": "https://github.com/nionio6915/Euclid_Probe",
+      "type": "github"
+    },
+    {
+      "label": "Euclid Probe Documentation",
+      "url": "https://euclidprobe.github.io/",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Probe Documentation",
+      "url": "https://www.klipper3d.org/Config_Reference.html#probe",
+      "type": "documentation"
+    }
+  ]
+}

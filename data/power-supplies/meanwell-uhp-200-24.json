@@ -1,0 +1,52 @@
+{
+  "id": "meanwell-uhp-200-24",
+  "name": "UHP-200-24",
+  "manufacturer": "MeanWell",
+  "description": "Slim-profile 200W fanless power supply with built-in PFC. The UHP series is the premium compact choice for Voron and other space-constrained builds. At only 26mm thick and fully fanless, it runs silently and fits in tight enclosures. Very popular in Voron V0/Micron builds and as an upgrade over LRS series where DIN rail mounting or slim profile is needed. Potted construction with aluminum extrusion base provides excellent durability.",
+  "voltage": 24,
+  "wattage": 202,
+  "formFactor": "enclosed-slim",
+  "electricalSpecs": {
+    "outputVoltage": 24,
+    "outputCurrent": 8.4,
+    "outputPower": 201.6,
+    "inputVoltageRange": "90-264VAC",
+    "efficiency": 93,
+    "powerFactorCorrection": true
+  },
+  "physicalSpecs": {
+    "dimensions": "194x55x26mm",
+    "weight": 420,
+    "coolingMethod": "convection",
+    "hasFan": false
+  },
+  "certifications": ["UL", "CE", "CB", "CCC", "BSMI", "EAC", "TUV"],
+  "protections": ["short-circuit", "overload", "overvoltage", "overtemperature"],
+  "operatingTemperature": "-30 to +70C",
+  "typicalUseCases": [
+    "Voron V0 / Micron (popular choice)",
+    "Voron 2.4 / Trident (compact alternative to LRS-200)",
+    "Rat Rig V-Minion",
+    "Any build requiring a slim, silent PSU",
+    "DIN rail mounted printer electronics"
+  ],
+  "communityRecommendation": "highly-recommended",
+  "references": [
+    {
+      "label": "MeanWell UHP-200 Product Page",
+      "url": "https://www.meanwell.com/webapp/product/search.aspx?prod=UHP-200(R)",
+      "type": "product"
+    },
+    {
+      "label": "Fabreeko Product Page",
+      "url": "https://www.fabreeko.com/products/mean-well-uhp-200-24",
+      "type": "product"
+    },
+    {
+      "label": "West3D Product Page",
+      "url": "https://west3d.com/products/mean-well-uhp-200-24-200w-24v-8-4a-power-supply-psu",
+      "type": "product"
+    }
+  ],
+  "unverified": ["weight"]
+}

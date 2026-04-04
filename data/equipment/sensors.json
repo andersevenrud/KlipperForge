@@ -1,0 +1,56 @@
+[
+  {
+    "id": "filament-sensor-switch",
+    "name": "Filament Runout Sensor (Switch)",
+    "category": "sensors",
+    "description": "Simple mechanical switch filament runout detector",
+    "sections": [
+      {
+        "definitionId": "filament_switch_sensor",
+        "instanceName": "filament_sensor",
+        "data": {
+          "switch_pin": "^PG12",
+          "pause_on_runout": true,
+          "runout_gcode": "PAUSE"
+        }
+      }
+    ]
+  },
+  {
+    "id": "filament-sensor-encoder",
+    "name": "Filament Motion Sensor (Encoder)",
+    "category": "sensors",
+    "description": "Encoder-based filament motion sensor that detects jams and runout",
+    "sections": [
+      {
+        "definitionId": "filament_motion_sensor",
+        "instanceName": "filament_sensor",
+        "data": {
+          "switch_pin": "^PG12",
+          "detection_length": 7.0,
+          "extruder": "extruder",
+          "pause_on_runout": true,
+          "runout_gcode": "PAUSE"
+        }
+      }
+    ]
+  },
+  {
+    "id": "chamber-thermistor",
+    "name": "Chamber Temperature Sensor",
+    "category": "sensors",
+    "description": "Thermistor for monitoring enclosed chamber temperature",
+    "sections": [
+      {
+        "definitionId": "temperature_sensor",
+        "instanceName": "chamber",
+        "data": {
+          "sensor_type": "Generic 3950",
+          "sensor_pin": "PF5",
+          "min_temp": 0,
+          "max_temp": 100
+        }
+      }
+    ]
+  }
+]

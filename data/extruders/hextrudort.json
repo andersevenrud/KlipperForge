@@ -1,0 +1,40 @@
+{
+  "id": "hextrudort",
+  "name": "HextrudORT",
+  "manufacturer": "MirageC79 (Community)",
+  "description": "The HextrudORT is an open source direct drive extruder designed by MirageC79 (Olivier) for the HevORT project. It reuses Bondtech BMG internals with a 50:17 gear ratio (approximately 3:1), providing reliable extrusion in a compact, lightweight package. Its hexagonal motor mount layout gives the design its name and allows for a compact toolhead build.",
+  "driveType": "direct",
+  "mechanicalSpecs": {
+    "gearRatio": "50:17",
+    "filamentDiameter": 1.75,
+    "gripType": "dual drive",
+    "maxFeedRate": 25
+  },
+  "motorSpecs": {
+    "includedMotor": false,
+    "motorType": "NEMA14",
+    "compatibleMotors": "NEMA14 (36mm pancake recommended)"
+  },
+  "physicalSpecs": {
+    "mountPattern": "NEMA14 face mount (hex pattern)"
+  },
+  "features": [
+    "Open source design files available",
+    "Uses Bondtech BMG internals (50:17 gear ratio)",
+    "Lightweight NEMA14 compatible",
+    "Community-developed with wide toolhead support"
+  ],
+  "references": [
+    {
+      "label": "HextrudORT GitHub Repository",
+      "url": "https://github.com/MirageC79/HextrudORT",
+      "type": "github"
+    },
+    {
+      "label": "Klipper Extruder Configuration Reference",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "dimensions", "maxFeedRate"]
+}

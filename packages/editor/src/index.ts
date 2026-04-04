@@ -1,0 +1,16 @@
+export { ConfigEditor, type ConfigEditorProps } from "./components/ConfigEditor";
+export { GcodeEditor, type GcodeEditorProps } from "./components/GcodeEditor";
+export type { InlineEditRequest } from "./extensions/inline-edit-extension";
+export { JsonViewer, type JsonViewerProps } from "./components/JsonViewer";
+export { KlipperConfigViewer, type KlipperConfigViewerProps } from "./components/KlipperConfigViewer";
+export { ValidationStatusPopup } from "./components/ValidationStatusPopup";
+export { EditorScrollProvider, useEditorScroll } from "./context/editor-scroll-context";
+export { diffExtension, dispatchDiffLines } from "./extensions/diff-extension";
+export { editorTheme } from "./extensions/editor-theme";
+export { flashLineEffect, flashLineExtension } from "./extensions/flash-line-extension";
+export { klipperFoldService } from "./extensions/fold-extension";
+export { klipperLanguage } from "./extensions/klipper-language";
+export { dispatchOverrides, overrideExtension } from "./extensions/override-extension";
+export { dispatchUnmanagedSections, unmanagedExtension } from "./extensions/unmanaged-extension";
+export { dispatchDiagnostics, validationExtension } from "./extensions/validation-extension";
+export { computeChangedLines } from "./utils/line-diff";

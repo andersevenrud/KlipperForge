@@ -1,0 +1,37 @@
+{
+  "id": "noctua-nf-a4x10",
+  "name": "NF-A4x10 FLX",
+  "manufacturer": "Noctua",
+  "description": "The Noctua NF-A4x10 FLX is a premium 40×10mm axial fan widely used as a hotend or electronics cooling fan in 3D printers. It features Noctua's SSO2 (Self-Stabilising Oil-pressure Bearing 2) for exceptional longevity and low noise. The FLX variant ships with a Low-Noise Adapter and a 3-pin to 2-pin connector, making it compatible with most 3D printer boards at 12V.",
+  "fanType": "axial",
+  "size": "4010",
+  "airflowSpecs": {
+    "airflow": 4.83,
+    "staticPressure": 1.78,
+    "rpm": 4500
+  },
+  "electricalSpecs": {
+    "voltage": 12,
+    "current": 0.05,
+    "power": 0.6,
+    "pwmCapable": false,
+    "tachoSignal": true
+  },
+  "noiseSpecs": {
+    "noiseLevel": 17.9
+  },
+  "physicalSpecs": {
+    "dimensions": "40×40×10mm",
+    "weight": 11,
+    "bearingType": "SSO2 (Self-Stabilising Oil-pressure Bearing 2)",
+    "connectorType": "3-pin"
+  },
+  "references": [
+    {
+      "label": "Noctua NF-A4x10 FLX Product Page",
+      "url": "https://noctua.at/en/nf-a4x10-flx",
+      "type": "product"
+    }
+  ],
+  "unverified": []
+}

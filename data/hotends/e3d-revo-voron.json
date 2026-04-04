@@ -1,0 +1,52 @@
+{
+  "id": "e3d-revo-voron",
+  "name": "Revo Voron",
+  "manufacturer": "E3D",
+  "description": "The E3D Revo Voron is a purpose-built hotend for Voron 2.4 and Trident printers. It features E3D's Revo ecosystem with tool-free, cold nozzle swapping via the patented RapidChange mechanism. The integrated HeatCore combines the heater and thermistor into a single replaceable unit, simplifying maintenance.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 300,
+    "heaterType": "HeatCore (integrated heater + thermistor)",
+    "heaterPower": 40,
+    "heatUpTime": "~90s to 200°C",
+    "thermistorType": "integrated in HeatCore (104NT)"
+  },
+  "heatBreakSpecs": {
+    "type": "all-metal",
+    "material": "titanium alloy",
+    "retraction": "0.4-1mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "Revo quick-swap (tool-free cold swap)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "Revo brass nozzles",
+      "Revo ObXidian nozzles",
+      "Revo high-flow nozzles"
+    ],
+    "maxFlowRate": "~11mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "mountType": "Voron standard toolhead mount"
+  },
+  "features": [
+    "Tool-free cold nozzle swapping",
+    "Integrated HeatCore heater block",
+    "Designed specifically for Voron 2.4 and Trident",
+    "Compatible with Stealthburner toolhead"
+  ],
+  "references": [
+    {
+      "label": "E3D Revo Voron Product Page",
+      "url": "https://e3d-online.com/products/revo-voron",
+      "type": "product"
+    },
+    {
+      "label": "E3D Revo Support",
+      "url": "https://e3d-online.com/pages/revo-support",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["heatUpTime", "maxFlowRate", "retraction"]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "ldo-42sth48-2804ah",
+  "name": "LDO-42STH48-2804AH",
+  "manufacturer": "LDO",
+  "description": "High-temperature 48mm NEMA17 stepper with Class H insulation (180°C). Designed for enclosed printers running ABS/ASA. High current 2.8A rating.",
+  "nemaSize": 17,
+  "electricalSpecs": {
+    "ratedCurrent": 2.8,
+    "holdingTorque": 42,
+    "stepAngle": 1.8,
+    "phaseResistance": 0.7,
+    "phaseInductance": 0.6,
+    "ratedVoltage": 1.96
+  },
+  "physicalSpecs": {
+    "bodyLength": 48,
+    "weight": 350,
+    "shaftDiameter": 5,
+    "shaftLength": 24
+  },
+  "connectorType": "JST-PH 4-pin",
+  "temperatureRating": 180,
+  "references": [
+    { "label": "LDO 42mm Hybrid Stepper Series", "url": "http://ldomotors.com/products/show/42mm-hybrid-stepper-series", "type": "product" }
+  ]
+}

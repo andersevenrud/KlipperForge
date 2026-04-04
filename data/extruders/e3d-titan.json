@@ -1,0 +1,41 @@
+{
+  "id": "e3d-titan",
+  "name": "E3D Titan",
+  "manufacturer": "E3D",
+  "description": "The E3D Titan is a well-established single drive extruder featuring a hobbed bolt and a 3:1 gear reduction. Compatible with both direct drive and bowden configurations, it was one of the first compact gear-reduction extruders widely adopted in the 3D printing community. The Titan is no longer in production but remains widely used and referenced.",
+  "driveType": "both",
+  "mechanicalSpecs": {
+    "gearRatio": "3:1",
+    "filamentDiameter": 1.75,
+    "gripType": "single drive with hobbed gear",
+    "maxFeedRate": 20
+  },
+  "motorSpecs": {
+    "includedMotor": false,
+    "compatibleMotors": "NEMA17 (standard and pancake)"
+  },
+  "physicalSpecs": {
+    "weight": 90,
+    "dimensions": "36 × 36 × 34mm",
+    "mountPattern": "NEMA17 face mount"
+  },
+  "features": [
+    "Hobbed bolt drive with single-sided grip",
+    "Compatible with direct drive and bowden setups",
+    "Proven design with wide community support",
+    "Supports 1.75mm and 3mm filament (separate versions)"
+  ],
+  "references": [
+    {
+      "label": "E3D Classics Support",
+      "url": "https://e3d-online.com/pages/e3d-classics-support-v6-nozzle",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Extruder Configuration Reference",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["dimensions", "maxFeedRate", "weight"]
+}

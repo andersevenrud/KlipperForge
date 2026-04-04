@@ -1,0 +1,33 @@
+{
+  "id": "max31865-board",
+  "name": "MAX31865 Amplifier Board",
+  "manufacturer": "Various (Maxim Integrated chip)",
+  "description": "The MAX31865 is a dedicated RTD-to-digital converter IC that provides a high-accuracy SPI interface for PT100 and PT1000 RTD sensors. Breakout boards based on this chip are widely used in 3D printing to connect PT100 sensors to standard printer control boards. The chip handles excitation current, ADC conversion, and fault detection. In Klipper, the sensor is configured using the 'temperature_sensor' section with 'sensor_type: MAX31865' and requires SPI pin configuration.",
+  "sensorType": "RTD",
+  "sensingSpecs": {
+    "temperatureRange": "-200 to 400°C",
+    "accuracy": "±0.5°C"
+  },
+  "klipperSpecs": {
+    "sensorType": "MAX31865",
+    "requiresAmplifier": true,
+    "amplifierChip": "MAX31865"
+  },
+  "physicalSpecs": {
+    "packageType": "breakout board",
+    "dimensions": "14 × 21mm (Adafruit variant)"
+  },
+  "unverified": ["dimensions"],
+  "references": [
+    {
+      "label": "Maxim MAX31865 Datasheet",
+      "url": "https://www.analog.com/en/products/max31865.html",
+      "type": "datasheet"
+    },
+    {
+      "label": "Klipper Config Reference - MAX31865",
+      "url": "https://www.klipper3d.org/Config_Reference.html#temperature-sensors",
+      "type": "documentation"
+    }
+  ]
+}

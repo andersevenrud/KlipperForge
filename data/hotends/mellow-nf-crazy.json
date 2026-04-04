@@ -1,0 +1,52 @@
+{
+  "id": "mellow-nf-crazy",
+  "name": "NF-Crazy",
+  "manufacturer": "Mellow",
+  "description": "The Mellow NF-Crazy is a budget-friendly all-metal hotend with a bi-metallic heatbreak, offering high-temperature capability at an accessible price point. It is V6-compatible and uses standard M6 threading for broad nozzle compatibility. While it shares design inspiration with more expensive bi-metallic hotends, it is produced at lower cost tolerances. It is popular as an affordable entry point for all-metal printing and as a secondary hotend for experimentation.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 450,
+    "heaterType": "cartridge",
+    "heaterPower": 40,
+    "thermistorType": "NTC 100K"
+  },
+  "heatBreakSpecs": {
+    "type": "bi-metallic",
+    "material": "stainless steel / copper composite",
+    "retraction": "1-2mm (direct drive), 3-6mm (Bowden)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D V6 brass nozzles",
+      "E3D V6 hardened steel nozzles",
+      "third-party M6 V6-style nozzles"
+    ],
+    "maxFlowRate": "~15mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "weight": 25,
+    "mountType": "V6 groove mount compatible"
+  },
+  "features": [
+    "450°C temperature rating (with high-temp thermistor)",
+    "Bi-metallic heatbreak at budget price",
+    "V6 nozzle ecosystem compatibility",
+    "Affordable option for all-metal printing upgrades"
+  ],
+  "references": [
+    {
+      "label": "Mellow NF-Crazy Product Page",
+      "url": "https://3dmellow.com/products/nf-crazy-v1-hotend",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "maxFlowRate", "retraction", "heaterPower", "thermistorType", "maxTemperature"]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "meanwell-uhp-350-24",
+  "name": "UHP-350-24",
+  "manufacturer": "MeanWell",
+  "description": "High-power 350W slim fanless power supply with built-in PFC. Offers the same wattage as the LRS-350-24 but in a much slimmer, completely fanless package. Popular for Voron Trident and 2.4 builds where both high power and silent operation are desired. Also used in Rat Rig V-Minion and similar printer designs that benefit from slim PSU mounting.",
+  "voltage": 24,
+  "wattage": 350,
+  "formFactor": "enclosed-slim",
+  "electricalSpecs": {
+    "outputVoltage": 24,
+    "outputCurrent": 14.6,
+    "outputPower": 350.4,
+    "inputVoltageRange": "90-264VAC",
+    "efficiency": 94,
+    "powerFactorCorrection": true
+  },
+  "physicalSpecs": {
+    "dimensions": "220x62x31mm",
+    "weight": 580,
+    "coolingMethod": "convection",
+    "hasFan": false
+  },
+  "certifications": ["UL", "CE", "CB", "CCC", "BSMI", "EAC", "TUV"],
+  "protections": ["short-circuit", "overload", "overvoltage", "overtemperature"],
+  "operatingTemperature": "-30 to +70C",
+  "typicalUseCases": [
+    "Voron 2.4 (premium silent option)",
+    "Voron Trident (premium silent option)",
+    "Rat Rig V-Minion",
+    "DIY builds requiring high-power silent PSU",
+    "DIN rail mounted electronics bays"
+  ],
+  "communityRecommendation": "highly-recommended",
+  "references": [
+    {
+      "label": "MeanWell UHP-350 Product Page",
+      "url": "https://www.meanwell.com/webapp/product/search.aspx?prod=UHP-350(R)",
+      "type": "product"
+    },
+    {
+      "label": "Fabreeko Product Page",
+      "url": "https://www.fabreeko.com/products/mean-well-uhp-350-24-power-supply",
+      "type": "product"
+    },
+    {
+      "label": "KB-3D Product Page",
+      "url": "https://kb-3d.com/store/power-supplies-converters/705-meanwell-uhp-350-24-power-supply-24v-350w-1667063240768.html",
+      "type": "product"
+    }
+  ],
+  "unverified": ["weight"]
+}

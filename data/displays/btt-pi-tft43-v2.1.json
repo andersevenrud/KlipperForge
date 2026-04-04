@@ -1,0 +1,36 @@
+{
+  "id": "btt-pi-tft43-v2.1",
+  "name": "Pi TFT43 V2.1",
+  "manufacturer": "BigTreeTech",
+  "description": "A 4.3 inch DSI touchscreen display designed for Raspberry Pi. Connects directly via the DSI ribbon cable for a clean, compact installation with KlipperScreen.",
+  "displayType": "klipperscreen",
+  "screenSpecs": {
+    "size": "4.3 inch",
+    "resolution": "800x480",
+    "panelType": "TFT",
+    "touchscreen": true
+  },
+  "connectionSpecs": {
+    "interface": "DSI",
+    "connector": "DSI ribbon cable"
+  },
+  "klipperIntegration": {
+    "method": "KlipperScreen",
+    "requiresSbc": true,
+    "softwareRequired": "KlipperScreen"
+  },
+  "features": [
+    "Direct DSI connection to Raspberry Pi",
+    "Capacitive touchscreen",
+    "Compact 4.3 inch form factor",
+    "No HDMI port required"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "GitHub - BTT TouchScreen Hardware",
+      "url": "https://github.com/bigtreetech/BIGTREETECH-TouchScreenHardware",
+      "type": "github"
+    }
+  ]
+}

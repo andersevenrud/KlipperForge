@@ -1,0 +1,25 @@
+{
+  "id": "ldo-42sth48-2004ac",
+  "name": "LDO-42STH48-2004AC",
+  "manufacturer": "LDO",
+  "description": "Standard 48mm NEMA17 stepper widely used as Voron Z axis motor. Reliable and well-documented.",
+  "nemaSize": 17,
+  "electricalSpecs": {
+    "ratedCurrent": 2.0,
+    "holdingTorque": 59,
+    "stepAngle": 1.8,
+    "phaseResistance": 1.6,
+    "phaseInductance": 3.0,
+    "ratedVoltage": 3.2
+  },
+  "physicalSpecs": {
+    "bodyLength": 48,
+    "weight": 350,
+    "shaftDiameter": 5,
+    "shaftLength": 24
+  },
+  "connectorType": "JST-PH 4-pin",
+  "references": [
+    { "label": "LDO 42mm Hybrid Stepper Series", "url": "http://ldomotors.com/products/show/42mm-hybrid-stepper-series", "type": "product" }
+  ]
+}

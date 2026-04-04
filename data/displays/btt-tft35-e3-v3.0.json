@@ -1,0 +1,37 @@
+{
+  "id": "btt-tft35-e3-v3.0",
+  "name": "TFT35-E3 V3.0",
+  "manufacturer": "BigTreeTech",
+  "description": "A 3.5 inch dual-mode color TFT display designed for Ender-3 printers. In Klipper, operates in 12864 emulation mode via EXP1/EXP2. The color touch mode is Marlin-only. Features EXP3 for single-cable connection to E3 series boards in addition to standard EXP1/EXP2.",
+  "displayType": "dual-mode",
+  "screenSpecs": {
+    "size": "3.5 inch",
+    "resolution": "480x320",
+    "panelType": "TFT",
+    "touchscreen": true
+  },
+  "connectionSpecs": {
+    "interface": "UART + EXP1/EXP2",
+    "connector": "UART serial + EXP ribbon cable"
+  },
+  "klipperIntegration": {
+    "method": "12864 emulation mode via EXP1/EXP2",
+    "klipperDisplayType": "emulated_st7920",
+    "requiresSbc": false
+  },
+  "features": [
+    "Dual-mode: color touch (Marlin) + 12864 emulation (Klipper)",
+    "Designed for Ender-3 and similar printers",
+    "EXP3 connector for single-cable connection to E3 series boards",
+    "Resistive touchscreen (Marlin mode only)",
+    "SD card slot"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "GitHub - BTT TouchScreen Firmware",
+      "url": "https://github.com/bigtreetech/BIGTREETECH-TouchScreenFirmware",
+      "type": "github"
+    }
+  ]
+}

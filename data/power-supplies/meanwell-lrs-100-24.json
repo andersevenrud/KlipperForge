@@ -1,0 +1,44 @@
+{
+  "id": "meanwell-lrs-100-24",
+  "name": "LRS-100-24",
+  "manufacturer": "MeanWell",
+  "description": "Compact 100W enclosed power supply from MeanWell's popular LRS series. Fanless convection-cooled design with a 30mm low profile. Suitable for smaller 3D printers or as an auxiliary supply. Full-range AC input (85-264VAC) eliminates the need for a voltage selector switch.",
+  "voltage": 24,
+  "wattage": 108,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 24,
+    "outputCurrent": 4.5,
+    "outputPower": 108,
+    "inputVoltageRange": "85-264VAC",
+    "efficiency": 90,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "129x97x30mm",
+    "weight": 340,
+    "coolingMethod": "convection",
+    "hasFan": false
+  },
+  "certifications": ["UL 62368-1", "CE", "CB"],
+  "protections": ["short-circuit", "overload", "overvoltage"],
+  "operatingTemperature": "-30 to +70C",
+  "typicalUseCases": [
+    "Small 3D printers with DC heated beds",
+    "Auxiliary 24V supply for electronics"
+  ],
+  "communityRecommendation": "standard",
+  "references": [
+    {
+      "label": "MeanWell LRS-100-24 Datasheet",
+      "url": "https://www.meanwell.com/Upload/PDF/LRS-100/LRS-100-SPEC.PDF",
+      "type": "datasheet"
+    },
+    {
+      "label": "DigiKey Product Page",
+      "url": "https://www.digikey.com/en/products/detail/mean-well-usa-inc/LRS-100-24/7704998",
+      "type": "product"
+    }
+  ],
+  "unverified": []
+}

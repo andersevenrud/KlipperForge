@@ -1,0 +1,61 @@
+{
+  "id": "e3d-v6.1",
+  "name": "E3D V6.1",
+  "manufacturer": "E3D",
+  "description": "The E3D V6.1 is an updated revision of the iconic E3D V6, featuring an improved heatbreak geometry and refined manufacturing tolerances. The V6.1 heatbreak provides a sharper thermal gradient compared to the original V6, reducing the risk of heat creep at sustained printing speeds. It maintains full backward compatibility with the V6 ecosystem of nozzles, heat blocks, and mounts, making it a seamless upgrade for existing V6-based machines.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 300,
+    "heaterType": "cartridge",
+    "heaterPower": 30,
+    "heatUpTime": "~85s to 200°C",
+    "thermistorType": "NTC 100K (Semitec 104GT-2)",
+    "thermistorId": "atc-semitec-104gt-2"
+  },
+  "heatBreakSpecs": {
+    "type": "all-metal",
+    "material": "titanium alloy (improved geometry over V6)",
+    "retraction": "1-2mm (direct drive), 3-6mm (Bowden)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D V6 brass nozzles",
+      "E3D V6 hardened steel nozzles",
+      "E3D V6 nozzle X",
+      "third-party M6 V6-style nozzles"
+    ],
+    "maxFlowRate": "~12mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "weight": 27,
+    "mountType": "groove mount (16mm OD, 3.7mm groove depth)"
+  },
+  "features": [
+    "Improved heatbreak over original V6 with sharper thermal gradient",
+    "Full backward compatibility with V6 ecosystem",
+    "Drop-in upgrade for existing V6-based machines",
+    "Massive nozzle and accessory ecosystem",
+    "Bowden and direct-drive compatible"
+  ],
+  "references": [
+    {
+      "label": "E3D V6 Product Page",
+      "url": "https://e3d-online.com/products/v6-all-metal-hotend",
+      "type": "product"
+    },
+    {
+      "label": "E3D V6 Support",
+      "url": "https://e3d-online.com/pages/e3d-classics-support-v6-nozzle",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "heatUpTime", "maxFlowRate", "retraction"]
+}

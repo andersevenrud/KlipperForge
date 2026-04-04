@@ -1,0 +1,26 @@
+{
+  "id": "ldo-36sth17-1004ahg",
+  "name": "LDO-36STH17-1004AHG",
+  "manufacturer": "LDO",
+  "description": "Ultra-compact 17mm round NEMA14 stepper for the most space-constrained extruder designs. High-temp Class H insulation.",
+  "nemaSize": 14,
+  "electricalSpecs": {
+    "ratedCurrent": 1.0,
+    "holdingTorque": 10,
+    "stepAngle": 1.8,
+    "phaseResistance": 10.0,
+    "phaseInductance": 6.0,
+    "ratedVoltage": 10.0
+  },
+  "physicalSpecs": {
+    "bodyLength": 17,
+    "weight": 65,
+    "shaftDiameter": 5,
+    "shaftLength": 24
+  },
+  "connectorType": "JST-PH 4-pin",
+  "temperatureRating": 180,
+  "references": [
+    { "label": "LDO 35mm Hybrid Stepper Series", "url": "http://ldomotors.com/products/show/35mm-hybrid-stepper-series", "type": "product" }
+  ]
+}

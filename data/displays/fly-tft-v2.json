@@ -1,0 +1,42 @@
+{
+  "id": "fly-tft-v2",
+  "name": "FLY-TFT-V2",
+  "manufacturer": "Mellow",
+  "description": "A 3.5 inch SPI TFT display with ST7796 driver designed for Raspberry Pi. Supports KlipperScreen for full Klipper control via touchscreen interface.",
+  "displayType": "klipperscreen",
+  "screenSpecs": {
+    "size": "3.5 inch",
+    "resolution": "320x480",
+    "panelType": "TFT",
+    "touchscreen": true,
+    "driver": "ST7796"
+  },
+  "connectionSpecs": {
+    "interface": "SPI",
+    "connector": "Raspberry Pi GPIO header"
+  },
+  "klipperIntegration": {
+    "method": "KlipperScreen",
+    "requiresSbc": true,
+    "softwareRequired": "KlipperScreen"
+  },
+  "features": [
+    "SPI connection to Raspberry Pi",
+    "KlipperScreen compatible",
+    "Capacitive or resistive touchscreen (variant dependent)",
+    "Compact form factor"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "GitHub - FLY-TFT",
+      "url": "https://github.com/Mellow-3D/FLY-TFT",
+      "type": "github"
+    },
+    {
+      "label": "Mellow FLY Documentation",
+      "url": "https://mellow.klipper.cn/en/",
+      "type": "documentation"
+    }
+  ]
+}

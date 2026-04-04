@@ -1,0 +1,49 @@
+{
+  "id": "bltouch-v3.1",
+  "name": "BLTouch V3.1",
+  "manufacturer": "ANTCLABS",
+  "description": "The BLTouch V3.1 is a precision auto bed leveling sensor that uses a deployable probe pin actuated by a servo mechanism. It is the most widely used probe in the 3D printing community and works reliably on all bed surfaces including glass, PEI, and textured sheets.",
+  "probeType": "servo",
+  "electricalSpecs": {
+    "operatingVoltage": "5V DC",
+    "signalType": "digital (servo PWM + switch output)",
+    "currentDraw": "15mA (idle), 300mA (peak during deploy)"
+  },
+  "performanceSpecs": {
+    "repeatability": "±0.005mm",
+    "triggerDistance": "contact-based",
+    "bedCompatibility": [
+      "glass",
+      "PEI",
+      "textured PEI",
+      "magnetic flex plates",
+      "BuildTak",
+      "aluminum"
+    ],
+    "temperatureCompensation": false
+  },
+  "physicalSpecs": {
+    "dimensions": "11.53 × 17.9 × 36.3mm",
+    "weight": 24,
+    "mountType": "BLTouch standard (2x M3 screw, 18mm spacing)"
+  },
+  "klipperSection": "bltouch",
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "ANTCLABS Official Product Page",
+      "url": "https://www.antclabs.com/bltouch-v3",
+      "type": "product"
+    },
+    {
+      "label": "ANTCLABS BLTouch Datasheet",
+      "url": "https://www.antclabs.com/manual",
+      "type": "datasheet"
+    },
+    {
+      "label": "Klipper BLTouch Documentation",
+      "url": "https://www.klipper3d.org/BLTouch.html",
+      "type": "documentation"
+    }
+  ]
+}

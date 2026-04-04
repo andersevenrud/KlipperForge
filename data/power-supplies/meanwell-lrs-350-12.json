@@ -1,0 +1,46 @@
+{
+  "id": "meanwell-lrs-350-12",
+  "name": "LRS-350-12",
+  "manufacturer": "MeanWell",
+  "description": "350W 12V enclosed power supply from MeanWell's LRS series. Used primarily as an upgrade for older 12V 3D printers like the original Creality CR-10 and Anet A8. Features forced-air cooling via built-in fan. While 12V is less common in modern builds, this remains the go-to reliable 12V PSU for legacy printer maintenance and upgrades.",
+  "voltage": 12,
+  "wattage": 348,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 12,
+    "outputCurrent": 29,
+    "outputPower": 348,
+    "inputVoltageRange": "90-132VAC / 180-264VAC",
+    "efficiency": 85,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "215x115x30mm",
+    "weight": 760,
+    "coolingMethod": "forced-air",
+    "hasFan": true
+  },
+  "certifications": ["UL 62368-1", "CE", "CB"],
+  "protections": ["short-circuit", "overload", "overvoltage"],
+  "operatingTemperature": "-25 to +70C",
+  "typicalUseCases": [
+    "Creality CR-10 (original 12V models)",
+    "Anet A8 upgrade",
+    "Legacy 12V 3D printers",
+    "LED lighting projects"
+  ],
+  "communityRecommendation": "recommended",
+  "references": [
+    {
+      "label": "MeanWell LRS-350 Datasheet",
+      "url": "https://www.meanwell.com/Upload/PDF/LRS-350/LRS-350-SPEC.PDF",
+      "type": "datasheet"
+    },
+    {
+      "label": "Amazon Product Page",
+      "url": "https://www.amazon.com/MEAN-WELL-LRS-350-12-Computer-Project/dp/B07VTLJS18",
+      "type": "product"
+    }
+  ],
+  "unverified": []
+}

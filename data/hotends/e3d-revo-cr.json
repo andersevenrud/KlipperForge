@@ -1,0 +1,59 @@
+{
+  "id": "e3d-revo-cr",
+  "name": "Revo CR",
+  "manufacturer": "E3D",
+  "description": "The E3D Revo CR brings the Revo RapidChange nozzle system to Creality Ender 3 and CR-10 series printers as a drop-in upgrade. It replaces the stock MK8-style hotend with E3D's tool-free quick-swap nozzle technology, allowing nozzle changes at printing temperature without tools. The 40W HeatCore provides faster heat-up than the Revo Micro while maintaining the same ecosystem of Revo nozzles.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 300,
+    "heaterType": "RapidChange HeatCore (integrated heater + thermistor)",
+    "heaterPower": 40,
+    "heatUpTime": "~70s to 200°C",
+    "thermistorType": "Revo integrated (NTC 100K, Creality-compatible response)"
+  },
+  "heatBreakSpecs": {
+    "type": "all-metal",
+    "material": "titanium alloy",
+    "retraction": "1-2mm (direct drive), 3-6mm (Bowden)"
+  },
+  "nozzleSpecs": {
+    "system": "Revo quick-change (tool-free, no hot-tightening required)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D Revo brass nozzles",
+      "E3D Revo hardened steel nozzles",
+      "E3D Revo high-flow nozzles"
+    ],
+    "maxFlowRate": "~11mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "weight": 30,
+    "mountType": "Creality MK8 compatible (Ender 3, CR-10 series)"
+  },
+  "features": [
+    "Drop-in upgrade for Creality Ender 3 and CR-10 series",
+    "Tool-free nozzle changes at operating temperature",
+    "Integrated HeatCore simplifies wiring",
+    "All-metal construction for engineering filaments",
+    "Part of the broader Revo ecosystem with shared nozzles"
+  ],
+  "references": [
+    {
+      "label": "E3D Revo Creality Support",
+      "url": "https://e3d-online.com/pages/revo-support-revo-creality",
+      "type": "product"
+    },
+    {
+      "label": "E3D Revo Support",
+      "url": "https://e3d-online.com/pages/revo-support",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "heatUpTime", "maxFlowRate", "retraction"]
+}

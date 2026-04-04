@@ -1,0 +1,50 @@
+{
+  "id": "th3d-ezabl",
+  "name": "EZABL Pro",
+  "manufacturer": "TH3D",
+  "description": "The EZABL Pro is an industrial-grade capacitive proximity sensor designed for 3D printers. It features 12-24V DC input with optically-isolated signal output and a long trigger distance of approximately 4mm. It detects any dense surface material including glass, PEI, and FR4. Available in M12 and M18 barrel sizes.",
+  "probeType": "capacitive",
+  "electricalSpecs": {
+    "operatingVoltage": "12-24V DC",
+    "signalType": "digital (optically-isolated output)",
+    "currentDraw": "20mA"
+  },
+  "performanceSpecs": {
+    "repeatability": "±0.005mm",
+    "triggerDistance": "~4mm (M12), ~8mm (M18)",
+    "bedCompatibility": [
+      "spring steel sheet",
+      "aluminum",
+      "metallic surfaces",
+      "glass",
+      "PEI",
+      "garolite",
+      "FR4"
+    ],
+    "temperatureCompensation": false
+  },
+  "physicalSpecs": {
+    "dimensions": "12mm diameter × 60mm length (M12 version)",
+    "weight": 15,
+    "mountType": "M12 or M18 threaded barrel"
+  },
+  "klipperSection": "probe",
+  "unverified": ["currentDraw", "repeatability", "dimensions", "weight"],
+  "references": [
+    {
+      "label": "TH3D EZABL Pro Product Page",
+      "url": "https://www.th3dstudio.com/product/ezabl-pro-plug-print-auto-bed-leveling-kit/",
+      "type": "product"
+    },
+    {
+      "label": "TH3D EZABL Installation Guide",
+      "url": "https://support.th3dstudio.com/helpcenter/ezabl-pro-installation-guide/",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Probe Documentation",
+      "url": "https://www.klipper3d.org/Config_Reference.html#probe",
+      "type": "documentation"
+    }
+  ]
+}

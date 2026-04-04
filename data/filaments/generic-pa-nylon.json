@@ -1,0 +1,62 @@
+{
+  "id": "generic-pa-nylon",
+  "name": "PA (Nylon)",
+  "manufacturer": "Generic",
+  "description": "Polyamide (PA/Nylon) is a strong, durable engineering filament with excellent wear resistance and toughness. Highly hygroscopic — must be kept dry. Requires an enclosure and high temperatures. Ideal for gears, hinges, bearings, and structural parts under stress.",
+  "filamentType": "PA",
+  "ratings": {
+    "strength": 4,
+    "stiffness": 3,
+    "durability": 5,
+    "printability": 2,
+    "heatResistance": 3
+  },
+  "printSpecs": {
+    "nozzleTempRange": "230–270°C",
+    "bedTempRange": "70–90°C",
+    "printSpeedRange": "30–50 mm/s",
+    "coolingFan": "None",
+    "enclosureRequired": true,
+    "firstLayerTemp": "250–260°C"
+  },
+  "mechanicalSpecs": {
+    "tensileStrength": 70,
+    "heatDeflectionTemp": 80,
+    "elongationAtBreak": 100,
+    "impactStrength": "Very high"
+  },
+  "environmentalSpecs": {
+    "moistureSensitivity": "Very high",
+    "uvResistance": "Poor",
+    "foodSafe": false,
+    "dryingTemp": 80,
+    "dryingTime": 12
+  },
+  "physicalSpecs": {
+    "diameter": 1.75,
+    "density": 1.14,
+    "glassTransitionTemp": 70,
+    "meltingPoint": 220
+  },
+  "features": [
+    "Excellent wear and abrasion resistance",
+    "High toughness and impact strength",
+    "Good fatigue resistance for moving parts",
+    "Self-lubricating surface",
+    "Requires dry storage (desiccant box or dryer)",
+    "Strong interlayer bonding with proper settings"
+  ],
+  "references": [
+    {
+      "label": "Simplify3D — Nylon Material Guide",
+      "url": "https://www.simplify3d.com/resources/materials-guide/nylon/",
+      "type": "documentation"
+    },
+    {
+      "label": "MatterHackers — Nylon Filament Guide",
+      "url": "https://www.matterhackers.com/3d-printer-filament-compare",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["tensileStrength", "elongationAtBreak"]
+}

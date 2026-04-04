@@ -1,0 +1,49 @@
+{
+  "id": "btt-eddy-usb",
+  "name": "BTT Eddy USB",
+  "manufacturer": "BigTreeTech",
+  "description": "The BTT Eddy USB is an eddy current bed probe that connects directly to the host via USB. It provides non-contact bed probing with temperature compensation and supports rapid multi-point surface scanning. The USB version includes its own RP2040 MCU for signal processing.",
+  "probeType": "eddy-current",
+  "electricalSpecs": {
+    "operatingVoltage": "5V DC (USB powered)",
+    "signalType": "USB",
+    "currentDraw": "30mA"
+  },
+  "performanceSpecs": {
+    "repeatability": "±0.0005mm",
+    "triggerDistance": "0.5-5mm (configurable)",
+    "bedCompatibility": [
+      "spring steel sheet",
+      "PEI on spring steel",
+      "textured PEI on spring steel",
+      "aluminum"
+    ],
+    "bedCompatibilityNote": "Eddy current probes require a conductive surface. They cannot detect non-conductive materials like bare glass or G10/FR4 without a conductive layer underneath.",
+    "temperatureCompensation": true,
+    "multiPoint": true
+  },
+  "physicalSpecs": {
+    "dimensions": "30.0 × 16.0 × 9.0mm",
+    "weight": 6,
+    "mountType": "2x M3 screw"
+  },
+  "klipperSection": "probe_eddy_current",
+  "unverified": [],
+  "references": [
+    {
+      "label": "BigTreeTech Eddy Product Page",
+      "url": "https://biqu.equipment/products/bigtreetech-eddy",
+      "type": "product"
+    },
+    {
+      "label": "BigTreeTech Eddy GitHub Repository",
+      "url": "https://github.com/bigtreetech/Eddy",
+      "type": "github"
+    },
+    {
+      "label": "Klipper Eddy Current Probe Documentation",
+      "url": "https://www.klipper3d.org/Config_Reference.html#probe_eddy_current",
+      "type": "documentation"
+    }
+  ]
+}

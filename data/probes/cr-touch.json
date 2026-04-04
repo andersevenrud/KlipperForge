@@ -1,0 +1,44 @@
+{
+  "id": "cr-touch",
+  "name": "CR-Touch",
+  "manufacturer": "Creality",
+  "description": "The CR-Touch is Creality's auto bed leveling sensor featuring a metal probe pin and optical endpoint detection. It is BLTouch-compatible and tolerates 24V logic levels, making it a drop-in replacement on many Creality printers without additional voltage regulation.",
+  "probeType": "servo",
+  "electricalSpecs": {
+    "operatingVoltage": "5V DC",
+    "signalType": "digital (servo PWM + optical endpoint)",
+    "currentDraw": "35mA (idle), 280mA (peak during deploy)"
+  },
+  "performanceSpecs": {
+    "repeatability": "±0.04mm",
+    "triggerDistance": "contact-based",
+    "bedCompatibility": [
+      "glass",
+      "PEI",
+      "textured PEI",
+      "magnetic flex plates",
+      "BuildTak",
+      "aluminum"
+    ],
+    "temperatureCompensation": false
+  },
+  "physicalSpecs": {
+    "dimensions": "27.0 × 17.5 × 39.3mm",
+    "weight": 11,
+    "mountType": "BLTouch-compatible (2x M3 screw, 18mm spacing)"
+  },
+  "klipperSection": "bltouch",
+  "unverified": ["currentDraw", "dimensions"],
+  "references": [
+    {
+      "label": "Creality CR-Touch Product Page",
+      "url": "https://www.creality.com/products/cr-touch-auto-leveling-kit",
+      "type": "product"
+    },
+    {
+      "label": "Klipper BLTouch Documentation",
+      "url": "https://www.klipper3d.org/BLTouch.html",
+      "type": "documentation"
+    }
+  ]
+}

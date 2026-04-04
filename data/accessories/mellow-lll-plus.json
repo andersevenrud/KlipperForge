@@ -1,0 +1,33 @@
+{
+  "id": "mellow-lll-plus",
+  "name": "LLL Plus Filament Buffer",
+  "manufacturer": "Mellow",
+  "description": "Motorized filament buffer with break detection, installed between spool and extruder.",
+  "accessoryType": "filament-buffer",
+  "electricalSpecs": {
+    "voltage": "12V–24V"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75
+  },
+  "firmware": ["Klipper", "RRF", "Marlin"],
+  "features": [
+    "Motorized feeding and retraction",
+    "Filament break detection",
+    "Manual feed buttons",
+    "Silent stepper driver"
+  ],
+  "references": [
+    {
+      "label": "Mellow Store - LLL Plus",
+      "url": "https://3dmellow.com/products/mellow-lll-plus-filament-buffer-for-diy-3d-printers-klipper-rrf-marlin-material-break-detection-automatic-filament-feeding",
+      "type": "product"
+    },
+    {
+      "label": "FLY Buffer Plus Documentation",
+      "url": "https://mellow.klipper.cn/en/docs/ProductDoc/ExtensionBoard/fly-buffer-plus/",
+      "type": "documentation"
+    }
+  ],
+  "unverified": []
+}

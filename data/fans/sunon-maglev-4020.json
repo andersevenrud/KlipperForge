@@ -1,0 +1,39 @@
+{
+  "id": "sunon-maglev-4020",
+  "name": "MagLev MF40201V1-1000U-A99",
+  "manufacturer": "Sunon",
+  "description": "The Sunon MF40201V1-1000U-A99 is a 40×20mm axial fan using Sunon's Vapo bearing technology. Its greater depth compared to the 4010 variant allows for higher static pressure and airflow, making it a good choice when the cooling path has moderate restriction. It is commonly used as a hotend or electronics fan on 12V printers.",
+  "fanType": "axial",
+  "size": "4020",
+  "airflowSpecs": {
+    "airflow": 8.9,
+    "rpm": 7000
+  },
+  "electricalSpecs": {
+    "voltage": 12,
+    "current": 0.058,
+    "power": 0.7,
+    "pwmCapable": false,
+    "tachoSignal": false
+  },
+  "noiseSpecs": {
+    "noiseLevel": 25.5
+  },
+  "physicalSpecs": {
+    "dimensions": "40×40×20mm",
+    "bearingType": "Vapo (Vapour Bearing)"
+  },
+  "references": [
+    {
+      "label": "Sunon MF40201V1-1000U-A99 Product Page (TME)",
+      "url": "https://www.tme.com/us/en-us/details/mf40201v1-a99-a/dc12v-fans/sunon/mf40201v1-1000u-a99/",
+      "type": "product"
+    },
+    {
+      "label": "Sunon MF40201V1-1000U-A99 Product Page (SOS Electronic)",
+      "url": "https://www.soselectronic.com/en-gb/products/sunon/mf40201v1-1000u-a99-305539",
+      "type": "product"
+    }
+  ],
+  "unverified": ["staticPressure", "weight"]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "sunon-5020-blower",
+  "name": "MF50201V1-1B00U-A99",
+  "manufacturer": "Sunon",
+  "description": "The Sunon MF50201V1-1B00U-A99 is a 50×20mm radial blower fan with Vapo bearing technology. Its 20mm depth provides more airflow than the 5015 variant, and it is used in 3D printers where a higher-volume blower is needed for part cooling or duct designs that can accommodate the extra thickness.",
+  "fanType": "blower",
+  "size": "5020",
+  "airflowSpecs": {
+    "airflow": 5.8,
+    "rpm": 5300
+  },
+  "electricalSpecs": {
+    "voltage": 12,
+    "current": 0.124,
+    "power": 1.49,
+    "pwmCapable": false,
+    "tachoSignal": false
+  },
+  "noiseSpecs": {
+    "noiseLevel": 34.8
+  },
+  "physicalSpecs": {
+    "dimensions": "50×50×20mm",
+    "bearingType": "Vapo (Vapour Bearing)"
+  },
+  "references": [
+    {
+      "label": "Sunon MF50201V1-1B00U-A99 Product Page (TME)",
+      "url": "https://www.tme.com/us/en-us/details/mf50201v1-a99-b/dc12v-fans/sunon/mf50201v1-1b00u-a99/",
+      "type": "product"
+    }
+  ],
+  "unverified": ["staticPressure", "weight"]
+}

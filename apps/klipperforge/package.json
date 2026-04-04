@@ -1,0 +1,46 @@
+{
+  "name": "@klipperforge/app",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "playwright test --config e2e/playwright.config.ts",
+    "test:e2e:ui": "playwright test --config e2e/playwright.config.ts --ui"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-sans": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@hookform/resolvers": "^5.2.2",
+    "@klipperforge/dfu": "workspace:*",
+    "@klipperforge/editor": "workspace:*",
+    "@klipperforge/klipper-config": "workspace:*",
+    "@klipperforge/printer-data": "workspace:*",
+    "@tanstack/react-query": "^5.95.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.0",
+    "cmdk": "^1.1.1",
+    "fflate": "^0.8.2",
+    "lucide-react": "^0.577.0",
+    "radix-ui": "^1.4.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.71.2",
+    "react-resizable-panels": "^2.1.0",
+    "tailwind-merge": "^3.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react-swc": "^4.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.0",
+    "vite": "^7.3.1",
+    "zod": "^3.24.0"
+  }
+}

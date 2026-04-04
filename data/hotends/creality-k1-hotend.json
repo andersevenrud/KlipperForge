@@ -1,0 +1,53 @@
+{
+  "id": "creality-k1-hotend",
+  "name": "K1 Hotend",
+  "manufacturer": "Creality",
+  "description": "The Creality K1 Hotend is the proprietary hotend system integrated into the Creality K1 and K1 Max high-speed CoreXY printers. It uses a ceramic heating core delivering 60W of power for rapid heat-up, combined with a bi-metallic heatbreak for high-flow performance. The quick-swap nozzle design allows fast nozzle changes without tools. The system is tuned for the K1's high-speed printing requirements, supporting flow rates competitive with dedicated aftermarket high-flow hotends.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 300,
+    "heaterType": "ceramic heating ring (360° encircling)",
+    "heaterPower": 60,
+    "heatUpTime": "~40s to 200°C",
+    "thermistorType": "NTC 100K"
+  },
+  "heatBreakSpecs": {
+    "type": "bi-metallic",
+    "material": "stainless steel / copper composite",
+    "retraction": "0.5-2mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "Creality K1 proprietary quick-swap",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "Creality K1 brass nozzles",
+      "Creality K1 hardened steel nozzles"
+    ],
+    "maxFlowRate": "~32mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "weight": 35,
+    "mountType": "Creality K1 proprietary (K1, K1 Max)"
+  },
+  "features": [
+    "60W 360° ceramic heating ring for fast heat-up (~40s to 200°C)",
+    "Bi-metallic heatbreak for high-flow performance",
+    "Proprietary quick-swap nozzle system",
+    "Optimized for high-speed CoreXY printing",
+    "~32mm³/s flow rate for fast printing"
+  ],
+  "references": [
+    {
+      "label": "Creality K1 Product Page",
+      "url": "https://www.creality.com/products/creality-k1-3d-printer",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "heatUpTime", "maxFlowRate", "retraction", "thermistorType"]
+}

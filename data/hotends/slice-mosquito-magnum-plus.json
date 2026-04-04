@@ -1,0 +1,51 @@
+{
+  "id": "slice-mosquito-magnum-plus",
+  "name": "Mosquito Magnum+",
+  "manufacturer": "Slice Engineering",
+  "description": "The Slice Engineering Mosquito Magnum+ is the high-flow evolution of the Mosquito hotend, featuring dual 50W heater sockets (100W total) and an extended melt zone targeting up to ~88mm³/s. It retains the same precision copper heater block construction and Mosquito mount interface while dramatically increasing volumetric throughput for high-speed printing.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 500,
+    "heaterType": "cartridge",
+    "heaterPower": 100,
+    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G, Slice Engineering 300°C thermistor)"
+  },
+  "heatBreakSpecs": {
+    "type": "two-piece proprietary",
+    "material": "stainless steel with proprietary liner",
+    "retraction": "0.5-1.5mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "Mosquito proprietary (M6 thread, Mosquito-spec bore)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "Slice Engineering Vanadium nozzles",
+      "Slice Engineering brass nozzles",
+      "select third-party Mosquito-compatible nozzles"
+    ],
+    "maxFlowRate": "~88mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "mountType": "Mosquito standard mount (proprietary)"
+  },
+  "features": [
+    "500°C maximum temperature (block rated to 500°C)",
+    "Dual 50W heater sockets (100W total)",
+    "Extended high-flow melt zone",
+    "Drop-in upgrade path from standard Mosquito"
+  ],
+  "references": [
+    {
+      "label": "Slice Engineering Mosquito Magnum+ Product Page",
+      "url": "https://www.sliceengineering.com/products/mosquito-magnum-hotend",
+      "type": "product"
+    },
+    {
+      "label": "Slice Engineering Documentation",
+      "url": "https://www.sliceengineering.com/pages/documentation",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["maxFlowRate", "retraction"]
+}

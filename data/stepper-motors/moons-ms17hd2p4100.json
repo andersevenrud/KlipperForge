@@ -1,0 +1,24 @@
+{
+  "id": "moons-ms17hd2p4100",
+  "name": "MS17HD2P4100",
+  "manufacturer": "Moons'",
+  "description": "Compact 40mm NEMA17 stepper suitable for extruders and light-duty applications. Low 1.0A current draw.",
+  "nemaSize": 17,
+  "electricalSpecs": {
+    "ratedCurrent": 1.0,
+    "holdingTorque": 48,
+    "stepAngle": 1.8,
+    "phaseResistance": 3.9,
+    "phaseInductance": 8.9,
+    "ratedVoltage": 3.9
+  },
+  "physicalSpecs": {
+    "bodyLength": 40,
+    "weight": 280,
+    "shaftDiameter": 5,
+    "shaftLength": 24
+  },
+  "references": [
+    { "label": "Moons' product page", "url": "https://www.moonsindustries.com/series/nema-17-standard-hybrid-stepper-motors-b020105", "type": "product" }
+  ]
+}

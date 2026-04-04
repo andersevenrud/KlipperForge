@@ -1,0 +1,61 @@
+{
+  "id": "generic-asa",
+  "name": "ASA",
+  "manufacturer": "Generic",
+  "description": "Acrylonitrile styrene acrylate (ASA) is an ABS alternative with excellent UV resistance and weatherability. Ideal for outdoor functional parts where long-term sun exposure is expected. Requires an enclosure like ABS.",
+  "filamentType": "ASA",
+  "ratings": {
+    "strength": 3,
+    "stiffness": 3,
+    "durability": 4,
+    "printability": 2,
+    "heatResistance": 3
+  },
+  "printSpecs": {
+    "nozzleTempRange": "220–250°C",
+    "bedTempRange": "90–110°C",
+    "printSpeedRange": "40–60 mm/s",
+    "coolingFan": "None/low",
+    "enclosureRequired": true,
+    "firstLayerTemp": "240–245°C"
+  },
+  "mechanicalSpecs": {
+    "tensileStrength": 42,
+    "heatDeflectionTemp": 94,
+    "elongationAtBreak": 30,
+    "impactStrength": "High"
+  },
+  "environmentalSpecs": {
+    "moistureSensitivity": "Low",
+    "uvResistance": "Excellent",
+    "foodSafe": false,
+    "dryingTemp": 80,
+    "dryingTime": 4
+  },
+  "physicalSpecs": {
+    "diameter": 1.75,
+    "density": 1.07,
+    "glassTransitionTemp": 105,
+    "meltingPoint": 240
+  },
+  "features": [
+    "Excellent UV and weather resistance",
+    "Similar strength profile to ABS",
+    "Good for outdoor applications",
+    "Better color stability than ABS",
+    "Lower warping tendency than ABS",
+    "Chemical resistance to many solvents"
+  ],
+  "references": [
+    {
+      "label": "Simplify3D — ASA Material Guide",
+      "url": "https://www.simplify3d.com/resources/materials-guide/asa/",
+      "type": "documentation"
+    },
+    {
+      "label": "ColorFabb ASA TDS",
+      "url": "https://colorfabb.com/media/datasheets/tds/colorfabb/TDS_E_ColorFabb_ASA.pdf",
+      "type": "datasheet"
+    }
+  ]
+}

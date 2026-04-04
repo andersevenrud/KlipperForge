@@ -1,0 +1,50 @@
+{
+  "id": "meanwell-rsp-500-24",
+  "name": "RSP-500-24",
+  "manufacturer": "MeanWell",
+  "description": "High-power 500W enclosed power supply with built-in active PFC and forced-air cooling. Features remote ON/OFF control, remote sense, and DC OK signal. Used in large-format 3D printers and industrial applications where high power and PFC compliance are required. A step up from the LRS-350 for builds that need more current headroom.",
+  "voltage": 24,
+  "wattage": 504,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 24,
+    "outputCurrent": 21,
+    "outputPower": 504,
+    "inputVoltageRange": "85-264VAC",
+    "efficiency": 90.5,
+    "powerFactorCorrection": true
+  },
+  "physicalSpecs": {
+    "dimensions": "230x127x40.5mm",
+    "weight": 1200,
+    "coolingMethod": "forced-air",
+    "hasFan": true
+  },
+  "certifications": ["UL", "CE", "CB", "CCC", "BSMI", "EAC", "TUV"],
+  "protections": ["short-circuit", "overload", "overvoltage", "overtemperature"],
+  "operatingTemperature": "-30 to +70C",
+  "typicalUseCases": [
+    "Large-format 3D printers with DC heated beds",
+    "Industrial 3D printer applications",
+    "Builds requiring PFC compliance and high wattage"
+  ],
+  "communityRecommendation": "recommended",
+  "references": [
+    {
+      "label": "MeanWell RSP-500 Datasheet",
+      "url": "https://www.meanwell.com/Upload/PDF/RSP-500/RSP-500-SPEC.PDF",
+      "type": "datasheet"
+    },
+    {
+      "label": "MeanWell RSP-500-24 Product Page",
+      "url": "https://meanwell-ps.com/products/rsp-500-24",
+      "type": "product"
+    },
+    {
+      "label": "Amazon Product Page",
+      "url": "https://www.amazon.com/MEAN-WELL-RSP-500-24-Printer-Industrial/dp/B085FXZRDH",
+      "type": "product"
+    }
+  ],
+  "unverified": []
+}

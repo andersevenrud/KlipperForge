@@ -1,0 +1,36 @@
+{
+  "id": "gdstime-5015-24v",
+  "name": "5015 24V Blower",
+  "manufacturer": "GDSTime",
+  "description": "The GDSTime 5015 24V is a budget radial blower fan used for part cooling on 24V 3D printers. It is a common choice in budget and mid-range printer builds due to its low cost and availability. Performance specifications are not consistently published by the manufacturer and can vary significantly between production batches.",
+  "fanType": "blower",
+  "size": "5015",
+  "airflowSpecs": {
+    "airflow": 5.36,
+    "rpm": 6000
+  },
+  "electricalSpecs": {
+    "voltage": 24,
+    "current": 0.1,
+    "power": 2.2,
+    "pwmCapable": false,
+    "tachoSignal": false
+  },
+  "noiseSpecs": {
+    "noiseLevel": 38.7
+  },
+  "physicalSpecs": {
+    "dimensions": "50×50×15mm",
+    "weight": 27,
+    "bearingType": "Dual Ball Bearing",
+    "connectorType": "XH2.54-2P"
+  },
+  "references": [
+    {
+      "label": "GDSTime GDB5015 24V Product Page (West3D)",
+      "url": "https://west3d.com/products/gdstime-dc-24v-50x50x15-centrifugal-blower-fan-gdb5015dual-ball-bearing-6000rpm-2-2w-1a-xh2-54",
+      "type": "product"
+    }
+  ],
+  "unverified": ["airflow", "staticPressure", "rpm", "noiseLevel", "power"]
+}

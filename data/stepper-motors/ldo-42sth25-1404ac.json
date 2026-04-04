@@ -1,0 +1,25 @@
+{
+  "id": "ldo-42sth25-1404ac",
+  "name": "LDO-42STH25-1404AC",
+  "manufacturer": "LDO",
+  "description": "High-resolution 0.9° step angle 25mm pancake for geared extruders. 1.4A current with 23Ncm torque.",
+  "nemaSize": 17,
+  "electricalSpecs": {
+    "ratedCurrent": 1.4,
+    "holdingTorque": 23,
+    "stepAngle": 0.9,
+    "phaseResistance": 2.4,
+    "phaseInductance": 5.5,
+    "ratedVoltage": 3.36
+  },
+  "physicalSpecs": {
+    "bodyLength": 25,
+    "weight": 165,
+    "shaftDiameter": 5,
+    "shaftLength": 24
+  },
+  "connectorType": "JST-PH 4-pin",
+  "references": [
+    { "label": "LDO 42mm Hybrid Stepper Series", "url": "http://ldomotors.com/products/show/42mm-hybrid-stepper-series", "type": "product" }
+  ]
+}

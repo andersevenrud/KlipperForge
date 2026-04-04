@@ -1,0 +1,29 @@
+{
+  "id": "ntc-100k-mgb18",
+  "name": "NTC 100K MGB18-104F39050L32",
+  "manufacturer": "Various",
+  "description": "The MGB18-104F39050L32 is a cartridge-style NTC thermistor with a nominal resistance of 100kΩ at 25°C and a beta value of 4100K. The cartridge format makes it suitable for direct insertion into hotend heater blocks. It is supported natively in Klipper and commonly found in budget printer hotend assemblies.",
+  "sensorType": "NTC",
+  "sensingSpecs": {
+    "resistanceAt25C": 100000,
+    "betaValue": 4100,
+    "temperatureRange": "-20 to 300°C"
+  },
+  "klipperSpecs": {
+    "sensorType": "NTC 100K MGB18-104F39050L32",
+    "requiresAmplifier": false,
+    "pullupResistor": 4700
+  },
+  "physicalSpecs": {
+    "packageType": "cartridge",
+    "dimensions": "3mm diameter × 10mm length"
+  },
+  "unverified": ["temperatureRange", "dimensions"],
+  "references": [
+    {
+      "label": "Klipper Config Reference - Thermistors",
+      "url": "https://www.klipper3d.org/Config_Reference.html#temperature-sensors",
+      "type": "documentation"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "fysetc-g36hsy4405",
+  "name": "G36HSY4405",
+  "manufacturer": "FYSETC",
+  "description": "Budget round NEMA14 stepper suitable for Sherpa Mini, Orbiter, and similar compact extruders.",
+  "nemaSize": 14,
+  "electricalSpecs": {
+    "ratedCurrent": 1.0,
+    "holdingTorque": 11,
+    "stepAngle": 1.8,
+    "phaseResistance": 2.4,
+    "phaseInductance": 1.7,
+    "ratedVoltage": 2.4
+  },
+  "physicalSpecs": {
+    "bodyLength": 20,
+    "weight": 85,
+    "shaftDiameter": 5,
+    "shaftLength": 24
+  },
+  "references": []
+}

@@ -1,0 +1,97 @@
+[
+  {
+    "id": "bltouch",
+    "name": "BLTouch",
+    "category": "probes",
+    "description": "Popular servo-based auto bed leveling probe",
+    "sections": [
+      {
+        "definitionId": "bltouch",
+        "data": {
+          "sensor_pin": "^PB7",
+          "control_pin": "PB6",
+          "x_offset": -40,
+          "y_offset": -10,
+          "z_offset": 0,
+          "speed": 3.0,
+          "samples": 2,
+          "sample_retract_dist": 6.0
+        }
+      }
+    ]
+  },
+  {
+    "id": "inductive-probe",
+    "name": "Inductive Probe",
+    "category": "probes",
+    "description": "Inductive proximity sensor for bed leveling (metal beds only)",
+    "sections": [
+      {
+        "definitionId": "probe",
+        "data": {
+          "pin": "^PB7",
+          "x_offset": 0,
+          "y_offset": 25,
+          "z_offset": 0,
+          "speed": 10.0,
+          "samples": 3,
+          "samples_result": "median"
+        }
+      }
+    ]
+  },
+  {
+    "id": "klicky-probe",
+    "name": "Klicky Probe",
+    "category": "probes",
+    "description": "Magnetic detachable probe popular with Voron printers",
+    "sections": [
+      {
+        "definitionId": "probe",
+        "data": {
+          "pin": "PG15",
+          "x_offset": 0,
+          "y_offset": 19.75,
+          "z_offset": 6.42,
+          "speed": 7,
+          "samples": 3,
+          "samples_result": "median",
+          "sample_retract_dist": 2.0
+        }
+      }
+    ]
+  },
+  {
+    "id": "cartographer",
+    "name": "Cartographer",
+    "category": "probes",
+    "description": "Eddy current probe with touch support",
+    "sections": [
+      {
+        "definitionId": "cartographer",
+        "data": {
+          "x_offset": 0,
+          "y_offset": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "beacon",
+    "name": "Beacon",
+    "category": "probes",
+    "description": "Eddy current probe with contact and proximity sensing",
+    "sections": [
+      {
+        "definitionId": "beacon",
+        "data": {
+          "x_offset": 0,
+          "y_offset": 0,
+          "mesh_main_direction": "x",
+          "default_probe_method": "contact",
+          "home_method": "contact"
+        }
+      }
+    ]
+  }
+]

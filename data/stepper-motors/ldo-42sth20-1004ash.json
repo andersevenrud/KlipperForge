@@ -1,0 +1,26 @@
+{
+  "id": "ldo-42sth20-1004ash",
+  "name": "LDO-42STH20-1004ASH",
+  "manufacturer": "LDO",
+  "description": "High-temperature slim 20mm pancake NEMA17 for Voron extruders. Class H insulation with Teflon wires for enclosed printers.",
+  "nemaSize": 17,
+  "electricalSpecs": {
+    "ratedCurrent": 1.0,
+    "holdingTorque": 18,
+    "stepAngle": 1.8,
+    "phaseResistance": 7.2,
+    "phaseInductance": 7.0,
+    "ratedVoltage": 7.2
+  },
+  "physicalSpecs": {
+    "bodyLength": 20,
+    "weight": 127,
+    "shaftDiameter": 5,
+    "shaftLength": 24
+  },
+  "connectorType": "JST-PH 4-pin",
+  "temperatureRating": 180,
+  "references": [
+    { "label": "LDO 42mm Hybrid Stepper Series", "url": "http://ldomotors.com/products/show/42mm-hybrid-stepper-series", "type": "product" }
+  ]
+}

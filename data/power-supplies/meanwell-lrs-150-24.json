@@ -1,0 +1,44 @@
+{
+  "id": "meanwell-lrs-150-24",
+  "name": "LRS-150-24",
+  "manufacturer": "MeanWell",
+  "description": "Mid-range 150W enclosed power supply from MeanWell's LRS series. Fanless convection-cooled design with a slim 30mm profile. A popular choice for printers with DC heated beds that need moderate power. Input voltage switchable between 115VAC and 230VAC.",
+  "voltage": 24,
+  "wattage": 156,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 24,
+    "outputCurrent": 6.5,
+    "outputPower": 156,
+    "inputVoltageRange": "85-132VAC / 170-264VAC",
+    "efficiency": 89,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "159x97x30mm",
+    "weight": 420,
+    "coolingMethod": "convection",
+    "hasFan": false
+  },
+  "certifications": ["UL 62368-1", "CE", "CB"],
+  "protections": ["short-circuit", "overload", "overvoltage", "overtemperature"],
+  "operatingTemperature": "-30 to +70C",
+  "typicalUseCases": [
+    "Small to mid-size 3D printers with DC heated beds",
+    "Printers with AC heated beds needing a 24V electronics supply"
+  ],
+  "communityRecommendation": "standard",
+  "references": [
+    {
+      "label": "MeanWell LRS-150 Datasheet",
+      "url": "https://www.meanwell.com/Upload/PDF/LRS-150/LRS-150-SPEC.PDF",
+      "type": "datasheet"
+    },
+    {
+      "label": "DigiKey Product Page",
+      "url": "https://www.digikey.com/en/products/detail/mean-well-usa-inc/LRS-150-24/7705015",
+      "type": "product"
+    }
+  ],
+  "unverified": []
+}

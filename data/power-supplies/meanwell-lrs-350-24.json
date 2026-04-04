@@ -1,0 +1,47 @@
+{
+  "id": "meanwell-lrs-350-24",
+  "name": "LRS-350-24",
+  "manufacturer": "MeanWell",
+  "description": "High-power 350W enclosed power supply from MeanWell's LRS series. Unlike the smaller LRS models, the 350W variant includes an internal cooling fan. This is the standard PSU for printers with DC heated beds that need full power from a single supply, including Creality CR-10 V3, Ender 3 Pro, and many DIY builds. The most popular upgrade PSU for consumer 3D printers.",
+  "voltage": 24,
+  "wattage": 350,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 24,
+    "outputCurrent": 14.6,
+    "outputPower": 350.4,
+    "inputVoltageRange": "90-132VAC / 180-264VAC",
+    "efficiency": 88,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "215x115x30mm",
+    "weight": 960,
+    "coolingMethod": "forced-air",
+    "hasFan": true
+  },
+  "certifications": ["UL 62368-1", "CE", "CB"],
+  "protections": ["short-circuit", "overload", "overvoltage"],
+  "operatingTemperature": "-25 to +70C",
+  "typicalUseCases": [
+    "Creality Ender 3 Pro (stock and upgrade)",
+    "Creality CR-10 V3",
+    "DIY printers with DC heated beds",
+    "Voron builds (alternative to LRS-200 for DC bed setups)",
+    "General-purpose 24V 3D printer supply"
+  ],
+  "communityRecommendation": "highly-recommended",
+  "references": [
+    {
+      "label": "MeanWell LRS-350 Datasheet",
+      "url": "https://www.meanwell.com/Upload/PDF/LRS-350/LRS-350-SPEC.PDF",
+      "type": "datasheet"
+    },
+    {
+      "label": "DigiKey Product Page",
+      "url": "https://www.digikey.com/en/products/detail/mean-well-usa-inc/LRS-350-24/7705034",
+      "type": "product"
+    }
+  ],
+  "unverified": []
+}

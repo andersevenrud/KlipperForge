@@ -1,0 +1,62 @@
+{
+  "id": "goliath-air",
+  "name": "Goliath Air-Cooled",
+  "manufacturer": "VzBoT / Mellow",
+  "description": "The Goliath Air-Cooled is a high-flow hotend designed by the VzBoT team and manufactured by Mellow3D. It delivers extreme volumetric throughput without the complexity of a water cooling loop. It uses a large aluminum heatsink for cooling, making it significantly easier to integrate than the water-cooled variant while still achieving very high flow rates. Features a 50mm long melt zone, nickel-plated copper thermal block, and a bi-material copper-zirconia heatbreak.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 550,
+    "heaterType": "cartridge",
+    "heaterPower": 100,
+    "thermistorType": "PT1000 (M3 brass cartridge)",
+    "thermistorId": "pt1000"
+  },
+  "heatBreakSpecs": {
+    "type": "all-metal",
+    "material": "copper-zirconia composite",
+    "retraction": "0.5-2mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6, 9mm flats)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D V6 brass nozzles",
+      "E3D V6 hardened steel nozzles",
+      "third-party M6 V6-style nozzles"
+    ],
+    "maxFlowRate": "~80mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "mountType": "Goliath / VzBoT proprietary"
+  },
+  "features": [
+    "~80mm³/s high volumetric flow",
+    "Air-cooled design — no water loop required",
+    "Large aluminum heatsink with fan cooling",
+    "100W heater for sustained high-temperature printing",
+    "50mm long melt zone",
+    "Rated to 550°C for engineering filaments",
+    "V6 nozzle compatibility",
+    "Copper-zirconia heatbreak",
+    "Simpler installation than water-cooled variant"
+  ],
+  "references": [
+    {
+      "label": "VzBoT Goliath Documentation",
+      "url": "https://docs.vzbot.org/goliath",
+      "type": "documentation"
+    },
+    {
+      "label": "Goliath Hotend GitHub",
+      "url": "https://github.com/VzBoT3D/Goliath",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["maxFlowRate", "retraction"]
+}

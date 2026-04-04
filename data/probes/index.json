@@ -1,0 +1,21 @@
+{
+  "probes": [
+    { "id": "bltouch-v3.1", "name": "BLTouch V3.1", "manufacturer": "ANTCLABS", "probeType": "servo" },
+    { "id": "cr-touch", "name": "CR-Touch", "manufacturer": "Creality", "probeType": "servo" },
+    { "id": "3dtouch", "name": "3DTouch", "manufacturer": "TriangleLab", "probeType": "servo" },
+    { "id": "biqu-microprobe-v2", "name": "MicroProbe V2", "manufacturer": "BIQU", "probeType": "servo" },
+    { "id": "pinda-v2", "name": "PINDA V2", "manufacturer": "Prusa", "probeType": "inductive" },
+    { "id": "superpinda", "name": "SuperPINDA", "manufacturer": "Prusa", "probeType": "inductive" },
+    { "id": "th3d-ezabl", "name": "EZABL Pro", "manufacturer": "TH3D", "probeType": "inductive" },
+    { "id": "cartographer-3d", "name": "Cartographer 3D", "manufacturer": "Cartographer3D", "probeType": "eddy-current" },
+    { "id": "btt-eddy-usb", "name": "BTT Eddy USB", "manufacturer": "BigTreeTech", "probeType": "eddy-current" },
+    { "id": "btt-eddy-coil", "name": "BTT Eddy Coil", "manufacturer": "BigTreeTech", "probeType": "eddy-current" },
+    { "id": "beacon", "name": "Beacon", "manufacturer": "Beacon3D", "probeType": "eddy-current" },
+    { "id": "beacon-revh", "name": "Beacon RevH", "manufacturer": "Beacon3D", "probeType": "eddy-current" },
+    { "id": "bd-sensor", "name": "BD Sensor", "manufacturer": "markniu (PandaPi3D)", "probeType": "eddy-current" },
+    { "id": "voron-tap", "name": "Voron Tap", "manufacturer": "Voron Design", "probeType": "mechanical" },
+    { "id": "klicky-probe", "name": "Klicky Probe", "manufacturer": "Community (JosAr)", "probeType": "mechanical" },
+    { "id": "euclid-probe", "name": "Euclid Probe", "manufacturer": "Community (nionio6915)", "probeType": "mechanical" },
+    { "id": "smart-effector", "name": "Duet Smart Effector", "manufacturer": "Duet3D", "probeType": "strain-gauge" }
+  ]
+}

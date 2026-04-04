@@ -1,0 +1,51 @@
+{
+  "id": "creality-spider-3",
+  "name": "Spider 3.0",
+  "manufacturer": "Creality",
+  "description": "The Creality Spider 3.0 is an all-metal, high-flow hotend designed as a performance upgrade for Creality and other V6-compatible printers. It features a bi-metallic heatbreak and a 60W heater for fast heat-up, with V6 standard nozzle threading. Targeted at users looking for higher volumetric flow rates without moving to a fully proprietary ecosystem.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 300,
+    "heaterType": "cartridge",
+    "heaterPower": 60,
+    "thermistorType": "NTC 100K"
+  },
+  "heatBreakSpecs": {
+    "type": "bi-metallic",
+    "material": "titanium / copper alloy (0.2mm wall thickness)",
+    "retraction": "0.4-2mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D V6 brass",
+      "E3D V6 hardened steel",
+      "third-party M6 V6-style nozzles"
+    ],
+    "maxFlowRate": "~35mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "mountType": "V6 groove mount compatible"
+  },
+  "features": [
+    "60W heater for rapid heat-up",
+    "Bi-metallic heatbreak for thermal efficiency",
+    "V6 nozzle ecosystem compatibility",
+    "High-flow upgrade over stock Creality hotends"
+  ],
+  "references": [
+    {
+      "label": "Creality Spider 3.0 Product Page",
+      "url": "https://www.creality.com/products/spider-high-temperature-hotend",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["maxFlowRate", "retraction", "thermistorType", "heaterPower"]
+}

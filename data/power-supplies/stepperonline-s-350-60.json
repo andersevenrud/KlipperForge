@@ -1,0 +1,45 @@
+{
+  "id": "stepperonline-s-350-60",
+  "name": "S-350-60",
+  "manufacturer": "StepperOnline",
+  "description": "350W 60V switching power supply from StepperOnline's S series. Designed for high-voltage stepper motor applications at 60V. Used with BTT Octopus Pro (60V rated) and TMC5160 Pro drivers for maximum stepper performance. The 60V rating is at the upper end of what most 3D printer stepper drivers support.",
+  "voltage": 60,
+  "wattage": 350,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 60,
+    "outputCurrent": 5.9,
+    "outputPower": 354,
+    "inputVoltageRange": "93-132VAC / 176-264VAC",
+    "efficiency": 86,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "215x115x50mm",
+    "weight": 1100,
+    "coolingMethod": "forced-air",
+    "hasFan": true
+  },
+  "certifications": ["CE", "RoHS"],
+  "protections": ["short-circuit", "overload", "overvoltage", "overtemperature"],
+  "operatingTemperature": "-10 to +50C",
+  "typicalUseCases": [
+    "60V 3D printer builds with BTT Octopus Pro",
+    "High-voltage stepper systems with TMC5160 Pro drivers",
+    "CNC stepper motor systems"
+  ],
+  "communityRecommendation": "standard",
+  "references": [
+    {
+      "label": "StepperOnline Product Page",
+      "url": "https://www.omc-stepperonline.com/350w-60v-5-9a-115-230v-switching-power-supply-stepper-motor-cnc-router-kits-s-350-60",
+      "type": "product"
+    },
+    {
+      "label": "Amazon Product Page",
+      "url": "https://www.amazon.com/Switching-Power-Supply-Router-S-350-60/dp/B00XTHM6TO",
+      "type": "product"
+    }
+  ],
+  "unverified": []
+}

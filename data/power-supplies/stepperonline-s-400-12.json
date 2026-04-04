@@ -1,0 +1,45 @@
+{
+  "id": "stepperonline-s-400-12",
+  "name": "S-400-12",
+  "manufacturer": "StepperOnline",
+  "description": "400W 12V switching power supply from StepperOnline. Budget-friendly option for 12V 3D printers and CNC systems. Features forced-air cooling and a voltage selector switch for 115/230VAC input. While not as well-known as MeanWell, StepperOnline power supplies are widely used in the CNC and 3D printing communities for their value proposition.",
+  "voltage": 12,
+  "wattage": 400,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 12,
+    "outputCurrent": 33,
+    "outputPower": 396,
+    "inputVoltageRange": "93-132VAC / 176-264VAC",
+    "efficiency": 82.5,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "215x115x50mm",
+    "weight": 1300,
+    "coolingMethod": "forced-air",
+    "hasFan": true
+  },
+  "certifications": ["CE", "RoHS"],
+  "protections": ["short-circuit", "overload", "overvoltage", "overtemperature"],
+  "operatingTemperature": "-10 to +50C",
+  "typicalUseCases": [
+    "12V 3D printers",
+    "CNC router systems",
+    "LED lighting projects"
+  ],
+  "communityRecommendation": "standard",
+  "references": [
+    {
+      "label": "StepperOnline Product Page",
+      "url": "https://www.omc-stepperonline.com/400w-12v-33a-115-230v-switching-power-supply-stepper-motor-cnc-router-kits-s-400-12",
+      "type": "product"
+    },
+    {
+      "label": "Amazon Product Page",
+      "url": "https://www.amazon.com/Switching-Power-Supply-Printer-S-400-12/dp/B00XTHNUYY",
+      "type": "product"
+    }
+  ],
+  "unverified": []
+}

@@ -1,0 +1,38 @@
+{
+  "id": "generic-3950",
+  "name": "Generic NTC 100K 3950",
+  "manufacturer": "Various",
+  "description": "A widely sold generic NTC thermistor with a nominal resistance of 100kΩ at 25°C and a claimed beta value of 3950K. These are budget components sold by many manufacturers under no single brand and are commonly bundled with low-cost 3D printers and hotends. Quality and accuracy vary considerably between suppliers. Klipper introduced the 'Generic 3950' sensor type specifically for this class of thermistor, replacing the older and less accurate 'NTC 100K beta 3950' type.",
+  "sensorType": "NTC",
+  "sensingSpecs": {
+    "resistanceAt25C": 100000,
+    "betaValue": 3950,
+    "temperatureRange": "-20 to 300°C"
+  },
+  "klipperSpecs": {
+    "sensorType": "Generic 3950",
+    "requiresAmplifier": false,
+    "pullupResistor": 4700
+  },
+  "physicalSpecs": {
+    "packageType": "glass bead"
+  },
+  "unverified": [
+    "betaValue",
+    "temperatureRange",
+    "resistanceAt25C",
+    "packageType"
+  ],
+  "references": [
+    {
+      "label": "Klipper Config Reference - Thermistors",
+      "url": "https://www.klipper3d.org/Config_Reference.html#temperature-sensors",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Generic 3950 Discussion",
+      "url": "https://github.com/Klipper3d/klipper/issues/4054",
+      "type": "github"
+    }
+  ]
+}

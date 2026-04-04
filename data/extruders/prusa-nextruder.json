@@ -1,0 +1,40 @@
+{
+  "id": "prusa-nextruder",
+  "name": "Prusa Nextruder",
+  "manufacturer": "Prusa Research",
+  "description": "Direct drive extruder system used in Prusa MK3.9, MK4, MK4S, XL, and CORE One printers. Features a 10:1 planetary gearbox for high torque in a compact form factor, with a large no-slip drive gear for reliable filament feeding including flexible materials. The Nextruder integrates its own PCB with a dedicated CPU and stepper driver, and includes a load cell sensor for nozzle-based bed probing.",
+  "driveType": "direct",
+  "mechanicalSpecs": {
+    "gearRatio": "10:1",
+    "filamentDiameter": 1.75,
+    "gripType": "single drive gear"
+  },
+  "motorSpecs": {
+    "includedMotor": true,
+    "motorType": "Pancake stepper with integrated planetary gearbox"
+  },
+  "physicalSpecs": {
+    "mountPattern": "Prusa Nextruder proprietary"
+  },
+  "features": [
+    "10:1 planetary gearbox for high torque",
+    "No-slip large drive gear",
+    "Integrated PCB with CPU and stepper driver",
+    "Load cell sensor for nozzle-based bed probing",
+    "Hot-swappable hotend assembly",
+    "Handles flexible filaments reliably"
+  ],
+  "references": [
+    {
+      "label": "Prusa Blog: Reworked Nextruder",
+      "url": "https://blog.prusa3d.com/development-update-reworked-nextruder-new-features-and-updated-shipping-information_69967/",
+      "type": "documentation"
+    },
+    {
+      "label": "The Nextruder: Prusa XL Deep Dive (All3DP)",
+      "url": "https://all3dp.com/1/nextruder-prusa-xl-deep-dive/",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "dimensions", "maxFeedRate"]
+}

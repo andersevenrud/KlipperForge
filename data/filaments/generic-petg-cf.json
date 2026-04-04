@@ -1,0 +1,57 @@
+{
+  "id": "generic-petg-cf",
+  "name": "PETG-CF (Carbon Fiber)",
+  "manufacturer": "Generic",
+  "description": "PETG reinforced with chopped carbon fibers, offering improved stiffness and dimensional stability over standard PETG while retaining its ease of printing and chemical resistance. Easier to print than PA-CF since PETG has lower moisture sensitivity. A good entry point into fiber-reinforced filaments. Requires a hardened nozzle.",
+  "filamentType": "PETG-CF",
+  "ratings": {
+    "strength": 3,
+    "stiffness": 4,
+    "durability": 3,
+    "printability": 3,
+    "heatResistance": 3
+  },
+  "printSpecs": {
+    "nozzleTempRange": "230–260°C",
+    "bedTempRange": "70–85°C",
+    "printSpeedRange": "30–50 mm/s",
+    "coolingFan": "Low (30%)",
+    "enclosureRequired": false,
+    "firstLayerTemp": "240–250°C"
+  },
+  "mechanicalSpecs": {
+    "tensileStrength": 55,
+    "heatDeflectionTemp": 78,
+    "elongationAtBreak": 6,
+    "impactStrength": "Moderate"
+  },
+  "environmentalSpecs": {
+    "moistureSensitivity": "Moderate",
+    "uvResistance": "Good",
+    "foodSafe": false,
+    "dryingTemp": 65,
+    "dryingTime": 6
+  },
+  "physicalSpecs": {
+    "diameter": 1.75,
+    "density": 1.30,
+    "glassTransitionTemp": 82,
+    "meltingPoint": 240
+  },
+  "features": [
+    "Easier to print than PA-CF or PC-CF",
+    "No enclosure required in most cases",
+    "Improved stiffness over plain PETG",
+    "Good chemical resistance retained",
+    "Lower moisture sensitivity than nylon CF",
+    "Requires hardened steel nozzle (abrasive)"
+  ],
+  "references": [
+    {
+      "label": "Simplify3D — PETG Material Guide",
+      "url": "https://www.simplify3d.com/resources/materials-guide/petg/",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["tensileStrength", "heatDeflectionTemp", "elongationAtBreak", "density"]
+}

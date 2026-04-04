@@ -1,0 +1,49 @@
+{
+  "id": "cartographer-3d",
+  "name": "Cartographer 3D",
+  "manufacturer": "Cartographer3D",
+  "description": "The Cartographer 3D is a high-precision eddy current bed probe that communicates over USB or CAN bus. It performs rapid non-contact bed scanning with sub-micron repeatability and includes built-in temperature compensation. It supports multi-point surface mapping for real-time bed mesh generation during printing.",
+  "probeType": "eddy-current",
+  "electricalSpecs": {
+    "operatingVoltage": "5V DC (USB or CAN bus powered)",
+    "signalType": "USB or CAN bus",
+    "currentDraw": "80mA"
+  },
+  "performanceSpecs": {
+    "repeatability": "±0.001mm",
+    "triggerDistance": "0.5-5mm (configurable)",
+    "bedCompatibility": [
+      "spring steel sheet",
+      "PEI on spring steel",
+      "textured PEI on spring steel",
+      "aluminum"
+    ],
+    "bedCompatibilityNote": "Eddy current probes require a conductive surface. They cannot detect non-conductive materials like bare glass or G10/FR4 without a conductive layer underneath.",
+    "temperatureCompensation": true,
+    "multiPoint": true
+  },
+  "physicalSpecs": {
+    "dimensions": "28.0 × 14.0 × 8.0mm",
+    "weight": 5,
+    "mountType": "2x M3 screw"
+  },
+  "klipperSection": "cartographer",
+  "unverified": ["currentDraw", "weight", "dimensions"],
+  "references": [
+    {
+      "label": "Cartographer3D Official Website",
+      "url": "https://cartographer3d.com/",
+      "type": "product"
+    },
+    {
+      "label": "Cartographer3D GitHub Repository",
+      "url": "https://github.com/Cartographer3D/cartographer-klipper",
+      "type": "github"
+    },
+    {
+      "label": "Cartographer3D Documentation",
+      "url": "https://docs.cartographer3d.com/",
+      "type": "documentation"
+    }
+  ]
+}

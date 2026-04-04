@@ -1,0 +1,26 @@
+{
+  "id": "ldo-36sth20-0804ah",
+  "name": "LDO-36STH20-0804AH",
+  "manufacturer": "LDO",
+  "description": "Low-current round NEMA14 stepper with 0.8A rating. High-temp Class H insulation for enclosed printers.",
+  "nemaSize": 14,
+  "electricalSpecs": {
+    "ratedCurrent": 0.8,
+    "holdingTorque": 8,
+    "stepAngle": 1.8,
+    "phaseResistance": 1.85,
+    "phaseInductance": 1.05,
+    "ratedVoltage": 1.48
+  },
+  "physicalSpecs": {
+    "bodyLength": 20,
+    "weight": 75,
+    "shaftDiameter": 5,
+    "shaftLength": 24
+  },
+  "connectorType": "JST-PH 4-pin",
+  "temperatureRating": 180,
+  "references": [
+    { "label": "LDO 35mm Hybrid Stepper Series", "url": "http://ldomotors.com/products/show/35mm-hybrid-stepper-series", "type": "product" }
+  ]
+}

@@ -1,0 +1,368 @@
+{
+  "id": "voron-2.4",
+  "name": "Voron 2.4",
+  "manufacturer": "VORON Design",
+  "description": "High-performance CoreXY 3D printer kit with enclosed chamber",
+  "variants": [
+    {
+      "id": "350",
+      "name": "350mm",
+      "kinematics": "corexy",
+      "bedSize": { "x": 350, "y": 350, "z": 340 },
+      "defaults": {
+        "sections": [
+          {
+            "definitionId": "printer",
+            "data": {
+              "kinematics": "corexy",
+              "max_velocity": 300,
+              "max_accel": 3000,
+              "max_z_velocity": 15,
+              "max_z_accel": 350,
+              "square_corner_velocity": 5
+            }
+          },
+          {
+            "definitionId": "mcu",
+            "data": {
+              "serial": "/dev/serial/by-id/usb-katapult_stm32f446xx_placeholder"
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "x",
+            "data": {
+              "step_pin": "PF13",
+              "dir_pin": "!PF12",
+              "enable_pin": "!PF14",
+              "rotation_distance": 40,
+              "microsteps": 32,
+              "endstop_pin": "PG6",
+              "position_min": 0,
+              "position_endstop": 350,
+              "position_max": 350,
+              "homing_speed": 25,
+              "homing_retract_dist": 5
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "y",
+            "data": {
+              "step_pin": "PG0",
+              "dir_pin": "!PG1",
+              "enable_pin": "!PF15",
+              "rotation_distance": 40,
+              "microsteps": 32,
+              "endstop_pin": "PG9",
+              "position_min": 0,
+              "position_endstop": 350,
+              "position_max": 350,
+              "homing_speed": 25,
+              "homing_retract_dist": 5
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "z",
+            "data": {
+              "step_pin": "PF11",
+              "dir_pin": "!PG3",
+              "enable_pin": "!PG5",
+              "rotation_distance": 40,
+              "gear_ratio": "80:16",
+              "microsteps": 32,
+              "endstop_pin": "PG10",
+              "position_max": 340,
+              "position_min": -5,
+              "homing_speed": 8,
+              "homing_retract_dist": 3
+            }
+          },
+          {
+            "definitionId": "extruder",
+            "data": {
+              "step_pin": "PE2",
+              "dir_pin": "PE3",
+              "enable_pin": "!PD4",
+              "rotation_distance": 22.6789511,
+              "gear_ratio": "50:10",
+              "microsteps": 32,
+              "nozzle_diameter": 0.4,
+              "filament_diameter": 1.75,
+              "heater_pin": "PA2",
+              "sensor_type": "Generic 3950",
+              "sensor_pin": "PF4",
+              "min_temp": 10,
+              "max_temp": 270,
+              "control": "pid",
+              "pid_kp": 26.213,
+              "pid_ki": 1.304,
+              "pid_kd": 131.721
+            }
+          },
+          {
+            "definitionId": "heater_bed",
+            "data": {
+              "heater_pin": "PA1",
+              "sensor_type": "Generic 3950",
+              "sensor_pin": "PF3",
+              "max_temp": 120,
+              "min_temp": 0,
+              "control": "pid",
+              "pid_kp": 38.771,
+              "pid_ki": 1.746,
+              "pid_kd": 215.177
+            }
+          },
+          {
+            "definitionId": "fan",
+            "data": {
+              "pin": "PA8"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "300",
+      "name": "300mm",
+      "kinematics": "corexy",
+      "bedSize": { "x": 300, "y": 300, "z": 290 },
+      "defaults": {
+        "sections": [
+          {
+            "definitionId": "printer",
+            "data": {
+              "kinematics": "corexy",
+              "max_velocity": 300,
+              "max_accel": 3000,
+              "max_z_velocity": 15,
+              "max_z_accel": 350,
+              "square_corner_velocity": 5
+            }
+          },
+          {
+            "definitionId": "mcu",
+            "data": {
+              "serial": "/dev/serial/by-id/usb-katapult_stm32f446xx_placeholder"
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "x",
+            "data": {
+              "step_pin": "PF13",
+              "dir_pin": "!PF12",
+              "enable_pin": "!PF14",
+              "rotation_distance": 40,
+              "microsteps": 32,
+              "endstop_pin": "PG6",
+              "position_min": 0,
+              "position_endstop": 300,
+              "position_max": 300,
+              "homing_speed": 25,
+              "homing_retract_dist": 5
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "y",
+            "data": {
+              "step_pin": "PG0",
+              "dir_pin": "!PG1",
+              "enable_pin": "!PF15",
+              "rotation_distance": 40,
+              "microsteps": 32,
+              "endstop_pin": "PG9",
+              "position_min": 0,
+              "position_endstop": 300,
+              "position_max": 300,
+              "homing_speed": 25,
+              "homing_retract_dist": 5
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "z",
+            "data": {
+              "step_pin": "PF11",
+              "dir_pin": "!PG3",
+              "enable_pin": "!PG5",
+              "rotation_distance": 40,
+              "gear_ratio": "80:16",
+              "microsteps": 32,
+              "endstop_pin": "PG10",
+              "position_max": 290,
+              "position_min": -5,
+              "homing_speed": 8,
+              "homing_retract_dist": 3
+            }
+          },
+          {
+            "definitionId": "extruder",
+            "data": {
+              "step_pin": "PE2",
+              "dir_pin": "PE3",
+              "enable_pin": "!PD4",
+              "rotation_distance": 22.6789511,
+              "gear_ratio": "50:10",
+              "microsteps": 32,
+              "nozzle_diameter": 0.4,
+              "filament_diameter": 1.75,
+              "heater_pin": "PA2",
+              "sensor_type": "Generic 3950",
+              "sensor_pin": "PF4",
+              "min_temp": 10,
+              "max_temp": 270,
+              "control": "pid",
+              "pid_kp": 26.213,
+              "pid_ki": 1.304,
+              "pid_kd": 131.721
+            }
+          },
+          {
+            "definitionId": "heater_bed",
+            "data": {
+              "heater_pin": "PA1",
+              "sensor_type": "Generic 3950",
+              "sensor_pin": "PF3",
+              "max_temp": 120,
+              "min_temp": 0,
+              "control": "pid",
+              "pid_kp": 38.771,
+              "pid_ki": 1.746,
+              "pid_kd": 215.177
+            }
+          },
+          {
+            "definitionId": "fan",
+            "data": {
+              "pin": "PA8"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "250",
+      "name": "250mm",
+      "kinematics": "corexy",
+      "bedSize": { "x": 250, "y": 250, "z": 230 },
+      "defaults": {
+        "sections": [
+          {
+            "definitionId": "printer",
+            "data": {
+              "kinematics": "corexy",
+              "max_velocity": 300,
+              "max_accel": 3000,
+              "max_z_velocity": 15,
+              "max_z_accel": 350,
+              "square_corner_velocity": 5
+            }
+          },
+          {
+            "definitionId": "mcu",
+            "data": {
+              "serial": "/dev/serial/by-id/usb-katapult_stm32f446xx_placeholder"
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "x",
+            "data": {
+              "step_pin": "PF13",
+              "dir_pin": "!PF12",
+              "enable_pin": "!PF14",
+              "rotation_distance": 40,
+              "microsteps": 32,
+              "endstop_pin": "PG6",
+              "position_min": 0,
+              "position_endstop": 250,
+              "position_max": 250,
+              "homing_speed": 25,
+              "homing_retract_dist": 5
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "y",
+            "data": {
+              "step_pin": "PG0",
+              "dir_pin": "!PG1",
+              "enable_pin": "!PF15",
+              "rotation_distance": 40,
+              "microsteps": 32,
+              "endstop_pin": "PG9",
+              "position_min": 0,
+              "position_endstop": 250,
+              "position_max": 250,
+              "homing_speed": 25,
+              "homing_retract_dist": 5
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "z",
+            "data": {
+              "step_pin": "PF11",
+              "dir_pin": "!PG3",
+              "enable_pin": "!PG5",
+              "rotation_distance": 40,
+              "gear_ratio": "80:16",
+              "microsteps": 32,
+              "endstop_pin": "PG10",
+              "position_max": 230,
+              "position_min": -5,
+              "homing_speed": 8,
+              "homing_retract_dist": 3
+            }
+          },
+          {
+            "definitionId": "extruder",
+            "data": {
+              "step_pin": "PE2",
+              "dir_pin": "PE3",
+              "enable_pin": "!PD4",
+              "rotation_distance": 22.6789511,
+              "gear_ratio": "50:10",
+              "microsteps": 32,
+              "nozzle_diameter": 0.4,
+              "filament_diameter": 1.75,
+              "heater_pin": "PA2",
+              "sensor_type": "Generic 3950",
+              "sensor_pin": "PF4",
+              "min_temp": 10,
+              "max_temp": 270,
+              "control": "pid",
+              "pid_kp": 26.213,
+              "pid_ki": 1.304,
+              "pid_kd": 131.721
+            }
+          },
+          {
+            "definitionId": "heater_bed",
+            "data": {
+              "heater_pin": "PA1",
+              "sensor_type": "Generic 3950",
+              "sensor_pin": "PF3",
+              "max_temp": 120,
+              "min_temp": 0,
+              "control": "pid",
+              "pid_kp": 38.771,
+              "pid_ki": 1.746,
+              "pid_kd": 215.177
+            }
+          },
+          {
+            "definitionId": "fan",
+            "data": {
+              "pin": "PA8"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

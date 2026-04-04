@@ -1,0 +1,62 @@
+{
+  "id": "generic-petg",
+  "name": "PETG",
+  "manufacturer": "Generic",
+  "description": "Polyethylene terephthalate glycol-modified (PETG) combines ease of printing with good mechanical properties and chemical resistance. It bridges the gap between PLA and ABS, making it suitable for functional parts, enclosures, and outdoor applications.",
+  "filamentType": "PETG",
+  "ratings": {
+    "strength": 3,
+    "stiffness": 3,
+    "durability": 4,
+    "printability": 4,
+    "heatResistance": 2
+  },
+  "printSpecs": {
+    "nozzleTempRange": "220–250°C",
+    "bedTempRange": "70–90°C",
+    "printSpeedRange": "30–60 mm/s",
+    "coolingFan": "Moderate (50%)",
+    "enclosureRequired": false,
+    "firstLayerTemp": "230–240°C"
+  },
+  "mechanicalSpecs": {
+    "tensileStrength": 50,
+    "heatDeflectionTemp": 70,
+    "elongationAtBreak": 23,
+    "impactStrength": "Moderate"
+  },
+  "environmentalSpecs": {
+    "moistureSensitivity": "Moderate",
+    "uvResistance": "Good",
+    "foodSafe": true,
+    "dryingTemp": 65,
+    "dryingTime": 4
+  },
+  "physicalSpecs": {
+    "diameter": 1.75,
+    "density": 1.27,
+    "glassTransitionTemp": 80,
+    "meltingPoint": 230
+  },
+  "features": [
+    "Good layer adhesion and strength",
+    "Chemical and moisture resistance",
+    "Low warping compared to ABS",
+    "Food-safe grades available",
+    "Good transparency in natural form",
+    "UV resistant for outdoor use"
+  ],
+  "references": [
+    {
+      "label": "Simplify3D — PETG Material Guide",
+      "url": "https://www.simplify3d.com/resources/materials-guide/petg/",
+      "type": "documentation"
+    },
+    {
+      "label": "Polymaker PolyLite PETG TDS",
+      "url": "https://polymaker.com/wp-content/uploads/lana-downloads/PolyLite_PETG_TDS_V5.3.pdf",
+      "type": "datasheet"
+    }
+  ],
+  "unverified": ["tensileStrength", "elongationAtBreak"]
+}

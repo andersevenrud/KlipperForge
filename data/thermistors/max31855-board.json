@@ -1,0 +1,33 @@
+{
+  "id": "max31855-board",
+  "name": "MAX31855 Amplifier Board",
+  "manufacturer": "Various (Maxim Integrated chip)",
+  "description": "The MAX31855 is a cold-junction compensated thermocouple-to-digital converter IC designed for K-type thermocouples. It provides a 14-bit ADC result over a simple SPI interface, making it straightforward to connect a K-type thermocouple to a 3D printer control board. Breakout boards based on this chip are widely available. Klipper supports it directly with the 'MAX31855' sensor type. For multi-type thermocouple support, the more capable MAX31856 is an alternative.",
+  "sensorType": "thermocouple",
+  "sensingSpecs": {
+    "temperatureRange": "-200 to 1350°C",
+    "accuracy": "±2°C"
+  },
+  "klipperSpecs": {
+    "sensorType": "MAX31855",
+    "requiresAmplifier": true,
+    "amplifierChip": "MAX31855"
+  },
+  "physicalSpecs": {
+    "packageType": "breakout board",
+    "dimensions": "14 × 21mm (Adafruit variant)"
+  },
+  "unverified": ["dimensions"],
+  "references": [
+    {
+      "label": "Maxim MAX31855 Datasheet",
+      "url": "https://www.analog.com/en/products/max31855.html",
+      "type": "datasheet"
+    },
+    {
+      "label": "Klipper Config Reference - MAX31855",
+      "url": "https://www.klipper3d.org/Config_Reference.html#temperature-sensors",
+      "type": "documentation"
+    }
+  ]
+}

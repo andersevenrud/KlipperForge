@@ -1,0 +1,51 @@
+{
+  "id": "meanwell-uhp-350-48",
+  "name": "UHP-350-48",
+  "manufacturer": "MeanWell",
+  "description": "High-power 350W 48V slim fanless power supply with built-in PFC. Provides substantial 48V power in a compact fanless package. Used in high-performance 3D printer builds with multiple 48V stepper motors or large stepper configurations requiring high current at 48V. Popular in Formbot 48V Voron kits and similar high-voltage builds.",
+  "voltage": 48,
+  "wattage": 350,
+  "formFactor": "enclosed-slim",
+  "electricalSpecs": {
+    "outputVoltage": 48,
+    "outputCurrent": 7.3,
+    "outputPower": 350.4,
+    "inputVoltageRange": "90-264VAC",
+    "efficiency": 95,
+    "powerFactorCorrection": true
+  },
+  "physicalSpecs": {
+    "dimensions": "220x62x31mm",
+    "weight": 680,
+    "coolingMethod": "convection",
+    "hasFan": false
+  },
+  "certifications": ["UL", "CE", "CB", "CCC", "BSMI", "EAC", "TUV"],
+  "protections": ["short-circuit", "overload", "overvoltage", "overtemperature"],
+  "operatingTemperature": "-30 to +70C",
+  "typicalUseCases": [
+    "Voron 48V builds with multiple steppers",
+    "Formbot 48V Voron kits",
+    "High-performance motion systems with TMC5160 drivers",
+    "Large-format printers with 48V stepper systems"
+  ],
+  "communityRecommendation": "recommended",
+  "references": [
+    {
+      "label": "MeanWell UHP-350 Product Page",
+      "url": "https://www.meanwell.com/webapp/product/search.aspx?prod=UHP-350(R)",
+      "type": "product"
+    },
+    {
+      "label": "KB-3D Product Page",
+      "url": "https://kb-3d.com/store/power-supplies-converters/985-meanwell-uhp-350-48-power-supply-48v-350w-1667063247077.html",
+      "type": "product"
+    },
+    {
+      "label": "DigiKey Product Page",
+      "url": "https://www.digikey.com/en/products/detail/mean-well-usa-inc/UHP-350-48/7707258",
+      "type": "product"
+    }
+  ],
+  "unverified": ["weight"]
+}

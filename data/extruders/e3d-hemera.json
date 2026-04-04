@@ -1,0 +1,48 @@
+{
+  "id": "e3d-hemera",
+  "name": "E3D Hemera",
+  "manufacturer": "E3D",
+  "description": "The E3D Hemera is an integrated direct drive extruder and hotend system. It combines dual drive gears with a 3.32:1 gear ratio, an integrated heatsink, and a bundled NEMA17 stepper motor into a single unit. The Hemera is designed to reduce the number of components on a toolhead while delivering reliable extrusion, particularly for flexible and abrasive filaments.",
+  "driveType": "both",
+  "mechanicalSpecs": {
+    "gearRatio": "3.32:1",
+    "filamentDiameter": 1.75,
+    "gripType": "dual drive",
+    "maxFeedRate": 25
+  },
+  "motorSpecs": {
+    "includedMotor": true,
+    "motorType": "NEMA17 stepper (E3D integrated)",
+    "compatibleMotors": "Dedicated E3D Hemera NEMA17"
+  },
+  "physicalSpecs": {
+    "weight": 388,
+    "dimensions": "77 × 44 × 83mm",
+    "mountPattern": "E3D Hemera standard mount"
+  },
+  "features": [
+    "Integrated extruder and hotend system",
+    "Dual drive gears for reliable filament grip",
+    "Integrated heatsink reduces components",
+    "Ships with matched stepper motor",
+    "Compatible with E3D V6 nozzles"
+  ],
+  "references": [
+    {
+      "label": "E3D Hemera Product Page",
+      "url": "https://e3d-online.com/collections/hemera-1",
+      "type": "product"
+    },
+    {
+      "label": "E3D Hemera Collection",
+      "url": "https://e3d-online.com/collections/hemera-1",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Extruder Configuration Reference",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["dimensions", "maxFeedRate"]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "moons-ms17hd6p4150",
+  "name": "MS17HD6P4150",
+  "manufacturer": "Moons'",
+  "description": "Premium 48mm NEMA17 stepper from Moons'. High 62Ncm torque at moderate 1.5A current for efficient operation.",
+  "nemaSize": 17,
+  "electricalSpecs": {
+    "ratedCurrent": 1.5,
+    "holdingTorque": 62,
+    "stepAngle": 1.8,
+    "phaseResistance": 2.2,
+    "phaseInductance": 4.9,
+    "ratedVoltage": 3.3
+  },
+  "physicalSpecs": {
+    "bodyLength": 48,
+    "weight": 360,
+    "shaftDiameter": 5,
+    "shaftLength": 24
+  },
+  "references": [
+    { "label": "Moons' product page", "url": "https://www.moonsindustries.com/series/nema-17-standard-hybrid-stepper-motors-b020105", "type": "product" }
+  ]
+}

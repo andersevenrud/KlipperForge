@@ -1,0 +1,49 @@
+{
+  "id": "beacon",
+  "name": "Beacon",
+  "manufacturer": "Beacon3D",
+  "description": "The Beacon is a high-performance eddy current bed probe designed for fast and accurate non-contact bed mesh scanning. It connects via USB and features sub-micron repeatability with built-in temperature compensation. It can generate a full bed mesh in seconds by scanning while the toolhead is in motion.",
+  "probeType": "eddy-current",
+  "electricalSpecs": {
+    "operatingVoltage": "5V DC (USB powered)",
+    "signalType": "USB",
+    "currentDraw": "90mA"
+  },
+  "performanceSpecs": {
+    "repeatability": "±0.001mm",
+    "triggerDistance": "0.5-5mm (configurable)",
+    "bedCompatibility": [
+      "spring steel sheet",
+      "PEI on spring steel",
+      "textured PEI on spring steel",
+      "aluminum"
+    ],
+    "bedCompatibilityNote": "Eddy current probes require a conductive surface. They cannot detect non-conductive materials like bare glass or G10/FR4 without a conductive layer underneath.",
+    "temperatureCompensation": true,
+    "multiPoint": true
+  },
+  "physicalSpecs": {
+    "dimensions": "27.0 × 14.5 × 8.5mm",
+    "weight": 3.5,
+    "mountType": "2x M3 screw"
+  },
+  "klipperSection": "beacon",
+  "unverified": ["currentDraw", "dimensions", "repeatability"],
+  "references": [
+    {
+      "label": "Beacon3D Official Website",
+      "url": "https://beacon3d.com/",
+      "type": "product"
+    },
+    {
+      "label": "Beacon3D GitHub Repository",
+      "url": "https://github.com/beacon3d/beacon_klipper",
+      "type": "github"
+    },
+    {
+      "label": "Beacon3D Documentation",
+      "url": "https://docs.beacon3d.com/",
+      "type": "documentation"
+    }
+  ]
+}

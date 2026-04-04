@@ -1,0 +1,45 @@
+{
+  "id": "wristpin-g2sa",
+  "name": "WristWatch G2",
+  "manufacturer": "Community (bythorsthunder / tetsu97)",
+  "description": "The WristWatch G2 (WWG2) is a community-designed standalone extruder that uses Galileo 2 internals for filament extrusion. Designed by @bythorsthunder with contributions from tetsu97, it is built as an alternative to the WristWatch BMG extruder. It uses the same 9:1 planetary gear system and dual drive mechanism as the Galileo 2 but features a revised three-part body (main body, rear plate, tension arm) and uses the Orbiter 2.0 mounting pattern.",
+  "driveType": "direct",
+  "mechanicalSpecs": {
+    "gearRatio": "9:1",
+    "filamentDiameter": 1.75,
+    "gripType": "dual drive"
+  },
+  "motorSpecs": {
+    "includedMotor": false,
+    "motorType": "NEMA14",
+    "compatibleMotors": "NEMA14 36mm pancake (same as Galileo 2 SA)"
+  },
+  "physicalSpecs": {
+    "mountPattern": "Orbiter 2.0 mounting pattern"
+  },
+  "features": [
+    "Standalone extruder using Galileo 2 internals",
+    "Three-part body design for improved printability",
+    "Uses Orbiter 2.0 mounting pattern",
+    "Open source design files available",
+    "Compatible with XOL2 and other toolheads via adapters"
+  ],
+  "references": [
+    {
+      "label": "WristWatch G2 Extruder GitHub Repository",
+      "url": "https://github.com/tetsu97/WristWatch-G2-Extruder",
+      "type": "github"
+    },
+    {
+      "label": "Galileo 2 GitHub Repository (upstream)",
+      "url": "https://github.com/JaredC01/Galileo2",
+      "type": "github"
+    },
+    {
+      "label": "Klipper Extruder Configuration Reference",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "dimensions", "maxFeedRate"]
+}

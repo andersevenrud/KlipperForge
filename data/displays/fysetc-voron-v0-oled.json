@@ -1,0 +1,45 @@
+{
+  "id": "fysetc-voron-v0-oled",
+  "name": "Voron V0 1.3\" OLED Display",
+  "manufacturer": "Fysetc",
+  "description": "A 1.3 inch OLED display designed for Voron V0 builds. Uses an SH1106 driver with I2C interface, connected via a dedicated STM32F042 adapter board that communicates with the Klipper host over USB. Provides basic print status information in a compact form factor.",
+  "displayType": "klipper-native",
+  "screenSpecs": {
+    "size": "1.3 inch",
+    "resolution": "128x64",
+    "panelType": "OLED",
+    "touchscreen": false,
+    "driver": "SH1106"
+  },
+  "connectionSpecs": {
+    "interface": "I2C (via STM32F042 USB adapter board)",
+    "connector": "USB to Klipper host"
+  },
+  "klipperIntegration": {
+    "method": "Klipper [display] section",
+    "klipperDisplayType": "sh1106",
+    "requiresSbc": false
+  },
+  "features": [
+    "Klipper native display support",
+    "OLED panel with high contrast",
+    "Compact 1.3 inch form factor",
+    "Designed for Voron V0",
+    "STM32F042 USB adapter board included",
+    "Click encoder with push button for menu navigation",
+    "Onboard Neopixel LED"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "Fysetc Voron V0 OLED Product Page",
+      "url": "https://www.fysetc.com/products/fysetc-voron-v0-1-3-inch-oled-display-screen-smart-display-for-raspberry-pi-3-b-voron-v0-3d-printer-accessories",
+      "type": "product"
+    },
+    {
+      "label": "Voron V0 Display Hardware",
+      "url": "https://github.com/VoronDesign/Voron-Hardware/tree/master/V0_Display",
+      "type": "github"
+    }
+  ]
+}

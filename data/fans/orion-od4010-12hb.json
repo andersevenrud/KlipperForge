@@ -1,0 +1,40 @@
+{
+  "id": "orion-od4010-12hb",
+  "name": "OD4010-12HB",
+  "manufacturer": "Orion",
+  "description": "The Orion OD4010-12HB is a 40×10mm axial fan used as a hotend cooling fan on 12V 3D printers. Orion publishes datasheets for this product with specific airflow and electrical figures. Its dual ball bearing makes it more durable than sleeve-bearing alternatives in the elevated ambient temperatures typical of enclosed printer environments.",
+  "fanType": "axial",
+  "size": "4010",
+  "airflowSpecs": {
+    "airflow": 7.0,
+    "staticPressure": 5.08,
+    "rpm": 6000
+  },
+  "electricalSpecs": {
+    "voltage": 12,
+    "current": 0.1,
+    "power": 1.2,
+    "pwmCapable": false,
+    "tachoSignal": false
+  },
+  "noiseSpecs": {
+    "noiseLevel": 25
+  },
+  "physicalSpecs": {
+    "dimensions": "40×40×10mm",
+    "bearingType": "Dual Ball Bearing"
+  },
+  "references": [
+    {
+      "label": "Orion OD4010 Series Datasheet (PDF)",
+      "url": "https://orionfans.com/productFiles/datasheet/OD4010.pdf",
+      "type": "datasheet"
+    },
+    {
+      "label": "Orion OD4010-12HB Product Page (DigiKey)",
+      "url": "https://www.digikey.com/en/products/detail/orion-fans/OD4010-12HB/2621108",
+      "type": "product"
+    }
+  ],
+  "unverified": ["weight"]
+}

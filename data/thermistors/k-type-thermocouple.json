@@ -1,0 +1,32 @@
+{
+  "id": "k-type-thermocouple",
+  "name": "K-Type Thermocouple",
+  "manufacturer": "Various",
+  "description": "K-type thermocouples are the most common thermocouple type and are frequently used in 3D printing for high-temperature applications. They consist of nickel-chromium and nickel-aluminium alloy wires and are capable of measuring temperatures from -200°C to 1350°C. Because thermocouples produce a very small voltage (approximately 41µV/°C), a dedicated amplifier such as the MAX31855 or MAX31856 is required to interface with a 3D printer control board. The Klipper sensor type depends on which amplifier board is used.",
+  "sensorType": "thermocouple",
+  "sensingSpecs": {
+    "temperatureRange": "-200 to 1350°C",
+    "accuracy": "±2.5°C or ±0.75% (Class 2, IEC 60584)"
+  },
+  "klipperSpecs": {
+    "sensorType": "MAX31855 or MAX31856 depending on amplifier",
+    "requiresAmplifier": true,
+    "amplifierChip": "MAX31855 or MAX31856"
+  },
+  "physicalSpecs": {
+    "leadType": "Type K alloy (nickel-chromium / nickel-aluminium)"
+  },
+  "unverified": [],
+  "references": [
+    {
+      "label": "Klipper Config Reference - Thermocouples",
+      "url": "https://www.klipper3d.org/Config_Reference.html#temperature-sensors",
+      "type": "documentation"
+    },
+    {
+      "label": "NIST ITS-90 Thermocouple Tables",
+      "url": "https://srdata.nist.gov/its90/main/",
+      "type": "datasheet"
+    }
+  ]
+}

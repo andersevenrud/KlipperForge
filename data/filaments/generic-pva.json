@@ -1,0 +1,57 @@
+{
+  "id": "generic-pva",
+  "name": "PVA",
+  "manufacturer": "Generic",
+  "description": "Polyvinyl alcohol (PVA) is a water-soluble support material primarily used in dual-extrusion setups alongside PLA. Dissolves completely in warm water, leaving clean surfaces on overhangs and internal cavities. Extremely hygroscopic and must be stored dry.",
+  "filamentType": "PVA",
+  "ratings": {
+    "strength": 1,
+    "stiffness": 1,
+    "durability": 1,
+    "printability": 3,
+    "heatResistance": 1
+  },
+  "printSpecs": {
+    "nozzleTempRange": "185–210°C",
+    "bedTempRange": "45–60°C",
+    "printSpeedRange": "20–40 mm/s",
+    "coolingFan": "Moderate (50%)",
+    "enclosureRequired": false,
+    "firstLayerTemp": "195–200°C"
+  },
+  "mechanicalSpecs": {
+    "tensileStrength": 30,
+    "heatDeflectionTemp": 40,
+    "elongationAtBreak": 10,
+    "impactStrength": "Low"
+  },
+  "environmentalSpecs": {
+    "moistureSensitivity": "Very high",
+    "uvResistance": "Poor",
+    "foodSafe": false,
+    "dryingTemp": 45,
+    "dryingTime": 6
+  },
+  "physicalSpecs": {
+    "diameter": 1.75,
+    "density": 1.23,
+    "glassTransitionTemp": 62,
+    "meltingPoint": 190
+  },
+  "features": [
+    "Water-soluble support material",
+    "Dissolves in warm water (no chemicals needed)",
+    "Excellent PLA support compatibility",
+    "Clean separation from model material",
+    "Requires dual-extrusion printer",
+    "Must be stored in sealed dry container"
+  ],
+  "references": [
+    {
+      "label": "Simplify3D — PVA Material Guide",
+      "url": "https://www.simplify3d.com/resources/materials-guide/pva/",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["tensileStrength", "heatDeflectionTemp", "elongationAtBreak"]
+}

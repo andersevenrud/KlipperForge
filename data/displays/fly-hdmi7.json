@@ -1,0 +1,38 @@
+{
+  "id": "fly-hdmi7",
+  "name": "FLY-HDMI7",
+  "manufacturer": "Mellow",
+  "description": "A 7 inch IPS HDMI capacitive touchscreen display with USB-C touch interface and 3.5mm headphone jack. Supports direct FPC connection to FLY host boards as well as standard HDMI cable connection to any SBC. Features tempered glass and 500 nits brightness.",
+  "displayType": "klipperscreen",
+  "screenSpecs": {
+    "size": "7 inch",
+    "resolution": "1024x600",
+    "panelType": "IPS TFT",
+    "touchscreen": true
+  },
+  "connectionSpecs": {
+    "interface": "HDMI + USB",
+    "connector": "Mini HDMI + USB-C (or FPC direct-connect to FLY boards)"
+  },
+  "klipperIntegration": {
+    "method": "KlipperScreen",
+    "requiresSbc": true,
+    "softwareRequired": "KlipperScreen"
+  },
+  "features": [
+    "IPS panel with 500 nits brightness",
+    "Capacitive touchscreen",
+    "Tempered glass",
+    "3.5mm headphone jack",
+    "FPC direct-connect to FLY host boards",
+    "Standard HDMI connection for any SBC"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "Mellow FLY HDMI Documentation",
+      "url": "https://mellow.klipper.cn/en/docs/ProductDoc/Screen/fly-hdmi/wiring/",
+      "type": "documentation"
+    }
+  ]
+}

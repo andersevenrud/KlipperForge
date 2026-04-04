@@ -1,0 +1,36 @@
+{
+  "id": "trianglelab-ntc-100k-cartridge",
+  "name": "TriangleLab NTC 100K Cartridge",
+  "manufacturer": "TriangleLab",
+  "description": "The TriangleLab NTC 100K cartridge thermistor is a hotend-specific thermistor sold by TriangleLab for use with their Dragon, Dragonfly, and other hotend products. It features a cartridge form factor for easy insertion into heater blocks and uses a beta value of 3950K. In Klipper it is configured using the 'Generic 3950' sensor type.",
+  "sensorType": "NTC",
+  "sensingSpecs": {
+    "resistanceAt25C": 100000,
+    "betaValue": 3950,
+    "temperatureRange": "-50 to 260°C",
+    "accuracy": "±1%"
+  },
+  "klipperSpecs": {
+    "sensorType": "Generic 3950",
+    "requiresAmplifier": false,
+    "pullupResistor": 4700
+  },
+  "physicalSpecs": {
+    "packageType": "cartridge",
+    "dimensions": "3mm diameter × 10mm length",
+    "leadType": "PTFE sleeved"
+  },
+  "unverified": ["dimensions", "leadType"],
+  "references": [
+    {
+      "label": "TriangleLab Store",
+      "url": "https://www.trianglelab.net/products/ntc-100k-ohm-b3950-thermistor-cartridge",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Config Reference - Thermistors",
+      "url": "https://www.klipper3d.org/Config_Reference.html#temperature-sensors",
+      "type": "documentation"
+    }
+  ]
+}

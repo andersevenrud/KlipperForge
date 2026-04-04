@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A2535"/>
+      <stop offset="100%" stop-color="#0A0F18"/>
+    </linearGradient>
+
+    <linearGradient id="steel" x1="0%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#8899AA"/>
+      <stop offset="40%" stop-color="#556677"/>
+      <stop offset="100%" stop-color="#2A3A4A"/>
+    </linearGradient>
+
+    <linearGradient id="hotFace" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E08040"/>
+      <stop offset="60%" stop-color="#C06030"/>
+      <stop offset="100%" stop-color="#556677"/>
+    </linearGradient>
+
+    <linearGradient id="peen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#506878"/>
+      <stop offset="100%" stop-color="#1E2E3E"/>
+    </linearGradient>
+
+    <linearGradient id="wood" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5A300C"/>
+      <stop offset="35%" stop-color="#B87438"/>
+      <stop offset="100%" stop-color="#6A3814"/>
+    </linearGradient>
+
+    <radialGradient id="forgeGlow" cx="22%" cy="72%" r="45%">
+      <stop offset="0%" stop-color="#FF6600" stop-opacity="0.50"/>
+      <stop offset="50%" stop-color="#FF2200" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FF0000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="kGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="sparkGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="hammerShadow">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-color="rgba(0,0,0,0.7)"/>
+    </filter>
+
+    <filter id="borderGlow" x="-5%" y="-5%" width="110%" height="110%">
+      <feGaussianBlur stdDeviation="1.5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Clip sparks to frame interior -->
+    <clipPath id="frameClip">
+      <rect x="6" y="6" width="188" height="188" rx="34" ry="34"/>
+    </clipPath>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect x="4" y="4" width="192" height="192" rx="36" ry="36" fill="url(#bg)"/>
+
+  <!-- Border — Klipper red -->
+  <rect x="4" y="4" width="192" height="192" rx="36" ry="36" fill="none" stroke="#D42B1E" stroke-width="3.5" filter="url(#borderGlow)"/>
+
+  <!-- Inner subtle border -->
+  <rect x="9" y="9" width="182" height="182" rx="32" ry="32" fill="none" stroke="rgba(212,43,30,0.10)" stroke-width="1"/>
+
+  <!-- Forge ambient glow -->
+  <rect x="4" y="4" width="192" height="192" rx="36" ry="36" fill="url(#forgeGlow)"/>
+
+  <!-- HAMMER — head centered in frame, rotated -45deg -->
+  <g transform="translate(100,100) scale(0.82) rotate(-45) translate(-103,-68)" filter="url(#hammerShadow)">
+
+    <!-- Handle -->
+    <rect x="87" y="87" width="26" height="100" rx="6" fill="url(#wood)"/>
+    <rect x="88" y="89" width="5" height="96" rx="2.5" fill="rgba(255,255,255,0.12)"/>
+    <rect x="88" y="124" width="24" height="2.5" rx="1" fill="rgba(0,0,0,0.35)"/>
+    <rect x="88" y="144" width="24" height="2.5" rx="1" fill="rgba(0,0,0,0.35)"/>
+    <rect x="88" y="164" width="24" height="2.5" rx="1" fill="rgba(0,0,0,0.35)"/>
+    <ellipse cx="100" cy="186" rx="14" ry="5.5" fill="#3A1A06"/>
+
+    <!-- Ferrule -->
+    <rect x="82" y="80" width="36" height="14" rx="3" fill="#2E3E50"/>
+    <rect x="83" y="81" width="34" height="4.5" rx="2" fill="rgba(255,255,255,0.20)"/>
+
+    <!-- Head shadow -->
+    <rect x="47" y="40" width="108" height="50" rx="5" fill="rgba(0,0,0,0.5)" transform="translate(2,3)"/>
+
+    <!-- Head main body -->
+    <rect x="45" y="38" width="110" height="52" rx="5" fill="url(#steel)"/>
+    <rect x="48" y="39" width="104" height="6" rx="3" fill="rgba(255,255,255,0.22)"/>
+    <rect x="48" y="83" width="104" height="6" rx="3" fill="rgba(0,0,0,0.35)"/>
+
+    <!-- Hot striking face -->
+    <rect x="45" y="38" width="28" height="52" rx="5" fill="url(#hotFace)"/>
+    <rect x="46" y="39" width="8" height="50" rx="4" fill="rgba(255,130,50,0.25)"/>
+    <line x1="73" y1="40" x2="73" y2="88" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+
+    <!-- Cross-peen -->
+    <polygon points="155,38 172,52 172,76 155,90" fill="url(#peen)"/>
+    <line x1="155" y1="39" x2="171" y2="53" stroke="rgba(255,255,255,0.12)" stroke-width="0.7"/>
+
+    <!-- Eye slot -->
+    <rect x="85" y="79" width="30" height="13" rx="2.5" fill="rgba(8,16,26,0.88)"/>
+    <rect x="86" y="80" width="28" height="3.5" rx="1.5" fill="rgba(255,255,255,0.06)"/>
+
+    <!-- K on hammer head — steep V-shaped diagonals -->
+    <g transform="translate(108, 64)" filter="url(#kGlow)">
+      <!-- Vertical stroke -->
+      <rect x="-12" y="-16" width="7" height="32" rx="1.5" fill="#D42B1E"/>
+      <!-- Upper diagonal — steep, forming top of V -->
+      <polygon points="-5,0 -5,-5 13,-18 13,-13" fill="#D42B1E"/>
+      <!-- Lower diagonal — steep, forming bottom of V -->
+      <polygon points="-5,0 -5,5 13,18 13,13" fill="#D42B1E"/>
+    </g>
+
+  </g>
+
+  <!-- Sparks — clipped to frame, emanating from hot face tip at ~(64,131) -->
+  <g filter="url(#sparkGlow)" clip-path="url(#frameClip)">
+    <!-- Primary sparks -->
+    <circle cx="64" cy="131" r="3.5" fill="#FFD700"/>
+    <circle cx="50" cy="120" r="2.6" fill="#FF8C00"/>
+    <circle cx="74" cy="118" r="2.2" fill="#FFE066"/>
+    <circle cx="46" cy="148" r="2.0" fill="#FFA500"/>
+    <circle cx="76" cy="140" r="1.6" fill="#FFD700"/>
+
+    <!-- Spark trails -->
+    <line x1="64" y1="131" x2="46" y2="110" stroke="#FFD700" stroke-width="2.0" stroke-linecap="round" opacity="0.82"/>
+    <line x1="64" y1="131" x2="80" y2="114" stroke="#FFA500" stroke-width="1.6" stroke-linecap="round" opacity="0.70"/>
+    <line x1="62" y1="133" x2="42" y2="150" stroke="#FF8C00" stroke-width="1.3" stroke-linecap="round" opacity="0.60"/>
+    <line x1="66" y1="129" x2="82" y2="146" stroke="#FFE066" stroke-width="1.1" stroke-linecap="round" opacity="0.52"/>
+    <line x1="63" y1="135" x2="52" y2="160" stroke="#FF6600" stroke-width="1.0" stroke-linecap="round" opacity="0.44"/>
+    <line x1="64" y1="129" x2="56" y2="106" stroke="#FFD700" stroke-width="0.9" stroke-linecap="round" opacity="0.38"/>
+
+    <!-- Scatter sparks -->
+    <circle cx="42" cy="114" r="1.3" fill="#FFD700" opacity="0.78"/>
+    <circle cx="80" cy="116" r="1.1" fill="#FFA500" opacity="0.66"/>
+    <circle cx="40" cy="156" r="0.9" fill="#FF8C00" opacity="0.58"/>
+    <circle cx="56" cy="104" r="0.8" fill="#FFE066" opacity="0.50"/>
+  </g>
+
+</svg>

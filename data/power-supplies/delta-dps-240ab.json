@@ -1,0 +1,40 @@
+{
+  "id": "delta-dps-240ab",
+  "name": "DPS-240AB",
+  "manufacturer": "Delta Electronics",
+  "description": "The stock power supply used in Prusa MK3/MK3S+/MK4/MK3.5/MK3.9/XL printers. A 240W fanless 24V power supply made by Delta Electronics, one of the world's largest power supply manufacturers. Prusa selected Delta for their reliability and safety certifications. This is an OEM-specific model primarily available as a Prusa spare part rather than through general retail channels.",
+  "voltage": 24,
+  "wattage": 240,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 24,
+    "outputCurrent": 10,
+    "outputPower": 240,
+    "inputVoltageRange": "100-240VAC",
+    "efficiency": 89,
+    "powerFactorCorrection": true
+  },
+  "physicalSpecs": {
+    "dimensions": "160x120x50mm",
+    "coolingMethod": "convection",
+    "hasFan": false
+  },
+  "certifications": ["UL", "CE", "CB"],
+  "protections": ["short-circuit", "overload", "overvoltage"],
+  "operatingTemperature": "-30 to +70C",
+  "typicalUseCases": [
+    "Prusa MK3/MK3S/MK3S+ (stock)",
+    "Prusa MK4/MK4S (stock)",
+    "Prusa MK3.5/MK3.9 (stock)",
+    "Prusa XL (stock)"
+  ],
+  "communityRecommendation": "standard",
+  "references": [
+    {
+      "label": "Prusa Store - PSU 24V 240W",
+      "url": "https://www.prusa3d.com/product/psu-24v-240w/",
+      "type": "product"
+    }
+  ],
+  "unverified": ["weight", "operatingTemperature", "certifications"]
+}

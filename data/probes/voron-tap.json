@@ -1,0 +1,49 @@
+{
+  "id": "voron-tap",
+  "name": "Voron Tap",
+  "manufacturer": "Voron Design",
+  "description": "Voron Tap is a mechanical probing system that uses the nozzle itself as the probe. The entire toolhead moves vertically on a rail, and an optical switch detects when the nozzle contacts the bed surface. This eliminates XY offset between the probe and nozzle, providing highly accurate Z measurements on any bed surface.",
+  "probeType": "mechanical",
+  "electricalSpecs": {
+    "operatingVoltage": "5-24V DC",
+    "signalType": "digital (optical switch)",
+    "currentDraw": "10mA"
+  },
+  "performanceSpecs": {
+    "repeatability": "±0.0004mm",
+    "triggerDistance": "contact-based (nozzle touch)",
+    "bedCompatibility": [
+      "glass",
+      "PEI",
+      "textured PEI",
+      "magnetic flex plates",
+      "BuildTak",
+      "aluminum",
+      "any solid surface"
+    ],
+    "temperatureCompensation": false
+  },
+  "physicalSpecs": {
+    "dimensions": "replaces X carriage front plate",
+    "mountType": "replaces X carriage (Voron 2.4/Trident compatible)"
+  },
+  "klipperSection": "probe",
+  "unverified": ["currentDraw", "weight", "dimensions"],
+  "references": [
+    {
+      "label": "Voron Tap GitHub Repository",
+      "url": "https://github.com/VoronDesign/Voron-Tap",
+      "type": "github"
+    },
+    {
+      "label": "Voron Design Website",
+      "url": "https://vorondesign.com/",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Probe Documentation",
+      "url": "https://www.klipper3d.org/Config_Reference.html#probe",
+      "type": "documentation"
+    }
+  ]
+}

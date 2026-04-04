@@ -1,0 +1,37 @@
+{
+  "id": "btt-tft50-v3.0",
+  "name": "TFT50 V3.0",
+  "manufacturer": "BigTreeTech",
+  "description": "A 5 inch dual-mode color TFT display. In Klipper, operates in 12864 emulation mode via EXP1/EXP2 ribbon cables. The color touch mode is Marlin-only.",
+  "displayType": "dual-mode",
+  "screenSpecs": {
+    "size": "5 inch",
+    "resolution": "480x272",
+    "panelType": "TFT",
+    "touchscreen": true
+  },
+  "connectionSpecs": {
+    "interface": "UART + EXP1/EXP2",
+    "connector": "UART serial + EXP1/EXP2 ribbon cables"
+  },
+  "klipperIntegration": {
+    "method": "12864 emulation mode via EXP1/EXP2",
+    "klipperDisplayType": "emulated_st7920",
+    "requiresSbc": false
+  },
+  "features": [
+    "Dual-mode: color touch (Marlin) + 12864 emulation (Klipper)",
+    "5 inch display",
+    "Resistive touchscreen (Marlin mode only)",
+    "SD card slot",
+    "Rotary encoder for 12864 mode"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "GitHub - BTT TouchScreen Firmware",
+      "url": "https://github.com/bigtreetech/BIGTREETECH-TouchScreenFirmware",
+      "type": "github"
+    }
+  ]
+}

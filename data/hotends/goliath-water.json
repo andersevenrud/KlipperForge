@@ -1,0 +1,61 @@
+{
+  "id": "goliath-water",
+  "name": "Goliath Water-Cooled",
+  "manufacturer": "VzBoT / Mellow",
+  "description": "The Goliath Water-Cooled Hotend is designed by the VzBoT team and manufactured by Mellow3D for extreme volumetric flow rates, targeting ~100mm³/s or more. Water cooling replaces the traditional heat sink and fan, enabling a much larger melt zone without the risk of heat creep at high feed rates. Features a 50mm long melt zone, nickel-plated copper thermal block, 100W heater, and a bi-material copper-zirconia heatbreak. It is aimed at production and high-speed printing environments where maximum throughput is the priority.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 550,
+    "heaterType": "cartridge",
+    "heaterPower": 100,
+    "thermistorType": "PT1000 (M3 brass cartridge)",
+    "thermistorId": "pt1000"
+  },
+  "heatBreakSpecs": {
+    "type": "water-cooled",
+    "material": "copper-zirconia composite with water cooling jacket",
+    "retraction": "0.5-2mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6, 9mm flats)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D V6 brass nozzles",
+      "E3D V6 hardened steel nozzles",
+      "third-party M6 V6-style nozzles"
+    ],
+    "maxFlowRate": "~100mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "mountType": "Goliath / VzBoT proprietary (requires water cooling loop)"
+  },
+  "features": [
+    "~100mm³/s extreme volumetric flow",
+    "Water-cooled cold side eliminates heat creep at high speeds",
+    "100W heater for sustained high-temperature melt",
+    "50mm long melt zone",
+    "Rated to 550°C for engineering and exotic filaments",
+    "V6 nozzle compatibility",
+    "Copper-zirconia heatbreak",
+    "Designed for high-speed and high-throughput applications"
+  ],
+  "references": [
+    {
+      "label": "VzBoT Goliath Documentation",
+      "url": "https://docs.vzbot.org/goliath",
+      "type": "documentation"
+    },
+    {
+      "label": "Goliath Hotend GitHub",
+      "url": "https://github.com/VzBoT3D/Goliath",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["maxFlowRate", "retraction"]
+}

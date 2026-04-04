@@ -1,0 +1,1988 @@
+import type { SectionParams } from "../param-types";
+import { createSchemaFromParams } from "../schema-from-params";
+import type { SectionDefinition } from "../types";
+
+export const tmc2130Params: SectionParams = {
+  cs_pin: {
+    type: { kind: "string" },
+    description:
+      "The pin corresponding to the TMC2130 chip select line. This pin will be set to low at the start of SPI messages and raised to high after the message completes. This parameter must be provided.",
+    required: true,
+  },
+  spi_speed: {
+    type: { kind: "number", integer: true, min: 100000 },
+    description: "spi_speed parameter",
+    required: false,
+  },
+  spi_bus: {
+    type: { kind: "string" },
+    description: "spi_bus parameter",
+    required: false,
+  },
+  spi_software_sclk_pin: {
+    type: { kind: "string" },
+    description: "spi_software_sclk_pin parameter",
+    required: false,
+  },
+  spi_software_mosi_pin: {
+    type: { kind: "string" },
+    description: "spi_software_mosi_pin parameter",
+    required: false,
+  },
+  spi_software_miso_pin: {
+    type: { kind: "string" },
+    description: 'See the "common SPI settings" section for a description of the above parameters.',
+    required: false,
+  },
+  chain_position: {
+    type: { kind: "number", integer: true, min: 1 },
+    description: "chain_position parameter",
+    required: false,
+  },
+  chain_length: {
+    type: { kind: "number", integer: true, min: 2 },
+    description:
+      "These parameters configure an SPI daisy chain. The two parameters define the stepper position in the chain and the total chain length. Position 1 corresponds to the stepper that connects to the MOSI signal. The default is to not use an SPI daisy chain.",
+    required: false,
+  },
+  interpolate: {
+    type: { kind: "boolean" },
+    description:
+      "If true, enable step interpolation (the driver will internally step at a rate of 256 micro-steps). This interpolation does introduce a small systemic positional deviation - see TMC_Drivers.md for details. The default is True.",
+    required: false,
+    default: true,
+  },
+  run_current: {
+    type: { kind: "number", above: 0 },
+    description:
+      "The amount of current (in amps RMS) to configure the driver to use during stepper movement. This parameter must be provided.",
+    required: true,
+  },
+  hold_current: {
+    type: { kind: "number", above: 0 },
+    description:
+      "The amount of current (in amps RMS) to configure the driver to use when the stepper is not moving. Setting a hold_current is not recommended (see TMC_Drivers.md for details). The default is to not reduce the current.",
+    required: false,
+  },
+  sense_resistor: {
+    type: { kind: "number", above: 0 },
+    description: "The resistance (in ohms) of the motor sense resistor. The default is 0.110 ohms.",
+    required: false,
+    default: 0.11,
+  },
+  stealthchop_threshold: {
+    type: { kind: "number", min: 0 },
+    description:
+      'The velocity (in mm/s) to set the "stealthChop" threshold to. When set, "stealthChop" mode will be enabled if the stepper motor velocity is below this value. Note that the "sensorless homing" code may temporarily override this setting during homing operations. The default is 0, which disables "stealthChop" mode.',
+    required: false,
+    default: 0,
+  },
+  coolstep_threshold: {
+    type: { kind: "number", min: 0 },
+    description:
+      'The velocity (in mm/s) to set the TMC driver internal "CoolStep" threshold to. If set, the coolstep feature will be enabled when the stepper motor velocity is near or above this value. Important - if coolstep_threshold is set and "sensorless homing" is used, then one must ensure that the homing speed is above the coolstep threshold! The default is to not enable the coolstep feature.',
+    required: false,
+  },
+  high_velocity_threshold: {
+    type: { kind: "number", min: 0 },
+    description:
+      'The velocity (in mm/s) to set the TMC driver internal "high velocity" threshold (THIGH) to. This is typically used to disable the "CoolStep" feature at high speeds. The default is to not set a TMC "high velocity" threshold.',
+    required: false,
+  },
+  driver_mslut0: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut0 parameter",
+    required: false,
+    default: 2863314260,
+  },
+  driver_mslut1: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut1 parameter",
+    required: false,
+    default: 1251300522,
+  },
+  driver_mslut2: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut2 parameter",
+    required: false,
+    default: 608774441,
+  },
+  driver_mslut3: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut3 parameter",
+    required: false,
+    default: 269500962,
+  },
+  driver_mslut4: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut4 parameter",
+    required: false,
+    default: 4227858431,
+  },
+  driver_mslut5: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut5 parameter",
+    required: false,
+    default: 3048961917,
+  },
+  driver_mslut6: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut6 parameter",
+    required: false,
+    default: 1227445590,
+  },
+  driver_mslut7: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut7 parameter",
+    required: false,
+    default: 4211234,
+  },
+  driver_w0: {
+    type: { kind: "number", integer: true },
+    description: "driver_w0 parameter",
+    required: false,
+    default: 2,
+  },
+  driver_w1: {
+    type: { kind: "number", integer: true },
+    description: "driver_w1 parameter",
+    required: false,
+    default: 1,
+  },
+  driver_w2: {
+    type: { kind: "number", integer: true },
+    description: "driver_w2 parameter",
+    required: false,
+    default: 1,
+  },
+  driver_w3: {
+    type: { kind: "number", integer: true },
+    description: "driver_w3 parameter",
+    required: false,
+    default: 1,
+  },
+  driver_x1: {
+    type: { kind: "number", integer: true },
+    description: "driver_x1 parameter",
+    required: false,
+    default: 128,
+  },
+  driver_x2: {
+    type: { kind: "number", integer: true },
+    description: "driver_x2 parameter",
+    required: false,
+    default: 255,
+  },
+  driver_x3: {
+    type: { kind: "number", integer: true },
+    description: "driver_x3 parameter",
+    required: false,
+    default: 255,
+  },
+  driver_start_sin: {
+    type: { kind: "number", integer: true },
+    description: "driver_start_sin parameter",
+    required: false,
+    default: 0,
+  },
+  driver_start_sin90: {
+    type: { kind: "number", integer: true },
+    description:
+      'These fields control the Microstep Table registers directly. The optimal wave table is specific to each motor and might vary with current. An optimal configuration will have minimal print artifacts caused by non-linear stepper movement. The values specified above are the default values used by the driver. The value must be specified as a decimal integer (hex form is not supported). In order to compute the wave table fields, see the tmc2130 "Calculation Sheet" from the Trinamic website.',
+    required: false,
+    default: 247,
+  },
+  driver_iholddelay: {
+    type: { kind: "number", integer: true },
+    description: "driver_iholddelay parameter",
+    required: false,
+    default: 8,
+  },
+  driver_tpowerdown: {
+    type: { kind: "number", integer: true },
+    description: "driver_tpowerdown parameter",
+    required: false,
+    default: 0,
+  },
+  driver_tbl: {
+    type: { kind: "number", integer: true },
+    description: "driver_tbl parameter",
+    required: false,
+    default: 1,
+  },
+  driver_toff: {
+    type: { kind: "number", integer: true },
+    description: "driver_toff parameter",
+    required: false,
+    default: 4,
+  },
+  driver_hend: {
+    type: { kind: "number", integer: true },
+    description: "driver_hend parameter",
+    required: false,
+    default: 7,
+  },
+  driver_hstrt: {
+    type: { kind: "number", integer: true },
+    description: "driver_hstrt parameter",
+    required: false,
+    default: 0,
+  },
+  driver_vhighfs: {
+    type: { kind: "number", integer: true },
+    description: "driver_vhighfs parameter",
+    required: false,
+    default: 0,
+  },
+  driver_vhighchm: {
+    type: { kind: "number", integer: true },
+    description: "driver_vhighchm parameter",
+    required: false,
+    default: 0,
+  },
+  driver_pwm_autoscale: {
+    type: { kind: "boolean" },
+    description: "driver_pwm_autoscale parameter",
+    required: false,
+    default: true,
+  },
+  driver_pwm_freq: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_freq parameter",
+    required: false,
+    default: 1,
+  },
+  driver_pwm_grad: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_grad parameter",
+    required: false,
+    default: 4,
+  },
+  driver_pwm_ampl: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_ampl parameter",
+    required: false,
+    default: 128,
+  },
+  driver_freewheel: {
+    type: { kind: "number", integer: true },
+    description: "driver_freewheel parameter",
+    required: false,
+    default: 0,
+  },
+  driver_sgt: {
+    type: { kind: "number", integer: true },
+    description: "driver_sgt parameter",
+    required: false,
+    default: 0,
+  },
+  driver_semin: {
+    type: { kind: "number", integer: true },
+    description: "driver_semin parameter",
+    required: false,
+    default: 0,
+  },
+  driver_seup: {
+    type: { kind: "number", integer: true },
+    description: "driver_seup parameter",
+    required: false,
+    default: 0,
+  },
+  driver_semax: {
+    type: { kind: "number", integer: true },
+    description: "driver_semax parameter",
+    required: false,
+    default: 0,
+  },
+  driver_sedn: {
+    type: { kind: "number", integer: true },
+    description: "driver_sedn parameter",
+    required: false,
+    default: 0,
+  },
+  driver_seimin: {
+    type: { kind: "number", integer: true },
+    description: "driver_seimin parameter",
+    required: false,
+    default: 0,
+  },
+  driver_sfilt: {
+    type: { kind: "number", integer: true },
+    description:
+      "Set the given register during the configuration of the TMC2130 chip. This may be used to set custom motor parameters. The defaults for each parameter are next to the parameter name in the above list.",
+    required: false,
+    default: 0,
+  },
+  diag0_pin: {
+    type: { kind: "string" },
+    description: "diag0_pin parameter",
+    required: false,
+  },
+  diag1_pin: {
+    type: { kind: "string" },
+    description:
+      'The micro-controller pin attached to one of the DIAG lines of the TMC2130 chip. Only a single diag pin should be specified. The pin is "active low" and is thus normally prefaced with "^!". Setting this creates a "tmc2130_stepper_x:virtual_endstop" virtual pin which may be used as the stepper\'s endstop_pin. Doing this enables "sensorless homing". (Be sure to also set driver_SGT to an appropriate sensitivity value.) The default is to not enable sensorless homing.',
+    required: false,
+  },
+};
+
+export const tmc2130Schema = createSchemaFromParams(tmc2130Params);
+
+export const tmc2130Definition: SectionDefinition<typeof tmc2130Schema> = {
+  id: "tmc2130",
+  naming: { kind: "named", prefix: "tmc2130" },
+  schema: tmc2130Schema,
+  params: tmc2130Params,
+  order: 22,
+  category: "Stepper Drivers",
+  label: "TMC2130",
+};
+
+export const tmc2208Params: SectionParams = {
+  uart_pin: {
+    type: { kind: "string" },
+    description: "The pin connected to the TMC2208 PDN_UART line. This parameter must be provided.",
+    required: true,
+  },
+  tx_pin: {
+    type: { kind: "string" },
+    description:
+      "If using separate receive and transmit lines to communicate with the driver then set uart_pin to the receive pin and tx_pin to the transmit pin. The default is to use uart_pin for both reading and writing.",
+    required: false,
+  },
+  select_pins: {
+    type: { kind: "string" },
+    description:
+      "A comma separated list of pins to set prior to accessing the tmc2208 UART. This may be useful for configuring an analog mux for UART communication. The default is to not configure any pins.",
+    required: false,
+  },
+  interpolate: {
+    type: { kind: "boolean" },
+    description:
+      "If true, enable step interpolation (the driver will internally step at a rate of 256 micro-steps). This interpolation does introduce a small systemic positional deviation - see TMC_Drivers.md for details. The default is True.",
+    required: false,
+    default: true,
+  },
+  run_current: {
+    type: { kind: "number", above: 0 },
+    description:
+      "The amount of current (in amps RMS) to configure the driver to use during stepper movement. This parameter must be provided.",
+    required: true,
+  },
+  hold_current: {
+    type: { kind: "number", above: 0 },
+    description:
+      "The amount of current (in amps RMS) to configure the driver to use when the stepper is not moving. Setting a hold_current is not recommended (see TMC_Drivers.md for details). The default is to not reduce the current.",
+    required: false,
+  },
+  sense_resistor: {
+    type: { kind: "number", above: 0 },
+    description: "The resistance (in ohms) of the motor sense resistor. The default is 0.110 ohms.",
+    required: false,
+    default: 0.11,
+  },
+  stealthchop_threshold: {
+    type: { kind: "number", min: 0 },
+    description:
+      'The velocity (in mm/s) to set the "stealthChop" threshold to. When set, "stealthChop" mode will be enabled if the stepper motor velocity is below this value. Note that the "sensorless homing" code may temporarily override this setting during homing operations. The default is 0, which disables "stealthChop" mode.',
+    required: false,
+    default: 0,
+  },
+  driver_multistep_filt: {
+    type: { kind: "boolean" },
+    description: "driver_multistep_filt parameter",
+    required: false,
+    default: true,
+  },
+  driver_iholddelay: {
+    type: { kind: "number", integer: true },
+    description: "driver_iholddelay parameter",
+    required: false,
+    default: 8,
+  },
+  driver_tpowerdown: {
+    type: { kind: "number", integer: true },
+    description: "driver_tpowerdown parameter",
+    required: false,
+    default: 20,
+  },
+  driver_tbl: {
+    type: { kind: "number", integer: true },
+    description: "driver_tbl parameter",
+    required: false,
+    default: 2,
+  },
+  driver_toff: {
+    type: { kind: "number", integer: true },
+    description: "driver_toff parameter",
+    required: false,
+    default: 3,
+  },
+  driver_hend: {
+    type: { kind: "number", integer: true },
+    description: "driver_hend parameter",
+    required: false,
+    default: 0,
+  },
+  driver_hstrt: {
+    type: { kind: "number", integer: true },
+    description: "driver_hstrt parameter",
+    required: false,
+    default: 5,
+  },
+  driver_pwm_autograd: {
+    type: { kind: "boolean" },
+    description: "driver_pwm_autograd parameter",
+    required: false,
+    default: true,
+  },
+  driver_pwm_autoscale: {
+    type: { kind: "boolean" },
+    description: "driver_pwm_autoscale parameter",
+    required: false,
+    default: true,
+  },
+  driver_pwm_lim: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_lim parameter",
+    required: false,
+    default: 12,
+  },
+  driver_pwm_reg: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_reg parameter",
+    required: false,
+    default: 8,
+  },
+  driver_pwm_freq: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_freq parameter",
+    required: false,
+    default: 1,
+  },
+  driver_pwm_grad: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_grad parameter",
+    required: false,
+    default: 14,
+  },
+  driver_pwm_ofs: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_ofs parameter",
+    required: false,
+    default: 36,
+  },
+  driver_freewheel: {
+    type: { kind: "number", integer: true },
+    description:
+      "Set the given register during the configuration of the TMC2208 chip. This may be used to set custom motor parameters. The defaults for each parameter are next to the parameter name in the above list.",
+    required: false,
+    default: 0,
+  },
+};
+
+export const tmc2208Schema = createSchemaFromParams(tmc2208Params);
+
+export const tmc2208Definition: SectionDefinition<typeof tmc2208Schema> = {
+  id: "tmc2208",
+  naming: { kind: "named", prefix: "tmc2208" },
+  schema: tmc2208Schema,
+  params: tmc2208Params,
+  order: 22,
+  category: "Stepper Drivers",
+  label: "TMC2208",
+};
+
+export const tmc2209Params: SectionParams = {
+  uart_pin: {
+    type: { kind: "string" },
+    description: "uart_pin parameter",
+    required: true,
+  },
+  tx_pin: {
+    type: { kind: "string" },
+    description: "tx_pin parameter",
+    required: false,
+  },
+  select_pins: {
+    type: { kind: "string" },
+    description: "select_pins parameter",
+    required: false,
+  },
+  interpolate: {
+    type: { kind: "boolean" },
+    description: "interpolate parameter",
+    required: false,
+    default: true,
+  },
+  run_current: {
+    type: { kind: "number", above: 0 },
+    description: "run_current parameter",
+    required: true,
+  },
+  hold_current: {
+    type: { kind: "number", above: 0 },
+    description: "hold_current parameter",
+    required: false,
+  },
+  sense_resistor: {
+    type: { kind: "number", above: 0 },
+    description: "sense_resistor parameter",
+    required: false,
+    default: 0.11,
+  },
+  stealthchop_threshold: {
+    type: { kind: "number", min: 0 },
+    description: 'See the "tmc2208" section for the definition of these parameters.',
+    required: false,
+    default: 0,
+  },
+  coolstep_threshold: {
+    type: { kind: "number", min: 0 },
+    description:
+      'The velocity (in mm/s) to set the TMC driver internal "CoolStep" threshold to. If set, the coolstep feature will be enabled when the stepper motor velocity is near or above this value. Important - if coolstep_threshold is set and "sensorless homing" is used, then one must ensure that the homing speed is above the coolstep threshold! The default is to not enable the coolstep feature.',
+    required: false,
+  },
+  uart_address: {
+    type: { kind: "number", integer: true, min: 0 },
+    description:
+      "The address of the TMC2209 chip for UART messages (an integer between 0 and 3). This is typically used when multiple TMC2209 chips are connected to the same UART pin. The default is zero.",
+    required: false,
+    default: 0,
+  },
+  driver_multistep_filt: {
+    type: { kind: "boolean" },
+    description: "driver_multistep_filt parameter",
+    required: false,
+    default: true,
+  },
+  driver_iholddelay: {
+    type: { kind: "number", integer: true },
+    description: "driver_iholddelay parameter",
+    required: false,
+    default: 8,
+  },
+  driver_tpowerdown: {
+    type: { kind: "number", integer: true },
+    description: "driver_tpowerdown parameter",
+    required: false,
+    default: 20,
+  },
+  driver_tbl: {
+    type: { kind: "number", integer: true },
+    description: "driver_tbl parameter",
+    required: false,
+    default: 2,
+  },
+  driver_toff: {
+    type: { kind: "number", integer: true },
+    description: "driver_toff parameter",
+    required: false,
+    default: 3,
+  },
+  driver_hend: {
+    type: { kind: "number", integer: true },
+    description: "driver_hend parameter",
+    required: false,
+    default: 0,
+  },
+  driver_hstrt: {
+    type: { kind: "number", integer: true },
+    description: "driver_hstrt parameter",
+    required: false,
+    default: 5,
+  },
+  driver_pwm_autograd: {
+    type: { kind: "boolean" },
+    description: "driver_pwm_autograd parameter",
+    required: false,
+    default: true,
+  },
+  driver_pwm_autoscale: {
+    type: { kind: "boolean" },
+    description: "driver_pwm_autoscale parameter",
+    required: false,
+    default: true,
+  },
+  driver_pwm_lim: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_lim parameter",
+    required: false,
+    default: 12,
+  },
+  driver_pwm_reg: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_reg parameter",
+    required: false,
+    default: 8,
+  },
+  driver_pwm_freq: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_freq parameter",
+    required: false,
+    default: 1,
+  },
+  driver_pwm_grad: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_grad parameter",
+    required: false,
+    default: 14,
+  },
+  driver_pwm_ofs: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_ofs parameter",
+    required: false,
+    default: 36,
+  },
+  driver_freewheel: {
+    type: { kind: "number", integer: true },
+    description: "driver_freewheel parameter",
+    required: false,
+    default: 0,
+  },
+  driver_sgthrs: {
+    type: { kind: "number", integer: true },
+    description: "driver_sgthrs parameter",
+    required: false,
+    default: 0,
+  },
+  driver_semin: {
+    type: { kind: "number", integer: true },
+    description: "driver_semin parameter",
+    required: false,
+    default: 0,
+  },
+  driver_seup: {
+    type: { kind: "number", integer: true },
+    description: "driver_seup parameter",
+    required: false,
+    default: 0,
+  },
+  driver_semax: {
+    type: { kind: "number", integer: true },
+    description: "driver_semax parameter",
+    required: false,
+    default: 0,
+  },
+  driver_sedn: {
+    type: { kind: "number", integer: true },
+    description: "driver_sedn parameter",
+    required: false,
+    default: 0,
+  },
+  driver_seimin: {
+    type: { kind: "number", integer: true },
+    description:
+      "Set the given register during the configuration of the TMC2209 chip. This may be used to set custom motor parameters. The defaults for each parameter are next to the parameter name in the above list.",
+    required: false,
+    default: 0,
+  },
+  diag_pin: {
+    type: { kind: "string" },
+    description:
+      'The micro-controller pin attached to the DIAG line of the TMC2209 chip. The pin is normally prefaced with "^" to enable a pullup. Setting this creates a "tmc2209_stepper_x:virtual_endstop" virtual pin which may be used as the stepper\'s endstop_pin. Doing this enables "sensorless homing". (Be sure to also set driver_SGTHRS to an appropriate sensitivity value.) The default is to not enable sensorless homing.',
+    required: false,
+  },
+};
+
+export const tmc2660Params: SectionParams = {
+  cs_pin: {
+    type: { kind: "string" },
+    description:
+      "The pin corresponding to the TMC2660 chip select line. This pin will be set to low at the start of SPI messages and set to high after the message transfer completes. This parameter must be provided.",
+    required: true,
+  },
+  spi_speed: {
+    type: { kind: "number", integer: true, min: 100000 },
+    description: "SPI bus frequency used to communicate with the TMC2660 stepper driver. The default is 4000000.",
+    required: false,
+    default: 4000000,
+  },
+  spi_bus: {
+    type: { kind: "string" },
+    description: "spi_bus parameter",
+    required: false,
+  },
+  spi_software_sclk_pin: {
+    type: { kind: "string" },
+    description: "spi_software_sclk_pin parameter",
+    required: false,
+  },
+  spi_software_mosi_pin: {
+    type: { kind: "string" },
+    description: "spi_software_mosi_pin parameter",
+    required: false,
+  },
+  spi_software_miso_pin: {
+    type: { kind: "string" },
+    description: 'See the "common SPI settings" section for a description of the above parameters.',
+    required: false,
+  },
+  interpolate: {
+    type: { kind: "boolean" },
+    description:
+      "If true, enable step interpolation (the driver will internally step at a rate of 256 micro-steps). This only works if microsteps is set to 16. Interpolation does introduce a small systemic positional deviation - see TMC_Drivers.md for details. The default is True.",
+    required: false,
+    default: true,
+  },
+  run_current: {
+    type: { kind: "number", min: 0.1 },
+    description:
+      "The amount of current (in amps RMS) used by the driver during stepper movement. This parameter must be provided.",
+    required: true,
+  },
+  sense_resistor: {
+    type: { kind: "number" },
+    description: "The resistance (in ohms) of the motor sense resistor. This parameter must be provided.",
+    required: false,
+  },
+  idle_current_percent: {
+    type: { kind: "number", integer: true, min: 0, max: 100 },
+    description:
+      "The percentage of the run_current the stepper driver will be lowered to when the idle timeout expires (you need to set up the timeout using a [idle_timeout] config section). The current will be raised again once the stepper has to move again. Make sure to set this to a high enough value such that the steppers do not lose their position. There is also small delay until the current is raised again, so take this into account when commanding fast moves while the stepper is idling. The default is 100 (no reduction).",
+    required: false,
+    default: 100,
+  },
+  driver_tbl: {
+    type: { kind: "number", integer: true },
+    description: "driver_tbl parameter",
+    required: false,
+    default: 2,
+  },
+  driver_rndtf: {
+    type: { kind: "number", integer: true },
+    description: "driver_rndtf parameter",
+    required: false,
+    default: 0,
+  },
+  driver_hdec: {
+    type: { kind: "number", integer: true },
+    description: "driver_hdec parameter",
+    required: false,
+    default: 0,
+  },
+  driver_chm: {
+    type: { kind: "number", integer: true },
+    description: "driver_chm parameter",
+    required: false,
+    default: 0,
+  },
+  driver_hend: {
+    type: { kind: "number", integer: true },
+    description: "driver_hend parameter",
+    required: false,
+    default: 3,
+  },
+  driver_hstrt: {
+    type: { kind: "number", integer: true },
+    description: "driver_hstrt parameter",
+    required: false,
+    default: 3,
+  },
+  driver_toff: {
+    type: { kind: "number", integer: true },
+    description: "driver_toff parameter",
+    required: false,
+    default: 4,
+  },
+  driver_seimin: {
+    type: { kind: "number", integer: true },
+    description: "driver_seimin parameter",
+    required: false,
+    default: 0,
+  },
+  driver_sedn: {
+    type: { kind: "number", integer: true },
+    description: "driver_sedn parameter",
+    required: false,
+    default: 0,
+  },
+  driver_semax: {
+    type: { kind: "number", integer: true },
+    description: "driver_semax parameter",
+    required: false,
+    default: 0,
+  },
+  driver_seup: {
+    type: { kind: "number", integer: true },
+    description: "driver_seup parameter",
+    required: false,
+    default: 0,
+  },
+  driver_semin: {
+    type: { kind: "number", integer: true },
+    description: "driver_semin parameter",
+    required: false,
+    default: 0,
+  },
+  driver_sfilt: {
+    type: { kind: "number", integer: true },
+    description: "driver_sfilt parameter",
+    required: false,
+    default: 0,
+  },
+  driver_sgt: {
+    type: { kind: "number", integer: true },
+    description: "driver_sgt parameter",
+    required: false,
+    default: 0,
+  },
+  driver_slph: {
+    type: { kind: "number", integer: true },
+    description: "driver_slph parameter",
+    required: false,
+    default: 0,
+  },
+  driver_slpl: {
+    type: { kind: "number", integer: true },
+    description: "driver_slpl parameter",
+    required: false,
+    default: 0,
+  },
+  driver_diss2g: {
+    type: { kind: "number", integer: true },
+    description: "driver_diss2g parameter",
+    required: false,
+    default: 0,
+  },
+  driver_ts2g: {
+    type: { kind: "number", integer: true },
+    description:
+      "Set the given parameter during the configuration of the TMC2660 chip. This may be used to set custom driver parameters. The defaults for each parameter are next to the parameter name in the list above. See the TMC2660 datasheet about what each parameter does and what the restrictions on parameter combinations are. Be especially aware of the CHOPCONF register, where setting CHM to either zero or one will lead to layout changes (the first bit of HDEC) is interpreted as the MSB of HSTRT in this case).",
+    required: false,
+    default: 3,
+  },
+};
+
+export const tmc2660Schema = createSchemaFromParams(tmc2660Params);
+
+export const tmc2660Definition: SectionDefinition<typeof tmc2660Schema> = {
+  id: "tmc2660",
+  naming: { kind: "named", prefix: "tmc2660" },
+  schema: tmc2660Schema,
+  params: tmc2660Params,
+  order: 22,
+  category: "Stepper Drivers",
+  label: "TMC2660",
+};
+
+export const tmc2240Params: SectionParams = {
+  cs_pin: {
+    type: { kind: "string" },
+    description:
+      "The pin corresponding to the TMC2240 chip select line. This pin will be set to low at the start of SPI messages and raised to high after the message completes. This parameter must be provided.",
+    required: true,
+  },
+  spi_speed: {
+    type: { kind: "number", integer: true, min: 100000 },
+    description: "spi_speed parameter",
+    required: false,
+  },
+  spi_bus: {
+    type: { kind: "string" },
+    description: "spi_bus parameter",
+    required: false,
+  },
+  spi_software_sclk_pin: {
+    type: { kind: "string" },
+    description: "spi_software_sclk_pin parameter",
+    required: false,
+  },
+  spi_software_mosi_pin: {
+    type: { kind: "string" },
+    description: "spi_software_mosi_pin parameter",
+    required: false,
+  },
+  spi_software_miso_pin: {
+    type: { kind: "string" },
+    description: 'See the "common SPI settings" section for a description of the above parameters.',
+    required: false,
+  },
+  uart_pin: {
+    type: { kind: "string" },
+    description:
+      "The pin connected to the TMC2240 DIAG1/SW line. If this parameter is provided UART communication is used rather then SPI.",
+    required: false,
+  },
+  chain_position: {
+    type: { kind: "number", integer: true, min: 1 },
+    description: "chain_position parameter",
+    required: false,
+  },
+  chain_length: {
+    type: { kind: "number", integer: true, min: 2 },
+    description:
+      "These parameters configure an SPI daisy chain. The two parameters define the stepper position in the chain and the total chain length. Position 1 corresponds to the stepper that connects to the MOSI signal. The default is to not use an SPI daisy chain.",
+    required: false,
+  },
+  interpolate: {
+    type: { kind: "boolean" },
+    description:
+      "If true, enable step interpolation (the driver will internally step at a rate of 256 micro-steps). The default is True.",
+    required: false,
+    default: true,
+  },
+  run_current: {
+    type: { kind: "number", above: 0 },
+    description:
+      "The amount of current (in amps RMS) to configure the driver to use during stepper movement. This parameter must be provided.",
+    required: true,
+  },
+  hold_current: {
+    type: { kind: "number", above: 0 },
+    description:
+      "The amount of current (in amps RMS) to configure the driver to use when the stepper is not moving. Setting a hold_current is not recommended (see TMC_Drivers.md for details). The default is to not reduce the current.",
+    required: false,
+  },
+  rref: {
+    type: { kind: "number", min: 12000, max: 60000 },
+    description: "The resistance (in ohms) of the resistor between IREF and GND. The default is 12000.",
+    required: false,
+    default: 12000,
+  },
+  stealthchop_threshold: {
+    type: { kind: "number", min: 0 },
+    description:
+      'The velocity (in mm/s) to set the "stealthChop" threshold to. When set, "stealthChop" mode will be enabled if the stepper motor velocity is below this value. Note that the "sensorless homing" code may temporarily override this setting during homing operations. The default is 0, which disables "stealthChop" mode.',
+    required: false,
+    default: 0,
+  },
+  coolstep_threshold: {
+    type: { kind: "number", min: 0 },
+    description:
+      'The velocity (in mm/s) to set the TMC driver internal "CoolStep" threshold to. If set, the coolstep feature will be enabled when the stepper motor velocity is near or above this value. Important - if coolstep_threshold is set and "sensorless homing" is used, then one must ensure that the homing speed is above the coolstep threshold! The default is to not enable the coolstep feature.',
+    required: false,
+  },
+  high_velocity_threshold: {
+    type: { kind: "number", min: 0 },
+    description:
+      'The velocity (in mm/s) to set the TMC driver internal "high velocity" threshold (THIGH) to. This is typically used to disable the "CoolStep" feature at high speeds. The default is to not set a TMC "high velocity" threshold.',
+    required: false,
+  },
+  driver_mslut0: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut0 parameter",
+    required: false,
+    default: 2863314260,
+  },
+  driver_mslut1: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut1 parameter",
+    required: false,
+    default: 1251300522,
+  },
+  driver_mslut2: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut2 parameter",
+    required: false,
+    default: 608774441,
+  },
+  driver_mslut3: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut3 parameter",
+    required: false,
+    default: 269500962,
+  },
+  driver_mslut4: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut4 parameter",
+    required: false,
+    default: 4227858431,
+  },
+  driver_mslut5: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut5 parameter",
+    required: false,
+    default: 3048961917,
+  },
+  driver_mslut6: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut6 parameter",
+    required: false,
+    default: 1227445590,
+  },
+  driver_mslut7: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut7 parameter",
+    required: false,
+    default: 4211234,
+  },
+  driver_w0: {
+    type: { kind: "number", integer: true },
+    description: "driver_w0 parameter",
+    required: false,
+    default: 2,
+  },
+  driver_w1: {
+    type: { kind: "number", integer: true },
+    description: "driver_w1 parameter",
+    required: false,
+    default: 1,
+  },
+  driver_w2: {
+    type: { kind: "number", integer: true },
+    description: "driver_w2 parameter",
+    required: false,
+    default: 1,
+  },
+  driver_w3: {
+    type: { kind: "number", integer: true },
+    description: "driver_w3 parameter",
+    required: false,
+    default: 1,
+  },
+  driver_x1: {
+    type: { kind: "number", integer: true },
+    description: "driver_x1 parameter",
+    required: false,
+    default: 128,
+  },
+  driver_x2: {
+    type: { kind: "number", integer: true },
+    description: "driver_x2 parameter",
+    required: false,
+    default: 255,
+  },
+  driver_x3: {
+    type: { kind: "number", integer: true },
+    description: "driver_x3 parameter",
+    required: false,
+    default: 255,
+  },
+  driver_start_sin: {
+    type: { kind: "number", integer: true },
+    description: "driver_start_sin parameter",
+    required: false,
+    default: 0,
+  },
+  driver_start_sin90: {
+    type: { kind: "number", integer: true },
+    description: "driver_start_sin90 parameter",
+    required: false,
+    default: 247,
+  },
+  driver_offset_sin90: {
+    type: { kind: "number", integer: true },
+    description:
+      'These fields control the Microstep Table registers directly. The optimal wave table is specific to each motor and might vary with current. An optimal configuration will have minimal print artifacts caused by non-linear stepper movement. The values specified above are the default values used by the driver. The value must be specified as a decimal integer (hex form is not supported). In order to compute the wave table fields, see the tmc2130 "Calculation Sheet" from the Trinamic website. Additionally, this driver also has the OFFSET_SIN90 field which can be used to tune a motor with unbalanced coils. See the `Sine Wave Lookup Table` section in the datasheet for information about this field and how to tune it.',
+    required: false,
+    default: 0,
+  },
+  driver_multistep_filt: {
+    type: { kind: "boolean" },
+    description: "driver_multistep_filt parameter",
+    required: false,
+    default: true,
+  },
+  driver_iholddelay: {
+    type: { kind: "number", integer: true },
+    description: "driver_iholddelay parameter",
+    required: false,
+    default: 6,
+  },
+  driver_irundelay: {
+    type: { kind: "number", integer: true },
+    description: "driver_irundelay parameter",
+    required: false,
+    default: 4,
+  },
+  driver_tpowerdown: {
+    type: { kind: "number", integer: true },
+    description: "driver_tpowerdown parameter",
+    required: false,
+    default: 10,
+  },
+  driver_tbl: {
+    type: { kind: "number", integer: true },
+    description: "driver_tbl parameter",
+    required: false,
+    default: 2,
+  },
+  driver_toff: {
+    type: { kind: "number", integer: true },
+    description: "driver_toff parameter",
+    required: false,
+    default: 3,
+  },
+  driver_hend: {
+    type: { kind: "number", integer: true },
+    description: "driver_hend parameter",
+    required: false,
+    default: 2,
+  },
+  driver_hstrt: {
+    type: { kind: "number", integer: true },
+    description: "driver_hstrt parameter",
+    required: false,
+    default: 5,
+  },
+  driver_fd3: {
+    type: { kind: "number", integer: true },
+    description: "driver_fd3 parameter",
+    required: false,
+    default: 0,
+  },
+  driver_tpfd: {
+    type: { kind: "number", integer: true },
+    description: "driver_tpfd parameter",
+    required: false,
+    default: 4,
+  },
+  driver_chm: {
+    type: { kind: "number", integer: true },
+    description: "driver_chm parameter",
+    required: false,
+    default: 0,
+  },
+  driver_vhighfs: {
+    type: { kind: "number", integer: true },
+    description: "driver_vhighfs parameter",
+    required: false,
+    default: 0,
+  },
+  driver_vhighchm: {
+    type: { kind: "number", integer: true },
+    description: "driver_vhighchm parameter",
+    required: false,
+    default: 0,
+  },
+  driver_diss2g: {
+    type: { kind: "number", integer: true },
+    description: "driver_diss2g parameter",
+    required: false,
+    default: 0,
+  },
+  driver_diss2vs: {
+    type: { kind: "number", integer: true },
+    description: "driver_diss2vs parameter",
+    required: false,
+    default: 0,
+  },
+  driver_pwm_autoscale: {
+    type: { kind: "boolean" },
+    description: "driver_pwm_autoscale parameter",
+    required: false,
+    default: true,
+  },
+  driver_pwm_autograd: {
+    type: { kind: "boolean" },
+    description: "driver_pwm_autograd parameter",
+    required: false,
+    default: true,
+  },
+  driver_pwm_freq: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_freq parameter",
+    required: false,
+    default: 0,
+  },
+  driver_freewheel: {
+    type: { kind: "number", integer: true },
+    description: "driver_freewheel parameter",
+    required: false,
+    default: 0,
+  },
+  driver_pwm_grad: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_grad parameter",
+    required: false,
+    default: 0,
+  },
+  driver_pwm_ofs: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_ofs parameter",
+    required: false,
+    default: 29,
+  },
+  driver_pwm_reg: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_reg parameter",
+    required: false,
+    default: 4,
+  },
+  driver_pwm_lim: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_lim parameter",
+    required: false,
+    default: 12,
+  },
+  driver_sgt: {
+    type: { kind: "number", integer: true },
+    description: "driver_sgt parameter",
+    required: false,
+    default: 0,
+  },
+  driver_semin: {
+    type: { kind: "number", integer: true },
+    description: "driver_semin parameter",
+    required: false,
+    default: 0,
+  },
+  driver_seup: {
+    type: { kind: "number", integer: true },
+    description: "driver_seup parameter",
+    required: false,
+    default: 0,
+  },
+  driver_semax: {
+    type: { kind: "number", integer: true },
+    description: "driver_semax parameter",
+    required: false,
+    default: 0,
+  },
+  driver_sedn: {
+    type: { kind: "number", integer: true },
+    description: "driver_sedn parameter",
+    required: false,
+    default: 0,
+  },
+  driver_seimin: {
+    type: { kind: "number", integer: true },
+    description: "driver_seimin parameter",
+    required: false,
+    default: 0,
+  },
+  driver_sfilt: {
+    type: { kind: "number", integer: true },
+    description: "driver_sfilt parameter",
+    required: false,
+    default: 0,
+  },
+  driver_sg4_thrs: {
+    type: { kind: "number", integer: true },
+    description: "driver_sg4_thrs parameter",
+    required: false,
+    default: 0,
+  },
+  driver_sg4_angle_offset: {
+    type: { kind: "number", integer: true },
+    description: "driver_sg4_angle_offset parameter",
+    required: false,
+    default: 1,
+  },
+  driver_slope_control: {
+    type: { kind: "number", integer: true },
+    description:
+      "Set the given register during the configuration of the TMC2240 chip. This may be used to set custom motor parameters. The defaults for each parameter are next to the parameter name in the above list.",
+    required: false,
+    default: 0,
+  },
+  diag0_pin: {
+    type: { kind: "string" },
+    description: "diag0_pin parameter",
+    required: false,
+  },
+  diag1_pin: {
+    type: { kind: "string" },
+    description:
+      'The micro-controller pin attached to one of the DIAG lines of the TMC2240 chip. Only a single diag pin should be specified. The pin is "active low" and is thus normally prefaced with "^!". Setting this creates a "tmc2240_stepper_x:virtual_endstop" virtual pin which may be used as the stepper\'s endstop_pin. Doing this enables "sensorless homing". (Be sure to also set driver_SGT OR driver_SG4_THRS to an appropriate sensitivity value.) The default is to not enable sensorless homing.',
+    required: false,
+  },
+};
+
+export const tmc2240Schema = createSchemaFromParams(tmc2240Params);
+
+export const tmc2240Definition: SectionDefinition<typeof tmc2240Schema> = {
+  id: "tmc2240",
+  naming: { kind: "named", prefix: "tmc2240" },
+  schema: tmc2240Schema,
+  params: tmc2240Params,
+  order: 22,
+  category: "Stepper Drivers",
+  label: "TMC2240",
+};
+
+export const tmc5160Params: SectionParams = {
+  cs_pin: {
+    type: { kind: "string" },
+    description:
+      "The pin corresponding to the TMC5160 chip select line. This pin will be set to low at the start of SPI messages and raised to high after the message completes. This parameter must be provided.",
+    required: true,
+  },
+  spi_speed: {
+    type: { kind: "number", integer: true, min: 100000 },
+    description: "spi_speed parameter",
+    required: false,
+  },
+  spi_bus: {
+    type: { kind: "string" },
+    description: "spi_bus parameter",
+    required: false,
+  },
+  spi_software_sclk_pin: {
+    type: { kind: "string" },
+    description: "spi_software_sclk_pin parameter",
+    required: false,
+  },
+  spi_software_mosi_pin: {
+    type: { kind: "string" },
+    description: "spi_software_mosi_pin parameter",
+    required: false,
+  },
+  spi_software_miso_pin: {
+    type: { kind: "string" },
+    description: 'See the "common SPI settings" section for a description of the above parameters.',
+    required: false,
+  },
+  chain_position: {
+    type: { kind: "number", integer: true, min: 1 },
+    description: "chain_position parameter",
+    required: false,
+  },
+  chain_length: {
+    type: { kind: "number", integer: true, min: 2 },
+    description:
+      "These parameters configure an SPI daisy chain. The two parameters define the stepper position in the chain and the total chain length. Position 1 corresponds to the stepper that connects to the MOSI signal. The default is to not use an SPI daisy chain.",
+    required: false,
+  },
+  interpolate: {
+    type: { kind: "boolean" },
+    description:
+      "If true, enable step interpolation (the driver will internally step at a rate of 256 micro-steps). The default is True.",
+    required: false,
+    default: true,
+  },
+  run_current: {
+    type: { kind: "number", above: 0 },
+    description:
+      "The amount of current (in amps RMS) to configure the driver to use during stepper movement. This parameter must be provided.",
+    required: true,
+  },
+  hold_current: {
+    type: { kind: "number", above: 0 },
+    description:
+      "The amount of current (in amps RMS) to configure the driver to use when the stepper is not moving. Setting a hold_current is not recommended (see TMC_Drivers.md for details). The default is to not reduce the current.",
+    required: false,
+  },
+  sense_resistor: {
+    type: { kind: "number", above: 0 },
+    description: "The resistance (in ohms) of the motor sense resistor. The default is 0.075 ohms.",
+    required: false,
+    default: 0.075,
+  },
+  stealthchop_threshold: {
+    type: { kind: "number", min: 0 },
+    description:
+      'The velocity (in mm/s) to set the "stealthChop" threshold to. When set, "stealthChop" mode will be enabled if the stepper motor velocity is below this value. Note that the "sensorless homing" code may temporarily override this setting during homing operations. The default is 0, which disables "stealthChop" mode.',
+    required: false,
+    default: 0,
+  },
+  coolstep_threshold: {
+    type: { kind: "number", min: 0 },
+    description:
+      'The velocity (in mm/s) to set the TMC driver internal "CoolStep" threshold to. If set, the coolstep feature will be enabled when the stepper motor velocity is near or above this value. Important - if coolstep_threshold is set and "sensorless homing" is used, then one must ensure that the homing speed is above the coolstep threshold! The default is to not enable the coolstep feature.',
+    required: false,
+  },
+  high_velocity_threshold: {
+    type: { kind: "number", min: 0 },
+    description:
+      'The velocity (in mm/s) to set the TMC driver internal "high velocity" threshold (THIGH) to. This is typically used to disable the "CoolStep" feature at high speeds. The default is to not set a TMC "high velocity" threshold.',
+    required: false,
+  },
+  driver_mslut0: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut0 parameter",
+    required: false,
+    default: 2863314260,
+  },
+  driver_mslut1: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut1 parameter",
+    required: false,
+    default: 1251300522,
+  },
+  driver_mslut2: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut2 parameter",
+    required: false,
+    default: 608774441,
+  },
+  driver_mslut3: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut3 parameter",
+    required: false,
+    default: 269500962,
+  },
+  driver_mslut4: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut4 parameter",
+    required: false,
+    default: 4227858431,
+  },
+  driver_mslut5: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut5 parameter",
+    required: false,
+    default: 3048961917,
+  },
+  driver_mslut6: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut6 parameter",
+    required: false,
+    default: 1227445590,
+  },
+  driver_mslut7: {
+    type: { kind: "number", integer: true },
+    description: "driver_mslut7 parameter",
+    required: false,
+    default: 4211234,
+  },
+  driver_w0: {
+    type: { kind: "number", integer: true },
+    description: "driver_w0 parameter",
+    required: false,
+    default: 2,
+  },
+  driver_w1: {
+    type: { kind: "number", integer: true },
+    description: "driver_w1 parameter",
+    required: false,
+    default: 1,
+  },
+  driver_w2: {
+    type: { kind: "number", integer: true },
+    description: "driver_w2 parameter",
+    required: false,
+    default: 1,
+  },
+  driver_w3: {
+    type: { kind: "number", integer: true },
+    description: "driver_w3 parameter",
+    required: false,
+    default: 1,
+  },
+  driver_x1: {
+    type: { kind: "number", integer: true },
+    description: "driver_x1 parameter",
+    required: false,
+    default: 128,
+  },
+  driver_x2: {
+    type: { kind: "number", integer: true },
+    description: "driver_x2 parameter",
+    required: false,
+    default: 255,
+  },
+  driver_x3: {
+    type: { kind: "number", integer: true },
+    description: "driver_x3 parameter",
+    required: false,
+    default: 255,
+  },
+  driver_start_sin: {
+    type: { kind: "number", integer: true },
+    description: "driver_start_sin parameter",
+    required: false,
+    default: 0,
+  },
+  driver_start_sin90: {
+    type: { kind: "number", integer: true },
+    description:
+      'These fields control the Microstep Table registers directly. The optimal wave table is specific to each motor and might vary with current. An optimal configuration will have minimal print artifacts caused by non-linear stepper movement. The values specified above are the default values used by the driver. The value must be specified as a decimal integer (hex form is not supported). In order to compute the wave table fields, see the tmc2130 "Calculation Sheet" from the Trinamic website.',
+    required: false,
+    default: 247,
+  },
+  driver_multistep_filt: {
+    type: { kind: "boolean" },
+    description: "driver_multistep_filt parameter",
+    required: false,
+    default: true,
+  },
+  driver_iholddelay: {
+    type: { kind: "number", integer: true },
+    description: "driver_iholddelay parameter",
+    required: false,
+    default: 6,
+  },
+  driver_tpowerdown: {
+    type: { kind: "number", integer: true },
+    description: "driver_tpowerdown parameter",
+    required: false,
+    default: 10,
+  },
+  driver_tbl: {
+    type: { kind: "number", integer: true },
+    description: "driver_tbl parameter",
+    required: false,
+    default: 2,
+  },
+  driver_toff: {
+    type: { kind: "number", integer: true },
+    description: "driver_toff parameter",
+    required: false,
+    default: 3,
+  },
+  driver_hend: {
+    type: { kind: "number", integer: true },
+    description: "driver_hend parameter",
+    required: false,
+    default: 2,
+  },
+  driver_hstrt: {
+    type: { kind: "number", integer: true },
+    description: "driver_hstrt parameter",
+    required: false,
+    default: 5,
+  },
+  driver_fd3: {
+    type: { kind: "number", integer: true },
+    description: "driver_fd3 parameter",
+    required: false,
+    default: 0,
+  },
+  driver_tpfd: {
+    type: { kind: "number", integer: true },
+    description: "driver_tpfd parameter",
+    required: false,
+    default: 4,
+  },
+  driver_chm: {
+    type: { kind: "number", integer: true },
+    description: "driver_chm parameter",
+    required: false,
+    default: 0,
+  },
+  driver_vhighfs: {
+    type: { kind: "number", integer: true },
+    description: "driver_vhighfs parameter",
+    required: false,
+    default: 0,
+  },
+  driver_vhighchm: {
+    type: { kind: "number", integer: true },
+    description: "driver_vhighchm parameter",
+    required: false,
+    default: 0,
+  },
+  driver_diss2g: {
+    type: { kind: "number", integer: true },
+    description: "driver_diss2g parameter",
+    required: false,
+    default: 0,
+  },
+  driver_diss2vs: {
+    type: { kind: "number", integer: true },
+    description: "driver_diss2vs parameter",
+    required: false,
+    default: 0,
+  },
+  driver_pwm_autoscale: {
+    type: { kind: "boolean" },
+    description: "driver_pwm_autoscale parameter",
+    required: false,
+    default: true,
+  },
+  driver_pwm_autograd: {
+    type: { kind: "boolean" },
+    description: "driver_pwm_autograd parameter",
+    required: false,
+    default: true,
+  },
+  driver_pwm_freq: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_freq parameter",
+    required: false,
+    default: 0,
+  },
+  driver_freewheel: {
+    type: { kind: "number", integer: true },
+    description: "driver_freewheel parameter",
+    required: false,
+    default: 0,
+  },
+  driver_pwm_grad: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_grad parameter",
+    required: false,
+    default: 0,
+  },
+  driver_pwm_ofs: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_ofs parameter",
+    required: false,
+    default: 30,
+  },
+  driver_pwm_reg: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_reg parameter",
+    required: false,
+    default: 4,
+  },
+  driver_pwm_lim: {
+    type: { kind: "number", integer: true },
+    description: "driver_pwm_lim parameter",
+    required: false,
+    default: 12,
+  },
+  driver_sgt: {
+    type: { kind: "number", integer: true },
+    description: "driver_sgt parameter",
+    required: false,
+    default: 0,
+  },
+  driver_semin: {
+    type: { kind: "number", integer: true },
+    description: "driver_semin parameter",
+    required: false,
+    default: 0,
+  },
+  driver_seup: {
+    type: { kind: "number", integer: true },
+    description: "driver_seup parameter",
+    required: false,
+    default: 0,
+  },
+  driver_semax: {
+    type: { kind: "number", integer: true },
+    description: "driver_semax parameter",
+    required: false,
+    default: 0,
+  },
+  driver_sedn: {
+    type: { kind: "number", integer: true },
+    description: "driver_sedn parameter",
+    required: false,
+    default: 0,
+  },
+  driver_seimin: {
+    type: { kind: "number", integer: true },
+    description: "driver_seimin parameter",
+    required: false,
+    default: 0,
+  },
+  driver_sfilt: {
+    type: { kind: "number", integer: true },
+    description: "driver_sfilt parameter",
+    required: false,
+    default: 0,
+  },
+  driver_drvstrength: {
+    type: { kind: "number", integer: true },
+    description: "driver_drvstrength parameter",
+    required: false,
+    default: 0,
+  },
+  driver_bbmclks: {
+    type: { kind: "number", integer: true },
+    description: "driver_bbmclks parameter",
+    required: false,
+    default: 4,
+  },
+  driver_bbmtime: {
+    type: { kind: "number", integer: true },
+    description: "driver_bbmtime parameter",
+    required: false,
+    default: 0,
+  },
+  driver_filt_isense: {
+    type: { kind: "number", integer: true },
+    description:
+      "Set the given register during the configuration of the TMC5160 chip. This may be used to set custom motor parameters. The defaults for each parameter are next to the parameter name in the above list.",
+    required: false,
+    default: 0,
+  },
+  diag0_pin: {
+    type: { kind: "string" },
+    description: "diag0_pin parameter",
+    required: false,
+  },
+  diag1_pin: {
+    type: { kind: "string" },
+    description:
+      'The micro-controller pin attached to one of the DIAG lines of the TMC5160 chip. Only a single diag pin should be specified. The pin is "active low" and is thus normally prefaced with "^!". Setting this creates a "tmc5160_stepper_x:virtual_endstop" virtual pin which may be used as the stepper\'s endstop_pin. Doing this enables "sensorless homing". (Be sure to also set driver_SGT to an appropriate sensitivity value.) The default is to not enable sensorless homing.',
+    required: false,
+  },
+};
+
+export const ad5206Params: SectionParams = {
+  enable_pin: {
+    type: { kind: "string" },
+    description:
+      "The pin corresponding to the AD5206 chip select line. This pin will be set to low at the start of SPI messages and raised to high after the message completes. This parameter must be provided.",
+    required: true,
+  },
+  spi_speed: {
+    type: { kind: "number", integer: true, min: 100000 },
+    description: "spi_speed parameter",
+    required: false,
+  },
+  spi_bus: {
+    type: { kind: "string" },
+    description: "spi_bus parameter",
+    required: false,
+  },
+  spi_software_sclk_pin: {
+    type: { kind: "string" },
+    description: "spi_software_sclk_pin parameter",
+    required: false,
+  },
+  spi_software_mosi_pin: {
+    type: { kind: "string" },
+    description: "spi_software_mosi_pin parameter",
+    required: false,
+  },
+  spi_software_miso_pin: {
+    type: { kind: "string" },
+    description: 'See the "common SPI settings" section for a description of the above parameters.',
+    required: false,
+  },
+  channel_1: {
+    type: { kind: "string" },
+    description: "channel_1 parameter",
+    required: false,
+  },
+  channel_2: {
+    type: { kind: "string" },
+    description: "channel_2 parameter",
+    required: false,
+  },
+  channel_3: {
+    type: { kind: "string" },
+    description: "channel_3 parameter",
+    required: false,
+  },
+  channel_4: {
+    type: { kind: "string" },
+    description: "channel_4 parameter",
+    required: false,
+  },
+  channel_5: {
+    type: { kind: "string" },
+    description: "channel_5 parameter",
+    required: false,
+  },
+  channel_6: {
+    type: { kind: "string" },
+    description:
+      "The value to statically set the given AD5206 channel to. This is typically set to a number between 0.0 and 1.0 with 1.0 being the highest resistance and 0.0 being the lowest resistance. However, the range may be changed with the 'scale' parameter (see below). If a channel is not specified then it is left unconfigured.",
+    required: false,
+  },
+  scale: {
+    type: { kind: "number", above: 0 },
+    description:
+      "This parameter can be used to alter how the 'channel_x' parameters are interpreted. If provided, then the 'channel_x' parameters should be between 0.0 and 'scale'. This may be useful when the AD5206 is used to set stepper voltage references. The 'scale' can be set to the equivalent stepper amperage if the AD5206 were at its highest resistance, and then the 'channel_x' parameters can be specified using the desired amperage value for the stepper. The default is to not scale the 'channel_x' parameters.",
+    required: false,
+    default: 1,
+  },
+};
+
+export const ad5206Schema = createSchemaFromParams(ad5206Params);
+
+export const ad5206Definition: SectionDefinition<typeof ad5206Schema> = {
+  id: "ad5206",
+  naming: { kind: "named", prefix: "ad5206" },
+  schema: ad5206Schema,
+  params: ad5206Params,
+  order: 70,
+  category: "Stepper Drivers",
+  label: "AD5206",
+};
+
+export const mcp4451Params: SectionParams = {
+  i2c_address: {
+    type: { kind: "number", integer: true, min: 0, max: 127 },
+    description: "The i2c address that the chip is using on the i2c bus. This parameter must be provided.",
+    required: true,
+  },
+  i2c_mcu: {
+    type: { kind: "string" },
+    description: "i2c_mcu parameter",
+    required: false,
+    default: "mcu",
+  },
+  i2c_bus: {
+    type: { kind: "string" },
+    description: "i2c_bus parameter",
+    required: false,
+  },
+  i2c_software_scl_pin: {
+    type: { kind: "string" },
+    description: "i2c_software_scl_pin parameter",
+    required: false,
+  },
+  i2c_software_sda_pin: {
+    type: { kind: "string" },
+    description: "i2c_software_sda_pin parameter",
+    required: false,
+  },
+  i2c_speed: {
+    type: { kind: "number", integer: true, min: 100000 },
+    description: 'See the "common I2C settings" section for a description of the above parameters.',
+    required: false,
+  },
+  wiper_0: {
+    type: { kind: "string" },
+    description: "wiper_0 parameter",
+    required: false,
+  },
+  wiper_1: {
+    type: { kind: "string" },
+    description: "wiper_1 parameter",
+    required: false,
+  },
+  wiper_2: {
+    type: { kind: "string" },
+    description: "wiper_2 parameter",
+    required: false,
+  },
+  wiper_3: {
+    type: { kind: "string" },
+    description:
+      "The value to statically set the given MCP4451 \"wiper\" to. This is typically set to a number between 0.0 and 1.0 with 1.0 being the highest resistance and 0.0 being the lowest resistance. However, the range may be changed with the 'scale' parameter (see below). If a wiper is not specified then it is left unconfigured.",
+    required: false,
+  },
+  scale: {
+    type: { kind: "number", above: 0 },
+    description:
+      "This parameter can be used to alter how the 'wiper_x' parameters are interpreted. If provided, then the 'wiper_x' parameters should be between 0.0 and 'scale'. This may be useful when the MCP4451 is used to set stepper voltage references. The 'scale' can be set to the equivalent stepper amperage if the MCP4451 were at its highest resistance, and then the 'wiper_x' parameters can be specified using the desired amperage value for the stepper. The default is to not scale the 'wiper_x' parameters.",
+    required: false,
+    default: 1,
+  },
+};
+
+export const mcp4451Schema = createSchemaFromParams(mcp4451Params);
+
+export const mcp4451Definition: SectionDefinition<typeof mcp4451Schema> = {
+  id: "mcp4451",
+  naming: { kind: "named", prefix: "mcp4451" },
+  schema: mcp4451Schema,
+  params: mcp4451Params,
+  order: 70,
+  category: "Stepper Drivers",
+  label: "MCP4451",
+};
+
+export const mcp4728Params: SectionParams = {
+  i2c_address: {
+    type: { kind: "number", integer: true, min: 0, max: 127 },
+    description: "The i2c address that the chip is using on the i2c bus. The default is 96.",
+    required: false,
+    default: 96,
+  },
+  i2c_mcu: {
+    type: { kind: "string" },
+    description: "i2c_mcu parameter",
+    required: false,
+    default: "mcu",
+  },
+  i2c_bus: {
+    type: { kind: "string" },
+    description: "i2c_bus parameter",
+    required: false,
+  },
+  i2c_software_scl_pin: {
+    type: { kind: "string" },
+    description: "i2c_software_scl_pin parameter",
+    required: false,
+  },
+  i2c_software_sda_pin: {
+    type: { kind: "string" },
+    description: "i2c_software_sda_pin parameter",
+    required: false,
+  },
+  i2c_speed: {
+    type: { kind: "number", integer: true, min: 100000 },
+    description: 'See the "common I2C settings" section for a description of the above parameters.',
+    required: false,
+  },
+  channel_a: {
+    type: { kind: "string" },
+    description: "channel_a parameter",
+    required: false,
+  },
+  channel_b: {
+    type: { kind: "string" },
+    description: "channel_b parameter",
+    required: false,
+  },
+  channel_c: {
+    type: { kind: "string" },
+    description: "channel_c parameter",
+    required: false,
+  },
+  channel_d: {
+    type: { kind: "string" },
+    description:
+      "The value to statically set the given MCP4728 channel to. This is typically set to a number between 0.0 and 1.0 with 1.0 being the highest voltage (2.048V) and 0.0 being the lowest voltage. However, the range may be changed with the 'scale' parameter (see below). If a channel is not specified then it is left unconfigured.",
+    required: false,
+  },
+  scale: {
+    type: { kind: "number", above: 0 },
+    description:
+      "This parameter can be used to alter how the 'channel_x' parameters are interpreted. If provided, then the 'channel_x' parameters should be between 0.0 and 'scale'. This may be useful when the MCP4728 is used to set stepper voltage references. The 'scale' can be set to the equivalent stepper amperage if the MCP4728 were at its highest voltage (2.048V), and then the 'channel_x' parameters can be specified using the desired amperage value for the stepper. The default is to not scale the 'channel_x' parameters.",
+    required: false,
+    default: 1,
+  },
+};
+
+export const mcp4728Schema = createSchemaFromParams(mcp4728Params);
+
+export const mcp4728Definition: SectionDefinition<typeof mcp4728Schema> = {
+  id: "mcp4728",
+  naming: { kind: "named", prefix: "mcp4728" },
+  schema: mcp4728Schema,
+  params: mcp4728Params,
+  order: 70,
+  category: "Stepper Drivers",
+  label: "MCP4728",
+};
+
+export const mcp4018Params: SectionParams = {
+  i2c_address: {
+    type: { kind: "number", integer: true, min: 0, max: 127 },
+    description: "The i2c address that the chip is using on the i2c bus. The default is 47.",
+    required: false,
+    default: 47,
+  },
+  i2c_mcu: {
+    type: { kind: "string" },
+    description: "i2c_mcu parameter",
+    required: false,
+    default: "mcu",
+  },
+  i2c_bus: {
+    type: { kind: "string" },
+    description: "i2c_bus parameter",
+    required: false,
+  },
+  i2c_software_scl_pin: {
+    type: { kind: "string" },
+    description: "i2c_software_scl_pin parameter",
+    required: false,
+  },
+  i2c_software_sda_pin: {
+    type: { kind: "string" },
+    description: "i2c_software_sda_pin parameter",
+    required: false,
+  },
+  i2c_speed: {
+    type: { kind: "number", integer: true, min: 100000 },
+    description: 'See the "common I2C settings" section for a description of the above parameters.',
+    required: false,
+  },
+  wiper: {
+    type: { kind: "number", min: 0 },
+    description:
+      "The value to statically set the given MCP4018 \"wiper\" to. This is typically set to a number between 0.0 and 1.0 with 1.0 being the highest resistance and 0.0 being the lowest resistance. However, the range may be changed with the 'scale' parameter (see below). This parameter must be provided.",
+    required: true,
+  },
+  scale: {
+    type: { kind: "number", above: 0 },
+    description:
+      "This parameter can be used to alter how the 'wiper' parameter is interpreted. If provided, then the 'wiper' parameter should be between 0.0 and 'scale'. This may be useful when the MCP4018 is used to set stepper voltage references. The 'scale' can be set to the equivalent stepper amperage if the MCP4018 is at its highest resistance, and then the 'wiper' parameter can be specified using the desired amperage value for the stepper. The default is to not scale the 'wiper' parameter.",
+    required: false,
+    default: 1,
+  },
+};
+
+export const mcp4018Schema = createSchemaFromParams(mcp4018Params);
+
+export const mcp4018Definition: SectionDefinition<typeof mcp4018Schema> = {
+  id: "mcp4018",
+  naming: { kind: "named", prefix: "mcp4018" },
+  schema: mcp4018Schema,
+  params: mcp4018Params,
+  order: 70,
+  category: "Stepper Drivers",
+  label: "MCP4018",
+};

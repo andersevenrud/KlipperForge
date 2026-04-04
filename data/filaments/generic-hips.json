@@ -1,0 +1,56 @@
+{
+  "id": "generic-hips",
+  "name": "HIPS",
+  "manufacturer": "Generic",
+  "description": "High impact polystyrene (HIPS) is a lightweight, easy-to-print filament commonly used as a dissolvable support material for ABS (using limonene solvent). Also usable as a primary material for lightweight parts and prototypes. Prints similarly to ABS but with less warping.",
+  "filamentType": "HIPS",
+  "ratings": {
+    "strength": 2,
+    "stiffness": 2,
+    "durability": 3,
+    "printability": 3,
+    "heatResistance": 3
+  },
+  "printSpecs": {
+    "nozzleTempRange": "225–245°C",
+    "bedTempRange": "100–115°C",
+    "printSpeedRange": "40–60 mm/s",
+    "coolingFan": "Low (20–40%)",
+    "enclosureRequired": false,
+    "firstLayerTemp": "230–235°C"
+  },
+  "mechanicalSpecs": {
+    "tensileStrength": 32,
+    "heatDeflectionTemp": 85,
+    "elongationAtBreak": 40,
+    "impactStrength": "Moderate"
+  },
+  "environmentalSpecs": {
+    "moistureSensitivity": "Low",
+    "uvResistance": "Poor",
+    "foodSafe": false,
+    "dryingTemp": 65,
+    "dryingTime": 4
+  },
+  "physicalSpecs": {
+    "diameter": 1.75,
+    "density": 1.04,
+    "glassTransitionTemp": 95,
+    "meltingPoint": 230
+  },
+  "features": [
+    "Dissolves in limonene (ABS support material)",
+    "Lightweight and easy to print",
+    "Lower warping than ABS",
+    "Good for prototyping and lightweight parts",
+    "Easy to sand and paint",
+    "Compatible with ABS print settings"
+  ],
+  "references": [
+    {
+      "label": "Simplify3D — HIPS Material Guide",
+      "url": "https://www.simplify3d.com/resources/materials-guide/hips/",
+      "type": "documentation"
+    }
+  ]
+}

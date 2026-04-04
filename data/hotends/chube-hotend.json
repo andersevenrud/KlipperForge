@@ -1,0 +1,60 @@
+{
+  "id": "chube-hotend",
+  "name": "Chube",
+  "manufacturer": "Luke's Laboratory",
+  "description": "The Chube is a high-flow, all-metal hotend from Luke's Laboratory, fully manufactured in Wrightstown, WI, USA. It features a unique copper heat block and Chalice titanium heatbreak designed for sustained high volumetric extrusion. The Chalice heatbreak uses aerospace-grade titanium with a hardened, lubricious surface treatment for minimal heat creep. The Chube is designed for speed printing with standard V6 (RepRap M6) nozzle compatibility, making it a popular choice for high-performance Voron and other CoreXY builds.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 500,
+    "heaterType": "cartridge",
+    "heaterPower": 120,
+    "thermistorType": "NTC 100K or PT1000"
+  },
+  "heatBreakSpecs": {
+    "type": "all-metal",
+    "material": "Chalice titanium (aerospace-grade with surface treatment)",
+    "retraction": "0.5-1mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (RepRap M6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D V6",
+      "CHT clone nozzles",
+      "hardened steel V6"
+    ],
+    "maxFlowRate": "~50mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "mountType": "Groove mount / Voron compatible"
+  },
+  "features": [
+    "Copper heater block for excellent thermal conductivity",
+    "Chalice titanium heatbreak with aerospace-grade surface treatment",
+    "High flow capability ~50mm³/s",
+    "V6 (RepRap M6) nozzle compatibility",
+    "120W heater for fast heat-up",
+    "Rated for 500°C heat block and 300°C ambient",
+    "Designed for speed printing on CoreXY machines",
+    "Manufactured in USA"
+  ],
+  "references": [
+    {
+      "label": "Chube Hotend Official Site",
+      "url": "https://chubehotend.com/",
+      "type": "product"
+    },
+    {
+      "label": "Luke's Laboratory — Chube",
+      "url": "https://www.lukeslabonline.com/collections/chube",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["maxFlowRate", "retraction", "thermistorType"]
+}

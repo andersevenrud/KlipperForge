@@ -1,0 +1,45 @@
+{
+  "id": "meanwell-lrs-100-48",
+  "name": "LRS-100-48",
+  "manufacturer": "MeanWell",
+  "description": "Compact 100W 48V power supply from MeanWell's LRS series. Fanless convection-cooled design with 30mm low profile. Commonly used as a dedicated 48V stepper motor supply alongside a separate 24V supply for heaters and fans. Popular in Voron 48V builds where it powers TMC5160 high-voltage stepper drivers.",
+  "voltage": 48,
+  "wattage": 110,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 48,
+    "outputCurrent": 2.3,
+    "outputPower": 110.4,
+    "inputVoltageRange": "85-264VAC",
+    "efficiency": 91,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "129x97x30mm",
+    "weight": 340,
+    "coolingMethod": "convection",
+    "hasFan": false
+  },
+  "certifications": ["UL 62368-1", "CE", "CB"],
+  "protections": ["short-circuit", "overload", "overvoltage"],
+  "operatingTemperature": "-30 to +70C",
+  "typicalUseCases": [
+    "Voron 48V builds (dedicated motor supply)",
+    "High-voltage stepper driver supply (TMC5160)",
+    "Auxiliary 48V supply for high-performance motion systems"
+  ],
+  "communityRecommendation": "recommended",
+  "references": [
+    {
+      "label": "MeanWell LRS-100 Datasheet",
+      "url": "https://www.meanwell.com/Upload/PDF/LRS-100/LRS-100-SPEC.PDF",
+      "type": "datasheet"
+    },
+    {
+      "label": "DigiKey Product Page",
+      "url": "https://www.digikey.com/en/products/detail/mean-well-usa-inc/LRS-100-48/7705007",
+      "type": "product"
+    }
+  ],
+  "unverified": []
+}

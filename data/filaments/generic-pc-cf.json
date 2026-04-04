@@ -1,0 +1,57 @@
+{
+  "id": "generic-pc-cf",
+  "name": "PC-CF (Carbon Fiber)",
+  "manufacturer": "Generic",
+  "description": "Polycarbonate reinforced with chopped carbon fibers, delivering exceptional heat resistance and stiffness. One of the strongest FDM filaments available, combining PC's already high heat deflection temperature with carbon fiber's rigidity. Requires very high temperatures, an enclosure, and a hardened nozzle. Used for high-performance jigs, tooling, and heat-critical structural parts.",
+  "filamentType": "PC-CF",
+  "ratings": {
+    "strength": 5,
+    "stiffness": 5,
+    "durability": 4,
+    "printability": 1,
+    "heatResistance": 5
+  },
+  "printSpecs": {
+    "nozzleTempRange": "270–310°C",
+    "bedTempRange": "105–120°C",
+    "printSpeedRange": "25–45 mm/s",
+    "coolingFan": "None",
+    "enclosureRequired": true,
+    "firstLayerTemp": "280–295°C"
+  },
+  "mechanicalSpecs": {
+    "tensileStrength": 80,
+    "heatDeflectionTemp": 155,
+    "elongationAtBreak": 5,
+    "impactStrength": "Moderate"
+  },
+  "environmentalSpecs": {
+    "moistureSensitivity": "High",
+    "uvResistance": "Moderate",
+    "foodSafe": false,
+    "dryingTemp": 80,
+    "dryingTime": 8
+  },
+  "physicalSpecs": {
+    "diameter": 1.75,
+    "density": 1.22,
+    "glassTransitionTemp": 150,
+    "meltingPoint": 280
+  },
+  "features": [
+    "Highest heat resistance among common CF filaments",
+    "Excellent stiffness-to-weight ratio",
+    "Reduced warping compared to plain PC",
+    "Requires all-metal hotend (270°C+)",
+    "Requires hardened steel or ruby nozzle (abrasive)",
+    "Demanding to print — experienced users recommended"
+  ],
+  "references": [
+    {
+      "label": "Vision Miner — CarbonX PC+CF",
+      "url": "https://visionminer.com/blogs/articles/carbonx%E2%84%A2-pc-cf-carbon-fiber-polycarbonate-3d-printing-filament-by-3dxtech",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["tensileStrength", "heatDeflectionTemp", "elongationAtBreak"]
+}

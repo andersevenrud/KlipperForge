@@ -1,0 +1,50 @@
+{
+  "id": "meanwell-uhp-200-48",
+  "name": "UHP-200-48",
+  "manufacturer": "MeanWell",
+  "description": "Slim-profile 200W 48V fanless power supply with built-in PFC. The premium choice for high-voltage stepper builds where silence and compact size matter. Used in Voron 48V configurations to power TMC5160 high-voltage stepper drivers. Pairs well with a separate 24V supply for heaters, fans, and control electronics.",
+  "voltage": 48,
+  "wattage": 202,
+  "formFactor": "enclosed-slim",
+  "electricalSpecs": {
+    "outputVoltage": 48,
+    "outputCurrent": 4.2,
+    "outputPower": 201.6,
+    "inputVoltageRange": "90-264VAC",
+    "efficiency": 94,
+    "powerFactorCorrection": true
+  },
+  "physicalSpecs": {
+    "dimensions": "194x55x26mm",
+    "weight": 470,
+    "coolingMethod": "convection",
+    "hasFan": false
+  },
+  "certifications": ["UL", "CE", "CB", "CCC", "BSMI", "EAC", "TUV"],
+  "protections": ["short-circuit", "overload", "overvoltage", "overtemperature"],
+  "operatingTemperature": "-30 to +70C",
+  "typicalUseCases": [
+    "Voron 48V builds (dedicated motor supply)",
+    "High-voltage stepper driver supply (TMC5160)",
+    "Premium silent 48V supply for high-performance motion systems"
+  ],
+  "communityRecommendation": "recommended",
+  "references": [
+    {
+      "label": "MeanWell UHP-200 Product Page",
+      "url": "https://www.meanwell.com/webapp/product/search.aspx?prod=UHP-200(R)",
+      "type": "product"
+    },
+    {
+      "label": "West3D Product Page",
+      "url": "https://west3d.com/products/mean-well-uhp-200-48-200w-48v-4-2a-power-supply-psu-1",
+      "type": "product"
+    },
+    {
+      "label": "DigiKey Product Page",
+      "url": "https://www.digikey.com/en/products/detail/mean-well-usa-inc/UHP-200-48/7707239",
+      "type": "product"
+    }
+  ],
+  "unverified": []
+}

@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.input {
+  @apply w-full px-2 py-1 bg-zinc-800 border border-zinc-600 rounded text-white text-sm;
+}
+
+.input:focus {
+  @apply outline-none border-blue-500;
+}

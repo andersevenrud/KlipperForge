@@ -1,0 +1,24 @@
+{
+  "id": "bondtech-42h025h-0704a",
+  "name": "42H025H-0704A",
+  "manufacturer": "Bondtech",
+  "description": "Pancake stepper designed for Bondtech BMG and LGX extruders. 25mm body with 0.7A low-current draw.",
+  "nemaSize": 17,
+  "electricalSpecs": {
+    "ratedCurrent": 0.7,
+    "holdingTorque": 16,
+    "stepAngle": 1.8,
+    "phaseResistance": 4.4,
+    "phaseInductance": 5.5,
+    "ratedVoltage": 3.08
+  },
+  "physicalSpecs": {
+    "bodyLength": 25,
+    "weight": 150,
+    "shaftDiameter": 5,
+    "shaftLength": 24
+  },
+  "references": [
+    { "label": "Bondtech product page", "url": "https://www.bondtech.se/product/nema17-25mm-stepper-motor-18mm-o-shaft/", "type": "product" }
+  ]
+}

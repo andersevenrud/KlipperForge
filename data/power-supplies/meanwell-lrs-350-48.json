@@ -1,0 +1,45 @@
+{
+  "id": "meanwell-lrs-350-48",
+  "name": "LRS-350-48",
+  "manufacturer": "MeanWell",
+  "description": "High-power 350W 48V enclosed power supply from MeanWell's LRS series. Features forced-air cooling via built-in fan. Used in 48V 3D printer builds where significant motor power is needed, such as large-format or multi-stepper configurations running TMC5160 drivers at high voltage.",
+  "voltage": 48,
+  "wattage": 350,
+  "formFactor": "enclosed",
+  "electricalSpecs": {
+    "outputVoltage": 48,
+    "outputCurrent": 7.3,
+    "outputPower": 350.4,
+    "inputVoltageRange": "90-132VAC / 180-264VAC",
+    "efficiency": 89,
+    "powerFactorCorrection": false
+  },
+  "physicalSpecs": {
+    "dimensions": "215x115x30mm",
+    "weight": 760,
+    "coolingMethod": "forced-air",
+    "hasFan": true
+  },
+  "certifications": ["UL 62368-1", "CE", "CB"],
+  "protections": ["short-circuit", "overload", "overvoltage"],
+  "operatingTemperature": "-25 to +70C",
+  "typicalUseCases": [
+    "High-performance 48V 3D printer builds",
+    "Large Voron builds with 48V stepper systems",
+    "CNC/3D printer hybrid builds"
+  ],
+  "communityRecommendation": "recommended",
+  "references": [
+    {
+      "label": "MeanWell LRS-350 Datasheet",
+      "url": "https://www.meanwell.com/Upload/PDF/LRS-350/LRS-350-SPEC.PDF",
+      "type": "datasheet"
+    },
+    {
+      "label": "KB-3D Product Page",
+      "url": "https://kb-3d.com/store/power-supplies-converters/987-meanwell-lrs-350-48-power-supply-48v-350w-1694545951225.html",
+      "type": "product"
+    }
+  ],
+  "unverified": ["weight"]
+}

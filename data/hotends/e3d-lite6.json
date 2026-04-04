@@ -1,0 +1,56 @@
+{
+  "id": "e3d-lite6",
+  "name": "E3D Lite6",
+  "manufacturer": "E3D",
+  "description": "The E3D Lite6 is E3D's budget-oriented entry-level hotend, sharing the V6 groove mount and nozzle threading but using a PTFE-lined heatbreak instead of the all-metal design of the V6. This makes it easier to print flexible filaments and reduces the risk of jams on retraction-heavy profiles, while keeping the cost low. Maximum temperature is limited to ~245°C by the PTFE liner.",
+  "hotendType": "ptfe-lined",
+  "thermalSpecs": {
+    "maxTemperature": 245,
+    "heaterType": "cartridge",
+    "heaterPower": 30,
+    "thermistorType": "NTC 100K (Semitec 104GT-2)",
+    "thermistorId": "atc-semitec-104gt-2"
+  },
+  "heatBreakSpecs": {
+    "type": "PTFE-lined",
+    "material": "stainless steel with PTFE liner",
+    "retraction": "5-7mm (Bowden), 1-3mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D V6 brass nozzles",
+      "third-party M6 V6-style nozzles"
+    ],
+    "maxFlowRate": "~8mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "mountType": "groove mount (16mm OD, V6-compatible)"
+  },
+  "features": [
+    "Budget E3D option with V6 compatibility",
+    "PTFE-lined for smooth flexible filament feeding",
+    "Groove mount for broad printer support",
+    "Not suitable for high-temperature materials"
+  ],
+  "references": [
+    {
+      "label": "E3D Lite6 Collection",
+      "url": "https://e3d-online.com/collections/lite-6-spares",
+      "type": "product"
+    },
+    {
+      "label": "E3D Lite6 Collection",
+      "url": "https://e3d-online.com/collections/lite-6-spares",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["heaterPower", "maxFlowRate", "retraction", "maxTemperature"]
+}

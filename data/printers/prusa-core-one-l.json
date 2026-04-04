@@ -1,0 +1,148 @@
+{
+  "id": "prusa-core-one-l",
+  "name": "Prusa CORE One L",
+  "manufacturer": "Prusa Research",
+  "kinematics": "corexy",
+  "description": "Large enclosed CoreXY 3D printer with 30-liter build volume, AC convection heatbed (cast aluminum block), active chamber temperature control up to 60C, and 0.9-degree stepper motors on X/Y. Uses the same xBuddy board platform (STM32F407, TMC2130 SPI drivers) and Nextruder as the CORE One. Includes built-in 1080p camera with night vision, accelerometer, and hardened nozzle. Note: no official Klipper config exists — pin mappings are derived from CORE One firmware source.",
+  "bedSize": { "x": 300, "y": 300, "z": 330 },
+  "equipment": [
+    { "category": "mcu-boards", "label": "xBuddy Board", "role": "Main MCU" },
+    { "category": "hotends", "id": "prusa-nextruder", "label": "Prusa Nextruder", "role": "Hotend" },
+    { "category": "extruders", "id": "prusa-nextruder", "label": "Prusa Nextruder", "role": "Extruder" },
+    { "category": "probes", "label": "Loadcell", "role": "Z Probe" }
+  ],
+  "defaults": {
+    "sections": [
+      {
+        "definitionId": "printer",
+        "data": {
+          "kinematics": "corexy",
+          "max_velocity": 350,
+          "max_accel": 1250,
+          "max_z_velocity": 30,
+          "max_z_accel": 200,
+          "square_corner_velocity": 5
+        }
+      },
+      {
+        "definitionId": "mcu",
+        "data": {
+          "serial": "/dev/serial/by-id/usb-Prusa_Research__a.s._Prusa_CORE_One_L_placeholder"
+        }
+      },
+      {
+        "definitionId": "stepper",
+        "instanceName": "x",
+        "data": {
+          "step_pin": "PD7",
+          "dir_pin": "PD6",
+          "enable_pin": "!PB9",
+          "microsteps": 16,
+          "rotation_distance": 32,
+          "endstop_pin": "tmc2130_stepper_x:virtual_endstop",
+          "position_endstop": 302,
+          "position_min": -2,
+          "position_max": 302,
+          "homing_speed": 50,
+          "homing_retract_dist": 0
+        }
+      },
+      {
+        "definitionId": "stepper",
+        "instanceName": "y",
+        "data": {
+          "step_pin": "PD5",
+          "dir_pin": "PD4",
+          "enable_pin": "!PB9",
+          "microsteps": 16,
+          "rotation_distance": 32,
+          "endstop_pin": "tmc2130_stepper_y:virtual_endstop",
+          "position_endstop": -19,
+          "position_min": -19,
+          "position_max": 301,
+          "homing_speed": 50,
+          "homing_retract_dist": 0
+        }
+      },
+      {
+        "definitionId": "stepper",
+        "instanceName": "z",
+        "data": {
+          "step_pin": "PD3",
+          "dir_pin": "PD2",
+          "enable_pin": "!PB8",
+          "microsteps": 16,
+          "rotation_distance": 8,
+          "endstop_pin": "probe:z_virtual_endstop",
+          "position_min": 0,
+          "position_max": 335,
+          "homing_speed": 13.333
+        }
+      },
+      {
+        "definitionId": "extruder",
+        "data": {
+          "step_pin": "PD1",
+          "dir_pin": "PD0",
+          "enable_pin": "!PD10",
+          "microsteps": 16,
+          "rotation_distance": 8.421,
+          "nozzle_diameter": 0.4,
+          "filament_diameter": 1.75,
+          "heater_pin": "PB1",
+          "sensor_type": "ATC Semitec 104GT-2",
+          "sensor_pin": "PC0",
+          "min_temp": 5,
+          "max_temp": 305,
+          "control": "pid",
+          "pid_kp": 7,
+          "pid_ki": 0.5,
+          "pid_kd": 45
+        }
+      },
+      {
+        "definitionId": "heater_bed",
+        "data": {
+          "heater_pin": "PB0",
+          "sensor_type": "EPCOS 100K B57560G104F",
+          "sensor_pin": "PA4",
+          "min_temp": 5,
+          "max_temp": 125,
+          "control": "pid",
+          "pid_kp": 120,
+          "pid_ki": 1.5,
+          "pid_kd": 600
+        }
+      },
+      {
+        "definitionId": "fan",
+        "data": {
+          "pin": "PE11"
+        }
+      }
+    ]
+  },
+  "references": [
+    {
+      "label": "Prusa CORE One L Product Page",
+      "url": "https://www.prusa3d.com/product/prusa-core-one-l/",
+      "type": "product"
+    },
+    {
+      "label": "Prusa CORE One L Landing Page",
+      "url": "https://www.prusa3d.com/en/core-one-l/",
+      "type": "product"
+    },
+    {
+      "label": "Prusa CORE One L Knowledge Base",
+      "url": "https://help.prusa3d.com/product/core-one-l",
+      "type": "documentation"
+    },
+    {
+      "label": "Prusa Firmware Buddy Source",
+      "url": "https://github.com/prusa3d/Prusa-Firmware-Buddy",
+      "type": "github"
+    }
+  ],
+  "unverified": ["pin_mappings", "rotation_distance", "pid_values", "position_limits", "heater_bed_config"]
+}

@@ -1,0 +1,26 @@
+export const config = {
+  port: Number(process.env.PORT ?? 3001),
+  dockerSocket: process.env.DOCKER_SOCKET ?? "/var/run/docker.sock",
+  klipperSourcePath: process.env.KLIPPER_SOURCE_PATH ?? "./data/klipper",
+  dbPath: process.env.DB_PATH ?? "./data/db/firmware.sqlite",
+  boardDataPath: process.env.BOARD_DATA_PATH ?? "../../data",
+  presetDataPath: process.env.PRESET_DATA_PATH ?? "../../data/firmware-presets",
+  builderImage: process.env.BUILDER_IMAGE ?? "klipperforge-builder:latest",
+  maxConcurrentBuilds: Number(process.env.MAX_CONCURRENT_BUILDS ?? 2),
+  maxPendingBuilds: Number(process.env.MAX_PENDING_BUILDS ?? 20),
+  buildTimeoutMs: Number(process.env.BUILD_TIMEOUT_MS ?? 120_000),
+  rateLimitMaxRequests: Number(process.env.RATE_LIMIT_MAX_REQUESTS ?? 5),
+  rateLimitWindowSeconds: Number(process.env.RATE_LIMIT_WINDOW_SECONDS ?? 60),
+  buildCpus: Number(process.env.BUILD_CPUS ?? 1),
+  buildMemoryMb: Number(process.env.BUILD_MEMORY_MB ?? 384),
+  disableCache: process.env.DISABLE_CACHE === "true",
+  cacheMaxEntries: Number(process.env.CACHE_MAX_ENTRIES ?? 500),
+  cacheMaxSizeMb: Number(process.env.CACHE_MAX_SIZE_MB ?? 200),
+  cacheTtlSeconds: Number(process.env.CACHE_TTL_SECONDS ?? 604_800), // 7 days
+  cacheEvictStaleCommits: process.env.CACHE_EVICT_STALE_COMMITS !== "false",
+  trustProxy: process.env.TRUST_PROXY === "true",
+  // Docker volume names for sibling container mounts (set when running in Docker)
+  klipperVolumeName: process.env.KLIPPER_VOLUME_NAME ?? "",
+  buildsVolumeName: process.env.BUILDS_VOLUME_NAME ?? "",
+  buildsPath: process.env.BUILDS_PATH ?? "",
+};

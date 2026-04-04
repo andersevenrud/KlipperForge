@@ -1,0 +1,45 @@
+{
+  "id": "klicky-probe",
+  "name": "Klicky Probe",
+  "manufacturer": "Community (JosAr)",
+  "description": "The Klicky Probe is a community-designed magnetically-attached mechanical probe. It uses a microswitch mounted on a small PCB or printed body that docks magnetically to the toolhead. The probe is automatically picked up from and returned to a dock during probing sequences, enabling probing without permanently adding weight to the toolhead.",
+  "probeType": "mechanical",
+  "electricalSpecs": {
+    "operatingVoltage": "3.3-5V DC",
+    "signalType": "digital (microswitch)",
+    "currentDraw": "< 1mA"
+  },
+  "performanceSpecs": {
+    "repeatability": "±0.01mm",
+    "triggerDistance": "contact-based (switch actuation)",
+    "bedCompatibility": [
+      "glass",
+      "PEI",
+      "textured PEI",
+      "magnetic flex plates",
+      "BuildTak",
+      "aluminum",
+      "any solid surface"
+    ],
+    "temperatureCompensation": false
+  },
+  "physicalSpecs": {
+    "dimensions": "varies (3D printed body + microswitch)",
+    "weight": 3,
+    "mountType": "magnetic dock (6mm magnets)"
+  },
+  "klipperSection": "probe",
+  "unverified": ["currentDraw", "weight"],
+  "references": [
+    {
+      "label": "Klicky Probe GitHub Repository",
+      "url": "https://github.com/jlas1/Klicky-Probe",
+      "type": "github"
+    },
+    {
+      "label": "Klipper Probe Documentation",
+      "url": "https://www.klipper3d.org/Config_Reference.html#probe",
+      "type": "documentation"
+    }
+  ]
+}

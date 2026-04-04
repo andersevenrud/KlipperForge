@@ -1,0 +1,39 @@
+{
+  "id": "galileo-2-sa",
+  "name": "Galileo 2 SA",
+  "manufacturer": "LDO Motors",
+  "description": "The Galileo 2 SA (Standalone Assembly) is a planetary gear extruder designed as a drop-in replacement for the Orbiter 2.0 or Sherpa Mini extruders. It uses the same 9:1 planetary gear system and G2E kit parts but in a standalone body, extending Galileo 2 compatibility to any printer that supports Orbiter 2.0 or Sherpa Mini mounting.",
+  "driveType": "direct",
+  "mechanicalSpecs": {
+    "gearRatio": "9:1",
+    "filamentDiameter": 1.75,
+    "gripType": "dual drive"
+  },
+  "motorSpecs": {
+    "includedMotor": false,
+    "motorType": "NEMA14",
+    "compatibleMotors": "NEMA14 36mm pancake with 9T pinion (LDO-36STH20-1004AHG-9T recommended)"
+  },
+  "physicalSpecs": {
+    "mountPattern": "Orbiter 2.0 / Sherpa Mini compatible mount"
+  },
+  "features": [
+    "Drop-in replacement for Orbiter 2.0 or Sherpa Mini",
+    "Planetary gear system for high torque and smooth extrusion",
+    "Uses same G2E kit parts for assembly",
+    "Open source design files available"
+  ],
+  "references": [
+    {
+      "label": "Galileo 2 GitHub Repository",
+      "url": "https://github.com/JaredC01/Galileo2",
+      "type": "github"
+    },
+    {
+      "label": "Klipper Extruder Configuration Reference",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "dimensions", "maxFeedRate"]
+}

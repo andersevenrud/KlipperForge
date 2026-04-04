@@ -1,0 +1,51 @@
+{
+  "id": "trianglelab-td6s",
+  "name": "TD6S",
+  "manufacturer": "TriangleLab",
+  "description": "The TriangleLab TCHC TD6S is an all-metal hotend featuring a ceramic heating core and the TUN (TriangleLab Unity Nozzle) system where the heatbreak and nozzle are integrated into a single one-piece component to prevent leaks. It uses V6-compatible M6 threading and a V6 groove mount interface. The ceramic heating ring provides fast, even heat distribution.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 300,
+    "heaterType": "ceramic heating core",
+    "heaterPower": 50,
+    "thermistorType": "NTC 100K (ATC Semitec 104GT-2 / 104NT-4-R025H42G)"
+  },
+  "heatBreakSpecs": {
+    "type": "bi-metallic",
+    "material": "stainless steel / copper composite",
+    "retraction": "0.4-2mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "TUN (TriangleLab Unity Nozzle, M6 V6-compatible thread, integrated heatbreak+nozzle)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "TriangleLab TUN nozzles (integrated heatbreak+nozzle)",
+      "TriangleLab thin-wall bi-metal heatbreak with V6 nozzles"
+    ],
+    "maxFlowRate": "~30mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "mountType": "V6 groove mount compatible"
+  },
+  "features": [
+    "TUN one-piece nozzle+heatbreak prevents leaks",
+    "Ceramic heating core for fast even heating",
+    "V6 groove mount for broad printer compatibility",
+    "Bi-metallic heatbreak",
+    "Compatible with all V6 hotend interfaces"
+  ],
+  "references": [
+    {
+      "label": "TriangleLab TCHC TD6S Product Page",
+      "url": "https://www.trianglelab.net/products/tchc-td6s-hotend",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["maxFlowRate", "retraction"]
+}

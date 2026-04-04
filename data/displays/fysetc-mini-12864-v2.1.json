@@ -1,0 +1,49 @@
+{
+  "id": "fysetc-mini-12864-v2.1",
+  "name": "Mini 12864 V2.1",
+  "manufacturer": "Fysetc",
+  "description": "A widely used 128x64 monochrome LCD display with WS2811 neopixel RGB backlight. Featured in Klipper's official sample-lcd.cfg configuration file. Popular in Voron builds.",
+  "displayType": "klipper-native",
+  "screenSpecs": {
+    "size": "2.4 inch",
+    "resolution": "128x64",
+    "panelType": "monochrome LCD",
+    "touchscreen": false,
+    "driver": "UC1701"
+  },
+  "connectionSpecs": {
+    "interface": "SPI (EXP1/EXP2)",
+    "connector": "EXP1 + EXP2 ribbon cables"
+  },
+  "klipperIntegration": {
+    "method": "Klipper [display] section",
+    "klipperDisplayType": "uc1701",
+    "requiresSbc": false
+  },
+  "features": [
+    "Klipper native display support",
+    "WS2811 neopixel RGB backlight",
+    "Rotary encoder with push button",
+    "Standard EXP1/EXP2 interface",
+    "Referenced in Klipper sample-lcd.cfg",
+    "Popular in Voron builds"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "Fysetc Mini 12864 Wiki",
+      "url": "https://wiki.fysetc.com/docs/Mini12864Panel",
+      "type": "documentation"
+    },
+    {
+      "label": "GitHub - Fysetc Mini 12864",
+      "url": "https://github.com/FYSETC/FYSETC-Mini-12864-Panel",
+      "type": "github"
+    },
+    {
+      "label": "Klipper sample-lcd.cfg",
+      "url": "https://github.com/Klipper3d/klipper/blob/master/config/sample-lcd.cfg",
+      "type": "documentation"
+    }
+  ]
+}

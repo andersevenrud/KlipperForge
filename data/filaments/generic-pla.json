@@ -1,0 +1,67 @@
+{
+  "id": "generic-pla",
+  "name": "PLA",
+  "manufacturer": "Generic",
+  "description": "Polylactic acid (PLA) is the most popular FDM filament. It is easy to print, biodegradable under industrial conditions, and available in a wide range of colors. Best suited for prototypes, decorative items, and low-stress parts.",
+  "filamentType": "PLA",
+  "ratings": {
+    "strength": 2,
+    "stiffness": 4,
+    "durability": 2,
+    "printability": 5,
+    "heatResistance": 1
+  },
+  "printSpecs": {
+    "nozzleTempRange": "190–220°C",
+    "bedTempRange": "45–60°C",
+    "printSpeedRange": "40–100 mm/s",
+    "coolingFan": "High (100%)",
+    "enclosureRequired": false,
+    "firstLayerTemp": "200–210°C"
+  },
+  "mechanicalSpecs": {
+    "tensileStrength": 50,
+    "heatDeflectionTemp": 52,
+    "elongationAtBreak": 6,
+    "impactStrength": "Low"
+  },
+  "environmentalSpecs": {
+    "moistureSensitivity": "Low",
+    "uvResistance": "Poor",
+    "foodSafe": false,
+    "dryingTemp": 45,
+    "dryingTime": 4
+  },
+  "physicalSpecs": {
+    "diameter": 1.75,
+    "density": 1.24,
+    "glassTransitionTemp": 60,
+    "meltingPoint": 165
+  },
+  "features": [
+    "Easiest FDM material to print",
+    "Low warping tendency",
+    "Wide color and finish variety",
+    "Biodegradable under industrial composting",
+    "Low odor during printing",
+    "Good surface finish and detail"
+  ],
+  "references": [
+    {
+      "label": "Simplify3D — PLA Material Guide",
+      "url": "https://www.simplify3d.com/resources/materials-guide/pla/",
+      "type": "documentation"
+    },
+    {
+      "label": "Polymaker PolyTerra PLA TDS",
+      "url": "https://polymaker.com/wp-content/uploads/lana-downloads/PolyTerra-PLA_TDS_V5.3.pdf",
+      "type": "datasheet"
+    },
+    {
+      "label": "MatterHackers — PLA Filament Guide",
+      "url": "https://www.matterhackers.com/3d-printer-filament-compare",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["tensileStrength", "elongationAtBreak"]
+}

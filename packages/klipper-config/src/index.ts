@@ -1,0 +1,165 @@
+// New section schema system
+export type {
+  ConfigDocument,
+  ConfigValue,
+  ImportWarning,
+  McuBoardAssociation,
+  SaveConfigSection,
+  SectionDefinition,
+  SectionInstance,
+  SectionNaming,
+  SectionOverride,
+} from "./sections/types";
+export type {
+  ParamDefinition,
+  ParamType,
+  SectionParams,
+} from "./sections/param-types";
+export { createSchemaFromParams } from "./sections/schema-from-params";
+export { SectionRegistry, resolveHeader } from "./sections/registry";
+export {
+  SAVE_CONFIG_HEADER_PREFIX,
+  type SerializeOptions,
+  serializeConfig,
+  serializeConfigWithSourceMap,
+  serializeMultiFileConfig,
+} from "./sections/serializer";
+export type { ConfigSourceMap, MultiFileOutput, OmittedDefault } from "./sections/serializer";
+export {
+  validateDocument,
+  type SectionValidationError,
+  type BoardPinContext,
+  type ValidateDocumentOptions,
+} from "./sections/validator";
+export {
+  collectActiveOverrides,
+  type ActiveOverride,
+  type OverrideMap,
+} from "./sections/overrides";
+// Pin format validation
+export {
+  MCU_PIN_FAMILIES,
+  isVirtualEndstop,
+  matchesKnownPinFormat,
+} from "./pin-formats";
+export type { McuPinFamily } from "./pin-formats";
+// Pin aliases
+export type { BoardPinAlias } from "./pins";
+export {
+  buildReverseAliasMap,
+  convertDocumentPins,
+  extractBoardPinAliases,
+  isReservedPin,
+  parsePinAliasString,
+  resolvePinAlias,
+} from "./pins";
+
+export {
+  beaconDefinition,
+  beaconSchema,
+  bedMeshDefinition,
+  bedMeshSchema,
+  bltouchDefinition,
+  bltouchSchema,
+  boardPinsDefinition,
+  boardPinsNamedDefinition,
+  boardPinsParams,
+  boardPinsSchema,
+  cartographerCoilDefinition,
+  cartographerCoilSchema,
+  cartographerDefinition,
+  cartographerScanDefinition,
+  cartographerScanSchema,
+  cartographerSchema,
+  cartographerTouchDefinition,
+  cartographerTouchSchema,
+  controllerFanDefinition,
+  controllerFanSchema,
+  createDefaultRegistry,
+  defaultRegistry,
+  extruderDefinition,
+  extruderSchema,
+  fanDefinition,
+  fanGenericDefinition,
+  fanGenericSchema,
+  fanSchema,
+  filamentMotionSensorDefinition,
+  filamentSensorSchema,
+  filamentSwitchSensorDefinition,
+  heaterBedDefinition,
+  heaterBedSchema,
+  heaterFanDefinition,
+  heaterFanSchema,
+  inputShaperDefinition,
+  inputShaperSchema,
+  mcuDefinition,
+  mcuNamedDefinition,
+  mcuSchema,
+  printerDefinition,
+  printerSchema,
+  probeDefinition,
+  probeSchema,
+  safeZHomeDefinition,
+  safeZHomeSchema,
+  stepperDefinition,
+  stepperSchema,
+  temperatureSensorDefinition,
+  temperatureSensorSchema,
+  tmc2209Definition,
+  tmc5160Definition,
+  tmcSchema,
+} from "./sections/schemas";
+
+// Section data normalization
+export { computeHiddenFields, normalizeSectionData } from "./sections/normalize";
+export type { NormalizeSectionOptions, NormalizeSectionResult } from "./sections/normalize";
+
+// Section modes (TMC communication + MCU connection)
+export {
+  type SectionModeConfig,
+  type SectionModeOption,
+  SECTION_MODES,
+  SHARED_BUS_PIN_FIELDS,
+  getSectionModeConfig,
+  isTmcSection,
+} from "./sections/section-modes";
+
+// Field grouping
+export type { FieldGroup } from "./sections/field-groups";
+export {
+  applyControlVisibility,
+  applyFieldGroups,
+  applySensorTypeVisibility,
+  getFieldGroup,
+} from "./sections/field-groups";
+
+// Sensor types
+export { KNOWN_SENSOR_TYPES } from "./sections/generated/heating";
+export { KNOWN_ACCEL_CHIPS } from "./sections/generated/tuning";
+
+// Import/export
+export { cfgToDocument, parseMultiFileConfigs } from "./import";
+export { exportProject, importProject } from "./project";
+export type { KlipperForgeProject } from "./project";
+
+// Legacy exports (deprecated — use section schema system instead)
+/** @deprecated Use section schema system instead */
+export type {
+  ConfigSection,
+  ExtruderSection,
+  FanSection,
+  HeaterBedSection,
+  KinematicsType,
+  McuSection,
+  PrinterConfig,
+  PrinterSection,
+  ProbeSection,
+  StepperSection,
+} from "./types";
+/** @deprecated Use serializeConfig instead */
+export { generateKlipperConfig } from "./generator";
+/** @deprecated Use parseKlipperConfig with section registry instead */
+export { COMMENT_SECTION_TYPE, parseKlipperConfig } from "./parser";
+export type { ParseResult } from "./parser";
+/** @deprecated Use validateDocument instead */
+export { validateConfig, type ValidationError } from "./validator";

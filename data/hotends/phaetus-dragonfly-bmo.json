@@ -1,0 +1,52 @@
+{
+  "id": "phaetus-dragonfly-bmo",
+  "name": "Dragonfly BMO",
+  "manufacturer": "Phaetus",
+  "description": "The Phaetus Dragonfly BMO is the V6 groove-mount variant of the Dragonfly series, sharing the same bi-metallic heatbreak technology as the BMS but designed as a drop-in V6 replacement at 62.3mm tip-to-top. It retains the 500°C temperature rating and V6-compatible nozzle threading while offering a nickel-plated copper heater block. Heater cartridge and thermistor are sold separately.",
+  "hotendType": "all-metal",
+  "thermalSpecs": {
+    "maxTemperature": 500,
+    "heaterType": "cartridge (not included, user-supplied)",
+    "thermistorType": "not included (user-supplied, typically NTC 100K or PT1000)"
+  },
+  "heatBreakSpecs": {
+    "type": "bi-metallic",
+    "material": "stainless steel / copper composite",
+    "retraction": "0.5-2mm (direct drive)"
+  },
+  "nozzleSpecs": {
+    "system": "V6 threaded (M6)",
+    "includedNozzleSizeMm": 0.4,
+    "compatibleNozzles": [
+      "E3D V6 brass nozzles",
+      "E3D V6 hardened steel nozzles",
+      "third-party M6 V6-style nozzles"
+    ],
+    "maxFlowRate": "~22mm³/s"
+  },
+  "physicalSpecs": {
+    "filamentDiameter": 1.75,
+    "weight": 22,
+    "mountType": "V6 groove mount compatible (62.3mm tip-to-top, same as V6)"
+  },
+  "features": [
+    "500°C maximum temperature rating",
+    "Bi-metallic heatbreak for superior thermal gradient",
+    "V6 groove mount for broad toolhead support",
+    "Larger melt zone than Dragonfly BMS",
+    "V6 nozzle ecosystem compatibility"
+  ],
+  "references": [
+    {
+      "label": "Phaetus Dragonfly BMO Product Page",
+      "url": "https://www.phaetus.com/dragonfly-bmo/",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Extruder Configuration",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "maxFlowRate", "retraction"]
+}

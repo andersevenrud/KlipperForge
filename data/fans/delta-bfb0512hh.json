@@ -1,0 +1,41 @@
+{
+  "id": "delta-bfb0512hh",
+  "name": "BFB0512HH",
+  "manufacturer": "Delta",
+  "description": "The Delta BFB0512HH is a 50×15mm radial blower fan from Delta Electronics, a well-established industrial fan manufacturer. It provides strong static pressure for directing airflow through part-cooling ducts and is a popular choice in Voron-style and other high-performance 3D printer builds that require a reliable 12V blower.",
+  "fanType": "blower",
+  "size": "5015",
+  "airflowSpecs": {
+    "airflow": 4.59,
+    "staticPressure": 21.99,
+    "rpm": 6500
+  },
+  "electricalSpecs": {
+    "voltage": 12,
+    "current": 0.21,
+    "power": 2.52,
+    "pwmCapable": false,
+    "tachoSignal": true
+  },
+  "noiseSpecs": {
+    "noiseLevel": 45.0
+  },
+  "physicalSpecs": {
+    "dimensions": "50×50×15mm",
+    "weight": 28,
+    "bearingType": "Dual Ball Bearing"
+  },
+  "references": [
+    {
+      "label": "Delta BFB0512HH-F00 Product Page",
+      "url": "https://www.delta-fan.com/products/BFB0512HH-F00.html",
+      "type": "product"
+    },
+    {
+      "label": "Delta BFB0512HH-F00 Datasheet (PDF)",
+      "url": "https://www.delta-fan.com/Download/Spec/BFB0512HH-F00.pdf",
+      "type": "datasheet"
+    }
+  ],
+  "unverified": []
+}

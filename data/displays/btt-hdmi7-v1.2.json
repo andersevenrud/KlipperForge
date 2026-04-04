@@ -1,0 +1,37 @@
+{
+  "id": "btt-hdmi7-v1.2",
+  "name": "HDMI7 V1.2",
+  "manufacturer": "BigTreeTech",
+  "description": "A 7 inch IPS capacitive touchscreen display with HDMI video input and USB touch interface. Higher resolution than HDMI5 series, compatible with any SBC running KlipperScreen.",
+  "displayType": "klipperscreen",
+  "screenSpecs": {
+    "size": "7 inch",
+    "resolution": "1024x600",
+    "panelType": "IPS TFT",
+    "touchscreen": true
+  },
+  "connectionSpecs": {
+    "interface": "HDMI + USB",
+    "connector": "Mini HDMI + USB-C"
+  },
+  "klipperIntegration": {
+    "method": "KlipperScreen",
+    "requiresSbc": true,
+    "softwareRequired": "KlipperScreen"
+  },
+  "features": [
+    "7 inch IPS panel",
+    "1024x600 resolution",
+    "Capacitive touchscreen",
+    "HDMI input works with any SBC",
+    "USB-C touch interface"
+  ],
+  "unverified": ["dimensions", "weight", "connector"],
+  "references": [
+    {
+      "label": "GitHub - BTT TouchScreen Hardware",
+      "url": "https://github.com/bigtreetech/BIGTREETECH-TouchScreenHardware",
+      "type": "github"
+    }
+  ]
+}

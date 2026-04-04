@@ -1,0 +1,37 @@
+{
+  "id": "btt-tft35-spi-v2.1",
+  "name": "TFT35 SPI V2.1",
+  "manufacturer": "BigTreeTech",
+  "description": "A 3.5 inch color TFT display with resistive touch, connected via SPI. Designed for use with KlipperScreen on CB1 or Raspberry Pi. Features an ILI9488 display driver.",
+  "displayType": "klipperscreen",
+  "screenSpecs": {
+    "size": "3.5 inch",
+    "resolution": "480x320",
+    "panelType": "TFT",
+    "touchscreen": true,
+    "driver": "ILI9488"
+  },
+  "connectionSpecs": {
+    "interface": "SPI + I2C",
+    "connector": "SPI header + I2C touch"
+  },
+  "klipperIntegration": {
+    "method": "KlipperScreen",
+    "requiresSbc": true,
+    "softwareRequired": "KlipperScreen"
+  },
+  "features": [
+    "Resistive touchscreen (NS2009 driver via I2C)",
+    "KlipperScreen compatible",
+    "SPI connection for compact wiring",
+    "Works with CB1 and Raspberry Pi"
+  ],
+  "unverified": ["dimensions", "weight"],
+  "references": [
+    {
+      "label": "GitHub - BTT TFT35 SPI",
+      "url": "https://github.com/bigtreetech/TFT35-SPI",
+      "type": "github"
+    }
+  ]
+}
