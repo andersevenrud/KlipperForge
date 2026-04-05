@@ -1,0 +1,38 @@
+{
+  "id": "vz-hextrudort-low",
+  "name": "Vz Hextrudort Low",
+  "manufacturer": "Mellow / VzBoT",
+  "description": "The Vz Hextrudort Low is a CNC-machined aluminum extruder designed by the VzBoT community for lightweight direct drive setups. It is the standard CNC variant of the Vz-HextrudORT, smaller in the Y direction than the printed version, and compatible with 8T or 10T NEMA14 round stepper motors. Designed for high-speed printers such as the VzBoT.",
+  "driveType": "direct",
+  "mechanicalSpecs": {
+    "filamentDiameter": 1.75
+  },
+  "motorSpecs": {
+    "includedMotor": false,
+    "motorType": "NEMA14 round",
+    "compatibleMotors": "NEMA14 round (8T or 10T pinion, e.g. LDO-36STH20-1004, Moons equivalent)"
+  },
+  "physicalSpecs": {
+    "mountPattern": "VzBoT toolhead mount"
+  },
+  "features": [
+    "CNC machined aluminum body",
+    "Lightweight design for reduced toolhead inertia",
+    "Smaller Y-axis profile than printed version",
+    "Compatible with 8T or 10T NEMA14 round motors",
+    "Community design adapted from MirageC HextrudORT"
+  ],
+  "references": [
+    {
+      "label": "VzBoT Vz-HextrudORT GitHub Repository",
+      "url": "https://github.com/VzBoT3D/Vz-HextrudORT",
+      "type": "github"
+    },
+    {
+      "label": "Klipper Extruder Configuration Reference",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["gearRatio", "gripType", "weight", "dimensions", "maxFeedRate"]
+}

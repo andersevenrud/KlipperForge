@@ -1,0 +1,41 @@
+{
+  "id": "ldo-orbiter-v2.5",
+  "name": "LDO Orbiter v2.5",
+  "manufacturer": "LDO Motors",
+  "description": "The LDO Orbiter v2.5 is an upgraded direct drive extruder sharing the same firmware configuration as the v2.0 (690 steps/mm, rotation distance 4.69). Key improvements include dual drive gears with RNC nano coating (HRC60+), an improved spider shaft with 20–30 µm concentricity (down from 50–140 µm in v2.0), and upgraded MF679ZZ internal bearings. Compatible with Orbiter v2.0 mounts.",
+  "driveType": "direct",
+  "mechanicalSpecs": {
+    "gearRatio": "7.5:1",
+    "filamentDiameter": 1.75,
+    "gripType": "dual drive"
+  },
+  "motorSpecs": {
+    "includedMotor": true,
+    "motorType": "NEMA14 pancake stepper",
+    "compatibleMotors": "Dedicated LDO NEMA14 36mm pancake"
+  },
+  "physicalSpecs": {
+    "mountPattern": "Orbiter v2 standard mount"
+  },
+  "features": [
+    "7.5:1 planetary gear reduction (same as v2.0)",
+    "Dual drive gears with RNC nano coating (HRC60+)",
+    "Improved spider shaft concentricity (20–30 µm vs 50–140 µm in v2.0)",
+    "MF679ZZ bearings (upgraded from MF148ZZ in v2.0)",
+    "Same firmware configuration as Orbiter v2.0 (690 steps/mm)",
+    "Compatible with Orbiter v2.0 mounts"
+  ],
+  "references": [
+    {
+      "label": "Orbiter v2.5 - Orbiter Projects",
+      "url": "https://www.orbiterprojects.com/orbiter-v2-5/",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Extruder Configuration Reference",
+      "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "dimensions", "maxFeedRate"]
+}

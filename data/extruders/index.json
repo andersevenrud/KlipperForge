@@ -14,6 +14,9 @@
     { "id": "prusa-nextruder", "name": "Prusa Nextruder", "manufacturer": "Prusa Research", "driveType": "direct" },
     { "id": "hextrudort", "name": "HextrudORT", "manufacturer": "MirageC79 (Community)", "driveType": "direct" },
     { "id": "vz-hextrudort", "name": "VZ-HextrudORT", "manufacturer": "VzBoT", "driveType": "direct" },
+    { "id": "vz-hextrudort-low", "name": "Vz Hextrudort Low", "manufacturer": "Mellow / VzBoT", "driveType": "direct" },
+    { "id": "vz-hextrudort-low-plus", "name": "Vz Hextrudort Low Plus", "manufacturer": "Mellow / VzBoT", "driveType": "direct" },
+    { "id": "ldo-orbiter-v2.5", "name": "LDO Orbiter v2.5", "manufacturer": "LDO Motors", "driveType": "direct" },
     { "id": "wristpin-g2sa", "name": "WristWatch G2", "manufacturer": "Community (bythorsthunder / tetsu97)", "driveType": "direct" }
   ]
 }
