@@ -1,7 +1,7 @@
 {
   "id": "vz-hextrudort-low-plus",
-  "name": "Vz Hextrudort Low Plus",
-  "manufacturer": "Mellow / VzBoT",
+  "name": "Vz-HextrudORT Low Plus",
+  "manufacturer": "VzBoT",
   "description": "The Vz Hextrudort Low Plus is the CNC variant of the Vz-HextrudORT with larger CNC gears compared to the standard Low version. Compatible with 8T or 10T NEMA14 round stepper motors. Designed for high-speed printers such as the VzBoT.",
   "driveType": "direct",
   "mechanicalSpecs": {

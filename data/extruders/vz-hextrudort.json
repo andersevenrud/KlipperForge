@@ -1,6 +1,6 @@
 {
   "id": "vz-hextrudort",
-  "name": "VZ-HextrudORT",
+  "name": "Vz-HextrudORT",
   "manufacturer": "VzBoT",
   "description": "The VZ-HextrudORT is a derivative of the HextrudORT extruder design, adapted by the VzBoT community for use on VzBoT high-speed printers. Available in multiple versions: a printed version with BMG-style gears (50:17 ratio), and a CNC aluminum version with custom gears (60:8 or 60:10 depending on motor pinion). It is optimized for the extremely high accelerations and print speeds that the VzBoT platform targets, pairing with a NEMA14 motor to minimize toolhead mass.",
   "driveType": "direct",

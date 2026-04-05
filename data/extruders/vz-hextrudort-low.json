@@ -1,7 +1,7 @@
 {
   "id": "vz-hextrudort-low",
-  "name": "Vz Hextrudort Low",
-  "manufacturer": "Mellow / VzBoT",
+  "name": "Vz-HextrudORT Low",
+  "manufacturer": "VzBoT",
   "description": "The Vz Hextrudort Low is a CNC-machined aluminum extruder designed by the VzBoT community for lightweight direct drive setups. It is the standard CNC variant of the Vz-HextrudORT, smaller in the Y direction than the printed version, and compatible with 8T or 10T NEMA14 round stepper motors. Designed for high-speed printers such as the VzBoT.",
   "driveType": "direct",
   "mechanicalSpecs": {
