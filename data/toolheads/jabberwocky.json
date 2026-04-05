@@ -1,0 +1,48 @@
+{
+  "id": "jabberwocky",
+  "name": "Jabberwocky",
+  "manufacturer": "LDO Motors",
+  "description": "A toolhead and extruder system designed specifically for filament changing units (FCUs) and multicolor changers. Features a tool-free hinged extruder mechanism for fast maintenance, a Bondtech compound drive gear with dual LDO Orbiter gears, and integrated dual filament sensors for reliable filament change cycles.",
+  "toolheadType": "integrated",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4", "Voron Trident"],
+    "railSystems": [],
+    "hotendMounts": ["Phaetus Conch (high-flow, up to 35 mm\u00b3/s)"],
+    "extruderMounts": ["Integrated Bondtech compound gear extruder"],
+    "probeMounts": [],
+    "fanMounts": ["2510 axial hotend fan", "Dual 3010 blower part cooling"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Tool-free hinged extruder for fast maintenance",
+    "Bondtech compound drive gear with dual LDO Orbiter gears",
+    "Dual filament sensors for monitoring filament supply",
+    "Integrated filament cutter with support bearings",
+    "Compatible with ERCF and Box Turtle filament changers",
+    "Available as complete assembled kit or basic hardware kit",
+    "Nitehawk 36 toolhead board support"
+  ],
+  "references": [
+    {
+      "label": "Jabberwocky (GitHub)",
+      "url": "https://github.com/kinematicdigit/Jabberwocky",
+      "type": "github"
+    },
+    {
+      "label": "Jabberwocky on Fabreeko",
+      "url": "https://www.fabreeko.com/products/jabberwocky-toolhead-and-extruder-designed-for-filament-changers",
+      "type": "product"
+    },
+    {
+      "label": "Jabberwocky on West3D",
+      "url": "https://west3d.com/products/jabberwocky-complete-toolhead-with-filament-cutter-and-extruder-for-3d-printers-and-multi-filament-setups",
+      "type": "product"
+    }
+  ],
+  "unverified": ["weight", "dimensions", "ERCF and Box Turtle compatibility", "targetPrinters"]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "omniburner",
+  "name": "Omniburner",
+  "manufacturer": "KevinAkaSam",
+  "description": "A universal Mini StealthBurner adaptation that supports multiple extruders in a single printed part via clever mounting point design. Uses sliding hex nuts and shared screw holes so users can swap between five different extruders in minutes without rewiring, major disassembly, or reprinting.",
+  "toolheadType": "modular",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron V0", "Voron V0.2", "Printers for Ants"],
+    "railSystems": ["MGN7H", "MGN9H"],
+    "hotendMounts": [],
+    "extruderMounts": [
+      "Papilio",
+      "Papilio Lite",
+      "Sherpa Mini",
+      "Orbiter V2",
+      "LGX Lite",
+      "TBG Lite"
+    ],
+    "probeMounts": [],
+    "fanMounts": []
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Universal Mini StealthBurner adaptation",
+    "Supports 5+ extruders in one printed part",
+    "Sliding hex nut system for quick extruder swaps",
+    "No rewiring or major disassembly needed for swaps",
+    "Same PTFE tubes work across extruder configurations",
+    "Based on Mini StealthBurner extruder mounts by Jacob G"
+  ],
+  "references": [
+    {
+      "label": "Omniburner on Printables",
+      "url": "https://www.printables.com/model/854317",
+      "type": "product"
+    }
+  ],
+  "unverified": ["weight", "dimensions", "hotendMounts", "probeMounts", "fanMounts", "targetPrinters", "railSystems"]
+}

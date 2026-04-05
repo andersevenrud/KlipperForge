@@ -1,0 +1,52 @@
+{
+  "id": "breakneck",
+  "name": "BreakNeck",
+  "manufacturer": "leddhedd",
+  "description": "A modular toolhead ecosystem for front-rail CoreXY printers featuring remote CPAP cooling and a deliberate bend in the filament path to create a buffering effect. Superseded by the upcoming ARMPITHEIGHT project under Armchair Engineering, which offers greater modularity and performance.",
+  "toolheadType": "modular",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4", "Voron Trident", "Front-rail CoreXY printers"],
+    "railSystems": ["MGN12", "MGN9"],
+    "hotendMounts": [
+      "Phaetus Goliath",
+      "Phaetus Rapido UHF",
+      "Phaetus Rapido HF",
+      "Phaetus Dragon UHF"
+    ],
+    "extruderMounts": [
+      "Vz-HextrudORT",
+      "MicroSherpa",
+      "Kyro"
+    ],
+    "probeMounts": [
+      "Beacon",
+      "Klicky",
+      "Klicky PCB"
+    ],
+    "fanMounts": [
+      "CPAP (7040 blower, remote)"
+    ]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Remote CPAP cooling system",
+    "Deliberate bent filament path for PA buffering",
+    "Modular hotend, extruder, and cooling integration",
+    "6mm and 9mm belt support",
+    "MGN12 and MGN9 carriage options",
+    "Superseded by upcoming ARMPITHEIGHT project"
+  ],
+  "references": [
+    {
+      "label": "BreakNeck on GitHub",
+      "url": "https://github.com/leddhedd/BreakNeck",
+      "type": "github"
+    }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

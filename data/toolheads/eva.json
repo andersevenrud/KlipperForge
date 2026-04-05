@@ -1,0 +1,36 @@
+{
+  "id": "eva",
+  "name": "EVA",
+  "manufacturer": "EVA Project / Rat Rig",
+  "description": "Open-source universal modular carriage platform for 3D printers, built around MGN12 and MGN15 linear rail carriages. Used officially by Rat Rig and designed with a specification-based modular assembly system (front, top, bottom, back) that enables mixing and matching of hotends and extruders.",
+  "toolheadType": "modular",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Rat Rig V-Core 3", "Rat Rig V-Minion", "Rat Rig V-Core Pro"],
+    "railSystems": ["MGN12C", "MGN12H", "MGN15C"],
+    "hotendMounts": ["E3D V6", "Slice Mosquito", "Slice Copperhead", "Phaetus Dragon SF", "Phaetus Dragon HF", "Phaetus Rapido HF", "Phaetus Dragonfly BMO", "E3D Revo Voron", "DropEffect NeXt-G"],
+    "extruderMounts": ["Bondtech BMG", "Bondtech BMG-M", "Bondtech LGX", "Bondtech LGX Lite", "E3D Titan", "E3D Hemera", "E3D Aero", "Orbiter v1.5", "Orbiter v2.0", "Sherpa Mini", "Bowden"],
+    "probeMounts": ["BLTouch", "Klicky", "Euclid", "Inductive"],
+    "fanMounts": ["5015 blower (part cooling)", "Dual 5015 blower (part cooling)", "4010 axial (hotend)"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Modular assembly system (front, top, bottom, back components)",
+    "MGN12 and MGN15 linear rail support",
+    "Specification-based design for community remixes",
+    "Official Rat Rig carriage platform",
+    "Extensive hotend and extruder combination support",
+    "Open-source with community-driven development"
+  ],
+  "references": [
+    { "label": "GitHub Repository (EVA 3)", "url": "https://github.com/EVA-3D/eva-main", "type": "github" },
+    { "label": "GitHub Repository (EVA 1, archived)", "url": "https://github.com/pkucmus/EVA", "type": "github" },
+    { "label": "EVA 3 Website", "url": "https://main.eva-3d.page", "type": "documentation" },
+    { "label": "EVA 2 Website", "url": "https://2.eva-3d.page", "type": "documentation" }
+  ],
+  "unverified": ["weight", "dimensions", "Klicky probe support", "Euclid probe support"]
+}

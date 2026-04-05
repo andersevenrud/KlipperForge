@@ -1,0 +1,37 @@
+{
+  "id": "anthead",
+  "name": "AntHead",
+  "manufacturer": "Printers for Ants",
+  "description": "A toolhead designed primarily for Micron and other Printers for Ants (PFA) printers, with carriage adapters for larger 2020-based printers like Voron V0, V2, and Trident. Features dual 4010 blower fans for part cooling, a 2510 axial heatsink fan, and support for filament cutter integration.",
+  "toolheadType": "modular",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Micron", "Pandora", "Voron V0", "Voron 2.4", "Voron Trident"],
+    "railSystems": ["MGN9H", "MGN9C", "MGN12H"],
+    "hotendMounts": ["Dragon", "Dragon Ace", "Revo Voron", "Rapido", "TZV6", "ReVolcano"],
+    "extruderMounts": ["BMG", "G2"],
+    "probeMounts": [],
+    "fanMounts": ["Dual 4010 blower", "2510 axial"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Dual 4010 blower fans for part cooling",
+    "2510 axial heatsink cooling fan",
+    "Filament cutter support",
+    "Printed part configurator tool",
+    "Color customization tool",
+    "Multiple carriage options for small and large printers"
+  ],
+  "references": [
+    {
+      "label": "AntHead (GitHub)",
+      "url": "https://github.com/PrintersForAnts/AntHead",
+      "type": "github"
+    }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "reaper",
+  "name": "Reaper",
+  "manufacturer": "APDMachine",
+  "description": "A modular toolhead evolved from the Mantis design, featuring interlocking locating features for high rigidity and reduced vibration. Supports 16 hotends, 11 extruders, and 3 probe families, with all main screws accessible from the front or sides for easy maintenance.",
+  "toolheadType": "modular",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4", "Voron Trident"],
+    "railSystems": ["MGN12"],
+    "hotendMounts": ["Phaetus Dragon (Standard, HF, UHF)", "Phaetus Rapido (1.0, 2.0, HF, UHF)", "Dropeffect NextG (Standard, UHF)", "Revo Voron", "Slice Mosquito", "BambuLab", "VZ Goliath"],
+    "extruderMounts": ["Balrog", "Sherpa Mini", "Orbiter V2", "Vz-Hextrudort", "LGX Lite", "LGX Lite Pro", "Hummingbird", "G2SA"],
+    "probeMounts": ["TAP", "Beacon", "Cartographer", "Klicky PCB"],
+    "fanMounts": ["3010 heatsink fan", "Dual 5015 part cooling"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Interlocking locating features for maximum rigidity",
+    "Front and side-accessible screws for easy maintenance",
+    "Integrated nozzle and logo LEDs",
+    "Web-based configurator for part selection",
+    "No support printing required",
+    "Community-driven development with active Discord"
+  ],
+  "references": [
+    {
+      "label": "Reaper Toolhead (GitHub)",
+      "url": "https://github.com/APDMachine/Reaper",
+      "type": "github"
+    },
+    {
+      "label": "Reaper Toolhead Website",
+      "url": "https://reapertoolhead.com",
+      "type": "product"
+    }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

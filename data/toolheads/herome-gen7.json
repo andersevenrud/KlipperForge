@@ -1,0 +1,38 @@
+{
+  "id": "herome-gen7",
+  "name": "HeroMe Gen7",
+  "manufacturer": "Community (MediaMan3D)",
+  "description": "A highly modular printhead platform supporting over 115 printer models, 47 hotends, 37+ extruders, 20+ ABL sensors, and 35+ cooling duct options. Often described as \"Lego blocks for printheads,\" it is CFD-validated for part cooling performance.",
+  "toolheadType": "modular",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Creality Ender 3/5 series", "Creality CR-10 series", "Anycubic Vyper", "Anycubic Kobra series", "Elegoo Neptune series", "Artillery Genius/Sidewinder", "Prusa MK3S+", "Voron 2.4", "115+ printer models and clones"],
+    "railSystems": [],
+    "hotendMounts": ["E3D V6", "E3D Volcano", "E3D Revo series", "Phaetus Dragon", "Phaetus Rapido", "Phaetus TaiChi", "Slice Engineering Mosquito", "Creality Spider", "TriangleLab hotends", "47+ hotend options"],
+    "extruderMounts": ["Bondtech BMG/LGX series", "E3D Titan", "Orbiter", "Sherpa variants", "Micro Swiss kits", "37+ extruder options"],
+    "probeMounts": ["BLTouch", "CR Touch", "PINDA", "Beacon3D", "20+ ABL sensors"],
+    "fanMounts": ["Single/dual 4010", "Single/dual 4020", "Single/dual 5015", "Single/dual 5020", "Axial heatsink fans"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Modular \"Lego blocks\" design for mixing and matching components",
+    "CFD-validated part cooling with 35+ duct options",
+    "Supports 115+ printer models, 47 hotends, 37+ extruders",
+    "14 ADXL345 accelerometer mounts",
+    "4 LED bar mount options",
+    "12 cable management options",
+    "Fully assembled printhead weighs under 87g"
+  ],
+  "references": [
+    {
+      "label": "HeroMe Gen7 on Printables",
+      "url": "https://www.printables.com/model/39322-hero-me-gen7-platform-release4",
+      "type": "other"
+    }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

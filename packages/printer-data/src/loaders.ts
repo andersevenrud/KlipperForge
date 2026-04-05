@@ -30,6 +30,8 @@ import type {
   StepperMotorIndex,
   Thermistor,
   ThermistorIndex,
+  Toolhead,
+  ToolheadIndex,
 } from "./types.js";
 
 const DATA_BASE_PATH = "/data";
@@ -198,6 +200,14 @@ export async function loadDisplayIndex(): Promise<DisplayIndex> {
 
 export async function loadDisplay(id: string): Promise<Display> {
   return fetchJson<Display>(`/displays/${id}.json`);
+}
+
+export async function loadToolheadIndex(): Promise<ToolheadIndex> {
+  return fetchJson<ToolheadIndex>("/toolheads/index.json");
+}
+
+export async function loadToolhead(id: string): Promise<Toolhead> {
+  return fetchJson<Toolhead>(`/toolheads/${id}.json`);
 }
 
 export async function loadDocIndices(): Promise<DocIndices> {

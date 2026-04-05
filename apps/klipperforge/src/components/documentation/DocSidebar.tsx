@@ -10,6 +10,7 @@ import {
   CircleDot,
   CircuitBoard,
   Cog,
+  Combine,
   Cpu,
   Crosshair,
   Fan,
@@ -93,6 +94,12 @@ const DISPLAY_TYPE_LABELS: Record<string, string> = {
   standalone: "WiFi",
   "all-in-one": "AIO",
   "dual-mode": "dual",
+};
+
+const TOOLHEAD_TYPE_LABELS: Record<string, string> = {
+  modular: "modular",
+  integrated: "integrated",
+  "tool-changer": "changer",
 };
 
 // ---------------------------------------------------------------------------
@@ -275,6 +282,19 @@ export function DocSidebar({
       : indices.filaments;
     return groupBy(filaments, (f) => f.manufacturer);
   }, [indices.filaments, search]);
+
+  const filteredToolheadGroups = useMemo(() => {
+    const query = search.toLowerCase().trim();
+    const toolheads = query
+      ? indices.toolheads.filter(
+          (t) =>
+            t.name.toLowerCase().includes(query) ||
+            t.manufacturer.toLowerCase().includes(query) ||
+            t.toolheadType.toLowerCase().includes(query),
+        )
+      : indices.toolheads;
+    return groupBy(toolheads, (t) => t.manufacturer);
+  }, [indices.toolheads, search]);
 
   const forceOpen = search.trim() ? { open: true as const } : {};
 
@@ -713,6 +733,52 @@ export function DocSidebar({
               ))}
               {filteredHotendGroups.length === 0 && (
                 <p className="text-muted-foreground p-4 text-center text-sm">No hotends found.</p>
+              )}
+            </CollapsibleContent>
+          </Collapsible>
+        </div>
+
+        <div className={isCategoryDimmed("toolheads") ? "pointer-events-none opacity-40" : ""}>
+          <Collapsible {...categoryOpen("toolheads")}>
+            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+              <Combine className="size-3.5" />
+              <span>Toolheads</span>
+              <span className="text-muted-foreground ml-auto text-xs">{indices.toolheads.length}</span>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              {filteredToolheadGroups.map((group) => (
+                <Collapsible
+                  key={group.key}
+                  {...groupOpen(
+                    "toolheads",
+                    group.items.map((t) => t.id),
+                  )}
+                >
+                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                    <span>{group.key}</span>
+                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    {group.items.map((toolhead) => (
+                      <SidebarItem
+                        key={toolhead.id}
+                        itemId={toolhead.id}
+                        category="toolheads"
+                        label={toolhead.name}
+                        badge={TOOLHEAD_TYPE_LABELS[toolhead.toolheadType] ?? toolhead.toolheadType}
+                        selected={isSelected(selection, "toolheads", toolhead.id)}
+                        compareMode={compareMode}
+                        compareChecked={comparePendingIds.includes(toolhead.id)}
+                        onClick={handleItemClick}
+                      />
+                    ))}
+                  </CollapsibleContent>
+                </Collapsible>
+              ))}
+              {filteredToolheadGroups.length === 0 && (
+                <p className="text-muted-foreground p-4 text-center text-sm">No toolheads found.</p>
               )}
             </CollapsibleContent>
           </Collapsible>

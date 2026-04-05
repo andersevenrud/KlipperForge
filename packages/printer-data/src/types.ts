@@ -65,6 +65,9 @@ export interface FilamentReference extends BaseReference<FilamentReferenceType> 
 export type DisplayReferenceType = "datasheet" | "product" | "github" | "documentation" | "other";
 export interface DisplayReference extends BaseReference<DisplayReferenceType> {}
 
+export type ToolheadReferenceType = "datasheet" | "product" | "github" | "documentation" | "other";
+export interface ToolheadReference extends BaseReference<ToolheadReferenceType> {}
+
 export type AnyReferenceType =
   | PrinterReferenceType
   | McuBoardReferenceType
@@ -77,7 +80,8 @@ export type AnyReferenceType =
   | PowerSupplyReferenceType
   | AccessoryReferenceType
   | FilamentReferenceType
-  | DisplayReferenceType;
+  | DisplayReferenceType
+  | ToolheadReferenceType;
 
 // ---------------------------------------------------------------------------
 // Index entry types
@@ -175,6 +179,13 @@ export interface DisplayIndexEntry {
   displayType: string;
 }
 
+export interface ToolheadIndexEntry {
+  id: string;
+  name: string;
+  manufacturer: string;
+  toolheadType: string;
+}
+
 export interface PcbLayoutIndexEntry {
   boardId: string;
   name: string;
@@ -224,7 +235,8 @@ export type PrinterEquipmentCategory =
   | "power-supplies"
   | "probes"
   | "stepper-motors"
-  | "thermistors";
+  | "thermistors"
+  | "toolheads";
 
 export interface PrinterEquipmentEntry {
   category: PrinterEquipmentCategory;
@@ -823,6 +835,43 @@ export interface DisplayIndex {
   displays: DisplayIndexEntry[];
 }
 
+// ---------------------------------------------------------------------------
+// Toolhead types
+// ---------------------------------------------------------------------------
+
+export interface ToolheadCompatibilitySpecs {
+  targetPrinters: string[];
+  railSystems?: string[];
+  hotendMounts?: string[];
+  extruderMounts?: string[];
+  probeMounts?: string[];
+  fanMounts?: string[];
+}
+
+export interface ToolheadPhysicalSpecs {
+  weight?: number;
+  dimensions?: string;
+  material?: string;
+  printable?: boolean;
+}
+
+export interface Toolhead {
+  id: string;
+  name: string;
+  manufacturer: string;
+  description: string;
+  toolheadType: string;
+  compatibilitySpecs: ToolheadCompatibilitySpecs;
+  physicalSpecs?: ToolheadPhysicalSpecs;
+  features?: string[];
+  references?: ToolheadReference[];
+  unverified?: string[];
+}
+
+export interface ToolheadIndex {
+  toolheads: ToolheadIndexEntry[];
+}
+
 export interface PcbLayoutIndex {
   layouts: PcbLayoutIndexEntry[];
 }
@@ -840,5 +889,6 @@ export interface DocIndices {
   accessories: AccessoryIndexEntry[];
   filaments: FilamentIndexEntry[];
   displays: DisplayIndexEntry[];
+  toolheads: ToolheadIndexEntry[];
   pcbLayouts: PcbLayoutIndexEntry[];
 }

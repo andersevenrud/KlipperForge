@@ -1,0 +1,37 @@
+{
+  "id": "banantis",
+  "name": "Banantis",
+  "manufacturer": "jakub874",
+  "description": "A dual 5015 toolhead for Voron-derived printers with the Monolith Gantry, based on the Mantis toolhead design. Provides enhanced part cooling through dual 5015 blower fans in a form factor optimized for the Monolith Gantry platform.",
+  "toolheadType": "integrated",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4 (Monolith Gantry)", "Voron Trident (Monolith Gantry)"],
+    "railSystems": ["Monolith Gantry"],
+    "hotendMounts": [],
+    "extruderMounts": [],
+    "probeMounts": [],
+    "fanMounts": [
+      "2x 5015 blower (part cooling)"
+    ]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Dual 5015 blower fan cooling",
+    "Variant of the Mantis toolhead",
+    "Designed for Monolith Gantry",
+    "Optimized for Voron-derived printers"
+  ],
+  "references": [
+    {
+      "label": "Banantis on GitHub",
+      "url": "https://github.com/jakub874/Banantis",
+      "type": "github"
+    }
+  ],
+  "unverified": ["weight", "dimensions", "hotendMounts", "extruderMounts", "probeMounts"]
+}

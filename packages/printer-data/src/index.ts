@@ -116,6 +116,13 @@ export type {
   ThermistorReference,
   ThermistorReferenceType,
   ThermistorSensingSpecs,
+  Toolhead,
+  ToolheadCompatibilitySpecs,
+  ToolheadIndex,
+  ToolheadIndexEntry,
+  ToolheadPhysicalSpecs,
+  ToolheadReference,
+  ToolheadReferenceType,
 } from "./types.js";
 export {
   loadAccessory,
@@ -149,5 +156,7 @@ export {
   loadStepperMotorIndex,
   loadThermistor,
   loadThermistorIndex,
+  loadToolhead,
+  loadToolheadIndex,
   resolvePresetVariant,
 } from "./loaders.js";

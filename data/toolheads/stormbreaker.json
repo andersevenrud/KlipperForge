@@ -1,0 +1,33 @@
+{
+  "id": "stormbreaker",
+  "name": "Stormbreaker",
+  "manufacturer": "Gr33n5murf",
+  "description": "A toolhead designed for Voron printers with the Monolith Gantry. Part of the growing ecosystem of community toolheads optimized for the Monolith platform's performance-oriented gantry design on Voron 2.4 and Trident.",
+  "toolheadType": "integrated",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4 (Monolith Gantry)", "Voron Trident (Monolith Gantry)"],
+    "railSystems": ["Monolith Gantry"],
+    "hotendMounts": [],
+    "extruderMounts": [],
+    "probeMounts": [],
+    "fanMounts": []
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Designed for Monolith Gantry",
+    "Optimized for Voron printers"
+  ],
+  "references": [
+    {
+      "label": "Stormbreaker on GitHub",
+      "url": "https://github.com/Gr33n5murf/Stormbreaker-Toolhead",
+      "type": "github"
+    }
+  ],
+  "unverified": ["weight", "dimensions", "hotendMounts", "extruderMounts", "probeMounts", "fanMounts"]
+}

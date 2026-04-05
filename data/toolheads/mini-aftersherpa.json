@@ -1,0 +1,37 @@
+{
+  "id": "mini-aftersherpa",
+  "name": "Mini-AfterSherpa",
+  "manufacturer": "Printers for Ants",
+  "description": "A modular V0.1-style toolhead offering flexibility in extruder and hotend choice for small-format printers. Supports both direct-drive and bowden configurations with dual 3010 blower fans and a 3007 axial heatsink fan, fitting printers that use Mini-Afterburner-style X carriages.",
+  "toolheadType": "modular",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron V0.1", "Micron", "Flying Zero", "Salad Fork"],
+    "railSystems": [],
+    "hotendMounts": ["Phaetus Dragon", "TriangleLab Dragon", "Phaetus Dragonfly BMO", "E3D V6 (groove mount)", "Slice Engineering Mosquito", "Mellow NF Crazy", "Phaetus Dragonfly BMS", "Revo Micro"],
+    "extruderMounts": ["Sherpa Mini", "Sherpa Micro", "Sailfin", "Reverse Pocketwatch V2", "Orbiter V1.5", "Orbiter V2.0", "Bowden adapter"],
+    "probeMounts": [],
+    "fanMounts": ["Dual 3010 blower", "3007 axial"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Modular design supporting multiple extruder and hotend combinations",
+    "Dual 3010 blower fans for part cooling",
+    "3007 axial heatsink cooling fan",
+    "Two zip tie slots for cable management",
+    "Heatset inserts for secure mounting",
+    "Bowden adapter option for any standard 1.75mm bowden extruder"
+  ],
+  "references": [
+    {
+      "label": "Mini-AfterSherpa (GitHub)",
+      "url": "https://github.com/PrintersForAnts/Mini-AfterSherpa",
+      "type": "github"
+    }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

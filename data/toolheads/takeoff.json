@@ -1,0 +1,42 @@
+{
+  "id": "takeoff",
+  "name": "Takeoff",
+  "manufacturer": "Kizime123",
+  "description": "The only fully open-source SLM (selective laser melting) metal toolhead for Voron printers. Uses dual 3628 fans with a Chube hotend and features an innovative belt self-deflection design that results in no X-axis travel loss.",
+  "toolheadType": "integrated",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4", "Voron Trident", "Monolith", "DoomCube (4040 frame)"],
+    "railSystems": [],
+    "hotendMounts": ["Chube (formerly Jaguar)"],
+    "extruderMounts": ["LGX Lite Pro", "Vz-Hextrudort", "Sherpa Mini", "Sherpa Micro", "Orbiter 2", "Peopoly Lancer", "DFA/Orbital Ascender", "A3DP FXD"],
+    "probeMounts": ["Beacon"],
+    "fanMounts": ["Dual 3628 fans"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "SLM metal (selective laser melting)",
+    "printable": false
+  },
+  "features": [
+    "Fully open-source SLM metal construction (GPL-3.0)",
+    "No X-axis travel loss",
+    "Innovative belt self-deflection design",
+    "Dual 3628 fans for high cooling performance",
+    "Requires pretension tool for high belt tensions",
+    "~17mm Y loss unless using door mod or bed-moving configuration"
+  ],
+  "references": [
+    {
+      "label": "Takeoff Toolhead (GitHub)",
+      "url": "https://github.com/Kizime123/Takeoff-Toolhead",
+      "type": "github"
+    },
+    {
+      "label": "Takeoff Toolhead on Luke's Laboratory",
+      "url": "https://lukeslabonline.com/products/takeoff-toolhead",
+      "type": "product"
+    }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "xol-toolhead",
+  "name": "Xol Toolhead",
+  "manufacturer": "Armchair Heavy Industries",
+  "description": "Modular toolhead evolved from the Mantis Xol 2, designed for Voron 2.4, Trident, and other CoreXY printers. Supports a wide range of hotends, extruders, and probes with a focus on modularity, serviceability, and easy installation. Uses dual 4010 blower fans for part cooling with CFD-optimized ducts.",
+  "toolheadType": "modular",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4", "Voron Trident"],
+    "railSystems": ["MGN12H", "MGN9H"],
+    "hotendMounts": ["Phaetus Dragon SF", "Phaetus Dragon HF", "Phaetus Dragon UHF", "Phaetus Dragon UHF-Mini", "Phaetus Dragon Ace", "Phaetus Rapido HF", "Phaetus Rapido UHF", "DropEffect XG", "DropEffect NeXtG", "E3D Revo Voron", "Chube Compact", "Red Lizard K1-UHF", "NF-Crazy Volcano"],
+    "extruderMounts": ["Sherpa Mini", "Orbiter v2.0", "Galileo G2SA", "WristWatch G2", "WristWatch BMG", "Vz-HextrudORT Low", "LGX Lite", "Double Folded Ascender"],
+    "probeMounts": ["Voron Tap", "Klicky", "Klicky PCB", "Beacon", "Euclid", "BTT Eddy"],
+    "fanMounts": ["2x 4010 blower (part cooling)", "2510 axial (hotend)"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Dual 4010 blower fans for part cooling",
+    "2510 axial hotend fan",
+    "Xol-Carriage with unified single-piece print",
+    "Archetype belt clip system compatibility",
+    "Support for 6mm and 9mm belt widths",
+    "Wide hotend and extruder modularity",
+    "Simplified assembly with reduced small hardware",
+    "CPAP cooling support"
+  ],
+  "references": [
+    { "label": "GitHub Repository", "url": "https://github.com/Armchair-Heavy-Industries/Xol-Toolhead", "type": "github" }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

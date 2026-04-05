@@ -1,0 +1,61 @@
+{
+  "id": "madmax",
+  "name": "MadMax",
+  "manufacturer": "zruncho3d",
+  "description": "A magnetic-hold-only tool changer conversion for CoreXY printers using a Maxwell kinematic coupling for toolhead attach/detach and integrated probing. Performs XY-only toolchanges for fast switching and supports a wide range of toolheads on any front-facing MGN9H or MGN12H CoreXY printer.",
+  "toolheadType": "tool-changer",
+  "compatibilitySpecs": {
+    "targetPrinters": [
+      "Voron Trident",
+      "Voron V0",
+      "Micron",
+      "Salad Fork",
+      "Tri-Zero",
+      "Pandora's Box",
+      "Front-facing MGN9H/MGN12H CoreXY printers"
+    ],
+    "railSystems": ["MGN9H", "MGN12H"],
+    "hotendMounts": [
+      "Mini StealthBurner",
+      "Dragon Burner",
+      "Rapid Burner",
+      "A4T",
+      "Xol Toolhead",
+      "AntHead",
+      "OmniBurner",
+      "OmniBrick",
+      "DragonBrick",
+      "RapidBrick",
+      "A4TBrick"
+    ],
+    "probeMounts": [
+      "Maxwell coupling integrated probe"
+    ],
+    "fanMounts": []
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Magnetic-hold-only docking (no positive lock)",
+    "Maxwell kinematic coupling for self-alignment",
+    "XY-only toolchanges for fast switching",
+    "Integrated probing with Tap/Boop-comparable accuracy",
+    "Core weighs approximately 50g",
+    "SpeedClips for fast repeatable belt tensioning",
+    "Keyslot and magnet-based docks",
+    "Wide toolhead compatibility",
+    "Automatic calibration via Nudge tool"
+  ],
+  "references": [
+    {
+      "label": "MadMax on GitHub",
+      "url": "https://github.com/zruncho3d/madmax",
+      "type": "github"
+    }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

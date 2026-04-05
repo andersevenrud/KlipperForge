@@ -5,6 +5,7 @@ import {
   CircleDot,
   CircleHelp,
   Cog,
+  Combine,
   Cpu,
   Crosshair,
   ExternalLink,
@@ -102,6 +103,7 @@ export const CATEGORY_PARAM_KEY: Record<string, string> = {
   extruders: "extruder",
   hotends: "hotend",
   "power-supplies": "psu",
+  toolheads: "toolhead",
 };
 
 export const DOC_CATEGORY_ICONS: Record<PrinterEquipmentCategory, typeof ExternalLink> = {
@@ -116,6 +118,7 @@ export const DOC_CATEGORY_ICONS: Record<PrinterEquipmentCategory, typeof Externa
   extruders: CircleDot,
   hotends: Flame,
   "power-supplies": PlugZap,
+  toolheads: Combine,
 };
 
 export const DOC_CATEGORY_LABELS: Record<PrinterEquipmentCategory, string> = {
@@ -130,6 +133,7 @@ export const DOC_CATEGORY_LABELS: Record<PrinterEquipmentCategory, string> = {
   extruders: "Extruders",
   hotends: "Hotends",
   "power-supplies": "Power Supplies",
+  toolheads: "Toolheads",
 };
 
 const REFERENCE_TYPE_ICONS: Record<AnyReferenceType, typeof ExternalLink> = {

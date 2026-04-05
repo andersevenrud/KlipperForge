@@ -1,0 +1,36 @@
+{
+  "id": "rapid-burner",
+  "name": "Rapid Burner",
+  "manufacturer": "chirpy2605",
+  "description": "Toolhead specifically designed for ultra-high-flow hotends including Rapido UHF, Dragon UHF, and Goliath hotends. Features CFD-tuned ducts with 60% larger fan coverage than Dragon Burner. Primarily for Voron V0.2 with additional mounts for Trident, V2.4, and Switchwire.",
+  "toolheadType": "integrated",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron V0.2", "Voron Trident", "Voron 2.4", "Voron Switchwire", "Voron Legacy"],
+    "railSystems": ["MGN7H", "MGN9C"],
+    "hotendMounts": ["Phaetus Rapido UHF", "Phaetus Dragon UHF", "Goliath Air", "Goliath Water", "E3D V6 Volcano"],
+    "extruderMounts": ["Sherpa Mini", "Sherpa Micro", "Orbiter v1.5", "Orbiter v2.0", "Sailfin", "Sharkfin", "LGX Lite", "E3D Roto", "Vz-HextrudORT", "Double Folded Ascender", "RoundTrip", "Galileo G2SA"],
+    "probeMounts": ["SlideSwipe", "Klicky", "ZeroClick"],
+    "fanMounts": ["2x 4010 blower (part cooling)", "3010 axial (hotend)"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Dual 4010 24V blower fans for part cooling",
+    "Single 3010 24V axial hotend fan",
+    "CFD-tuned ducts with 60% larger fan coverage",
+    "Designed for ultra-high-flow hotends",
+    "Neopixel LED support (nozzle and logo)",
+    "ADXL345 accelerometer front mount",
+    "Heatsink thermistor support for heat creep monitoring",
+    "No loss in X, Y, or Z with V0.2 X-carriage",
+    "MGN7H and MGN9C rail support"
+  ],
+  "references": [
+    { "label": "GitHub Repository", "url": "https://github.com/chirpy2605/voron/tree/main/V0/Rapid_Burner", "type": "github" }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "vz-printhead",
+  "name": "Vz-Printhead",
+  "manufacturer": "VzBoT",
+  "description": "A lightweight and stiff printhead designed for VzBoT printers, available in both printed and CNC-aluminum variants. The CNC version weighs just 27g (full aluminum) or 22g (hybrid carbon fiber and aluminum), and features a height-adjustable fan duct that allows configuration changes without reprinting components.",
+  "toolheadType": "modular",
+  "compatibilitySpecs": {
+    "targetPrinters": ["VzBoT 235", "VzBoT 330", "Rat Rig V-Core 3"],
+    "railSystems": ["MGN9"],
+    "hotendMounts": ["Dragon", "Rapido", "Goliath", "V6 groove mount", "Mosquito", "Magnum", "Magnum+", "Volcomosq", "DropEffect NeXt-G"],
+    "extruderMounts": ["Vz-HextrudORT", "Orbiter v2.0", "Sherpa Mini", "Sherpa Micro", "Bowden", "LGX Lite"],
+    "probeMounts": [],
+    "fanMounts": ["Height-adjustable fan duct"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed) or CNC aluminum / carbon fiber hybrid",
+    "printable": true
+  },
+  "features": [
+    "Available in printed and CNC-aluminum variants",
+    "CNC version weighs 27g (aluminum) or 22g (carbon fiber hybrid)",
+    "Height-adjustable fan duct without reprinting",
+    "Designed for maximum stiffness at minimal weight",
+    "Non-commercial license with authorized manufacturing partners"
+  ],
+  "references": [
+    {
+      "label": "Vz-Printhead Printed (GitHub)",
+      "url": "https://github.com/VzBoT3D/Vz-Printhead-Printed",
+      "type": "github"
+    },
+    {
+      "label": "Vz-Printhead CNC (GitHub)",
+      "url": "https://github.com/VzBoT3D/Vz-Printhead-CNC",
+      "type": "github"
+    },
+    {
+      "label": "VzBoT Printhead Documentation",
+      "url": "https://docs.vzbot.org/Vz-Printhead",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "dimensions", "Mosquito hotend support", "Magnum hotend support", "Magnum+ hotend support", "Volcomosq hotend support", "DropEffect NeXt-G hotend support", "LGX Lite extruder support"]
+}

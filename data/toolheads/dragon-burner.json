@@ -1,0 +1,36 @@
+{
+  "id": "dragon-burner",
+  "name": "Dragon Burner",
+  "manufacturer": "chirpy2605",
+  "description": "Compact toolhead for the Voron V0.2 using dual 4010 blower fans for part cooling and a single 3010 hotend fan. Supports a wide range of hotends and extruders with screwless fan attachment. Also has adapter mounts for Voron Trident, V2.4, Switchwire, and Legacy printers.",
+  "toolheadType": "integrated",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron V0.2", "Voron Trident", "Voron 2.4", "Voron Switchwire", "Voron Legacy"],
+    "railSystems": ["MGN7H", "MGN9C"],
+    "hotendMounts": ["Phaetus Dragon SF", "Phaetus Dragon HF", "Phaetus Dragon (Volcano)", "Phaetus Dragonfly BMO", "Phaetus Dragonfly BMS", "Phaetus Rapido HF", "Phaetus Dragon Ace HF", "Phaetus NeXt G HF", "Phaetus NeXt G UHF", "Phaetus TaiChi", "E3D Revo Voron", "E3D V6 Groove Mount", "Creality Spider Pro", "BambuLab X1C", "Red Lizard K1 Pro", "Red Lizard K1 UHF", "NF-Crazy", "Chube Compact"],
+    "extruderMounts": ["Sherpa Mini", "Sherpa Micro", "Orbiter v1.5", "Orbiter v2.0", "Sailfin", "Sharkfin", "LGX Lite", "E3D Roto", "Vz-HextrudORT", "Double Folded Ascender", "RoundTrip", "Galileo G2SA", "WristWatch BMG", "WristWatch G2", "Papilio Lite"],
+    "probeMounts": ["SlideSwipe", "Klicky", "ZeroClick"],
+    "fanMounts": ["2x 4010 blower (part cooling)", "3010 axial (hotend)"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Dual 4010 24V blower fans for part cooling",
+    "Single 3010 24V axial hotend fan",
+    "Screwless fan attachment system",
+    "Neopixel LED support (nozzle and logo)",
+    "Adafruit Sequin LED compatibility",
+    "ADXL345 accelerometer front mount",
+    "Heatsink thermistor support",
+    "Dual cable routing channels",
+    "V0.2 X-carriage compatible"
+  ],
+  "references": [
+    { "label": "GitHub Repository", "url": "https://github.com/chirpy2605/voron/tree/main/V0/Dragon_Burner", "type": "github" }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

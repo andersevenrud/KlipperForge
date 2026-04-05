@@ -1,0 +1,32 @@
+{
+  "id": "mini-stealthburner",
+  "name": "Mini StealthBurner",
+  "manufacturer": "Voron Design",
+  "description": "Voron Design's official compact toolhead for the Voron V0.2. Features a low-mass direct-drive extruder using BMG gears and a 20mm pancake motor, with improved part cooling ducts optimized for the smaller Voron Zero platform.",
+  "toolheadType": "integrated",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron V0.2"],
+    "railSystems": ["MGN7H"],
+    "hotendMounts": ["E3D Revo Voron", "Phaetus Dragon SF", "Phaetus Dragonfly BMO", "Phaetus Dragonfly BMS", "DropEffect XG", "Creality Spider Pro"],
+    "extruderMounts": ["Mini StealthBurner direct drive"],
+    "probeMounts": [],
+    "fanMounts": ["4010 blower (part cooling)", "3010 axial (hotend)"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Low-mass direct-drive design with BMG gears",
+    "20mm pancake NEMA14 motor with 10-tooth spur gear",
+    "Improved part cooling ducts over V0.1 toolhead",
+    "Compact form factor for Voron Zero platform",
+    "Multiple hotend compatibility"
+  ],
+  "references": [
+    { "label": "GitHub Repository (Voron-0)", "url": "https://github.com/VoronDesign/Voron-0", "type": "github" }
+  ],
+  "unverified": ["weight", "dimensions", "fanMounts"]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "irob",
+  "name": "IROB",
+  "manufacturer": "MongooseTNM",
+  "description": "A redesign of the Takeoff toolhead by Kizime123, featuring dual 4028 cooling fans with triple-vane ducts for improved part cooling. Supports Dragon UHF hotend and Sherpa Mini extruder with a custom Klicky tap probe solution for Voron 2.4 and Trident printers.",
+  "toolheadType": "integrated",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4", "Voron Trident"],
+    "railSystems": ["MGN12H"],
+    "hotendMounts": [
+      "Phaetus Dragon UHF"
+    ],
+    "extruderMounts": [
+      "Sherpa Mini"
+    ],
+    "probeMounts": [
+      "Klicky (custom tap variant)"
+    ],
+    "fanMounts": [
+      "2x 4028 blower (part cooling)",
+      "1x 3010 axial (hotend)"
+    ]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Redesign of the Takeoff toolhead",
+    "Dual 4028 cooling fans",
+    "Triple-vane cooling ducts",
+    "Custom Klicky tap probe solution",
+    "ADXL345 accelerometer mount",
+    "6mm belt system",
+    "Integrated wiring channels and zip-tie management"
+  ],
+  "references": [
+    {
+      "label": "IROB Toolhead on GitHub",
+      "url": "https://github.com/MongooseTNM/The-IROB-Toolhead",
+      "type": "github"
+    }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

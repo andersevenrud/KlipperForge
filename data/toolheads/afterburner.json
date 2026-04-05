@@ -1,0 +1,33 @@
+{
+  "id": "afterburner",
+  "name": "Afterburner",
+  "manufacturer": "Voron Design",
+  "description": "Voron Design's legacy toolhead and predecessor to the StealthBurner. Designed for Voron 2.4, Trident, and Switchwire with the Clockwork 1 extruder using a repackaged BMG dual-gear drive. Still in use on older builds but superseded by the StealthBurner for new builds.",
+  "toolheadType": "integrated",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4", "Voron Trident", "Voron Switchwire"],
+    "railSystems": ["MGN12H"],
+    "hotendMounts": ["Phaetus Dragon SF", "Phaetus Dragon HF", "Phaetus Dragonfly BMO", "Phaetus Dragonfly BMS", "Phaetus Rapido HF", "E3D Revo Voron", "E3D Revo Micro", "E3D V6", "Slice Mosquito"],
+    "extruderMounts": ["Clockwork 1"],
+    "probeMounts": ["Klicky", "Euclid"],
+    "fanMounts": ["5015 blower (part cooling)", "4010 axial (hotend)"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Clockwork 1 extruder with BMG dual-gear drive",
+    "Single 5015 part cooling blower fan",
+    "4010 hotend cooling fan",
+    "Interchangeable hotend mounting system",
+    "Direct-drive filament path",
+    "Predecessor to StealthBurner"
+  ],
+  "references": [
+    { "label": "GitHub Repository", "url": "https://github.com/VoronDesign/Voron-Afterburner", "type": "github" }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "misschanger",
+  "name": "MissChanger",
+  "manufacturer": "VIN-y",
+  "description": "A StealthBurner-based tool changer system for Voron 2.4 that maintains MGN9H tapping accuracy from Voron-Tap. Supports quick, tool-less conversion between tool-changer and single-nozzle mode, with an integrated nozzle brush dock for post-tool-change cleaning. Trident compatibility is planned.",
+  "toolheadType": "tool-changer",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4"],
+    "railSystems": ["MGN9H"],
+    "hotendMounts": [
+      "StealthBurner"
+    ],
+    "extruderMounts": [
+      "Clockwork 2",
+      "Galileo 2"
+    ],
+    "probeMounts": [
+      "MGN9H TAP-style probing (integrated)"
+    ],
+    "fanMounts": []
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Quick, tool-less conversion between tool-changer and single-nozzle mode",
+    "MGN9H tapping system for Z probing accuracy",
+    "Integrated nozzle brush dock",
+    "Up to 5 tool stations (350mm) or 4 tool stations (300mm)",
+    "Docks run in standard 2020 extrusion grooves",
+    "Compatible with Clockwork 2 and Galileo 2 extruders",
+    "Voron-Tap style probing maintained"
+  ],
+  "references": [
+    {
+      "label": "MissChanger on GitHub",
+      "url": "https://github.com/VIN-y/MissChanger",
+      "type": "github"
+    }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

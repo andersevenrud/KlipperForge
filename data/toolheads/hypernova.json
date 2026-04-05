@@ -1,0 +1,37 @@
+{
+  "id": "hypernova",
+  "name": "Hypernova",
+  "manufacturer": "HyperDrive Design",
+  "description": "A modular toolhead designed specifically for bedslinger printers, supporting UHF hotends and standalone extruders. Requires an MGN12 linear rail conversion on the X axis for Ender 3 installations, with dedicated CAD files for both Switchwire/Enderwire and Ender/CR10 configurations.",
+  "toolheadType": "modular",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron Switchwire", "Enderwire", "Creality Ender 3", "Creality CR-10"],
+    "railSystems": ["MGN12"],
+    "hotendMounts": ["Rapido UHF", "Rapido HF", "Dragon Ace", "Chube Air", "TZV6 with MZE", "Red Lizard K1 UHF"],
+    "extruderMounts": ["Annex Sherpa (CNC)", "Orbiter 2.0", "Orbiter 2.5", "G2SA", "Bondtech LGX Lite", "Bondtech LGX Lite Pro"],
+    "probeMounts": ["Beacon", "Cartographer V4"],
+    "fanMounts": []
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Designed specifically for bedslinger printers",
+    "UHF hotend support",
+    "Modular dual part fan duct options (UHF and HF variants)",
+    "Multiple fan cover styles",
+    "Dedicated extruder adapter plates with CANbus mounting",
+    "Requires MGN12 rail conversion for Ender 3"
+  ],
+  "references": [
+    {
+      "label": "Hypernova Bedslinger Documentation",
+      "url": "https://hyperdrivedesign.com/products/Hypernova/hypernova_bedsligers/",
+      "type": "documentation"
+    }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

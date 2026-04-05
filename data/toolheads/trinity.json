@@ -1,0 +1,37 @@
+{
+  "id": "trinity",
+  "name": "Trinity",
+  "manufacturer": "WV-design",
+  "description": "A single-piece unibody high-performance toolhead with double 3628 fans for high-temperature chamber cooling. Features a balanced center of mass to reduce rail wear and a compact Y-axis footprint that fits within a Sherpa Mini extruder mount, making it suitable for dual-gantry setups.",
+  "toolheadType": "integrated",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4", "Voron Trident", "Monolith"],
+    "railSystems": ["MGN9", "MGN12 (with Monolith SLM belt clamp)"],
+    "hotendMounts": ["Dragon Ace Volcano (recommended)"],
+    "extruderMounts": ["Sherpa Mini (recommended)"],
+    "probeMounts": [],
+    "fanMounts": ["Dual 3628 (Delta FFB03612EHNYCL or FFB03612EHN-BGA)", "2510 auxiliary (Delta ASB02505SHA-AY6B)"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "Fiber-reinforced ABS, PC-PBT, high-Tg PC, annealed PET, or annealed PPS",
+    "printable": true
+  },
+  "features": [
+    "Single-piece unibody construction for maximum stiffness",
+    "Double 3628 fans for high-temperature chamber cooling",
+    "Balanced center of mass reducing rail wear and deflection",
+    "Compact Y-axis footprint fits within Sherpa Mini mount",
+    "Bottom-braced hotend at heatsink base to minimize deflection",
+    "Compatible with 6mm and 9mm GT2 belts (GT3 not supported)"
+  ],
+  "references": [
+    {
+      "label": "Trinity Toolhead (GitHub)",
+      "url": "https://github.com/WV-design/Trinity-toolhead",
+      "type": "github"
+    }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

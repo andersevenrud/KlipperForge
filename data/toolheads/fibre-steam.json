@@ -1,0 +1,57 @@
+{
+  "id": "fibre-steam",
+  "name": "Fibre Steam",
+  "manufacturer": "tristanmcpherson",
+  "description": "A robust, high-performance CPAP toolhead designed for the Monolith Gantry by Rafi (Shamoon78) with documentation maintained by tristanmcpherson. Integrates the extruder into the toolhead for accurate center-of-mass balancing, prioritizing stiffness for effective input shaping at high print speeds.",
+  "toolheadType": "integrated",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4 (Monolith Gantry)", "Voron Trident (Monolith Gantry)"],
+    "railSystems": ["Monolith Gantry"],
+    "hotendMounts": [
+      "Phaetus Goliath",
+      "Phaetus Rapido HF",
+      "Phaetus Rapido UHF",
+      "Phaetus Dragon UHF"
+    ],
+    "extruderMounts": [
+      "HGX",
+      "RIDGA",
+      "Mellow NF Cannon Worm",
+      "Galileo 2"
+    ],
+    "probeMounts": [
+      "Beacon"
+    ],
+    "fanMounts": [
+      "CPAP (18mm or 22mm)"
+    ]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "PCCF/ASACF/ABSCF (printed, stiff filament required)",
+    "printable": true
+  },
+  "features": [
+    "CPAP cooling system (18mm or 22mm variants)",
+    "Integrated extruder for center-of-mass balancing",
+    "Designed for Monolith Gantry",
+    "Beacon Z-homing sensor support",
+    "Multiple gearset and extruder configurations",
+    "Requires stiff filament (PCCF, ASACF, or ABSCF)",
+    "Approximately 10mm X-axis travel loss"
+  ],
+  "references": [
+    {
+      "label": "Fibre Steam Wiki",
+      "url": "https://tristanmcpherson.github.io/fibresteam_wiki/",
+      "type": "documentation"
+    },
+    {
+      "label": "Original CAD (Angry Tool Head) on GitHub",
+      "url": "https://github.com/Shamoon78/Angry_Tool_Head",
+      "type": "github"
+    }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

@@ -23,6 +23,7 @@ const CATEGORIES: CategoryMapping[] = [
   { dir: "accessories", key: "accessories", arrayField: "accessories" },
   { dir: "filaments", key: "filaments", arrayField: "filaments" },
   { dir: "displays", key: "displays", arrayField: "displays" },
+  { dir: "toolheads", key: "toolheads", arrayField: "toolheads" },
   { dir: "pcb-layouts", key: "pcbLayouts", arrayField: "layouts" },
 ];
 

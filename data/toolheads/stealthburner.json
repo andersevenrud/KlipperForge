@@ -1,0 +1,35 @@
+{
+  "id": "stealthburner",
+  "name": "StealthBurner",
+  "manufacturer": "Voron Design",
+  "description": "Voron Design's flagship toolhead for Voron 2.4, Trident, Switchwire, and Legacy printers. Features an integrated Clockwork 2 extruder with dual-gear BMG drive, a single 5015 part cooling blower, a 4010 hotend fan, and RGBW Neopixel LEDs for status indication and nozzle illumination.",
+  "toolheadType": "integrated",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4", "Voron Trident", "Voron Switchwire", "Voron Legacy"],
+    "railSystems": ["MGN12H"],
+    "hotendMounts": ["Phaetus Dragon SF", "Phaetus Dragon HF", "Phaetus Dragonfly BMO", "Phaetus Dragonfly BMS", "Phaetus Rapido HF", "Phaetus Rapido v2", "Chube Compact", "E3D Revo Voron", "E3D Revo Micro", "E3D V6", "E3D Revo Six"],
+    "extruderMounts": ["Clockwork 2", "Clockwork 1"],
+    "probeMounts": ["Voron Tap", "Klicky", "Euclid"],
+    "fanMounts": ["5015 blower (part cooling)", "4010 axial (hotend)"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Clockwork 2 integrated extruder with dual-gear BMG drive",
+    "Single 5015 part cooling blower fan",
+    "4010 hotend cooling fan",
+    "RGBW Neopixel LED status and nozzle illumination",
+    "Direct-drive filament path",
+    "Interchangeable hotend mounting system",
+    "Successor to Afterburner toolhead"
+  ],
+  "references": [
+    { "label": "GitHub Repository", "url": "https://github.com/VoronDesign/Voron-Stealthburner", "type": "github" },
+    { "label": "Voron Design Page", "url": "https://vorondesign.com/voron_stealthburner", "type": "product" }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

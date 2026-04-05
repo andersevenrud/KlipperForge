@@ -19,6 +19,7 @@ import { DocProbePage } from "./DocProbePage";
 import { DocSidebar } from "./DocSidebar";
 import { DocStepperMotorPage } from "./DocStepperMotorPage";
 import { DocThermistorPage } from "./DocThermistorPage";
+import { DocToolheadPage } from "./DocToolheadPage";
 import { CATEGORY_PARAM_KEY } from "./doc-shared";
 
 // ---------------------------------------------------------------------------
@@ -37,7 +38,8 @@ export type DocCategory =
   | "printers"
   | "probes"
   | "stepper-motors"
-  | "thermistors";
+  | "thermistors"
+  | "toolheads";
 
 export interface DocSelection {
   category: DocCategory;
@@ -66,6 +68,7 @@ const PARAM_TO_CATEGORY: Record<string, DocCategory> = {
   psu: "power-supplies",
   accessory: "accessories",
   filament: "filaments",
+  toolhead: "toolheads",
 };
 
 function resolveSelectionFromUrl(params: URLSearchParams): DocSelection | null {
@@ -89,6 +92,7 @@ const DOC_CATEGORIES: DocCategory[] = [
   "probes",
   "stepper-motors",
   "thermistors",
+  "toolheads",
 ];
 
 function isDocCategory(value: string): value is DocCategory {
@@ -315,6 +319,8 @@ function DocContent({ selection }: DocContentProps) {
       return <DocFilamentPage filamentId={selection.itemId} />;
     case "displays":
       return <DocDisplayPage displayId={selection.itemId} />;
+    case "toolheads":
+      return <DocToolheadPage toolheadId={selection.itemId} />;
     default:
       return null;
   }

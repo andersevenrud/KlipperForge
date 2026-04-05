@@ -1,0 +1,57 @@
+{
+  "id": "stealthchanger",
+  "name": "StealthChanger",
+  "manufacturer": "DraftShift Design",
+  "description": "A tool changing system for Vorons and other front-mount printer motion systems using bushings and magnets for kinematic docking. Supports a wide range of toolheads and offers LDO and Fysetc CNC shuttle options. Acts as a Voron Tap replacement with integrated OptoTap-based Z probing.",
+  "toolheadType": "tool-changer",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4", "Front-mount CoreXY printers"],
+    "railSystems": ["MGN12H", "MGN9H"],
+    "hotendMounts": [
+      "StealthBurner",
+      "Dragon Burner",
+      "Rapid Burner",
+      "Yavoth",
+      "AntHead",
+      "A4T",
+      "Xol Toolhead",
+      "Jabberwocky",
+      "Archetype BlackBird",
+      "Mini StealthBurner (usermod)"
+    ],
+    "fanMounts": []
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Bushing and magnet based kinematic docking",
+    "OptoTap-based Z probing (replaces Voron Tap)",
+    "LDO hardware kit available",
+    "Up to 5 toolheads (300mm) or 6 toolheads (350mm)",
+    "Replaceable wear parts without reprints",
+    "CAN bus recommended for multi-tool wiring",
+    "Rigidity comparable to or exceeding TapChanger"
+  ],
+  "references": [
+    {
+      "label": "StealthChanger on GitHub",
+      "url": "https://github.com/DraftShift/StealthChanger",
+      "type": "github"
+    },
+    {
+      "label": "StealthChanger Website",
+      "url": "https://stealthchanger.com",
+      "type": "documentation"
+    },
+    {
+      "label": "LDO StealthChanger Kit",
+      "url": "https://ldomotion.com/products/stealth-changer",
+      "type": "product"
+    }
+  ],
+  "unverified": ["weight", "dimensions", "toolCountPerBuildSize"]
+}

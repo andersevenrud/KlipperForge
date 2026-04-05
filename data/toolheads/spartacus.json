@@ -1,0 +1,47 @@
+{
+  "id": "spartacus",
+  "name": "Spartacus",
+  "manufacturer": "CN3D (Nadir)",
+  "description": "A lightweight toolhead for the Voron 2.4 and Trident, designed for accessibility and performance using off-the-shelf components. Features dual 4010 blower fans for part cooling, dual RGBW neopixel LEDs, and a total weight under 320g with passive stepper motor cooling that routes airflow away from the build plate.",
+  "toolheadType": "integrated",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4", "Voron Trident"],
+    "railSystems": [],
+    "hotendMounts": [
+      "T-Volcano",
+      "E3D Revo Voron",
+      "Phaetus Rapido UHF",
+      "V6"
+    ],
+    "extruderMounts": [
+      "BMG dual-drive (NEMA14 pancake)"
+    ],
+    "probeMounts": [],
+    "fanMounts": [
+      "1x 3010 axial (hotend)",
+      "2x 4010 blower (part cooling)"
+    ]
+  },
+  "physicalSpecs": {
+    "weight": 320,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Under 320g total weight",
+    "Dual 4010 blower fans for enhanced part cooling",
+    "Dual RGBW neopixel LEDs",
+    "Passive stepper motor cooling",
+    "Concealed cable management with motor covers",
+    "Airflow tested up to 5.9 m/s"
+  ],
+  "references": [
+    {
+      "label": "Spartacus on Printables",
+      "url": "https://www.printables.com/model/745412-spartacus-the-toolhead",
+      "type": "product"
+    }
+  ],
+  "unverified": ["dimensions", "railSystems"]
+}

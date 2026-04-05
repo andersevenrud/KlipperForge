@@ -1,0 +1,34 @@
+{
+  "id": "yavoth",
+  "name": "Yavoth",
+  "manufacturer": "chirpy2605",
+  "description": "Unibody toolhead design for high-flow and ultra-high-flow hotends using angled 4010 part cooling fans and a 2510 hotend fan. Requires no supports for printing. Primarily designed for Voron V0.2 with alternative carriage mounts available for other printers.",
+  "toolheadType": "integrated",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron V0.2", "Voron Trident", "Voron 2.4", "Voron Switchwire"],
+    "railSystems": ["MGN7H", "MGN9C"],
+    "hotendMounts": ["Phaetus Dragon (Volcano)", "Phaetus Rapido v1 HF", "Phaetus Rapido v2 HF", "Phaetus Dragon Ace", "E3D Revo Voron", "Phaetus Dragon UHF", "Phaetus Rapido UHF", "Chube Compact"],
+    "extruderMounts": ["Sherpa Mini", "Sherpa Micro", "Orbiter v2.0", "Galileo G2SA", "E3D Roto", "WristWatch BMG", "WristWatch G2", "Sailfin", "Sharkfin"],
+    "probeMounts": [],
+    "fanMounts": ["2x 4010 blower angled (part cooling)", "2510 axial (hotend)"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Unibody design requiring no print supports",
+    "Angled dual 4010 blower fans (front to rear)",
+    "2510 axial hotend fan (positioned higher than standard 3010)",
+    "Neopixel LED integration",
+    "Standard and 5mm rear offset variants",
+    "UHF cowl variants for ultra-high-flow hotends",
+    "Wide extruder support via Sherpa Mini and Orbiter v2 mount patterns"
+  ],
+  "references": [
+    { "label": "GitHub Repository", "url": "https://github.com/chirpy2605/voron/tree/main/V0/Yavoth", "type": "github" }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

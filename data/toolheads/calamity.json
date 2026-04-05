@@ -1,0 +1,42 @@
+{
+  "id": "calamity",
+  "name": "Calamity",
+  "manufacturer": "lukeslaboratory",
+  "description": "A rigid, fully metal modular toolhead that weighs under 500g fully loaded. Designed for Voron 2.4 and Trident with MGN12 rail and belt paths up to 10mm wide, with a maximum width of 55.20mm before fans for compact gantry compatibility.",
+  "toolheadType": "modular",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4", "Voron Trident", "Printers for Ants (with 4010 fans)"],
+    "railSystems": ["MGN12H", "MGN9H"],
+    "hotendMounts": ["Chube", "Goliath/Dragon/V9", "Mosquito"],
+    "extruderMounts": ["Sherpa", "LGX Lite Pro", "Vz-Hextrudort", "A3DP FXD"],
+    "probeMounts": [],
+    "fanMounts": ["Dual 3628 fans"]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "SLM metal",
+    "printable": false
+  },
+  "features": [
+    "Under 500g fully loaded with Chube Air, LGX Lite Pro, and 3628 fans",
+    "Maximum 55.20mm wide before fans",
+    "Compatible with belt paths up to 10mm wide (MGN12)",
+    "Rigid fully metal construction",
+    "Open-source design (CC BY-NC 4.0)",
+    "SLM support bracket available"
+  ],
+  "references": [
+    {
+      "label": "Calamity Toolhead (GitHub)",
+      "url": "https://github.com/lukeslaboratory/Calamity-Toolhead",
+      "type": "github"
+    },
+    {
+      "label": "Calamity Toolhead on Luke's Laboratory",
+      "url": "https://www.lukeslabonline.com/products/calamity-toolhead",
+      "type": "product"
+    }
+  ],
+  "unverified": ["weight", "dimensions"]
+}

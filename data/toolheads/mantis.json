@@ -1,0 +1,33 @@
+{
+  "id": "mantis",
+  "name": "Mantis",
+  "manufacturer": "Armchair Heavy Industries",
+  "description": "Legacy toolhead based on Long/Mandryd's original Mantis design, modified with dual 4010 blowers for improved part cooling. Predecessor to the Xol Toolhead, offering approximately 260g assembled weight with Sherpa Mini and better airflow than StealthBurner through shorter ducts. The repository is archived and development continues as the Xol Toolhead.",
+  "toolheadType": "modular",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4", "Voron Trident"],
+    "railSystems": ["MGN12H"],
+    "hotendMounts": ["Phaetus Rapido HF", "Phaetus Dragon SF", "Phaetus Dragon HF", "Phaetus Dragon UHF-Mini", "E3D Revo Voron", "DropEffect XG", "NF-Crazy", "BambuLab"],
+    "extruderMounts": ["Sherpa Mini", "Orbiter v2.0", "Vz-HextrudORT Low", "LGX Lite", "Double Folded Ascender"],
+    "probeMounts": ["Voron Tap", "Beacon", "Klicky", "Klicky PCB", "Euclid"],
+    "fanMounts": ["2x 4010 blower (part cooling)", "2510 axial (hotend)"]
+  },
+  "physicalSpecs": {
+    "weight": "~260g (with Sherpa Mini)",
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Dual 4010 24V blower fans for part cooling",
+    "2510 24V axial hotend fan",
+    "Improved airflow over StealthBurner (6-7 CFM vs 4.6-5.2 CFM)",
+    "Lightweight construction (~260g with Sherpa Mini)",
+    "Multiple hotend and extruder options",
+    "Predecessor to Xol Toolhead (archived)"
+  ],
+  "references": [
+    { "label": "GitHub Repository (archived)", "url": "https://github.com/Armchair-Heavy-Industries/Mantis-Xol", "type": "github" }
+  ],
+  "unverified": ["dimensions"]
+}

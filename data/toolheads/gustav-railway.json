@@ -1,0 +1,50 @@
+{
+  "id": "gustav-railway",
+  "name": "Gustav Railway",
+  "manufacturer": "RCI-Nicket",
+  "description": "A performance-oriented, configurable toolhead platform for the Monolith Gantry on Voron 2.4 and Trident printers. Achieves zero build volume loss by fitting entirely within the gantry structure, enabling high input shaper results and faster print speeds.",
+  "toolheadType": "integrated",
+  "compatibilitySpecs": {
+    "targetPrinters": ["Voron 2.4 (Monolith Gantry)", "Voron Trident (Monolith Gantry)"],
+    "railSystems": ["Monolith Gantry"],
+    "hotendMounts": [
+      "Phaetus Dragon UHF",
+      "Phaetus Dragon ACE UHF",
+      "Phaetus Rapido UHF"
+    ],
+    "extruderMounts": [
+      "DFA (Annex Engineering)",
+      "WristWatch",
+      "Micro-Cosm"
+    ],
+    "probeMounts": [
+      "Beacon"
+    ],
+    "fanMounts": [
+      "CPAP",
+      "2x 5015 blower (part cooling)"
+    ]
+  },
+  "physicalSpecs": {
+    "weight": null,
+    "dimensions": null,
+    "material": "ABS/ASA (printed)",
+    "printable": true
+  },
+  "features": [
+    "Designed for Monolith Gantry",
+    "Zero build volume loss",
+    "Lightweight design for high input shaper results",
+    "CPAP and dual 5015 cooling options",
+    "Not compatible with CAN bus toolhead boards",
+    "Work-in-progress Klicky probe support"
+  ],
+  "references": [
+    {
+      "label": "Gustav Railway on GitHub",
+      "url": "https://github.com/RCI-Nicket/Gustav-Railway-Toolhead",
+      "type": "github"
+    }
+  ],
+  "unverified": ["weight", "dimensions", "canBusIncompatibility", "klickyProbeSupport"]
+}
