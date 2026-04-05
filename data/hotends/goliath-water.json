@@ -57,5 +57,20 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["maxFlowRate", "retraction"]
+  "unverified": [
+    "maxFlowRate",
+    "retraction"
+  ],
+  "relatedArticles": [
+    {
+      "category": "thermistors",
+      "id": "pt1000",
+      "name": "PT1000 RTD"
+    },
+    {
+      "category": "toolheads",
+      "id": "rapid-burner",
+      "name": "Rapid Burner"
+    }
+  ]
 }

@@ -48,5 +48,36 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "maxFlowRate", "retraction"]
+  "unverified": [
+    "weight",
+    "maxFlowRate",
+    "retraction"
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "afterburner",
+      "name": "Afterburner"
+    },
+    {
+      "category": "toolheads",
+      "id": "dragon-burner",
+      "name": "Dragon Burner"
+    },
+    {
+      "category": "toolheads",
+      "id": "mini-stealthburner",
+      "name": "Mini StealthBurner"
+    },
+    {
+      "category": "toolheads",
+      "id": "mini-aftersherpa",
+      "name": "Mini-AfterSherpa"
+    },
+    {
+      "category": "toolheads",
+      "id": "stealthburner",
+      "name": "StealthBurner"
+    }
+  ]
 }

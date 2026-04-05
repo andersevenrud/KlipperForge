@@ -28,7 +28,11 @@
     "mountType": "replaces X carriage (Voron 2.4/Trident compatible)"
   },
   "klipperSection": "probe",
-  "unverified": ["currentDraw", "weight", "dimensions"],
+  "unverified": [
+    "currentDraw",
+    "weight",
+    "dimensions"
+  ],
   "references": [
     {
       "label": "Voron Tap GitHub Repository",
@@ -44,6 +48,38 @@
       "label": "Klipper Probe Documentation",
       "url": "https://www.klipper3d.org/Config_Reference.html#probe",
       "type": "documentation"
+    }
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "a4t",
+      "name": "A4T"
+    },
+    {
+      "category": "toolheads",
+      "id": "archetype",
+      "name": "Archetype"
+    },
+    {
+      "category": "toolheads",
+      "id": "mantis",
+      "name": "Mantis"
+    },
+    {
+      "category": "toolheads",
+      "id": "reaper",
+      "name": "Reaper"
+    },
+    {
+      "category": "toolheads",
+      "id": "stealthburner",
+      "name": "StealthBurner"
+    },
+    {
+      "category": "toolheads",
+      "id": "xol-toolhead",
+      "name": "Xol Toolhead"
     }
   ]
 }

@@ -48,5 +48,34 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "maxFlowRate", "retraction", "heaterPower", "thermistorType", "maxTemperature"]
+  "unverified": [
+    "weight",
+    "maxFlowRate",
+    "retraction",
+    "heaterPower",
+    "thermistorType",
+    "maxTemperature"
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "dragon-burner",
+      "name": "Dragon Burner"
+    },
+    {
+      "category": "toolheads",
+      "id": "mailbox",
+      "name": "Mailbox"
+    },
+    {
+      "category": "toolheads",
+      "id": "mantis",
+      "name": "Mantis"
+    },
+    {
+      "category": "toolheads",
+      "id": "mini-aftersherpa",
+      "name": "Mini-AfterSherpa"
+    }
+  ]
 }

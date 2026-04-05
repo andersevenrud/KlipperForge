@@ -5,8 +5,12 @@
   "description": "A custom toolhead designed specifically for the Sovol SV08 printer, utilizing its original planetary gear extruder. Features dual 4010 blower fans with vortex generator ducts for improved airflow, magnetic pogo pin connections, and support for multiple hotends including Rapido, Bambu Lab, and the stock SV08 hotend.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": ["Sovol SV08"],
-    "railSystems": ["MGN12H"],
+    "targetPrinters": [
+      "Sovol SV08"
+    ],
+    "railSystems": [
+      "MGN12H"
+    ],
     "hotendMounts": [
       "Sovol SV08 stock",
       "Phaetus Rapido",
@@ -50,5 +54,35 @@
       "type": "product"
     }
   ],
-  "unverified": ["weight", "dimensions"]
+  "unverified": [
+    "weight",
+    "dimensions"
+  ],
+  "relatedArticles": [
+    {
+      "category": "hotends",
+      "id": "bambu-lab-hotend",
+      "name": "Bambu Lab Hotend"
+    },
+    {
+      "category": "probes",
+      "id": "beacon",
+      "name": "Beacon"
+    },
+    {
+      "category": "probes",
+      "id": "btt-eddy-coil",
+      "name": "BTT Eddy Coil"
+    },
+    {
+      "category": "probes",
+      "id": "cartographer-3d",
+      "name": "Cartographer 3D"
+    },
+    {
+      "category": "probes",
+      "id": "klicky-probe",
+      "name": "Klicky Probe"
+    }
+  ]
 }

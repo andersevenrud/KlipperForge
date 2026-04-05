@@ -50,5 +50,17 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "retraction", "heaterPower", "thermistorType"]
+  "unverified": [
+    "weight",
+    "retraction",
+    "heaterPower",
+    "thermistorType"
+  ],
+  "relatedArticles": [
+    {
+      "category": "thermistors",
+      "id": "atc-semitec-104nt-4",
+      "name": "ATC Semitec 104NT-4"
+    }
+  ]
 }

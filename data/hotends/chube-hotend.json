@@ -56,5 +56,51 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["maxFlowRate", "retraction", "thermistorType"]
+  "unverified": [
+    "maxFlowRate",
+    "retraction",
+    "thermistorType"
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "a4t",
+      "name": "A4T"
+    },
+    {
+      "category": "toolheads",
+      "id": "archetype",
+      "name": "Archetype"
+    },
+    {
+      "category": "toolheads",
+      "id": "calamity",
+      "name": "Calamity"
+    },
+    {
+      "category": "toolheads",
+      "id": "dragon-burner",
+      "name": "Dragon Burner"
+    },
+    {
+      "category": "toolheads",
+      "id": "hypernova",
+      "name": "Hypernova"
+    },
+    {
+      "category": "toolheads",
+      "id": "stealthburner",
+      "name": "StealthBurner"
+    },
+    {
+      "category": "toolheads",
+      "id": "xol-toolhead",
+      "name": "Xol Toolhead"
+    },
+    {
+      "category": "toolheads",
+      "id": "yavoth",
+      "name": "Yavoth"
+    }
+  ]
 }

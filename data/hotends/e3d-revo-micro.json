@@ -55,5 +55,27 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "heatUpTime", "maxFlowRate", "retraction"]
+  "unverified": [
+    "weight",
+    "heatUpTime",
+    "maxFlowRate",
+    "retraction"
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "afterburner",
+      "name": "Afterburner"
+    },
+    {
+      "category": "toolheads",
+      "id": "mini-aftersherpa",
+      "name": "Mini-AfterSherpa"
+    },
+    {
+      "category": "toolheads",
+      "id": "stealthburner",
+      "name": "StealthBurner"
+    }
+  ]
 }

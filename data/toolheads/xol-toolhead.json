@@ -5,12 +5,51 @@
   "description": "Modular toolhead evolved from the Mantis Xol 2, designed for Voron 2.4, Trident, and other CoreXY printers. Supports a wide range of hotends, extruders, and probes with a focus on modularity, serviceability, and easy installation. Uses dual 4010 blower fans for part cooling with CFD-optimized ducts.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": ["Voron 2.4", "Voron Trident"],
-    "railSystems": ["MGN12H", "MGN9H"],
-    "hotendMounts": ["Phaetus Dragon SF", "Phaetus Dragon HF", "Phaetus Dragon UHF", "Phaetus Dragon UHF-Mini", "Phaetus Dragon Ace", "Phaetus Rapido HF", "Phaetus Rapido UHF", "DropEffect XG", "DropEffect NeXtG", "E3D Revo Voron", "Chube Compact", "Red Lizard K1-UHF", "NF-Crazy Volcano"],
-    "extruderMounts": ["Sherpa Mini", "Orbiter v2.0", "Galileo G2SA", "WristWatch G2", "WristWatch BMG", "Vz-HextrudORT Low", "LGX Lite", "Double Folded Ascender"],
-    "probeMounts": ["Voron Tap", "Klicky", "Klicky PCB", "Beacon", "Euclid", "BTT Eddy"],
-    "fanMounts": ["2x 4010 blower (part cooling)", "2510 axial (hotend)"]
+    "targetPrinters": [
+      "Voron 2.4",
+      "Voron Trident"
+    ],
+    "railSystems": [
+      "MGN12H",
+      "MGN9H"
+    ],
+    "hotendMounts": [
+      "Phaetus Dragon SF",
+      "Phaetus Dragon HF",
+      "Phaetus Dragon UHF",
+      "Phaetus Dragon UHF-Mini",
+      "Phaetus Dragon Ace",
+      "Phaetus Rapido HF",
+      "Phaetus Rapido UHF",
+      "DropEffect XG",
+      "DropEffect NeXtG",
+      "E3D Revo Voron",
+      "Chube Compact",
+      "Red Lizard K1-UHF",
+      "NF-Crazy Volcano"
+    ],
+    "extruderMounts": [
+      "Sherpa Mini",
+      "Orbiter v2.0",
+      "Galileo G2SA",
+      "WristWatch G2",
+      "WristWatch BMG",
+      "Vz-HextrudORT Low",
+      "LGX Lite",
+      "Double Folded Ascender"
+    ],
+    "probeMounts": [
+      "Voron Tap",
+      "Klicky",
+      "Klicky PCB",
+      "Beacon",
+      "Euclid",
+      "BTT Eddy"
+    ],
+    "fanMounts": [
+      "2x 4010 blower (part cooling)",
+      "2510 axial (hotend)"
+    ]
   },
   "physicalSpecs": {
     "weight": null,
@@ -29,7 +68,101 @@
     "CPAP cooling support"
   ],
   "references": [
-    { "label": "GitHub Repository", "url": "https://github.com/Armchair-Heavy-Industries/Xol-Toolhead", "type": "github" }
+    {
+      "label": "GitHub Repository",
+      "url": "https://github.com/Armchair-Heavy-Industries/Xol-Toolhead",
+      "type": "github"
+    }
   ],
-  "unverified": ["weight", "dimensions"]
+  "unverified": [
+    "weight",
+    "dimensions"
+  ],
+  "relatedArticles": [
+    {
+      "category": "extruders",
+      "id": "bondtech-lgx-lite",
+      "name": "Bondtech LGX Lite"
+    },
+    {
+      "category": "extruders",
+      "id": "galileo-2-sa",
+      "name": "Galileo 2 SA"
+    },
+    {
+      "category": "extruders",
+      "id": "ldo-orbiter-v2",
+      "name": "LDO Orbiter v2.0"
+    },
+    {
+      "category": "extruders",
+      "id": "sherpa-mini",
+      "name": "Sherpa Mini"
+    },
+    {
+      "category": "extruders",
+      "id": "vz-hextrudort-low",
+      "name": "Vz-HextrudORT Low"
+    },
+    {
+      "category": "hotends",
+      "id": "chube-hotend",
+      "name": "Chube"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragon-hf",
+      "name": "Dragon High Flow"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragon-sf",
+      "name": "Dragon Standard Flow"
+    },
+    {
+      "category": "hotends",
+      "id": "dropeffect-nextg",
+      "name": "neXt-G"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-hf",
+      "name": "Rapido HF"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-uhf",
+      "name": "Rapido UHF"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-revo-voron",
+      "name": "Revo Voron"
+    },
+    {
+      "category": "probes",
+      "id": "beacon",
+      "name": "Beacon"
+    },
+    {
+      "category": "probes",
+      "id": "btt-eddy-coil",
+      "name": "BTT Eddy Coil"
+    },
+    {
+      "category": "probes",
+      "id": "euclid-probe",
+      "name": "Euclid Probe"
+    },
+    {
+      "category": "probes",
+      "id": "klicky-probe",
+      "name": "Klicky Probe"
+    },
+    {
+      "category": "probes",
+      "id": "voron-tap",
+      "name": "Voron Tap"
+    }
+  ]
 }

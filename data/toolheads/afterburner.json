@@ -5,12 +5,36 @@
   "description": "Voron Design's legacy toolhead and predecessor to the StealthBurner. Designed for Voron 2.4, Trident, and Switchwire with the Clockwork 1 extruder using a repackaged BMG dual-gear drive. Still in use on older builds but superseded by the StealthBurner for new builds.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": ["Voron 2.4", "Voron Trident", "Voron Switchwire"],
-    "railSystems": ["MGN12H"],
-    "hotendMounts": ["Phaetus Dragon SF", "Phaetus Dragon HF", "Phaetus Dragonfly BMO", "Phaetus Dragonfly BMS", "Phaetus Rapido HF", "E3D Revo Voron", "E3D Revo Micro", "E3D V6", "Slice Mosquito"],
-    "extruderMounts": ["Clockwork 1"],
-    "probeMounts": ["Klicky", "Euclid"],
-    "fanMounts": ["5015 blower (part cooling)", "4010 axial (hotend)"]
+    "targetPrinters": [
+      "Voron 2.4",
+      "Voron Trident",
+      "Voron Switchwire"
+    ],
+    "railSystems": [
+      "MGN12H"
+    ],
+    "hotendMounts": [
+      "Phaetus Dragon SF",
+      "Phaetus Dragon HF",
+      "Phaetus Dragonfly BMO",
+      "Phaetus Dragonfly BMS",
+      "Phaetus Rapido HF",
+      "E3D Revo Voron",
+      "E3D Revo Micro",
+      "E3D V6",
+      "Slice Mosquito"
+    ],
+    "extruderMounts": [
+      "Clockwork 1"
+    ],
+    "probeMounts": [
+      "Klicky",
+      "Euclid"
+    ],
+    "fanMounts": [
+      "5015 blower (part cooling)",
+      "4010 axial (hotend)"
+    ]
   },
   "physicalSpecs": {
     "weight": null,
@@ -27,7 +51,71 @@
     "Predecessor to StealthBurner"
   ],
   "references": [
-    { "label": "GitHub Repository", "url": "https://github.com/VoronDesign/Voron-Afterburner", "type": "github" }
+    {
+      "label": "GitHub Repository",
+      "url": "https://github.com/VoronDesign/Voron-Afterburner",
+      "type": "github"
+    }
   ],
-  "unverified": ["weight", "dimensions"]
+  "unverified": [
+    "weight",
+    "dimensions"
+  ],
+  "relatedArticles": [
+    {
+      "category": "hotends",
+      "id": "phaetus-dragon-hf",
+      "name": "Dragon High Flow"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragon-sf",
+      "name": "Dragon Standard Flow"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragonfly-bmo",
+      "name": "Dragonfly BMO"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragonfly-bms",
+      "name": "Dragonfly BMS"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-v6",
+      "name": "E3D V6"
+    },
+    {
+      "category": "hotends",
+      "id": "slice-mosquito",
+      "name": "Mosquito"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-hf",
+      "name": "Rapido HF"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-revo-micro",
+      "name": "Revo Micro"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-revo-voron",
+      "name": "Revo Voron"
+    },
+    {
+      "category": "probes",
+      "id": "euclid-probe",
+      "name": "Euclid Probe"
+    },
+    {
+      "category": "probes",
+      "id": "klicky-probe",
+      "name": "Klicky Probe"
+    }
+  ]
 }

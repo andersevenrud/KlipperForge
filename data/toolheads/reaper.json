@@ -5,12 +5,42 @@
   "description": "A modular toolhead evolved from the Mantis design, featuring interlocking locating features for high rigidity and reduced vibration. Supports 16 hotends, 11 extruders, and 3 probe families, with all main screws accessible from the front or sides for easy maintenance.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": ["Voron 2.4", "Voron Trident"],
-    "railSystems": ["MGN12"],
-    "hotendMounts": ["Phaetus Dragon (Standard, HF, UHF)", "Phaetus Rapido (1.0, 2.0, HF, UHF)", "Dropeffect NextG (Standard, UHF)", "Revo Voron", "Slice Mosquito", "BambuLab", "VZ Goliath"],
-    "extruderMounts": ["Balrog", "Sherpa Mini", "Orbiter V2", "Vz-Hextrudort", "LGX Lite", "LGX Lite Pro", "Hummingbird", "G2SA"],
-    "probeMounts": ["TAP", "Beacon", "Cartographer", "Klicky PCB"],
-    "fanMounts": ["3010 heatsink fan", "Dual 5015 part cooling"]
+    "targetPrinters": [
+      "Voron 2.4",
+      "Voron Trident"
+    ],
+    "railSystems": [
+      "MGN12"
+    ],
+    "hotendMounts": [
+      "Phaetus Dragon (Standard, HF, UHF)",
+      "Phaetus Rapido (1.0, 2.0, HF, UHF)",
+      "Dropeffect NextG (Standard, UHF)",
+      "Revo Voron",
+      "Slice Mosquito",
+      "BambuLab",
+      "VZ Goliath"
+    ],
+    "extruderMounts": [
+      "Balrog",
+      "Sherpa Mini",
+      "Orbiter V2",
+      "Vz-Hextrudort",
+      "LGX Lite",
+      "LGX Lite Pro",
+      "Hummingbird",
+      "G2SA"
+    ],
+    "probeMounts": [
+      "TAP",
+      "Beacon",
+      "Cartographer",
+      "Klicky PCB"
+    ],
+    "fanMounts": [
+      "3010 heatsink fan",
+      "Dual 5015 part cooling"
+    ]
   },
   "physicalSpecs": {
     "weight": null,
@@ -38,5 +68,75 @@
       "type": "product"
     }
   ],
-  "unverified": ["weight", "dimensions"]
+  "unverified": [
+    "weight",
+    "dimensions"
+  ],
+  "relatedArticles": [
+    {
+      "category": "extruders",
+      "id": "bondtech-lgx-lite",
+      "name": "Bondtech LGX Lite"
+    },
+    {
+      "category": "extruders",
+      "id": "galileo-2-sa",
+      "name": "Galileo 2 SA"
+    },
+    {
+      "category": "extruders",
+      "id": "ldo-orbiter-v2",
+      "name": "LDO Orbiter v2.0"
+    },
+    {
+      "category": "extruders",
+      "id": "sherpa-mini",
+      "name": "Sherpa Mini"
+    },
+    {
+      "category": "extruders",
+      "id": "vz-hextrudort",
+      "name": "Vz-HextrudORT"
+    },
+    {
+      "category": "hotends",
+      "id": "bambu-lab-hotend",
+      "name": "Bambu Lab Hotend"
+    },
+    {
+      "category": "hotends",
+      "id": "goliath-air",
+      "name": "Goliath Air-Cooled"
+    },
+    {
+      "category": "hotends",
+      "id": "slice-mosquito",
+      "name": "Mosquito"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-revo-voron",
+      "name": "Revo Voron"
+    },
+    {
+      "category": "probes",
+      "id": "beacon",
+      "name": "Beacon"
+    },
+    {
+      "category": "probes",
+      "id": "cartographer-3d",
+      "name": "Cartographer 3D"
+    },
+    {
+      "category": "probes",
+      "id": "klicky-probe",
+      "name": "Klicky Probe"
+    },
+    {
+      "category": "probes",
+      "id": "voron-tap",
+      "name": "Voron Tap"
+    }
+  ]
 }

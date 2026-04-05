@@ -5,8 +5,13 @@
   "description": "A compact community variant of the Mini StealthBurner, roughly 5/8 the size of the official design. Uses a modular core-and-shroud architecture where the extruder and hotend mount to a core piece and the shroud slides on, supporting over 13 extruders and 24 hotend configurations with dual 4010 blowers and improved airflow.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": ["Voron V0.1", "Voron V0.2"],
-    "railSystems": ["MGN9H"],
+    "targetPrinters": [
+      "Voron V0.1",
+      "Voron V0.2"
+    ],
+    "railSystems": [
+      "MGN9H"
+    ],
     "hotendMounts": [
       "Phaetus Rapido HF",
       "Phaetus Rapido UHF",
@@ -60,5 +65,65 @@
       "type": "github"
     }
   ],
-  "unverified": ["weight", "dimensions"]
+  "unverified": [
+    "weight",
+    "dimensions"
+  ],
+  "relatedArticles": [
+    {
+      "category": "extruders",
+      "id": "bondtech-lgx-lite",
+      "name": "Bondtech LGX Lite"
+    },
+    {
+      "category": "extruders",
+      "id": "ldo-orbiter-v2",
+      "name": "LDO Orbiter v2.0"
+    },
+    {
+      "category": "extruders",
+      "id": "sherpa-mini",
+      "name": "Sherpa Mini"
+    },
+    {
+      "category": "hotends",
+      "id": "bambu-lab-hotend",
+      "name": "Bambu Lab Hotend"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-v6",
+      "name": "E3D V6"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-hf",
+      "name": "Rapido HF"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-uhf",
+      "name": "Rapido UHF"
+    },
+    {
+      "category": "hotends",
+      "id": "creality-spider-3",
+      "name": "Spider 3.0"
+    },
+    {
+      "category": "probes",
+      "id": "beacon",
+      "name": "Beacon"
+    },
+    {
+      "category": "probes",
+      "id": "cartographer-3d",
+      "name": "Cartographer 3D"
+    },
+    {
+      "category": "probes",
+      "id": "klicky-probe",
+      "name": "Klicky Probe"
+    }
+  ]
 }

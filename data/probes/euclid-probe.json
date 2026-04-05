@@ -29,7 +29,12 @@
     "mountType": "magnetic dock (6mm magnets)"
   },
   "klipperSection": "probe",
-  "unverified": ["currentDraw", "weight", "dimensions", "repeatability"],
+  "unverified": [
+    "currentDraw",
+    "weight",
+    "dimensions",
+    "repeatability"
+  ],
   "references": [
     {
       "label": "Euclid Probe GitHub Repository",
@@ -45,6 +50,43 @@
       "label": "Klipper Probe Documentation",
       "url": "https://www.klipper3d.org/Config_Reference.html#probe",
       "type": "documentation"
+    }
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "a4t",
+      "name": "A4T"
+    },
+    {
+      "category": "toolheads",
+      "id": "afterburner",
+      "name": "Afterburner"
+    },
+    {
+      "category": "toolheads",
+      "id": "archetype",
+      "name": "Archetype"
+    },
+    {
+      "category": "toolheads",
+      "id": "eva",
+      "name": "EVA"
+    },
+    {
+      "category": "toolheads",
+      "id": "mantis",
+      "name": "Mantis"
+    },
+    {
+      "category": "toolheads",
+      "id": "stealthburner",
+      "name": "StealthBurner"
+    },
+    {
+      "category": "toolheads",
+      "id": "xol-toolhead",
+      "name": "Xol Toolhead"
     }
   ]
 }

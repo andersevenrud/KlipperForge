@@ -5,12 +5,44 @@
   "description": "Toolhead using a modified 5015 fan mechanism for part cooling and a 3010 hotend fan, with Neopixel RGBW LED support. Designed for Voron V0.1 and V0.2 with additional adapter mounts for Trident, V2.4, Switchwire, and Legacy printers. Features CFD-optimized cooling ducts.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": ["Voron V0.1", "Voron V0.2", "Voron Trident", "Voron 2.4", "Voron Switchwire", "Voron Legacy"],
-    "railSystems": ["MGN7H", "MGN9C"],
-    "hotendMounts": ["E3D Revo Voron", "Phaetus Dragon SF", "Phaetus Dragon HF", "Phaetus Dragonfly", "Phaetus Rapido HF", "Phaetus Dragon UHF (without extender)", "NF-Crazy"],
-    "extruderMounts": ["LGX Lite", "Orbiter v1.5", "PocketWatch 2", "RoundHouse", "RoundAbout"],
-    "probeMounts": ["SlideSwipe", "MiniSlideSwipe", "Klicky", "ZeroClick"],
-    "fanMounts": ["5015 blower internals (part cooling)", "3010 axial (hotend)"]
+    "targetPrinters": [
+      "Voron V0.1",
+      "Voron V0.2",
+      "Voron Trident",
+      "Voron 2.4",
+      "Voron Switchwire",
+      "Voron Legacy"
+    ],
+    "railSystems": [
+      "MGN7H",
+      "MGN9C"
+    ],
+    "hotendMounts": [
+      "E3D Revo Voron",
+      "Phaetus Dragon SF",
+      "Phaetus Dragon HF",
+      "Phaetus Dragonfly",
+      "Phaetus Rapido HF",
+      "Phaetus Dragon UHF (without extender)",
+      "NF-Crazy"
+    ],
+    "extruderMounts": [
+      "LGX Lite",
+      "Orbiter v1.5",
+      "PocketWatch 2",
+      "RoundHouse",
+      "RoundAbout"
+    ],
+    "probeMounts": [
+      "SlideSwipe",
+      "MiniSlideSwipe",
+      "Klicky",
+      "ZeroClick"
+    ],
+    "fanMounts": [
+      "5015 blower internals (part cooling)",
+      "3010 axial (hotend)"
+    ]
   },
   "physicalSpecs": {
     "weight": null,
@@ -29,7 +61,56 @@
     "Adapter mounts for larger Voron printers"
   ],
   "references": [
-    { "label": "GitHub Repository", "url": "https://github.com/chirpy2605/voron/tree/main/V0/Mailbox", "type": "github" }
+    {
+      "label": "GitHub Repository",
+      "url": "https://github.com/chirpy2605/voron/tree/main/V0/Mailbox",
+      "type": "github"
+    }
   ],
-  "unverified": ["weight", "dimensions"]
+  "unverified": [
+    "weight",
+    "dimensions"
+  ],
+  "relatedArticles": [
+    {
+      "category": "extruders",
+      "id": "bondtech-lgx-lite",
+      "name": "Bondtech LGX Lite"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragon-hf",
+      "name": "Dragon High Flow"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragon-sf",
+      "name": "Dragon Standard Flow"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragonfly-bmo",
+      "name": "Dragonfly BMO"
+    },
+    {
+      "category": "hotends",
+      "id": "mellow-nf-crazy",
+      "name": "NF-Crazy"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-hf",
+      "name": "Rapido HF"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-revo-voron",
+      "name": "Revo Voron"
+    },
+    {
+      "category": "probes",
+      "id": "klicky-probe",
+      "name": "Klicky Probe"
+    }
+  ]
 }

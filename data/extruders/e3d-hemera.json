@@ -44,5 +44,15 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["dimensions", "maxFeedRate"]
+  "unverified": [
+    "dimensions",
+    "maxFeedRate"
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "eva",
+      "name": "EVA"
+    }
+  ]
 }

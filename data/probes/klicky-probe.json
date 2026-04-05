@@ -29,7 +29,10 @@
     "mountType": "magnetic dock (6mm magnets)"
   },
   "klipperSection": "probe",
-  "unverified": ["currentDraw", "weight"],
+  "unverified": [
+    "currentDraw",
+    "weight"
+  ],
   "references": [
     {
       "label": "Klicky Probe GitHub Repository",
@@ -40,6 +43,83 @@
       "label": "Klipper Probe Documentation",
       "url": "https://www.klipper3d.org/Config_Reference.html#probe",
       "type": "documentation"
+    }
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "a4t",
+      "name": "A4T"
+    },
+    {
+      "category": "toolheads",
+      "id": "afterburner",
+      "name": "Afterburner"
+    },
+    {
+      "category": "toolheads",
+      "id": "archetype",
+      "name": "Archetype"
+    },
+    {
+      "category": "toolheads",
+      "id": "breakneck",
+      "name": "BreakNeck"
+    },
+    {
+      "category": "toolheads",
+      "id": "burninator",
+      "name": "Burninator"
+    },
+    {
+      "category": "toolheads",
+      "id": "dragon-burner",
+      "name": "Dragon Burner"
+    },
+    {
+      "category": "toolheads",
+      "id": "eva",
+      "name": "EVA"
+    },
+    {
+      "category": "toolheads",
+      "id": "mailbox",
+      "name": "Mailbox"
+    },
+    {
+      "category": "toolheads",
+      "id": "mantis",
+      "name": "Mantis"
+    },
+    {
+      "category": "toolheads",
+      "id": "mini-stealth",
+      "name": "Mini Stealth"
+    },
+    {
+      "category": "toolheads",
+      "id": "rapid-burner",
+      "name": "Rapid Burner"
+    },
+    {
+      "category": "toolheads",
+      "id": "reaper",
+      "name": "Reaper"
+    },
+    {
+      "category": "toolheads",
+      "id": "stealthburner",
+      "name": "StealthBurner"
+    },
+    {
+      "category": "toolheads",
+      "id": "xenomorph",
+      "name": "Xenomorph"
+    },
+    {
+      "category": "toolheads",
+      "id": "xol-toolhead",
+      "name": "Xol Toolhead"
     }
   ]
 }

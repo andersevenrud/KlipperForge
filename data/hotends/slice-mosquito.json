@@ -8,7 +8,8 @@
     "maxTemperature": 500,
     "heaterType": "cartridge",
     "heaterPower": 50,
-    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G, Slice Engineering 300°C thermistor)"
+    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G, Slice Engineering 300°C thermistor)",
+    "thermistorId": "atc-semitec-104nt-4"
   },
   "heatBreakSpecs": {
     "type": "two-piece proprietary",
@@ -53,5 +54,56 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "maxFlowRate", "retraction"]
+  "unverified": [
+    "weight",
+    "maxFlowRate",
+    "retraction"
+  ],
+  "relatedArticles": [
+    {
+      "category": "thermistors",
+      "id": "atc-semitec-104nt-4",
+      "name": "ATC Semitec 104NT-4"
+    },
+    {
+      "category": "toolheads",
+      "id": "afterburner",
+      "name": "Afterburner"
+    },
+    {
+      "category": "toolheads",
+      "id": "archetype",
+      "name": "Archetype"
+    },
+    {
+      "category": "toolheads",
+      "id": "calamity",
+      "name": "Calamity"
+    },
+    {
+      "category": "toolheads",
+      "id": "eva",
+      "name": "EVA"
+    },
+    {
+      "category": "toolheads",
+      "id": "herome-gen7",
+      "name": "HeroMe Gen7"
+    },
+    {
+      "category": "toolheads",
+      "id": "mini-aftersherpa",
+      "name": "Mini-AfterSherpa"
+    },
+    {
+      "category": "toolheads",
+      "id": "reaper",
+      "name": "Reaper"
+    },
+    {
+      "category": "toolheads",
+      "id": "vz-printhead",
+      "name": "Vz-Printhead"
+    }
+  ]
 }

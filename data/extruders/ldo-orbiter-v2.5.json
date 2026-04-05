@@ -37,5 +37,16 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "dimensions", "maxFeedRate"]
+  "unverified": [
+    "weight",
+    "dimensions",
+    "maxFeedRate"
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "hypernova",
+      "name": "Hypernova"
+    }
+  ]
 }

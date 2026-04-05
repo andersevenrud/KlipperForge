@@ -5,12 +5,47 @@
   "description": "Another 4010 Toolhead (A4T) for Voron front-rail printers, built around dual 4010 blower fans with CFD-optimized ducts and a 2510 hotend fan. Compatible with Xol-Carriage and standard Voron CW2/Tap carriage, offering wide hotend and extruder modularity with Neopixel LED support.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": ["Voron 2.4", "Voron Trident"],
-    "railSystems": ["MGN12H", "MGN9H"],
-    "hotendMounts": ["Phaetus Dragon HF", "Phaetus Dragon UHF", "Phaetus Dragon UHF-Mini", "Phaetus Dragon Ace", "Phaetus Rapido HF", "Phaetus Rapido UHF", "E3D Revo Voron", "Chube Compact", "NF-Crazy Volcano", "BambuLab"],
-    "extruderMounts": ["WristWatch BMG", "Sherpa Mini", "Vz-HextrudORT Low", "LGX Lite", "E3D Roto", "WristWatch G2", "Orbiter v2.0"],
-    "probeMounts": ["Voron Tap", "Beacon", "Klicky", "Klicky PCB", "Euclid", "BTT Eddy"],
-    "fanMounts": ["2x 4010 blower (part cooling)", "2510 axial (hotend)"]
+    "targetPrinters": [
+      "Voron 2.4",
+      "Voron Trident"
+    ],
+    "railSystems": [
+      "MGN12H",
+      "MGN9H"
+    ],
+    "hotendMounts": [
+      "Phaetus Dragon HF",
+      "Phaetus Dragon UHF",
+      "Phaetus Dragon UHF-Mini",
+      "Phaetus Dragon Ace",
+      "Phaetus Rapido HF",
+      "Phaetus Rapido UHF",
+      "E3D Revo Voron",
+      "Chube Compact",
+      "NF-Crazy Volcano",
+      "BambuLab"
+    ],
+    "extruderMounts": [
+      "WristWatch BMG",
+      "Sherpa Mini",
+      "Vz-HextrudORT Low",
+      "LGX Lite",
+      "E3D Roto",
+      "WristWatch G2",
+      "Orbiter v2.0"
+    ],
+    "probeMounts": [
+      "Voron Tap",
+      "Beacon",
+      "Klicky",
+      "Klicky PCB",
+      "Euclid",
+      "BTT Eddy"
+    ],
+    "fanMounts": [
+      "2x 4010 blower (part cooling)",
+      "2510 axial (hotend)"
+    ]
   },
   "physicalSpecs": {
     "weight": null,
@@ -28,7 +63,91 @@
     "Wide hotend and extruder modularity"
   ],
   "references": [
-    { "label": "GitHub Repository", "url": "https://github.com/Armchair-Heavy-Industries/A4T", "type": "github" }
+    {
+      "label": "GitHub Repository",
+      "url": "https://github.com/Armchair-Heavy-Industries/A4T",
+      "type": "github"
+    }
   ],
-  "unverified": ["weight", "dimensions"]
+  "unverified": [
+    "weight",
+    "dimensions"
+  ],
+  "relatedArticles": [
+    {
+      "category": "extruders",
+      "id": "bondtech-lgx-lite",
+      "name": "Bondtech LGX Lite"
+    },
+    {
+      "category": "extruders",
+      "id": "ldo-orbiter-v2",
+      "name": "LDO Orbiter v2.0"
+    },
+    {
+      "category": "extruders",
+      "id": "sherpa-mini",
+      "name": "Sherpa Mini"
+    },
+    {
+      "category": "extruders",
+      "id": "vz-hextrudort-low",
+      "name": "Vz-HextrudORT Low"
+    },
+    {
+      "category": "hotends",
+      "id": "bambu-lab-hotend",
+      "name": "Bambu Lab Hotend"
+    },
+    {
+      "category": "hotends",
+      "id": "chube-hotend",
+      "name": "Chube"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragon-hf",
+      "name": "Dragon High Flow"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-hf",
+      "name": "Rapido HF"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-uhf",
+      "name": "Rapido UHF"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-revo-voron",
+      "name": "Revo Voron"
+    },
+    {
+      "category": "probes",
+      "id": "beacon",
+      "name": "Beacon"
+    },
+    {
+      "category": "probes",
+      "id": "btt-eddy-coil",
+      "name": "BTT Eddy Coil"
+    },
+    {
+      "category": "probes",
+      "id": "euclid-probe",
+      "name": "Euclid Probe"
+    },
+    {
+      "category": "probes",
+      "id": "klicky-probe",
+      "name": "Klicky Probe"
+    },
+    {
+      "category": "probes",
+      "id": "voron-tap",
+      "name": "Voron Tap"
+    }
+  ]
 }

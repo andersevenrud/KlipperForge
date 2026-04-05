@@ -47,5 +47,32 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["maxFlowRate", "retraction", "thermistorType", "heaterPower"]
+  "unverified": [
+    "maxFlowRate",
+    "retraction",
+    "thermistorType",
+    "heaterPower"
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "dragon-burner",
+      "name": "Dragon Burner"
+    },
+    {
+      "category": "toolheads",
+      "id": "herome-gen7",
+      "name": "HeroMe Gen7"
+    },
+    {
+      "category": "toolheads",
+      "id": "mini-stealth",
+      "name": "Mini Stealth"
+    },
+    {
+      "category": "toolheads",
+      "id": "mini-stealthburner",
+      "name": "Mini StealthBurner"
+    }
+  ]
 }

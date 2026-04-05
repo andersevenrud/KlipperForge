@@ -28,7 +28,10 @@
     "mountType": "BLTouch-compatible (2x M3 screw, 18mm spacing)"
   },
   "klipperSection": "bltouch",
-  "unverified": ["currentDraw", "dimensions"],
+  "unverified": [
+    "currentDraw",
+    "dimensions"
+  ],
   "references": [
     {
       "label": "Creality CR-Touch Product Page",
@@ -39,6 +42,13 @@
       "label": "Klipper BLTouch Documentation",
       "url": "https://www.klipper3d.org/BLTouch.html",
       "type": "documentation"
+    }
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "herome-gen7",
+      "name": "HeroMe Gen7"
     }
   ]
 }

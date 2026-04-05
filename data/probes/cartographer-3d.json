@@ -28,7 +28,11 @@
     "mountType": "2x M3 screw"
   },
   "klipperSection": "cartographer",
-  "unverified": ["currentDraw", "weight", "dimensions"],
+  "unverified": [
+    "currentDraw",
+    "weight",
+    "dimensions"
+  ],
   "references": [
     {
       "label": "Cartographer3D Official Website",
@@ -44,6 +48,33 @@
       "label": "Cartographer3D Documentation",
       "url": "https://docs.cartographer3d.com/",
       "type": "documentation"
+    }
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "burninator",
+      "name": "Burninator"
+    },
+    {
+      "category": "toolheads",
+      "id": "hypernova",
+      "name": "Hypernova"
+    },
+    {
+      "category": "toolheads",
+      "id": "mini-stealth",
+      "name": "Mini Stealth"
+    },
+    {
+      "category": "toolheads",
+      "id": "reaper",
+      "name": "Reaper"
+    },
+    {
+      "category": "toolheads",
+      "id": "xenomorph",
+      "name": "Xenomorph"
     }
   ]
 }

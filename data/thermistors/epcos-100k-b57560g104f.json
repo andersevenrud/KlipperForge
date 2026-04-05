@@ -21,7 +21,9 @@
     "dimensions": "2.3mm × 4.1mm",
     "leadType": "dumet wire (copper-clad FeNi)"
   },
-  "unverified": ["responseTime"],
+  "unverified": [
+    "responseTime"
+  ],
   "references": [
     {
       "label": "TDK/EPCOS Product Page",
@@ -32,6 +34,13 @@
       "label": "Klipper Config Reference - Thermistors",
       "url": "https://www.klipper3d.org/Config_Reference.html#temperature-sensors",
       "type": "documentation"
+    }
+  ],
+  "relatedArticles": [
+    {
+      "category": "printers",
+      "id": "prusa-mk3s",
+      "name": "Prusa MK3S+"
     }
   ]
 }

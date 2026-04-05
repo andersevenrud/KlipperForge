@@ -5,12 +5,39 @@
   "description": "A compact 4010 toolhead combining design elements from the DragonBurner and A4T into an even smaller package. Features a monolithic cowl with 1.2mm wall thickness that reduces printed parts and simplifies assembly, while supporting UHF hotends and integrated nozzle and logo LEDs.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": ["Voron 2.4", "Voron Trident", "Voron 0", "Monolith Gantry", "Pandora Gantry", "StealthChanger", "MadMax"],
-    "railSystems": ["MGN12H", "MGN9H", "MGN7H"],
-    "hotendMounts": ["Phaetus Dragon (SF cowl)", "Phaetus Dragon UHF", "NextG", "NextG UHF", "Rapido HF", "Rapido UHF", "Dragon ACE (with spacer)", "CHC-XL"],
+    "targetPrinters": [
+      "Voron 2.4",
+      "Voron Trident",
+      "Voron 0",
+      "Monolith Gantry",
+      "Pandora Gantry",
+      "StealthChanger",
+      "MadMax"
+    ],
+    "railSystems": [
+      "MGN12H",
+      "MGN9H",
+      "MGN7H"
+    ],
+    "hotendMounts": [
+      "Phaetus Dragon (SF cowl)",
+      "Phaetus Dragon UHF",
+      "NextG",
+      "NextG UHF",
+      "Rapido HF",
+      "Rapido UHF",
+      "Dragon ACE (with spacer)",
+      "CHC-XL"
+    ],
     "extruderMounts": [],
-    "probeMounts": ["Klicky", "Beacon", "Cartographer"],
-    "fanMounts": ["4010 blower fans"]
+    "probeMounts": [
+      "Klicky",
+      "Beacon",
+      "Cartographer"
+    ],
+    "fanMounts": [
+      "4010 blower fans"
+    ]
   },
   "physicalSpecs": {
     "weight": null,
@@ -33,5 +60,40 @@
       "type": "github"
     }
   ],
-  "unverified": ["weight", "dimensions"]
+  "unverified": [
+    "weight",
+    "dimensions"
+  ],
+  "relatedArticles": [
+    {
+      "category": "hotends",
+      "id": "dropeffect-nextg",
+      "name": "neXt-G"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-hf",
+      "name": "Rapido HF"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-uhf",
+      "name": "Rapido UHF"
+    },
+    {
+      "category": "probes",
+      "id": "beacon",
+      "name": "Beacon"
+    },
+    {
+      "category": "probes",
+      "id": "cartographer-3d",
+      "name": "Cartographer 3D"
+    },
+    {
+      "category": "probes",
+      "id": "klicky-probe",
+      "name": "Klicky Probe"
+    }
+  ]
 }

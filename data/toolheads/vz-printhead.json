@@ -5,12 +5,37 @@
   "description": "A lightweight and stiff printhead designed for VzBoT printers, available in both printed and CNC-aluminum variants. The CNC version weighs just 27g (full aluminum) or 22g (hybrid carbon fiber and aluminum), and features a height-adjustable fan duct that allows configuration changes without reprinting components.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": ["VzBoT 235", "VzBoT 330", "Rat Rig V-Core 3"],
-    "railSystems": ["MGN9"],
-    "hotendMounts": ["Dragon", "Rapido", "Goliath", "V6 groove mount", "Mosquito", "Magnum", "Magnum+", "Volcomosq", "DropEffect NeXt-G"],
-    "extruderMounts": ["Vz-HextrudORT", "Orbiter v2.0", "Sherpa Mini", "Sherpa Micro", "Bowden", "LGX Lite"],
+    "targetPrinters": [
+      "VzBoT 235",
+      "VzBoT 330",
+      "Rat Rig V-Core 3"
+    ],
+    "railSystems": [
+      "MGN9"
+    ],
+    "hotendMounts": [
+      "Dragon",
+      "Rapido",
+      "Goliath",
+      "V6 groove mount",
+      "Mosquito",
+      "Magnum",
+      "Magnum+",
+      "Volcomosq",
+      "DropEffect NeXt-G"
+    ],
+    "extruderMounts": [
+      "Vz-HextrudORT",
+      "Orbiter v2.0",
+      "Sherpa Mini",
+      "Sherpa Micro",
+      "Bowden",
+      "LGX Lite"
+    ],
     "probeMounts": [],
-    "fanMounts": ["Height-adjustable fan duct"]
+    "fanMounts": [
+      "Height-adjustable fan duct"
+    ]
   },
   "physicalSpecs": {
     "weight": null,
@@ -42,5 +67,56 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "dimensions", "Mosquito hotend support", "Magnum hotend support", "Magnum+ hotend support", "Volcomosq hotend support", "DropEffect NeXt-G hotend support", "LGX Lite extruder support"]
+  "unverified": [
+    "weight",
+    "dimensions",
+    "Mosquito hotend support",
+    "Magnum hotend support",
+    "Magnum+ hotend support",
+    "Volcomosq hotend support",
+    "DropEffect NeXt-G hotend support",
+    "LGX Lite extruder support"
+  ],
+  "relatedArticles": [
+    {
+      "category": "extruders",
+      "id": "bondtech-lgx-lite",
+      "name": "Bondtech LGX Lite"
+    },
+    {
+      "category": "extruders",
+      "id": "ldo-orbiter-v2",
+      "name": "LDO Orbiter v2.0"
+    },
+    {
+      "category": "extruders",
+      "id": "sherpa-mini",
+      "name": "Sherpa Mini"
+    },
+    {
+      "category": "extruders",
+      "id": "vz-hextrudort",
+      "name": "Vz-HextrudORT"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-v6",
+      "name": "E3D V6"
+    },
+    {
+      "category": "hotends",
+      "id": "goliath-air",
+      "name": "Goliath Air-Cooled"
+    },
+    {
+      "category": "hotends",
+      "id": "slice-mosquito",
+      "name": "Mosquito"
+    },
+    {
+      "category": "hotends",
+      "id": "dropeffect-nextg",
+      "name": "neXt-G"
+    }
+  ]
 }

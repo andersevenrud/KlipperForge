@@ -9,7 +9,8 @@
     "heaterType": "cartridge",
     "heaterPower": 60,
     "heatUpTime": "~55s to 200°C",
-    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G)"
+    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G)",
+    "thermistorId": "atc-semitec-104nt-4"
   },
   "heatBreakSpecs": {
     "type": "bi-metallic",
@@ -52,5 +53,34 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "heatUpTime", "maxFlowRate", "retraction", "heaterPower", "thermistorType"]
+  "unverified": [
+    "weight",
+    "heatUpTime",
+    "maxFlowRate",
+    "retraction",
+    "heaterPower",
+    "thermistorType"
+  ],
+  "relatedArticles": [
+    {
+      "category": "thermistors",
+      "id": "atc-semitec-104nt-4",
+      "name": "ATC Semitec 104NT-4"
+    },
+    {
+      "category": "toolheads",
+      "id": "dragon-burner",
+      "name": "Dragon Burner"
+    },
+    {
+      "category": "toolheads",
+      "id": "herome-gen7",
+      "name": "HeroMe Gen7"
+    },
+    {
+      "category": "toolheads",
+      "id": "rainbow-dragon",
+      "name": "Rainbow Dragon"
+    }
+  ]
 }

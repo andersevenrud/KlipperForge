@@ -5,12 +5,52 @@
   "description": "A highly modular printhead platform supporting over 115 printer models, 47 hotends, 37+ extruders, 20+ ABL sensors, and 35+ cooling duct options. Often described as \"Lego blocks for printheads,\" it is CFD-validated for part cooling performance.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": ["Creality Ender 3/5 series", "Creality CR-10 series", "Anycubic Vyper", "Anycubic Kobra series", "Elegoo Neptune series", "Artillery Genius/Sidewinder", "Prusa MK3S+", "Voron 2.4", "115+ printer models and clones"],
+    "targetPrinters": [
+      "Creality Ender 3/5 series",
+      "Creality CR-10 series",
+      "Anycubic Vyper",
+      "Anycubic Kobra series",
+      "Elegoo Neptune series",
+      "Artillery Genius/Sidewinder",
+      "Prusa MK3S+",
+      "Voron 2.4",
+      "115+ printer models and clones"
+    ],
     "railSystems": [],
-    "hotendMounts": ["E3D V6", "E3D Volcano", "E3D Revo series", "Phaetus Dragon", "Phaetus Rapido", "Phaetus TaiChi", "Slice Engineering Mosquito", "Creality Spider", "TriangleLab hotends", "47+ hotend options"],
-    "extruderMounts": ["Bondtech BMG/LGX series", "E3D Titan", "Orbiter", "Sherpa variants", "Micro Swiss kits", "37+ extruder options"],
-    "probeMounts": ["BLTouch", "CR Touch", "PINDA", "Beacon3D", "20+ ABL sensors"],
-    "fanMounts": ["Single/dual 4010", "Single/dual 4020", "Single/dual 5015", "Single/dual 5020", "Axial heatsink fans"]
+    "hotendMounts": [
+      "E3D V6",
+      "E3D Volcano",
+      "E3D Revo series",
+      "Phaetus Dragon",
+      "Phaetus Rapido",
+      "Phaetus TaiChi",
+      "Slice Engineering Mosquito",
+      "Creality Spider",
+      "TriangleLab hotends",
+      "47+ hotend options"
+    ],
+    "extruderMounts": [
+      "Bondtech BMG/LGX series",
+      "E3D Titan",
+      "Orbiter",
+      "Sherpa variants",
+      "Micro Swiss kits",
+      "37+ extruder options"
+    ],
+    "probeMounts": [
+      "BLTouch",
+      "CR Touch",
+      "PINDA",
+      "Beacon3D",
+      "20+ ABL sensors"
+    ],
+    "fanMounts": [
+      "Single/dual 4010",
+      "Single/dual 4020",
+      "Single/dual 5015",
+      "Single/dual 5020",
+      "Axial heatsink fans"
+    ]
   },
   "physicalSpecs": {
     "weight": null,
@@ -34,5 +74,60 @@
       "type": "other"
     }
   ],
-  "unverified": ["weight", "dimensions"]
+  "unverified": [
+    "weight",
+    "dimensions"
+  ],
+  "relatedArticles": [
+    {
+      "category": "extruders",
+      "id": "e3d-titan",
+      "name": "E3D Titan"
+    },
+    {
+      "category": "extruders",
+      "id": "ldo-orbiter-v2",
+      "name": "LDO Orbiter v2.0"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-v6",
+      "name": "E3D V6"
+    },
+    {
+      "category": "hotends",
+      "id": "slice-mosquito",
+      "name": "Mosquito"
+    },
+    {
+      "category": "hotends",
+      "id": "creality-spider-3",
+      "name": "Spider 3.0"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-taichi",
+      "name": "Taichi"
+    },
+    {
+      "category": "probes",
+      "id": "beacon",
+      "name": "Beacon"
+    },
+    {
+      "category": "probes",
+      "id": "bltouch-v3.1",
+      "name": "BLTouch V3.1"
+    },
+    {
+      "category": "probes",
+      "id": "cr-touch",
+      "name": "CR-Touch"
+    },
+    {
+      "category": "probes",
+      "id": "pinda-v2",
+      "name": "PINDA V2"
+    }
+  ]
 }

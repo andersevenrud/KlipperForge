@@ -5,8 +5,13 @@
   "description": "A robust, high-performance CPAP toolhead designed for the Monolith Gantry by Rafi (Shamoon78) with documentation maintained by tristanmcpherson. Integrates the extruder into the toolhead for accurate center-of-mass balancing, prioritizing stiffness for effective input shaping at high print speeds.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": ["Voron 2.4 (Monolith Gantry)", "Voron Trident (Monolith Gantry)"],
-    "railSystems": ["Monolith Gantry"],
+    "targetPrinters": [
+      "Voron 2.4 (Monolith Gantry)",
+      "Voron Trident (Monolith Gantry)"
+    ],
+    "railSystems": [
+      "Monolith Gantry"
+    ],
     "hotendMounts": [
       "Phaetus Goliath",
       "Phaetus Rapido HF",
@@ -53,5 +58,35 @@
       "type": "github"
     }
   ],
-  "unverified": ["weight", "dimensions"]
+  "unverified": [
+    "weight",
+    "dimensions"
+  ],
+  "relatedArticles": [
+    {
+      "category": "extruders",
+      "id": "galileo-2-sa",
+      "name": "Galileo 2 SA"
+    },
+    {
+      "category": "hotends",
+      "id": "goliath-air",
+      "name": "Goliath Air-Cooled"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-hf",
+      "name": "Rapido HF"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-uhf",
+      "name": "Rapido UHF"
+    },
+    {
+      "category": "probes",
+      "id": "beacon",
+      "name": "Beacon"
+    }
+  ]
 }

@@ -8,8 +8,8 @@
     "ratedCurrent": 0.8,
     "holdingTorque": 40,
     "stepAngle": 1.8,
-    "phaseResistance": 6.0,
-    "phaseInductance": 6.0
+    "phaseResistance": 6,
+    "phaseInductance": 6
   },
   "physicalSpecs": {
     "bodyLength": 34,
@@ -17,5 +17,12 @@
     "shaftDiameter": 5,
     "shaftLength": 22
   },
-  "connectorType": "JST-XH 4-pin"
+  "connectorType": "JST-XH 4-pin",
+  "relatedArticles": [
+    {
+      "category": "printers",
+      "id": "ender-3",
+      "name": "Ender 3"
+    }
+  ]
 }

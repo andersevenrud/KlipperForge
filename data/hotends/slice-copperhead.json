@@ -8,7 +8,8 @@
     "maxTemperature": 450,
     "heaterType": "cartridge",
     "heaterPower": 50,
-    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G, Slice Engineering 300°C thermistor)"
+    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G, Slice Engineering 300°C thermistor)",
+    "thermistorId": "atc-semitec-104nt-4"
   },
   "heatBreakSpecs": {
     "type": "bimetallic",
@@ -53,5 +54,22 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "maxFlowRate", "retraction", "heaterPower"]
+  "unverified": [
+    "weight",
+    "maxFlowRate",
+    "retraction",
+    "heaterPower"
+  ],
+  "relatedArticles": [
+    {
+      "category": "thermistors",
+      "id": "atc-semitec-104nt-4",
+      "name": "ATC Semitec 104NT-4"
+    },
+    {
+      "category": "toolheads",
+      "id": "eva",
+      "name": "EVA"
+    }
+  ]
 }

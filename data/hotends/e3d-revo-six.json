@@ -48,5 +48,16 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["heatUpTime", "maxFlowRate", "retraction"]
+  "unverified": [
+    "heatUpTime",
+    "maxFlowRate",
+    "retraction"
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "stealthburner",
+      "name": "StealthBurner"
+    }
+  ]
 }

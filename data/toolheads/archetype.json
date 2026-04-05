@@ -5,12 +5,43 @@
   "description": "A total toolhead ecosystem with a focus on modularity and flexibility for Voron 2.4 and Trident printers. Includes multiple variants (Atrocity, Blackbird, Breakneck, Mantis, Mjolnir, Zephyr) each targeting different fan configurations and use cases. Shares the Xol-Carriage mounting system.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": ["Voron 2.4", "Voron Trident"],
-    "railSystems": ["MGN12H", "MGN9H"],
-    "hotendMounts": ["Phaetus Dragon SF", "Phaetus Dragon HF", "Phaetus Dragon UHF", "Phaetus Rapido HF", "Phaetus Rapido UHF", "NF-Crazy Volcano", "Slice Mosquito", "Chube Compact", "VZ Goliath"],
-    "extruderMounts": ["Sherpa Mini", "Sherpa Micro", "Vz-HextrudORT Low", "Orbiter v2.0"],
-    "probeMounts": ["Voron Tap", "Beacon", "Klicky", "Klicky PCB", "Euclid", "BTT Eddy"],
-    "fanMounts": ["Varies by variant (3515 axial, 4010 blower, 5015 blower, CPAP)", "2510 axial (hotend)"]
+    "targetPrinters": [
+      "Voron 2.4",
+      "Voron Trident"
+    ],
+    "railSystems": [
+      "MGN12H",
+      "MGN9H"
+    ],
+    "hotendMounts": [
+      "Phaetus Dragon SF",
+      "Phaetus Dragon HF",
+      "Phaetus Dragon UHF",
+      "Phaetus Rapido HF",
+      "Phaetus Rapido UHF",
+      "NF-Crazy Volcano",
+      "Slice Mosquito",
+      "Chube Compact",
+      "VZ Goliath"
+    ],
+    "extruderMounts": [
+      "Sherpa Mini",
+      "Sherpa Micro",
+      "Vz-HextrudORT Low",
+      "Orbiter v2.0"
+    ],
+    "probeMounts": [
+      "Voron Tap",
+      "Beacon",
+      "Klicky",
+      "Klicky PCB",
+      "Euclid",
+      "BTT Eddy"
+    ],
+    "fanMounts": [
+      "Varies by variant (3515 axial, 4010 blower, 5015 blower, CPAP)",
+      "2510 axial (hotend)"
+    ]
   },
   "physicalSpecs": {
     "weight": null,
@@ -27,8 +58,97 @@
     "Comprehensive documentation site"
   ],
   "references": [
-    { "label": "GitHub Repository", "url": "https://github.com/Armchair-Heavy-Industries/Archetype", "type": "github" },
-    { "label": "Documentation", "url": "https://docs.armchairheavyindustries.com", "type": "documentation" }
+    {
+      "label": "GitHub Repository",
+      "url": "https://github.com/Armchair-Heavy-Industries/Archetype",
+      "type": "github"
+    },
+    {
+      "label": "Documentation",
+      "url": "https://docs.armchairheavyindustries.com",
+      "type": "documentation"
+    }
   ],
-  "unverified": ["weight", "dimensions", "probeMounts"]
+  "unverified": [
+    "weight",
+    "dimensions",
+    "probeMounts"
+  ],
+  "relatedArticles": [
+    {
+      "category": "extruders",
+      "id": "ldo-orbiter-v2",
+      "name": "LDO Orbiter v2.0"
+    },
+    {
+      "category": "extruders",
+      "id": "sherpa-mini",
+      "name": "Sherpa Mini"
+    },
+    {
+      "category": "extruders",
+      "id": "vz-hextrudort-low",
+      "name": "Vz-HextrudORT Low"
+    },
+    {
+      "category": "hotends",
+      "id": "chube-hotend",
+      "name": "Chube"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragon-hf",
+      "name": "Dragon High Flow"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragon-sf",
+      "name": "Dragon Standard Flow"
+    },
+    {
+      "category": "hotends",
+      "id": "goliath-air",
+      "name": "Goliath Air-Cooled"
+    },
+    {
+      "category": "hotends",
+      "id": "slice-mosquito",
+      "name": "Mosquito"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-hf",
+      "name": "Rapido HF"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-uhf",
+      "name": "Rapido UHF"
+    },
+    {
+      "category": "probes",
+      "id": "beacon",
+      "name": "Beacon"
+    },
+    {
+      "category": "probes",
+      "id": "btt-eddy-coil",
+      "name": "BTT Eddy Coil"
+    },
+    {
+      "category": "probes",
+      "id": "euclid-probe",
+      "name": "Euclid Probe"
+    },
+    {
+      "category": "probes",
+      "id": "klicky-probe",
+      "name": "Klicky Probe"
+    },
+    {
+      "category": "probes",
+      "id": "voron-tap",
+      "name": "Voron Tap"
+    }
+  ]
 }

@@ -28,7 +28,10 @@
     "mountType": "adhesive or screw mount"
   },
   "klipperSection": "probe_eddy_current",
-  "unverified": ["weight", "dimensions"],
+  "unverified": [
+    "weight",
+    "dimensions"
+  ],
   "references": [
     {
       "label": "BigTreeTech Eddy Product Page",
@@ -44,6 +47,28 @@
       "label": "Klipper Eddy Current Probe Documentation",
       "url": "https://www.klipper3d.org/Config_Reference.html#probe_eddy_current",
       "type": "documentation"
+    }
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "a4t",
+      "name": "A4T"
+    },
+    {
+      "category": "toolheads",
+      "id": "archetype",
+      "name": "Archetype"
+    },
+    {
+      "category": "toolheads",
+      "id": "xenomorph",
+      "name": "Xenomorph"
+    },
+    {
+      "category": "toolheads",
+      "id": "xol-toolhead",
+      "name": "Xol Toolhead"
     }
   ]
 }

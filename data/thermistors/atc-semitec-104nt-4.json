@@ -31,5 +31,52 @@
       "url": "https://www.klipper3d.org/Config_Reference.html#temperature-sensors",
       "type": "documentation"
     }
+  ],
+  "relatedArticles": [
+    {
+      "category": "hotends",
+      "id": "trianglelab-chc-pro",
+      "name": "CHC Pro"
+    },
+    {
+      "category": "hotends",
+      "id": "slice-copperhead",
+      "name": "Copperhead"
+    },
+    {
+      "category": "hotends",
+      "id": "bondtech-copperhead",
+      "name": "CopperHead"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragon-hf",
+      "name": "Dragon High Flow"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragon-sf",
+      "name": "Dragon Standard Flow"
+    },
+    {
+      "category": "hotends",
+      "id": "slice-mosquito",
+      "name": "Mosquito"
+    },
+    {
+      "category": "hotends",
+      "id": "slice-mosquito-magnum-plus",
+      "name": "Mosquito Magnum+"
+    },
+    {
+      "category": "hotends",
+      "id": "prusa-nextruder",
+      "name": "Prusa Nextruder Hotend"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-taichi",
+      "name": "Taichi"
+    }
   ]
 }

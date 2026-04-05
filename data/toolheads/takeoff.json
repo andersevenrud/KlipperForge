@@ -5,12 +5,32 @@
   "description": "The only fully open-source SLM (selective laser melting) metal toolhead for Voron printers. Uses dual 3628 fans with a Chube hotend and features an innovative belt self-deflection design that results in no X-axis travel loss.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": ["Voron 2.4", "Voron Trident", "Monolith", "DoomCube (4040 frame)"],
+    "targetPrinters": [
+      "Voron 2.4",
+      "Voron Trident",
+      "Monolith",
+      "DoomCube (4040 frame)"
+    ],
     "railSystems": [],
-    "hotendMounts": ["Chube (formerly Jaguar)"],
-    "extruderMounts": ["LGX Lite Pro", "Vz-Hextrudort", "Sherpa Mini", "Sherpa Micro", "Orbiter 2", "Peopoly Lancer", "DFA/Orbital Ascender", "A3DP FXD"],
-    "probeMounts": ["Beacon"],
-    "fanMounts": ["Dual 3628 fans"]
+    "hotendMounts": [
+      "Chube (formerly Jaguar)"
+    ],
+    "extruderMounts": [
+      "LGX Lite Pro",
+      "Vz-Hextrudort",
+      "Sherpa Mini",
+      "Sherpa Micro",
+      "Orbiter 2",
+      "Peopoly Lancer",
+      "DFA/Orbital Ascender",
+      "A3DP FXD"
+    ],
+    "probeMounts": [
+      "Beacon"
+    ],
+    "fanMounts": [
+      "Dual 3628 fans"
+    ]
   },
   "physicalSpecs": {
     "weight": null,
@@ -38,5 +58,35 @@
       "type": "product"
     }
   ],
-  "unverified": ["weight", "dimensions"]
+  "unverified": [
+    "weight",
+    "dimensions"
+  ],
+  "relatedArticles": [
+    {
+      "category": "extruders",
+      "id": "bondtech-lgx-lite",
+      "name": "Bondtech LGX Lite"
+    },
+    {
+      "category": "extruders",
+      "id": "ldo-orbiter-v2",
+      "name": "LDO Orbiter v2.0"
+    },
+    {
+      "category": "extruders",
+      "id": "sherpa-mini",
+      "name": "Sherpa Mini"
+    },
+    {
+      "category": "extruders",
+      "id": "vz-hextrudort",
+      "name": "Vz-HextrudORT"
+    },
+    {
+      "category": "probes",
+      "id": "beacon",
+      "name": "Beacon"
+    }
+  ]
 }

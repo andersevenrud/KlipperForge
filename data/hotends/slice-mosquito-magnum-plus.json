@@ -8,7 +8,8 @@
     "maxTemperature": 500,
     "heaterType": "cartridge",
     "heaterPower": 100,
-    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G, Slice Engineering 300°C thermistor)"
+    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G, Slice Engineering 300°C thermistor)",
+    "thermistorId": "atc-semitec-104nt-4"
   },
   "heatBreakSpecs": {
     "type": "two-piece proprietary",
@@ -47,5 +48,15 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["maxFlowRate", "retraction"]
+  "unverified": [
+    "maxFlowRate",
+    "retraction"
+  ],
+  "relatedArticles": [
+    {
+      "category": "thermistors",
+      "id": "atc-semitec-104nt-4",
+      "name": "ATC Semitec 104NT-4"
+    }
+  ]
 }

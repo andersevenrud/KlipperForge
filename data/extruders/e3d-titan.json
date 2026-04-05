@@ -37,5 +37,21 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["dimensions", "maxFeedRate", "weight"]
+  "unverified": [
+    "dimensions",
+    "maxFeedRate",
+    "weight"
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "eva",
+      "name": "EVA"
+    },
+    {
+      "category": "toolheads",
+      "id": "herome-gen7",
+      "name": "HeroMe Gen7"
+    }
+  ]
 }

@@ -48,5 +48,85 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["maxFlowRate", "retraction"]
+  "unverified": [
+    "maxFlowRate",
+    "retraction"
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "a4t",
+      "name": "A4T"
+    },
+    {
+      "category": "toolheads",
+      "id": "afterburner",
+      "name": "Afterburner"
+    },
+    {
+      "category": "toolheads",
+      "id": "archetype",
+      "name": "Archetype"
+    },
+    {
+      "category": "toolheads",
+      "id": "breakneck",
+      "name": "BreakNeck"
+    },
+    {
+      "category": "toolheads",
+      "id": "burninator",
+      "name": "Burninator"
+    },
+    {
+      "category": "toolheads",
+      "id": "dragon-burner",
+      "name": "Dragon Burner"
+    },
+    {
+      "category": "toolheads",
+      "id": "eva",
+      "name": "EVA"
+    },
+    {
+      "category": "toolheads",
+      "id": "fibre-steam",
+      "name": "Fibre Steam"
+    },
+    {
+      "category": "toolheads",
+      "id": "hypernova",
+      "name": "Hypernova"
+    },
+    {
+      "category": "toolheads",
+      "id": "mailbox",
+      "name": "Mailbox"
+    },
+    {
+      "category": "toolheads",
+      "id": "mantis",
+      "name": "Mantis"
+    },
+    {
+      "category": "toolheads",
+      "id": "mini-stealth",
+      "name": "Mini Stealth"
+    },
+    {
+      "category": "toolheads",
+      "id": "stealthburner",
+      "name": "StealthBurner"
+    },
+    {
+      "category": "toolheads",
+      "id": "xol-toolhead",
+      "name": "Xol Toolhead"
+    },
+    {
+      "category": "toolheads",
+      "id": "yavoth",
+      "name": "Yavoth"
+    }
+  ]
 }

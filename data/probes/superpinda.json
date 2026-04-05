@@ -25,7 +25,11 @@
     "mountType": "M8 threaded barrel"
   },
   "klipperSection": "probe",
-  "unverified": ["currentDraw", "repeatability", "triggerDistance"],
+  "unverified": [
+    "currentDraw",
+    "repeatability",
+    "triggerDistance"
+  ],
   "references": [
     {
       "label": "Prusa SuperPINDA Spare Part",
@@ -41,6 +45,18 @@
       "label": "Klipper Probe Documentation",
       "url": "https://www.klipper3d.org/Config_Reference.html#probe",
       "type": "documentation"
+    }
+  ],
+  "relatedArticles": [
+    {
+      "category": "printers",
+      "id": "prusa-mini",
+      "name": "Prusa Mini+"
+    },
+    {
+      "category": "printers",
+      "id": "prusa-mk3s",
+      "name": "Prusa MK3S+"
     }
   ]
 }

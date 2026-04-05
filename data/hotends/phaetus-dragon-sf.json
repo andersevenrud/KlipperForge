@@ -8,7 +8,8 @@
     "maxTemperature": 500,
     "heaterType": "cartridge",
     "heaterPower": 40,
-    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G)"
+    "thermistorType": "NTC 100K (Semitec 104NT-4-R025H42G)",
+    "thermistorId": "atc-semitec-104nt-4"
   },
   "heatBreakSpecs": {
     "type": "bi-metallic",
@@ -47,5 +48,67 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["heaterPower", "maxFlowRate", "retraction", "thermistorType"]
+  "unverified": [
+    "heaterPower",
+    "maxFlowRate",
+    "retraction",
+    "thermistorType"
+  ],
+  "relatedArticles": [
+    {
+      "category": "thermistors",
+      "id": "atc-semitec-104nt-4",
+      "name": "ATC Semitec 104NT-4"
+    },
+    {
+      "category": "toolheads",
+      "id": "afterburner",
+      "name": "Afterburner"
+    },
+    {
+      "category": "toolheads",
+      "id": "archetype",
+      "name": "Archetype"
+    },
+    {
+      "category": "toolheads",
+      "id": "dragon-burner",
+      "name": "Dragon Burner"
+    },
+    {
+      "category": "toolheads",
+      "id": "eva",
+      "name": "EVA"
+    },
+    {
+      "category": "toolheads",
+      "id": "mailbox",
+      "name": "Mailbox"
+    },
+    {
+      "category": "toolheads",
+      "id": "mantis",
+      "name": "Mantis"
+    },
+    {
+      "category": "toolheads",
+      "id": "mini-stealthburner",
+      "name": "Mini StealthBurner"
+    },
+    {
+      "category": "toolheads",
+      "id": "mini-aftersherpa",
+      "name": "Mini-AfterSherpa"
+    },
+    {
+      "category": "toolheads",
+      "id": "stealthburner",
+      "name": "StealthBurner"
+    },
+    {
+      "category": "toolheads",
+      "id": "xol-toolhead",
+      "name": "Xol Toolhead"
+    }
+  ]
 }

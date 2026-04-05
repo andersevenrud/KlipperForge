@@ -35,5 +35,51 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "dimensions", "maxFeedRate"]
+  "unverified": [
+    "weight",
+    "dimensions",
+    "maxFeedRate"
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "dragon-burner",
+      "name": "Dragon Burner"
+    },
+    {
+      "category": "toolheads",
+      "id": "fibre-steam",
+      "name": "Fibre Steam"
+    },
+    {
+      "category": "toolheads",
+      "id": "hypernova",
+      "name": "Hypernova"
+    },
+    {
+      "category": "toolheads",
+      "id": "misschanger",
+      "name": "MissChanger"
+    },
+    {
+      "category": "toolheads",
+      "id": "rapid-burner",
+      "name": "Rapid Burner"
+    },
+    {
+      "category": "toolheads",
+      "id": "reaper",
+      "name": "Reaper"
+    },
+    {
+      "category": "toolheads",
+      "id": "xol-toolhead",
+      "name": "Xol Toolhead"
+    },
+    {
+      "category": "toolheads",
+      "id": "yavoth",
+      "name": "Yavoth"
+    }
+  ]
 }

@@ -48,5 +48,23 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["maxFlowRate", "retraction", "thermistorType", "heaterPower", "maxTemperature"]
+  "unverified": [
+    "maxFlowRate",
+    "retraction",
+    "thermistorType",
+    "heaterPower",
+    "maxTemperature"
+  ],
+  "relatedArticles": [
+    {
+      "category": "printers",
+      "id": "ender-3",
+      "name": "Ender 3"
+    },
+    {
+      "category": "thermistors",
+      "id": "generic-3950",
+      "name": "Generic NTC 100K 3950"
+    }
+  ]
 }

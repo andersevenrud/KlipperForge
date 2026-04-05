@@ -5,8 +5,12 @@
   "description": "A StealthBurner-based tool changer system for Voron 2.4 that maintains MGN9H tapping accuracy from Voron-Tap. Supports quick, tool-less conversion between tool-changer and single-nozzle mode, with an integrated nozzle brush dock for post-tool-change cleaning. Trident compatibility is planned.",
   "toolheadType": "tool-changer",
   "compatibilitySpecs": {
-    "targetPrinters": ["Voron 2.4"],
-    "railSystems": ["MGN9H"],
+    "targetPrinters": [
+      "Voron 2.4"
+    ],
+    "railSystems": [
+      "MGN9H"
+    ],
     "hotendMounts": [
       "StealthBurner"
     ],
@@ -41,5 +45,15 @@
       "type": "github"
     }
   ],
-  "unverified": ["weight", "dimensions"]
+  "unverified": [
+    "weight",
+    "dimensions"
+  ],
+  "relatedArticles": [
+    {
+      "category": "extruders",
+      "id": "galileo-2-sa",
+      "name": "Galileo 2 SA"
+    }
+  ]
 }

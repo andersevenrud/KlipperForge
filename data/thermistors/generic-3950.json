@@ -34,5 +34,12 @@
       "url": "https://github.com/Klipper3d/klipper/issues/4054",
       "type": "github"
     }
+  ],
+  "relatedArticles": [
+    {
+      "category": "hotends",
+      "id": "creality-mk8",
+      "name": "Creality MK8"
+    }
   ]
 }

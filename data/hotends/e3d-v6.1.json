@@ -57,5 +57,17 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "heatUpTime", "maxFlowRate", "retraction"]
+  "unverified": [
+    "weight",
+    "heatUpTime",
+    "maxFlowRate",
+    "retraction"
+  ],
+  "relatedArticles": [
+    {
+      "category": "thermistors",
+      "id": "atc-semitec-104gt-2",
+      "name": "ATC Semitec 104GT-2"
+    }
+  ]
 }

@@ -5,12 +5,37 @@
   "description": "A modular V0.1-style toolhead offering flexibility in extruder and hotend choice for small-format printers. Supports both direct-drive and bowden configurations with dual 3010 blower fans and a 3007 axial heatsink fan, fitting printers that use Mini-Afterburner-style X carriages.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": ["Voron V0.1", "Micron", "Flying Zero", "Salad Fork"],
+    "targetPrinters": [
+      "Voron V0.1",
+      "Micron",
+      "Flying Zero",
+      "Salad Fork"
+    ],
     "railSystems": [],
-    "hotendMounts": ["Phaetus Dragon", "TriangleLab Dragon", "Phaetus Dragonfly BMO", "E3D V6 (groove mount)", "Slice Engineering Mosquito", "Mellow NF Crazy", "Phaetus Dragonfly BMS", "Revo Micro"],
-    "extruderMounts": ["Sherpa Mini", "Sherpa Micro", "Sailfin", "Reverse Pocketwatch V2", "Orbiter V1.5", "Orbiter V2.0", "Bowden adapter"],
+    "hotendMounts": [
+      "Phaetus Dragon",
+      "TriangleLab Dragon",
+      "Phaetus Dragonfly BMO",
+      "E3D V6 (groove mount)",
+      "Slice Engineering Mosquito",
+      "Mellow NF Crazy",
+      "Phaetus Dragonfly BMS",
+      "Revo Micro"
+    ],
+    "extruderMounts": [
+      "Sherpa Mini",
+      "Sherpa Micro",
+      "Sailfin",
+      "Reverse Pocketwatch V2",
+      "Orbiter V1.5",
+      "Orbiter V2.0",
+      "Bowden adapter"
+    ],
     "probeMounts": [],
-    "fanMounts": ["Dual 3010 blower", "3007 axial"]
+    "fanMounts": [
+      "Dual 3010 blower",
+      "3007 axial"
+    ]
   },
   "physicalSpecs": {
     "weight": null,
@@ -33,5 +58,50 @@
       "type": "github"
     }
   ],
-  "unverified": ["weight", "dimensions"]
+  "unverified": [
+    "weight",
+    "dimensions"
+  ],
+  "relatedArticles": [
+    {
+      "category": "extruders",
+      "id": "ldo-orbiter-v2",
+      "name": "LDO Orbiter v2.0"
+    },
+    {
+      "category": "extruders",
+      "id": "sherpa-mini",
+      "name": "Sherpa Mini"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragon-sf",
+      "name": "Dragon Standard Flow"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragonfly-bmo",
+      "name": "Dragonfly BMO"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragonfly-bms",
+      "name": "Dragonfly BMS"
+    },
+    {
+      "category": "hotends",
+      "id": "slice-mosquito",
+      "name": "Mosquito"
+    },
+    {
+      "category": "hotends",
+      "id": "mellow-nf-crazy",
+      "name": "NF-Crazy"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-revo-micro",
+      "name": "Revo Micro"
+    }
+  ]
 }

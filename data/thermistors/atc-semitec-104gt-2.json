@@ -20,7 +20,9 @@
     "dimensions": "1.35mm × 2.0mm glass bead",
     "leadType": "tinned copper"
   },
-  "unverified": ["dimensions"],
+  "unverified": [
+    "dimensions"
+  ],
   "references": [
     {
       "label": "ATC Semitec 104GT-2 Datasheet",
@@ -31,6 +33,28 @@
       "label": "Klipper Config Reference - Thermistors",
       "url": "https://www.klipper3d.org/Config_Reference.html#temperature-sensors",
       "type": "documentation"
+    }
+  ],
+  "relatedArticles": [
+    {
+      "category": "hotends",
+      "id": "e3d-lite6",
+      "name": "E3D Lite6"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-v6",
+      "name": "E3D V6"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-v6.1",
+      "name": "E3D V6.1"
+    },
+    {
+      "category": "printers",
+      "id": "prusa-mk3s",
+      "name": "Prusa MK3S+"
     }
   ]
 }

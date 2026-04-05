@@ -51,5 +51,32 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "retraction", "heaterPower", "maxFlowRate"]
+  "unverified": [
+    "weight",
+    "retraction",
+    "heaterPower",
+    "maxFlowRate"
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "burninator",
+      "name": "Burninator"
+    },
+    {
+      "category": "toolheads",
+      "id": "eva",
+      "name": "EVA"
+    },
+    {
+      "category": "toolheads",
+      "id": "vz-printhead",
+      "name": "Vz-Printhead"
+    },
+    {
+      "category": "toolheads",
+      "id": "xol-toolhead",
+      "name": "Xol Toolhead"
+    }
+  ]
 }

@@ -5,8 +5,13 @@
   "description": "A performance-oriented, configurable toolhead platform for the Monolith Gantry on Voron 2.4 and Trident printers. Achieves zero build volume loss by fitting entirely within the gantry structure, enabling high input shaper results and faster print speeds.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": ["Voron 2.4 (Monolith Gantry)", "Voron Trident (Monolith Gantry)"],
-    "railSystems": ["Monolith Gantry"],
+    "targetPrinters": [
+      "Voron 2.4 (Monolith Gantry)",
+      "Voron Trident (Monolith Gantry)"
+    ],
+    "railSystems": [
+      "Monolith Gantry"
+    ],
     "hotendMounts": [
       "Phaetus Dragon UHF",
       "Phaetus Dragon ACE UHF",
@@ -46,5 +51,22 @@
       "type": "github"
     }
   ],
-  "unverified": ["weight", "dimensions", "canBusIncompatibility", "klickyProbeSupport"]
+  "unverified": [
+    "weight",
+    "dimensions",
+    "canBusIncompatibility",
+    "klickyProbeSupport"
+  ],
+  "relatedArticles": [
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-uhf",
+      "name": "Rapido UHF"
+    },
+    {
+      "category": "probes",
+      "id": "beacon",
+      "name": "Beacon"
+    }
+  ]
 }

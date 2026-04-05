@@ -37,5 +37,47 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "dimensions", "maxFeedRate", "gearRatio"]
+  "unverified": [
+    "weight",
+    "dimensions",
+    "maxFeedRate",
+    "gearRatio"
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "breakneck",
+      "name": "BreakNeck"
+    },
+    {
+      "category": "toolheads",
+      "id": "calamity",
+      "name": "Calamity"
+    },
+    {
+      "category": "toolheads",
+      "id": "dragon-burner",
+      "name": "Dragon Burner"
+    },
+    {
+      "category": "toolheads",
+      "id": "rapid-burner",
+      "name": "Rapid Burner"
+    },
+    {
+      "category": "toolheads",
+      "id": "reaper",
+      "name": "Reaper"
+    },
+    {
+      "category": "toolheads",
+      "id": "takeoff",
+      "name": "Takeoff"
+    },
+    {
+      "category": "toolheads",
+      "id": "vz-printhead",
+      "name": "Vz-Printhead"
+    }
+  ]
 }

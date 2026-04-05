@@ -5,12 +5,28 @@
   "description": "Voron Design's official compact toolhead for the Voron V0.2. Features a low-mass direct-drive extruder using BMG gears and a 20mm pancake motor, with improved part cooling ducts optimized for the smaller Voron Zero platform.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": ["Voron V0.2"],
-    "railSystems": ["MGN7H"],
-    "hotendMounts": ["E3D Revo Voron", "Phaetus Dragon SF", "Phaetus Dragonfly BMO", "Phaetus Dragonfly BMS", "DropEffect XG", "Creality Spider Pro"],
-    "extruderMounts": ["Mini StealthBurner direct drive"],
+    "targetPrinters": [
+      "Voron V0.2"
+    ],
+    "railSystems": [
+      "MGN7H"
+    ],
+    "hotendMounts": [
+      "E3D Revo Voron",
+      "Phaetus Dragon SF",
+      "Phaetus Dragonfly BMO",
+      "Phaetus Dragonfly BMS",
+      "DropEffect XG",
+      "Creality Spider Pro"
+    ],
+    "extruderMounts": [
+      "Mini StealthBurner direct drive"
+    ],
     "probeMounts": [],
-    "fanMounts": ["4010 blower (part cooling)", "3010 axial (hotend)"]
+    "fanMounts": [
+      "4010 blower (part cooling)",
+      "3010 axial (hotend)"
+    ]
   },
   "physicalSpecs": {
     "weight": null,
@@ -26,7 +42,42 @@
     "Multiple hotend compatibility"
   ],
   "references": [
-    { "label": "GitHub Repository (Voron-0)", "url": "https://github.com/VoronDesign/Voron-0", "type": "github" }
+    {
+      "label": "GitHub Repository (Voron-0)",
+      "url": "https://github.com/VoronDesign/Voron-0",
+      "type": "github"
+    }
   ],
-  "unverified": ["weight", "dimensions", "fanMounts"]
+  "unverified": [
+    "weight",
+    "dimensions",
+    "fanMounts"
+  ],
+  "relatedArticles": [
+    {
+      "category": "hotends",
+      "id": "phaetus-dragon-sf",
+      "name": "Dragon Standard Flow"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragonfly-bmo",
+      "name": "Dragonfly BMO"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragonfly-bms",
+      "name": "Dragonfly BMS"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-revo-voron",
+      "name": "Revo Voron"
+    },
+    {
+      "category": "hotends",
+      "id": "creality-spider-3",
+      "name": "Spider 3.0"
+    }
+  ]
 }

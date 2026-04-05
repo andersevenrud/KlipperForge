@@ -5,8 +5,15 @@
   "description": "A modular toolhead ecosystem for front-rail CoreXY printers featuring remote CPAP cooling and a deliberate bend in the filament path to create a buffering effect. Superseded by the upcoming ARMPITHEIGHT project under Armchair Engineering, which offers greater modularity and performance.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": ["Voron 2.4", "Voron Trident", "Front-rail CoreXY printers"],
-    "railSystems": ["MGN12", "MGN9"],
+    "targetPrinters": [
+      "Voron 2.4",
+      "Voron Trident",
+      "Front-rail CoreXY printers"
+    ],
+    "railSystems": [
+      "MGN12",
+      "MGN9"
+    ],
     "hotendMounts": [
       "Phaetus Goliath",
       "Phaetus Rapido UHF",
@@ -48,5 +55,40 @@
       "type": "github"
     }
   ],
-  "unverified": ["weight", "dimensions"]
+  "unverified": [
+    "weight",
+    "dimensions"
+  ],
+  "relatedArticles": [
+    {
+      "category": "extruders",
+      "id": "vz-hextrudort",
+      "name": "Vz-HextrudORT"
+    },
+    {
+      "category": "hotends",
+      "id": "goliath-air",
+      "name": "Goliath Air-Cooled"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-hf",
+      "name": "Rapido HF"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-uhf",
+      "name": "Rapido UHF"
+    },
+    {
+      "category": "probes",
+      "id": "beacon",
+      "name": "Beacon"
+    },
+    {
+      "category": "probes",
+      "id": "klicky-probe",
+      "name": "Klicky Probe"
+    }
+  ]
 }

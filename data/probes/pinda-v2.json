@@ -25,7 +25,10 @@
     "mountType": "M8 threaded barrel"
   },
   "klipperSection": "probe",
-  "unverified": ["currentDraw", "repeatability"],
+  "unverified": [
+    "currentDraw",
+    "repeatability"
+  ],
   "references": [
     {
       "label": "Prusa SuperPINDA Spare Part (PINDA V2 replacement)",
@@ -41,6 +44,13 @@
       "label": "Klipper Probe Documentation",
       "url": "https://www.klipper3d.org/Config_Reference.html#probe",
       "type": "documentation"
+    }
+  ],
+  "relatedArticles": [
+    {
+      "category": "toolheads",
+      "id": "herome-gen7",
+      "name": "HeroMe Gen7"
     }
   ]
 }

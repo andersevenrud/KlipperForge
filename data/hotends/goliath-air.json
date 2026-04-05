@@ -58,5 +58,45 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["maxFlowRate", "retraction"]
+  "unverified": [
+    "maxFlowRate",
+    "retraction"
+  ],
+  "relatedArticles": [
+    {
+      "category": "thermistors",
+      "id": "pt1000",
+      "name": "PT1000 RTD"
+    },
+    {
+      "category": "toolheads",
+      "id": "archetype",
+      "name": "Archetype"
+    },
+    {
+      "category": "toolheads",
+      "id": "breakneck",
+      "name": "BreakNeck"
+    },
+    {
+      "category": "toolheads",
+      "id": "fibre-steam",
+      "name": "Fibre Steam"
+    },
+    {
+      "category": "toolheads",
+      "id": "rapid-burner",
+      "name": "Rapid Burner"
+    },
+    {
+      "category": "toolheads",
+      "id": "reaper",
+      "name": "Reaper"
+    },
+    {
+      "category": "toolheads",
+      "id": "vz-printhead",
+      "name": "Vz-Printhead"
+    }
+  ]
 }

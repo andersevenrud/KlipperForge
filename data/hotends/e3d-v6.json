@@ -56,5 +56,61 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "heatUpTime", "maxFlowRate"]
+  "unverified": [
+    "weight",
+    "heatUpTime",
+    "maxFlowRate"
+  ],
+  "relatedArticles": [
+    {
+      "category": "printers",
+      "id": "prusa-mk3s",
+      "name": "Prusa MK3S+"
+    },
+    {
+      "category": "thermistors",
+      "id": "atc-semitec-104gt-2",
+      "name": "ATC Semitec 104GT-2"
+    },
+    {
+      "category": "toolheads",
+      "id": "afterburner",
+      "name": "Afterburner"
+    },
+    {
+      "category": "toolheads",
+      "id": "dragon-burner",
+      "name": "Dragon Burner"
+    },
+    {
+      "category": "toolheads",
+      "id": "eva",
+      "name": "EVA"
+    },
+    {
+      "category": "toolheads",
+      "id": "herome-gen7",
+      "name": "HeroMe Gen7"
+    },
+    {
+      "category": "toolheads",
+      "id": "mini-stealth",
+      "name": "Mini Stealth"
+    },
+    {
+      "category": "toolheads",
+      "id": "spartacus",
+      "name": "Spartacus"
+    },
+    {
+      "category": "toolheads",
+      "id": "stealthburner",
+      "name": "StealthBurner"
+    },
+    {
+      "category": "toolheads",
+      "id": "vz-printhead",
+      "name": "Vz-Printhead"
+    }
+  ]
 }

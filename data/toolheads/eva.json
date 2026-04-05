@@ -5,12 +5,51 @@
   "description": "Open-source universal modular carriage platform for 3D printers, built around MGN12 and MGN15 linear rail carriages. Used officially by Rat Rig and designed with a specification-based modular assembly system (front, top, bottom, back) that enables mixing and matching of hotends and extruders.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": ["Rat Rig V-Core 3", "Rat Rig V-Minion", "Rat Rig V-Core Pro"],
-    "railSystems": ["MGN12C", "MGN12H", "MGN15C"],
-    "hotendMounts": ["E3D V6", "Slice Mosquito", "Slice Copperhead", "Phaetus Dragon SF", "Phaetus Dragon HF", "Phaetus Rapido HF", "Phaetus Dragonfly BMO", "E3D Revo Voron", "DropEffect NeXt-G"],
-    "extruderMounts": ["Bondtech BMG", "Bondtech BMG-M", "Bondtech LGX", "Bondtech LGX Lite", "E3D Titan", "E3D Hemera", "E3D Aero", "Orbiter v1.5", "Orbiter v2.0", "Sherpa Mini", "Bowden"],
-    "probeMounts": ["BLTouch", "Klicky", "Euclid", "Inductive"],
-    "fanMounts": ["5015 blower (part cooling)", "Dual 5015 blower (part cooling)", "4010 axial (hotend)"]
+    "targetPrinters": [
+      "Rat Rig V-Core 3",
+      "Rat Rig V-Minion",
+      "Rat Rig V-Core Pro"
+    ],
+    "railSystems": [
+      "MGN12C",
+      "MGN12H",
+      "MGN15C"
+    ],
+    "hotendMounts": [
+      "E3D V6",
+      "Slice Mosquito",
+      "Slice Copperhead",
+      "Phaetus Dragon SF",
+      "Phaetus Dragon HF",
+      "Phaetus Rapido HF",
+      "Phaetus Dragonfly BMO",
+      "E3D Revo Voron",
+      "DropEffect NeXt-G"
+    ],
+    "extruderMounts": [
+      "Bondtech BMG",
+      "Bondtech BMG-M",
+      "Bondtech LGX",
+      "Bondtech LGX Lite",
+      "E3D Titan",
+      "E3D Hemera",
+      "E3D Aero",
+      "Orbiter v1.5",
+      "Orbiter v2.0",
+      "Sherpa Mini",
+      "Bowden"
+    ],
+    "probeMounts": [
+      "BLTouch",
+      "Klicky",
+      "Euclid",
+      "Inductive"
+    ],
+    "fanMounts": [
+      "5015 blower (part cooling)",
+      "Dual 5015 blower (part cooling)",
+      "4010 axial (hotend)"
+    ]
   },
   "physicalSpecs": {
     "weight": null,
@@ -27,10 +66,128 @@
     "Open-source with community-driven development"
   ],
   "references": [
-    { "label": "GitHub Repository (EVA 3)", "url": "https://github.com/EVA-3D/eva-main", "type": "github" },
-    { "label": "GitHub Repository (EVA 1, archived)", "url": "https://github.com/pkucmus/EVA", "type": "github" },
-    { "label": "EVA 3 Website", "url": "https://main.eva-3d.page", "type": "documentation" },
-    { "label": "EVA 2 Website", "url": "https://2.eva-3d.page", "type": "documentation" }
+    {
+      "label": "GitHub Repository (EVA 3)",
+      "url": "https://github.com/EVA-3D/eva-main",
+      "type": "github"
+    },
+    {
+      "label": "GitHub Repository (EVA 1, archived)",
+      "url": "https://github.com/pkucmus/EVA",
+      "type": "github"
+    },
+    {
+      "label": "EVA 3 Website",
+      "url": "https://main.eva-3d.page",
+      "type": "documentation"
+    },
+    {
+      "label": "EVA 2 Website",
+      "url": "https://2.eva-3d.page",
+      "type": "documentation"
+    }
   ],
-  "unverified": ["weight", "dimensions", "Klicky probe support", "Euclid probe support"]
+  "unverified": [
+    "weight",
+    "dimensions",
+    "Klicky probe support",
+    "Euclid probe support"
+  ],
+  "relatedArticles": [
+    {
+      "category": "extruders",
+      "id": "bondtech-bmg",
+      "name": "Bondtech BMG"
+    },
+    {
+      "category": "extruders",
+      "id": "bondtech-lgx",
+      "name": "Bondtech LGX"
+    },
+    {
+      "category": "extruders",
+      "id": "bondtech-lgx-lite",
+      "name": "Bondtech LGX Lite"
+    },
+    {
+      "category": "extruders",
+      "id": "e3d-hemera",
+      "name": "E3D Hemera"
+    },
+    {
+      "category": "extruders",
+      "id": "e3d-titan",
+      "name": "E3D Titan"
+    },
+    {
+      "category": "extruders",
+      "id": "ldo-orbiter-v2",
+      "name": "LDO Orbiter v2.0"
+    },
+    {
+      "category": "extruders",
+      "id": "sherpa-mini",
+      "name": "Sherpa Mini"
+    },
+    {
+      "category": "hotends",
+      "id": "slice-copperhead",
+      "name": "Copperhead"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragon-hf",
+      "name": "Dragon High Flow"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragon-sf",
+      "name": "Dragon Standard Flow"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-dragonfly-bmo",
+      "name": "Dragonfly BMO"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-v6",
+      "name": "E3D V6"
+    },
+    {
+      "category": "hotends",
+      "id": "slice-mosquito",
+      "name": "Mosquito"
+    },
+    {
+      "category": "hotends",
+      "id": "dropeffect-nextg",
+      "name": "neXt-G"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-hf",
+      "name": "Rapido HF"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-revo-voron",
+      "name": "Revo Voron"
+    },
+    {
+      "category": "probes",
+      "id": "bltouch-v3.1",
+      "name": "BLTouch V3.1"
+    },
+    {
+      "category": "probes",
+      "id": "euclid-probe",
+      "name": "Euclid Probe"
+    },
+    {
+      "category": "probes",
+      "id": "klicky-probe",
+      "name": "Klicky Probe"
+    }
+  ]
 }

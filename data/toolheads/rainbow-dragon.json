@@ -5,12 +5,28 @@
   "description": "Work-in-progress dual filament toolhead for Voron V0.2 using the Phaetus TaiChi dual filament hotend. Requires two NEMA 14 pancake stepper motors with BMG gear sets and one spare stepper driver slot. Built on the Dragon Burner v7+ platform with adapter mounts for larger Voron printers.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": ["Voron V0.2", "Voron Trident", "Voron 2.4", "Voron Switchwire", "Voron Legacy"],
-    "railSystems": ["MGN7H", "MGN9C"],
-    "hotendMounts": ["Phaetus TaiChi"],
-    "extruderMounts": ["Dual NEMA 14 with BMG gears (integrated)"],
+    "targetPrinters": [
+      "Voron V0.2",
+      "Voron Trident",
+      "Voron 2.4",
+      "Voron Switchwire",
+      "Voron Legacy"
+    ],
+    "railSystems": [
+      "MGN7H",
+      "MGN9C"
+    ],
+    "hotendMounts": [
+      "Phaetus TaiChi"
+    ],
+    "extruderMounts": [
+      "Dual NEMA 14 with BMG gears (integrated)"
+    ],
     "probeMounts": [],
-    "fanMounts": ["2x 4010 blower (part cooling)", "3010 axial (hotend)"]
+    "fanMounts": [
+      "2x 4010 blower (part cooling)",
+      "3010 axial (hotend)"
+    ]
   },
   "physicalSpecs": {
     "weight": null,
@@ -27,7 +43,21 @@
     "Work in progress / beta status"
   ],
   "references": [
-    { "label": "GitHub Repository", "url": "https://github.com/chirpy2605/voron/tree/main/V0/Rainbow_Dragon", "type": "github" }
+    {
+      "label": "GitHub Repository",
+      "url": "https://github.com/chirpy2605/voron/tree/main/V0/Rainbow_Dragon",
+      "type": "github"
+    }
   ],
-  "unverified": ["weight", "dimensions"]
+  "unverified": [
+    "weight",
+    "dimensions"
+  ],
+  "relatedArticles": [
+    {
+      "category": "hotends",
+      "id": "phaetus-taichi",
+      "name": "Taichi"
+    }
+  ]
 }

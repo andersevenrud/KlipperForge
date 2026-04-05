@@ -4,9 +4,10 @@
   "workspaces": ["apps/*", "packages/*"],
   "scripts": {
     "build:indices": "bun run scripts/build-doc-indices.ts",
+    "build:crossrefs": "bun run scripts/generate-cross-references.ts",
     "generate:og": "bun run scripts/generate-og-image.ts",
-    "dev": "bun run build:indices && bun run --filter @klipperforge/app --filter @klipperforge/pcb-editor --filter @klipperforge/firmware --filter @klipperforge/configs dev",
-    "build": "bun run build:indices && bun run --filter @klipperforge/app --elide-lines=0 build && bun run --filter @klipperforge/pcb-editor build",
+    "dev": "bun run build:indices && bun run build:crossrefs && bun run --filter @klipperforge/app --filter @klipperforge/pcb-editor --filter @klipperforge/firmware --filter @klipperforge/configs dev",
+    "build": "bun run build:indices && bun run build:crossrefs && bun run --filter @klipperforge/app --elide-lines=0 build && bun run --filter @klipperforge/pcb-editor build",
     "preview": "bun run --filter @klipperforge/app preview",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
