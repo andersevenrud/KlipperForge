@@ -7,6 +7,7 @@ import {
   DocPageShell,
   FeatureList,
   ReferenceList,
+  RelatedArticles,
   SpecRow,
   SpecSection,
   UnverifiedBanner,
@@ -96,6 +97,7 @@ export function DocMmuPage({ mmuId }: DocMmuPageProps) {
 
       <FeatureList features={mmu.features} />
 
+      <RelatedArticles articles={mmu.relatedArticles} />
       <ReferenceList references={mmu.references} />
     </DocPageShell>
   );

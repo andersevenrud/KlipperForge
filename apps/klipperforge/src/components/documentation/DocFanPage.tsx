@@ -7,6 +7,7 @@ import {
   DocHeader,
   DocPageShell,
   ReferenceList,
+  RelatedArticles,
   SpecRow,
   SpecSection,
   UnverifiedBanner,
@@ -79,6 +80,7 @@ export function DocFanPage({ fanId }: DocFanPageProps) {
         <SpecRow field="leadWireLength" label="Lead Wire Length" value={fan.physicalSpecs.leadWireLength} suffix="mm" />
       </SpecSection>
 
+      <RelatedArticles articles={fan.relatedArticles} />
       <ReferenceList references={fan.references} />
     </DocPageShell>
   );

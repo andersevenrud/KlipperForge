@@ -1,7 +1,7 @@
 import { useDocDataQuery } from "@/hooks/use-queries";
 import { loadStepperMotor } from "@klipperforge/printer-data";
 import { Ruler, Thermometer, Zap } from "lucide-react";
-import { Badge, DocHeader, DocPageShell, ReferenceList, SpecRow, SpecSection } from "./doc-shared";
+import { Badge, DocHeader, DocPageShell, ReferenceList, RelatedArticles, SpecRow, SpecSection } from "./doc-shared";
 
 interface DocStepperMotorPageProps {
   motorId: string;
@@ -42,6 +42,7 @@ export function DocStepperMotorPage({ motorId }: DocStepperMotorPageProps) {
         </SpecSection>
       )}
 
+      <RelatedArticles articles={motor.relatedArticles} />
       <ReferenceList references={motor.references} />
     </DocPageShell>
   );

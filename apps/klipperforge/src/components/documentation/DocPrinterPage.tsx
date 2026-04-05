@@ -9,6 +9,7 @@ import {
   DOC_CATEGORY_LABELS,
   DocPageShell,
   ReferenceList,
+  RelatedArticles,
   SpecRow,
 } from "./doc-shared";
 
@@ -76,6 +77,7 @@ export function DocPrinterPage({ printerId }: DocPrinterPageProps) {
 
       <EquipmentList equipment={printer.equipment} />
 
+      <RelatedArticles articles={printer.relatedArticles} />
       <ReferenceList references={printer.references} />
     </DocPageShell>
   );

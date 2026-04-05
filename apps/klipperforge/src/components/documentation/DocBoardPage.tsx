@@ -8,7 +8,7 @@ import { loadMcuBoard, loadPcbLayout } from "@klipperforge/printer-data";
 import { Cog, Cpu, Ruler, Zap } from "lucide-react";
 import { useMemo } from "react";
 import { DocPcbViewer } from "./DocPcbViewer";
-import { DocPageShell, ReferenceList, SpecRow } from "./doc-shared";
+import { DocPageShell, ReferenceList, RelatedArticles, SpecRow } from "./doc-shared";
 
 interface DocBoardPageProps {
   boardId: string;
@@ -196,6 +196,7 @@ export function DocBoardPage({ boardId }: DocBoardPageProps) {
         </div>
       )}
 
+      <RelatedArticles articles={board.relatedArticles} />
       <ReferenceList references={board.references} />
 
       {jumperGroups.length > 0 && (

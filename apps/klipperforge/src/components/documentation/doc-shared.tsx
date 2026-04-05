@@ -1,4 +1,4 @@
-import type { AnyReferenceType, PrinterEquipmentCategory } from "@klipperforge/printer-data";
+import type { AnyReferenceType, CrossReferenceCategory, RelatedArticle } from "@klipperforge/printer-data";
 import {
   BookOpen,
   Check,
@@ -25,6 +25,7 @@ import {
   X,
 } from "lucide-react";
 import { type ReactNode, createContext, useContext, useEffect, useRef } from "react";
+import { Link } from "react-router";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -65,6 +66,10 @@ interface ReferenceListProps {
 
 interface UnverifiedBannerProps {
   unverified?: string[];
+}
+
+interface RelatedArticlesProps {
+  articles?: RelatedArticle[];
 }
 
 interface FeatureListProps {
@@ -108,7 +113,7 @@ export const CATEGORY_PARAM_KEY: Record<string, string> = {
   mmus: "mmu",
 };
 
-export const DOC_CATEGORY_ICONS: Record<PrinterEquipmentCategory, typeof ExternalLink> = {
+export const DOC_CATEGORY_ICONS: Record<CrossReferenceCategory, typeof ExternalLink> = {
   accessories: Puzzle,
   displays: Monitor,
   filaments: Layers,
@@ -122,9 +127,10 @@ export const DOC_CATEGORY_ICONS: Record<PrinterEquipmentCategory, typeof Externa
   "power-supplies": PlugZap,
   toolheads: Combine,
   mmus: GitBranch,
+  printers: Printer,
 };
 
-export const DOC_CATEGORY_LABELS: Record<PrinterEquipmentCategory, string> = {
+export const DOC_CATEGORY_LABELS: Record<CrossReferenceCategory, string> = {
   accessories: "Accessories",
   displays: "Displays",
   filaments: "Filaments",
@@ -138,6 +144,7 @@ export const DOC_CATEGORY_LABELS: Record<PrinterEquipmentCategory, string> = {
   "power-supplies": "Power Supplies",
   toolheads: "Toolheads",
   mmus: "MMUs",
+  printers: "Printers",
 };
 
 const REFERENCE_TYPE_ICONS: Record<AnyReferenceType, typeof ExternalLink> = {
@@ -280,6 +287,57 @@ export function ReferenceList({ references }: ReferenceListProps) {
           );
         })}
       </ul>
+    </div>
+  );
+}
+
+export function RelatedArticles({ articles }: RelatedArticlesProps) {
+  if (!articles || articles.length === 0) return null;
+
+  const grouped = new Map<string, RelatedArticle[]>();
+  for (const article of articles) {
+    const existing = grouped.get(article.category);
+    if (existing) {
+      existing.push(article);
+    } else {
+      grouped.set(article.category, [article]);
+    }
+  }
+
+  return (
+    <div className="mt-6">
+      <h2 className="mb-3 text-lg font-semibold">Related Articles</h2>
+      <div className="space-y-3">
+        {Array.from(grouped.entries()).map(([category, entries]) => {
+          const CategoryIcon = DOC_CATEGORY_ICONS[category as CrossReferenceCategory];
+          const categoryLabel = DOC_CATEGORY_LABELS[category as CrossReferenceCategory];
+          const paramKey = CATEGORY_PARAM_KEY[category];
+          return (
+            <div key={category}>
+              <h3 className="text-muted-foreground mb-1 flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide">
+                {CategoryIcon && <CategoryIcon className="size-3.5" />}
+                {categoryLabel ?? category}
+              </h3>
+              <ul className="space-y-0.5">
+                {entries.map((entry) => (
+                  <li key={`${entry.category}-${entry.id}`} className="text-sm">
+                    {paramKey ? (
+                      <Link
+                        to={`/documentation?${paramKey}=${entry.id}`}
+                        className="text-primary hover:text-primary/80 underline-offset-4 hover:underline"
+                      >
+                        {entry.name}
+                      </Link>
+                    ) : (
+                      <span className="text-muted-foreground">{entry.name}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

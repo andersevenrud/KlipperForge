@@ -7,6 +7,7 @@ import {
   DocPageShell,
   FeatureList,
   ReferenceList,
+  RelatedArticles,
   SpecRow,
   SpecSection,
   UnverifiedBanner,
@@ -64,6 +65,7 @@ export function DocAccessoryPage({ accessoryId }: DocAccessoryPageProps) {
 
       <FeatureList features={accessory.features} />
 
+      <RelatedArticles articles={accessory.relatedArticles} />
       <ReferenceList references={accessory.references} />
     </DocPageShell>
   );

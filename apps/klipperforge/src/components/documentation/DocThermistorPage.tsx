@@ -1,7 +1,16 @@
 import { useDocDataQuery } from "@/hooks/use-queries";
 import { loadThermistor } from "@klipperforge/printer-data";
 import { Ruler, Settings, Thermometer } from "lucide-react";
-import { Badge, DocHeader, DocPageShell, ReferenceList, SpecRow, SpecSection, UnverifiedBanner } from "./doc-shared";
+import {
+  Badge,
+  DocHeader,
+  DocPageShell,
+  ReferenceList,
+  RelatedArticles,
+  SpecRow,
+  SpecSection,
+  UnverifiedBanner,
+} from "./doc-shared";
 
 interface DocThermistorPageProps {
   thermistorId: string;
@@ -65,6 +74,7 @@ export function DocThermistorPage({ thermistorId }: DocThermistorPageProps) {
         </SpecSection>
       )}
 
+      <RelatedArticles articles={thermistor.relatedArticles} />
       <ReferenceList references={thermistor.references} />
     </DocPageShell>
   );

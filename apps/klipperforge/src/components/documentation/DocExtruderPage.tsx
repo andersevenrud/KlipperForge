@@ -7,6 +7,7 @@ import {
   DocPageShell,
   FeatureList,
   ReferenceList,
+  RelatedArticles,
   SpecRow,
   SpecSection,
   UnverifiedBanner,
@@ -74,6 +75,7 @@ export function DocExtruderPage({ extruderId }: DocExtruderPageProps) {
       )}
 
       <FeatureList features={extruder.features} />
+      <RelatedArticles articles={extruder.relatedArticles} />
       <ReferenceList references={extruder.references} />
     </DocPageShell>
   );

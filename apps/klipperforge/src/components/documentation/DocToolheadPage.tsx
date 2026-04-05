@@ -8,6 +8,7 @@ import {
   DocPageShell,
   FeatureList,
   ReferenceList,
+  RelatedArticles,
   SpecRow,
   SpecSection,
   UnverifiedBanner,
@@ -96,6 +97,7 @@ export function DocToolheadPage({ toolheadId }: DocToolheadPageProps) {
       )}
 
       <FeatureList features={toolhead.features} />
+      <RelatedArticles articles={toolhead.relatedArticles} />
       <ReferenceList references={toolhead.references} />
     </DocPageShell>
   );

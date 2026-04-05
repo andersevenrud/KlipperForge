@@ -8,6 +8,7 @@ import {
   DocPageShell,
   FeatureList,
   ReferenceList,
+  RelatedArticles,
   SpecRow,
   SpecSection,
   UnverifiedBanner,
@@ -92,6 +93,7 @@ export function DocDisplayPage({ displayId }: DocDisplayPageProps) {
 
       <FeatureList features={display.features} />
 
+      <RelatedArticles articles={display.relatedArticles} />
       <ReferenceList references={display.references} />
     </DocPageShell>
   );

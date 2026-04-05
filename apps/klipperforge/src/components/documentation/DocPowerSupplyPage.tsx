@@ -8,6 +8,7 @@ import {
   DocHeader,
   DocPageShell,
   ReferenceList,
+  RelatedArticles,
   SpecRow,
   SpecSection,
   UnverifiedBanner,
@@ -127,6 +128,7 @@ export function DocPowerSupplyPage({ powerSupplyId }: DocPowerSupplyPageProps) {
         </SpecSection>
       )}
 
+      <RelatedArticles articles={psu.relatedArticles} />
       <ReferenceList references={psu.references} />
     </DocPageShell>
   );

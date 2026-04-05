@@ -7,6 +7,7 @@ import {
   DocHeader,
   DocPageShell,
   ReferenceList,
+  RelatedArticles,
   SpecRow,
   SpecSection,
   UnverifiedBanner,
@@ -87,6 +88,7 @@ export function DocProbePage({ probeId }: DocProbePageProps) {
         </SpecSection>
       )}
 
+      <RelatedArticles articles={probe.relatedArticles} />
       <ReferenceList references={probe.references} />
     </DocPageShell>
   );

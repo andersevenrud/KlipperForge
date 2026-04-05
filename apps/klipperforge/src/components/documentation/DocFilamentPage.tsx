@@ -9,6 +9,7 @@ import {
   DocPageShell,
   FeatureList,
   ReferenceList,
+  RelatedArticles,
   SpecRow,
   SpecSection,
   UnverifiedBanner,
@@ -165,6 +166,7 @@ export function DocFilamentPage({ filamentId }: DocFilamentPageProps) {
 
       <FeatureList features={filament.features} />
 
+      <RelatedArticles articles={filament.relatedArticles} />
       <ReferenceList references={filament.references} />
     </DocPageShell>
   );

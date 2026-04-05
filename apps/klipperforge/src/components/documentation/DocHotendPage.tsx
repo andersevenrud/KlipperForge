@@ -8,6 +8,7 @@ import {
   DocPageShell,
   FeatureList,
   ReferenceList,
+  RelatedArticles,
   SpecRow,
   SpecSection,
   UnverifiedBanner,
@@ -102,6 +103,7 @@ export function DocHotendPage({ hotendId }: DocHotendPageProps) {
       )}
 
       <FeatureList features={hotend.features} />
+      <RelatedArticles articles={hotend.relatedArticles} />
       <ReferenceList references={hotend.references} />
     </DocPageShell>
   );

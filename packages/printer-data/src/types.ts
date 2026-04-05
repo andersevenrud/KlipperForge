@@ -257,6 +257,14 @@ export interface PrinterEquipmentEntry {
   role?: string;
 }
 
+export type CrossReferenceCategory = PrinterEquipmentCategory | "printers";
+
+export interface RelatedArticle {
+  category: CrossReferenceCategory;
+  id: string;
+  name: string;
+}
+
 // ---------------------------------------------------------------------------
 // Printer types
 // ---------------------------------------------------------------------------
@@ -281,6 +289,7 @@ export interface PrinterPreset {
   equipment?: PrinterEquipmentEntry[];
   references?: PrinterReference[];
   unverified?: string[];
+  relatedArticles?: RelatedArticle[];
 }
 
 export interface ResolvedPreset {
@@ -319,6 +328,7 @@ export interface McuBoard {
   dimensions?: McuBoardDimensions;
   maxMotorVoltage?: number;
   mcuVariants?: string[];
+  relatedArticles?: RelatedArticle[];
 }
 
 // ---------------------------------------------------------------------------
@@ -418,6 +428,7 @@ export interface Probe {
   klipperSection?: string;
   references?: ProbeReference[];
   unverified?: string[];
+  relatedArticles?: RelatedArticle[];
 }
 
 // ---------------------------------------------------------------------------
@@ -451,6 +462,7 @@ export interface StepperMotor {
   connectorType?: string;
   temperatureRating?: number;
   references?: StepperMotorReference[];
+  relatedArticles?: RelatedArticle[];
 }
 
 // ---------------------------------------------------------------------------
@@ -497,6 +509,7 @@ export interface Fan {
   physicalSpecs: FanPhysicalSpecs;
   references?: FanReference[];
   unverified?: string[];
+  relatedArticles?: RelatedArticle[];
 }
 
 // ---------------------------------------------------------------------------
@@ -535,6 +548,7 @@ export interface Thermistor {
   physicalSpecs?: ThermistorPhysicalSpecs;
   references?: ThermistorReference[];
   unverified?: string[];
+  relatedArticles?: RelatedArticle[];
 }
 
 // ---------------------------------------------------------------------------
@@ -572,6 +586,7 @@ export interface Extruder {
   features?: string[];
   references?: ExtruderReference[];
   unverified?: string[];
+  relatedArticles?: RelatedArticle[];
 }
 
 // ---------------------------------------------------------------------------
@@ -620,6 +635,7 @@ export interface Hotend {
   features?: string[];
   references?: HotendReference[];
   unverified?: string[];
+  relatedArticles?: RelatedArticle[];
 }
 
 // ---------------------------------------------------------------------------
@@ -659,6 +675,7 @@ export interface PowerSupply {
   communityRecommendation: "highly-recommended" | "recommended" | "standard" | "budget";
   references?: PowerSupplyReference[];
   unverified?: string[];
+  relatedArticles?: RelatedArticle[];
 }
 
 // ---------------------------------------------------------------------------
@@ -719,6 +736,7 @@ export interface Filament {
   features?: string[];
   references?: FilamentReference[];
   unverified?: string[];
+  relatedArticles?: RelatedArticle[];
 }
 
 // ---------------------------------------------------------------------------
@@ -784,6 +802,7 @@ export interface Accessory {
   features?: string[];
   references?: AccessoryReference[];
   unverified?: string[];
+  relatedArticles?: RelatedArticle[];
 }
 
 export interface AccessoryIndex {
@@ -841,6 +860,7 @@ export interface Display {
   features?: string[];
   references?: DisplayReference[];
   unverified?: string[];
+  relatedArticles?: RelatedArticle[];
 }
 
 export interface DisplayIndex {
@@ -878,6 +898,7 @@ export interface Toolhead {
   features?: string[];
   references?: ToolheadReference[];
   unverified?: string[];
+  relatedArticles?: RelatedArticle[];
 }
 
 export interface ToolheadIndex {
@@ -929,6 +950,7 @@ export interface Mmu {
   features?: string[];
   references?: MmuReference[];
   unverified?: string[];
+  relatedArticles?: RelatedArticle[];
 }
 
 export interface MmuIndex {
