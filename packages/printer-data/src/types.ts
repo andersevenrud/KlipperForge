@@ -68,6 +68,9 @@ export interface DisplayReference extends BaseReference<DisplayReferenceType> {}
 export type ToolheadReferenceType = "datasheet" | "product" | "github" | "documentation" | "other";
 export interface ToolheadReference extends BaseReference<ToolheadReferenceType> {}
 
+export type MmuReferenceType = "datasheet" | "product" | "github" | "documentation" | "other";
+export interface MmuReference extends BaseReference<MmuReferenceType> {}
+
 export type AnyReferenceType =
   | PrinterReferenceType
   | McuBoardReferenceType
@@ -81,7 +84,8 @@ export type AnyReferenceType =
   | AccessoryReferenceType
   | FilamentReferenceType
   | DisplayReferenceType
-  | ToolheadReferenceType;
+  | ToolheadReferenceType
+  | MmuReferenceType;
 
 // ---------------------------------------------------------------------------
 // Index entry types
@@ -186,6 +190,13 @@ export interface ToolheadIndexEntry {
   toolheadType: string;
 }
 
+export interface MmuIndexEntry {
+  id: string;
+  name: string;
+  manufacturer: string;
+  mmuType: string;
+}
+
 export interface PcbLayoutIndexEntry {
   boardId: string;
   name: string;
@@ -232,6 +243,7 @@ export type PrinterEquipmentCategory =
   | "filaments"
   | "hotends"
   | "mcu-boards"
+  | "mmus"
   | "power-supplies"
   | "probes"
   | "stepper-motors"
@@ -872,6 +884,57 @@ export interface ToolheadIndex {
   toolheads: ToolheadIndexEntry[];
 }
 
+// ---------------------------------------------------------------------------
+// MMU types
+// ---------------------------------------------------------------------------
+
+export interface MmuFilamentSpecs {
+  filamentCapacity: number;
+  scalable: boolean;
+  maxFilaments?: number;
+  filamentDiameter: number;
+}
+
+export interface MmuMechanicalSpecs {
+  driveType: string;
+  motorCount?: number;
+  bufferRequired?: boolean;
+  bufferType?: string;
+}
+
+export interface MmuSoftwareSpecs {
+  klipperDriver: string;
+  klipperDriverUrl?: string;
+}
+
+export interface MmuPhysicalSpecs {
+  dimensions?: string;
+  weight?: number;
+  material?: string;
+  printable?: boolean;
+}
+
+export interface Mmu {
+  id: string;
+  name: string;
+  manufacturer: string;
+  description: string;
+  mmuType: string;
+  openSource: boolean;
+  license?: string;
+  filamentSpecs: MmuFilamentSpecs;
+  mechanicalSpecs: MmuMechanicalSpecs;
+  softwareSpecs: MmuSoftwareSpecs;
+  physicalSpecs?: MmuPhysicalSpecs;
+  features?: string[];
+  references?: MmuReference[];
+  unverified?: string[];
+}
+
+export interface MmuIndex {
+  mmus: MmuIndexEntry[];
+}
+
 export interface PcbLayoutIndex {
   layouts: PcbLayoutIndexEntry[];
 }
@@ -890,5 +953,6 @@ export interface DocIndices {
   filaments: FilamentIndexEntry[];
   displays: DisplayIndexEntry[];
   toolheads: ToolheadIndexEntry[];
+  mmus: MmuIndexEntry[];
   pcbLayouts: PcbLayoutIndexEntry[];
 }

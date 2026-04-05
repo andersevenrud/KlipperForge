@@ -1,0 +1,40 @@
+{
+  "id": "night-owl",
+  "name": "Night Owl",
+  "manufacturer": "Armored Turtle",
+  "description": "Night Owl is a compact dual-lane automated filament changer for Klipper printers. It is functionally a smaller variant of Box Turtle, using the same lane-based architecture where each lane has its own dedicated stepper motor. Unlike Box Turtle, Night Owl does not include electric respoolers and uses an off-the-shelf FYSETC ERB 2.0 board (RP2040-based) rather than a custom PCB. Multiple Night Owl units can be chained together via the AFC software for additional filament capacity.",
+  "mmuType": "lane",
+  "openSource": true,
+  "license": "GPL-3.0",
+  "filamentSpecs": {
+    "filamentCapacity": 2,
+    "scalable": true,
+    "filamentDiameter": 1.75
+  },
+  "mechanicalSpecs": {
+    "driveType": "lane",
+    "motorCount": 2,
+    "bufferRequired": true,
+    "bufferType": "TurtleNeck toolhead buffer"
+  },
+  "softwareSpecs": {
+    "klipperDriver": "AFC-Klipper-Add-On",
+    "klipperDriverUrl": "https://github.com/ArmoredTurtle/AFC-Klipper-Add-On"
+  },
+  "physicalSpecs": {
+    "printable": true
+  },
+  "features": [
+    "Compact 2-lane design",
+    "Same AFC software capabilities as Box Turtle",
+    "Hub with optional cutter support",
+    "Per-lane prep and load sensors",
+    "Uses off-the-shelf FYSETC ERB 2.0 MCU board",
+    "CAN bus or serial USB connectivity",
+    "Multiple units can be chained for additional capacity"
+  ],
+  "references": [
+    { "label": "AFC-Klipper-Add-On (contains Night Owl code)", "url": "https://github.com/ArmoredTurtle/AFC-Klipper-Add-On", "type": "github" }
+  ],
+  "unverified": ["material"]
+}

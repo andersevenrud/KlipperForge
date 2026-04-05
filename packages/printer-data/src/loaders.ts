@@ -17,6 +17,8 @@ import type {
   MacroTemplate,
   McuBoard,
   McuBoardIndex,
+  Mmu,
+  MmuIndex,
   PcbLayout,
   PcbLayoutIndex,
   PowerSupply,
@@ -208,6 +210,14 @@ export async function loadToolheadIndex(): Promise<ToolheadIndex> {
 
 export async function loadToolhead(id: string): Promise<Toolhead> {
   return fetchJson<Toolhead>(`/toolheads/${id}.json`);
+}
+
+export async function loadMmuIndex(): Promise<MmuIndex> {
+  return fetchJson<MmuIndex>("/mmus/index.json");
+}
+
+export async function loadMmu(id: string): Promise<Mmu> {
+  return fetchJson<Mmu>(`/mmus/${id}.json`);
 }
 
 export async function loadDocIndices(): Promise<DocIndices> {

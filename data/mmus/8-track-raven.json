@@ -1,0 +1,41 @@
+{
+  "id": "8-track-raven",
+  "name": "8-Track Raven",
+  "manufacturer": "Armored Turtle",
+  "description": "8-Track Raven is a modular cassette-based automated filament changer for Klipper printers. It is a simplified, lower-cost alpha variant of the full 8-Track system, retaining the same cassette design but using off-the-shelf MCU boards instead of custom electronics. Each cassette is a self-contained filament management unit with its own NEMA 17 stepper motor and MG 996R servo, using BMG gears for filament drive. Cassettes are interchangeable and forward-compatible with the full 8-Track system.",
+  "mmuType": "lane",
+  "openSource": true,
+  "license": "GPL-3.0",
+  "filamentSpecs": {
+    "filamentCapacity": 4,
+    "scalable": true,
+    "filamentDiameter": 1.75
+  },
+  "mechanicalSpecs": {
+    "driveType": "lane",
+    "motorCount": 4,
+    "bufferRequired": false
+  },
+  "softwareSpecs": {
+    "klipperDriver": "Standalone Klipper macros",
+    "klipperDriverUrl": "https://github.com/ArmoredTurtle/8-Track-Raven-Alpha"
+  },
+  "physicalSpecs": {
+    "material": "ABS/ASA (printed), TPU for rollers",
+    "printable": true
+  },
+  "features": [
+    "Modular cassette design (interchangeable with full 8-Track)",
+    "Fixed cassette dimensions for forward compatibility",
+    "Custom PCBs with pogo pin connections between cassettes and hub",
+    "BMG extruder gear drive per cassette",
+    "One-way bearing to prevent filament backslip",
+    "Spring-loaded tension arms",
+    "Magnetic positioning with endstop microswitch per cassette",
+    "Uses off-the-shelf BTT MMB CAN board"
+  ],
+  "references": [
+    { "label": "GitHub Repository (Alpha)", "url": "https://github.com/ArmoredTurtle/8-Track-Raven-Alpha", "type": "github" }
+  ],
+  "unverified": ["material", "bufferRequired"]
+}

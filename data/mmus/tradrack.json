@@ -1,0 +1,46 @@
+{
+  "id": "tradrack",
+  "name": "TradRack",
+  "manufacturer": "Annex Engineering",
+  "description": "TradRack is a multimaterial system for FFF 3D printers with a focus on scalability at low cost. It uses a selector-type design where a single drive gear pair is mounted on a selector carriage riding along an MGN9 linear rail on a 2020 aluminum extrusion frame. The selector moves to each filament lane position and a servo-actuated pivoting arm lowers a hobbed gear onto the filament to engage it. Each additional lane requires only one printed module body and a handful of cheap hardware parts, making it extremely cost-effective to scale.",
+  "mmuType": "selector",
+  "openSource": true,
+  "license": "CC BY-NC-SA 4.0",
+  "filamentSpecs": {
+    "filamentCapacity": 8,
+    "scalable": true,
+    "filamentDiameter": 1.75
+  },
+  "mechanicalSpecs": {
+    "driveType": "selector",
+    "motorCount": 2,
+    "bufferRequired": true,
+    "bufferType": "One buffer per lane (type not specified by official docs)"
+  },
+  "softwareSpecs": {
+    "klipperDriver": "trad_rack (Kalico/Klipper module)",
+    "klipperDriverUrl": "https://github.com/Annex-Engineering/TradRack/tree/main/Kalico"
+  },
+  "physicalSpecs": {
+    "material": "ASA (recommended) or PC",
+    "printable": true
+  },
+  "features": [
+    "Extremely low per-lane cost",
+    "Single-screw module attach and detach",
+    "MGN9 linear rail with 2GT belt-driven selector",
+    "Servo-based spring-coupled filament engagement",
+    "Extruder syncing support (TradRack as secondary extruder)",
+    "Tool mapping and lane groups for runout handling",
+    "Supports filament sensors, cutters, purge buckets",
+    "Slicer integration (PrusaSlicer, SuperSlicer)",
+    "Lane count is user-configurable with no fixed maximum"
+  ],
+  "references": [
+    { "label": "GitHub Repository", "url": "https://github.com/Annex-Engineering/TradRack", "type": "github" },
+    { "label": "Kalico/Klipper Module", "url": "https://github.com/Annex-Engineering/TradRack/tree/main/Kalico", "type": "github" },
+    { "label": "Happy Hare (Alternative Driver)", "url": "https://github.com/moggieuk/Happy-Hare", "type": "github" },
+    { "label": "BOM / Sourcing Spreadsheet", "url": "https://docs.google.com/spreadsheets/d/1SKBtkgSVPqqGEjftI6v6i6T5Bh3Phx-4YXsJYH17ggs/", "type": "documentation" }
+  ],
+  "unverified": ["filamentCapacity", "bufferType"]
+}

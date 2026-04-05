@@ -12,6 +12,7 @@ import {
   Fan,
   FileText,
   Flame,
+  GitBranch,
   Github,
   Layers,
   Monitor,
@@ -104,6 +105,7 @@ export const CATEGORY_PARAM_KEY: Record<string, string> = {
   hotends: "hotend",
   "power-supplies": "psu",
   toolheads: "toolhead",
+  mmus: "mmu",
 };
 
 export const DOC_CATEGORY_ICONS: Record<PrinterEquipmentCategory, typeof ExternalLink> = {
@@ -119,6 +121,7 @@ export const DOC_CATEGORY_ICONS: Record<PrinterEquipmentCategory, typeof Externa
   hotends: Flame,
   "power-supplies": PlugZap,
   toolheads: Combine,
+  mmus: GitBranch,
 };
 
 export const DOC_CATEGORY_LABELS: Record<PrinterEquipmentCategory, string> = {
@@ -134,6 +137,7 @@ export const DOC_CATEGORY_LABELS: Record<PrinterEquipmentCategory, string> = {
   hotends: "Hotends",
   "power-supplies": "Power Supplies",
   toolheads: "Toolheads",
+  mmus: "MMUs",
 };
 
 const REFERENCE_TYPE_ICONS: Record<AnyReferenceType, typeof ExternalLink> = {

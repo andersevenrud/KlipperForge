@@ -24,6 +24,7 @@ const CATEGORIES: CategoryMapping[] = [
   { dir: "filaments", key: "filaments", arrayField: "filaments" },
   { dir: "displays", key: "displays", arrayField: "displays" },
   { dir: "toolheads", key: "toolheads", arrayField: "toolheads" },
+  { dir: "mmus", key: "mmus", arrayField: "mmus" },
   { dir: "pcb-layouts", key: "pcbLayouts", arrayField: "layouts" },
 ];
 

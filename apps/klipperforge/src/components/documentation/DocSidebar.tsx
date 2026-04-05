@@ -15,6 +15,7 @@ import {
   Crosshair,
   Fan,
   Flame,
+  GitBranch,
   Image,
   Layers,
   Monitor,
@@ -100,6 +101,11 @@ const TOOLHEAD_TYPE_LABELS: Record<string, string> = {
   modular: "modular",
   integrated: "integrated",
   "tool-changer": "changer",
+};
+
+const MMU_TYPE_LABELS: Record<string, string> = {
+  selector: "selector",
+  lane: "lane",
 };
 
 // ---------------------------------------------------------------------------
@@ -295,6 +301,19 @@ export function DocSidebar({
       : indices.toolheads;
     return groupBy(toolheads, (t) => t.manufacturer);
   }, [indices.toolheads, search]);
+
+  const filteredMmuGroups = useMemo(() => {
+    const query = search.toLowerCase().trim();
+    const mmus = query
+      ? indices.mmus.filter(
+          (m) =>
+            m.name.toLowerCase().includes(query) ||
+            m.manufacturer.toLowerCase().includes(query) ||
+            m.mmuType.toLowerCase().includes(query),
+        )
+      : indices.mmus;
+    return groupBy(mmus, (m) => m.manufacturer);
+  }, [indices.mmus, search]);
 
   const forceOpen = search.trim() ? { open: true as const } : {};
 
@@ -779,6 +798,52 @@ export function DocSidebar({
               ))}
               {filteredToolheadGroups.length === 0 && (
                 <p className="text-muted-foreground p-4 text-center text-sm">No toolheads found.</p>
+              )}
+            </CollapsibleContent>
+          </Collapsible>
+        </div>
+
+        <div className={isCategoryDimmed("mmus") ? "pointer-events-none opacity-40" : ""}>
+          <Collapsible {...categoryOpen("mmus")}>
+            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+              <GitBranch className="size-3.5" />
+              <span>MMUs</span>
+              <span className="text-muted-foreground ml-auto text-xs">{indices.mmus.length}</span>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              {filteredMmuGroups.map((group) => (
+                <Collapsible
+                  key={group.key}
+                  {...groupOpen(
+                    "mmus",
+                    group.items.map((m) => m.id),
+                  )}
+                >
+                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                    <span>{group.key}</span>
+                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    {group.items.map((mmu) => (
+                      <SidebarItem
+                        key={mmu.id}
+                        itemId={mmu.id}
+                        category="mmus"
+                        label={mmu.name}
+                        badge={MMU_TYPE_LABELS[mmu.mmuType] ?? mmu.mmuType}
+                        selected={isSelected(selection, "mmus", mmu.id)}
+                        compareMode={compareMode}
+                        compareChecked={comparePendingIds.includes(mmu.id)}
+                        onClick={handleItemClick}
+                      />
+                    ))}
+                  </CollapsibleContent>
+                </Collapsible>
+              ))}
+              {filteredMmuGroups.length === 0 && (
+                <p className="text-muted-foreground p-4 text-center text-sm">No MMUs found.</p>
               )}
             </CollapsibleContent>
           </Collapsible>

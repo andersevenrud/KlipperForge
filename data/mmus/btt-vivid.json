@@ -1,0 +1,43 @@
+{
+  "id": "btt-vivid",
+  "name": "ViViD",
+  "manufacturer": "Bigtreetech",
+  "description": "The BTT ViViD is a commercial multi-color management system using a selector-based design with a rotating selector mechanism and a separate buffer unit. During a filament change, the system unloads the current filament via high-speed retraction through the selector back to the buffer, rotates the selector to the new slot, and performs high-speed loading. The unit doubles as a filament dryer box with a heated chamber (up to 60C, typical range 45-55C depending on material). It connects to the printer's Klipper host via USB and supports RFID tag reading for open standard protocols.",
+  "mmuType": "selector",
+  "openSource": false,
+  "filamentSpecs": {
+    "filamentCapacity": 4,
+    "scalable": true,
+    "maxFilaments": 16,
+    "filamentDiameter": 1.75
+  },
+  "mechanicalSpecs": {
+    "driveType": "selector",
+    "motorCount": 2,
+    "bufferRequired": true,
+    "bufferType": "Included Buffer module (connected via PTFE, min 60mm bend radius)"
+  },
+  "softwareSpecs": {
+    "klipperDriver": "BTT MMS or Happy Hare",
+    "klipperDriverUrl": "https://github.com/bigtreetech/BIGTREETECH_MMS"
+  },
+  "features": [
+    "Built-in filament dryer/heated chamber (up to 60C)",
+    "Filament cutting mechanism (supports Filametrix and A4T cutters)",
+    "Automatic filament loading with gate/entry/outlet sensors",
+    "Filament runout detection with auto-continue",
+    "Purge and brush nozzle cleaning system",
+    "RFID tag reading (open standard protocols)",
+    "RGB status indicators",
+    "KlipperScreen UI integration",
+    "Compatible with Happy Hare as alternative driver",
+    "Supports Blobifier purge system (Spoolman integration via Happy Hare only)"
+  ],
+  "references": [
+    { "label": "Wiki", "url": "https://global.bttwiki.com/BIGTREETECH_ViViD.html", "type": "documentation" },
+    { "label": "Product Page", "url": "https://biqu.equipment/products/biqu-vivid", "type": "product" },
+    { "label": "MMS Software", "url": "https://github.com/bigtreetech/BIGTREETECH_MMS", "type": "github" },
+    { "label": "Hardware Repository", "url": "https://github.com/bigtreetech/BIGTREETECH_ViViD", "type": "github" }
+  ],
+  "unverified": ["motorCount", "maxFilaments"]
+}

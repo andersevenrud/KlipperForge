@@ -1,0 +1,44 @@
+{
+  "id": "pico-mmu",
+  "name": "Pico MMU",
+  "manufacturer": "Community (lhndo)",
+  "description": "Pico MMU is a minimalist, compact, selector-type multi-material unit designed as part of the LH-Stinger project. It uses a single NEMA 17 stepper motor for filament drive and a single servo (EMAX ES3004) for lane selection via a cam mechanism. The servo rotates cam shafts that press idler arms against BMG drive gears to engage the selected lane. All lanes share the single drive motor. A Guest Lane feature allows feeding additional filaments manually through the last lane position for materials like TPU or HueForge filament.",
+  "mmuType": "selector",
+  "openSource": true,
+  "license": "CC BY-NC-SA 4.0",
+  "filamentSpecs": {
+    "filamentCapacity": 4,
+    "scalable": false,
+    "filamentDiameter": 1.75
+  },
+  "mechanicalSpecs": {
+    "driveType": "selector",
+    "motorCount": 1,
+    "bufferRequired": false
+  },
+  "softwareSpecs": {
+    "klipperDriver": "Custom Klipper macros (sp_mmu.cfg)",
+    "klipperDriverUrl": "https://github.com/lhndo/LH-Stinger/wiki/Pico-MMU"
+  },
+  "physicalSpecs": {
+    "material": "PLA or PETG",
+    "printable": true
+  },
+  "features": [
+    "No filament buffer required",
+    "Approximately 20-second filament changes",
+    "Guest Lane for extra filaments (TPU, HueForge, etc.)",
+    "Park Purge (purge into bucket, no purge tower needed)",
+    "Hybrid Purge and Infinite Spool support",
+    "Filament cutter support (highly recommended)",
+    "Compact design mounting off a single NEMA 17 motor",
+    "Available in 3-lane and 4-lane variants",
+    "Uses approximately 113g of filament to print (4-lane)"
+  ],
+  "references": [
+    { "label": "Wiki", "url": "https://github.com/lhndo/LH-Stinger/wiki/Pico-MMU", "type": "documentation" },
+    { "label": "CAD Files", "url": "http://tiny.cc/lhs-pico-mu", "type": "other" },
+    { "label": "LH-Stinger Repository", "url": "https://github.com/lhndo/LH-Stinger", "type": "github" }
+  ],
+  "unverified": []
+}

@@ -1,0 +1,40 @@
+{
+  "id": "coprint-kcm",
+  "name": "KCM",
+  "manufacturer": "CoPrint",
+  "description": "The CoPrint KCM (Klipper Chroma Module) is a commercial multi-extruder control module for Klipper-based printers. Each color lane has a dedicated CX-I extruder with a NEMA 17 stepper motor and dual-drive gear mechanism. These extruders work in sync with the direct-drive extruder inside the ChromaHead toolhead. During a filament change, the active filament is cut and retracted only to the 8-in-1 module (not back to the spool), and the next filament is loaded through this short path. Expandable to 20 colors via ECM (Extended Chroma Module) add-ons.",
+  "mmuType": "lane",
+  "openSource": false,
+  "filamentSpecs": {
+    "filamentCapacity": 4,
+    "scalable": true,
+    "maxFilaments": 20,
+    "filamentDiameter": 1.75
+  },
+  "mechanicalSpecs": {
+    "driveType": "lane",
+    "motorCount": 4,
+    "bufferRequired": false
+  },
+  "softwareSpecs": {
+    "klipperDriver": "CoPrint (proprietary)",
+    "klipperDriverUrl": "https://wiki.coprint3d.com"
+  },
+  "features": [
+    "Dedicated CX-I dual-drive extruder per lane",
+    "Short retraction path (to 8-in-1 module, not spool)",
+    "In-place filament cutting and cleaning",
+    "Controllable Purge System (claims 90% purge tower reduction)",
+    "ChromaHead modular toolhead with Input Shaper support",
+    "Expandable to 20 colors via ECM modules (up to 4 ECMs)",
+    "USB connectivity to Klipper host",
+    "Compatible with many Klipper printers (Ender 3 V3, Creality K1, Voron, etc.)",
+    "KCM Set includes: module, ChromaHead, 8-in-1 module, 4x CX-I extruder kits"
+  ],
+  "references": [
+    { "label": "KCM Product Page", "url": "https://coprint3d.com/pages/kcm-klipper-chroma-module", "type": "product" },
+    { "label": "Wiki", "url": "https://wiki.coprint3d.com", "type": "documentation" },
+    { "label": "ECM Expansion Module", "url": "https://coprint3d.com/pages/ecm-extended-chroma-module", "type": "product" }
+  ],
+  "unverified": []
+}

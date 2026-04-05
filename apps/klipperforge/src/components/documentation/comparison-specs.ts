@@ -6,6 +6,7 @@ import {
   loadFilament,
   loadHotend,
   loadMcuBoard,
+  loadMmu,
   loadPowerSupply,
   loadProbe,
   loadStepperMotor,
@@ -444,6 +445,44 @@ export const COMPARISON_CONFIGS: Partial<Record<DocCategory, ComparisonCategoryC
           { label: "Dimensions", accessor: nested("physicalSpecs.dimensions") },
           { label: "Weight", accessor: nested("physicalSpecs.weight"), suffix: " g" },
           { label: "Mount Type", accessor: nested("physicalSpecs.mountType") },
+        ],
+      },
+    ],
+  },
+
+  mmus: {
+    loader: loadMmu,
+    nameAccessor: (d) => d.name as string,
+    sections: [
+      {
+        title: "Filament",
+        rows: [
+          { label: "Filament Capacity", accessor: nested("filamentSpecs.filamentCapacity") },
+          { label: "Scalable", accessor: nested("filamentSpecs.scalable"), format: "boolean" },
+          { label: "Max Filaments", accessor: nested("filamentSpecs.maxFilaments") },
+          { label: "Filament Diameter", accessor: nested("filamentSpecs.filamentDiameter"), suffix: " mm" },
+        ],
+      },
+      {
+        title: "Mechanical",
+        rows: [
+          { label: "Drive Type", accessor: nested("mechanicalSpecs.driveType") },
+          { label: "Motor Count", accessor: nested("mechanicalSpecs.motorCount") },
+          { label: "Buffer Required", accessor: nested("mechanicalSpecs.bufferRequired"), format: "boolean" },
+          { label: "Buffer Type", accessor: nested("mechanicalSpecs.bufferType") },
+        ],
+      },
+      {
+        title: "Software",
+        rows: [{ label: "Klipper Driver", accessor: nested("softwareSpecs.klipperDriver") }],
+      },
+      {
+        title: "General",
+        rows: [
+          { label: "Open Source", accessor: nested("openSource"), format: "boolean" },
+          { label: "License", accessor: nested("license") },
+          { label: "Printable", accessor: nested("physicalSpecs.printable"), format: "boolean" },
+          { label: "Material", accessor: nested("physicalSpecs.material") },
         ],
       },
     ],

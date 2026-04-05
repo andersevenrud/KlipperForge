@@ -13,6 +13,7 @@ import { DocExtruderPage } from "./DocExtruderPage";
 import { DocFanPage } from "./DocFanPage";
 import { DocFilamentPage } from "./DocFilamentPage";
 import { DocHotendPage } from "./DocHotendPage";
+import { DocMmuPage } from "./DocMmuPage";
 import { DocPowerSupplyPage } from "./DocPowerSupplyPage";
 import { DocPrinterPage } from "./DocPrinterPage";
 import { DocProbePage } from "./DocProbePage";
@@ -34,6 +35,7 @@ export type DocCategory =
   | "filaments"
   | "hotends"
   | "mcu-boards"
+  | "mmus"
   | "power-supplies"
   | "printers"
   | "probes"
@@ -65,6 +67,7 @@ const PARAM_TO_CATEGORY: Record<string, DocCategory> = {
   thermistor: "thermistors",
   extruder: "extruders",
   hotend: "hotends",
+  mmu: "mmus",
   psu: "power-supplies",
   accessory: "accessories",
   filament: "filaments",
@@ -87,6 +90,7 @@ const DOC_CATEGORIES: DocCategory[] = [
   "filaments",
   "hotends",
   "mcu-boards",
+  "mmus",
   "power-supplies",
   "printers",
   "probes",
@@ -321,6 +325,8 @@ function DocContent({ selection }: DocContentProps) {
       return <DocDisplayPage displayId={selection.itemId} />;
     case "toolheads":
       return <DocToolheadPage toolheadId={selection.itemId} />;
+    case "mmus":
+      return <DocMmuPage mmuId={selection.itemId} />;
     default:
       return null;
   }

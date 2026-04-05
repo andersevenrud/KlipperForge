@@ -1,0 +1,46 @@
+{
+  "id": "emu",
+  "name": "EMU",
+  "manufacturer": "Community (DW-Tas)",
+  "description": "EMU (Expandable Multi-material Unit) is a modular, lane-based, expandable MMU built around the proven Filamentalist V3 rewinder platform. Each lane is a fully self-contained unit with its own driving stepper, sealed dry box enclosure, humidity sensor, filament sensors, eject button, and status LEDs. Lanes can be added at any time without reprinting existing parts. The design emphasizes practical features like per-lane drying, humidity monitoring, and tool-free access even mid-print.",
+  "mmuType": "lane",
+  "openSource": true,
+  "license": "CC BY-NC-SA 4.0",
+  "filamentSpecs": {
+    "filamentCapacity": 4,
+    "scalable": true,
+    "filamentDiameter": 1.75
+  },
+  "mechanicalSpecs": {
+    "driveType": "lane",
+    "motorCount": 4,
+    "bufferRequired": false,
+    "bufferType": "Integrated Filamentalist V3 rewinder per lane"
+  },
+  "softwareSpecs": {
+    "klipperDriver": "Happy Hare",
+    "klipperDriverUrl": "https://github.com/moggieuk/Happy-Hare"
+  },
+  "physicalSpecs": {
+    "material": "PETG or PC (dry box panels, 1.5mm for visibility)",
+    "printable": true
+  },
+  "features": [
+    "Modular and expandable: add lanes anytime, mix and match across multiple bases",
+    "Sealed dry boxes per lane maintaining 15% humidity (silica gel) or 5-8% (molecular sieves)",
+    "Integrated humidity sensor per lane (visible in Mainsail / Home Assistant)",
+    "Integrated Filamentalist V3 rewinder per lane (no external buffer)",
+    "One-screw or tool-free access and servicing, even mid-print",
+    "Dual pre-stepper filament sensors for endless spool and runout detection",
+    "Per-lane ventilation fan (speed-controlled)",
+    "Per-lane eject button, status LED, and filament color LED",
+    "Uses off-the-shelf EBB42 or EBB36 boards",
+    "Companion projects: Crossbow Filament Cutter and A4T Toolhead"
+  ],
+  "references": [
+    { "label": "GitHub Repository", "url": "https://github.com/DW-Tas/EMU", "type": "github" },
+    { "label": "Documentation", "url": "https://github.com/DW-Tas/EMU/tree/main/docs", "type": "documentation" },
+    { "label": "Happy Hare (Klipper Driver)", "url": "https://github.com/moggieuk/Happy-Hare", "type": "github" }
+  ],
+  "unverified": ["filamentCapacity"]
+}

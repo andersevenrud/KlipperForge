@@ -1,0 +1,42 @@
+{
+  "id": "3ms",
+  "name": "3MS",
+  "manufacturer": "3DCoded",
+  "description": "The 3MS (Modular Multi Material System) is a lane-type multimaterial system for Klipper 3D printers. Each filament lane has its own dedicated BMG-clone extruder driven by a NEMA 17 stepper motor. All lanes feed into a printed Y-splitter that merges into a single bowden tube going to the printer's toolhead extruder. On a tool change, the active lane retracts its filament to a parking position just above the Y-splitter, and the new lane pushes its filament through the shared path to the toolhead. The system is designed for simplicity and low cost.",
+  "mmuType": "lane",
+  "openSource": true,
+  "license": "GPL-3.0",
+  "filamentSpecs": {
+    "filamentCapacity": 4,
+    "scalable": true,
+    "filamentDiameter": 1.75
+  },
+  "mechanicalSpecs": {
+    "driveType": "lane",
+    "motorCount": 4,
+    "bufferRequired": false
+  },
+  "softwareSpecs": {
+    "klipperDriver": "Happy Hare",
+    "klipperDriverUrl": "https://github.com/moggieuk/Happy-Hare"
+  },
+  "physicalSpecs": {
+    "printable": true
+  },
+  "features": [
+    "Very low cost (~$150 USD for a 4-unit build, ~$30 per filament unit)",
+    "Minimal mechanical complexity (no rails, belts, or servos)",
+    "One dedicated BMG-clone extruder per lane",
+    "Printed Y-splitter merges all lanes into single path",
+    "All parts available on Amazon or as a kit",
+    "Configuration generator tool available",
+    "Modular design: add or remove filament units after building",
+    "Comprehensive step-by-step documentation"
+  ],
+  "references": [
+    { "label": "GitHub Repository", "url": "https://github.com/3DCoded/3MS", "type": "github" },
+    { "label": "Documentation", "url": "https://3ms.3dcoded.xyz/", "type": "documentation" },
+    { "label": "Happy Hare (Klipper Driver)", "url": "https://github.com/moggieuk/Happy-Hare", "type": "github" }
+  ],
+  "unverified": ["material"]
+}
