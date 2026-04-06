@@ -1,17 +1,91 @@
 {
   "thermistors": [
-    { "id": "epcos-100k-b57560g104f", "name": "EPCOS 100K B57560G104F", "manufacturer": "EPCOS (TDK)", "sensorType": "NTC" },
-    { "id": "atc-semitec-104gt-2", "name": "ATC Semitec 104GT-2", "manufacturer": "ATC Semitec", "sensorType": "NTC" },
-    { "id": "atc-semitec-104nt-4", "name": "ATC Semitec 104NT-4", "manufacturer": "ATC Semitec", "sensorType": "NTC" },
-    { "id": "generic-3950", "name": "Generic NTC 100K 3950", "manufacturer": "Various", "sensorType": "NTC" },
-    { "id": "honeywell-100k", "name": "Honeywell 135-104LAG-J01", "manufacturer": "Honeywell", "sensorType": "NTC" },
-    { "id": "slice-engineering-450", "name": "Slice Engineering 450°C", "manufacturer": "Slice Engineering", "sensorType": "NTC" },
-    { "id": "ntc-100k-mgb18", "name": "NTC 100K MGB18-104F39050L32", "manufacturer": "Various", "sensorType": "NTC" },
-    { "id": "trianglelab-ntc-100k-cartridge", "name": "TriangleLab NTC 100K Cartridge", "manufacturer": "TriangleLab", "sensorType": "NTC" },
-    { "id": "pt100", "name": "PT100 RTD", "manufacturer": "Various", "sensorType": "RTD" },
-    { "id": "pt1000", "name": "PT1000 RTD", "manufacturer": "Various", "sensorType": "RTD" },
-    { "id": "max31865-board", "name": "MAX31865 Amplifier Board", "manufacturer": "Various", "sensorType": "RTD" },
-    { "id": "k-type-thermocouple", "name": "K-Type Thermocouple", "manufacturer": "Various", "sensorType": "thermocouple" },
-    { "id": "max31855-board", "name": "MAX31855 Amplifier Board", "manufacturer": "Various", "sensorType": "thermocouple" }
+    {
+      "id": "epcos-100k-b57560g104f",
+      "name": "EPCOS 100K B57560G104F",
+      "manufacturer": "EPCOS (TDK)",
+      "sensorType": "NTC",
+      "hasImage": true
+    },
+    {
+      "id": "atc-semitec-104gt-2",
+      "name": "ATC Semitec 104GT-2",
+      "manufacturer": "ATC Semitec",
+      "sensorType": "NTC"
+    },
+    {
+      "id": "atc-semitec-104nt-4",
+      "name": "ATC Semitec 104NT-4",
+      "manufacturer": "ATC Semitec",
+      "sensorType": "NTC"
+    },
+    {
+      "id": "generic-3950",
+      "name": "Generic NTC 100K 3950",
+      "manufacturer": "Various",
+      "sensorType": "NTC",
+      "hasImage": true
+    },
+    {
+      "id": "honeywell-100k",
+      "name": "Honeywell 135-104LAG-J01",
+      "manufacturer": "Honeywell",
+      "sensorType": "NTC"
+    },
+    {
+      "id": "slice-engineering-450",
+      "name": "Slice Engineering 450°C",
+      "manufacturer": "Slice Engineering",
+      "sensorType": "NTC",
+      "hasImage": true
+    },
+    {
+      "id": "ntc-100k-mgb18",
+      "name": "NTC 100K MGB18-104F39050L32",
+      "manufacturer": "Various",
+      "sensorType": "NTC",
+      "hasImage": true
+    },
+    {
+      "id": "trianglelab-ntc-100k-cartridge",
+      "name": "TriangleLab NTC 100K Cartridge",
+      "manufacturer": "TriangleLab",
+      "sensorType": "NTC"
+    },
+    {
+      "id": "pt100",
+      "name": "PT100 RTD",
+      "manufacturer": "Various",
+      "sensorType": "RTD",
+      "hasImage": true
+    },
+    {
+      "id": "pt1000",
+      "name": "PT1000 RTD",
+      "manufacturer": "Various",
+      "sensorType": "RTD",
+      "hasImage": true
+    },
+    {
+      "id": "max31865-board",
+      "name": "MAX31865 Amplifier Board",
+      "manufacturer": "Various",
+      "sensorType": "RTD",
+      "hasImage": true
+    },
+    {
+      "id": "k-type-thermocouple",
+      "name": "K-Type Thermocouple",
+      "manufacturer": "Various",
+      "sensorType": "thermocouple",
+      "hasImage": true
+    },
+    {
+      "id": "max31855-board",
+      "name": "MAX31855 Amplifier Board",
+      "manufacturer": "Various",
+      "sensorType": "thermocouple",
+      "hasImage": true
+    }
   ]
 }

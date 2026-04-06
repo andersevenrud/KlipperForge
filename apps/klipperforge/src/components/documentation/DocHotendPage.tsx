@@ -1,4 +1,4 @@
-import { useDocDataQuery } from "@/hooks/use-queries";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import { loadHotend } from "@klipperforge/printer-data";
 import { Flame, Ruler } from "lucide-react";
 import { Link } from "react-router";
@@ -25,6 +25,9 @@ interface DocHotendPageProps {
 
 export function DocHotendPage({ hotendId }: DocHotendPageProps) {
   const hotend = useDocDataQuery(loadHotend, hotendId);
+  const { data: indices } = useDocIndicesQuery();
+
+  const hasImage = indices.hotends.find((h) => h.id === hotendId)?.hasImage;
 
   return (
     <DocPageShell>
@@ -39,6 +42,14 @@ export function DocHotendPage({ hotendId }: DocHotendPageProps) {
           </>
         }
       />
+
+      {hasImage && (
+        <img
+          src={`/data/hotends/images/${hotendId}.png`}
+          alt={hotend.name}
+          className="mt-4 max-h-64 rounded border object-contain"
+        />
+      )}
 
       <UnverifiedBanner unverified={hotend.unverified} />
 

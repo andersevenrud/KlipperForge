@@ -1,29 +1,80 @@
 {
   "printers": [
-    { "id": "ender-3", "name": "Ender 3", "manufacturer": "Creality" },
-    { "id": "prusa-core-one", "name": "Prusa CORE One", "manufacturer": "Prusa Research" },
-    { "id": "prusa-core-one-l", "name": "Prusa CORE One L", "manufacturer": "Prusa Research" },
-    { "id": "prusa-core-one-plus", "name": "Prusa CORE One+", "manufacturer": "Prusa Research" },
-    { "id": "prusa-mini", "name": "Prusa Mini+", "manufacturer": "Prusa Research" },
-    { "id": "prusa-mk3s", "name": "Prusa MK3S+", "manufacturer": "Prusa Research" },
-    { "id": "prusa-mk4s", "name": "Prusa MK4S", "manufacturer": "Prusa Research" },
+    {
+      "id": "ender-3",
+      "name": "Ender 3",
+      "manufacturer": "Creality",
+      "hasImage": true
+    },
+    {
+      "id": "prusa-core-one",
+      "name": "Prusa CORE One",
+      "manufacturer": "Prusa Research",
+      "hasImage": true
+    },
+    {
+      "id": "prusa-core-one-l",
+      "name": "Prusa CORE One L",
+      "manufacturer": "Prusa Research",
+      "hasImage": true
+    },
+    {
+      "id": "prusa-core-one-plus",
+      "name": "Prusa CORE One+",
+      "manufacturer": "Prusa Research"
+    },
+    {
+      "id": "prusa-mini",
+      "name": "Prusa Mini+",
+      "manufacturer": "Prusa Research",
+      "hasImage": true
+    },
+    {
+      "id": "prusa-mk3s",
+      "name": "Prusa MK3S+",
+      "manufacturer": "Prusa Research",
+      "hasImage": true
+    },
+    {
+      "id": "prusa-mk4s",
+      "name": "Prusa MK4S",
+      "manufacturer": "Prusa Research",
+      "hasImage": true
+    },
     {
       "id": "prusa-xl",
       "name": "Prusa XL",
       "manufacturer": "Prusa Research",
+      "hasImage": true,
       "variants": [
-        { "id": "single", "name": "Single Toolhead" },
-        { "id": "5-tool", "name": "5 Toolheads" }
+        {
+          "id": "single",
+          "name": "Single Toolhead"
+        },
+        {
+          "id": "5-tool",
+          "name": "5 Toolheads"
+        }
       ]
     },
     {
       "id": "voron-2.4",
       "name": "Voron 2.4",
       "manufacturer": "VORON Design",
+      "hasImage": true,
       "variants": [
-        { "id": "350", "name": "350mm" },
-        { "id": "300", "name": "300mm" },
-        { "id": "250", "name": "250mm" }
+        {
+          "id": "350",
+          "name": "350mm"
+        },
+        {
+          "id": "300",
+          "name": "300mm"
+        },
+        {
+          "id": "250",
+          "name": "250mm"
+        }
       ]
     }
   ]

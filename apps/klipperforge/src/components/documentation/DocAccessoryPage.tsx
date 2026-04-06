@@ -1,4 +1,4 @@
-import { useDocDataQuery } from "@/hooks/use-queries";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import { loadAccessory } from "@klipperforge/printer-data";
 import { Ruler, Zap } from "lucide-react";
 import {
@@ -24,6 +24,9 @@ interface DocAccessoryPageProps {
 
 export function DocAccessoryPage({ accessoryId }: DocAccessoryPageProps) {
   const accessory = useDocDataQuery(loadAccessory, accessoryId);
+  const { data: indices } = useDocIndicesQuery();
+
+  const hasImage = indices.accessories.find((a) => a.id === accessoryId)?.hasImage;
 
   return (
     <DocPageShell>
@@ -40,6 +43,14 @@ export function DocAccessoryPage({ accessoryId }: DocAccessoryPageProps) {
           </>
         }
       />
+
+      {hasImage && (
+        <img
+          src={`/data/accessories/images/${accessoryId}.png`}
+          alt={accessory.name}
+          className="mt-4 max-h-64 rounded border object-contain"
+        />
+      )}
 
       <UnverifiedBanner unverified={accessory.unverified} />
 

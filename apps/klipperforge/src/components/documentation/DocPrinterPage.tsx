@@ -1,4 +1,4 @@
-import { useDocDataQuery } from "@/hooks/use-queries";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import type { PrinterEquipmentCategory, PrinterEquipmentEntry } from "@klipperforge/printer-data";
 import { loadPrinterPreset } from "@klipperforge/printer-data";
 import { Box, Package, Ruler } from "lucide-react";
@@ -19,11 +19,22 @@ interface DocPrinterPageProps {
 
 export function DocPrinterPage({ printerId }: DocPrinterPageProps) {
   const printer = useDocDataQuery(loadPrinterPreset, printerId);
+  const { data: indices } = useDocIndicesQuery();
+
+  const hasImage = indices.printers.find((p) => p.id === printerId)?.hasImage;
 
   return (
     <DocPageShell>
       <h1 className="text-2xl font-bold">{printer.name}</h1>
       <p className="text-muted-foreground mt-1 text-sm">{printer.manufacturer}</p>
+
+      {hasImage && (
+        <img
+          src={`/data/printers/images/${printerId}.png`}
+          alt={printer.name}
+          className="mt-4 max-h-64 rounded border object-contain"
+        />
+      )}
 
       {printer.description && <p className="mt-3 text-sm">{printer.description}</p>}
 

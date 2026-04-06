@@ -1,18 +1,111 @@
 {
   "fans": [
-    { "id": "noctua-nf-a4x10", "name": "NF-A4x10 FLX", "manufacturer": "Noctua", "fanType": "axial", "size": "4010" },
-    { "id": "noctua-nf-a4x20", "name": "NF-A4x20 FLX", "manufacturer": "Noctua", "fanType": "axial", "size": "4020" },
-    { "id": "noctua-nf-a6x25", "name": "NF-A6x25 FLX", "manufacturer": "Noctua", "fanType": "axial", "size": "6025" },
-    { "id": "sunon-maglev-4010", "name": "MagLev MF40101V1-1000U-A99", "manufacturer": "Sunon", "fanType": "axial", "size": "4010" },
-    { "id": "sunon-maglev-4020", "name": "MagLev MF40201V1-1000U-A99", "manufacturer": "Sunon", "fanType": "axial", "size": "4020" },
-    { "id": "sunon-5015-blower", "name": "MF50151VX-B00U-A99", "manufacturer": "Sunon", "fanType": "blower", "size": "5015" },
-    { "id": "sunon-5020-blower", "name": "MF50201V1-1B00U-A99", "manufacturer": "Sunon", "fanType": "blower", "size": "5020" },
-    { "id": "gdstime-4010-24v", "name": "4010 24V", "manufacturer": "GDSTime", "fanType": "axial", "size": "4010" },
-    { "id": "gdstime-4020-24v", "name": "4020 24V", "manufacturer": "GDSTime", "fanType": "axial", "size": "4020" },
-    { "id": "gdstime-5015-24v", "name": "5015 24V Blower", "manufacturer": "GDSTime", "fanType": "blower", "size": "5015" },
-    { "id": "delta-bfb0412hha", "name": "BFB0412HHA", "manufacturer": "Delta", "fanType": "blower", "size": "4010" },
-    { "id": "delta-bfb0512hh", "name": "BFB0512HH", "manufacturer": "Delta", "fanType": "blower", "size": "5015" },
-    { "id": "winsinn-5015-24v", "name": "5015 24V Blower", "manufacturer": "WINSINN", "fanType": "blower", "size": "5015" },
-    { "id": "orion-od4010-12hb", "name": "OD4010-12HB", "manufacturer": "Orion", "fanType": "axial", "size": "4010" }
+    {
+      "id": "noctua-nf-a4x10",
+      "name": "NF-A4x10 FLX",
+      "manufacturer": "Noctua",
+      "fanType": "axial",
+      "size": "4010",
+      "hasImage": true
+    },
+    {
+      "id": "noctua-nf-a4x20",
+      "name": "NF-A4x20 FLX",
+      "manufacturer": "Noctua",
+      "fanType": "axial",
+      "size": "4020",
+      "hasImage": true
+    },
+    {
+      "id": "noctua-nf-a6x25",
+      "name": "NF-A6x25 FLX",
+      "manufacturer": "Noctua",
+      "fanType": "axial",
+      "size": "6025",
+      "hasImage": true
+    },
+    {
+      "id": "sunon-maglev-4010",
+      "name": "MagLev MF40101V1-1000U-A99",
+      "manufacturer": "Sunon",
+      "fanType": "axial",
+      "size": "4010",
+      "hasImage": true
+    },
+    {
+      "id": "sunon-maglev-4020",
+      "name": "MagLev MF40201V1-1000U-A99",
+      "manufacturer": "Sunon",
+      "fanType": "axial",
+      "size": "4020",
+      "hasImage": true
+    },
+    {
+      "id": "sunon-5015-blower",
+      "name": "MF50151VX-B00U-A99",
+      "manufacturer": "Sunon",
+      "fanType": "blower",
+      "size": "5015"
+    },
+    {
+      "id": "sunon-5020-blower",
+      "name": "MF50201V1-1B00U-A99",
+      "manufacturer": "Sunon",
+      "fanType": "blower",
+      "size": "5020"
+    },
+    {
+      "id": "gdstime-4010-24v",
+      "name": "4010 24V",
+      "manufacturer": "GDSTime",
+      "fanType": "axial",
+      "size": "4010",
+      "hasImage": true
+    },
+    {
+      "id": "gdstime-4020-24v",
+      "name": "4020 24V",
+      "manufacturer": "GDSTime",
+      "fanType": "axial",
+      "size": "4020",
+      "hasImage": true
+    },
+    {
+      "id": "gdstime-5015-24v",
+      "name": "5015 24V Blower",
+      "manufacturer": "GDSTime",
+      "fanType": "blower",
+      "size": "5015"
+    },
+    {
+      "id": "delta-bfb0412hha",
+      "name": "BFB0412HHA",
+      "manufacturer": "Delta",
+      "fanType": "blower",
+      "size": "4010",
+      "hasImage": true
+    },
+    {
+      "id": "delta-bfb0512hh",
+      "name": "BFB0512HH",
+      "manufacturer": "Delta",
+      "fanType": "blower",
+      "size": "5015",
+      "hasImage": true
+    },
+    {
+      "id": "winsinn-5015-24v",
+      "name": "5015 24V Blower",
+      "manufacturer": "WINSINN",
+      "fanType": "blower",
+      "size": "5015"
+    },
+    {
+      "id": "orion-od4010-12hb",
+      "name": "OD4010-12HB",
+      "manufacturer": "Orion",
+      "fanType": "axial",
+      "size": "4010"
+    }
   ]
 }

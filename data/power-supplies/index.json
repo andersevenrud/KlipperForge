@@ -1,30 +1,231 @@
 {
   "powerSupplies": [
-    { "id": "meanwell-lrs-100-24", "name": "LRS-100-24", "manufacturer": "MeanWell", "voltage": 24, "wattage": 108, "formFactor": "enclosed" },
-    { "id": "meanwell-lrs-150-24", "name": "LRS-150-24", "manufacturer": "MeanWell", "voltage": 24, "wattage": 156, "formFactor": "enclosed" },
-    { "id": "meanwell-lrs-200-24", "name": "LRS-200-24", "manufacturer": "MeanWell", "voltage": 24, "wattage": 211, "formFactor": "enclosed" },
-    { "id": "meanwell-lrs-350-24", "name": "LRS-350-24", "manufacturer": "MeanWell", "voltage": 24, "wattage": 350, "formFactor": "enclosed" },
-    { "id": "meanwell-lrs-350-12", "name": "LRS-350-12", "manufacturer": "MeanWell", "voltage": 12, "wattage": 348, "formFactor": "enclosed" },
-    { "id": "meanwell-lrs-100-48", "name": "LRS-100-48", "manufacturer": "MeanWell", "voltage": 48, "wattage": 110, "formFactor": "enclosed" },
-    { "id": "meanwell-lrs-350-48", "name": "LRS-350-48", "manufacturer": "MeanWell", "voltage": 48, "wattage": 350, "formFactor": "enclosed" },
-    { "id": "meanwell-uhp-200-24", "name": "UHP-200-24", "manufacturer": "MeanWell", "voltage": 24, "wattage": 202, "formFactor": "enclosed-slim" },
-    { "id": "meanwell-uhp-350-24", "name": "UHP-350-24", "manufacturer": "MeanWell", "voltage": 24, "wattage": 350, "formFactor": "enclosed-slim" },
-    { "id": "meanwell-uhp-500-24", "name": "UHP-500-24", "manufacturer": "MeanWell", "voltage": 24, "wattage": 502, "formFactor": "enclosed-slim" },
-    { "id": "meanwell-uhp-200-48", "name": "UHP-200-48", "manufacturer": "MeanWell", "voltage": 48, "wattage": 202, "formFactor": "enclosed-slim" },
-    { "id": "meanwell-uhp-350-48", "name": "UHP-350-48", "manufacturer": "MeanWell", "voltage": 48, "wattage": 350, "formFactor": "enclosed-slim" },
-    { "id": "meanwell-rsp-320-24", "name": "RSP-320-24", "manufacturer": "MeanWell", "voltage": 24, "wattage": 322, "formFactor": "enclosed" },
-    { "id": "meanwell-rsp-500-24", "name": "RSP-500-24", "manufacturer": "MeanWell", "voltage": 24, "wattage": 504, "formFactor": "enclosed" },
-    { "id": "meanwell-se-450-24", "name": "SE-450-24", "manufacturer": "MeanWell", "voltage": 24, "wattage": 451, "formFactor": "enclosed" },
-    { "id": "meanwell-se-600-24", "name": "SE-600-24", "manufacturer": "MeanWell", "voltage": 24, "wattage": 600, "formFactor": "enclosed" },
-    { "id": "meanwell-rs-25-5", "name": "RS-25-5", "manufacturer": "MeanWell", "voltage": 5, "wattage": 25, "formFactor": "enclosed" },
-    { "id": "delta-dps-240ab", "name": "DPS-240AB", "manufacturer": "Delta Electronics", "voltage": 24, "wattage": 240, "formFactor": "enclosed" },
-    { "id": "stepperonline-s-400-12", "name": "S-400-12", "manufacturer": "StepperOnline", "voltage": 12, "wattage": 400, "formFactor": "enclosed" },
-    { "id": "stepperonline-s-350-48", "name": "S-350-48", "manufacturer": "StepperOnline", "voltage": 48, "wattage": 350, "formFactor": "enclosed" },
-    { "id": "stepperonline-s-350-60", "name": "S-350-60", "manufacturer": "StepperOnline", "voltage": 60, "wattage": 350, "formFactor": "enclosed" },
-    { "id": "stepperonline-le-350-48", "name": "LE-350-48", "manufacturer": "StepperOnline", "voltage": 48, "wattage": 350, "formFactor": "enclosed" },
-    { "id": "stepperonline-le-250-48", "name": "LE-250-48", "manufacturer": "StepperOnline", "voltage": 48, "wattage": 250, "formFactor": "enclosed" },
-    { "id": "stepperonline-le-350-60", "name": "LE-350-60", "manufacturer": "StepperOnline", "voltage": 60, "wattage": 350, "formFactor": "enclosed" },
-    { "id": "sompom-s-360-24", "name": "S-360-24", "manufacturer": "Sompom", "voltage": 24, "wattage": 360, "formFactor": "enclosed" },
-    { "id": "sompom-s-360-48", "name": "S-360-48", "manufacturer": "Sompom", "voltage": 48, "wattage": 360, "formFactor": "enclosed" }
+    {
+      "id": "meanwell-lrs-100-24",
+      "name": "LRS-100-24",
+      "manufacturer": "MeanWell",
+      "voltage": 24,
+      "wattage": 108,
+      "formFactor": "enclosed",
+      "hasImage": true
+    },
+    {
+      "id": "meanwell-lrs-150-24",
+      "name": "LRS-150-24",
+      "manufacturer": "MeanWell",
+      "voltage": 24,
+      "wattage": 156,
+      "formFactor": "enclosed",
+      "hasImage": true
+    },
+    {
+      "id": "meanwell-lrs-200-24",
+      "name": "LRS-200-24",
+      "manufacturer": "MeanWell",
+      "voltage": 24,
+      "wattage": 211,
+      "formFactor": "enclosed",
+      "hasImage": true
+    },
+    {
+      "id": "meanwell-lrs-350-24",
+      "name": "LRS-350-24",
+      "manufacturer": "MeanWell",
+      "voltage": 24,
+      "wattage": 350,
+      "formFactor": "enclosed"
+    },
+    {
+      "id": "meanwell-lrs-350-12",
+      "name": "LRS-350-12",
+      "manufacturer": "MeanWell",
+      "voltage": 12,
+      "wattage": 348,
+      "formFactor": "enclosed",
+      "hasImage": true
+    },
+    {
+      "id": "meanwell-lrs-100-48",
+      "name": "LRS-100-48",
+      "manufacturer": "MeanWell",
+      "voltage": 48,
+      "wattage": 110,
+      "formFactor": "enclosed"
+    },
+    {
+      "id": "meanwell-lrs-350-48",
+      "name": "LRS-350-48",
+      "manufacturer": "MeanWell",
+      "voltage": 48,
+      "wattage": 350,
+      "formFactor": "enclosed"
+    },
+    {
+      "id": "meanwell-uhp-200-24",
+      "name": "UHP-200-24",
+      "manufacturer": "MeanWell",
+      "voltage": 24,
+      "wattage": 202,
+      "formFactor": "enclosed-slim",
+      "hasImage": true
+    },
+    {
+      "id": "meanwell-uhp-350-24",
+      "name": "UHP-350-24",
+      "manufacturer": "MeanWell",
+      "voltage": 24,
+      "wattage": 350,
+      "formFactor": "enclosed-slim",
+      "hasImage": true
+    },
+    {
+      "id": "meanwell-uhp-500-24",
+      "name": "UHP-500-24",
+      "manufacturer": "MeanWell",
+      "voltage": 24,
+      "wattage": 502,
+      "formFactor": "enclosed-slim",
+      "hasImage": true
+    },
+    {
+      "id": "meanwell-uhp-200-48",
+      "name": "UHP-200-48",
+      "manufacturer": "MeanWell",
+      "voltage": 48,
+      "wattage": 202,
+      "formFactor": "enclosed-slim"
+    },
+    {
+      "id": "meanwell-uhp-350-48",
+      "name": "UHP-350-48",
+      "manufacturer": "MeanWell",
+      "voltage": 48,
+      "wattage": 350,
+      "formFactor": "enclosed-slim"
+    },
+    {
+      "id": "meanwell-rsp-320-24",
+      "name": "RSP-320-24",
+      "manufacturer": "MeanWell",
+      "voltage": 24,
+      "wattage": 322,
+      "formFactor": "enclosed",
+      "hasImage": true
+    },
+    {
+      "id": "meanwell-rsp-500-24",
+      "name": "RSP-500-24",
+      "manufacturer": "MeanWell",
+      "voltage": 24,
+      "wattage": 504,
+      "formFactor": "enclosed",
+      "hasImage": true
+    },
+    {
+      "id": "meanwell-se-450-24",
+      "name": "SE-450-24",
+      "manufacturer": "MeanWell",
+      "voltage": 24,
+      "wattage": 451,
+      "formFactor": "enclosed",
+      "hasImage": true
+    },
+    {
+      "id": "meanwell-se-600-24",
+      "name": "SE-600-24",
+      "manufacturer": "MeanWell",
+      "voltage": 24,
+      "wattage": 600,
+      "formFactor": "enclosed",
+      "hasImage": true
+    },
+    {
+      "id": "meanwell-rs-25-5",
+      "name": "RS-25-5",
+      "manufacturer": "MeanWell",
+      "voltage": 5,
+      "wattage": 25,
+      "formFactor": "enclosed",
+      "hasImage": true
+    },
+    {
+      "id": "delta-dps-240ab",
+      "name": "DPS-240AB",
+      "manufacturer": "Delta Electronics",
+      "voltage": 24,
+      "wattage": 240,
+      "formFactor": "enclosed",
+      "hasImage": true
+    },
+    {
+      "id": "stepperonline-s-400-12",
+      "name": "S-400-12",
+      "manufacturer": "StepperOnline",
+      "voltage": 12,
+      "wattage": 400,
+      "formFactor": "enclosed",
+      "hasImage": true
+    },
+    {
+      "id": "stepperonline-s-350-48",
+      "name": "S-350-48",
+      "manufacturer": "StepperOnline",
+      "voltage": 48,
+      "wattage": 350,
+      "formFactor": "enclosed",
+      "hasImage": true
+    },
+    {
+      "id": "stepperonline-s-350-60",
+      "name": "S-350-60",
+      "manufacturer": "StepperOnline",
+      "voltage": 60,
+      "wattage": 350,
+      "formFactor": "enclosed",
+      "hasImage": true
+    },
+    {
+      "id": "stepperonline-le-350-48",
+      "name": "LE-350-48",
+      "manufacturer": "StepperOnline",
+      "voltage": 48,
+      "wattage": 350,
+      "formFactor": "enclosed"
+    },
+    {
+      "id": "stepperonline-le-250-48",
+      "name": "LE-250-48",
+      "manufacturer": "StepperOnline",
+      "voltage": 48,
+      "wattage": 250,
+      "formFactor": "enclosed",
+      "hasImage": true
+    },
+    {
+      "id": "stepperonline-le-350-60",
+      "name": "LE-350-60",
+      "manufacturer": "StepperOnline",
+      "voltage": 60,
+      "wattage": 350,
+      "formFactor": "enclosed"
+    },
+    {
+      "id": "sompom-s-360-24",
+      "name": "S-360-24",
+      "manufacturer": "Sompom",
+      "voltage": 24,
+      "wattage": 360,
+      "formFactor": "enclosed",
+      "hasImage": true
+    },
+    {
+      "id": "sompom-s-360-48",
+      "name": "S-360-48",
+      "manufacturer": "Sompom",
+      "voltage": 48,
+      "wattage": 360,
+      "formFactor": "enclosed",
+      "hasImage": true
+    }
   ]
 }

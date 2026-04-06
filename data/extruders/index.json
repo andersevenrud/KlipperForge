@@ -1,22 +1,127 @@
 {
   "extruders": [
-    { "id": "bondtech-bmg", "name": "Bondtech BMG", "manufacturer": "Bondtech", "driveType": "both" },
-    { "id": "bondtech-lgx", "name": "Bondtech LGX", "manufacturer": "Bondtech", "driveType": "direct" },
-    { "id": "bondtech-lgx-lite", "name": "Bondtech LGX Lite", "manufacturer": "Bondtech", "driveType": "direct" },
-    { "id": "ldo-orbiter-v2", "name": "LDO Orbiter v2.0", "manufacturer": "LDO Motors", "driveType": "direct" },
-    { "id": "galileo-2-sa", "name": "Galileo 2 SA", "manufacturer": "LDO Motors", "driveType": "direct" },
-    { "id": "galileo-2-g2e", "name": "Galileo 2 G2E", "manufacturer": "LDO Motors", "driveType": "direct" },
-    { "id": "sherpa-mini", "name": "Sherpa Mini", "manufacturer": "Annex Engineering", "driveType": "direct" },
-    { "id": "e3d-titan", "name": "E3D Titan", "manufacturer": "E3D", "driveType": "both" },
-    { "id": "e3d-hemera", "name": "E3D Hemera", "manufacturer": "E3D", "driveType": "both" },
-    { "id": "creality-sprite-pro", "name": "Creality Sprite Pro", "manufacturer": "Creality", "driveType": "direct" },
-    { "id": "generic-mk8", "name": "Generic MK8", "manufacturer": "Generic", "driveType": "both" },
-    { "id": "prusa-nextruder", "name": "Prusa Nextruder", "manufacturer": "Prusa Research", "driveType": "direct" },
-    { "id": "hextrudort", "name": "HextrudORT", "manufacturer": "MirageC79 (Community)", "driveType": "direct" },
-    { "id": "vz-hextrudort", "name": "Vz-HextrudORT", "manufacturer": "VzBoT", "driveType": "direct" },
-    { "id": "vz-hextrudort-low", "name": "Vz-HextrudORT Low", "manufacturer": "VzBoT", "driveType": "direct" },
-    { "id": "vz-hextrudort-low-plus", "name": "Vz-HextrudORT Low Plus", "manufacturer": "VzBoT", "driveType": "direct" },
-    { "id": "ldo-orbiter-v2.5", "name": "LDO Orbiter v2.5", "manufacturer": "LDO Motors", "driveType": "direct" },
-    { "id": "wristpin-g2sa", "name": "WristWatch G2", "manufacturer": "Community (bythorsthunder / tetsu97)", "driveType": "direct" }
+    {
+      "id": "bondtech-bmg",
+      "name": "Bondtech BMG",
+      "manufacturer": "Bondtech",
+      "driveType": "both",
+      "hasImage": true
+    },
+    {
+      "id": "bondtech-lgx",
+      "name": "Bondtech LGX",
+      "manufacturer": "Bondtech",
+      "driveType": "direct",
+      "hasImage": true
+    },
+    {
+      "id": "bondtech-lgx-lite",
+      "name": "Bondtech LGX Lite",
+      "manufacturer": "Bondtech",
+      "driveType": "direct",
+      "hasImage": true
+    },
+    {
+      "id": "ldo-orbiter-v2",
+      "name": "LDO Orbiter v2.0",
+      "manufacturer": "LDO Motors",
+      "driveType": "direct",
+      "hasImage": true
+    },
+    {
+      "id": "galileo-2-sa",
+      "name": "Galileo 2 SA",
+      "manufacturer": "LDO Motors",
+      "driveType": "direct",
+      "hasImage": true
+    },
+    {
+      "id": "galileo-2-g2e",
+      "name": "Galileo 2 G2E",
+      "manufacturer": "LDO Motors",
+      "driveType": "direct"
+    },
+    {
+      "id": "sherpa-mini",
+      "name": "Sherpa Mini",
+      "manufacturer": "Annex Engineering",
+      "driveType": "direct",
+      "hasImage": true
+    },
+    {
+      "id": "e3d-titan",
+      "name": "E3D Titan",
+      "manufacturer": "E3D",
+      "driveType": "both",
+      "hasImage": true
+    },
+    {
+      "id": "e3d-hemera",
+      "name": "E3D Hemera",
+      "manufacturer": "E3D",
+      "driveType": "both",
+      "hasImage": true
+    },
+    {
+      "id": "creality-sprite-pro",
+      "name": "Creality Sprite Pro",
+      "manufacturer": "Creality",
+      "driveType": "direct",
+      "hasImage": true
+    },
+    {
+      "id": "generic-mk8",
+      "name": "Generic MK8",
+      "manufacturer": "Generic",
+      "driveType": "both"
+    },
+    {
+      "id": "prusa-nextruder",
+      "name": "Prusa Nextruder",
+      "manufacturer": "Prusa Research",
+      "driveType": "direct"
+    },
+    {
+      "id": "hextrudort",
+      "name": "HextrudORT",
+      "manufacturer": "MirageC79 (Community)",
+      "driveType": "direct",
+      "hasImage": true
+    },
+    {
+      "id": "vz-hextrudort",
+      "name": "Vz-HextrudORT",
+      "manufacturer": "VzBoT",
+      "driveType": "direct",
+      "hasImage": true
+    },
+    {
+      "id": "vz-hextrudort-low",
+      "name": "Vz-HextrudORT Low",
+      "manufacturer": "VzBoT",
+      "driveType": "direct",
+      "hasImage": true
+    },
+    {
+      "id": "vz-hextrudort-low-plus",
+      "name": "Vz-HextrudORT Low Plus",
+      "manufacturer": "VzBoT",
+      "driveType": "direct",
+      "hasImage": true
+    },
+    {
+      "id": "ldo-orbiter-v2.5",
+      "name": "LDO Orbiter v2.5",
+      "manufacturer": "LDO Motors",
+      "driveType": "direct",
+      "hasImage": true
+    },
+    {
+      "id": "wristpin-g2sa",
+      "name": "WristWatch G2",
+      "manufacturer": "Community (bythorsthunder / tetsu97)",
+      "driveType": "direct",
+      "hasImage": true
+    }
   ]
 }

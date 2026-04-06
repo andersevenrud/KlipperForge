@@ -1,4 +1,4 @@
-import { useDocDataQuery } from "@/hooks/use-queries";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import { loadStepperMotor } from "@klipperforge/printer-data";
 import { Ruler, Thermometer, Zap } from "lucide-react";
 import { Badge, DocHeader, DocPageShell, ReferenceList, RelatedArticles, SpecRow, SpecSection } from "./doc-shared";
@@ -9,6 +9,9 @@ interface DocStepperMotorPageProps {
 
 export function DocStepperMotorPage({ motorId }: DocStepperMotorPageProps) {
   const motor = useDocDataQuery(loadStepperMotor, motorId);
+  const { data: indices } = useDocIndicesQuery();
+
+  const hasImage = indices.motors.find((m) => m.id === motorId)?.hasImage;
 
   return (
     <DocPageShell>
@@ -18,6 +21,14 @@ export function DocStepperMotorPage({ motorId }: DocStepperMotorPageProps) {
         description={motor.description}
         badges={<Badge>NEMA{motor.nemaSize}</Badge>}
       />
+
+      {hasImage && (
+        <img
+          src={`/data/stepper-motors/images/${motorId}.png`}
+          alt={motor.name}
+          className="mt-4 max-h-64 rounded border object-contain"
+        />
+      )}
 
       <SpecSection title="Electrical Specifications" icon={Zap}>
         <SpecRow label="Rated Current" value={motor.electricalSpecs.ratedCurrent} suffix="A per phase" />

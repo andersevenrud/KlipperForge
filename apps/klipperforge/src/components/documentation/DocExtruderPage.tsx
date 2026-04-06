@@ -1,4 +1,4 @@
-import { useDocDataQuery } from "@/hooks/use-queries";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import { loadExtruder } from "@klipperforge/printer-data";
 import { Ruler, Settings, Wrench } from "lucide-react";
 import {
@@ -25,6 +25,9 @@ interface DocExtruderPageProps {
 
 export function DocExtruderPage({ extruderId }: DocExtruderPageProps) {
   const extruder = useDocDataQuery(loadExtruder, extruderId);
+  const { data: indices } = useDocIndicesQuery();
+
+  const hasImage = indices.extruders.find((e) => e.id === extruderId)?.hasImage;
 
   return (
     <DocPageShell>
@@ -34,6 +37,14 @@ export function DocExtruderPage({ extruderId }: DocExtruderPageProps) {
         description={extruder.description}
         badges={<Badge>{DRIVE_TYPE_LABELS[extruder.driveType] ?? extruder.driveType}</Badge>}
       />
+
+      {hasImage && (
+        <img
+          src={`/data/extruders/images/${extruderId}.png`}
+          alt={extruder.name}
+          className="mt-4 max-h-64 rounded border object-contain"
+        />
+      )}
 
       <UnverifiedBanner unverified={extruder.unverified} />
 

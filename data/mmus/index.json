@@ -1,15 +1,77 @@
 {
   "mmus": [
-    { "id": "ercf-v2", "name": "ERCF v2", "manufacturer": "Enraged Rabbit Community", "mmuType": "selector" },
-    { "id": "tradrack", "name": "TradRack", "manufacturer": "Annex Engineering", "mmuType": "selector" },
-    { "id": "box-turtle", "name": "Box Turtle", "manufacturer": "Armored Turtle", "mmuType": "lane" },
-    { "id": "night-owl", "name": "Night Owl", "manufacturer": "Armored Turtle", "mmuType": "lane" },
-    { "id": "8-track-raven", "name": "8-Track Raven", "manufacturer": "Armored Turtle", "mmuType": "lane" },
-    { "id": "3ms", "name": "3MS", "manufacturer": "3DCoded", "mmuType": "lane" },
-    { "id": "pico-mmu", "name": "Pico MMU", "manufacturer": "Community (lhndo)", "mmuType": "selector" },
-    { "id": "emu", "name": "EMU", "manufacturer": "Community (DW-Tas)", "mmuType": "lane" },
-    { "id": "quattrobox", "name": "QuattroBox", "manufacturer": "Community (Batalhoti)", "mmuType": "lane" },
-    { "id": "btt-vivid", "name": "ViViD", "manufacturer": "Bigtreetech", "mmuType": "selector" },
-    { "id": "coprint-kcm", "name": "KCM", "manufacturer": "CoPrint", "mmuType": "lane" }
+    {
+      "id": "ercf-v2",
+      "name": "ERCF v2",
+      "manufacturer": "Enraged Rabbit Community",
+      "mmuType": "selector",
+      "hasImage": true
+    },
+    {
+      "id": "tradrack",
+      "name": "TradRack",
+      "manufacturer": "Annex Engineering",
+      "mmuType": "selector",
+      "hasImage": true
+    },
+    {
+      "id": "box-turtle",
+      "name": "Box Turtle",
+      "manufacturer": "Armored Turtle",
+      "mmuType": "lane",
+      "hasImage": true
+    },
+    {
+      "id": "night-owl",
+      "name": "Night Owl",
+      "manufacturer": "Armored Turtle",
+      "mmuType": "lane",
+      "hasImage": true
+    },
+    {
+      "id": "8-track-raven",
+      "name": "8-Track Raven",
+      "manufacturer": "Armored Turtle",
+      "mmuType": "lane"
+    },
+    {
+      "id": "3ms",
+      "name": "3MS",
+      "manufacturer": "3DCoded",
+      "mmuType": "lane",
+      "hasImage": true
+    },
+    {
+      "id": "pico-mmu",
+      "name": "Pico MMU",
+      "manufacturer": "Community (lhndo)",
+      "mmuType": "selector",
+      "hasImage": true
+    },
+    {
+      "id": "emu",
+      "name": "EMU",
+      "manufacturer": "Community (DW-Tas)",
+      "mmuType": "lane"
+    },
+    {
+      "id": "quattrobox",
+      "name": "QuattroBox",
+      "manufacturer": "Community (Batalhoti)",
+      "mmuType": "lane"
+    },
+    {
+      "id": "btt-vivid",
+      "name": "ViViD",
+      "manufacturer": "Bigtreetech",
+      "mmuType": "selector"
+    },
+    {
+      "id": "coprint-kcm",
+      "name": "KCM",
+      "manufacturer": "CoPrint",
+      "mmuType": "lane",
+      "hasImage": true
+    }
   ]
 }

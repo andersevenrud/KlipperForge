@@ -1,4 +1,4 @@
-import { useDocDataQuery } from "@/hooks/use-queries";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import { loadFan } from "@klipperforge/printer-data";
 import { Ruler, Volume2, Wind, Zap } from "lucide-react";
 import {
@@ -25,6 +25,9 @@ interface DocFanPageProps {
 
 export function DocFanPage({ fanId }: DocFanPageProps) {
   const fan = useDocDataQuery(loadFan, fanId);
+  const { data: indices } = useDocIndicesQuery();
+
+  const hasImage = indices.fans.find((f) => f.id === fanId)?.hasImage;
 
   return (
     <DocPageShell>
@@ -39,6 +42,14 @@ export function DocFanPage({ fanId }: DocFanPageProps) {
           </>
         }
       />
+
+      {hasImage && (
+        <img
+          src={`/data/fans/images/${fanId}.png`}
+          alt={fan.name}
+          className="mt-4 max-h-64 rounded border object-contain"
+        />
+      )}
 
       <UnverifiedBanner unverified={fan.unverified} />
 

@@ -1,4 +1,4 @@
-import { useDocDataQuery } from "@/hooks/use-queries";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import { loadProbe } from "@klipperforge/printer-data";
 import { FileText, Ruler, Target, Zap } from "lucide-react";
 import {
@@ -27,6 +27,8 @@ interface DocProbePageProps {
 
 export function DocProbePage({ probeId }: DocProbePageProps) {
   const probe = useDocDataQuery(loadProbe, probeId);
+  const { data: indices } = useDocIndicesQuery();
+  const hasImage = indices.probes.find((p) => p.id === probeId)?.hasImage;
 
   return (
     <DocPageShell>
@@ -36,6 +38,14 @@ export function DocProbePage({ probeId }: DocProbePageProps) {
         description={probe.description}
         badges={<Badge>{PROBE_TYPE_LABELS[probe.probeType] ?? probe.probeType}</Badge>}
       />
+
+      {hasImage && (
+        <img
+          src={`/data/probes/images/${probeId}.png`}
+          alt={probe.name}
+          className="mt-4 max-h-64 rounded border object-contain"
+        />
+      )}
 
       <UnverifiedBanner unverified={probe.unverified} />
 

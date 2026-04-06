@@ -1,4 +1,4 @@
-import { useDocDataQuery } from "@/hooks/use-queries";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import { loadPowerSupply } from "@klipperforge/printer-data";
 import { Ruler, Shield, Star, Thermometer, Zap } from "lucide-react";
 import type { ReactNode } from "react";
@@ -41,7 +41,9 @@ interface DocPowerSupplyPageProps {
 
 export function DocPowerSupplyPage({ powerSupplyId }: DocPowerSupplyPageProps) {
   const psu = useDocDataQuery(loadPowerSupply, powerSupplyId);
+  const { data: indices } = useDocIndicesQuery();
 
+  const hasImage = indices.powerSupplies.find((p) => p.id === powerSupplyId)?.hasImage;
   const rec = RECOMMENDATION_LABELS[psu.communityRecommendation];
 
   const badges: ReactNode = (
@@ -58,6 +60,14 @@ export function DocPowerSupplyPage({ powerSupplyId }: DocPowerSupplyPageProps) {
   return (
     <DocPageShell>
       <DocHeader name={psu.name} manufacturer={psu.manufacturer} description={psu.description} badges={badges} />
+
+      {hasImage && (
+        <img
+          src={`/data/power-supplies/images/${powerSupplyId}.png`}
+          alt={psu.name}
+          className="mt-4 max-h-64 rounded border object-contain"
+        />
+      )}
 
       <UnverifiedBanner unverified={psu.unverified} />
 

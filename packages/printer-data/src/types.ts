@@ -95,6 +95,7 @@ export interface PrinterIndexEntry {
   id: string;
   name: string;
   manufacturer: string;
+  hasImage?: boolean;
   variants?: PrinterVariantEntry[];
 }
 
@@ -115,6 +116,7 @@ export interface ProbeIndexEntry {
   name: string;
   manufacturer: string;
   probeType: string;
+  hasImage?: boolean;
 }
 
 export interface StepperMotorIndexEntry {
@@ -122,6 +124,7 @@ export interface StepperMotorIndexEntry {
   name: string;
   manufacturer: string;
   nemaSize: number;
+  hasImage?: boolean;
 }
 
 export interface FanIndexEntry {
@@ -130,6 +133,7 @@ export interface FanIndexEntry {
   manufacturer: string;
   fanType: string;
   size: string;
+  hasImage?: boolean;
 }
 
 export interface ThermistorIndexEntry {
@@ -137,6 +141,7 @@ export interface ThermistorIndexEntry {
   name: string;
   manufacturer: string;
   sensorType: string;
+  hasImage?: boolean;
 }
 
 export interface ExtruderIndexEntry {
@@ -144,6 +149,7 @@ export interface ExtruderIndexEntry {
   name: string;
   manufacturer: string;
   driveType: string;
+  hasImage?: boolean;
 }
 
 export interface HotendIndexEntry {
@@ -151,6 +157,7 @@ export interface HotendIndexEntry {
   name: string;
   manufacturer: string;
   hotendType: string;
+  hasImage?: boolean;
 }
 
 export interface PowerSupplyIndexEntry {
@@ -160,6 +167,7 @@ export interface PowerSupplyIndexEntry {
   voltage: number;
   wattage: number;
   formFactor: string;
+  hasImage?: boolean;
 }
 
 export interface AccessoryIndexEntry {
@@ -167,6 +175,7 @@ export interface AccessoryIndexEntry {
   name: string;
   manufacturer: string;
   accessoryType: string;
+  hasImage?: boolean;
 }
 
 export interface FilamentIndexEntry {
@@ -174,6 +183,7 @@ export interface FilamentIndexEntry {
   name: string;
   manufacturer: string;
   filamentType: string;
+  hasImage?: boolean;
 }
 
 export interface DisplayIndexEntry {
@@ -181,6 +191,7 @@ export interface DisplayIndexEntry {
   name: string;
   manufacturer: string;
   displayType: string;
+  hasImage?: boolean;
 }
 
 export interface ToolheadIndexEntry {
@@ -188,6 +199,7 @@ export interface ToolheadIndexEntry {
   name: string;
   manufacturer: string;
   toolheadType: string;
+  hasImage?: boolean;
 }
 
 export interface MmuIndexEntry {
@@ -195,6 +207,7 @@ export interface MmuIndexEntry {
   name: string;
   manufacturer: string;
   mmuType: string;
+  hasImage?: boolean;
 }
 
 export interface PcbLayoutIndexEntry {

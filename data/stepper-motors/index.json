@@ -1,25 +1,142 @@
 {
   "motors": [
-    { "id": "stepperonline-17hs19-2004s1", "name": "17HS19-2004S1", "manufacturer": "StepperOnline", "nemaSize": 17 },
-    { "id": "stepperonline-17hs16-2004s1", "name": "17HS16-2004S1", "manufacturer": "StepperOnline", "nemaSize": 17 },
-    { "id": "stepperonline-17hs08-1004s", "name": "17HS08-1004S", "manufacturer": "StepperOnline", "nemaSize": 17 },
-    { "id": "ldo-42sth48-2004ac", "name": "LDO-42STH48-2004AC", "manufacturer": "LDO", "nemaSize": 17 },
-    { "id": "ldo-42sth48-2804ah", "name": "LDO-42STH48-2804AH", "manufacturer": "LDO", "nemaSize": 17 },
-    { "id": "ldo-42sth40-2004mah", "name": "LDO-42STH40-2004MAH", "manufacturer": "LDO", "nemaSize": 17 },
-    { "id": "ldo-42sth20-1004ash", "name": "LDO-42STH20-1004ASH", "manufacturer": "LDO", "nemaSize": 17 },
-    { "id": "ldo-42sth25-1004ac", "name": "LDO-42STH25-1004AC", "manufacturer": "LDO", "nemaSize": 17 },
-    { "id": "ldo-42sth25-1404ac", "name": "LDO-42STH25-1404AC", "manufacturer": "LDO", "nemaSize": 17 },
-    { "id": "ldo-42sth25-1404mah", "name": "LDO-42STH25-1404MAH", "manufacturer": "LDO", "nemaSize": 17 },
-    { "id": "ldo-36sth20-1004ahg", "name": "LDO-36STH20-1004AHG", "manufacturer": "LDO", "nemaSize": 14 },
-    { "id": "ldo-36sth17-1004ahg", "name": "LDO-36STH17-1004AHG", "manufacturer": "LDO", "nemaSize": 14 },
-    { "id": "ldo-36sth20-0804ah", "name": "LDO-36STH20-0804AH", "manufacturer": "LDO", "nemaSize": 14 },
-    { "id": "moons-ms17hd6p4150", "name": "MS17HD6P4150", "manufacturer": "Moons'", "nemaSize": 17 },
-    { "id": "moons-ms17hd2p4100", "name": "MS17HD2P4100", "manufacturer": "Moons'", "nemaSize": 17 },
-    { "id": "moons-cse14hra1l410a", "name": "CSE14HRA1L410A", "manufacturer": "Moons'", "nemaSize": 14 },
-    { "id": "creality-42-40", "name": "42-40", "manufacturer": "Creality", "nemaSize": 17 },
-    { "id": "creality-42-34", "name": "42-34", "manufacturer": "Creality", "nemaSize": 17 },
-    { "id": "bondtech-42h025h-0704a", "name": "42H025H-0704A", "manufacturer": "Bondtech", "nemaSize": 17 },
-    { "id": "usongshine-17hs4023", "name": "17HS4023", "manufacturer": "Usongshine", "nemaSize": 17 },
-    { "id": "fysetc-g36hsy4405", "name": "G36HSY4405", "manufacturer": "FYSETC", "nemaSize": 14 }
+    {
+      "id": "stepperonline-17hs19-2004s1",
+      "name": "17HS19-2004S1",
+      "manufacturer": "StepperOnline",
+      "nemaSize": 17
+    },
+    {
+      "id": "stepperonline-17hs16-2004s1",
+      "name": "17HS16-2004S1",
+      "manufacturer": "StepperOnline",
+      "nemaSize": 17,
+      "hasImage": true
+    },
+    {
+      "id": "stepperonline-17hs08-1004s",
+      "name": "17HS08-1004S",
+      "manufacturer": "StepperOnline",
+      "nemaSize": 17,
+      "hasImage": true
+    },
+    {
+      "id": "ldo-42sth48-2004ac",
+      "name": "LDO-42STH48-2004AC",
+      "manufacturer": "LDO",
+      "nemaSize": 17,
+      "hasImage": true
+    },
+    {
+      "id": "ldo-42sth48-2804ah",
+      "name": "LDO-42STH48-2804AH",
+      "manufacturer": "LDO",
+      "nemaSize": 17
+    },
+    {
+      "id": "ldo-42sth40-2004mah",
+      "name": "LDO-42STH40-2004MAH",
+      "manufacturer": "LDO",
+      "nemaSize": 17,
+      "hasImage": true
+    },
+    {
+      "id": "ldo-42sth20-1004ash",
+      "name": "LDO-42STH20-1004ASH",
+      "manufacturer": "LDO",
+      "nemaSize": 17,
+      "hasImage": true
+    },
+    {
+      "id": "ldo-42sth25-1004ac",
+      "name": "LDO-42STH25-1004AC",
+      "manufacturer": "LDO",
+      "nemaSize": 17
+    },
+    {
+      "id": "ldo-42sth25-1404ac",
+      "name": "LDO-42STH25-1404AC",
+      "manufacturer": "LDO",
+      "nemaSize": 17
+    },
+    {
+      "id": "ldo-42sth25-1404mah",
+      "name": "LDO-42STH25-1404MAH",
+      "manufacturer": "LDO",
+      "nemaSize": 17
+    },
+    {
+      "id": "ldo-36sth20-1004ahg",
+      "name": "LDO-36STH20-1004AHG",
+      "manufacturer": "LDO",
+      "nemaSize": 14
+    },
+    {
+      "id": "ldo-36sth17-1004ahg",
+      "name": "LDO-36STH17-1004AHG",
+      "manufacturer": "LDO",
+      "nemaSize": 14,
+      "hasImage": true
+    },
+    {
+      "id": "ldo-36sth20-0804ah",
+      "name": "LDO-36STH20-0804AH",
+      "manufacturer": "LDO",
+      "nemaSize": 14
+    },
+    {
+      "id": "moons-ms17hd6p4150",
+      "name": "MS17HD6P4150",
+      "manufacturer": "Moons'",
+      "nemaSize": 17,
+      "hasImage": true
+    },
+    {
+      "id": "moons-ms17hd2p4100",
+      "name": "MS17HD2P4100",
+      "manufacturer": "Moons'",
+      "nemaSize": 17
+    },
+    {
+      "id": "moons-cse14hra1l410a",
+      "name": "CSE14HRA1L410A",
+      "manufacturer": "Moons'",
+      "nemaSize": 14,
+      "hasImage": true
+    },
+    {
+      "id": "creality-42-40",
+      "name": "42-40",
+      "manufacturer": "Creality",
+      "nemaSize": 17,
+      "hasImage": true
+    },
+    {
+      "id": "creality-42-34",
+      "name": "42-34",
+      "manufacturer": "Creality",
+      "nemaSize": 17,
+      "hasImage": true
+    },
+    {
+      "id": "bondtech-42h025h-0704a",
+      "name": "42H025H-0704A",
+      "manufacturer": "Bondtech",
+      "nemaSize": 17
+    },
+    {
+      "id": "usongshine-17hs4023",
+      "name": "17HS4023",
+      "manufacturer": "Usongshine",
+      "nemaSize": 17,
+      "hasImage": true
+    },
+    {
+      "id": "fysetc-g36hsy4405",
+      "name": "G36HSY4405",
+      "manufacturer": "FYSETC",
+      "nemaSize": 14,
+      "hasImage": true
+    }
   ]
 }

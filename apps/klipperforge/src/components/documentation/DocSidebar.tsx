@@ -76,6 +76,12 @@ function isSelected(selection: DocSelection | null, category: DocCategory, itemI
 // Constants
 // ---------------------------------------------------------------------------
 
+const IMAGE_INDICATOR = (
+  <span className="ml-auto shrink-0" title="Has product image">
+    <Image className="size-3 text-muted-foreground" />
+  </span>
+);
+
 const ACCESSORY_TYPE_LABELS: Record<string, string> = {
   "filament-buffer": "buffer",
   "filament-sensor": "sensor",
@@ -412,7 +418,7 @@ export function DocSidebar({
                                 </span>
                               )}
                               {board.hasImage && (
-                                <span title="Has board image">
+                                <span title="Has product image">
                                   <Image className="size-3 text-muted-foreground" />
                                 </span>
                               )}
@@ -511,6 +517,7 @@ export function DocSidebar({
                         category="stepper-motors"
                         label={motor.name}
                         badge={`NEMA${motor.nemaSize}`}
+                        suffix={"hasImage" in motor && motor.hasImage ? IMAGE_INDICATOR : undefined}
                         selected={isSelected(selection, "stepper-motors", motor.id)}
                         compareMode={compareMode}
                         compareChecked={comparePendingIds.includes(motor.id)}
@@ -557,6 +564,7 @@ export function DocSidebar({
                         category="probes"
                         label={probe.name}
                         badge={PROBE_TYPE_LABELS[probe.probeType] ?? probe.probeType}
+                        suffix={"hasImage" in probe && probe.hasImage ? IMAGE_INDICATOR : undefined}
                         selected={isSelected(selection, "probes", probe.id)}
                         compareMode={compareMode}
                         compareChecked={comparePendingIds.includes(probe.id)}
@@ -603,6 +611,7 @@ export function DocSidebar({
                         category="fans"
                         label={fan.name}
                         badge={fan.size}
+                        suffix={"hasImage" in fan && fan.hasImage ? IMAGE_INDICATOR : undefined}
                         selected={isSelected(selection, "fans", fan.id)}
                         compareMode={compareMode}
                         compareChecked={comparePendingIds.includes(fan.id)}
@@ -649,6 +658,7 @@ export function DocSidebar({
                         category="thermistors"
                         label={thermistor.name}
                         badge={thermistor.sensorType}
+                        suffix={"hasImage" in thermistor && thermistor.hasImage ? IMAGE_INDICATOR : undefined}
                         selected={isSelected(selection, "thermistors", thermistor.id)}
                         compareMode={compareMode}
                         compareChecked={comparePendingIds.includes(thermistor.id)}
@@ -695,6 +705,7 @@ export function DocSidebar({
                         category="extruders"
                         label={extruder.name}
                         badge={extruder.driveType}
+                        suffix={"hasImage" in extruder && extruder.hasImage ? IMAGE_INDICATOR : undefined}
                         selected={isSelected(selection, "extruders", extruder.id)}
                         compareMode={compareMode}
                         compareChecked={comparePendingIds.includes(extruder.id)}
@@ -741,6 +752,7 @@ export function DocSidebar({
                         category="hotends"
                         label={hotend.name}
                         badge={hotend.hotendType}
+                        suffix={"hasImage" in hotend && hotend.hasImage ? IMAGE_INDICATOR : undefined}
                         selected={isSelected(selection, "hotends", hotend.id)}
                         compareMode={compareMode}
                         compareChecked={comparePendingIds.includes(hotend.id)}
@@ -787,6 +799,7 @@ export function DocSidebar({
                         category="toolheads"
                         label={toolhead.name}
                         badge={TOOLHEAD_TYPE_LABELS[toolhead.toolheadType] ?? toolhead.toolheadType}
+                        suffix={"hasImage" in toolhead && toolhead.hasImage ? IMAGE_INDICATOR : undefined}
                         selected={isSelected(selection, "toolheads", toolhead.id)}
                         compareMode={compareMode}
                         compareChecked={comparePendingIds.includes(toolhead.id)}
@@ -833,6 +846,7 @@ export function DocSidebar({
                         category="mmus"
                         label={mmu.name}
                         badge={MMU_TYPE_LABELS[mmu.mmuType] ?? mmu.mmuType}
+                        suffix={"hasImage" in mmu && mmu.hasImage ? IMAGE_INDICATOR : undefined}
                         selected={isSelected(selection, "mmus", mmu.id)}
                         compareMode={compareMode}
                         compareChecked={comparePendingIds.includes(mmu.id)}
@@ -879,6 +893,7 @@ export function DocSidebar({
                         category="filaments"
                         label={filament.name}
                         badge={filament.filamentType}
+                        suffix={"hasImage" in filament && filament.hasImage ? IMAGE_INDICATOR : undefined}
                         selected={isSelected(selection, "filaments", filament.id)}
                         compareMode={compareMode}
                         compareChecked={comparePendingIds.includes(filament.id)}
@@ -925,6 +940,7 @@ export function DocSidebar({
                         category="power-supplies"
                         label={psu.name}
                         badges={[`${psu.voltage}V`, `${psu.wattage}W`]}
+                        suffix={"hasImage" in psu && psu.hasImage ? IMAGE_INDICATOR : undefined}
                         selected={isSelected(selection, "power-supplies", psu.id)}
                         compareMode={compareMode}
                         compareChecked={comparePendingIds.includes(psu.id)}
@@ -971,6 +987,7 @@ export function DocSidebar({
                         category="accessories"
                         label={accessory.name}
                         badge={ACCESSORY_TYPE_LABELS[accessory.accessoryType] ?? accessory.accessoryType}
+                        suffix={accessory.hasImage ? IMAGE_INDICATOR : undefined}
                         selected={isSelected(selection, "accessories", accessory.id)}
                         compareMode={compareMode}
                         compareChecked={comparePendingIds.includes(accessory.id)}
@@ -1017,6 +1034,7 @@ export function DocSidebar({
                         category="displays"
                         label={display.name}
                         badge={DISPLAY_TYPE_LABELS[display.displayType] ?? display.displayType}
+                        suffix={"hasImage" in display && display.hasImage ? IMAGE_INDICATOR : undefined}
                         selected={isSelected(selection, "displays", display.id)}
                         compareMode={compareMode}
                         compareChecked={comparePendingIds.includes(display.id)}
