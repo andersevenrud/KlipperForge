@@ -396,6 +396,11 @@ function parseCodeBlock(
       }
     }
 
+    // G-code fields must always be multiline
+    if (currentParam.name === "gcode" || currentParam.name.endsWith("_gcode")) {
+      paramType = { kind: "multiline" };
+    }
+
     // Priority: Config_Reference.md default > Python source default
     const defaultVal =
       extractDefault(desc, currentParam.defaultStr) ?? inferDefaultFromSource(currentParam.name, sectionName);

@@ -681,14 +681,14 @@
 			},
 			"runout_gcode": {
 				"type": {
-					"kind": "string"
+					"kind": "multiline"
 				},
 				"description": "A list of G-Code commands to execute after a filament runout is detected. See docs/Command_Templates.md for G-Code format. If pause_on_runout is set to True this G-Code will run after the PAUSE is complete. The default is not to run any G-Code commands.",
 				"required": false
 			},
 			"insert_gcode": {
 				"type": {
-					"kind": "string"
+					"kind": "multiline"
 				},
 				"description": "A list of G-Code commands to execute after a filament insert is detected. See docs/Command_Templates.md for G-Code format. The default is not to run any G-Code commands, which disables insert detection.",
 				"required": false
@@ -765,14 +765,14 @@
 			},
 			"runout_gcode": {
 				"type": {
-					"kind": "string"
+					"kind": "multiline"
 				},
 				"description": "runout_gcode parameter",
 				"required": false
 			},
 			"insert_gcode": {
 				"type": {
-					"kind": "string"
+					"kind": "multiline"
 				},
 				"description": "insert_gcode parameter",
 				"required": false
@@ -964,14 +964,14 @@
 			},
 			"runout_gcode": {
 				"type": {
-					"kind": "string"
+					"kind": "multiline"
 				},
 				"description": "runout_gcode parameter",
 				"required": false
 			},
 			"insert_gcode": {
 				"type": {
-					"kind": "string"
+					"kind": "multiline"
 				},
 				"description": "insert_gcode parameter",
 				"required": false
@@ -1203,14 +1203,14 @@
 			},
 			"activate_gcode": {
 				"type": {
-					"kind": "string"
+					"kind": "multiline"
 				},
 				"description": "activate_gcode parameter",
 				"required": false
 			},
 			"deactivate_gcode": {
 				"type": {
-					"kind": "string"
+					"kind": "multiline"
 				},
 				"description": "See the \"[probe]\" section for a description of the above parameters.",
 				"required": false

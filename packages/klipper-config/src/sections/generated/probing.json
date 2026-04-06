@@ -392,14 +392,14 @@
 			},
 			"activate_gcode": {
 				"type": {
-					"kind": "string"
+					"kind": "multiline"
 				},
 				"description": "activate_gcode parameter",
 				"required": false
 			},
 			"deactivate_gcode": {
 				"type": {
-					"kind": "string"
+					"kind": "multiline"
 				},
 				"description": "deactivate_gcode parameter",
 				"required": false

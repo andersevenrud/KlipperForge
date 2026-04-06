@@ -286,12 +286,12 @@ export const smart_effectorParams: SectionParams = {
     default: 0,
   },
   activate_gcode: {
-    type: { kind: "string" },
+    type: { kind: "multiline" },
     description: "activate_gcode parameter",
     required: false,
   },
   deactivate_gcode: {
-    type: { kind: "string" },
+    type: { kind: "multiline" },
     description: "deactivate_gcode parameter",
     required: false,
   },

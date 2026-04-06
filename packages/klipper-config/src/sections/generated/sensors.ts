@@ -547,13 +547,13 @@ export const filament_switch_sensorParams: SectionParams = {
     default: true,
   },
   runout_gcode: {
-    type: { kind: "string" },
+    type: { kind: "multiline" },
     description:
       "A list of G-Code commands to execute after a filament runout is detected. See docs/Command_Templates.md for G-Code format. If pause_on_runout is set to True this G-Code will run after the PAUSE is complete. The default is not to run any G-Code commands.",
     required: false,
   },
   insert_gcode: {
-    type: { kind: "string" },
+    type: { kind: "multiline" },
     description:
       "A list of G-Code commands to execute after a filament insert is detected. See docs/Command_Templates.md for G-Code format. The default is not to run any G-Code commands, which disables insert detection.",
     required: false,
@@ -612,12 +612,12 @@ export const filament_motion_sensorParams: SectionParams = {
     default: true,
   },
   runout_gcode: {
-    type: { kind: "string" },
+    type: { kind: "multiline" },
     description: "runout_gcode parameter",
     required: false,
   },
   insert_gcode: {
-    type: { kind: "string" },
+    type: { kind: "multiline" },
     description: "insert_gcode parameter",
     required: false,
   },
@@ -766,12 +766,12 @@ export const hall_filament_width_sensorParams: SectionParams = {
     default: true,
   },
   runout_gcode: {
-    type: { kind: "string" },
+    type: { kind: "multiline" },
     description: "runout_gcode parameter",
     required: false,
   },
   insert_gcode: {
-    type: { kind: "string" },
+    type: { kind: "multiline" },
     description: "insert_gcode parameter",
     required: false,
   },
@@ -960,12 +960,12 @@ export const load_cell_probeParams: SectionParams = {
     default: 0,
   },
   activate_gcode: {
-    type: { kind: "string" },
+    type: { kind: "multiline" },
     description: "activate_gcode parameter",
     required: false,
   },
   deactivate_gcode: {
-    type: { kind: "string" },
+    type: { kind: "multiline" },
     description: 'See the "[probe]" section for a description of the above parameters.',
     required: false,
   },
