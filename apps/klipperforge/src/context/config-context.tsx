@@ -5,9 +5,9 @@ import {
   type ConfigDocument,
   type ConfigSourceMap,
   type ConfigValue,
+  type DefaultMatch,
   type McuBoardAssociation,
   type MultiFileOutput,
-  type OmittedDefault,
   type OverrideMap,
   type SectionInstance,
   type SectionValidationError,
@@ -87,7 +87,7 @@ function buildMultiFileState(
   sourceMap: ConfigSourceMap;
   sourceMaps: Map<string, ConfigSourceMap>;
   activeFile: string;
-  omittedDefaults: OmittedDefault[];
+  defaultMatches: DefaultMatch[];
 } {
   const opts: SerializeOptions = {
     ...(showHeader ? buildSerializeOptions(doc) : undefined),
@@ -104,7 +104,7 @@ function buildMultiFileState(
       generatedOutput: multi.files.get(file) ?? "",
       sourceMap: multi.sourceMaps.get(file) ?? { sectionLines: new Map(), fieldLines: new Map(), rawSectionLines: [] },
       activeFile: file,
-      omittedDefaults: multi.omittedDefaults,
+      defaultMatches: multi.defaultMatches,
     };
   }
 
@@ -119,11 +119,14 @@ function buildMultiFileState(
     generatedOutput: result.text,
     sourceMap: result.sourceMap,
     activeFile: file,
-    omittedDefaults: result.omittedDefaults,
+    defaultMatches: result.defaultMatches,
   };
 }
 
 const initialMulti = buildMultiFileState(defaultDocument, true, false);
+
+const initialValidationErrors = validateDocument(defaultDocument, defaultRegistry);
+appendDefaultMatchInfoEntries(initialValidationErrors, initialMulti.defaultMatches);
 
 const initialState: ConfigState = {
   document: defaultDocument,
@@ -131,7 +134,7 @@ const initialState: ConfigState = {
   generatedOutputs: initialMulti.generatedOutputs,
   sourceMap: initialMulti.sourceMap,
   sourceMaps: initialMulti.sourceMaps,
-  validationErrors: validateDocument(defaultDocument, defaultRegistry),
+  validationErrors: initialValidationErrors,
   overrideMap: collectActiveOverrides(defaultDocument, defaultRegistry),
   boardPinAliases: extractBoardPinAliases(defaultDocument),
   showHeader: true,
@@ -160,12 +163,12 @@ export function resolveHeader(instance: SectionInstance): string {
   return resolveHeaderBase(instance, defaultRegistry) ?? instance.definitionId;
 }
 
-function appendOmittedDefaultInfoEntries(errors: SectionValidationError[], omittedDefaults: OmittedDefault[]): void {
-  for (const omitted of omittedDefaults) {
+function appendDefaultMatchInfoEntries(errors: SectionValidationError[], defaultMatches: DefaultMatch[]): void {
+  for (const match of defaultMatches) {
     errors.push({
-      section: omitted.section,
-      field: omitted.field,
-      message: `Hidden — matches default (${omitted.value})`,
+      section: match.section,
+      field: match.field,
+      message: `Matches default (${match.value})`,
       severity: "info",
     });
   }
@@ -295,7 +298,7 @@ function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
       const validationErrors = validateDocument(state.document, defaultRegistry, {
         boards: state.boardPinContext,
       });
-      appendOmittedDefaultInfoEntries(validationErrors, multi.omittedDefaults);
+      appendDefaultMatchInfoEntries(validationErrors, multi.defaultMatches);
       return {
         ...state,
         omitDefaults: newOmitDefaults,
@@ -308,12 +311,15 @@ function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
     }
     case "SET_BOARD_PIN_CONTEXT": {
       const boardPinContext = action.payload;
+      const multi = buildMultiFileState(state.document, state.showHeader, state.omitDefaults, state.activeFile);
+      const validationErrors = validateDocument(state.document, defaultRegistry, {
+        boards: boardPinContext,
+      });
+      appendDefaultMatchInfoEntries(validationErrors, multi.defaultMatches);
       return {
         ...state,
         boardPinContext,
-        validationErrors: validateDocument(state.document, defaultRegistry, {
-          boards: boardPinContext,
-        }),
+        validationErrors,
         baselineOutputs: state.baselineOutputs,
         boardPinAliases: state.boardPinAliases,
       };
@@ -423,7 +429,7 @@ function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
   const validationErrors = validateDocument(newDoc, defaultRegistry, {
     boards: state.boardPinContext,
   });
-  appendOmittedDefaultInfoEntries(validationErrors, multi.omittedDefaults);
+  appendDefaultMatchInfoEntries(validationErrors, multi.defaultMatches);
 
   return {
     document: newDoc,

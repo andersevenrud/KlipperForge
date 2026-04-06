@@ -24,7 +24,7 @@ export {
   serializeConfigWithSourceMap,
   serializeMultiFileConfig,
 } from "./sections/serializer";
-export type { ConfigSourceMap, MultiFileOutput, OmittedDefault } from "./sections/serializer";
+export type { ConfigSourceMap, DefaultMatch, MultiFileOutput } from "./sections/serializer";
 export {
   validateDocument,
   type SectionValidationError,

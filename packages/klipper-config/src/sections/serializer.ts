@@ -5,7 +5,7 @@ import { type SectionRegistry, resolveHeader } from "./registry";
 import { getSectionModeConfig } from "./section-modes";
 import type { ConfigDocument, ConfigValue, SaveConfigSection, SectionInstance } from "./types";
 
-export interface OmittedDefault {
+export interface DefaultMatch {
   section: string;
   field: string;
   value: ConfigValue;
@@ -14,7 +14,7 @@ export interface OmittedDefault {
 export interface MultiFileOutput {
   files: Map<string, string>;
   sourceMaps: Map<string, ConfigSourceMap>;
-  omittedDefaults: OmittedDefault[];
+  defaultMatches: DefaultMatch[];
 }
 
 export interface ConfigSourceMap {
@@ -194,7 +194,7 @@ export function serializeConfigWithSourceMap(
   doc: ConfigDocument,
   registry: SectionRegistry,
   options?: SerializeOptions,
-): { text: string; sourceMap: ConfigSourceMap; omittedDefaults: OmittedDefault[] } {
+): { text: string; sourceMap: ConfigSourceMap; defaultMatches: DefaultMatch[] } {
   const instances = doc.sections.map((s) => ({
     ...s,
     data: { ...s.data },
@@ -222,7 +222,7 @@ export function serializeConfigWithSourceMap(
     rawSectionLines: [],
   };
 
-  const omittedDefaults: OmittedDefault[] = [];
+  const defaultMatches: DefaultMatch[] = [];
   const sectionBlocks: string[] = [];
   // Account for header + annotation lines if present (+ blank line separator)
   const annotationLines = buildAnnotationLines(doc, instances, registry);
@@ -278,9 +278,9 @@ export function serializeConfigWithSourceMap(
       if (hiddenFields?.has(key)) continue;
 
       const paramDef = def?.params?.[key];
-      if (options?.omitDefaults && paramDef?.default !== undefined && value === paramDef.default) {
-        omittedDefaults.push({ section: header, field: key, value });
-        continue;
+      if (paramDef?.default !== undefined && value === paramDef.default) {
+        defaultMatches.push({ section: header, field: key, value });
+        if (options?.omitDefaults) continue;
       }
 
       sourceMap.fieldLines.set(`${header}::${key}`, lineNumber);
@@ -367,7 +367,7 @@ export function serializeConfigWithSourceMap(
   return {
     text: fullHeader ? `${fullHeader}\n\n${body}` : body,
     sourceMap,
-    omittedDefaults,
+    defaultMatches,
   };
 }
 
@@ -386,7 +386,7 @@ export function serializeMultiFileConfig(
   const result: MultiFileOutput = {
     files: new Map(),
     sourceMaps: new Map(),
-    omittedDefaults: [],
+    defaultMatches: [],
   };
 
   // Group sections by file
@@ -423,8 +423,8 @@ export function serializeMultiFileConfig(
         ? { ...options, header: options.secondaryHeader, secondaryHeader: undefined }
         : undefined;
 
-    const { text, sourceMap, omittedDefaults } = serializeConfigWithSourceMap(fileDoc, registry, fileOptions);
-    result.omittedDefaults.push(...omittedDefaults);
+    const { text, sourceMap, defaultMatches } = serializeConfigWithSourceMap(fileDoc, registry, fileOptions);
+    result.defaultMatches.push(...defaultMatches);
 
     result.files.set(file, text);
     result.sourceMaps.set(file, sourceMap);

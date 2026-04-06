@@ -517,7 +517,7 @@ describe("serializeConfig", () => {
     expect(output).toContain("shutdown_speed: 0");
   });
 
-  it("returns per-field omittedDefaults from serializeConfigWithSourceMap", () => {
+  it("returns per-field defaultMatches from serializeConfigWithSourceMap", () => {
     const registry = createDefaultRegistry();
     const doc: ConfigDocument = {
       sections: [
@@ -533,13 +533,13 @@ describe("serializeConfig", () => {
       ],
     };
 
-    const { omittedDefaults } = serializeConfigWithSourceMap(doc, registry, { omitDefaults: true });
-    expect(omittedDefaults).toHaveLength(2);
-    expect(omittedDefaults).toContainEqual({ section: "fan", field: "max_power", value: 1 });
-    expect(omittedDefaults).toContainEqual({ section: "fan", field: "shutdown_speed", value: 0 });
+    const { defaultMatches } = serializeConfigWithSourceMap(doc, registry, { omitDefaults: true });
+    expect(defaultMatches).toHaveLength(2);
+    expect(defaultMatches).toContainEqual({ section: "fan", field: "max_power", value: 1 });
+    expect(defaultMatches).toContainEqual({ section: "fan", field: "shutdown_speed", value: 0 });
   });
 
-  it("returns empty omittedDefaults when omitDefaults is false", () => {
+  it("returns defaultMatches even when omitDefaults is false", () => {
     const registry = createDefaultRegistry();
     const doc: ConfigDocument = {
       sections: [
@@ -553,8 +553,9 @@ describe("serializeConfig", () => {
       ],
     };
 
-    const { omittedDefaults } = serializeConfigWithSourceMap(doc, registry, { omitDefaults: false });
-    expect(omittedDefaults).toHaveLength(0);
+    const { defaultMatches } = serializeConfigWithSourceMap(doc, registry, { omitDefaults: false });
+    expect(defaultMatches).toHaveLength(1);
+    expect(defaultMatches).toContainEqual({ section: "fan", field: "max_power", value: 1 });
   });
 
   it("tracks source map lines for SAVE_CONFIG sections", () => {

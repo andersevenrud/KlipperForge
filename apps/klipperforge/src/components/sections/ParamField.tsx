@@ -15,6 +15,7 @@ interface ParamFieldProps {
   header: string;
   control: Control<Record<string, unknown>>;
   register: UseFormRegister<Record<string, unknown>>;
+  value?: unknown;
   error?: string;
   warning?: string;
   validationError?: string;
@@ -28,6 +29,7 @@ export function ParamField({
   header,
   control,
   register,
+  value,
   error,
   warning,
   validationError,
@@ -37,6 +39,8 @@ export function ParamField({
   const { type } = param;
   const { scrollToField } = useEditorScroll();
   const placeholder = formatPlaceholder(param.default);
+  const matchesDefault =
+    value !== undefined && value !== null && value !== "" && param.default !== undefined && value === param.default;
 
   return (
     <div
@@ -52,6 +56,7 @@ export function ParamField({
         error={error}
         validationError={validationError}
         warning={warning}
+        matchesDefault={matchesDefault}
         override={override}
       >
         {({ id, disabled }) =>

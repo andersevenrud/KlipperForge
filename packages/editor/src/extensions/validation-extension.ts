@@ -13,7 +13,7 @@ function mapErrorsToDiagnostics(
   const diagnostics: Diagnostic[] = [];
 
   for (const error of errors) {
-    // Skip info diagnostics — omitted fields aren't in the output
+    // Skip info diagnostics — handled by default-match-extension as inline badges
     if (error.severity === "info") continue;
 
     let lineNum: number | undefined;
@@ -58,9 +58,6 @@ const validationTheme = EditorView.baseTheme({
   },
   ".cm-diagnostic-warning": {
     borderBottom: "2px wavy #f59e0b",
-  },
-  ".cm-diagnostic-info": {
-    borderBottom: "2px wavy #3b82f6",
   },
   ".cm-tooltip-lint": {
     backgroundColor: "#1e1e1e",

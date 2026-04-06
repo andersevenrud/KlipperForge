@@ -4,6 +4,7 @@ import CodeMirror, { ExternalChange } from "@uiw/react-codemirror";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { useEditorScroll } from "../context/editor-scroll-context";
 import { createClipboardExtension } from "../extensions/clipboard-extension";
+import { defaultMatchExtension, dispatchDefaultMatches } from "../extensions/default-match-extension";
 import { diffExtension, dispatchDiffLines } from "../extensions/diff-extension";
 import { editorTheme } from "../extensions/editor-theme";
 import { flashLineExtension } from "../extensions/flash-line-extension";
@@ -62,6 +63,7 @@ export function ConfigEditor({
       try {
         dispatchDiagnostics(view, validationErrors, sourceMap);
         dispatchOverrides(view, overrideMap, sourceMap);
+        dispatchDefaultMatches(view, validationErrors, sourceMap);
         dispatchUnmanagedSections(view, sourceMap);
         dispatchDiffLines(view, diffLines ?? []);
       } catch {
@@ -182,6 +184,7 @@ export function ConfigEditor({
       flashLineExtension,
       validationExtension,
       overrideExtension,
+      defaultMatchExtension,
       unmanagedExtension,
       inlineEditExtension,
       clipboardExtension,
@@ -213,6 +216,7 @@ export function ConfigEditor({
         try {
           dispatchDiagnostics(view, validationErrors, sourceMap);
           dispatchOverrides(view, overrideMap, sourceMap);
+          dispatchDefaultMatches(view, validationErrors, sourceMap);
           dispatchUnmanagedSections(view, sourceMap);
           reapplyFolds(view, foldedSectionsRef.current);
         } catch {

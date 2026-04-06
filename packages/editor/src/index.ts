@@ -5,6 +5,7 @@ export { JsonViewer, type JsonViewerProps } from "./components/JsonViewer";
 export { KlipperConfigViewer, type KlipperConfigViewerProps } from "./components/KlipperConfigViewer";
 export { ValidationStatusPopup } from "./components/ValidationStatusPopup";
 export { EditorScrollProvider, useEditorScroll } from "./context/editor-scroll-context";
+export { defaultMatchExtension, dispatchDefaultMatches } from "./extensions/default-match-extension";
 export { diffExtension, dispatchDiffLines } from "./extensions/diff-extension";
 export { editorTheme } from "./extensions/editor-theme";
 export { flashLineEffect, flashLineExtension } from "./extensions/flash-line-extension";

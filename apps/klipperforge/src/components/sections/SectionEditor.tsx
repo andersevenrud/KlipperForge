@@ -194,10 +194,15 @@ export function SectionEditor({ section, header }: SectionEditorProps) {
       if (error.section === header && error.field) {
         if (error.severity === "warning") {
           warnings.set(error.field, error.message);
-        } else {
+        } else if (error.severity !== "info") {
           errors.set(error.field, error.message);
         }
-      } else if (error.section === header && !error.field && error.severity !== "warning") {
+      } else if (
+        error.section === header &&
+        !error.field &&
+        error.severity !== "warning" &&
+        error.severity !== "info"
+      ) {
         sectionLevel.push(error.message);
       }
     }
@@ -494,6 +499,7 @@ export function SectionEditor({ section, header }: SectionEditorProps) {
           header={header}
           control={control}
           register={register}
+          value={formValues[name]}
           error={fieldError?.message as string | undefined}
           warning={fieldWarnings.get(name) ?? indeterminateWarnings.get(name)}
           validationError={fieldErrors.get(name)}

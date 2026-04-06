@@ -1,5 +1,5 @@
 import type { ActiveOverride } from "@klipperforge/klipper-config";
-import { ArrowRightLeft, CircleHelp, TriangleAlert } from "lucide-react";
+import { ArrowRightLeft, CircleEqual, CircleHelp, TriangleAlert } from "lucide-react";
 import { type ReactNode, useId } from "react";
 import { Label } from "./label";
 import { Popover, PopoverContent, PopoverTrigger } from "./popover";
@@ -19,6 +19,7 @@ interface FieldWrapperProps {
   error?: string;
   validationError?: string;
   warning?: string;
+  matchesDefault?: boolean;
   override?: ActiveOverride;
   children: (props: FieldChildProps) => ReactNode;
 }
@@ -41,6 +42,7 @@ export function FieldWrapper({
   error,
   validationError,
   warning,
+  matchesDefault,
   override,
   children,
 }: FieldWrapperProps) {
@@ -74,6 +76,12 @@ export function FieldWrapper({
         <p className="flex items-center gap-1 text-xs text-yellow-500">
           <TriangleAlert className="h-3 w-3 shrink-0" />
           {warning}
+        </p>
+      )}
+      {matchesDefault && (
+        <p className="flex items-center gap-1 text-xs text-muted-foreground">
+          <CircleEqual className="h-3 w-3 shrink-0" />
+          Matches default
         </p>
       )}
       {override && (
