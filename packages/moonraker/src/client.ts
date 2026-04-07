@@ -102,6 +102,36 @@ export async function fetchFile(options: MoonrakerConnectionOptions, filePath: s
   return response.text();
 }
 
+export interface UploadFileResult {
+  item: { path: string; root: string };
+}
+
+export async function uploadFile(
+  options: MoonrakerConnectionOptions,
+  fileName: string,
+  content: string,
+): Promise<UploadFileResult> {
+  const url = `${options.baseUrl}/server/files/upload`;
+  const formData = new FormData();
+  formData.append("file", new Blob([content], { type: "text/plain" }), fileName);
+  formData.append("root", "config");
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: buildHeaders(options),
+    body: formData,
+    mode: "cors",
+  });
+
+  if (!response.ok) {
+    const body = await response.text().catch(() => "");
+    throw new MoonrakerApiError(response.status, body || `HTTP ${response.status}`);
+  }
+
+  const data = (await response.json()) as { result: UploadFileResult };
+  return data.result;
+}
+
 export async function testConnection(options: MoonrakerConnectionOptions): Promise<boolean> {
   try {
     await fetchFileList(options);

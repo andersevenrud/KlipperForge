@@ -55,6 +55,7 @@ import { ConfigListDialog } from "../storage/ConfigListDialog";
 import { RevisionHistoryDialog } from "../storage/RevisionHistoryDialog";
 import { SaveConfigDialog } from "../storage/SaveConfigDialog";
 import { ShareDialog } from "../storage/ShareDialog";
+import { MoonrakerExportDialog } from "./MoonrakerExportDialog";
 import { MoonrakerImportDialog } from "./MoonrakerImportDialog";
 import { NewConfigDialog } from "./NewConfigDialog";
 
@@ -466,6 +467,7 @@ export function SidebarActions() {
   const [pasteContent, setPasteContent] = useState("");
   const [importWarnings, setImportWarnings] = useState<ImportWarning[]>([]);
   const [moonrakerDialogOpen, setMoonrakerDialogOpen] = useState(false);
+  const [moonrakerExportDialogOpen, setMoonrakerExportDialogOpen] = useState(false);
 
   const hasMultipleFiles = (state.document.files?.length ?? 1) > 1;
   const activeFileName = state.activeFile;
@@ -694,6 +696,14 @@ export function SidebarActions() {
             <DropdownMenuItem onSelect={handleExportCfg}>Export .cfg</DropdownMenuItem>
             {hasMultipleFiles && <DropdownMenuItem onSelect={handleExportZip}>Export all as .zip</DropdownMenuItem>}
             <DropdownMenuItem onSelect={handleExportProject}>Export .klipperforge.json</DropdownMenuItem>
+            {featureFlags.moonrakerImport && (
+              <>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onSelect={() => setMoonrakerExportDialogOpen(true)}>
+                  Export to Moonraker...
+                </DropdownMenuItem>
+              </>
+            )}
           </DropdownMenuContent>
         </DropdownMenu>
         <NewConfigDialog open={newConfigOpen} onOpenChange={setNewConfigOpen} />
@@ -728,6 +738,14 @@ export function SidebarActions() {
             open={moonrakerDialogOpen}
             onOpenChange={setMoonrakerDialogOpen}
             onImport={handleMoonrakerImport}
+          />
+        )}
+
+        {featureFlags.moonrakerImport && (
+          <MoonrakerExportDialog
+            open={moonrakerExportDialogOpen}
+            onOpenChange={setMoonrakerExportDialogOpen}
+            files={state.generatedOutputs}
           />
         )}
       </div>
