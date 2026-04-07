@@ -3,17 +3,21 @@ import { PcbTooltip } from "@/components/svg/pcb/PcbTooltip";
 import type { ImageOpacity, Rotation } from "@/components/svg/pcb/pcb-types";
 import { usePcbTooltip } from "@/components/svg/pcb/usePcbTooltip";
 import { usePcbZoom } from "@/components/svg/pcb/usePcbZoom";
-import type { PcbLayout } from "@klipperforge/printer-data";
+import { cn } from "@/lib/utils";
+import type { PcbLayout, PinUsage } from "@klipperforge/printer-data";
 import { ImageIcon, ImageOff, Layers, Maximize2, RotateCw, ZoomIn, ZoomOut } from "lucide-react";
 import { useCallback, useState } from "react";
 
 interface DocPcbViewerProps {
   layout: PcbLayout;
+  usedPins?: Map<string, PinUsage>;
+  className?: string;
+  label?: string;
 }
 
-const emptyPins = new Map();
+const emptyPins: Map<string, PinUsage> = new Map();
 
-export function DocPcbViewer({ layout }: DocPcbViewerProps) {
+export function DocPcbViewer({ layout, usedPins, className, label }: DocPcbViewerProps) {
   const [imageOpacity, setImageOpacity] = useState<ImageOpacity>(1);
   const [rotation, setRotation] = useState<Rotation>(0);
   const [showOverlay, setShowOverlay] = useState(true);
@@ -57,8 +61,9 @@ export function DocPcbViewer({ layout }: DocPcbViewerProps) {
   }, []);
 
   return (
-    <div className="flex h-[28rem] flex-col rounded bg-muted/50">
+    <div className={cn("flex h-[28rem] flex-col rounded bg-muted/50", className)}>
       <div className="flex items-center gap-1 px-3 py-1.5">
+        {label && <span className="text-xs font-medium text-muted-foreground">{label}</span>}
         <button
           type="button"
           onClick={cycleRotation}
@@ -125,7 +130,7 @@ export function DocPcbViewer({ layout }: DocPcbViewerProps) {
           imageOpacity={imageOpacity}
           rotation={rotation}
           showOverlay={showOverlay}
-          usedPins={emptyPins}
+          usedPins={usedPins ?? emptyPins}
           highlightedConnector={tooltip?.connector.name}
           svgRef={svgRef}
           viewBox={zoomViewBox}
