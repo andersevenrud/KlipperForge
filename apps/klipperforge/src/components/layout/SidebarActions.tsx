@@ -12,6 +12,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Textarea } from "@/components/ui/textarea";
@@ -54,6 +55,7 @@ import { ConfigListDialog } from "../storage/ConfigListDialog";
 import { RevisionHistoryDialog } from "../storage/RevisionHistoryDialog";
 import { SaveConfigDialog } from "../storage/SaveConfigDialog";
 import { ShareDialog } from "../storage/ShareDialog";
+import { MoonrakerImportDialog } from "./MoonrakerImportDialog";
 import { NewConfigDialog } from "./NewConfigDialog";
 
 function readFileAsText(file: File): Promise<string> {
@@ -463,6 +465,7 @@ export function SidebarActions() {
   const [pasteDialogOpen, setPasteDialogOpen] = useState(false);
   const [pasteContent, setPasteContent] = useState("");
   const [importWarnings, setImportWarnings] = useState<ImportWarning[]>([]);
+  const [moonrakerDialogOpen, setMoonrakerDialogOpen] = useState(false);
 
   const hasMultipleFiles = (state.document.files?.length ?? 1) > 1;
   const activeFileName = state.activeFile;
@@ -615,6 +618,20 @@ export function SidebarActions() {
     }
   }
 
+  const handleMoonrakerImport = useCallback(
+    (files: { name: string; content: string }[]) => {
+      const doc = parseMultiFileConfigs(files, defaultRegistry);
+      dispatch({ type: "LOAD_DOCUMENT", payload: { document: doc } });
+      storage.markDirty();
+      scrollToTop();
+      setMoonrakerDialogOpen(false);
+      if (doc.importWarnings) {
+        setImportWarnings(doc.importWarnings);
+      }
+    },
+    [dispatch, storage, scrollToTop],
+  );
+
   return (
     <div className="shrink-0">
       {featureFlags.configStorage && <StorageActions />}
@@ -651,6 +668,14 @@ export function SidebarActions() {
             <DropdownMenuItem onSelect={handleImportFiles}>Import files...</DropdownMenuItem>
             <DropdownMenuItem onSelect={handleImportFolder}>Import folder...</DropdownMenuItem>
             <DropdownMenuItem onSelect={() => setPasteDialogOpen(true)}>Paste from clipboard...</DropdownMenuItem>
+            {featureFlags.moonrakerImport && (
+              <>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onSelect={() => setMoonrakerDialogOpen(true)}>
+                  Import from Moonraker...
+                </DropdownMenuItem>
+              </>
+            )}
           </DropdownMenuContent>
         </DropdownMenu>
         <DropdownMenu>
@@ -697,6 +722,14 @@ export function SidebarActions() {
         </Dialog>
 
         <ImportWarningsDialog warnings={importWarnings} onClose={() => setImportWarnings([])} />
+
+        {featureFlags.moonrakerImport && (
+          <MoonrakerImportDialog
+            open={moonrakerDialogOpen}
+            onOpenChange={setMoonrakerDialogOpen}
+            onImport={handleMoonrakerImport}
+          />
+        )}
       </div>
     </div>
   );

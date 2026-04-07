@@ -3,6 +3,7 @@ interface FeatureFlags {
   browserFlashTool: boolean;
   configStorage: boolean;
   projectJsonTab: boolean;
+  moonrakerImport: boolean;
 }
 
 export const featureFlags: FeatureFlags = {
@@ -10,4 +11,5 @@ export const featureFlags: FeatureFlags = {
   browserFlashTool: import.meta.env.VITE_FEATURE_BROWSER_FLASH_TOOL !== "false",
   configStorage: import.meta.env.VITE_FEATURE_CONFIG_STORAGE !== "false",
   projectJsonTab: import.meta.env.VITE_FEATURE_PROJECT_JSON_TAB === "true",
+  moonrakerImport: import.meta.env.VITE_FEATURE_MOONRAKER_IMPORT !== "false",
 };

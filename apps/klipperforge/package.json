@@ -18,6 +18,7 @@
     "@klipperforge/dfu": "workspace:*",
     "@klipperforge/editor": "workspace:*",
     "@klipperforge/klipper-config": "workspace:*",
+    "@klipperforge/moonraker": "workspace:*",
     "@klipperforge/printer-data": "workspace:*",
     "@tanstack/react-query": "^5.95.0",
     "class-variance-authority": "^0.7.1",

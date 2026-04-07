@@ -21,6 +21,7 @@
     { "path": "packages/klipper-config" },
     { "path": "packages/printer-data" },
     { "path": "packages/dfu" },
-    { "path": "packages/editor" }
+    { "path": "packages/editor" },
+    { "path": "packages/moonraker" }
   ]
 }

@@ -51,6 +51,7 @@
         "@klipperforge/dfu": "workspace:*",
         "@klipperforge/editor": "workspace:*",
         "@klipperforge/klipper-config": "workspace:*",
+        "@klipperforge/moonraker": "workspace:*",
         "@klipperforge/printer-data": "workspace:*",
         "@tanstack/react-query": "^5.95.0",
         "class-variance-authority": "^0.7.1",
@@ -142,6 +143,13 @@
         "@klipperforge/configparser": "workspace:*",
         "zod": "^3.24.0",
       },
+      "devDependencies": {
+        "typescript": "^5.7.0",
+      },
+    },
+    "packages/moonraker": {
+      "name": "@klipperforge/moonraker",
+      "version": "0.0.1",
       "devDependencies": {
         "typescript": "^5.7.0",
       },
@@ -371,6 +379,8 @@
     "@klipperforge/firmware": ["@klipperforge/firmware@workspace:apps/firmware"],
 
     "@klipperforge/klipper-config": ["@klipperforge/klipper-config@workspace:packages/klipper-config"],
+
+    "@klipperforge/moonraker": ["@klipperforge/moonraker@workspace:packages/moonraker"],
 
     "@klipperforge/pcb-editor": ["@klipperforge/pcb-editor@workspace:apps/pcb"],
 

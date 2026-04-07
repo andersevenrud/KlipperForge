@@ -12,7 +12,7 @@
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
     "format": "biome format --write .",
-    "typecheck": "tsc -b packages/configparser packages/klipper-config packages/printer-data packages/dfu packages/editor && tsc --noEmit -p apps/klipperforge && tsc --noEmit -p apps/pcb",
+    "typecheck": "tsc -b packages/configparser packages/klipper-config packages/printer-data packages/dfu packages/editor packages/moonraker && tsc --noEmit -p apps/klipperforge && tsc --noEmit -p apps/pcb",
     "firmware:dev": "bun run --filter @klipperforge/firmware dev",
     "test": "vitest run",
     "test:e2e": "bun run --filter @klipperforge/app test:e2e",
