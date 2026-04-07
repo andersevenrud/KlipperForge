@@ -13,6 +13,7 @@ COPY packages/klipper-config/package.json packages/klipper-config/
 COPY packages/printer-data/package.json packages/printer-data/
 COPY packages/dfu/package.json packages/dfu/
 COPY packages/editor/package.json packages/editor/
+COPY packages/moonraker/package.json packages/moonraker/
 
 RUN bun install --frozen-lockfile --ignore-scripts
 
