@@ -1,7 +1,7 @@
 import type { ConfigSummary } from "@/api/config-storage-types";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { HardDrive, Trash2 } from "lucide-react";
+import { HardDrive, Trash2, Upload } from "lucide-react";
 import { useState } from "react";
 
 interface ConfigListDialogProps {
@@ -14,6 +14,8 @@ interface ConfigListDialogProps {
   isLoading: boolean;
   storageMode: "local" | "remote";
   onSignIn?: () => void;
+  localConfigCount?: number;
+  onImportLocal?: () => void;
 }
 
 export function ConfigListDialog({
@@ -26,6 +28,8 @@ export function ConfigListDialog({
   isLoading,
   storageMode,
   onSignIn,
+  localConfigCount,
+  onImportLocal,
 }: ConfigListDialogProps) {
   const [deletingId, setDeletingId] = useState<string | null>(null);
 
@@ -62,6 +66,21 @@ export function ConfigListDialog({
                 Sign in
               </button>{" "}
               to sync across devices.
+            </span>
+          </div>
+        )}
+        {storageMode === "remote" && localConfigCount && localConfigCount > 0 && onImportLocal && (
+          <div className="flex items-center gap-2 rounded-md border border-border bg-blue-500/5 px-3 py-2 text-xs text-muted-foreground">
+            <Upload className="h-3.5 w-3.5 shrink-0 text-blue-500" />
+            <span>
+              You have {localConfigCount} config{localConfigCount !== 1 ? "s" : ""} in local storage.{" "}
+              <button
+                type="button"
+                onClick={onImportLocal}
+                className="font-medium text-foreground underline underline-offset-2"
+              >
+                Import them
+              </button>
             </span>
           </div>
         )}

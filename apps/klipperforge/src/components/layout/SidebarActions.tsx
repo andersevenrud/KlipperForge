@@ -20,6 +20,7 @@ import { useAuth } from "@/context/auth-context";
 import { useConfig } from "@/context/config-context";
 import { useConfigStorage } from "@/context/config-storage-context";
 import { useStorage } from "@/context/storage-context";
+import { useLocalConfigDetection } from "@/hooks/use-local-config-detection";
 import { useConfigListQuery } from "@/hooks/use-queries";
 import { featureFlags } from "@/lib/feature-flags";
 import { downloadBlob } from "@/lib/utils";
@@ -44,14 +45,18 @@ import {
   Download,
   FilePlus,
   FolderOpen,
+  HardDrive,
   Info,
   Link,
   Save,
   Share,
   TriangleAlert,
+  Upload,
+  X,
 } from "lucide-react";
 import { type ChangeEvent, useCallback, useRef, useState } from "react";
 import { ConfigListDialog } from "../storage/ConfigListDialog";
+import { ImportLocalConfigsDialog } from "../storage/ImportLocalConfigsDialog";
 import { RevisionHistoryDialog } from "../storage/RevisionHistoryDialog";
 import { SaveConfigDialog } from "../storage/SaveConfigDialog";
 import { ShareDialog } from "../storage/ShareDialog";
@@ -207,10 +212,13 @@ function StorageActions() {
   const queryClient = useQueryClient();
   const { scrollToTop } = useEditorScroll();
 
+  const localDetection = useLocalConfigDetection();
+
   const [saveDialogOpen, setSaveDialogOpen] = useState(false);
   const [configListOpen, setConfigListOpen] = useState(false);
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
   const [revisionHistoryOpen, setRevisionHistoryOpen] = useState(false);
+  const [importLocalOpen, setImportLocalOpen] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [isCreatingShare, setIsCreatingShare] = useState(false);
   const [shares, setShares] = useState<ShareInfo[]>([]);
@@ -384,9 +392,35 @@ function StorageActions() {
     [adapter, storage, dispatch, queryClient, scrollToTop],
   );
 
+  const handleImportLocalComplete = useCallback(() => {
+    queryClient.invalidateQueries({ queryKey: ["configList"] });
+    localDetection.recheck();
+  }, [queryClient, localDetection]);
+
+  const showLocalBanner = localDetection.hasLocalConfigs && !localDetection.dismissed;
+
   return (
     <>
       <StorageStatusBar />
+      {showLocalBanner && (
+        <div className="flex items-center gap-2 border-b border-border bg-blue-500/5 px-3 py-2 text-xs text-muted-foreground">
+          <Upload className="h-3.5 w-3.5 shrink-0 text-blue-500" />
+          <span className="flex-1">
+            You have {localDetection.localConfigCount} config{localDetection.localConfigCount !== 1 ? "s" : ""} saved
+            locally.{" "}
+            <button
+              type="button"
+              onClick={() => setImportLocalOpen(true)}
+              className="font-medium text-foreground underline underline-offset-2"
+            >
+              Import to cloud
+            </button>
+          </span>
+          <button type="button" onClick={localDetection.dismiss} className="rounded-sm p-0.5 hover:bg-muted">
+            <X className="h-3 w-3" />
+          </button>
+        </div>
+      )}
       <div className="flex items-center gap-2 border-b border-border px-3 py-2">
         <Button variant="outline" size="sm" className="flex-1" onClick={handleQuickSave} disabled={isSaving}>
           <Save className="mr-1 h-3 w-3" />
@@ -431,6 +465,8 @@ function StorageActions() {
         isLoading={configListQuery.isLoading}
         storageMode={adapter.mode}
         onSignIn={adapter.mode === "local" ? login : undefined}
+        localConfigCount={localDetection.hasLocalConfigs ? localDetection.localConfigCount : undefined}
+        onImportLocal={localDetection.hasLocalConfigs ? () => setImportLocalOpen(true) : undefined}
       />
 
       <ShareDialog
@@ -451,6 +487,12 @@ function StorageActions() {
         onRestore={handleRestoreRevision}
         isLoading={isLoadingRevisions}
       />
+
+      <ImportLocalConfigsDialog
+        open={importLocalOpen}
+        onOpenChange={setImportLocalOpen}
+        onImportComplete={handleImportLocalComplete}
+      />
     </>
   );
 }
@@ -459,6 +501,8 @@ export function SidebarActions() {
   const { state, dispatch } = useConfig();
   const { scrollToTop } = useEditorScroll();
   const storage = useStorage();
+  const queryClient = useQueryClient();
+  const localDetection = useLocalConfigDetection();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const folderInputRef = useRef<HTMLInputElement>(null);
   const [copied, setCopied] = useState(false);
@@ -468,6 +512,7 @@ export function SidebarActions() {
   const [importWarnings, setImportWarnings] = useState<ImportWarning[]>([]);
   const [moonrakerDialogOpen, setMoonrakerDialogOpen] = useState(false);
   const [moonrakerExportDialogOpen, setMoonrakerExportDialogOpen] = useState(false);
+  const [importLocalOpen, setImportLocalOpen] = useState(false);
 
   const hasMultipleFiles = (state.document.files?.length ?? 1) > 1;
   const activeFileName = state.activeFile;
@@ -634,6 +679,11 @@ export function SidebarActions() {
     [dispatch, storage, scrollToTop],
   );
 
+  const handleImportLocalComplete = useCallback(() => {
+    queryClient.invalidateQueries({ queryKey: ["configList"] });
+    localDetection.recheck();
+  }, [queryClient, localDetection]);
+
   return (
     <div className="shrink-0">
       {featureFlags.configStorage && <StorageActions />}
@@ -670,6 +720,15 @@ export function SidebarActions() {
             <DropdownMenuItem onSelect={handleImportFiles}>Import files...</DropdownMenuItem>
             <DropdownMenuItem onSelect={handleImportFolder}>Import folder...</DropdownMenuItem>
             <DropdownMenuItem onSelect={() => setPasteDialogOpen(true)}>Paste from clipboard...</DropdownMenuItem>
+            {featureFlags.configStorage && localDetection.hasLocalConfigs && (
+              <>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onSelect={() => setImportLocalOpen(true)}>
+                  <HardDrive className="mr-1 h-3 w-3" />
+                  Import from local storage...
+                </DropdownMenuItem>
+              </>
+            )}
             {featureFlags.moonrakerImport && (
               <>
                 <DropdownMenuSeparator />
@@ -746,6 +805,14 @@ export function SidebarActions() {
             open={moonrakerExportDialogOpen}
             onOpenChange={setMoonrakerExportDialogOpen}
             files={state.generatedOutputs}
+          />
+        )}
+
+        {featureFlags.configStorage && (
+          <ImportLocalConfigsDialog
+            open={importLocalOpen}
+            onOpenChange={setImportLocalOpen}
+            onImportComplete={handleImportLocalComplete}
           />
         )}
       </div>
