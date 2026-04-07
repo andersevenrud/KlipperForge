@@ -43,12 +43,18 @@ import {
   Clipboard,
   Clock,
   Download,
+  File,
+  FileArchive,
+  FileJson,
   FilePlus,
+  FileText,
+  Folder,
   FolderOpen,
   HardDrive,
   Info,
   Link,
   Save,
+  Server,
   Share,
   TriangleAlert,
   Upload,
@@ -717,9 +723,18 @@ export function SidebarActions() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start">
-            <DropdownMenuItem onSelect={handleImportFiles}>Import files...</DropdownMenuItem>
-            <DropdownMenuItem onSelect={handleImportFolder}>Import folder...</DropdownMenuItem>
-            <DropdownMenuItem onSelect={() => setPasteDialogOpen(true)}>Paste from clipboard...</DropdownMenuItem>
+            <DropdownMenuItem onSelect={handleImportFiles}>
+              <File className="mr-1 h-3 w-3" />
+              Import files...
+            </DropdownMenuItem>
+            <DropdownMenuItem onSelect={handleImportFolder}>
+              <Folder className="mr-1 h-3 w-3" />
+              Import folder...
+            </DropdownMenuItem>
+            <DropdownMenuItem onSelect={() => setPasteDialogOpen(true)}>
+              <Clipboard className="mr-1 h-3 w-3" />
+              Paste from clipboard...
+            </DropdownMenuItem>
             {featureFlags.configStorage && localDetection.hasLocalConfigs && (
               <>
                 <DropdownMenuSeparator />
@@ -733,6 +748,7 @@ export function SidebarActions() {
               <>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onSelect={() => setMoonrakerDialogOpen(true)}>
+                  <Server className="mr-1 h-3 w-3" />
                   Import from Moonraker...
                 </DropdownMenuItem>
               </>
@@ -752,13 +768,25 @@ export function SidebarActions() {
               {copied ? <Check className="mr-1 h-3 w-3" /> : <Clipboard className="mr-1 h-3 w-3" />}
               {copied ? "Copied!" : "Copy to clipboard"}
             </DropdownMenuItem>
-            <DropdownMenuItem onSelect={handleExportCfg}>Export .cfg</DropdownMenuItem>
-            {hasMultipleFiles && <DropdownMenuItem onSelect={handleExportZip}>Export all as .zip</DropdownMenuItem>}
-            <DropdownMenuItem onSelect={handleExportProject}>Export .klipperforge.json</DropdownMenuItem>
+            <DropdownMenuItem onSelect={handleExportCfg}>
+              <FileText className="mr-1 h-3 w-3" />
+              Export .cfg
+            </DropdownMenuItem>
+            {hasMultipleFiles && (
+              <DropdownMenuItem onSelect={handleExportZip}>
+                <FileArchive className="mr-1 h-3 w-3" />
+                Export all as .zip
+              </DropdownMenuItem>
+            )}
+            <DropdownMenuItem onSelect={handleExportProject}>
+              <FileJson className="mr-1 h-3 w-3" />
+              Export .klipperforge.json
+            </DropdownMenuItem>
             {featureFlags.moonrakerImport && (
               <>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onSelect={() => setMoonrakerExportDialogOpen(true)}>
+                  <Server className="mr-1 h-3 w-3" />
                   Export to Moonraker...
                 </DropdownMenuItem>
               </>
