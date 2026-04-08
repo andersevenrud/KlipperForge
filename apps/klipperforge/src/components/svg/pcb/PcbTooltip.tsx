@@ -19,7 +19,6 @@ interface PcbTooltipProps {
 }
 
 interface PinLabelProps {
-  pinNumber: number;
   pin: string;
   hint?: string;
   usage?: PinUsage;
@@ -27,7 +26,7 @@ interface PinLabelProps {
   onPinClick?: (assignment: PinAssignment) => void;
 }
 
-function PinLabel({ pinNumber, pin, hint, usage, pinned, onPinClick }: PinLabelProps) {
+function PinLabel({ pin, hint, usage, pinned, onPinClick }: PinLabelProps) {
   const usageContent = usage && (
     <>
       <span className="text-emerald-400">[{usage.section}]</span> <span className="text-sky-400">{usage.field}</span>
@@ -36,7 +35,7 @@ function PinLabel({ pinNumber, pin, hint, usage, pinned, onPinClick }: PinLabelP
 
   return (
     <>
-      <span className="text-muted-foreground/60 mr-1">{pinNumber}.</span>
+      <span className="text-muted-foreground/40 mr-1">&bull;</span>
       <span className={usage ? "text-foreground" : "text-muted-foreground"}>{pin}</span>
       {hint && <span className="text-muted-foreground"> ({hint})</span>}
       {usage && " "}
@@ -143,7 +142,6 @@ export function PcbTooltip({
                     {row.map((idx) => (
                       <td key={`pin-${idx.toString()}`} className="px-1.5 py-0.5 font-mono text-xs">
                         <PinLabel
-                          pinNumber={idx + 1}
                           pin={connector.pins[idx]}
                           hint={connector.pinHints?.[idx]}
                           usage={assignmentsByPin.get(connector.pins[idx])}
@@ -159,7 +157,6 @@ export function PcbTooltip({
                     {row.map((idx) => (
                       <td key={`pin-${idx.toString()}`} className="px-1.5 py-0.5 font-mono text-xs">
                         <PinLabel
-                          pinNumber={idx + 1}
                           pin={connector.pins[idx]}
                           hint={connector.pinHints?.[idx]}
                           usage={assignmentsByPin.get(connector.pins[idx])}
@@ -177,7 +174,6 @@ export function PcbTooltip({
           {groups.flat().map((idx) => (
             <li key={`pin-${idx.toString()}`} className="font-mono text-xs">
               <PinLabel
-                pinNumber={idx + 1}
                 pin={connector.pins[idx]}
                 hint={connector.pinHints?.[idx]}
                 usage={assignmentsByPin.get(connector.pins[idx])}
