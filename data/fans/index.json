@@ -106,6 +106,15 @@
       "manufacturer": "Orion",
       "fanType": "axial",
       "size": "4010"
+    },
+    {
+      "id": "mellow-cpap",
+      "name": "FLY-7040 CPAP Fan Kit",
+      "manufacturer": "Mellow",
+      "fanType": "cpap",
+      "size": "7040",
+      "hasImage": true,
+      "pcbLayoutId": "mellow-cpap"
     }
   ]
 }

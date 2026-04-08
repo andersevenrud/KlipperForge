@@ -1,0 +1,81 @@
+{
+	"boardId": "mellow-cpap",
+	"name": "Mellow FLY-7040 CPAP Controller",
+	"viewBox": {
+		"width": 721,
+		"height": 471
+	},
+	"image": "/data/pcb-layouts/mellow-cpap.png",
+	"connectors": [
+		{
+			"name": "FAN",
+			"category": "fan",
+			"x": 0,
+			"y": 60,
+			"width": 150,
+			"height": 370,
+			"pins": [
+				"<W>",
+				"<V>",
+				"<U>",
+				"<GND>",
+				"<HW>",
+				"<HV>",
+				"<HU>",
+				"<5V>"
+			],
+			"pinHints": [
+				"Phase W",
+				"Phase V",
+				"Phase U",
+				"<GND>",
+				"Hall W",
+				"Hall V",
+				"Hall U",
+				"<5V>"
+			],
+			"orientation": "vertical",
+			"rows": 1
+		},
+		{
+			"name": "POWER",
+			"category": "power",
+			"x": 580,
+			"y": 50,
+			"width": 140,
+			"height": 90,
+			"pins": [
+				"<24V>",
+				"<GND>"
+			],
+			"orientation": "vertical",
+			"rows": 1
+		},
+		{
+			"name": "CONTROL",
+			"category": "communication",
+			"x": 570,
+			"y": 210,
+			"width": 100,
+			"height": 210,
+			"pins": [
+				"<FG>",
+				"<FR>",
+				"<EN>",
+				"<GND>",
+				"<VSR>",
+				"<5V>"
+			],
+			"pinHints": [
+				"Speed Pulse Output",
+				"CCW or CW",
+				"Enable",
+				"<GND>",
+				"PWM Signal",
+				"<5V>"
+			],
+			"orientation": "vertical",
+			"rows": 1
+		}
+	]
+}

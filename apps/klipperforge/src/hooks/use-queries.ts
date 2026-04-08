@@ -59,10 +59,12 @@ export function useDocDataMultipleQuery<T>(loader: (id: string) => Promise<T>, i
   return queries.map((q) => q.data);
 }
 
-export function useOptionalDocDataQuery<T>(loader: (id: string) => Promise<T>, id: string): T | null {
+export function useOptionalDocDataQuery<T>(loader: (id: string) => Promise<T>, id: string | undefined): T | null {
+  const resolvedId = id ?? "";
   const query = useQuery({
-    queryKey: [loader.name, id],
-    queryFn: () => loader(id),
+    queryKey: [loader.name, resolvedId],
+    queryFn: () => loader(resolvedId),
+    enabled: !!id,
   });
 
   return query.data ?? null;

@@ -1,6 +1,8 @@
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
-import { loadFan } from "@klipperforge/printer-data";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useDocDataQuery, useDocIndicesQuery, useOptionalDocDataQuery } from "@/hooks/use-queries";
+import { loadFan, loadPcbLayout } from "@klipperforge/printer-data";
 import { Ruler, Volume2, Wind, Zap } from "lucide-react";
+import { DocPcbViewer } from "./DocPcbViewer";
 import {
   Badge,
   BooleanSpecRow,
@@ -17,6 +19,7 @@ const FAN_TYPE_LABELS: Record<string, string> = {
   axial: "Axial",
   radial: "Radial / Blower",
   blower: "Blower",
+  cpap: "CPAP",
 };
 
 interface DocFanPageProps {
@@ -26,6 +29,7 @@ interface DocFanPageProps {
 export function DocFanPage({ fanId }: DocFanPageProps) {
   const fan = useDocDataQuery(loadFan, fanId);
   const { data: indices } = useDocIndicesQuery();
+  const pcbLayout = useOptionalDocDataQuery(loadPcbLayout, fan.pcbLayoutId);
 
   const hasImage = indices.fans.find((f) => f.id === fanId)?.hasImage;
 
@@ -43,12 +47,35 @@ export function DocFanPage({ fanId }: DocFanPageProps) {
         }
       />
 
-      {hasImage && (
+      {hasImage && !pcbLayout && (
         <img
           src={`/data/fans/images/${fanId}.png`}
           alt={fan.name}
           className="mt-4 max-h-64 rounded border object-contain"
         />
+      )}
+      {pcbLayout && !hasImage && (
+        <div className="mt-4">
+          <DocPcbViewer layout={pcbLayout} label="Controller Board" />
+        </div>
+      )}
+      {hasImage && pcbLayout && (
+        <Tabs defaultValue="pcb" className="mt-4">
+          <TabsList variant="line">
+            <TabsTrigger value="photo">Product Photo</TabsTrigger>
+            <TabsTrigger value="pcb">Controller Board</TabsTrigger>
+          </TabsList>
+          <TabsContent value="photo">
+            <img
+              src={`/data/fans/images/${fanId}.png`}
+              alt={fan.name}
+              className="max-h-64 rounded border object-contain"
+            />
+          </TabsContent>
+          <TabsContent value="pcb">
+            <DocPcbViewer layout={pcbLayout} label="Controller Board" />
+          </TabsContent>
+        </Tabs>
       )}
 
       <UnverifiedBanner unverified={fan.unverified} />

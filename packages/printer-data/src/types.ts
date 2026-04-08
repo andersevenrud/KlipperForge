@@ -134,6 +134,7 @@ export interface FanIndexEntry {
   fanType: string;
   size: string;
   hasImage?: boolean;
+  pcbLayoutId?: string;
 }
 
 export interface ThermistorIndexEntry {
@@ -516,6 +517,7 @@ export interface Fan {
   description: string;
   fanType: string;
   size: string;
+  pcbLayoutId?: string;
   airflowSpecs: FanAirflowSpecs;
   electricalSpecs: FanElectricalSpecs;
   noiseSpecs?: FanNoiseSpecs;
