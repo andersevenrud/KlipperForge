@@ -58,19 +58,25 @@ function PinLabel({ pinNumber, pin, hint, usage, pinned, onPinClick }: PinLabelP
   );
 }
 
-const DIRECTION_LABELS: Record<string, Record<Rotation, string>> = {
-  horizontal: {
-    0: "From left to right",
-    90: "From top to bottom",
-    180: "From right to left",
-    270: "From bottom to top",
-  },
-  vertical: {
-    0: "From top to bottom",
-    90: "From right to left",
-    180: "From bottom to top",
-    270: "From left to right",
-  },
+type PinDirection = "ltr" | "rtl" | "ttb" | "btt";
+
+const PIN_DIRECTIONS: Record<string, Record<Rotation, PinDirection>> = {
+  horizontal: { 0: "ltr", 90: "ttb", 180: "rtl", 270: "btt" },
+  vertical: { 0: "ttb", 90: "rtl", 180: "btt", 270: "ltr" },
+};
+
+const DIRECTION_ARROWS: Record<PinDirection, string> = {
+  ltr: "\u2192",
+  rtl: "\u2190",
+  ttb: "\u2193",
+  btt: "\u2191",
+};
+
+const DIRECTION_LABELS: Record<PinDirection, string> = {
+  ltr: "From left to right",
+  rtl: "From right to left",
+  ttb: "From top to bottom",
+  btt: "From bottom to top",
 };
 
 export function PcbTooltip({
@@ -88,9 +94,11 @@ export function PcbTooltip({
   const assignmentsByPin = new Map(assignments.map((a) => [a.pin, a]));
   const combinedRotation = (((rotation + (connector.rotation ?? 0)) % 360) + 360) % 360;
   const snappedRotation = (Math.round(combinedRotation / 90) * 90) % 360;
-  const directionLabel = DIRECTION_LABELS[connector.orientation]?.[snappedRotation as Rotation] ?? "From left to right";
+  const direction = PIN_DIRECTIONS[connector.orientation]?.[snappedRotation as Rotation] ?? "ltr";
+  const directionArrow = DIRECTION_ARROWS[direction];
+  const directionLabel = DIRECTION_LABELS[direction];
   const rawGroups = buildPinGrid(connector);
-  const groups = connector.rows > 1 ? rotateGrid(rawGroups, rotation) : rawGroups;
+  const groups = rotateGrid(rawGroups, rotation);
   const isMultiRow = connector.rows > 1;
   const effectiveHorizontal =
     rotation === 0 || rotation === 180
@@ -106,7 +114,10 @@ export function PcbTooltip({
         {getConnectorLabel(connector)}
       </div>
       {connector.pins.length === 0 ? null : (
-        <div className="mb-1 text-xs text-muted-foreground italic">{directionLabel}</div>
+        <div className="mb-1 flex items-center gap-1.5 text-xs text-muted-foreground">
+          <span className="text-base leading-none">{directionArrow}</span>
+          <span className="italic">{directionLabel}</span>
+        </div>
       )}
       {connector.pins.length === 0 ? null : isMultiRow ? (
         <table className="border-separate border-spacing-0">
@@ -163,7 +174,7 @@ export function PcbTooltip({
         </table>
       ) : (
         <ul className="space-y-0.5">
-          {groups[0].map((idx) => (
+          {groups.flat().map((idx) => (
             <li key={`pin-${idx.toString()}`} className="font-mono text-xs">
               <PinLabel
                 pinNumber={idx + 1}
