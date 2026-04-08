@@ -28,9 +28,7 @@ interface PinLabelProps {
 function PinLabel({ pinNumber, pin, hint, usage, pinned, onPinClick }: PinLabelProps) {
   const usageContent = usage && (
     <>
-      <span className="text-emerald-400">{usage.section}</span>
-      <span className="text-muted-foreground">.</span>
-      <span className="text-sky-400">{usage.field}</span>
+      <span className="text-emerald-400">[{usage.section}]</span> <span className="text-sky-400">{usage.field}</span>
     </>
   );
 

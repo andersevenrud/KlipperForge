@@ -1,11 +1,13 @@
 import { PcbBoard } from "@/components/svg/pcb/PcbBoard";
+import type { PinAssignment } from "@/components/svg/pcb/PcbConnectorRect";
+import { PcbPinOverview } from "@/components/svg/pcb/PcbPinOverview";
 import { PcbTooltip } from "@/components/svg/pcb/PcbTooltip";
 import type { ImageOpacity, Rotation } from "@/components/svg/pcb/pcb-types";
 import { usePcbTooltip } from "@/components/svg/pcb/usePcbTooltip";
 import { usePcbZoom } from "@/components/svg/pcb/usePcbZoom";
 import { cn } from "@/lib/utils";
 import type { PcbLayout, PinUsage } from "@klipperforge/printer-data";
-import { ImageIcon, ImageOff, Layers, Maximize2, RotateCw, ZoomIn, ZoomOut } from "lucide-react";
+import { ImageIcon, ImageOff, Layers, List, Maximize2, RotateCw, ZoomIn, ZoomOut } from "lucide-react";
 import { useCallback, useState } from "react";
 
 interface DocPcbViewerProps {
@@ -13,14 +15,17 @@ interface DocPcbViewerProps {
   usedPins?: Map<string, PinUsage>;
   className?: string;
   label?: string;
+  onPinClick?: (assignment: PinAssignment) => void;
 }
 
 const emptyPins: Map<string, PinUsage> = new Map();
 
-export function DocPcbViewer({ layout, usedPins, className, label }: DocPcbViewerProps) {
+export function DocPcbViewer({ layout, usedPins, className, label, onPinClick }: DocPcbViewerProps) {
   const [imageOpacity, setImageOpacity] = useState<ImageOpacity>(1);
   const [rotation, setRotation] = useState<Rotation>(0);
   const [showOverlay, setShowOverlay] = useState(true);
+  const [showPinOverview, setShowPinOverview] = useState(false);
+  const [overviewHighlight, setOverviewHighlight] = useState<string | undefined>();
 
   const effectiveWidth = rotation === 90 || rotation === 270 ? layout.viewBox.height : layout.viewBox.width;
   const effectiveHeight = rotation === 90 || rotation === 270 ? layout.viewBox.width : layout.viewBox.height;
@@ -60,6 +65,18 @@ export function DocPcbViewer({ layout, usedPins, className, label }: DocPcbViewe
     setShowOverlay((prev) => !prev);
   }, []);
 
+  const togglePinOverview = useCallback(() => {
+    setShowPinOverview((prev) => !prev);
+  }, []);
+
+  const handlePinClick = useCallback(
+    (assignment: PinAssignment) => {
+      onPinClick?.(assignment);
+      dismiss();
+    },
+    [onPinClick, dismiss],
+  );
+
   return (
     <div className={cn("flex h-[28rem] flex-col rounded bg-muted/50", className)}>
       <div className="flex items-center gap-1 px-3 py-1.5">
@@ -90,6 +107,16 @@ export function DocPcbViewer({ layout, usedPins, className, label }: DocPcbViewe
         >
           <Layers className="size-3.5" />
         </button>
+        {usedPins && usedPins.size > 0 && (
+          <button
+            type="button"
+            onClick={togglePinOverview}
+            className={`flex items-center gap-1 rounded px-1.5 py-0.5 text-xs text-muted-foreground hover:bg-muted hover:text-foreground ${showPinOverview ? "bg-muted text-foreground" : ""}`}
+            title={`Pin overview: ${showPinOverview ? "visible" : "hidden"}`}
+          >
+            <List className="size-3.5" />
+          </button>
+        )}
         <span className="mx-1 h-4 border-l border-border" />
         <button
           type="button"
@@ -131,7 +158,7 @@ export function DocPcbViewer({ layout, usedPins, className, label }: DocPcbViewe
           rotation={rotation}
           showOverlay={showOverlay}
           usedPins={usedPins ?? emptyPins}
-          highlightedConnector={tooltip?.connector.name}
+          highlightedConnector={overviewHighlight ?? tooltip?.connector.name}
           svgRef={svgRef}
           viewBox={zoomViewBox}
           onPointerDown={onPointerDown}
@@ -148,6 +175,16 @@ export function DocPcbViewer({ layout, usedPins, className, label }: DocPcbViewe
             pinned={tooltip.pinned}
             rotation={rotation}
             jumperConfigs={layout.jumperConfigs}
+            onPinClick={onPinClick ? handlePinClick : undefined}
+          />
+        )}
+        {showPinOverview && usedPins && usedPins.size > 0 && (
+          <PcbPinOverview
+            layout={layout}
+            usedPins={usedPins}
+            onPinClick={handlePinClick}
+            onConnectorHover={setOverviewHighlight}
+            onConnectorLeave={() => setOverviewHighlight(undefined)}
           />
         )}
       </div>

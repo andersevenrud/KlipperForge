@@ -191,7 +191,7 @@ export function PcbPinOverview({
                                 <span className="shrink-0 font-mono text-muted-foreground">{p.pin}</span>
                                 {p.hint && <span className="shrink-0 text-muted-foreground/60">{p.hint}</span>}
                                 <span className="truncate font-medium">
-                                  {p.usage.section}.{p.usage.field}
+                                  [{p.usage.section}] {p.usage.field}
                                 </span>
                               </button>
                             ) : (

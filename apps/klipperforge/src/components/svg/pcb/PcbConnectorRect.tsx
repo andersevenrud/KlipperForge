@@ -14,7 +14,7 @@ export const CATEGORY_COLORS: Record<PcbConnectorCategory, { base: string; activ
   power: { base: "#9a3412", active: "#f97316" },
   communication: { base: "#4a5568", active: "#94a3b8" },
   driver: { base: "#5b21b6", active: "#8b5cf6" },
-  jumper: { base: "#6d28d9", active: "#a78bfa" },
+  jumper: { base: "#92400e", active: "#d97706" },
   button: { base: "#b91c1c", active: "#f87171" },
   "dip-switch": { base: "#155e75", active: "#22d3ee" },
   misc: { base: "#4a5568", active: "#94a3b8" },

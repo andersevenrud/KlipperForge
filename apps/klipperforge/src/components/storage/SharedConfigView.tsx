@@ -1,13 +1,15 @@
 import type { RevisionSummary, SharedConfigResponse } from "@/api/config-storage-types";
 import { fetchSharedConfig, fetchSharedRevision, fetchSharedRevisionList } from "@/api/configs";
+import type { PinAssignment } from "@/components/svg/pcb/PcbConnectorRect";
 import { Button } from "@/components/ui/button";
 import { useConfig } from "@/context/config-context";
 import { downloadBlob } from "@/lib/utils";
-import { KlipperConfigViewer } from "@klipperforge/editor";
+import { EditorView } from "@codemirror/view";
+import { KlipperConfigViewer, flashLineEffect } from "@klipperforge/editor";
 import { exportProject, importProject } from "@klipperforge/klipper-config";
 import { zipSync } from "fflate";
 import { Check, ChevronDown, Clipboard, Clock, Download, ExternalLink, Loader2 } from "lucide-react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import { SharedPcbStrip } from "./SharedPcbStrip";
 
@@ -32,6 +34,38 @@ export function SharedConfigView({ shareToken }: SharedConfigViewProps) {
   const [showRevisions, setShowRevisions] = useState(false);
   const [activeRevision, setActiveRevision] = useState<number | null>(null);
   const [loadingRevision, setLoadingRevision] = useState<number | null>(null);
+
+  const editorViewsRef = useRef(new Map<string, EditorView>());
+  const containerRefsRef = useRef(new Map<string, HTMLDivElement>());
+
+  const handlePinClick = useCallback((assignment: PinAssignment) => {
+    const sectionTarget = `[${assignment.section}]`;
+    for (const [filename, view] of editorViewsRef.current) {
+      const doc = view.state.doc;
+      let inSection = false;
+      for (let i = 1; i <= doc.lines; i++) {
+        const line = doc.line(i);
+        const trimmed = line.text.trim();
+        if (trimmed.startsWith("[") && trimmed.includes("]")) {
+          if (inSection) break;
+          if (trimmed === sectionTarget || trimmed.startsWith(`${sectionTarget} `)) {
+            inSection = true;
+          }
+          continue;
+        }
+        if (inSection && (trimmed.startsWith(`${assignment.field}:`) || trimmed.startsWith(`${assignment.field}=`))) {
+          containerRefsRef.current.get(filename)?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          view.dispatch({
+            effects: [
+              flashLineEffect.of(line.from),
+              EditorView.scrollIntoView(line.from, { y: "center", yMargin: 50 }),
+            ],
+          });
+          return;
+        }
+      }
+    }
+  }, []);
 
   const sortedFiles = useMemo(() => {
     const entries = [...state.generatedOutputs.entries()];
@@ -231,11 +265,23 @@ export function SharedConfigView({ shareToken }: SharedConfigViewProps) {
         </div>
       )}
       <div className="flex-1 space-y-4 overflow-auto bg-muted/30 p-4">
-        <SharedPcbStrip />
+        <SharedPcbStrip onPinClick={handlePinClick} />
         {sortedFiles.map(([filename, content]) => (
-          <div key={filename} className="mx-auto max-w-4xl overflow-hidden rounded-lg border border-border bg-card">
+          <div
+            key={filename}
+            ref={(el) => {
+              if (el) containerRefsRef.current.set(filename, el);
+              else containerRefsRef.current.delete(filename);
+            }}
+            className="mx-auto max-w-4xl overflow-hidden rounded-lg border border-border bg-card"
+          >
             <div className="border-b border-border px-4 py-2 text-sm font-medium">{filename}</div>
-            <KlipperConfigViewer value={content} />
+            <KlipperConfigViewer
+              value={content}
+              onCreateEditor={(view) => {
+                editorViewsRef.current.set(filename, view);
+              }}
+            />
           </div>
         ))}
       </div>

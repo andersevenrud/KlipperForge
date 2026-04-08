@@ -1,8 +1,13 @@
 import { DocPcbViewer } from "@/components/documentation/DocPcbViewer";
+import type { PinAssignment } from "@/components/svg/pcb/PcbConnectorRect";
 import { useMcu } from "@/context/mcu-context";
 import type { PcbLayout } from "@klipperforge/printer-data";
 import { loadPcbLayout } from "@klipperforge/printer-data";
 import { useEffect, useMemo, useState } from "react";
+
+interface SharedPcbStripProps {
+  onPinClick?: (assignment: PinAssignment) => void;
+}
 
 interface LoadedBoard {
   index: number;
@@ -10,7 +15,7 @@ interface LoadedBoard {
   layout: PcbLayout;
 }
 
-export function SharedPcbStrip() {
+export function SharedPcbStrip({ onPinClick }: SharedPcbStripProps) {
   const { state, pcbBoardIds, getUsedPins } = useMcu();
   const [loadedBoards, setLoadedBoards] = useState<LoadedBoard[]>([]);
 
@@ -64,7 +69,13 @@ export function SharedPcbStrip() {
     <div className="mx-auto flex w-full max-w-4xl gap-4 overflow-x-auto">
       {loadedBoards.map((board) => (
         <div key={board.index} className="min-w-[28rem] flex-1">
-          <DocPcbViewer layout={board.layout} usedPins={usedPins} className="h-80" label={board.label} />
+          <DocPcbViewer
+            layout={board.layout}
+            usedPins={usedPins}
+            className="h-80"
+            label={board.label}
+            onPinClick={onPinClick}
+          />
         </div>
       ))}
     </div>
