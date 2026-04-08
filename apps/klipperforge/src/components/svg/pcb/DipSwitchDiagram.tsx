@@ -6,6 +6,8 @@ type DipSwitchSize = "sm" | "lg";
 interface DipSwitchDiagramProps {
   options: JumperOption[];
   size?: DipSwitchSize;
+  selectedLabel?: string;
+  onSelectOption?: (label: string) => void;
 }
 
 interface SwitchToggleProps {
@@ -43,9 +45,10 @@ function SwitchToggle({ on, color, size }: SwitchToggleProps) {
   );
 }
 
-export function DipSwitchDiagram({ options, size = "sm" }: DipSwitchDiagramProps) {
+export function DipSwitchDiagram({ options, size = "sm", selectedLabel, onSelectOption }: DipSwitchDiagramProps) {
   const activeColor = CATEGORY_COLORS.jumper.active;
   const isLarge = size === "lg";
+  const hasSelection = selectedLabel !== undefined;
 
   const textClass = isLarge ? "text-xs" : "text-[9px]";
   const numTextClass = isLarge ? "text-[10px]" : "text-[8px]";
@@ -76,8 +79,34 @@ export function DipSwitchDiagram({ options, size = "sm" }: DipSwitchDiagramProps
       <tbody>
         {options.map((option) => {
           const switches = option.pattern[0] ?? [];
+          const isSelected = selectedLabel === option.label;
+          const dimmed = hasSelection && !isSelected;
+
           return (
-            <tr key={option.label}>
+            <tr
+              key={option.label}
+              className={`rounded transition-opacity ${
+                isSelected ? "ring-1 ring-cyan-500/60 bg-cyan-500/10" : ""
+              } ${dimmed ? "opacity-40" : ""} ${onSelectOption ? "cursor-pointer hover:bg-muted" : ""}`}
+              onClick={
+                onSelectOption
+                  ? (e) => {
+                      e.stopPropagation();
+                      onSelectOption(option.label);
+                    }
+                  : undefined
+              }
+              onKeyDown={
+                onSelectOption
+                  ? (e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.stopPropagation();
+                        onSelectOption(option.label);
+                      }
+                    }
+                  : undefined
+              }
+            >
               <td className={`${textClass} font-medium text-foreground/70 pr-2 ${cellPadding} whitespace-nowrap`}>
                 {option.label}
               </td>

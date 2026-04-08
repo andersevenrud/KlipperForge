@@ -4,7 +4,7 @@ import type { ConfigSection } from "./types.js";
 
 export interface ParseResult {
   sections: ConfigSection[];
-  mcuBoards: Pick<McuBoardAssociation, "boardId" | "alias">[];
+  mcuBoards: Pick<McuBoardAssociation, "boardId" | "alias" | "jumperSelections">[];
   saveConfigSections?: SaveConfigSection[];
   presetId?: string;
   warnings?: ImportWarning[];
@@ -142,6 +142,7 @@ export function parseKlipperConfig(text: string, options?: { extended: true }): 
   // Extract klipperforge annotations from section headers and preset ID
   const annotations: SectionAnnotation[] = [];
   const headerAnnotations = new Map<string, string>();
+  const jumperSelections = new Map<string, Record<string, string>>();
   let sectionIndex = 0;
   let presetId: string | undefined;
   const cleanedLines: string[] = [];
@@ -156,6 +157,17 @@ export function parseKlipperConfig(text: string, options?: { extended: true }): 
     // Check for header-block annotation (new format: # klipperforge:[section]:value) — metadata only
     const headerAnnoMatch = line.match(/^# klipperforge:\[(.+?)\]:(.+)$/);
     if (headerAnnoMatch) {
+      // Jumper annotations: accumulate per board (multiple lines with same key)
+      if (headerAnnoMatch[1].startsWith("jumpers:")) {
+        const boardId = headerAnnoMatch[1].slice("jumpers:".length);
+        const eqIdx = headerAnnoMatch[2].indexOf("=");
+        if (eqIdx > 0) {
+          const existing = jumperSelections.get(boardId) ?? {};
+          existing[headerAnnoMatch[2].slice(0, eqIdx)] = headerAnnoMatch[2].slice(eqIdx + 1);
+          jumperSelections.set(boardId, existing);
+        }
+        continue;
+      }
       headerAnnotations.set(headerAnnoMatch[1], headerAnnoMatch[2]);
       continue;
     }
@@ -215,7 +227,7 @@ export function parseKlipperConfig(text: string, options?: { extended: true }): 
   }
 
   // Extract MCU board associations from annotated mcu sections
-  const mcuBoards: Pick<McuBoardAssociation, "boardId" | "alias">[] = [];
+  const mcuBoards: Pick<McuBoardAssociation, "boardId" | "alias" | "jumperSelections">[] = [];
   for (const section of sections) {
     if (section.type === COMMENT_SECTION_TYPE) continue;
     if (section.annotation && section.type === "mcu") {
@@ -235,6 +247,14 @@ export function parseKlipperConfig(text: string, options?: { extended: true }): 
         const alias = header === "mcu" ? "" : header.slice(4);
         mcuBoards.push({ boardId: annotation, alias });
       }
+    }
+  }
+
+  // Merge jumper selections onto matching MCU boards
+  for (const board of mcuBoards) {
+    const selections = jumperSelections.get(board.boardId);
+    if (selections) {
+      board.jumperSelections = selections;
     }
   }
 

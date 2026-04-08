@@ -9,6 +9,8 @@ interface JumperPinDiagramProps {
   options: JumperOption[];
   size?: JumperDiagramSize;
   rotation?: Rotation;
+  selectedLabel?: string;
+  onSelectOption?: (label: string) => void;
 }
 
 export function isSpecialPin(pin: string): boolean {
@@ -135,11 +137,19 @@ function PatternGrid({ pattern, color, size }: PatternGridProps) {
   );
 }
 
-export function JumperPinDiagram({ connector, options, size = "sm", rotation = 0 }: JumperPinDiagramProps) {
+export function JumperPinDiagram({
+  connector,
+  options,
+  size = "sm",
+  rotation = 0,
+  selectedLabel,
+  onSelectOption,
+}: JumperPinDiagramProps) {
   const grid = rotateGrid(buildPinGrid(connector), rotation);
   const hasPins = connector.pins.length > 0;
   const activeColor = CATEGORY_COLORS.jumper.active;
   const isLarge = size === "lg";
+  const hasSelection = selectedLabel !== undefined;
 
   const pinTextClass = isLarge ? "text-xs" : "text-[9px]";
   const labelTextClass = isLarge ? "text-xs" : "text-[9px]";
@@ -168,12 +178,31 @@ export function JumperPinDiagram({ connector, options, size = "sm", rotation = 0
         </table>
       )}
       <div className={`flex flex-wrap items-start ${gapClass}`}>
-        {options.map((option) => (
-          <div key={option.label} className={`flex items-center ${itemGapClass}`}>
-            <span className={`${labelTextClass} font-medium text-foreground/70`}>{option.label}</span>
-            <PatternGrid pattern={rotateGrid(option.pattern, rotation)} color={activeColor} size={size} />
-          </div>
-        ))}
+        {options.map((option) => {
+          const isSelected = selectedLabel === option.label;
+          const dimmed = hasSelection && !isSelected;
+
+          return (
+            <button
+              key={option.label}
+              type="button"
+              className={`flex items-center ${itemGapClass} rounded px-1 py-0.5 transition-opacity ${
+                isSelected ? "ring-1 ring-amber-500/60 bg-amber-500/10" : ""
+              } ${dimmed ? "opacity-40" : ""} ${onSelectOption ? "cursor-pointer hover:bg-muted" : "cursor-default"}`}
+              onClick={
+                onSelectOption
+                  ? (e) => {
+                      e.stopPropagation();
+                      onSelectOption(option.label);
+                    }
+                  : undefined
+              }
+            >
+              <span className={`${labelTextClass} font-medium text-foreground/70`}>{option.label}</span>
+              <PatternGrid pattern={rotateGrid(option.pattern, rotation)} color={activeColor} size={size} />
+            </button>
+          );
+        })}
       </div>
     </div>
   );

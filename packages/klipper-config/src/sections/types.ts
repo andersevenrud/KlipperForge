@@ -45,6 +45,7 @@ export interface McuBoardAssociation {
   boardId: string;
   alias: string;
   selectedMcu?: string;
+  jumperSelections?: Record<string, string>;
 }
 
 export interface SaveConfigSection {

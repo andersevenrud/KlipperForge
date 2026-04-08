@@ -13,6 +13,7 @@ import { useCallback, useState } from "react";
 interface DocPcbViewerProps {
   layout: PcbLayout;
   usedPins?: Map<string, PinUsage>;
+  jumperSelections?: Record<string, string>;
   className?: string;
   label?: string;
   onPinClick?: (assignment: PinAssignment) => void;
@@ -20,7 +21,7 @@ interface DocPcbViewerProps {
 
 const emptyPins: Map<string, PinUsage> = new Map();
 
-export function DocPcbViewer({ layout, usedPins, className, label, onPinClick }: DocPcbViewerProps) {
+export function DocPcbViewer({ layout, usedPins, jumperSelections, className, label, onPinClick }: DocPcbViewerProps) {
   const [imageOpacity, setImageOpacity] = useState<ImageOpacity>(1);
   const [rotation, setRotation] = useState<Rotation>(0);
   const [showOverlay, setShowOverlay] = useState(true);
@@ -158,6 +159,7 @@ export function DocPcbViewer({ layout, usedPins, className, label, onPinClick }:
           rotation={rotation}
           showOverlay={showOverlay}
           usedPins={usedPins ?? emptyPins}
+          jumperSelections={jumperSelections}
           highlightedConnector={overviewHighlight ?? tooltip?.connector.name}
           svgRef={svgRef}
           viewBox={zoomViewBox}
@@ -175,6 +177,7 @@ export function DocPcbViewer({ layout, usedPins, className, label, onPinClick }:
             pinned={tooltip.pinned}
             rotation={rotation}
             jumperConfigs={layout.jumperConfigs}
+            jumperSelections={jumperSelections}
             onPinClick={onPinClick ? handlePinClick : undefined}
           />
         )}
@@ -182,6 +185,7 @@ export function DocPcbViewer({ layout, usedPins, className, label, onPinClick }:
           <PcbPinOverview
             layout={layout}
             usedPins={usedPins}
+            jumperSelections={jumperSelections}
             onPinClick={handlePinClick}
             onConnectorHover={setOverviewHighlight}
             onConnectorLeave={() => setOverviewHighlight(undefined)}

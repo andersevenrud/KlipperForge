@@ -8,6 +8,7 @@ interface McuBoardInstance {
   boardId: string;
   alias: string;
   selectedMcu?: string;
+  jumperSelections?: Record<string, string>;
   board: McuBoard | null;
 }
 
@@ -29,7 +30,13 @@ type McuAction =
     }
   | { type: "SET_ACTIVE_PCB_BOARD"; payload: { index: number } }
   | { type: "SET_MCU_VARIANT"; payload: { index: number; mcu: string | undefined } }
-  | { type: "RESTORE_BOARDS"; payload: { boards: { boardId: string; alias: string; selectedMcu?: string }[] } };
+  | { type: "SET_JUMPER_SELECTION"; payload: { index: number; connector: string; label: string | undefined } }
+  | {
+      type: "RESTORE_BOARDS";
+      payload: {
+        boards: { boardId: string; alias: string; selectedMcu?: string; jumperSelections?: Record<string, string> }[];
+      };
+    };
 
 interface McuContextValue {
   state: McuState;
@@ -84,6 +91,7 @@ function mcuReducer(state: McuState, action: McuAction): McuState {
           boardId: action.payload.boardId,
           board: null,
           selectedMcu: undefined,
+          jumperSelections: undefined,
         }),
         ...(action.payload.alias !== undefined && {
           alias: action.payload.alias,
@@ -109,6 +117,21 @@ function mcuReducer(state: McuState, action: McuAction): McuState {
       };
       return { ...state, boards: newBoards };
     }
+    case "SET_JUMPER_SELECTION": {
+      const newBoards = [...state.boards];
+      const current = newBoards[action.payload.index];
+      const selections = { ...current.jumperSelections };
+      if (action.payload.label === undefined) {
+        delete selections[action.payload.connector];
+      } else {
+        selections[action.payload.connector] = action.payload.label;
+      }
+      newBoards[action.payload.index] = {
+        ...current,
+        jumperSelections: Object.keys(selections).length > 0 ? selections : undefined,
+      };
+      return { ...state, boards: newBoards };
+    }
     case "RESTORE_BOARDS": {
       return {
         ...state,
@@ -116,6 +139,7 @@ function mcuReducer(state: McuState, action: McuAction): McuState {
           boardId: b.boardId,
           alias: b.alias,
           selectedMcu: b.selectedMcu,
+          jumperSelections: b.jumperSelections,
           board: null,
         })),
         activePcbBoard: 0,
@@ -213,6 +237,7 @@ export function McuProvider({ children }: McuProviderProps) {
         boardId: b.boardId,
         alias: b.alias,
         ...(b.selectedMcu ? { selectedMcu: b.selectedMcu } : {}),
+        ...(b.jumperSelections ? { jumperSelections: b.jumperSelections } : {}),
       }));
       configDispatch({ type: "SET_MCU_BOARDS", payload: mcuBoards });
     },

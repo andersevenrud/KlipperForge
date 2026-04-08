@@ -76,6 +76,11 @@ function buildAnnotationLines(doc: ConfigDocument, instances: SectionInstance[],
     for (const entry of doc.mcuBoards) {
       const mcuHeader = entry.alias === "" ? "mcu" : `mcu ${entry.alias}`;
       lines.push(`# klipperforge:[${mcuHeader}]:${entry.boardId}`);
+      if (entry.jumperSelections) {
+        for (const [name, label] of Object.entries(entry.jumperSelections)) {
+          lines.push(`# klipperforge:[jumpers:${entry.boardId}]:${name}=${label}`);
+        }
+      }
     }
   }
 

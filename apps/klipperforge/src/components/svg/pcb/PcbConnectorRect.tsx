@@ -29,6 +29,7 @@ interface PcbConnectorRectProps {
   connector: PcbConnector;
   rotation?: Rotation;
   highlighted?: boolean;
+  hasSelection?: boolean;
   usedPins: Map<string, PinUsage>;
   onHover: (connector: PcbConnector, assignments: PinAssignment[], event: React.MouseEvent) => void;
   onLeave: () => void;
@@ -39,6 +40,7 @@ export const PcbConnectorRect = memo(function PcbConnectorRect({
   connector,
   rotation = 0,
   highlighted = false,
+  hasSelection = false,
   usedPins,
   onHover,
   onLeave,
@@ -58,7 +60,7 @@ export const PcbConnectorRect = memo(function PcbConnectorRect({
     }
   }
 
-  const isActive = assignments.length > 0;
+  const isActive = assignments.length > 0 || hasSelection;
   const colors = CATEGORY_COLORS[connector.category];
   const fill = highlighted ? colors.active : isActive ? colors.active : colors.base;
   const opacity = highlighted ? 0.95 : isActive ? 0.85 : 0.4;

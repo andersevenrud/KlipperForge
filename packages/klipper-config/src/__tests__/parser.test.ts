@@ -339,6 +339,42 @@ serial: /dev/serial/by-id/test`;
     expect(result.mcuBoards).toHaveLength(1);
     expect(result.mcuBoards[0].boardId).toBe("btt-octopus-pro-1.1");
   });
+
+  it("parses jumper selection annotations", () => {
+    const input = `# klipperforge:[mcu]:btt-octopus-pro-1.1
+# klipperforge:[jumpers:btt-octopus-pro-1.1]:JUMPER_CAN_120R=Enabled
+
+[mcu]
+serial: /dev/serial/by-id/test`;
+    const result = parseKlipperConfig(input, { extended: true });
+    expect(result.mcuBoards).toHaveLength(1);
+    expect(result.mcuBoards[0].jumperSelections).toEqual({ JUMPER_CAN_120R: "Enabled" });
+  });
+
+  it("accumulates multiple jumper selection lines for same board", () => {
+    const input = `# klipperforge:[mcu]:btt-octopus-pro-1.1
+# klipperforge:[jumpers:btt-octopus-pro-1.1]:JUMPER_CAN_120R=Enabled
+# klipperforge:[jumpers:btt-octopus-pro-1.1]:JUMPER_HV_MOTOR0=48V+
+
+[mcu]
+serial: /dev/serial/by-id/test`;
+    const result = parseKlipperConfig(input, { extended: true });
+    expect(result.mcuBoards[0].jumperSelections).toEqual({
+      JUMPER_CAN_120R: "Enabled",
+      JUMPER_HV_MOTOR0: "48V+",
+    });
+  });
+
+  it("ignores jumper annotations for boards not in mcuBoards", () => {
+    const input = `# klipperforge:[mcu]:board-a
+# klipperforge:[jumpers:board-b]:J1=ON
+
+[mcu]
+serial: /dev/serial/by-id/test`;
+    const result = parseKlipperConfig(input, { extended: true });
+    expect(result.mcuBoards).toHaveLength(1);
+    expect(result.mcuBoards[0].jumperSelections).toBeUndefined();
+  });
 });
 
 describe("parse warnings", () => {

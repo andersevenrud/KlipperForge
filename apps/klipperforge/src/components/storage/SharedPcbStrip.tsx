@@ -72,6 +72,7 @@ export function SharedPcbStrip({ onPinClick }: SharedPcbStripProps) {
           <DocPcbViewer
             layout={board.layout}
             usedPins={usedPins}
+            jumperSelections={state.boards[board.index]?.jumperSelections}
             className="h-80"
             label={board.label}
             onPinClick={onPinClick}

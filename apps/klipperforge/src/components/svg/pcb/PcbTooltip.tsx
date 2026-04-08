@@ -13,7 +13,9 @@ interface PcbTooltipProps {
   pinned?: boolean;
   rotation?: Rotation;
   jumperConfigs?: Record<string, JumperOption[]>;
+  jumperSelections?: Record<string, string>;
   onPinClick?: (assignment: PinAssignment) => void;
+  onJumperSelect?: (connectorName: string, label: string) => void;
 }
 
 interface PinLabelProps {
@@ -79,7 +81,9 @@ export function PcbTooltip({
   pinned,
   rotation = 0,
   jumperConfigs,
+  jumperSelections,
   onPinClick,
+  onJumperSelect,
 }: PcbTooltipProps) {
   const assignmentsByPin = new Map(assignments.map((a) => [a.pin, a]));
   const combinedRotation = (((rotation + (connector.rotation ?? 0)) % 360) + 360) % 360;
@@ -175,12 +179,22 @@ export function PcbTooltip({
       )}
       {connector.category === "jumper" && jumperConfigs?.[connector.name] && (
         <div className="mt-1.5 border-t border-border pt-1.5">
-          <JumperPinDiagram connector={connector} options={jumperConfigs[connector.name]} rotation={rotation} />
+          <JumperPinDiagram
+            connector={connector}
+            options={jumperConfigs[connector.name]}
+            rotation={rotation}
+            selectedLabel={jumperSelections?.[connector.name]}
+            onSelectOption={onJumperSelect ? (label) => onJumperSelect(connector.name, label) : undefined}
+          />
         </div>
       )}
       {connector.category === "dip-switch" && jumperConfigs?.[connector.name] && (
         <div className="mt-1.5 border-t border-border pt-1.5">
-          <DipSwitchDiagram options={jumperConfigs[connector.name]} />
+          <DipSwitchDiagram
+            options={jumperConfigs[connector.name]}
+            selectedLabel={jumperSelections?.[connector.name]}
+            onSelectOption={onJumperSelect ? (label) => onJumperSelect(connector.name, label) : undefined}
+          />
         </div>
       )}
       {pinned && assignments.length > 0 && (

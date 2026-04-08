@@ -558,6 +558,50 @@ describe("serializeConfig", () => {
     expect(defaultMatches).toContainEqual({ section: "fan", field: "max_power", value: 1 });
   });
 
+  it("emits jumper selection annotations one per line", () => {
+    const registry = createDefaultRegistry();
+    const doc: ConfigDocument = {
+      sections: [{ definitionId: "mcu", data: {} }],
+      mcuBoards: [
+        {
+          boardId: "btt-octopus-pro-1.1",
+          alias: "",
+          jumperSelections: { JUMPER_CAN_120R: "Enabled", JUMPER_HV_MOTOR0: "48V+" },
+        },
+      ],
+    };
+
+    const output = serializeConfig(doc, registry, { header: "# Generated" });
+    expect(output).toContain("# klipperforge:[jumpers:btt-octopus-pro-1.1]:JUMPER_CAN_120R=Enabled");
+    expect(output).toContain("# klipperforge:[jumpers:btt-octopus-pro-1.1]:JUMPER_HV_MOTOR0=48V+");
+  });
+
+  it("omits jumper annotations when no selections", () => {
+    const registry = createDefaultRegistry();
+    const doc: ConfigDocument = {
+      sections: [{ definitionId: "mcu", data: {} }],
+      mcuBoards: [{ boardId: "btt-octopus-pro-1.1", alias: "" }],
+    };
+
+    const output = serializeConfig(doc, registry, { header: "# Generated" });
+    expect(output).not.toContain("klipperforge:[jumpers:");
+  });
+
+  it("emits jumper annotations for multiple boards", () => {
+    const registry = createDefaultRegistry();
+    const doc: ConfigDocument = {
+      sections: [{ definitionId: "mcu", data: {} }],
+      mcuBoards: [
+        { boardId: "board-a", alias: "", jumperSelections: { J1: "ON" } },
+        { boardId: "board-b", alias: "mcu2", jumperSelections: { J2: "OFF" } },
+      ],
+    };
+
+    const output = serializeConfig(doc, registry, { header: "# Generated" });
+    expect(output).toContain("# klipperforge:[jumpers:board-a]:J1=ON");
+    expect(output).toContain("# klipperforge:[jumpers:board-b]:J2=OFF");
+  });
+
   it("tracks source map lines for SAVE_CONFIG sections", () => {
     const registry = createDefaultRegistry();
     const doc: ConfigDocument = {

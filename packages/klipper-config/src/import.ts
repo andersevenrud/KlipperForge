@@ -16,7 +16,7 @@ import type { ConfigSection } from "./types";
 
 export function cfgToDocument(
   sections: ConfigSection[],
-  mcuBoards: Pick<McuBoardAssociation, "boardId" | "alias">[],
+  mcuBoards: Pick<McuBoardAssociation, "boardId" | "alias" | "jumperSelections">[],
   registry: SectionRegistry,
   saveConfigSections?: SaveConfigSection[],
   presetId?: string,
@@ -322,7 +322,7 @@ export function parseMultiFileConfigs(
   // Merge all sections into one document
   const allSections: SectionInstance[] = [];
   let presetId: string | undefined;
-  let mcuBoards: Pick<McuBoardAssociation, "boardId" | "alias">[] = [];
+  let mcuBoards: Pick<McuBoardAssociation, "boardId" | "alias" | "jumperSelections">[] = [];
   let saveConfigSections: SaveConfigSection[] | undefined;
   const rawSections: string[] = [];
   const allWarnings: ImportWarning[] = [];

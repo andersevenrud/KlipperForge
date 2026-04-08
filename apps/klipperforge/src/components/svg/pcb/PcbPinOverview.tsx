@@ -8,7 +8,9 @@ import { getConnectorLabel } from "./pcb-types";
 interface PcbPinOverviewProps {
   layout: PcbLayout;
   usedPins: Map<string, PinUsage>;
+  jumperSelections?: Record<string, string>;
   onPinClick: (assignment: PinAssignment) => void;
+  onJumperSelect?: (connectorName: string, label: string) => void;
   onConnectorHover?: (connectorName: string) => void;
   onConnectorLeave?: () => void;
 }
@@ -39,7 +41,9 @@ const CATEGORY_LABELS: Record<PcbConnectorCategory, string> = {
 export function PcbPinOverview({
   layout,
   usedPins,
+  jumperSelections,
   onPinClick,
+  onJumperSelect,
   onConnectorHover,
   onConnectorLeave,
 }: PcbPinOverviewProps) {
@@ -85,7 +89,14 @@ export function PcbPinOverview({
                             {getConnectorLabel(connector)}
                           </div>
                           <div className="mt-0.5">
-                            <JumperPinDiagram connector={connector} options={options} />
+                            <JumperPinDiagram
+                              connector={connector}
+                              options={options}
+                              selectedLabel={jumperSelections?.[connector.name]}
+                              onSelectOption={
+                                onJumperSelect ? (label) => onJumperSelect(connector.name, label) : undefined
+                              }
+                            />
                           </div>
                         </div>
                       );
@@ -133,7 +144,13 @@ export function PcbPinOverview({
                             {getConnectorLabel(connector)}
                           </div>
                           <div className="mt-0.5">
-                            <DipSwitchDiagram options={options} />
+                            <DipSwitchDiagram
+                              options={options}
+                              selectedLabel={jumperSelections?.[connector.name]}
+                              onSelectOption={
+                                onJumperSelect ? (label) => onJumperSelect(connector.name, label) : undefined
+                              }
+                            />
                           </div>
                         </div>
                       );

@@ -26,7 +26,7 @@ import { usePcbZoom } from "./usePcbZoom";
 
 export function PcbBoardViewer() {
   const navigate = useNavigate();
-  const { state, getUsedPins, imageBoardIds, pcbBoardIds } = useMcu();
+  const { state, dispatch: mcuDispatch, getUsedPins, imageBoardIds, pcbBoardIds } = useMcu();
   const { scrollToField, expandAndScrollToSection } = useEditorScroll();
   const [layout, setLayout] = useState<PcbLayout | null>(null);
   const [imageOpacity, setImageOpacity] = useState<ImageOpacity>(1);
@@ -100,6 +100,23 @@ export function PcbBoardViewer() {
   }, []);
 
   const usedPins = useMemo(() => getUsedPins(), [getUsedPins]);
+
+  const jumperSelections = activeBoard?.jumperSelections;
+
+  const handleJumperSelect = useCallback(
+    (connectorName: string, label: string) => {
+      const currentLabel = activeBoard?.jumperSelections?.[connectorName];
+      mcuDispatch({
+        type: "SET_JUMPER_SELECTION",
+        payload: {
+          index: state.activePcbBoard,
+          connector: connectorName,
+          label: currentLabel === label ? undefined : label,
+        },
+      });
+    },
+    [activeBoard, state.activePcbBoard, mcuDispatch],
+  );
 
   const hasLayout = pcbBoardIds.has(boardId);
   const hasImage = imageBoardIds.has(boardId);
@@ -227,6 +244,7 @@ export function PcbBoardViewer() {
             rotation={rotation}
             showOverlay={showOverlay}
             usedPins={usedPins}
+            jumperSelections={jumperSelections}
             highlightedConnector={overviewHighlight ?? tooltip?.connector.name}
             svgRef={svgRef}
             viewBox={zoomViewBox}
@@ -244,14 +262,18 @@ export function PcbBoardViewer() {
               pinned={tooltip.pinned}
               rotation={rotation}
               jumperConfigs={layout.jumperConfigs}
+              jumperSelections={jumperSelections}
               onPinClick={handlePinClick}
+              onJumperSelect={handleJumperSelect}
             />
           )}
           {showPinOverview && (
             <PcbPinOverview
               layout={layout}
               usedPins={usedPins}
+              jumperSelections={jumperSelections}
               onPinClick={handlePinClick}
+              onJumperSelect={handleJumperSelect}
               onConnectorHover={setOverviewHighlight}
               onConnectorLeave={() => setOverviewHighlight(undefined)}
             />

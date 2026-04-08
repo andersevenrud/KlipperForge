@@ -11,6 +11,7 @@ interface PcbBoardProps {
   rotation?: Rotation;
   showOverlay?: boolean;
   usedPins: Map<string, PinUsage>;
+  jumperSelections?: Record<string, string>;
   highlightedConnector?: string;
   svgRef?: React.Ref<SVGSVGElement>;
   viewBox?: string;
@@ -52,6 +53,7 @@ export function PcbBoard({
   rotation = 0,
   showOverlay = true,
   usedPins,
+  jumperSelections,
   highlightedConnector,
   svgRef,
   viewBox: viewBoxOverride,
@@ -157,6 +159,10 @@ export function PcbBoard({
                 connector={connector}
                 rotation={rotation}
                 highlighted={highlightedConnector === connector.name}
+                hasSelection={
+                  (connector.category === "jumper" || connector.category === "dip-switch") &&
+                  jumperSelections?.[connector.name] !== undefined
+                }
                 usedPins={usedPins}
                 onHover={onConnectorHover}
                 onLeave={onConnectorLeave}
