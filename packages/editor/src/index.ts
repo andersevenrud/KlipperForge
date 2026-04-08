@@ -15,3 +15,4 @@ export { dispatchOverrides, overrideExtension } from "./extensions/override-exte
 export { dispatchUnmanagedSections, unmanagedExtension } from "./extensions/unmanaged-extension";
 export { dispatchDiagnostics, validationExtension } from "./extensions/validation-extension";
 export { computeChangedLines } from "./utils/line-diff";
+export { EditorView } from "@codemirror/view";
