@@ -13,6 +13,19 @@ export function OutputOptions() {
           <Checkbox id={id} checked={state.showHeader} onCheckedChange={() => dispatch({ type: "TOGGLE_HEADER" })} />
         )}
       </FieldWrapper>
+      {state.showHeader && (
+        <div className="ml-6">
+          <FieldWrapper name="Only in printer.cfg" inline>
+            {({ id }) => (
+              <Checkbox
+                id={id}
+                checked={state.headerMainOnly}
+                onCheckedChange={() => dispatch({ type: "TOGGLE_HEADER_MAIN_ONLY" })}
+              />
+            )}
+          </FieldWrapper>
+        </div>
+      )}
       <FieldWrapper name="Hide fields matching defaults" inline>
         {({ id }) => (
           <Checkbox
