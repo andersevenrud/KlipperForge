@@ -1,5 +1,8 @@
 FROM oven/bun:1-alpine AS builder
 
+ARG VITE_FEATURE_ANALYTICS
+ENV VITE_FEATURE_ANALYTICS=$VITE_FEATURE_ANALYTICS
+
 WORKDIR /app
 
 # Copy workspace package.json files for dependency caching

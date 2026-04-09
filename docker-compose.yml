@@ -57,6 +57,8 @@ services:
     build:
       context: .
       dockerfile: docker/nginx/Dockerfile
+      args:
+        VITE_FEATURE_ANALYTICS: ${VITE_FEATURE_ANALYTICS:-true}
     ports:
       - "${APP_PORT:-80}:80"
     depends_on:
