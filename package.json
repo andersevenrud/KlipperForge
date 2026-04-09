@@ -23,16 +23,20 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.0",
-    "@commitlint/cli": "^20.0.0",
-    "@commitlint/config-conventional": "^20.0.0",
+    "@biomejs/biome": "^2.4.11",
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
     "@resvg/resvg-js": "^2.6.2",
-    "husky": "^9.0.0",
-    "knip": "^6.0.0",
-    "typescript": "^6.0.0",
-    "vitest": "^4.0.0"
+    "husky": "^9.1.7",
+    "knip": "^6.3.1",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.4"
   },
   "dependencies": {
-    "react-router": "^7.13.1"
+    "react-router": "^7.14.0"
+  },
+  "overrides": {
+    "@codemirror/state": "^6.6.0",
+    "@codemirror/view": "^6.41.0"
   }
 }
