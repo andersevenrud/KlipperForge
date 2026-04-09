@@ -124,13 +124,33 @@ export function App() {
           case "r":
             setMode("draw");
             break;
+          case "ArrowUp":
+          case "ArrowDown":
+          case "ArrowLeft":
+          case "ArrowRight":
+            if (selectedId && selected) {
+              e.preventDefault();
+              if (e.shiftKey) {
+                const dw = e.key === "ArrowLeft" ? -1 : e.key === "ArrowRight" ? 1 : 0;
+                const dh = e.key === "ArrowUp" ? -1 : e.key === "ArrowDown" ? 1 : 0;
+                updateConnector(selectedId, {
+                  width: Math.max(1, selected.width + dw),
+                  height: Math.max(1, selected.height + dh),
+                });
+              } else {
+                const dx = e.key === "ArrowLeft" ? -1 : e.key === "ArrowRight" ? 1 : 0;
+                const dy = e.key === "ArrowUp" ? -1 : e.key === "ArrowDown" ? 1 : 0;
+                updateConnector(selectedId, { x: selected.x + dx, y: selected.y + dy });
+              }
+            }
+            break;
         }
       }
 
       window.addEventListener("keydown", handleKeyDown);
       return () => window.removeEventListener("keydown", handleKeyDown);
     },
-    [selectedId, deleteConnector, selectConnector, duplicateConnector],
+    [selectedId, selected, deleteConnector, selectConnector, duplicateConnector, updateConnector],
   );
 
   return (
@@ -147,7 +167,7 @@ export function App() {
         onImportSvg={handleImport}
         onExport={handleExport}
       />
-      <div className="flex-1 flex overflow-hidden">
+      <div className="flex-1 flex overflow-hidden relative">
         <ConnectorList connectors={connectors} selectedId={selectedId} onSelect={selectConnector} />
         <Canvas
           image={image}
@@ -162,6 +182,11 @@ export function App() {
           onFindConnectorAt={findConnectorAt}
           snap={snap}
         />
+        {selectedId && (
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 pointer-events-none z-10 rounded bg-zinc-800/80 px-3 py-1 text-[11px] text-zinc-400">
+            Arrow keys to move &middot; Shift+Arrow to resize
+          </div>
+        )}
         <PropertiesPanel
           connector={selected}
           onUpdate={updateConnector}
