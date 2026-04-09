@@ -1,8 +1,8 @@
+import { Cable, Usb } from "lucide-react";
+import { useCallback, useState } from "react";
 import type { BoardFlashInfo, FlashMethod } from "@/api/firmware-types";
 import { Button } from "@/components/ui/button";
 import { useFirmwareFlash } from "@/hooks/use-firmware-flash";
-import { Cable, Usb } from "lucide-react";
-import { useCallback, useState } from "react";
 import { FlashInstructions } from "./FlashInstructions";
 import { FlashProgress } from "./FlashProgress";
 

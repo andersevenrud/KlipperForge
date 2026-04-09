@@ -1,8 +1,8 @@
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import type { PrinterEquipmentCategory, PrinterEquipmentEntry } from "@klipperforge/printer-data";
 import { loadPrinterPreset } from "@klipperforge/printer-data";
 import { Box, Package, Ruler } from "lucide-react";
 import { Link } from "react-router";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import {
   CATEGORY_PARAM_KEY,
   DOC_CATEGORY_ICONS,

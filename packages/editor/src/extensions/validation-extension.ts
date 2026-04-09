@@ -1,5 +1,5 @@
-import { lintGutter, setDiagnostics } from "@codemirror/lint";
 import type { Diagnostic } from "@codemirror/lint";
+import { lintGutter, setDiagnostics } from "@codemirror/lint";
 import type { Extension } from "@codemirror/state";
 import { EditorView } from "@codemirror/view";
 import type { ConfigSourceMap, SectionValidationError } from "@klipperforge/klipper-config";

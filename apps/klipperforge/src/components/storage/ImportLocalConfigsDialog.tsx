@@ -1,3 +1,5 @@
+import { Check, CircleAlert, Loader2, TriangleAlert } from "lucide-react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import type { ConfigSummary } from "@/api/config-storage-types";
 import { clearLocalConfigs, readLocalConfigIndex, readLocalConfigRevision } from "@/api/local-storage-reader";
 import { Button } from "@/components/ui/button";
@@ -14,8 +16,6 @@ import { Input } from "@/components/ui/input";
 import { useConfigStorage } from "@/context/config-storage-context";
 import { useConfigListQuery } from "@/hooks/use-queries";
 import { featureFlags } from "@/lib/feature-flags";
-import { Check, CircleAlert, Loader2, TriangleAlert } from "lucide-react";
-import { useCallback, useEffect, useMemo, useState } from "react";
 
 interface ImportLocalConfigsDialogProps {
   open: boolean;

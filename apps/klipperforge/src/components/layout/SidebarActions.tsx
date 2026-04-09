@@ -1,35 +1,9 @@
-import type { RevisionSummary, ShareInfo } from "@/api/config-storage-types";
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Textarea } from "@/components/ui/textarea";
-import { useAuth } from "@/context/auth-context";
-import { useConfig } from "@/context/config-context";
-import { useConfigStorage } from "@/context/config-storage-context";
-import { useStorage } from "@/context/storage-context";
-import { useLocalConfigDetection } from "@/hooks/use-local-config-detection";
-import { useConfigListQuery } from "@/hooks/use-queries";
-import { featureFlags } from "@/lib/feature-flags";
-import { downloadBlob } from "@/lib/utils";
 import { useEditorScroll } from "@klipperforge/editor";
 import {
-  type ImportWarning,
   cfgToDocument,
   defaultRegistry,
   exportProject,
+  type ImportWarning,
   importProject,
   parseKlipperConfig,
   parseMultiFileConfigs,
@@ -61,6 +35,32 @@ import {
   X,
 } from "lucide-react";
 import { type ChangeEvent, useCallback, useRef, useState } from "react";
+import type { RevisionSummary, ShareInfo } from "@/api/config-storage-types";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Textarea } from "@/components/ui/textarea";
+import { useAuth } from "@/context/auth-context";
+import { useConfig } from "@/context/config-context";
+import { useConfigStorage } from "@/context/config-storage-context";
+import { useStorage } from "@/context/storage-context";
+import { useLocalConfigDetection } from "@/hooks/use-local-config-detection";
+import { useConfigListQuery } from "@/hooks/use-queries";
+import { featureFlags } from "@/lib/feature-flags";
+import { downloadBlob } from "@/lib/utils";
 import { ConfigListDialog } from "../storage/ConfigListDialog";
 import { ImportLocalConfigsDialog } from "../storage/ImportLocalConfigsDialog";
 import { RevisionHistoryDialog } from "../storage/RevisionHistoryDialog";

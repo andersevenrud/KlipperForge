@@ -1,7 +1,7 @@
 import type { StateEffect } from "@codemirror/state";
 import { EditorView } from "@codemirror/view";
 import { SAVE_CONFIG_HEADER_PREFIX } from "@klipperforge/klipper-config";
-import { type MutableRefObject, type ReactNode, createContext, useCallback, useContext, useRef, useState } from "react";
+import { createContext, type MutableRefObject, type ReactNode, useCallback, useContext, useRef, useState } from "react";
 import { flashLineEffect } from "../extensions/flash-line-extension";
 import { unfoldAtPosition } from "../extensions/fold-extension";
 

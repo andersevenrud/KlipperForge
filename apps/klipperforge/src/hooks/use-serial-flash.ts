@@ -1,5 +1,5 @@
-import { flashSerial, requestSerialPort } from "@klipperforge/dfu";
 import type { FlashProgress, FlashResult } from "@klipperforge/dfu";
+import { flashSerial, requestSerialPort } from "@klipperforge/dfu";
 import { useCallback } from "react";
 import { useFlashState } from "./use-flash-state";
 

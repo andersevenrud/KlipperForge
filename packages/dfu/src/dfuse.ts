@@ -1,10 +1,8 @@
-/// <reference types="@types/w3c-web-usb" />
-import { binToDfuse } from "./bin-to-dfuse";
 import { getSectorsToErase } from "./flash-sectors";
 import type { FlashOptions, FlashProgress, FlashResult, TimerId } from "./types";
 
 // DFU class-specific requests
-const DFU_DETACH = 0;
+const _DFU_DETACH = 0;
 const DFU_DNLOAD = 1;
 const DFU_UPLOAD = 2;
 const DFU_GETSTATUS = 3;

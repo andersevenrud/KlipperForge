@@ -1,5 +1,5 @@
-import type { FlashMethod } from "@/api/firmware-types";
 import { Cable, Usb } from "lucide-react";
+import type { FlashMethod } from "@/api/firmware-types";
 
 interface FlashInstructionsProps {
   method: FlashMethod;

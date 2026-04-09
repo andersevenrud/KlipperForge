@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button";
-import { FieldWrapper } from "@/components/ui/field-wrapper";
-import { Input } from "@/components/ui/input";
 import { useEditorScroll } from "@klipperforge/editor";
 import { Plus, X } from "lucide-react";
 import { useCallback, useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { FieldWrapper } from "@/components/ui/field-wrapper";
+import { Input } from "@/components/ui/input";
 
 export interface KeyValueEntry {
   key: string;

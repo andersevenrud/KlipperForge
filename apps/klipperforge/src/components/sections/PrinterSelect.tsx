@@ -1,10 +1,10 @@
+import type { PrinterPreset } from "@klipperforge/printer-data";
+import { loadPrinterPreset } from "@klipperforge/printer-data";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { FieldWrapper } from "@/components/ui/field-wrapper";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useConfig } from "@/context/config-context";
 import { usePrinterIndexQuery } from "@/hooks/use-queries";
-import type { PrinterPreset } from "@klipperforge/printer-data";
-import { loadPrinterPreset } from "@klipperforge/printer-data";
-import { useEffect, useMemo, useRef, useState } from "react";
 
 interface PrinterSelectSelection {
   preset: PrinterPreset;

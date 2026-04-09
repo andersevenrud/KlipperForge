@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button";
-import { useIsMobile } from "@/hooks/use-is-mobile";
 import { PanelLeft, Wrench } from "lucide-react";
 import { useCallback, useState } from "react";
-import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
+import { Group, Panel, Separator } from "react-resizable-panels";
 import { useSearchParams } from "react-router";
+import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 import { CalibrationSidebar } from "./CalibrationSidebar";
 import { BeaconGuide } from "./guides/BeaconGuide";
 import { BedScrewPositionsGuide } from "./guides/BedScrewPositionsGuide";
@@ -92,15 +92,15 @@ export function CalibrationView() {
   }
 
   return (
-    <PanelGroup direction="horizontal" className="flex-1">
+    <Group orientation="horizontal" className="flex-1">
       <Panel defaultSize={25} minSize={15} maxSize={40}>
         {sidebar}
       </Panel>
-      <PanelResizeHandle className="w-1.5 bg-border transition-colors hover:bg-primary/50" />
+      <Separator className="w-1.5 bg-border transition-colors hover:bg-primary/50" />
       <Panel defaultSize={75}>
         <CalibrationContent guideId={selectedGuide} />
       </Panel>
-    </PanelGroup>
+    </Group>
   );
 }
 

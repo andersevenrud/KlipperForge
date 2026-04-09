@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { MCU_PIN_FAMILIES, isVirtualEndstop, matchesKnownPinFormat } from "../pin-formats";
+import { isVirtualEndstop, MCU_PIN_FAMILIES, matchesKnownPinFormat } from "../pin-formats";
 
 describe("MCU_PIN_FAMILIES", () => {
   const familyMap = Object.fromEntries(MCU_PIN_FAMILIES.map((f) => [f.id, f.pattern]));

@@ -1,8 +1,8 @@
+import { HardDrive, Trash2, Upload } from "lucide-react";
+import { useState } from "react";
 import type { ConfigSummary } from "@/api/config-storage-types";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { HardDrive, Trash2, Upload } from "lucide-react";
-import { useState } from "react";
 
 interface ConfigListDialogProps {
   open: boolean;

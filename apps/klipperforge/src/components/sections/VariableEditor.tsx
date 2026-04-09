@@ -1,6 +1,6 @@
-import { KeyValueEditor, type KeyValueEntry } from "@/components/sections/KeyValueEditor";
 import type { ConfigValue } from "@klipperforge/klipper-config";
 import { useCallback } from "react";
+import { KeyValueEditor, type KeyValueEntry } from "@/components/sections/KeyValueEditor";
 
 interface VariableEditorProps {
   header: string;

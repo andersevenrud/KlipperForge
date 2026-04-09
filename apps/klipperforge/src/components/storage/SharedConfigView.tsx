@@ -1,15 +1,15 @@
+import { EditorView, flashLineEffect, KlipperConfigViewer } from "@klipperforge/editor";
+import { exportProject, importProject } from "@klipperforge/klipper-config";
+import { zipSync } from "fflate";
+import { Check, ChevronDown, Clipboard, Clock, Download, ExternalLink, Loader2 } from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useNavigate } from "react-router";
 import type { RevisionSummary, SharedConfigResponse } from "@/api/config-storage-types";
 import { fetchSharedConfig, fetchSharedRevision, fetchSharedRevisionList } from "@/api/configs";
 import type { PinAssignment } from "@/components/svg/pcb/PcbConnectorRect";
 import { Button } from "@/components/ui/button";
 import { useConfig } from "@/context/config-context";
 import { downloadBlob } from "@/lib/utils";
-import { EditorView, KlipperConfigViewer, flashLineEffect } from "@klipperforge/editor";
-import { exportProject, importProject } from "@klipperforge/klipper-config";
-import { zipSync } from "fflate";
-import { Check, ChevronDown, Clipboard, Clock, Download, ExternalLink, Loader2 } from "lucide-react";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useNavigate } from "react-router";
 import { SharedPcbStrip } from "./SharedPcbStrip";
 
 interface SharedConfigViewProps {

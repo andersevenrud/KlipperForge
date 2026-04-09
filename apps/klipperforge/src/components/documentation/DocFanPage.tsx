@@ -1,7 +1,7 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useDocDataQuery, useDocIndicesQuery, useOptionalDocDataQuery } from "@/hooks/use-queries";
 import { loadFan, loadPcbLayout } from "@klipperforge/printer-data";
 import { Ruler, Volume2, Wind, Zap } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useDocDataQuery, useDocIndicesQuery, useOptionalDocDataQuery } from "@/hooks/use-queries";
 import { DocPcbViewer } from "./DocPcbViewer";
 import {
   Badge,

@@ -1,18 +1,18 @@
+import { Cpu } from "lucide-react";
+import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
+import { useLocation, useNavigate } from "react-router";
 import { fetchBuildStatus } from "@/api/firmware";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { featureFlags } from "@/lib/feature-flags";
 import type { AppView } from "@/types/views";
-import { Cpu } from "lucide-react";
-import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
-import { useLocation, useNavigate } from "react-router";
-import { ErrorBoundary } from "../ErrorBoundary";
-import { FeatureDisabled } from "../FeatureDisabled";
-import { WipBanner } from "../WipBanner";
 import { CalibrationView } from "../calibration/CalibrationView";
 import { DocumentationView } from "../documentation/DocumentationView";
+import { ErrorBoundary } from "../ErrorBoundary";
+import { FeatureDisabled } from "../FeatureDisabled";
 import { FirmwareView } from "../firmware/FirmwareView";
 import { StandaloneFlashTool } from "../firmware/StandaloneFlashTool";
 import { SharedConfigView } from "../storage/SharedConfigView";
+import { WipBanner } from "../WipBanner";
 import { ConfigurationView } from "./ConfigurationView";
 import { Header } from "./Header";
 

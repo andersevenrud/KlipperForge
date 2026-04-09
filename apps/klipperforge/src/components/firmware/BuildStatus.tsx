@@ -1,6 +1,6 @@
+import { AlertCircle, CheckCircle, Download, Loader2, Usb } from "lucide-react";
 import type { BuildStatusResponse } from "@/api/firmware-types";
 import { Button } from "@/components/ui/button";
-import { AlertCircle, CheckCircle, Download, Loader2, Usb } from "lucide-react";
 
 interface BuildStatusProps {
   status: BuildStatusResponse;

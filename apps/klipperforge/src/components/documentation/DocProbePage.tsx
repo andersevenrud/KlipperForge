@@ -1,6 +1,6 @@
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import { loadProbe } from "@klipperforge/printer-data";
 import { FileText, Ruler, Target, Zap } from "lucide-react";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import {
   Badge,
   BooleanSpecRow,

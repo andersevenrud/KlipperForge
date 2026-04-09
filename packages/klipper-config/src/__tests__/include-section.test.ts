@@ -37,7 +37,7 @@ describe("include section", () => {
 
     const output = serializeConfig(doc, registry);
     const lines = output.split("\n");
-    const includeLine = lines.findIndex((l) => l === "[include mainsail.cfg]");
+    const includeLine = lines.indexOf("[include mainsail.cfg]");
     expect(includeLine).toBeGreaterThan(-1);
     // Next non-empty line should be a section header, not a key-value pair
     const nextNonEmpty = lines.slice(includeLine + 1).find((l) => l.trim() !== "");

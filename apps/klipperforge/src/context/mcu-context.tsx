@@ -1,7 +1,7 @@
-import { useBoardDataQuery, useBoardIndexQuery, usePcbLayoutIndexQuery } from "@/hooks/use-queries";
-import { type BoardPinContext, SHARED_BUS_PIN_FIELDS, resolvePinAlias } from "@klipperforge/klipper-config";
+import { type BoardPinContext, resolvePinAlias, SHARED_BUS_PIN_FIELDS } from "@klipperforge/klipper-config";
 import type { McuBoard, McuBoardIndexEntry, PinUsage } from "@klipperforge/printer-data";
-import { type ReactNode, createContext, useCallback, useContext, useEffect, useMemo, useReducer, useRef } from "react";
+import { createContext, type ReactNode, useCallback, useContext, useEffect, useMemo, useReducer, useRef } from "react";
+import { useBoardDataQuery, useBoardIndexQuery, usePcbLayoutIndexQuery } from "@/hooks/use-queries";
 import { resolveHeader, useConfig } from "./config-context";
 
 interface McuBoardInstance {

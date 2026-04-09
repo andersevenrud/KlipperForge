@@ -1,6 +1,6 @@
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import { loadAccessory } from "@klipperforge/printer-data";
 import { Ruler, Zap } from "lucide-react";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import {
   Badge,
   DocHeader,

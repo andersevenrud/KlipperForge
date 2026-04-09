@@ -1,12 +1,12 @@
+import type { JumperOption, PcbConnector, PcbLayout } from "@klipperforge/printer-data";
+import { loadMcuBoard, loadPcbLayout } from "@klipperforge/printer-data";
+import { Cog, Cpu, Ruler, Zap } from "lucide-react";
+import { useMemo } from "react";
 import { DipSwitchDiagram } from "@/components/svg/pcb/DipSwitchDiagram";
 import { JumperPinDiagram } from "@/components/svg/pcb/JumperPinDiagram";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useMcu } from "@/context/mcu-context";
 import { useDocDataQuery, useOptionalDocDataQuery } from "@/hooks/use-queries";
-import type { JumperOption, PcbConnector, PcbLayout } from "@klipperforge/printer-data";
-import { loadMcuBoard, loadPcbLayout } from "@klipperforge/printer-data";
-import { Cog, Cpu, Ruler, Zap } from "lucide-react";
-import { useMemo } from "react";
 import { DocPcbViewer } from "./DocPcbViewer";
 import { DocPageShell, ReferenceList, RelatedArticles, SpecRow } from "./doc-shared";
 

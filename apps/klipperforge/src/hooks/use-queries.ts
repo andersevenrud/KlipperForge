@@ -1,6 +1,3 @@
-import type { ConfigListResponse, SharedConfigResponse } from "@/api/config-storage-types";
-import { fetchSharedConfig } from "@/api/configs";
-import { useConfigStorage } from "@/context/config-storage-context";
 import {
   loadDocIndices,
   loadMcuBoard,
@@ -9,6 +6,8 @@ import {
   loadPrinterIndex,
 } from "@klipperforge/printer-data";
 import { useQuery, useSuspenseQueries, useSuspenseQuery } from "@tanstack/react-query";
+import type { ConfigListResponse } from "@/api/config-storage-types";
+import { useConfigStorage } from "@/context/config-storage-context";
 
 interface BoardDataRequest {
   index: number;
@@ -21,7 +20,7 @@ const PRINTER_INDEX_QUERY_KEY = "loadPrinterIndex";
 const DOC_INDICES_QUERY_KEY = "loadDocIndices";
 const BOARD_DATA_QUERY_KEY = "loadBoardData";
 const CONFIG_LIST_QUERY_KEY = "configList";
-const SHARED_CONFIG_QUERY_KEY = "sharedConfig";
+const _SHARED_CONFIG_QUERY_KEY = "sharedConfig";
 
 export function useBoardIndexQuery() {
   return useSuspenseQuery({ queryKey: [BOARD_INDEX_QUERY_KEY], queryFn: loadMcuBoardIndex });

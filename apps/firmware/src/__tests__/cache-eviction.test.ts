@@ -37,11 +37,18 @@ import { getKlipperCommit } from "../services/klipper-source";
 
 describe("runCacheEviction", () => {
   beforeEach(() => {
-    vi.clearAllMocks();
-  });
-
-  afterEach(() => {
-    vi.restoreAllMocks();
+    vi.resetAllMocks();
+    vi.mocked(config).disableCache = false;
+    vi.mocked(config).cacheEvictStaleCommits = true;
+    vi.mocked(config).cacheTtlSeconds = 604_800;
+    vi.mocked(config).cacheMaxEntries = 500;
+    vi.mocked(config).cacheMaxSizeMb = 200;
+    vi.mocked(getKlipperCommit).mockReturnValue("abc123def456");
+    vi.mocked(getCacheSize).mockReturnValue(0);
+    vi.mocked(getCacheSizeBytes).mockReturnValue(0);
+    vi.mocked(evictByKlipperCommit).mockReturnValue(0);
+    vi.mocked(evictByTtl).mockReturnValue(0);
+    vi.mocked(evictLeastRecentlyAccessed).mockReturnValue(0);
   });
 
   it("does nothing when cache is disabled", () => {
@@ -69,8 +76,6 @@ describe("runCacheEviction", () => {
     runCacheEviction();
 
     expect(evictByKlipperCommit).not.toHaveBeenCalled();
-
-    vi.mocked(config).cacheEvictStaleCommits = true;
   });
 
   it("skips stale commit eviction when no commit available", () => {

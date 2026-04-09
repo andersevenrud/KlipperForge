@@ -1,4 +1,4 @@
-import { readFile, readdir, writeFile } from "node:fs/promises";
+import { readdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
 const DATA_DIR = join(import.meta.dirname, "..", "data");
@@ -40,7 +40,7 @@ async function buildDocIndices() {
 
   await writeFile(OUTPUT_PATH, `${JSON.stringify(result, null, 2)}\n`);
 
-  const dirs = await readdir(DATA_DIR, { withFileTypes: true });
+  const _dirs = await readdir(DATA_DIR, { withFileTypes: true });
   const categoryCount = CATEGORIES.length;
   const totalItems = Object.values(result).reduce((sum, arr) => sum + arr.length, 0);
   console.log(`Built doc-indices.json: ${categoryCount} categories, ${totalItems} items`);

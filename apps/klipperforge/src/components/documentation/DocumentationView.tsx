@@ -1,10 +1,10 @@
+import { ArrowLeftRight, BookOpen, PanelLeft } from "lucide-react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
+import { Group, Panel, Separator } from "react-resizable-panels";
+import { useSearchParams } from "react-router";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-is-mobile";
-import { ArrowLeftRight, BookOpen, PanelLeft } from "lucide-react";
-import { Suspense, useCallback, useEffect, useRef, useState } from "react";
-import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
-import { useSearchParams } from "react-router";
 import { DocAccessoryPage } from "./DocAccessoryPage";
 import { DocBoardPage } from "./DocBoardPage";
 import { DocComparisonView } from "./DocComparisonView";
@@ -268,15 +268,15 @@ export function DocumentationView() {
   }
 
   return (
-    <PanelGroup direction="horizontal" className="flex-1">
+    <Group orientation="horizontal" className="flex-1">
       <Panel defaultSize={25} minSize={15} maxSize={40}>
         <Suspense fallback={<LoadingSpinner />}>{sidebar}</Suspense>
       </Panel>
-      <PanelResizeHandle className="w-1.5 bg-border transition-colors hover:bg-primary/50" />
+      <Separator className="w-1.5 bg-border transition-colors hover:bg-primary/50" />
       <Panel defaultSize={75}>
         <Suspense fallback={<LoadingSpinner />}>{content}</Suspense>
       </Panel>
-    </PanelGroup>
+    </Group>
   );
 }
 

@@ -1,6 +1,6 @@
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import { loadMmu } from "@klipperforge/printer-data";
 import { Code, Cog, ExternalLink, Ruler, Spool } from "lucide-react";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import {
   Badge,
   DocHeader,

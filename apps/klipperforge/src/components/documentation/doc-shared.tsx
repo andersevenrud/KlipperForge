@@ -13,7 +13,7 @@ import {
   FileText,
   Flame,
   GitBranch,
-  Github,
+  GitFork,
   Layers,
   Monitor,
   PlugZap,
@@ -24,7 +24,7 @@ import {
   TriangleAlert,
   X,
 } from "lucide-react";
-import { type ReactNode, createContext, useContext, useEffect, useRef } from "react";
+import { createContext, type ReactNode, useContext, useEffect, useRef } from "react";
 import { Link } from "react-router";
 
 // ---------------------------------------------------------------------------
@@ -150,7 +150,7 @@ export const DOC_CATEGORY_LABELS: Record<CrossReferenceCategory, string> = {
 const REFERENCE_TYPE_ICONS: Record<AnyReferenceType, typeof ExternalLink> = {
   datasheet: FileText,
   product: ShoppingCart,
-  github: Github,
+  github: GitFork,
   documentation: FileText,
   other: ExternalLink,
   wiki: BookOpen,

@@ -1,3 +1,5 @@
+export { parseIni } from "./parser";
+export { formatMultilineValue, formatValue, normalizeValue, serializeIni } from "./serializer";
 export type {
   ConfigValue,
   IniSection,
@@ -6,5 +8,3 @@ export type {
   ParseWarning,
   SerializeOptions,
 } from "./types";
-export { parseIni } from "./parser";
-export { formatMultilineValue, formatValue, normalizeValue, serializeIni } from "./serializer";

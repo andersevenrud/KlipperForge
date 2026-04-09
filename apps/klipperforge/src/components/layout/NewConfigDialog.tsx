@@ -1,3 +1,9 @@
+import { useEditorScroll } from "@klipperforge/editor";
+import type { ConfigDocument } from "@klipperforge/klipper-config";
+import type { PrinterPreset } from "@klipperforge/printer-data";
+import { resolvePresetVariant } from "@klipperforge/printer-data";
+import { FilePlus, Loader2 } from "lucide-react";
+import { Suspense, useCallback, useState } from "react";
 import { PrinterSelect } from "@/components/sections/PrinterSelect";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -5,12 +11,6 @@ import { Separator } from "@/components/ui/separator";
 import { useConfig } from "@/context/config-context";
 import { useStorage } from "@/context/storage-context";
 import { clearDraft } from "@/lib/draft-storage";
-import { useEditorScroll } from "@klipperforge/editor";
-import type { ConfigDocument } from "@klipperforge/klipper-config";
-import type { PrinterPreset } from "@klipperforge/printer-data";
-import { resolvePresetVariant } from "@klipperforge/printer-data";
-import { FilePlus, Loader2 } from "lucide-react";
-import { Suspense, useCallback, useState } from "react";
 
 interface NewConfigDialogProps {
   open: boolean;

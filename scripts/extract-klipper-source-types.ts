@@ -7,7 +7,7 @@
  * Usage: bun run scripts/extract-klipper-source-types.ts
  */
 
-import { readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, join } from "node:path";
 
 const ROOT = join(import.meta.dirname, "..");

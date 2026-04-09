@@ -1,6 +1,6 @@
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import { loadToolhead } from "@klipperforge/printer-data";
 import { Plug, Ruler } from "lucide-react";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import {
   Badge,
   BooleanSpecRow,

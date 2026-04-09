@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
 import type { FlashPhase, FlashProgress as FlashProgressType } from "@klipperforge/dfu";
 import { AlertCircle, CheckCircle, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface FlashProgressProps {
   progress: FlashProgressType;

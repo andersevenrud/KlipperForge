@@ -1,10 +1,10 @@
+import { Check, ChevronsUpDown } from "lucide-react";
+import { useMemo, useState } from "react";
 import type { BoardEntry } from "@/api/firmware-types";
 import { Button } from "@/components/ui/button";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { FieldWrapper } from "@/components/ui/field-wrapper";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Check, ChevronsUpDown } from "lucide-react";
-import { useMemo, useState } from "react";
 
 interface BoardSelectorProps {
   boards: BoardEntry[];

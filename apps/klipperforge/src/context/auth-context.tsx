@@ -1,7 +1,7 @@
+import { createContext, type ReactNode, useCallback, useContext, useEffect, useState } from "react";
 import type { AuthUser } from "@/api/config-storage-types";
 import { fetchAuthMe, logout as logoutApi } from "@/api/configs";
 import { featureFlags } from "@/lib/feature-flags";
-import { type ReactNode, createContext, useCallback, useContext, useEffect, useState } from "react";
 
 interface AuthState {
   user: AuthUser | null;

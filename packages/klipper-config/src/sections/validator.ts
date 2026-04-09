@@ -2,7 +2,7 @@ import { isVirtualEndstop, matchesKnownPinFormat } from "../pin-formats";
 import { extractBoardPinAliases, isReservedPin, resolvePinAlias } from "../pins";
 import { applyControlVisibility, applyFieldGroups, applySensorTypeVisibility } from "./field-groups";
 import type { ParamDefinition } from "./param-types";
-import { type SectionRegistry, resolveHeader as resolveHeaderBase } from "./registry";
+import { resolveHeader as resolveHeaderBase, type SectionRegistry } from "./registry";
 import { SHARED_BUS_PIN_FIELDS } from "./section-modes";
 import type { ConfigDocument, SectionInstance } from "./types";
 

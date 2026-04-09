@@ -1,7 +1,7 @@
-import { formatMultilineValue, formatValue, normalizeValue } from "@klipperforge/configparser";
+import { formatMultilineValue, formatValue } from "@klipperforge/configparser";
 import { COMMENT_SECTION_TYPE } from "../parser";
 import { computeHiddenFields } from "./normalize";
-import { type SectionRegistry, resolveHeader } from "./registry";
+import { resolveHeader, type SectionRegistry } from "./registry";
 import { getSectionModeConfig } from "./section-modes";
 import type { ConfigDocument, ConfigValue, SaveConfigSection, SectionInstance } from "./types";
 

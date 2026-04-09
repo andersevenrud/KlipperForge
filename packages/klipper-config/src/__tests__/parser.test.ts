@@ -616,10 +616,10 @@ rotation_distance: 40`;
     const lines = output.split("\n");
 
     // Comment blocks should appear before their respective sections
-    const headerIdx = lines.findIndex((l) => l === "# Header comment");
-    const printerIdx = lines.findIndex((l) => l === "[printer]");
-    const stepperCommentIdx = lines.findIndex((l) => l === "# Stepper section");
-    const stepperIdx = lines.findIndex((l) => l === "[stepper_x]");
+    const headerIdx = lines.indexOf("# Header comment");
+    const printerIdx = lines.indexOf("[printer]");
+    const stepperCommentIdx = lines.indexOf("# Stepper section");
+    const stepperIdx = lines.indexOf("[stepper_x]");
 
     expect(headerIdx).toBeGreaterThanOrEqual(0);
     expect(printerIdx).toBeGreaterThan(headerIdx);

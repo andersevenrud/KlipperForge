@@ -1,3 +1,4 @@
+import { BookOpen, Cpu, Heart, LogIn, LogOut, Settings, User, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -9,7 +10,6 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAuth } from "@/context/auth-context";
 import { featureFlags } from "@/lib/feature-flags";
 import type { AppView } from "@/types/views";
-import { BookOpen, Cpu, Heart, LogIn, LogOut, Settings, User, Wrench } from "lucide-react";
 
 interface HeaderProps {
   activeView: AppView;

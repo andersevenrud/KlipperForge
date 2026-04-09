@@ -1,12 +1,28 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.0/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
+  "$schema": "https://biomejs.dev/schemas/2.4.11/schema.json",
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "a11y": {
+        "noStaticElementInteractions": "off"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "off"
+      }
+    }
+  },
+  "css": {
+    "parser": {
+      "cssModules": false,
+      "tailwindDirectives": true
+    },
+    "linter": {
+      "enabled": true
+    },
+    "formatter": {
+      "enabled": true
     }
   },
   "formatter": {
@@ -22,16 +38,19 @@
     }
   },
   "files": {
-    "ignore": [
-      "node_modules",
-      "dist",
-      "bun.lockb",
-      "*.d.ts",
-      "*.d.ts.map",
-      "*.tsbuildinfo",
-      "_docs",
-      "apps/firmware/data",
-      ".vite"
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/dist",
+      "!**/bun.lockb",
+      "!**/*.d.ts",
+      "!**/*.d.ts.map",
+      "!**/*.tsbuildinfo",
+      "!**/_docs",
+      "!**/apps/firmware/data",
+      "!**/.vite",
+      "!**/.claude",
+      "!**/playwright-report"
     ]
   }
 }

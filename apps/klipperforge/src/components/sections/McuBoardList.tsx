@@ -1,13 +1,13 @@
+import type { McuBoardIndexEntry } from "@klipperforge/printer-data";
+import { BookOpen, Check, ChevronsUpDown, CircuitBoard, Eye, Image, Plus, Trash2 } from "lucide-react";
+import { useMemo, useState } from "react";
+import { useNavigate } from "react-router";
 import { Button } from "@/components/ui/button";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { FieldWrapper } from "@/components/ui/field-wrapper";
 import { Input } from "@/components/ui/input";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { useMcu } from "@/context/mcu-context";
-import type { McuBoardIndexEntry } from "@klipperforge/printer-data";
-import { BookOpen, Check, ChevronsUpDown, CircuitBoard, Eye, Image, Plus, Trash2 } from "lucide-react";
-import { useMemo, useState } from "react";
-import { useNavigate } from "react-router";
 import { SectionHeader } from "./SectionHeader";
 
 interface BoardComboboxProps {

@@ -1,12 +1,12 @@
+import { isReservedPin } from "@klipperforge/klipper-config";
+import { AlertTriangle, ChevronsUpDown } from "lucide-react";
+import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useConfig } from "@/context/config-context";
 import { useMcu } from "@/context/mcu-context";
-import { isReservedPin } from "@klipperforge/klipper-config";
-import { AlertTriangle, ChevronsUpDown } from "lucide-react";
-import { useMemo, useState } from "react";
 
 interface PinSelectProps {
   value: string;

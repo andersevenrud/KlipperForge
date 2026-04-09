@@ -1,5 +1,3 @@
-import { resolveHeader, useConfig } from "@/context/config-context";
-import { useMcu } from "@/context/mcu-context";
 import { useEditorScroll } from "@klipperforge/editor";
 import type { PcbLayout } from "@klipperforge/printer-data";
 import { loadPcbLayout } from "@klipperforge/printer-data";
@@ -17,6 +15,8 @@ import {
 } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router";
+import { resolveHeader, useConfig } from "@/context/config-context";
+import { useMcu } from "@/context/mcu-context";
 import { PcbBoard } from "./PcbBoard";
 import type { PinAssignment } from "./PcbConnectorRect";
 import { PcbPinOverview } from "./PcbPinOverview";
@@ -67,7 +67,6 @@ export function PcbBoardViewer() {
 
   const {
     tooltip,
-    dismissPinned,
     dismiss,
     handleConnectorHover,
     handleConnectorLeave,

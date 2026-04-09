@@ -1,7 +1,7 @@
 import type { PcbConnectorCategory, PcbLayout, PinUsage } from "@klipperforge/printer-data";
 import { useMemo } from "react";
 import { DipSwitchDiagram } from "./DipSwitchDiagram";
-import { JumperPinDiagram, buildPinGrid, formatPinLabel, isSpecialPin } from "./JumperPinDiagram";
+import { buildPinGrid, formatPinLabel, isSpecialPin, JumperPinDiagram } from "./JumperPinDiagram";
 import { CATEGORY_COLORS, type PinAssignment } from "./PcbConnectorRect";
 import { getConnectorLabel } from "./pcb-types";
 

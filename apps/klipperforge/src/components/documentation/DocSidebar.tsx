@@ -1,9 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Input } from "@/components/ui/input";
-import { useDocIndicesQuery } from "@/hooks/use-queries";
-import type { DocIndices } from "@klipperforge/printer-data";
 import {
   ArrowLeftRight,
   ChevronRight,
@@ -27,6 +21,11 @@ import {
   X,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Input } from "@/components/ui/input";
+import { useDocIndicesQuery } from "@/hooks/use-queries";
 import type { DocCategory, DocSelection } from "./DocumentationView";
 
 // ---------------------------------------------------------------------------

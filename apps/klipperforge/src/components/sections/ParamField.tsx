@@ -1,11 +1,11 @@
-import { PinSelect } from "@/components/sections/PinSelect";
-import { FieldWrapper } from "@/components/ui/field-wrapper";
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { GcodeEditor, useEditorScroll } from "@klipperforge/editor";
 import type { ActiveOverride } from "@klipperforge/klipper-config";
 import type { ParamDefinition } from "@klipperforge/klipper-config/sections/param-types";
 import { type Control, Controller, type UseFormRegister } from "react-hook-form";
+import { PinSelect } from "@/components/sections/PinSelect";
+import { FieldWrapper } from "@/components/ui/field-wrapper";
+import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ListMultiSelect } from "./ListMultiSelect";
 import { formatPlaceholder, isPinField, numericSetValueAs } from "./section-editor-utils";
 

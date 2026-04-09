@@ -1,7 +1,10 @@
 {
   "name": "klipperforge-monorepo",
   "private": true,
-  "workspaces": ["apps/*", "packages/*"],
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "build:indices": "bun run scripts/build-doc-indices.ts",
     "build:crossrefs": "bun run scripts/generate-cross-references.ts",
@@ -20,14 +23,14 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.0",
-    "@commitlint/cli": "^19.0.0",
-    "@commitlint/config-conventional": "^19.0.0",
+    "@biomejs/biome": "^2.4.0",
+    "@commitlint/cli": "^20.0.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@resvg/resvg-js": "^2.6.2",
     "husky": "^9.0.0",
-    "knip": "^5.0.0",
-    "typescript": "^5.7.0",
-    "vitest": "^3.0.0"
+    "knip": "^6.0.0",
+    "typescript": "^6.0.0",
+    "vitest": "^4.0.0"
   },
   "dependencies": {
     "react-router": "^7.13.1"

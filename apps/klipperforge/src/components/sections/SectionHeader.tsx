@@ -1,5 +1,5 @@
-import { FieldWrapper } from "@/components/ui/field-wrapper";
 import type { ReactNode } from "react";
+import { FieldWrapper } from "@/components/ui/field-wrapper";
 
 interface SectionHeaderProps {
   label: string;

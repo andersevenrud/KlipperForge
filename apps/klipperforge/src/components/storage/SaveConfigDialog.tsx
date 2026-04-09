@@ -1,3 +1,8 @@
+import { zodResolver } from "@hookform/resolvers/zod";
+import { HardDrive } from "lucide-react";
+import { useCallback, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -10,11 +15,6 @@ import {
 import { FieldWrapper } from "@/components/ui/field-wrapper";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { HardDrive } from "lucide-react";
-import { useCallback, useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 
 interface SaveConfigDialogProps {
   open: boolean;

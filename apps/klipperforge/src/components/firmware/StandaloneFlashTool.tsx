@@ -1,9 +1,9 @@
+import { Upload, Usb, Zap } from "lucide-react";
+import { useCallback, useRef, useState } from "react";
 import type { FlashMethod } from "@/api/firmware-types";
 import { Button } from "@/components/ui/button";
 import { FieldWrapper } from "@/components/ui/field-wrapper";
 import { useFirmwareFlash } from "@/hooks/use-firmware-flash";
-import { Cable, Upload, Usb, Zap } from "lucide-react";
-import { useCallback, useRef, useState } from "react";
 import { BrowserFlashSupport } from "./BrowserFlashSupport";
 import { FlashDialog } from "./FlashDialog";
 

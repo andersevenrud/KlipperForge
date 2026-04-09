@@ -1,7 +1,7 @@
-import type { FlashMethod } from "@/api/firmware-types";
-import { canFlashDfu, canFlashSerial } from "@klipperforge/dfu";
 import type { FlashResult } from "@klipperforge/dfu";
+import { canFlashDfu, canFlashSerial } from "@klipperforge/dfu";
 import { useCallback, useMemo } from "react";
+import type { FlashMethod } from "@/api/firmware-types";
 import { useDfuFlash } from "./use-dfu-flash";
 import { useSerialFlash } from "./use-serial-flash";
 

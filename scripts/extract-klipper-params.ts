@@ -73,7 +73,7 @@ const SKIP_SECTIONS = new Set([
 
 // Sections that are "reference only" (their params come from another section)
 // Pattern: "See the 'X' section for a description of the above parameters."
-const INHERIT_PATTERNS: Record<string, string> = {};
+const _INHERIT_PATTERNS: Record<string, string> = {};
 
 // Load source types from Python source extraction (if available)
 interface SourceParamType {
@@ -614,11 +614,6 @@ for (const section of sections) {
 mkdirSync(OUTPUT_DIR, { recursive: true });
 
 // Group sections by category
-interface CategoryDef {
-  category: string;
-  sectionNames: string[];
-}
-
 const CATEGORY_MAP: Record<string, string> = {
   printer: "motion",
   stepper: "motion",

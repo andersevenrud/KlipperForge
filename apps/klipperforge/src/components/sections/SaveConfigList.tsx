@@ -1,11 +1,11 @@
+import { SAVE_CONFIG_HEADER_PREFIX } from "@klipperforge/klipper-config";
+import { ChevronRight, LocateFixed } from "lucide-react";
+import { useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Separator } from "@/components/ui/separator";
 import { useConfig } from "@/context/config-context";
 import { useCollapsibleSections } from "@/hooks/use-collapsible-sections";
-import { SAVE_CONFIG_HEADER_PREFIX } from "@klipperforge/klipper-config";
-import { ChevronRight, LocateFixed } from "lucide-react";
-import { useMemo } from "react";
 
 export function SaveConfigList() {
   const { state } = useConfig();

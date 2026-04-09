@@ -2,7 +2,7 @@ import { ZodBoolean, ZodNumber, ZodOptional, type ZodTypeAny } from "zod";
 
 export function unwrapType(schema: ZodTypeAny): { inner: ZodTypeAny; optional: boolean } {
   if (schema instanceof ZodOptional) {
-    return { inner: schema.unwrap(), optional: true };
+    return { inner: schema.unwrap() as ZodTypeAny, optional: true };
   }
   return { inner: schema, optional: false };
 }

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { SECTION_MODES, getSectionModeConfig, isTmcSection } from "../sections/section-modes";
+import { getSectionModeConfig, isTmcSection, SECTION_MODES } from "../sections/section-modes";
 
 describe("isTmcSection", () => {
   it("returns true for TMC driver IDs", () => {

@@ -29,7 +29,7 @@ export function getLog(jobId: string): string[] {
   return logs.get(jobId) ?? [];
 }
 
-function clearLog(jobId: string): void {
+function _clearLog(jobId: string): void {
   logs.delete(jobId);
   logTimestamps.delete(jobId);
 }

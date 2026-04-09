@@ -9,7 +9,7 @@ import { diffExtension, dispatchDiffLines } from "../extensions/diff-extension";
 import { editorTheme } from "../extensions/editor-theme";
 import { flashLineExtension } from "../extensions/flash-line-extension";
 import { createFoldPersistExtension, klipperFoldService, reapplyFolds } from "../extensions/fold-extension";
-import { type InlineEditRequest, createInlineEditExtension } from "../extensions/inline-edit-extension";
+import { createInlineEditExtension, type InlineEditRequest } from "../extensions/inline-edit-extension";
 import { klipperLanguage } from "../extensions/klipper-language";
 import { dispatchOverrides, overrideExtension } from "../extensions/override-extension";
 import { createScrollPreserveExtension } from "../extensions/scroll-preserve-extension";
@@ -317,7 +317,7 @@ export function ConfigEditor({
           }}
           className="h-full [&_.cm-editor]:h-full [&_.cm-scroller]:!overflow-auto"
         />
-        <ValidationStatusPopup errors={validationErrors} sourceMap={sourceMap} onNavigateToError={onNavigateToError} />
+        <ValidationStatusPopup errors={validationErrors} onNavigateToError={onNavigateToError} />
       </div>
     </div>
   );

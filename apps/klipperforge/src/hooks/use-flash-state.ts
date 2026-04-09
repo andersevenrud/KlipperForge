@@ -1,6 +1,6 @@
-import { getErrorMessage } from "@/lib/utils";
 import type { FlashProgress, FlashResult } from "@klipperforge/dfu";
 import { useCallback, useRef, useState } from "react";
+import { getErrorMessage } from "@/lib/utils";
 
 type FlashState = "idle" | "connecting" | "flashing" | "complete" | "error";
 

@@ -1,8 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { SectionRegistry } from "../../sections/registry";
 import { createDefaultRegistry } from "../../sections/schemas";
 import { serializeConfig, serializeConfigWithSourceMap } from "../../sections/serializer";
-import type { ConfigDocument, SectionDefinition } from "../../sections/types";
+import type { ConfigDocument } from "../../sections/types";
 
 describe("serializeConfig", () => {
   it("serializes a basic config document", () => {

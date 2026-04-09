@@ -1,4 +1,3 @@
-import type { z } from "zod";
 import type { ConfigValue, SectionDefinition, SectionInstance } from "./types";
 
 export class SectionRegistry {
@@ -28,7 +27,7 @@ export class SectionRegistry {
     const instanceData: Record<string, ConfigValue> = {};
     const meta: Record<string, ConfigValue> = {};
 
-    for (const [key, value] of Object.entries(parsed)) {
+    for (const [key, value] of Object.entries(parsed as Record<string, unknown>)) {
       if (value === undefined) continue;
       if (metaFields.has(key)) {
         meta[key] = value as ConfigValue;
@@ -45,7 +44,7 @@ export class SectionRegistry {
     };
   }
 
-  validate(defId: string, data: unknown): z.SafeParseReturnType<unknown, unknown> {
+  validate(defId: string, data: unknown) {
     const def = this.definitions.get(defId);
     if (!def) {
       throw new Error(`Unknown section definition: ${defId}`);

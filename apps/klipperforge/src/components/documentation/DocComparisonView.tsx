@@ -1,9 +1,9 @@
+import { ArrowLeft, Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useDocDataMultipleQuery } from "@/hooks/use-queries";
-import { ArrowLeft, Check, X } from "lucide-react";
-import type { DocCategory } from "./DocumentationView";
-import { COMPARISON_CONFIGS } from "./comparison-specs";
 import type { ComparisonCategoryConfig } from "./comparison-specs";
+import { COMPARISON_CONFIGS } from "./comparison-specs";
+import type { DocCategory } from "./DocumentationView";
 import { DOC_CATEGORY_LABELS } from "./doc-shared";
 
 // ---------------------------------------------------------------------------

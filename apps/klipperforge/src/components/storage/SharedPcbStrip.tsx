@@ -1,9 +1,9 @@
-import { DocPcbViewer } from "@/components/documentation/DocPcbViewer";
-import type { PinAssignment } from "@/components/svg/pcb/PcbConnectorRect";
-import { useMcu } from "@/context/mcu-context";
 import type { PcbLayout } from "@klipperforge/printer-data";
 import { loadPcbLayout } from "@klipperforge/printer-data";
 import { useEffect, useMemo, useState } from "react";
+import { DocPcbViewer } from "@/components/documentation/DocPcbViewer";
+import type { PinAssignment } from "@/components/svg/pcb/PcbConnectorRect";
+import { useMcu } from "@/context/mcu-context";
 
 interface SharedPcbStripProps {
   onPinClick?: (assignment: PinAssignment) => void;

@@ -1,4 +1,4 @@
-import { type SectionRegistry, resolveHeader } from "./registry";
+import { resolveHeader, type SectionRegistry } from "./registry";
 import type { ConfigDocument, ConfigValue, SectionInstance } from "./types";
 
 export interface ActiveOverride {

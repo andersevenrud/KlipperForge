@@ -1,9 +1,9 @@
 export type { MoonrakerConnectionOptions, MoonrakerFileEntry, UploadFileResult } from "./client";
 export {
-  MoonrakerApiError,
   fetchFile,
   fetchFileList,
   getMoonrakerErrorMessage,
+  MoonrakerApiError,
   normalizeUrl,
   testConnection,
   uploadFile,

@@ -2,7 +2,7 @@ import type { PcbConnector, PinUsage } from "@klipperforge/printer-data";
 import { PCB_CATEGORY_COLORS } from "@klipperforge/theme";
 import { memo } from "react";
 import { isSpecialPin } from "./JumperPinDiagram";
-import { type Rotation, getConnectorLabel } from "./pcb-types";
+import { getConnectorLabel, type Rotation } from "./pcb-types";
 
 export { PCB_CATEGORY_COLORS as CATEGORY_COLORS } from "@klipperforge/theme";
 

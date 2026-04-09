@@ -1,9 +1,9 @@
 import type { JumperOption, PcbConnector, PinUsage } from "@klipperforge/printer-data";
 import { createPortal } from "react-dom";
 import { DipSwitchDiagram } from "./DipSwitchDiagram";
-import { JumperPinDiagram, buildPinGrid, rotateGrid } from "./JumperPinDiagram";
+import { buildPinGrid, JumperPinDiagram, rotateGrid } from "./JumperPinDiagram";
 import type { PinAssignment } from "./PcbConnectorRect";
-import { type Rotation, getConnectorLabel } from "./pcb-types";
+import { getConnectorLabel, type Rotation } from "./pcb-types";
 
 interface PcbTooltipProps {
   connector: PcbConnector;

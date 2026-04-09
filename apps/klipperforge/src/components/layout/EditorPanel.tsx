@@ -1,3 +1,15 @@
+import { ConfigEditor, computeChangedLines, type InlineEditRequest, JsonViewer } from "@klipperforge/editor";
+import {
+  type ConfigValue,
+  cfgToDocument,
+  defaultRegistry,
+  exportProject,
+  type ParamDefinition,
+  parseKlipperConfig,
+  type SectionValidationError,
+} from "@klipperforge/klipper-config";
+import { AlertTriangle, GitCompareArrows, Plus, X, XCircle } from "lucide-react";
+import { useCallback, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -14,18 +26,6 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { resolveHeader, useConfig } from "@/context/config-context";
 import { featureFlags } from "@/lib/feature-flags";
-import { ConfigEditor, type InlineEditRequest, JsonViewer, computeChangedLines } from "@klipperforge/editor";
-import {
-  type ConfigValue,
-  type ParamDefinition,
-  type SectionValidationError,
-  cfgToDocument,
-  defaultRegistry,
-  exportProject,
-  parseKlipperConfig,
-} from "@klipperforge/klipper-config";
-import { AlertTriangle, GitCompareArrows, Plus, X, XCircle } from "lucide-react";
-import { useCallback, useMemo, useState } from "react";
 
 const FILENAME_PATTERN = /^[a-zA-Z0-9_-]+$/;
 

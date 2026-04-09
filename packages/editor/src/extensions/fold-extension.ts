@@ -1,4 +1,4 @@
-import { foldEffect, foldService, foldable, foldedRanges, unfoldEffect } from "@codemirror/language";
+import { foldable, foldEffect, foldedRanges, foldService, unfoldEffect } from "@codemirror/language";
 import type { EditorState, StateEffect } from "@codemirror/state";
 import { type EditorView, ViewPlugin, type ViewUpdate } from "@codemirror/view";
 import { ExternalChange } from "@uiw/react-codemirror";

@@ -1,4 +1,4 @@
-import type { ConfigSourceMap, SectionValidationError } from "@klipperforge/klipper-config";
+import type { SectionValidationError } from "@klipperforge/klipper-config";
 import { AlertTriangle, CheckCircle, Info, XCircle } from "lucide-react";
 import { Popover as PopoverPrimitive } from "radix-ui";
 import { useMemo } from "react";
@@ -6,7 +6,6 @@ import { useEditorScroll } from "../context/editor-scroll-context";
 
 interface ValidationStatusPopupProps {
   errors: SectionValidationError[];
-  sourceMap: ConfigSourceMap;
   onNavigateToError?: (error: SectionValidationError) => void;
 }
 
@@ -17,7 +16,7 @@ function formatErrorLocation(error: SectionValidationError): string {
   return `[${error.section}]`;
 }
 
-export function ValidationStatusPopup({ errors, sourceMap, onNavigateToError }: ValidationStatusPopupProps) {
+export function ValidationStatusPopup({ errors, onNavigateToError }: ValidationStatusPopupProps) {
   const { scrollToSection, scrollToField, expandAndScrollToSection } = useEditorScroll();
 
   const { errorCount, warningCount, infoCount } = useMemo(() => {

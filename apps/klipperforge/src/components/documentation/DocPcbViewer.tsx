@@ -1,3 +1,6 @@
+import type { PcbLayout, PinUsage } from "@klipperforge/printer-data";
+import { ImageIcon, ImageOff, Layers, List, Maximize2, PenTool, RotateCw, ZoomIn, ZoomOut } from "lucide-react";
+import { useCallback, useState } from "react";
 import { PcbBoard } from "@/components/svg/pcb/PcbBoard";
 import type { PinAssignment } from "@/components/svg/pcb/PcbConnectorRect";
 import { PcbPinOverview } from "@/components/svg/pcb/PcbPinOverview";
@@ -6,9 +9,6 @@ import type { ImageOpacity, Rotation } from "@/components/svg/pcb/pcb-types";
 import { usePcbTooltip } from "@/components/svg/pcb/usePcbTooltip";
 import { usePcbZoom } from "@/components/svg/pcb/usePcbZoom";
 import { cn } from "@/lib/utils";
-import type { PcbLayout, PinUsage } from "@klipperforge/printer-data";
-import { ImageIcon, ImageOff, Layers, List, Maximize2, PenTool, RotateCw, ZoomIn, ZoomOut } from "lucide-react";
-import { useCallback, useState } from "react";
 
 interface DocPcbViewerProps {
   layout: PcbLayout;
@@ -45,7 +45,6 @@ export function DocPcbViewer({ layout, usedPins, jumperSelections, className, la
 
   const {
     tooltip,
-    dismissPinned,
     dismiss,
     handleConnectorHover,
     handleConnectorLeave,

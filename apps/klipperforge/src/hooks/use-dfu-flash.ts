@@ -1,5 +1,5 @@
-import { flashDfu, requestDfuDevice } from "@klipperforge/dfu";
 import type { FlashProgress, FlashResult } from "@klipperforge/dfu";
+import { flashDfu, requestDfuDevice } from "@klipperforge/dfu";
 import { useCallback } from "react";
 import { useFlashState } from "./use-flash-state";
 

@@ -1,3 +1,8 @@
+import { useEditorScroll } from "@klipperforge/editor";
+import type { SectionInstance } from "@klipperforge/klipper-config";
+import { defaultRegistry, SHARED_BUS_PIN_FIELDS } from "@klipperforge/klipper-config";
+import { Plus } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -10,15 +15,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { resolveHeader, useConfig } from "@/context/config-context";
-import { useEditorScroll } from "@klipperforge/editor";
-import { SHARED_BUS_PIN_FIELDS, defaultRegistry } from "@klipperforge/klipper-config";
-import type { SectionInstance } from "@klipperforge/klipper-config";
-import { Plus } from "lucide-react";
-import { useEffect, useMemo, useRef, useState } from "react";
 import { NamePromptDialog } from "./NamePromptDialog";
 import { SectionHeader } from "./SectionHeader";
 import { SectionList } from "./SectionList";
-import { type SectionCatalogEntry, getCatalogByCategory } from "./section-catalog";
+import { getCatalogByCategory, type SectionCatalogEntry } from "./section-catalog";
 
 function collectExistingBusPins(sections: SectionInstance[]): Record<string, string> {
   const busPins: Record<string, string> = {};

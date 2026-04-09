@@ -1,6 +1,6 @@
-import { useConfig } from "@/context/config-context";
 import { useEditorScroll } from "@klipperforge/editor";
 import { useCallback, useEffect, useState } from "react";
+import { useConfig } from "@/context/config-context";
 
 interface UseCollapsibleSectionsOptions {
   filterScrollTarget?: (header: string) => boolean;

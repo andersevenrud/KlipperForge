@@ -1,6 +1,6 @@
+import { useCallback, useMemo, useState } from "react";
 import { hasLocalConfigs, readLocalConfigIndex } from "@/api/local-storage-reader";
 import { useConfigStorage } from "@/context/config-storage-context";
-import { useCallback, useMemo, useState } from "react";
 
 interface LocalConfigDetectionResult {
   hasLocalConfigs: boolean;

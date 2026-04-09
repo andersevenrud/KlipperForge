@@ -1,8 +1,8 @@
+import type { ReactNode } from "react";
+import { useState } from "react";
 import { FieldWrapper } from "@/components/ui/field-wrapper";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useState } from "react";
-import type { ReactNode } from "react";
 
 interface NumberField {
   type: "number";

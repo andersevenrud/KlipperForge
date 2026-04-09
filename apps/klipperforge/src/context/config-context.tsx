@@ -5,23 +5,22 @@ import {
   type ConfigDocument,
   type ConfigSourceMap,
   type ConfigValue,
+  collectActiveOverrides,
+  convertDocumentPins,
   type DefaultMatch,
+  defaultRegistry,
+  extractBoardPinAliases,
   type McuBoardAssociation,
-  type MultiFileOutput,
   type OverrideMap,
+  resolveHeader as resolveHeaderBase,
   type SectionInstance,
   type SectionValidationError,
   type SerializeOptions,
-  collectActiveOverrides,
-  convertDocumentPins,
-  defaultRegistry,
-  extractBoardPinAliases,
-  resolveHeader as resolveHeaderBase,
   serializeConfigWithSourceMap,
   serializeMultiFileConfig,
   validateDocument,
 } from "@klipperforge/klipper-config";
-import { type ReactNode, createContext, useContext, useReducer } from "react";
+import { createContext, type ReactNode, useContext, useReducer } from "react";
 
 interface ConfigState {
   document: ConfigDocument;

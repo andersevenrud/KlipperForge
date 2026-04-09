@@ -1,9 +1,9 @@
+import { X } from "lucide-react";
+import { type KeyboardEvent, useCallback, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { FieldWrapper } from "@/components/ui/field-wrapper";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { X } from "lucide-react";
-import { type KeyboardEvent, useCallback, useState } from "react";
 
 interface InitialPinsInputProps {
   value: string;

@@ -1,7 +1,7 @@
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import type { FilamentRatings } from "@klipperforge/printer-data";
 import { loadFilament } from "@klipperforge/printer-data";
 import { Droplets, FlaskConical, Gauge, Ruler, Thermometer } from "lucide-react";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import {
   Badge,
   BooleanSpecRow,

@@ -25,7 +25,6 @@ export function BuildLog({ lines }: BuildLogProps) {
         className="max-h-64 overflow-y-auto rounded-md border border-border bg-black/90 p-3 font-mono text-xs leading-relaxed text-green-400"
       >
         {lines.map((line, i) => (
-          // biome-ignore lint/suspicious/noArrayIndexKey: log lines are append-only
           <div key={i}>{line}</div>
         ))}
       </div>

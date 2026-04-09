@@ -1,48 +1,19 @@
 // New section schema system
-export type {
-  ConfigDocument,
-  ConfigValue,
-  ImportWarning,
-  McuBoardAssociation,
-  SaveConfigSection,
-  SectionDefinition,
-  SectionInstance,
-  SectionNaming,
-  SectionOverride,
-} from "./sections/types";
-export type {
-  ParamDefinition,
-  ParamType,
-  SectionParams,
-} from "./sections/param-types";
-export { createSchemaFromParams } from "./sections/schema-from-params";
-export { SectionRegistry, resolveHeader } from "./sections/registry";
-export {
-  SAVE_CONFIG_HEADER_PREFIX,
-  type SerializeOptions,
-  serializeConfig,
-  serializeConfigWithSourceMap,
-  serializeMultiFileConfig,
-} from "./sections/serializer";
-export type { ConfigSourceMap, DefaultMatch, MultiFileOutput } from "./sections/serializer";
-export {
-  validateDocument,
-  type SectionValidationError,
-  type BoardPinContext,
-  type ValidateDocumentOptions,
-} from "./sections/validator";
-export {
-  collectActiveOverrides,
-  type ActiveOverride,
-  type OverrideMap,
-} from "./sections/overrides";
+
+/** @deprecated Use serializeConfig instead */
+export { generateKlipperConfig } from "./generator";
+// Import/export
+export { cfgToDocument, parseMultiFileConfigs } from "./import";
+export type { ParseResult } from "./parser";
+/** @deprecated Use parseKlipperConfig with section registry instead */
+export { COMMENT_SECTION_TYPE, parseKlipperConfig } from "./parser";
+export type { McuPinFamily } from "./pin-formats";
 // Pin format validation
 export {
-  MCU_PIN_FAMILIES,
   isVirtualEndstop,
+  MCU_PIN_FAMILIES,
   matchesKnownPinFormat,
 } from "./pin-formats";
-export type { McuPinFamily } from "./pin-formats";
 // Pin aliases
 export type { BoardPinAlias } from "./pins";
 export {
@@ -53,7 +24,34 @@ export {
   parsePinAliasString,
   resolvePinAlias,
 } from "./pins";
-
+export type { KlipperForgeProject } from "./project";
+export { exportProject, importProject } from "./project";
+// Field grouping
+export type { FieldGroup } from "./sections/field-groups";
+export {
+  applyControlVisibility,
+  applyFieldGroups,
+  applySensorTypeVisibility,
+  getFieldGroup,
+} from "./sections/field-groups";
+// Sensor types
+export { KNOWN_SENSOR_TYPES } from "./sections/generated/heating";
+export { KNOWN_ACCEL_CHIPS } from "./sections/generated/tuning";
+export type { NormalizeSectionOptions, NormalizeSectionResult } from "./sections/normalize";
+// Section data normalization
+export { computeHiddenFields, normalizeSectionData } from "./sections/normalize";
+export {
+  type ActiveOverride,
+  collectActiveOverrides,
+  type OverrideMap,
+} from "./sections/overrides";
+export type {
+  ParamDefinition,
+  ParamType,
+  SectionParams,
+} from "./sections/param-types";
+export { resolveHeader, SectionRegistry } from "./sections/registry";
+export { createSchemaFromParams } from "./sections/schema-from-params";
 export {
   beaconDefinition,
   beaconSchema,
@@ -109,39 +107,40 @@ export {
   tmc5160Definition,
   tmcSchema,
 } from "./sections/schemas";
-
-// Section data normalization
-export { computeHiddenFields, normalizeSectionData } from "./sections/normalize";
-export type { NormalizeSectionOptions, NormalizeSectionResult } from "./sections/normalize";
-
 // Section modes (TMC communication + MCU connection)
 export {
-  type SectionModeConfig,
-  type SectionModeOption,
-  SECTION_MODES,
-  SHARED_BUS_PIN_FIELDS,
   getSectionModeConfig,
   isTmcSection,
+  SECTION_MODES,
+  type SectionModeConfig,
+  type SectionModeOption,
+  SHARED_BUS_PIN_FIELDS,
 } from "./sections/section-modes";
-
-// Field grouping
-export type { FieldGroup } from "./sections/field-groups";
+export type { ConfigSourceMap, DefaultMatch, MultiFileOutput } from "./sections/serializer";
 export {
-  applyControlVisibility,
-  applyFieldGroups,
-  applySensorTypeVisibility,
-  getFieldGroup,
-} from "./sections/field-groups";
-
-// Sensor types
-export { KNOWN_SENSOR_TYPES } from "./sections/generated/heating";
-export { KNOWN_ACCEL_CHIPS } from "./sections/generated/tuning";
-
-// Import/export
-export { cfgToDocument, parseMultiFileConfigs } from "./import";
-export { exportProject, importProject } from "./project";
-export type { KlipperForgeProject } from "./project";
-
+  SAVE_CONFIG_HEADER_PREFIX,
+  type SerializeOptions,
+  serializeConfig,
+  serializeConfigWithSourceMap,
+  serializeMultiFileConfig,
+} from "./sections/serializer";
+export type {
+  ConfigDocument,
+  ConfigValue,
+  ImportWarning,
+  McuBoardAssociation,
+  SaveConfigSection,
+  SectionDefinition,
+  SectionInstance,
+  SectionNaming,
+  SectionOverride,
+} from "./sections/types";
+export {
+  type BoardPinContext,
+  type SectionValidationError,
+  type ValidateDocumentOptions,
+  validateDocument,
+} from "./sections/validator";
 // Legacy exports (deprecated — use section schema system instead)
 /** @deprecated Use section schema system instead */
 export type {
@@ -156,10 +155,5 @@ export type {
   ProbeSection,
   StepperSection,
 } from "./types";
-/** @deprecated Use serializeConfig instead */
-export { generateKlipperConfig } from "./generator";
-/** @deprecated Use parseKlipperConfig with section registry instead */
-export { COMMENT_SECTION_TYPE, parseKlipperConfig } from "./parser";
-export type { ParseResult } from "./parser";
 /** @deprecated Use validateDocument instead */
-export { validateConfig, type ValidationError } from "./validator";
+export { type ValidationError, validateConfig } from "./validator";

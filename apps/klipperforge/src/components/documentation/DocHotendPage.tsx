@@ -1,7 +1,7 @@
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import { loadHotend } from "@klipperforge/printer-data";
 import { Flame, Ruler } from "lucide-react";
 import { Link } from "react-router";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import {
   Badge,
   DocHeader,

@@ -1,5 +1,5 @@
-import { defaultRegistry } from "@klipperforge/klipper-config";
 import type { ConfigValue, SectionDefinition } from "@klipperforge/klipper-config";
+import { defaultRegistry } from "@klipperforge/klipper-config";
 import type { SectionParams } from "@klipperforge/klipper-config/sections/param-types";
 
 export interface SectionCatalogEntry {

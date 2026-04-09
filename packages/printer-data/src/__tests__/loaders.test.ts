@@ -17,7 +17,7 @@ describe("loaders", () => {
     const mockData = {
       printers: [{ id: "voron-2.4", name: "Voron 2.4", manufacturer: "VORON Design" }],
     };
-    global.fetch = vi.fn().mockResolvedValue({
+    globalThis.fetch = vi.fn().mockResolvedValue({
       ok: true,
       json: () => Promise.resolve(mockData),
     });
@@ -25,11 +25,11 @@ describe("loaders", () => {
     const result = await loadPrinterIndex();
     expect(result.printers).toHaveLength(1);
     expect(result.printers[0].id).toBe("voron-2.4");
-    expect(global.fetch).toHaveBeenCalledWith("/data/printers/index.json");
+    expect(globalThis.fetch).toHaveBeenCalledWith("/data/printers/index.json");
   });
 
   it("throws on fetch failure", async () => {
-    global.fetch = vi.fn().mockResolvedValue({
+    globalThis.fetch = vi.fn().mockResolvedValue({
       ok: false,
       statusText: "Not Found",
     });
@@ -49,7 +49,7 @@ describe("loaders", () => {
         EXP1_1: "PE8",
       },
     };
-    global.fetch = vi.fn().mockResolvedValue({
+    globalThis.fetch = vi.fn().mockResolvedValue({
       ok: true,
       json: () => Promise.resolve(mockBoard),
     });
@@ -59,7 +59,7 @@ describe("loaders", () => {
     expect(result.aliases?.FAN0).toBe("PA8");
     expect(result.aliases?.DRIVER0_STEP).toBe("PF13");
     expect(result.aliases?.EXP1_1).toBe("PE8");
-    expect(global.fetch).toHaveBeenCalledWith("/data/mcu-boards/btt-octopus-pro-1.1.json");
+    expect(globalThis.fetch).toHaveBeenCalledWith("/data/mcu-boards/btt-octopus-pro-1.1.json");
   });
 
   it("loadAccessoryIndex fetches the accessory index", async () => {
@@ -73,7 +73,7 @@ describe("loaders", () => {
         },
       ],
     };
-    global.fetch = vi.fn().mockResolvedValue({
+    globalThis.fetch = vi.fn().mockResolvedValue({
       ok: true,
       json: () => Promise.resolve(mockData),
     });
@@ -81,7 +81,7 @@ describe("loaders", () => {
     const result = await loadAccessoryIndex();
     expect(result.accessories).toHaveLength(1);
     expect(result.accessories[0].id).toBe("btt-sfs-v2");
-    expect(global.fetch).toHaveBeenCalledWith("/data/accessories/index.json");
+    expect(globalThis.fetch).toHaveBeenCalledWith("/data/accessories/index.json");
   });
 
   it("loadAccessory fetches an accessory by ID", async () => {
@@ -92,7 +92,7 @@ describe("loaders", () => {
       description: "Smart filament sensor",
       accessoryType: "filament-sensor",
     };
-    global.fetch = vi.fn().mockResolvedValue({
+    globalThis.fetch = vi.fn().mockResolvedValue({
       ok: true,
       json: () => Promise.resolve(mockData),
     });
@@ -100,7 +100,7 @@ describe("loaders", () => {
     const result = await loadAccessory("btt-sfs-v2");
     expect(result.id).toBe("btt-sfs-v2");
     expect(result.accessoryType).toBe("filament-sensor");
-    expect(global.fetch).toHaveBeenCalledWith("/data/accessories/btt-sfs-v2.json");
+    expect(globalThis.fetch).toHaveBeenCalledWith("/data/accessories/btt-sfs-v2.json");
   });
 
   it("loadFilamentIndex fetches the filament index", async () => {
@@ -114,7 +114,7 @@ describe("loaders", () => {
         },
       ],
     };
-    global.fetch = vi.fn().mockResolvedValue({
+    globalThis.fetch = vi.fn().mockResolvedValue({
       ok: true,
       json: () => Promise.resolve(mockData),
     });
@@ -122,7 +122,7 @@ describe("loaders", () => {
     const result = await loadFilamentIndex();
     expect(result.filaments).toHaveLength(1);
     expect(result.filaments[0].id).toBe("generic-pla");
-    expect(global.fetch).toHaveBeenCalledWith("/data/filaments/index.json");
+    expect(globalThis.fetch).toHaveBeenCalledWith("/data/filaments/index.json");
   });
 
   it("loadFilament fetches a filament by ID", async () => {
@@ -135,7 +135,7 @@ describe("loaders", () => {
       printSpecs: { nozzleTempRange: "190–220°C", bedTempRange: "50–60°C" },
       physicalSpecs: { diameter: 1.75 },
     };
-    global.fetch = vi.fn().mockResolvedValue({
+    globalThis.fetch = vi.fn().mockResolvedValue({
       ok: true,
       json: () => Promise.resolve(mockData),
     });
@@ -143,7 +143,7 @@ describe("loaders", () => {
     const result = await loadFilament("generic-pla");
     expect(result.id).toBe("generic-pla");
     expect(result.filamentType).toBe("PLA");
-    expect(global.fetch).toHaveBeenCalledWith("/data/filaments/generic-pla.json");
+    expect(globalThis.fetch).toHaveBeenCalledWith("/data/filaments/generic-pla.json");
   });
 
   it("loadDisplayIndex fetches the display index", async () => {
@@ -157,7 +157,7 @@ describe("loaders", () => {
         },
       ],
     };
-    global.fetch = vi.fn().mockResolvedValue({
+    globalThis.fetch = vi.fn().mockResolvedValue({
       ok: true,
       json: () => Promise.resolve(mockData),
     });
@@ -165,7 +165,7 @@ describe("loaders", () => {
     const result = await loadDisplayIndex();
     expect(result.displays).toHaveLength(1);
     expect(result.displays[0].id).toBe("btt-knomi-v2.0");
-    expect(global.fetch).toHaveBeenCalledWith("/data/displays/index.json");
+    expect(globalThis.fetch).toHaveBeenCalledWith("/data/displays/index.json");
   });
 
   it("loadDisplay fetches a display by ID", async () => {
@@ -177,7 +177,7 @@ describe("loaders", () => {
       displayType: "standalone",
       screenSpecs: { size: "1.28 inch", resolution: "240x240" },
     };
-    global.fetch = vi.fn().mockResolvedValue({
+    globalThis.fetch = vi.fn().mockResolvedValue({
       ok: true,
       json: () => Promise.resolve(mockData),
     });
@@ -185,7 +185,7 @@ describe("loaders", () => {
     const result = await loadDisplay("btt-knomi-v2.0");
     expect(result.id).toBe("btt-knomi-v2.0");
     expect(result.displayType).toBe("standalone");
-    expect(global.fetch).toHaveBeenCalledWith("/data/displays/btt-knomi-v2.0.json");
+    expect(globalThis.fetch).toHaveBeenCalledWith("/data/displays/btt-knomi-v2.0.json");
   });
 
   it("loadMcuBoard loads board without aliases", async () => {
@@ -195,7 +195,7 @@ describe("loaders", () => {
       mcu: "STM32F446",
       pins: ["PA0"],
     };
-    global.fetch = vi.fn().mockResolvedValue({
+    globalThis.fetch = vi.fn().mockResolvedValue({
       ok: true,
       json: () => Promise.resolve(mockBoard),
     });

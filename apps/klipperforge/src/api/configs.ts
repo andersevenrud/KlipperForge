@@ -6,8 +6,8 @@ import type {
   CreateShareResponse,
   RevisionDetailResponse,
   RevisionListResponse,
-  ShareListResponse,
   SharedConfigResponse,
+  ShareListResponse,
   UpdateConfigResponse,
 } from "./config-storage-types";
 

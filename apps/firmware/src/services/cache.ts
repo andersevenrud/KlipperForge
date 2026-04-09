@@ -3,9 +3,9 @@ import {
   evictByKlipperCommit,
   evictByTtl,
   evictLeastRecentlyAccessed,
+  getCachedBuild,
   getCacheSize,
   getCacheSizeBytes,
-  getCachedBuild,
   storeCachedBuild,
 } from "../db/queries/cache";
 import type { CachedBuildResult } from "../types";

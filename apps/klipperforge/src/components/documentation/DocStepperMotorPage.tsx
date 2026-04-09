@@ -1,6 +1,6 @@
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import { loadStepperMotor } from "@klipperforge/printer-data";
 import { Ruler, Thermometer, Zap } from "lucide-react";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import { Badge, DocHeader, DocPageShell, ReferenceList, RelatedArticles, SpecRow, SpecSection } from "./doc-shared";
 
 interface DocStepperMotorPageProps {

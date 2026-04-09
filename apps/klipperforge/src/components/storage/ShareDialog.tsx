@@ -1,3 +1,5 @@
+import { Check, Copy, Link, Trash2 } from "lucide-react";
+import { useState } from "react";
 import type { ShareInfo } from "@/api/config-storage-types";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,8 +11,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { Check, Copy, Link, Trash2 } from "lucide-react";
-import { useState } from "react";
 
 interface ShareDialogProps {
   open: boolean;

@@ -1,3 +1,6 @@
+import { canFlashDfu, canFlashSerial } from "@klipperforge/dfu";
+import { Cpu, Loader2, Wrench, Zap } from "lucide-react";
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
 import {
   downloadBuild,
   fetchBoardPresets,
@@ -14,18 +17,15 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { featureFlags } from "@/lib/feature-flags";
 import { downloadBlob, getErrorMessage } from "@/lib/utils";
 import type { TimerId } from "@/types";
-import { canFlashDfu, canFlashSerial } from "@klipperforge/dfu";
-import { Cpu, Loader2, Wrench, Zap } from "lucide-react";
-import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
 import { BoardSelector } from "./BoardSelector";
 import { BrowserFlashSupport } from "./BrowserFlashSupport";
 import { BuildLog } from "./BuildLog";
 import { BuildStatus } from "./BuildStatus";
 import { FlashDialog } from "./FlashDialog";
+import { firmwareReducer, initialFirmwareState } from "./firmware-reducer";
 import { InterfaceSelector } from "./InterfaceSelector";
 import { OptionsPanel } from "./OptionsPanel";
 import { StandaloneFlashTool } from "./StandaloneFlashTool";
-import { firmwareReducer, initialFirmwareState } from "./firmware-reducer";
 
 interface FirmwareViewProps {
   onBuildStart?: () => void;

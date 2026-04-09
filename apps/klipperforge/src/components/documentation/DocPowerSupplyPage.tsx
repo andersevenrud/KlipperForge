@@ -1,7 +1,7 @@
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import { loadPowerSupply } from "@klipperforge/printer-data";
 import { Ruler, Shield, Star, Thermometer, Zap } from "lucide-react";
 import type { ReactNode } from "react";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import {
   Badge,
   BooleanSpecRow,

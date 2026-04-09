@@ -1,11 +1,5 @@
-import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { Button } from "@/components/ui/button";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Input } from "@/components/ui/input";
-import { resolveHeader, useConfig } from "@/context/config-context";
-import { useCollapsibleSections } from "@/hooks/use-collapsible-sections";
-import { COMMENT_SECTION_TYPE, defaultRegistry } from "@klipperforge/klipper-config";
 import type { SectionInstance } from "@klipperforge/klipper-config";
+import { COMMENT_SECTION_TYPE, defaultRegistry } from "@klipperforge/klipper-config";
 import {
   Calculator,
   ChevronRight,
@@ -19,6 +13,12 @@ import {
 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { Button } from "@/components/ui/button";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Input } from "@/components/ui/input";
+import { resolveHeader, useConfig } from "@/context/config-context";
+import { useCollapsibleSections } from "@/hooks/use-collapsible-sections";
 import { NamePromptDialog } from "./NamePromptDialog";
 import { RemoveConfirmButton } from "./RemoveConfirmButton";
 import { SectionEditor } from "./SectionEditor";

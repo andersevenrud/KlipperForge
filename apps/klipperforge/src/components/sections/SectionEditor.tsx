@@ -1,3 +1,24 @@
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  applyControlVisibility,
+  applyFieldGroups,
+  applySensorTypeVisibility,
+  computeHiddenFields,
+  defaultRegistry,
+  type FieldGroup,
+  getFieldGroup,
+  getSectionModeConfig,
+  isTmcSection,
+  KNOWN_SENSOR_TYPES,
+  normalizeSectionData,
+  parsePinAliasString,
+  type SectionInstance,
+} from "@klipperforge/klipper-config";
+import type { ParamDefinition } from "@klipperforge/klipper-config/sections/param-types";
+import { ChevronRight, TriangleAlert } from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { type ZodTypeAny, z } from "zod";
 import { KeyValueEditor, type KeyValueEntry } from "@/components/sections/KeyValueEditor";
 import { VariableEditor } from "@/components/sections/VariableEditor";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -6,28 +27,6 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { resolveHeader, useConfig } from "@/context/config-context";
 import type { TimerId } from "@/types";
-import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  type ConfigValue,
-  type FieldGroup,
-  KNOWN_SENSOR_TYPES,
-  type SectionInstance,
-  applyControlVisibility,
-  applyFieldGroups,
-  applySensorTypeVisibility,
-  computeHiddenFields,
-  defaultRegistry,
-  getFieldGroup,
-  getSectionModeConfig,
-  isTmcSection,
-  normalizeSectionData,
-  parsePinAliasString,
-} from "@klipperforge/klipper-config";
-import type { ParamDefinition } from "@klipperforge/klipper-config/sections/param-types";
-import { ChevronRight, TriangleAlert } from "lucide-react";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Controller, useForm } from "react-hook-form";
-import { type ZodTypeAny, z } from "zod";
 import { ParamField } from "./ParamField";
 import { getFieldType, numericSetValueAs, unwrapType } from "./section-editor-utils";
 
@@ -74,7 +73,8 @@ export function SectionEditor({ section, header }: SectionEditorProps) {
     reset,
     formState: { errors },
   } = useForm({
-    resolver: zodResolver(definition?.schema ?? z.object({}).passthrough()),
+    // biome-ignore lint/suspicious/noExplicitAny: Zod 4 compat layer type mismatch with zodResolver
+    resolver: zodResolver((definition?.schema ?? z.object({}).passthrough()) as any),
     mode: "onChange",
     defaultValues: { ...section.data, ...section.meta, ...overrideValues } as Record<string, unknown>,
   });
@@ -603,7 +603,7 @@ export function SectionEditor({ section, header }: SectionEditorProps) {
         </div>
       )}
 
-      {mainSegments.map((segment, i) =>
+      {mainSegments.map((segment, _i) =>
         segment.type === "group" ? (
           <div key={segment.label} className="rounded-md border border-border/50 bg-muted/20 p-2">
             <p className="mb-1 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">

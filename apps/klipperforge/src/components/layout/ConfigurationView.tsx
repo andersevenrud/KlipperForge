@@ -1,8 +1,8 @@
-import { useConfigPersistence } from "@/hooks/use-config-persistence";
-import { useIsMobile } from "@/hooks/use-is-mobile";
 import { CircuitBoard, Code, Settings } from "lucide-react";
 import { useState } from "react";
-import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
+import { Group, Panel, Separator } from "react-resizable-panels";
+import { useConfigPersistence } from "@/hooks/use-config-persistence";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 import { ErrorBoundary } from "../ErrorBoundary";
 import { ConfigPanel } from "./ConfigPanel";
 import { EditorPanel } from "./EditorPanel";
@@ -70,7 +70,7 @@ function MobileConfigurationLayout() {
 
 function DesktopConfigurationLayout() {
   return (
-    <PanelGroup direction="horizontal" className="flex-1">
+    <Group orientation="horizontal" className="flex-1">
       <Panel defaultSize={30} minSize={20} maxSize={50} style={{ minWidth: 360 }}>
         <div className="flex h-full flex-col">
           <ErrorBoundary fallbackClassName="flex-1">
@@ -79,23 +79,23 @@ function DesktopConfigurationLayout() {
           <SidebarActions />
         </div>
       </Panel>
-      <PanelResizeHandle className="w-1.5 bg-border transition-colors hover:bg-primary/50" />
+      <Separator className="w-1.5 bg-border transition-colors hover:bg-primary/50" />
       <Panel defaultSize={70}>
-        <PanelGroup direction="vertical">
+        <Group orientation="vertical">
           <Panel defaultSize={40} minSize={20}>
             <ErrorBoundary fallbackClassName="h-full">
               <IllustrationPanel />
             </ErrorBoundary>
           </Panel>
-          <PanelResizeHandle className="h-1.5 bg-border transition-colors hover:bg-primary/50" />
+          <Separator className="h-1.5 bg-border transition-colors hover:bg-primary/50" />
           <Panel defaultSize={60} minSize={20}>
             <ErrorBoundary fallbackClassName="h-full">
               <EditorPanel />
             </ErrorBoundary>
           </Panel>
-        </PanelGroup>
+        </Group>
       </Panel>
-    </PanelGroup>
+    </Group>
   );
 }
 
