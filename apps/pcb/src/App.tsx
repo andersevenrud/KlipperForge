@@ -112,6 +112,9 @@ export function App() {
             break;
           case "d":
             if (selectedId) {
+              if (e.ctrlKey || e.metaKey) {
+                e.preventDefault();
+              }
               duplicateConnector(selectedId);
             }
             break;
@@ -180,11 +183,12 @@ export function App() {
           onSelectConnector={selectConnector}
           onUpdateConnector={updateConnector}
           onFindConnectorAt={findConnectorAt}
+          onZoomChange={setZoom}
           snap={snap}
         />
         {selectedId && (
           <div className="absolute bottom-2 left-1/2 -translate-x-1/2 pointer-events-none z-10 rounded bg-zinc-800/80 px-3 py-1 text-[11px] text-zinc-400">
-            Arrow keys to move &middot; Shift+Arrow to resize
+            Arrow keys to move &middot; Shift+Arrow to resize &middot; Ctrl+D to duplicate
           </div>
         )}
         <PropertiesPanel

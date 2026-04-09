@@ -13,6 +13,7 @@ interface CanvasProps {
   onSelectConnector: (id: string | null) => void;
   onUpdateConnector: (id: string, updates: Partial<Connector>) => void;
   onFindConnectorAt: (x: number, y: number) => Connector | null;
+  onZoomChange: (zoom: number) => void;
   snap: (value: number) => number;
 }
 
@@ -43,6 +44,7 @@ export function Canvas({
   onSelectConnector,
   onUpdateConnector,
   onFindConnectorAt,
+  onZoomChange,
   snap,
 }: CanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -54,8 +56,32 @@ export function Canvas({
   const dragRef = useRef(drag);
   dragRef.current = drag;
 
+  const fittedImageRef = useRef<HTMLImageElement | null>(null);
+
   const imageWidth = image?.naturalWidth ?? 800;
   const imageHeight = image?.naturalHeight ?? 600;
+
+  // Fit image to viewport when a new image loads
+  useEffect(
+    function fitImageToViewportEffect() {
+      if (!image || image === fittedImageRef.current) return;
+      const container = containerRef.current;
+      if (!container) return;
+
+      fittedImageRef.current = image;
+
+      const padding = 40;
+      const containerW = container.clientWidth - padding;
+      const containerH = container.clientHeight - padding;
+      const fitZoom = Math.min(containerW / image.naturalWidth, containerH / image.naturalHeight);
+      const panX = (container.clientWidth - image.naturalWidth * fitZoom) / 2;
+      const panY = (container.clientHeight - image.naturalHeight * fitZoom) / 2;
+
+      onZoomChange(fitZoom);
+      setPan({ x: panX, y: panY });
+    },
+    [image, onZoomChange],
+  );
 
   const toCanvas = useCallback(
     (clientX: number, clientY: number) => {
