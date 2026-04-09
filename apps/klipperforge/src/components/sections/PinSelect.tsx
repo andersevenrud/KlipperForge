@@ -108,6 +108,11 @@ export function PinSelect({ value, onChange, id, disabled }: PinSelectProps) {
     onChange(`${effectivePrefix}${rawPin}`);
   };
 
+  const toggleInvert = () => {
+    const newPrefix = prefix.includes("!") ? prefix.replace("!", "") : `!${prefix}`;
+    onChange(`${newPrefix}${rawPin}`);
+  };
+
   return (
     <div className="flex gap-1">
       <Select disabled={disabled} value={prefix || "__none__"} onValueChange={handlePrefixChange}>
@@ -213,6 +218,17 @@ export function PinSelect({ value, onChange, id, disabled }: PinSelectProps) {
           </div>
         </PopoverContent>
       </Popover>
+      <button
+        type="button"
+        disabled={disabled || !rawPin}
+        onClick={toggleInvert}
+        className={`flex h-7 shrink-0 items-center rounded px-1 text-xs transition-colors ${
+          prefix.includes("!") ? "text-foreground" : "text-muted-foreground/40 hover:text-muted-foreground"
+        } disabled:pointer-events-none disabled:opacity-50`}
+        title={prefix.includes("!") ? "Remove inversion" : "Invert pin"}
+      >
+        !
+      </button>
     </div>
   );
 }
