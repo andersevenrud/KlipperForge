@@ -164,6 +164,17 @@ export function PcbBoardViewer() {
             <BookOpen className="size-3.5" />
           </button>
         )}
+        {layout && boardId && (
+          <a
+            href={`/pcb-designer/?${boardImageUrl ? `image=${encodeURIComponent(boardImageUrl)}&` : ""}layout=${boardId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 rounded px-1.5 py-0.5 text-xs text-muted-foreground hover:bg-muted hover:text-foreground"
+            title="Edit in PCB Designer"
+          >
+            <PenTool className="size-3.5" />
+          </a>
+        )}
         {layout && (
           <>
             <button

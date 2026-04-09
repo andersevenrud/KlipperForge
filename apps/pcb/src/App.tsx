@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Canvas } from "./components/Canvas";
 import { ConnectorList } from "./components/ConnectorList";
 import { PropertiesPanel } from "./components/PropertiesPanel";
@@ -29,6 +29,9 @@ export function App() {
   } = useCanvasState();
 
   const { snap } = useGrid(grid);
+
+  const layoutParamRef = useRef(new URLSearchParams(window.location.search).get("layout"));
+  const layoutImportedRef = useRef(false);
 
   // Load background image from URL param (e.g. ?image=/data/mcu-boards/images/board.png)
   useEffect(function loadImageFromUrlEffect() {
@@ -66,6 +69,28 @@ export function App() {
       importConnectors(result.connectors);
     },
     [importConnectors, image],
+  );
+
+  // Import layout from URL param after image is loaded (e.g. ?layout=btt-skr-mini-e3-v3)
+  useEffect(
+    function loadLayoutFromUrlEffect() {
+      const layoutId = layoutParamRef.current;
+      if (!layoutId || !image || layoutImportedRef.current) return;
+      layoutImportedRef.current = true;
+
+      async function fetchLayout() {
+        try {
+          const res = await fetch(`/data/pcb-layouts/${layoutId}.json`);
+          if (!res.ok) return;
+          const text = await res.text();
+          handleImport(text);
+        } catch {
+          // silently ignore fetch errors
+        }
+      }
+      fetchLayout();
+    },
+    [image, handleImport],
   );
 
   // Keyboard shortcuts

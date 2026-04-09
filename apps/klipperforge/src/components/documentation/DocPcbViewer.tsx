@@ -7,7 +7,7 @@ import { usePcbTooltip } from "@/components/svg/pcb/usePcbTooltip";
 import { usePcbZoom } from "@/components/svg/pcb/usePcbZoom";
 import { cn } from "@/lib/utils";
 import type { PcbLayout, PinUsage } from "@klipperforge/printer-data";
-import { ImageIcon, ImageOff, Layers, List, Maximize2, RotateCw, ZoomIn, ZoomOut } from "lucide-react";
+import { ImageIcon, ImageOff, Layers, List, Maximize2, PenTool, RotateCw, ZoomIn, ZoomOut } from "lucide-react";
 import { useCallback, useState } from "react";
 
 interface DocPcbViewerProps {
@@ -82,6 +82,15 @@ export function DocPcbViewer({ layout, usedPins, jumperSelections, className, la
     <div className={cn("flex h-[28rem] flex-col rounded bg-muted/50", className)}>
       <div className="flex items-center gap-1 px-3 py-1.5">
         {label && <span className="text-xs font-medium text-muted-foreground">{label}</span>}
+        <a
+          href={`/pcb-designer/?${layout.image ? `image=${encodeURIComponent(layout.image)}&` : ""}layout=${layout.boardId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1 rounded px-1.5 py-0.5 text-xs text-muted-foreground hover:bg-muted hover:text-foreground"
+          title="Edit in PCB Designer"
+        >
+          <PenTool className="size-3.5" />
+        </a>
         <button
           type="button"
           onClick={cycleRotation}
