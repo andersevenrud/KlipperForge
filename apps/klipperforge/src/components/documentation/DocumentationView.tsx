@@ -269,11 +269,11 @@ export function DocumentationView() {
 
   return (
     <Group orientation="horizontal" className="flex-1">
-      <Panel defaultSize={25} minSize={15} maxSize={40}>
+      <Panel defaultSize="25%" minSize="15%" maxSize="40%">
         <Suspense fallback={<LoadingSpinner />}>{sidebar}</Suspense>
       </Panel>
       <Separator className="w-1.5 bg-border transition-colors hover:bg-primary/50" />
-      <Panel defaultSize={75}>
+      <Panel defaultSize="75%">
         <Suspense fallback={<LoadingSpinner />}>{content}</Suspense>
       </Panel>
     </Group>

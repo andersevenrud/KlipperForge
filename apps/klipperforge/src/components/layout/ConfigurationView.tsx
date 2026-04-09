@@ -71,7 +71,7 @@ function MobileConfigurationLayout() {
 function DesktopConfigurationLayout() {
   return (
     <Group orientation="horizontal" className="flex-1">
-      <Panel defaultSize={30} minSize={20} maxSize={50} style={{ minWidth: 360 }}>
+      <Panel defaultSize="30%" minSize="20%" maxSize="50%" style={{ minWidth: 360 }}>
         <div className="flex h-full flex-col">
           <ErrorBoundary fallbackClassName="flex-1">
             <ConfigPanel />
@@ -80,15 +80,15 @@ function DesktopConfigurationLayout() {
         </div>
       </Panel>
       <Separator className="w-1.5 bg-border transition-colors hover:bg-primary/50" />
-      <Panel defaultSize={70}>
+      <Panel defaultSize="70%">
         <Group orientation="vertical">
-          <Panel defaultSize={40} minSize={20}>
+          <Panel defaultSize="40%" minSize="20%">
             <ErrorBoundary fallbackClassName="h-full">
               <IllustrationPanel />
             </ErrorBoundary>
           </Panel>
           <Separator className="h-1.5 bg-border transition-colors hover:bg-primary/50" />
-          <Panel defaultSize={60} minSize={20}>
+          <Panel defaultSize="60%" minSize="20%">
             <ErrorBoundary fallbackClassName="h-full">
               <EditorPanel />
             </ErrorBoundary>
