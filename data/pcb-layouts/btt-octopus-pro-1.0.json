@@ -938,8 +938,9 @@
       "rows": 2
     },
     {
-      "name": "JUMPER_MAX31865",
-      "category": "jumper",
+      "name": "DIP_MAX31865",
+      "title": "PT1000 Sensor Type",
+      "category": "dip-switch",
       "x": 240,
       "y": 210,
       "width": 20.24,
@@ -1430,7 +1431,7 @@
         "pattern": [[0, 1, 0, 0], [0, 1, 0, 0], [0, 0, 0, 0]]
       }
     ],
-    "JUMPER_MAX31865": [
+    "DIP_MAX31865": [
       {
         "label": "2 Lines PT100",
         "pattern": [[1, 1, 1, 0]]
