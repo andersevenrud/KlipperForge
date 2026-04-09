@@ -59,10 +59,10 @@ export function App() {
         const scaleX = image.naturalWidth / result.viewBoxWidth;
         const scaleY = image.naturalHeight / result.viewBoxHeight;
         for (const c of result.connectors) {
-          c.x = Math.round(c.x * scaleX * 100) / 100;
-          c.y = Math.round(c.y * scaleY * 100) / 100;
-          c.width = Math.round(c.width * scaleX * 100) / 100;
-          c.height = Math.round(c.height * scaleY * 100) / 100;
+          c.x = Math.round(c.x * scaleX);
+          c.y = Math.round(c.y * scaleY);
+          c.width = Math.round(c.width * scaleX);
+          c.height = Math.round(c.height * scaleY);
         }
       }
 
