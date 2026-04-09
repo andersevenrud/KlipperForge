@@ -1,3 +1,4 @@
+import { resolveHeader, useConfig } from "@/context/config-context";
 import { useMcu } from "@/context/mcu-context";
 import { useEditorScroll } from "@klipperforge/editor";
 import type { PcbLayout } from "@klipperforge/printer-data";
@@ -26,6 +27,7 @@ import { usePcbZoom } from "./usePcbZoom";
 
 export function PcbBoardViewer() {
   const navigate = useNavigate();
+  const { state: configState, dispatch: configDispatch } = useConfig();
   const { state, dispatch: mcuDispatch, getUsedPins, imageBoardIds, pcbBoardIds } = useMcu();
   const { scrollToField, expandAndScrollToSection } = useEditorScroll();
   const [layout, setLayout] = useState<PcbLayout | null>(null);
@@ -74,13 +76,46 @@ export function PcbBoardViewer() {
     handlePaneLeave,
   } = usePcbTooltip(svgRef);
 
+  const mainFile = configState.document.files?.[0] ?? "printer.cfg";
+
+  const sectionFileMap = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const section of configState.document.sections) {
+      const header = resolveHeader(section);
+      map.set(header, section.file ?? mainFile);
+    }
+    return map;
+  }, [configState.document.sections, mainFile]);
+
   const handlePinClick = useCallback(
     (assignment: PinAssignment) => {
-      scrollToField(assignment.section, assignment.field);
+      const sectionFile = sectionFileMap.get(assignment.section) ?? mainFile;
+      const needsFileSwitch = sectionFile !== configState.activeFile;
+      if (needsFileSwitch) {
+        configDispatch({ type: "SET_ACTIVE_FILE", payload: { file: sectionFile } });
+      }
+      if (needsFileSwitch) {
+        // Defer scroll until the editor remounts with the new file content
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            scrollToField(assignment.section, assignment.field);
+          });
+        });
+      } else {
+        scrollToField(assignment.section, assignment.field);
+      }
       expandAndScrollToSection(assignment.section, assignment.field);
       dismiss();
     },
-    [scrollToField, expandAndScrollToSection, dismiss],
+    [
+      scrollToField,
+      expandAndScrollToSection,
+      dismiss,
+      sectionFileMap,
+      configState.activeFile,
+      mainFile,
+      configDispatch,
+    ],
   );
 
   const cycleImageOpacity = useCallback(() => {
