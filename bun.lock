@@ -53,6 +53,7 @@
         "@klipperforge/klipper-config": "workspace:*",
         "@klipperforge/moonraker": "workspace:*",
         "@klipperforge/printer-data": "workspace:*",
+        "@klipperforge/theme": "workspace:*",
         "@tanstack/react-query": "^5.95.0",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.0",
@@ -82,6 +83,7 @@
       "name": "@klipperforge/pcb-editor",
       "version": "0.1.0",
       "dependencies": {
+        "@klipperforge/theme": "workspace:*",
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
       },
@@ -121,6 +123,7 @@
         "@codemirror/state": "^6.5.4",
         "@codemirror/view": "^6.39.16",
         "@klipperforge/klipper-config": "workspace:*",
+        "@klipperforge/theme": "workspace:*",
         "@lezer/highlight": "^1.2.0",
         "@uiw/react-codemirror": "^4.23.0",
         "lucide-react": "^0.577.0",
@@ -160,6 +163,13 @@
       "dependencies": {
         "@klipperforge/klipper-config": "workspace:*",
       },
+      "devDependencies": {
+        "typescript": "^5.7.0",
+      },
+    },
+    "packages/theme": {
+      "name": "@klipperforge/theme",
+      "version": "0.0.1",
       "devDependencies": {
         "typescript": "^5.7.0",
       },
@@ -385,6 +395,8 @@
     "@klipperforge/pcb-editor": ["@klipperforge/pcb-editor@workspace:apps/pcb"],
 
     "@klipperforge/printer-data": ["@klipperforge/printer-data@workspace:packages/printer-data"],
+
+    "@klipperforge/theme": ["@klipperforge/theme@workspace:packages/theme"],
 
     "@lezer/common": ["@lezer/common@1.5.1", "", {}, "sha512-6YRVG9vBkaY7p1IVxL4s44n5nUnaNnGM2/AckNgYOnxTG2kWh1vR8BMxPseWPjRNpb5VtXnMpeYAEAADoRV1Iw=="],
 

@@ -1,0 +1,17 @@
+export const EDITOR_COLORS = {
+  background: "#1e1e1e",
+  foreground: "#e0e0e0",
+  cursor: "#d41116",
+  selection: "#333333",
+  gutter: "#181818",
+  gutterForeground: "#6b6b6b",
+  gutterBorder: "#272727",
+  keyword: "#d41116",
+  function: "#82aaff",
+  string: "#a6da95",
+  number: "#f5a97f",
+  comment: "#6b6b6b",
+  operator: "#89dceb",
+  heading: "#fab387",
+  invalid: "#f56565",
+} as const;

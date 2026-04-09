@@ -1,24 +1,10 @@
-import type { PcbConnector, PcbConnectorCategory, PinUsage } from "@klipperforge/printer-data";
+import type { PcbConnector, PinUsage } from "@klipperforge/printer-data";
+import { PCB_CATEGORY_COLORS } from "@klipperforge/theme";
 import { memo } from "react";
 import { isSpecialPin } from "./JumperPinDiagram";
 import { type Rotation, getConnectorLabel } from "./pcb-types";
 
-export const CATEGORY_COLORS: Record<PcbConnectorCategory, { base: string; active: string }> = {
-  stepper: { base: "#6b21a8", active: "#a855f7" },
-  fan: { base: "#1e40af", active: "#3b82f6" },
-  heater: { base: "#991b1b", active: "#ef4444" },
-  thermistor: { base: "#854d0e", active: "#eab308" },
-  endstop: { base: "#166534", active: "#22c55e" },
-  display: { base: "#4a5568", active: "#94a3b8" },
-  probe: { base: "#0e7490", active: "#06b6d4" },
-  power: { base: "#9a3412", active: "#f97316" },
-  communication: { base: "#4a5568", active: "#94a3b8" },
-  driver: { base: "#5b21b6", active: "#8b5cf6" },
-  jumper: { base: "#92400e", active: "#d97706" },
-  button: { base: "#b91c1c", active: "#f87171" },
-  "dip-switch": { base: "#155e75", active: "#22d3ee" },
-  misc: { base: "#4a5568", active: "#94a3b8" },
-};
+export { PCB_CATEGORY_COLORS as CATEGORY_COLORS } from "@klipperforge/theme";
 
 export interface PinAssignment extends PinUsage {
   pin: string;
@@ -61,7 +47,7 @@ export const PcbConnectorRect = memo(function PcbConnectorRect({
   }
 
   const isActive = assignments.length > 0 || hasSelection;
-  const colors = CATEGORY_COLORS[connector.category];
+  const colors = PCB_CATEGORY_COLORS[connector.category];
   const fill = highlighted ? colors.active : isActive ? colors.active : colors.base;
   const opacity = highlighted ? 0.95 : isActive ? 0.85 : 0.4;
   const strokeWidth = highlighted ? 1 : isActive ? 0.6 : 0.3;

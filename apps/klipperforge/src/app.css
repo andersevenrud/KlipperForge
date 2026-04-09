@@ -2,6 +2,7 @@
 
 @source "../../../packages/editor/src";
 
+/* Source of truth: @klipperforge/theme (packages/theme/src/ui-colors.ts) */
 @theme {
   --color-background: #121212;
   --color-foreground: #e0e0e0;
