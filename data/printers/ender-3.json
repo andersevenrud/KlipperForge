@@ -104,7 +104,7 @@
           "max_temp": 130,
           "control": "pid",
           "pid_kp": 54.027,
-          "pid_ki": 0.770,
+          "pid_ki": 0.77,
           "pid_kd": 948.182
         }
       },

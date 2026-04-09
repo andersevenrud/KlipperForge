@@ -37,20 +37,8 @@
       "Micro Swiss kits",
       "37+ extruder options"
     ],
-    "probeMounts": [
-      "BLTouch",
-      "CR Touch",
-      "PINDA",
-      "Beacon3D",
-      "20+ ABL sensors"
-    ],
-    "fanMounts": [
-      "Single/dual 4010",
-      "Single/dual 4020",
-      "Single/dual 5015",
-      "Single/dual 5020",
-      "Axial heatsink fans"
-    ]
+    "probeMounts": ["BLTouch", "CR Touch", "PINDA", "Beacon3D", "20+ ABL sensors"],
+    "fanMounts": ["Single/dual 4010", "Single/dual 4020", "Single/dual 5015", "Single/dual 5020", "Axial heatsink fans"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -74,10 +62,7 @@
       "type": "other"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "relatedArticles": [
     {
       "category": "extruders",

@@ -44,10 +44,7 @@
       "type": "documentation"
     }
   ],
-  "unverified": [
-    "dimensions",
-    "maxFeedRate"
-  ],
+  "unverified": ["dimensions", "maxFeedRate"],
   "relatedArticles": [
     {
       "category": "toolheads",

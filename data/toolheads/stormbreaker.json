@@ -18,10 +18,7 @@
     "material": "ABS/ASA (printed)",
     "printable": true
   },
-  "features": [
-    "Designed for Monolith Gantry",
-    "Optimized for Voron printers"
-  ],
+  "features": ["Designed for Monolith Gantry", "Optimized for Voron printers"],
   "references": [
     {
       "label": "Stormbreaker on GitHub",

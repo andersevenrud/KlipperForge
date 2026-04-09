@@ -19,11 +19,7 @@
   "nozzleSpecs": {
     "system": "Revo quick-change (tool-free, no hot-tightening required)",
     "includedNozzleSizeMm": 0.4,
-    "compatibleNozzles": [
-      "E3D Revo brass nozzles",
-      "E3D Revo hardened steel nozzles",
-      "E3D Revo high-flow nozzles"
-    ],
+    "compatibleNozzles": ["E3D Revo brass nozzles", "E3D Revo hardened steel nozzles", "E3D Revo high-flow nozzles"],
     "maxFlowRate": "~11mm³/s"
   },
   "physicalSpecs": {

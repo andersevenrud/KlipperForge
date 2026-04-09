@@ -5,26 +5,12 @@
   "description": "A redesign of the Takeoff toolhead by Kizime123, featuring dual 4028 cooling fans with triple-vane ducts for improved part cooling. Supports Dragon UHF hotend and Sherpa Mini extruder with a custom Klicky tap probe solution for Voron 2.4 and Trident printers.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron 2.4",
-      "Voron Trident"
-    ],
-    "railSystems": [
-      "MGN12H"
-    ],
-    "hotendMounts": [
-      "Phaetus Dragon UHF"
-    ],
-    "extruderMounts": [
-      "Sherpa Mini"
-    ],
-    "probeMounts": [
-      "Klicky (custom tap variant)"
-    ],
-    "fanMounts": [
-      "2x 4028 blower (part cooling)",
-      "1x 3010 axial (hotend)"
-    ]
+    "targetPrinters": ["Voron 2.4", "Voron Trident"],
+    "railSystems": ["MGN12H"],
+    "hotendMounts": ["Phaetus Dragon UHF"],
+    "extruderMounts": ["Sherpa Mini"],
+    "probeMounts": ["Klicky (custom tap variant)"],
+    "fanMounts": ["2x 4028 blower (part cooling)", "1x 3010 axial (hotend)"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -48,10 +34,7 @@
       "type": "github"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "relatedArticles": [
     {
       "category": "extruders",

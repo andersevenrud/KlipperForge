@@ -23,11 +23,7 @@
   "certifications": ["CE", "RoHS"],
   "protections": ["short-circuit", "overload", "overvoltage", "overtemperature"],
   "operatingTemperature": "-10 to +50C",
-  "typicalUseCases": [
-    "12V 3D printers",
-    "CNC router systems",
-    "LED lighting projects"
-  ],
+  "typicalUseCases": ["12V 3D printers", "CNC router systems", "LED lighting projects"],
   "communityRecommendation": "standard",
   "references": [
     {

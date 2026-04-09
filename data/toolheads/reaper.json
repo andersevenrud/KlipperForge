@@ -5,13 +5,8 @@
   "description": "A modular toolhead evolved from the Mantis design, featuring interlocking locating features for high rigidity and reduced vibration. Supports 16 hotends, 11 extruders, and 3 probe families, with all main screws accessible from the front or sides for easy maintenance.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron 2.4",
-      "Voron Trident"
-    ],
-    "railSystems": [
-      "MGN12"
-    ],
+    "targetPrinters": ["Voron 2.4", "Voron Trident"],
+    "railSystems": ["MGN12"],
     "hotendMounts": [
       "Phaetus Dragon (Standard, HF, UHF)",
       "Phaetus Rapido (1.0, 2.0, HF, UHF)",
@@ -31,16 +26,8 @@
       "Hummingbird",
       "G2SA"
     ],
-    "probeMounts": [
-      "TAP",
-      "Beacon",
-      "Cartographer",
-      "Klicky PCB"
-    ],
-    "fanMounts": [
-      "3010 heatsink fan",
-      "Dual 5015 part cooling"
-    ]
+    "probeMounts": ["TAP", "Beacon", "Cartographer", "Klicky PCB"],
+    "fanMounts": ["3010 heatsink fan", "Dual 5015 part cooling"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -68,10 +55,7 @@
       "type": "product"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "relatedArticles": [
     {
       "category": "extruders",

@@ -5,14 +5,8 @@
   "description": "A total toolhead ecosystem with a focus on modularity and flexibility for Voron 2.4 and Trident printers. Includes multiple variants (Atrocity, Blackbird, Breakneck, Mantis, Mjolnir, Zephyr) each targeting different fan configurations and use cases. Shares the Xol-Carriage mounting system.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron 2.4",
-      "Voron Trident"
-    ],
-    "railSystems": [
-      "MGN12H",
-      "MGN9H"
-    ],
+    "targetPrinters": ["Voron 2.4", "Voron Trident"],
+    "railSystems": ["MGN12H", "MGN9H"],
     "hotendMounts": [
       "Phaetus Dragon SF",
       "Phaetus Dragon HF",
@@ -24,24 +18,9 @@
       "Chube Compact",
       "VZ Goliath"
     ],
-    "extruderMounts": [
-      "Sherpa Mini",
-      "Sherpa Micro",
-      "Vz-HextrudORT Low",
-      "Orbiter v2.0"
-    ],
-    "probeMounts": [
-      "Voron Tap",
-      "Beacon",
-      "Klicky",
-      "Klicky PCB",
-      "Euclid",
-      "BTT Eddy"
-    ],
-    "fanMounts": [
-      "Varies by variant (3515 axial, 4010 blower, 5015 blower, CPAP)",
-      "2510 axial (hotend)"
-    ]
+    "extruderMounts": ["Sherpa Mini", "Sherpa Micro", "Vz-HextrudORT Low", "Orbiter v2.0"],
+    "probeMounts": ["Voron Tap", "Beacon", "Klicky", "Klicky PCB", "Euclid", "BTT Eddy"],
+    "fanMounts": ["Varies by variant (3515 axial, 4010 blower, 5015 blower, CPAP)", "2510 axial (hotend)"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -69,11 +48,7 @@
       "type": "documentation"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions",
-    "probeMounts"
-  ],
+  "unverified": ["weight", "dimensions", "probeMounts"],
   "relatedArticles": [
     {
       "category": "extruders",

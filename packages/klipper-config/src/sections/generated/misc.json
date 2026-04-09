@@ -1,221 +1,221 @@
 [
-	{
-		"name": "save_variables",
-		"description": "Support saving variables to disk so that they are retained across\nrestarts. See\n[command templates](Command_Templates.md#save-variables-to-disk) and\n[G-Code reference](G-Codes.md#save_variables) for further information.",
-		"namingKind": "fixed",
-		"params": {
-			"filename": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Required - provide a filename that would be used to save the variables to disk e.g. ~/variables.cfg",
-				"required": true
-			}
-		}
-	},
-	{
-		"name": "idle_timeout",
-		"description": "Idle timeout. An idle timeout is automatically enabled - add an\nexplicit idle_timeout config section to change the default settings.",
-		"namingKind": "fixed",
-		"params": {
-			"gcode": {
-				"type": {
-					"kind": "multiline"
-				},
-				"description": "A list of G-Code commands to execute on an idle timeout. See docs/Command_Templates.md for G-Code format. The default is to run \"TURN_OFF_HEATERS\" and \"M84\".",
-				"required": false
-			},
-			"timeout": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "Idle time (in seconds) to wait before running the above G-Code commands. The default is 600 seconds.",
-				"required": false,
-				"default": 600
-			}
-		}
-	},
-	{
-		"name": "virtual_sdcard",
-		"description": "A virtual sdcard may be useful if the host machine is not fast enough\nto run OctoPrint well. It allows the Klipper host software to directly\nprint gcode files stored in a directory on the host using standard\nsdcard G-Code commands (eg, M24).",
-		"namingKind": "fixed",
-		"params": {
-			"path": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "The path of the local directory on the host machine to look for g-code files. This is a read-only directory (sdcard file writes are not supported). One may point this to OctoPrint's upload directory (generally ~/.octoprint/uploads/ ). This parameter must be provided.",
-				"required": true
-			},
-			"on_error_gcode": {
-				"type": {
-					"kind": "multiline"
-				},
-				"description": "A list of G-Code commands to execute when an error is reported. See docs/Command_Templates.md for G-Code format. The default is to run TURN_OFF_HEATERS.",
-				"required": false
-			}
-		}
-	},
-	{
-		"name": "force_move",
-		"description": "Support manually moving stepper motors for diagnostic purposes. Note,\nusing this feature may place the printer in an invalid state - see the\n[command reference](G-Codes.md#force_move) for important details.",
-		"namingKind": "fixed",
-		"params": {
-			"enable_force_move": {
-				"type": {
-					"kind": "boolean"
-				},
-				"description": "Set to true to enable FORCE_MOVE and SET_KINEMATIC_POSITION extended G-Code commands. The default is false.",
-				"required": false,
-				"default": false
-			}
-		}
-	},
-	{
-		"name": "pause_resume",
-		"description": "Pause/Resume functionality with support of position capture and\nrestore. See the [command reference](G-Codes.md#pause_resume) for more\ninformation.",
-		"namingKind": "fixed",
-		"params": {
-			"recover_velocity": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "When capture/restore is enabled, the speed at which to return to the captured position (in mm/s). Default is 50.0 mm/s.",
-				"required": false,
-				"default": 50
-			}
-		}
-	},
-	{
-		"name": "firmware_retraction",
-		"description": "Firmware filament retraction. This enables G10 (retract) and G11\n(unretract) GCODE commands issued by many slicers. The parameters\nbelow provide startup defaults, although the values can be adjusted\nvia the SET_RETRACTION [command](G-Codes.md#firmware_retraction)),\nallowing per-filament settings and runtime tuning.",
-		"namingKind": "fixed",
-		"params": {
-			"retract_length": {
-				"type": {
-					"kind": "number",
-					"min": 0
-				},
-				"description": "The length of filament (in mm) to retract when G10 is activated, and to unretract when G11 is activated (but see unretract_extra_length below). The default is 0 mm.",
-				"required": false,
-				"default": 0
-			},
-			"retract_speed": {
-				"type": {
-					"kind": "number",
-					"min": 1
-				},
-				"description": "The speed of retraction, in mm/s. The default is 20 mm/s.",
-				"required": false,
-				"default": 20
-			},
-			"unretract_extra_length": {
-				"type": {
-					"kind": "number",
-					"min": 0
-				},
-				"description": "The length (in mm) of *additional* filament to add when unretracting.",
-				"required": false,
-				"default": 0
-			},
-			"unretract_speed": {
-				"type": {
-					"kind": "number",
-					"min": 1
-				},
-				"description": "The speed of unretraction, in mm/s. The default is 10 mm/s.",
-				"required": false,
-				"default": 10
-			}
-		}
-	},
-	{
-		"name": "respond",
-		"description": "Enable the \"M118\" and \"RESPOND\" extended\n[commands](G-Codes.md#respond).",
-		"namingKind": "fixed",
-		"params": {
-			"default_type": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Sets the default prefix of the \"M118\" and \"RESPOND\" output to one of the following: echo: \"echo: \" (This is the default) command: \"// \" error: \"!! \"",
-				"required": false
-			},
-			"default_prefix": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Directly sets the default prefix. If present, this value will override the \"default_type\".",
-				"required": false
-			}
-		}
-	},
-	{
-		"name": "exclude_object",
-		"description": "Enables support to exclude or cancel individual objects during the printing\nprocess.\n\nSee the [exclude objects guide](Exclude_Object.md) and\n[command reference](G-Codes.md#excludeobject)\nfor additional information. See the\n[sample-macros.cfg](../config/sample-macros.cfg) file for a\nMarlin/RepRapFirmware compatible M486 G-Code macro.",
-		"namingKind": "fixed",
-		"params": {}
-	},
-	{
-		"name": "sx1509",
-		"description": "Configure an SX1509 I2C to GPIO expander. Due to the delay incurred by\nI2C communication you should NOT use SX1509 pins as stepper enable,\nstep or dir pins or any other pin that requires fast bit-banging. They\nare best used as static or gcode controlled digital outputs or\nhardware-pwm pins for e.g. fans. One may define any number of sections\nwith an \"sx1509\" prefix. Each expander provides a set of 16 pins\n(sx1509_my_sx1509:PIN_0 to sx1509_my_sx1509:PIN_15) which can be used\nin the printer configuration.\n\nSee the [generic-duet2-duex.cfg](../config/generic-duet2-duex.cfg)\nfile for an example.",
-		"namingKind": "fixed",
-		"params": {
-			"i2c_address": {
-				"type": {
-					"kind": "number",
-					"integer": true,
-					"min": 0,
-					"max": 127
-				},
-				"description": "I2C address used by this expander. Depending on the hardware jumpers this is one out of the following addresses: 62 63 112 113. This parameter must be provided.",
-				"required": true
-			},
-			"i2c_mcu": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "i2c_mcu parameter",
-				"required": false,
-				"default": "mcu"
-			},
-			"i2c_bus": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "i2c_bus parameter",
-				"required": false
-			},
-			"i2c_software_scl_pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "i2c_software_scl_pin parameter",
-				"required": false
-			},
-			"i2c_software_sda_pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "i2c_software_sda_pin parameter",
-				"required": false
-			},
-			"i2c_speed": {
-				"type": {
-					"kind": "number",
-					"integer": true,
-					"min": 100000
-				},
-				"description": "See the \"common I2C settings\" section for a description of the above parameters.",
-				"required": false
-			}
-		}
-	},
-	{
-		"name": "display_status",
-		"description": "Display status support. Enables display_status and M117 G-Code commands.",
-		"namingKind": "fixed",
-		"params": {}
-	}
+  {
+    "name": "save_variables",
+    "description": "Support saving variables to disk so that they are retained across\nrestarts. See\n[command templates](Command_Templates.md#save-variables-to-disk) and\n[G-Code reference](G-Codes.md#save_variables) for further information.",
+    "namingKind": "fixed",
+    "params": {
+      "filename": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Required - provide a filename that would be used to save the variables to disk e.g. ~/variables.cfg",
+        "required": true
+      }
+    }
+  },
+  {
+    "name": "idle_timeout",
+    "description": "Idle timeout. An idle timeout is automatically enabled - add an\nexplicit idle_timeout config section to change the default settings.",
+    "namingKind": "fixed",
+    "params": {
+      "gcode": {
+        "type": {
+          "kind": "multiline"
+        },
+        "description": "A list of G-Code commands to execute on an idle timeout. See docs/Command_Templates.md for G-Code format. The default is to run \"TURN_OFF_HEATERS\" and \"M84\".",
+        "required": false
+      },
+      "timeout": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "Idle time (in seconds) to wait before running the above G-Code commands. The default is 600 seconds.",
+        "required": false,
+        "default": 600
+      }
+    }
+  },
+  {
+    "name": "virtual_sdcard",
+    "description": "A virtual sdcard may be useful if the host machine is not fast enough\nto run OctoPrint well. It allows the Klipper host software to directly\nprint gcode files stored in a directory on the host using standard\nsdcard G-Code commands (eg, M24).",
+    "namingKind": "fixed",
+    "params": {
+      "path": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "The path of the local directory on the host machine to look for g-code files. This is a read-only directory (sdcard file writes are not supported). One may point this to OctoPrint's upload directory (generally ~/.octoprint/uploads/ ). This parameter must be provided.",
+        "required": true
+      },
+      "on_error_gcode": {
+        "type": {
+          "kind": "multiline"
+        },
+        "description": "A list of G-Code commands to execute when an error is reported. See docs/Command_Templates.md for G-Code format. The default is to run TURN_OFF_HEATERS.",
+        "required": false
+      }
+    }
+  },
+  {
+    "name": "force_move",
+    "description": "Support manually moving stepper motors for diagnostic purposes. Note,\nusing this feature may place the printer in an invalid state - see the\n[command reference](G-Codes.md#force_move) for important details.",
+    "namingKind": "fixed",
+    "params": {
+      "enable_force_move": {
+        "type": {
+          "kind": "boolean"
+        },
+        "description": "Set to true to enable FORCE_MOVE and SET_KINEMATIC_POSITION extended G-Code commands. The default is false.",
+        "required": false,
+        "default": false
+      }
+    }
+  },
+  {
+    "name": "pause_resume",
+    "description": "Pause/Resume functionality with support of position capture and\nrestore. See the [command reference](G-Codes.md#pause_resume) for more\ninformation.",
+    "namingKind": "fixed",
+    "params": {
+      "recover_velocity": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "When capture/restore is enabled, the speed at which to return to the captured position (in mm/s). Default is 50.0 mm/s.",
+        "required": false,
+        "default": 50
+      }
+    }
+  },
+  {
+    "name": "firmware_retraction",
+    "description": "Firmware filament retraction. This enables G10 (retract) and G11\n(unretract) GCODE commands issued by many slicers. The parameters\nbelow provide startup defaults, although the values can be adjusted\nvia the SET_RETRACTION [command](G-Codes.md#firmware_retraction)),\nallowing per-filament settings and runtime tuning.",
+    "namingKind": "fixed",
+    "params": {
+      "retract_length": {
+        "type": {
+          "kind": "number",
+          "min": 0
+        },
+        "description": "The length of filament (in mm) to retract when G10 is activated, and to unretract when G11 is activated (but see unretract_extra_length below). The default is 0 mm.",
+        "required": false,
+        "default": 0
+      },
+      "retract_speed": {
+        "type": {
+          "kind": "number",
+          "min": 1
+        },
+        "description": "The speed of retraction, in mm/s. The default is 20 mm/s.",
+        "required": false,
+        "default": 20
+      },
+      "unretract_extra_length": {
+        "type": {
+          "kind": "number",
+          "min": 0
+        },
+        "description": "The length (in mm) of *additional* filament to add when unretracting.",
+        "required": false,
+        "default": 0
+      },
+      "unretract_speed": {
+        "type": {
+          "kind": "number",
+          "min": 1
+        },
+        "description": "The speed of unretraction, in mm/s. The default is 10 mm/s.",
+        "required": false,
+        "default": 10
+      }
+    }
+  },
+  {
+    "name": "respond",
+    "description": "Enable the \"M118\" and \"RESPOND\" extended\n[commands](G-Codes.md#respond).",
+    "namingKind": "fixed",
+    "params": {
+      "default_type": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Sets the default prefix of the \"M118\" and \"RESPOND\" output to one of the following: echo: \"echo: \" (This is the default) command: \"// \" error: \"!! \"",
+        "required": false
+      },
+      "default_prefix": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Directly sets the default prefix. If present, this value will override the \"default_type\".",
+        "required": false
+      }
+    }
+  },
+  {
+    "name": "exclude_object",
+    "description": "Enables support to exclude or cancel individual objects during the printing\nprocess.\n\nSee the [exclude objects guide](Exclude_Object.md) and\n[command reference](G-Codes.md#excludeobject)\nfor additional information. See the\n[sample-macros.cfg](../config/sample-macros.cfg) file for a\nMarlin/RepRapFirmware compatible M486 G-Code macro.",
+    "namingKind": "fixed",
+    "params": {}
+  },
+  {
+    "name": "sx1509",
+    "description": "Configure an SX1509 I2C to GPIO expander. Due to the delay incurred by\nI2C communication you should NOT use SX1509 pins as stepper enable,\nstep or dir pins or any other pin that requires fast bit-banging. They\nare best used as static or gcode controlled digital outputs or\nhardware-pwm pins for e.g. fans. One may define any number of sections\nwith an \"sx1509\" prefix. Each expander provides a set of 16 pins\n(sx1509_my_sx1509:PIN_0 to sx1509_my_sx1509:PIN_15) which can be used\nin the printer configuration.\n\nSee the [generic-duet2-duex.cfg](../config/generic-duet2-duex.cfg)\nfile for an example.",
+    "namingKind": "fixed",
+    "params": {
+      "i2c_address": {
+        "type": {
+          "kind": "number",
+          "integer": true,
+          "min": 0,
+          "max": 127
+        },
+        "description": "I2C address used by this expander. Depending on the hardware jumpers this is one out of the following addresses: 62 63 112 113. This parameter must be provided.",
+        "required": true
+      },
+      "i2c_mcu": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "i2c_mcu parameter",
+        "required": false,
+        "default": "mcu"
+      },
+      "i2c_bus": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "i2c_bus parameter",
+        "required": false
+      },
+      "i2c_software_scl_pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "i2c_software_scl_pin parameter",
+        "required": false
+      },
+      "i2c_software_sda_pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "i2c_software_sda_pin parameter",
+        "required": false
+      },
+      "i2c_speed": {
+        "type": {
+          "kind": "number",
+          "integer": true,
+          "min": 100000
+        },
+        "description": "See the \"common I2C settings\" section for a description of the above parameters.",
+        "required": false
+      }
+    }
+  },
+  {
+    "name": "display_status",
+    "description": "Display status support. Enables display_status and M117 G-Code commands.",
+    "namingKind": "fixed",
+    "params": {}
+  }
 ]

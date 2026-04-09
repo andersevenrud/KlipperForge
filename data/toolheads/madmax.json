@@ -28,9 +28,7 @@
       "RapidBrick",
       "A4TBrick"
     ],
-    "probeMounts": [
-      "Maxwell coupling integrated probe"
-    ],
+    "probeMounts": ["Maxwell coupling integrated probe"],
     "fanMounts": []
   },
   "physicalSpecs": {

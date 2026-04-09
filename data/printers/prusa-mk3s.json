@@ -10,8 +10,18 @@
     { "category": "hotends", "id": "e3d-v6", "label": "E3D V6", "role": "Hotend" },
     { "category": "extruders", "label": "Prusa Extruder (Bondtech gears)", "role": "Extruder" },
     { "category": "probes", "id": "superpinda", "label": "SuperPINDA", "role": "Bed Probe" },
-    { "category": "thermistors", "id": "atc-semitec-104gt-2", "label": "ATC Semitec 104GT-2", "role": "Hotend Thermistor" },
-    { "category": "thermistors", "id": "epcos-100k-b57560g104f", "label": "EPCOS 100K B57560G104F", "role": "Bed Thermistor" }
+    {
+      "category": "thermistors",
+      "id": "atc-semitec-104gt-2",
+      "label": "ATC Semitec 104GT-2",
+      "role": "Hotend Thermistor"
+    },
+    {
+      "category": "thermistors",
+      "id": "epcos-100k-b57560g104f",
+      "label": "EPCOS 100K B57560G104F",
+      "role": "Bed Thermistor"
+    }
   ],
   "defaults": {
     "sections": [

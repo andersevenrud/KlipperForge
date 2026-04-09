@@ -12,11 +12,7 @@
   "performanceSpecs": {
     "repeatability": "±0.01mm",
     "triggerDistance": "~2mm (to steel sheet)",
-    "bedCompatibility": [
-      "spring steel sheet",
-      "aluminum",
-      "metallic surfaces"
-    ],
+    "bedCompatibility": ["spring steel sheet", "aluminum", "metallic surfaces"],
     "temperatureCompensation": true
   },
   "physicalSpecs": {
@@ -25,10 +21,7 @@
     "mountType": "M8 threaded barrel"
   },
   "klipperSection": "probe",
-  "unverified": [
-    "currentDraw",
-    "repeatability"
-  ],
+  "unverified": ["currentDraw", "repeatability"],
   "references": [
     {
       "label": "Prusa SuperPINDA Spare Part (PINDA V2 replacement)",

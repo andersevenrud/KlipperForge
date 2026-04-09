@@ -34,7 +34,11 @@
     "Multiple units can be chained for additional capacity"
   ],
   "references": [
-    { "label": "AFC-Klipper-Add-On (contains Night Owl code)", "url": "https://github.com/ArmoredTurtle/AFC-Klipper-Add-On", "type": "github" }
+    {
+      "label": "AFC-Klipper-Add-On (contains Night Owl code)",
+      "url": "https://github.com/ArmoredTurtle/AFC-Klipper-Add-On",
+      "type": "github"
+    }
   ],
   "unverified": ["material"]
 }

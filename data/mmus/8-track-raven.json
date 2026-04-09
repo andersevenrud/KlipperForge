@@ -35,7 +35,11 @@
     "Uses off-the-shelf BTT MMB CAN board"
   ],
   "references": [
-    { "label": "GitHub Repository (Alpha)", "url": "https://github.com/ArmoredTurtle/8-Track-Raven-Alpha", "type": "github" }
+    {
+      "label": "GitHub Repository (Alpha)",
+      "url": "https://github.com/ArmoredTurtle/8-Track-Raven-Alpha",
+      "type": "github"
+    }
   ],
   "unverified": ["material", "bufferRequired"]
 }

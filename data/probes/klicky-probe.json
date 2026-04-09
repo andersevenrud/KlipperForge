@@ -29,10 +29,7 @@
     "mountType": "magnetic dock (6mm magnets)"
   },
   "klipperSection": "probe",
-  "unverified": [
-    "currentDraw",
-    "weight"
-  ],
+  "unverified": ["currentDraw", "weight"],
   "references": [
     {
       "label": "Klicky Probe GitHub Repository",

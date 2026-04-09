@@ -21,6 +21,10 @@
   "connectorType": "JST-PH 4-pin",
   "temperatureRating": 180,
   "references": [
-    { "label": "LDO 35mm Hybrid Stepper Series", "url": "http://ldomotors.com/products/show/35mm-hybrid-stepper-series", "type": "product" }
+    {
+      "label": "LDO 35mm Hybrid Stepper Series",
+      "url": "http://ldomotors.com/products/show/35mm-hybrid-stepper-series",
+      "type": "product"
+    }
   ]
 }

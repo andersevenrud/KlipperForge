@@ -5,34 +5,12 @@
   "description": "A modular toolhead ecosystem for front-rail CoreXY printers featuring remote CPAP cooling and a deliberate bend in the filament path to create a buffering effect. Superseded by the upcoming ARMPITHEIGHT project under Armchair Engineering, which offers greater modularity and performance.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron 2.4",
-      "Voron Trident",
-      "Front-rail CoreXY printers"
-    ],
-    "railSystems": [
-      "MGN12",
-      "MGN9"
-    ],
-    "hotendMounts": [
-      "Phaetus Goliath",
-      "Phaetus Rapido UHF",
-      "Phaetus Rapido HF",
-      "Phaetus Dragon UHF"
-    ],
-    "extruderMounts": [
-      "Vz-HextrudORT",
-      "MicroSherpa",
-      "Kyro"
-    ],
-    "probeMounts": [
-      "Beacon",
-      "Klicky",
-      "Klicky PCB"
-    ],
-    "fanMounts": [
-      "CPAP (7040 blower, remote)"
-    ]
+    "targetPrinters": ["Voron 2.4", "Voron Trident", "Front-rail CoreXY printers"],
+    "railSystems": ["MGN12", "MGN9"],
+    "hotendMounts": ["Phaetus Goliath", "Phaetus Rapido UHF", "Phaetus Rapido HF", "Phaetus Dragon UHF"],
+    "extruderMounts": ["Vz-HextrudORT", "MicroSherpa", "Kyro"],
+    "probeMounts": ["Beacon", "Klicky", "Klicky PCB"],
+    "fanMounts": ["CPAP (7040 blower, remote)"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -55,10 +33,7 @@
       "type": "github"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "relatedArticles": [
     {
       "category": "extruders",

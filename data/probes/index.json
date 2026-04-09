@@ -1,21 +1,68 @@
 {
   "probes": [
-    { "id": "bltouch-v3.1", "name": "BLTouch V3.1", "manufacturer": "ANTCLABS", "probeType": "servo", "hasImage": true },
+    {
+      "id": "bltouch-v3.1",
+      "name": "BLTouch V3.1",
+      "manufacturer": "ANTCLABS",
+      "probeType": "servo",
+      "hasImage": true
+    },
     { "id": "cr-touch", "name": "CR-Touch", "manufacturer": "Creality", "probeType": "servo", "hasImage": true },
     { "id": "3dtouch", "name": "3DTouch", "manufacturer": "TriangleLab", "probeType": "servo", "hasImage": true },
-    { "id": "biqu-microprobe-v2", "name": "MicroProbe V2", "manufacturer": "BIQU", "probeType": "servo", "hasImage": true },
+    {
+      "id": "biqu-microprobe-v2",
+      "name": "MicroProbe V2",
+      "manufacturer": "BIQU",
+      "probeType": "servo",
+      "hasImage": true
+    },
     { "id": "pinda-v2", "name": "PINDA V2", "manufacturer": "Prusa", "probeType": "inductive", "hasImage": true },
     { "id": "superpinda", "name": "SuperPINDA", "manufacturer": "Prusa", "probeType": "inductive" },
     { "id": "th3d-ezabl", "name": "EZABL Pro", "manufacturer": "TH3D", "probeType": "inductive", "hasImage": true },
-    { "id": "cartographer-3d", "name": "Cartographer 3D", "manufacturer": "Cartographer3D", "probeType": "eddy-current" },
+    {
+      "id": "cartographer-3d",
+      "name": "Cartographer 3D",
+      "manufacturer": "Cartographer3D",
+      "probeType": "eddy-current"
+    },
     { "id": "btt-eddy-usb", "name": "BTT Eddy USB", "manufacturer": "BigTreeTech", "probeType": "eddy-current" },
     { "id": "btt-eddy-coil", "name": "BTT Eddy Coil", "manufacturer": "BigTreeTech", "probeType": "eddy-current" },
     { "id": "beacon", "name": "Beacon", "manufacturer": "Beacon3D", "probeType": "eddy-current", "hasImage": true },
     { "id": "beacon-revh", "name": "Beacon RevH", "manufacturer": "Beacon3D", "probeType": "eddy-current" },
-    { "id": "bd-sensor", "name": "BD Sensor", "manufacturer": "markniu (PandaPi3D)", "probeType": "eddy-current", "hasImage": true },
-    { "id": "voron-tap", "name": "Voron Tap", "manufacturer": "Voron Design", "probeType": "mechanical", "hasImage": true },
-    { "id": "klicky-probe", "name": "Klicky Probe", "manufacturer": "Community (JosAr)", "probeType": "mechanical", "hasImage": true },
-    { "id": "euclid-probe", "name": "Euclid Probe", "manufacturer": "Community (nionio6915)", "probeType": "mechanical", "hasImage": true },
-    { "id": "smart-effector", "name": "Duet Smart Effector", "manufacturer": "Duet3D", "probeType": "strain-gauge", "hasImage": true }
+    {
+      "id": "bd-sensor",
+      "name": "BD Sensor",
+      "manufacturer": "markniu (PandaPi3D)",
+      "probeType": "eddy-current",
+      "hasImage": true
+    },
+    {
+      "id": "voron-tap",
+      "name": "Voron Tap",
+      "manufacturer": "Voron Design",
+      "probeType": "mechanical",
+      "hasImage": true
+    },
+    {
+      "id": "klicky-probe",
+      "name": "Klicky Probe",
+      "manufacturer": "Community (JosAr)",
+      "probeType": "mechanical",
+      "hasImage": true
+    },
+    {
+      "id": "euclid-probe",
+      "name": "Euclid Probe",
+      "manufacturer": "Community (nionio6915)",
+      "probeType": "mechanical",
+      "hasImage": true
+    },
+    {
+      "id": "smart-effector",
+      "name": "Duet Smart Effector",
+      "manufacturer": "Duet3D",
+      "probeType": "strain-gauge",
+      "hasImage": true
+    }
   ]
 }

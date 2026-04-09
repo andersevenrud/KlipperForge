@@ -12,12 +12,7 @@
   "performanceSpecs": {
     "repeatability": "±0.001mm",
     "triggerDistance": "0.5-6mm (configurable, improved range)",
-    "bedCompatibility": [
-      "spring steel sheet",
-      "PEI on spring steel",
-      "textured PEI on spring steel",
-      "aluminum"
-    ],
+    "bedCompatibility": ["spring steel sheet", "PEI on spring steel", "textured PEI on spring steel", "aluminum"],
     "bedCompatibilityNote": "Eddy current probes require a conductive surface. They cannot detect non-conductive materials like bare glass or G10/FR4 without a conductive layer underneath.",
     "temperatureCompensation": true,
     "multiPoint": true

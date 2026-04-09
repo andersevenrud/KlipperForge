@@ -12,14 +12,7 @@
   "performanceSpecs": {
     "repeatability": "±0.005mm",
     "triggerDistance": "contact-based",
-    "bedCompatibility": [
-      "glass",
-      "PEI",
-      "textured PEI",
-      "magnetic flex plates",
-      "BuildTak",
-      "aluminum"
-    ],
+    "bedCompatibility": ["glass", "PEI", "textured PEI", "magnetic flex plates", "BuildTak", "aluminum"],
     "temperatureCompensation": false
   },
   "physicalSpecs": {
@@ -28,10 +21,7 @@
     "mountType": "BLTouch standard (2x M3 screw, 18mm spacing)"
   },
   "klipperSection": "bltouch",
-  "unverified": [
-    "dimensions",
-    "weight"
-  ],
+  "unverified": ["dimensions", "weight"],
   "references": [
     {
       "label": "ANTCLABS Official Product Page",

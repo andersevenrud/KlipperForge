@@ -34,7 +34,11 @@
   "references": [
     { "label": "KCM Product Page", "url": "https://coprint3d.com/pages/kcm-klipper-chroma-module", "type": "product" },
     { "label": "Wiki", "url": "https://wiki.coprint3d.com", "type": "documentation" },
-    { "label": "ECM Expansion Module", "url": "https://coprint3d.com/pages/ecm-extended-chroma-module", "type": "product" }
+    {
+      "label": "ECM Expansion Module",
+      "url": "https://coprint3d.com/pages/ecm-extended-chroma-module",
+      "type": "product"
+    }
   ],
   "unverified": []
 }

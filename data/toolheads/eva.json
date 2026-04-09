@@ -5,16 +5,8 @@
   "description": "Open-source universal modular carriage platform for 3D printers, built around MGN12 and MGN15 linear rail carriages. Used officially by Rat Rig and designed with a specification-based modular assembly system (front, top, bottom, back) that enables mixing and matching of hotends and extruders.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Rat Rig V-Core 3",
-      "Rat Rig V-Minion",
-      "Rat Rig V-Core Pro"
-    ],
-    "railSystems": [
-      "MGN12C",
-      "MGN12H",
-      "MGN15C"
-    ],
+    "targetPrinters": ["Rat Rig V-Core 3", "Rat Rig V-Minion", "Rat Rig V-Core Pro"],
+    "railSystems": ["MGN12C", "MGN12H", "MGN15C"],
     "hotendMounts": [
       "E3D V6",
       "Slice Mosquito",
@@ -39,17 +31,8 @@
       "Sherpa Mini",
       "Bowden"
     ],
-    "probeMounts": [
-      "BLTouch",
-      "Klicky",
-      "Euclid",
-      "Inductive"
-    ],
-    "fanMounts": [
-      "5015 blower (part cooling)",
-      "Dual 5015 blower (part cooling)",
-      "4010 axial (hotend)"
-    ]
+    "probeMounts": ["BLTouch", "Klicky", "Euclid", "Inductive"],
+    "fanMounts": ["5015 blower (part cooling)", "Dual 5015 blower (part cooling)", "4010 axial (hotend)"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -87,12 +70,7 @@
       "type": "documentation"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions",
-    "Klicky probe support",
-    "Euclid probe support"
-  ],
+  "unverified": ["weight", "dimensions", "Klicky probe support", "Euclid probe support"],
   "relatedArticles": [
     {
       "category": "extruders",

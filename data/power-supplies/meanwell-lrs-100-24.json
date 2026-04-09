@@ -23,10 +23,7 @@
   "certifications": ["UL 62368-1", "CE", "CB"],
   "protections": ["short-circuit", "overload", "overvoltage"],
   "operatingTemperature": "-30 to +70C",
-  "typicalUseCases": [
-    "Small 3D printers with DC heated beds",
-    "Auxiliary 24V supply for electronics"
-  ],
+  "typicalUseCases": ["Small 3D printers with DC heated beds", "Auxiliary 24V supply for electronics"],
   "communityRecommendation": "standard",
   "references": [
     {

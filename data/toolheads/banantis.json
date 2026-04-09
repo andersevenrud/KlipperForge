@@ -10,9 +10,7 @@
     "hotendMounts": [],
     "extruderMounts": [],
     "probeMounts": [],
-    "fanMounts": [
-      "2x 5015 blower (part cooling)"
-    ]
+    "fanMounts": ["2x 5015 blower (part cooling)"]
   },
   "physicalSpecs": {
     "weight": null,

@@ -5,12 +5,7 @@
   "description": "A modular V0.1-style toolhead offering flexibility in extruder and hotend choice for small-format printers. Supports both direct-drive and bowden configurations with dual 3010 blower fans and a 3007 axial heatsink fan, fitting printers that use Mini-Afterburner-style X carriages.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron V0.1",
-      "Micron",
-      "Flying Zero",
-      "Salad Fork"
-    ],
+    "targetPrinters": ["Voron V0.1", "Micron", "Flying Zero", "Salad Fork"],
     "railSystems": [],
     "hotendMounts": [
       "Phaetus Dragon",
@@ -32,10 +27,7 @@
       "Bowden adapter"
     ],
     "probeMounts": [],
-    "fanMounts": [
-      "Dual 3010 blower",
-      "3007 axial"
-    ]
+    "fanMounts": ["Dual 3010 blower", "3007 axial"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -58,10 +50,7 @@
       "type": "github"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "relatedArticles": [
     {
       "category": "extruders",

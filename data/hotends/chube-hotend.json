@@ -18,11 +18,7 @@
   "nozzleSpecs": {
     "system": "V6 threaded (RepRap M6)",
     "includedNozzleSizeMm": 0.4,
-    "compatibleNozzles": [
-      "E3D V6",
-      "CHT clone nozzles",
-      "hardened steel V6"
-    ],
+    "compatibleNozzles": ["E3D V6", "CHT clone nozzles", "hardened steel V6"],
     "maxFlowRate": "~50mm³/s"
   },
   "physicalSpecs": {
@@ -56,11 +52,7 @@
       "type": "documentation"
     }
   ],
-  "unverified": [
-    "maxFlowRate",
-    "retraction",
-    "thermistorType"
-  ],
+  "unverified": ["maxFlowRate", "retraction", "thermistorType"],
   "relatedArticles": [
     {
       "category": "toolheads",

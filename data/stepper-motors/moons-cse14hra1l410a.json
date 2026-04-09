@@ -19,6 +19,10 @@
     "shaftLength": 24
   },
   "references": [
-    { "label": "Moons' product page", "url": "https://www.moonsindustries.com/series/cse14hr-encapsulated-hybrid-stepper-motors-b02010501", "type": "product" }
+    {
+      "label": "Moons' product page",
+      "url": "https://www.moonsindustries.com/series/cse14hr-encapsulated-hybrid-stepper-motors-b02010501",
+      "type": "product"
+    }
   ]
 }

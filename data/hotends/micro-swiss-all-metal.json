@@ -19,11 +19,7 @@
   "nozzleSpecs": {
     "system": "MK8 threaded (M6)",
     "includedNozzleSizeMm": 0.4,
-    "compatibleNozzles": [
-      "MK8 brass nozzles",
-      "MK8 hardened steel nozzles",
-      "third-party M6 MK8-style nozzles"
-    ],
+    "compatibleNozzles": ["MK8 brass nozzles", "MK8 hardened steel nozzles", "third-party M6 MK8-style nozzles"],
     "maxFlowRate": "~10mm³/s"
   },
   "physicalSpecs": {

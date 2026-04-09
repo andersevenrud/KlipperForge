@@ -1,85 +1,85 @@
 {
-    "id": "btt-ebb-sb2209-usb-rp2040-v1.0",
-    "name": "Bigtreetech EBB SB2209 USB V1.0 (RP2040)",
-    "mcu": "RP2040",
-    "pins": [
-        "gpio0",
-        "gpio1",
-        "gpio2",
-        "gpio3",
-        "gpio4",
-        "gpio5",
-        "gpio6",
-        "gpio7",
-        "gpio8",
-        "gpio9",
-        "gpio10",
-        "gpio11",
-        "gpio12",
-        "gpio13",
-        "gpio14",
-        "gpio15",
-        "gpio16",
-        "gpio17",
-        "gpio18",
-        "gpio19",
-        "gpio20",
-        "gpio21",
-        "gpio22",
-        "gpio23",
-        "gpio24",
-        "gpio25",
-        "gpio26",
-        "gpio27",
-        "gpio28",
-        "gpio29"
-    ],
-    "aliases": {
-        "DRIVER_E_STEP": "gpio18",
-        "DRIVER_E_DIR": "gpio19",
-        "DRIVER_E_EN": "gpio17",
-        "DRIVER_E_UART": "gpio20",
-        "HE0": "gpio7",
-        "T0": "gpio26",
-        "T_MAX31865": "gpio9",
-        "NTC": "gpio27",
-        "LIS2DW_CS": "gpio1",
-        "FAN0": "gpio14",
-        "FAN1": "gpio4",
-        "FAN2": "gpio5",
-        "FAN3": "gpio16",
-        "FAN3_TACH": "gpio12",
-        "RGB": "gpio15",
-        "PROBE_SENSOR": "gpio21",
-        "PROBE_SERVO": "gpio22",
-        "PROBE_INPUT": "gpio6",
-        "ENDSTOP": "gpio13"
+  "id": "btt-ebb-sb2209-usb-rp2040-v1.0",
+  "name": "Bigtreetech EBB SB2209 USB V1.0 (RP2040)",
+  "mcu": "RP2040",
+  "pins": [
+    "gpio0",
+    "gpio1",
+    "gpio2",
+    "gpio3",
+    "gpio4",
+    "gpio5",
+    "gpio6",
+    "gpio7",
+    "gpio8",
+    "gpio9",
+    "gpio10",
+    "gpio11",
+    "gpio12",
+    "gpio13",
+    "gpio14",
+    "gpio15",
+    "gpio16",
+    "gpio17",
+    "gpio18",
+    "gpio19",
+    "gpio20",
+    "gpio21",
+    "gpio22",
+    "gpio23",
+    "gpio24",
+    "gpio25",
+    "gpio26",
+    "gpio27",
+    "gpio28",
+    "gpio29"
+  ],
+  "aliases": {
+    "DRIVER_E_STEP": "gpio18",
+    "DRIVER_E_DIR": "gpio19",
+    "DRIVER_E_EN": "gpio17",
+    "DRIVER_E_UART": "gpio20",
+    "HE0": "gpio7",
+    "T0": "gpio26",
+    "T_MAX31865": "gpio9",
+    "NTC": "gpio27",
+    "LIS2DW_CS": "gpio1",
+    "FAN0": "gpio14",
+    "FAN1": "gpio4",
+    "FAN2": "gpio5",
+    "FAN3": "gpio16",
+    "FAN3_TACH": "gpio12",
+    "RGB": "gpio15",
+    "PROBE_SENSOR": "gpio21",
+    "PROBE_SERVO": "gpio22",
+    "PROBE_INPUT": "gpio6",
+    "ENDSTOP": "gpio13"
+  },
+  "references": [
+    {
+      "label": "GitHub Repository",
+      "url": "https://github.com/bigtreetech/EBB",
+      "type": "github"
     },
-    "references": [
-        {
-            "label": "GitHub Repository",
-            "url": "https://github.com/bigtreetech/EBB",
-            "type": "github"
-        },
-        {
-            "label": "Wiki",
-            "url": "https://global.bttwiki.com/EBB%20SB2209%20USB.html",
-            "type": "wiki"
-        },
-        {
-            "label": "Pinout Diagram",
-            "url": "https://github.com/bigtreetech/EBB/blob/master/EBB_SB2209_USB/Hardware/BIGTREETECH%20EBB%20SB2209%20USB-Pin.pdf",
-            "type": "pinout"
-        },
-        {
-            "label": "Schematic",
-            "url": "https://github.com/bigtreetech/EBB/blob/master/EBB_SB2209_USB/Hardware/BIGTREETECH%20EBB%20SB2209%20USB%20V1.0-SCH.pdf",
-            "type": "schematic"
-        }
-    ],
-    "drivers": {
-        "count": 1,
-        "model": "TMC2209"
+    {
+      "label": "Wiki",
+      "url": "https://global.bttwiki.com/EBB%20SB2209%20USB.html",
+      "type": "wiki"
     },
-    "maxMotorVoltage": 24
+    {
+      "label": "Pinout Diagram",
+      "url": "https://github.com/bigtreetech/EBB/blob/master/EBB_SB2209_USB/Hardware/BIGTREETECH%20EBB%20SB2209%20USB-Pin.pdf",
+      "type": "pinout"
+    },
+    {
+      "label": "Schematic",
+      "url": "https://github.com/bigtreetech/EBB/blob/master/EBB_SB2209_USB/Hardware/BIGTREETECH%20EBB%20SB2209%20USB%20V1.0-SCH.pdf",
+      "type": "schematic"
+    }
+  ],
+  "drivers": {
+    "count": 1,
+    "model": "TMC2209"
+  },
+  "maxMotorVoltage": 24
 }

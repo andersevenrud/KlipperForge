@@ -5,23 +5,9 @@
   "description": "A modular toolhead designed specifically for bedslinger printers, supporting UHF hotends and standalone extruders. Requires an MGN12 linear rail conversion on the X axis for Ender 3 installations, with dedicated CAD files for both Switchwire/Enderwire and Ender/CR10 configurations.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron Switchwire",
-      "Enderwire",
-      "Creality Ender 3",
-      "Creality CR-10"
-    ],
-    "railSystems": [
-      "MGN12"
-    ],
-    "hotendMounts": [
-      "Rapido UHF",
-      "Rapido HF",
-      "Dragon Ace",
-      "Chube Air",
-      "TZV6 with MZE",
-      "Red Lizard K1 UHF"
-    ],
+    "targetPrinters": ["Voron Switchwire", "Enderwire", "Creality Ender 3", "Creality CR-10"],
+    "railSystems": ["MGN12"],
+    "hotendMounts": ["Rapido UHF", "Rapido HF", "Dragon Ace", "Chube Air", "TZV6 with MZE", "Red Lizard K1 UHF"],
     "extruderMounts": [
       "Annex Sherpa (CNC)",
       "Orbiter 2.0",
@@ -30,10 +16,7 @@
       "Bondtech LGX Lite",
       "Bondtech LGX Lite Pro"
     ],
-    "probeMounts": [
-      "Beacon",
-      "Cartographer V4"
-    ],
+    "probeMounts": ["Beacon", "Cartographer V4"],
     "fanMounts": []
   },
   "physicalSpecs": {
@@ -57,10 +40,7 @@
       "type": "documentation"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "relatedArticles": [
     {
       "category": "extruders",

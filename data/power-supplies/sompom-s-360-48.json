@@ -23,10 +23,7 @@
   "certifications": ["CE", "RoHS", "FCC", "ISO9001"],
   "protections": ["short-circuit", "overload", "overvoltage", "overtemperature"],
   "operatingTemperature": "-10 to +60C",
-  "typicalUseCases": [
-    "Budget 48V 3D printer builds",
-    "48V stepper driver setups (TMC5160)"
-  ],
+  "typicalUseCases": ["Budget 48V 3D printer builds", "48V stepper driver setups (TMC5160)"],
   "communityRecommendation": "budget",
   "references": [],
   "unverified": []

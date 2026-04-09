@@ -12,12 +12,7 @@
   "performanceSpecs": {
     "repeatability": "±0.0005mm",
     "triggerDistance": "0.5-5mm (configurable)",
-    "bedCompatibility": [
-      "spring steel sheet",
-      "PEI on spring steel",
-      "textured PEI on spring steel",
-      "aluminum"
-    ],
+    "bedCompatibility": ["spring steel sheet", "PEI on spring steel", "textured PEI on spring steel", "aluminum"],
     "bedCompatibilityNote": "Eddy current probes require a conductive surface. They cannot detect non-conductive materials like bare glass or G10/FR4 without a conductive layer underneath.",
     "temperatureCompensation": false,
     "multiPoint": true
@@ -28,10 +23,7 @@
     "mountType": "adhesive or screw mount"
   },
   "klipperSection": "probe_eddy_current",
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "references": [
     {
       "label": "BigTreeTech Eddy Product Page",

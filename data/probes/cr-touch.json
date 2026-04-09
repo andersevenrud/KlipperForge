@@ -12,14 +12,7 @@
   "performanceSpecs": {
     "repeatability": "±0.04mm",
     "triggerDistance": "contact-based",
-    "bedCompatibility": [
-      "glass",
-      "PEI",
-      "textured PEI",
-      "magnetic flex plates",
-      "BuildTak",
-      "aluminum"
-    ],
+    "bedCompatibility": ["glass", "PEI", "textured PEI", "magnetic flex plates", "BuildTak", "aluminum"],
     "temperatureCompensation": false
   },
   "physicalSpecs": {
@@ -28,10 +21,7 @@
     "mountType": "BLTouch-compatible (2x M3 screw, 18mm spacing)"
   },
   "klipperSection": "bltouch",
-  "unverified": [
-    "currentDraw",
-    "dimensions"
-  ],
+  "unverified": ["currentDraw", "dimensions"],
   "references": [
     {
       "label": "Creality CR-Touch Product Page",

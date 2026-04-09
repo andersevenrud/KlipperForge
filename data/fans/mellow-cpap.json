@@ -1,43 +1,43 @@
 {
-	"id": "mellow-cpap",
-	"name": "FLY-7040 CPAP Fan Kit",
-	"manufacturer": "Mellow",
-	"description": "High-airflow part-cooling system using a WS7040 brushless centrifugal blower connected via a flexible CPAP hose to the toolhead. The kit includes a driver/controller board with JST connectors for 24V power input and PWM signal from the MCU. Delivers significantly higher airflow than conventional 5015 blowers, making it suitable for high-speed printing.",
-	"fanType": "cpap",
-	"size": "7040",
-	"pcbLayoutId": "mellow-cpap",
-	"airflowSpecs": {
-		"airflow": 14.7,
-		"staticPressure": 662.6,
-		"rpm": 37000
-	},
-	"electricalSpecs": {
-		"voltage": 24,
-		"current": 2.7,
-		"power": 64.8,
-		"pwmCapable": true,
-		"tachoSignal": true
-	},
-	"noiseSpecs": {
-		"noiseLevel": 73
-	},
-	"physicalSpecs": {
-		"dimensions": "70×40×37mm (blower unit)",
-		"weight": 85,
-		"bearingType": "NMB Ball Bearing",
-		"connectorType": "JST"
-	},
-	"references": [
-		{
-			"label": "Mellow Documentation",
-			"url": "https://mellow.klipper.cn/en/docs/ProductDoc/ExtensionBoard/fly-7040/",
-			"type": "documentation"
-		},
-		{
-			"label": "AliExpress",
-			"url": "https://www.aliexpress.com/i/1005004729010078.html",
-			"type": "product"
-		}
-	],
-	"unverified": ["airflow", "staticPressure", "rpm", "current", "power", "noiseLevel", "weight"]
+  "id": "mellow-cpap",
+  "name": "FLY-7040 CPAP Fan Kit",
+  "manufacturer": "Mellow",
+  "description": "High-airflow part-cooling system using a WS7040 brushless centrifugal blower connected via a flexible CPAP hose to the toolhead. The kit includes a driver/controller board with JST connectors for 24V power input and PWM signal from the MCU. Delivers significantly higher airflow than conventional 5015 blowers, making it suitable for high-speed printing.",
+  "fanType": "cpap",
+  "size": "7040",
+  "pcbLayoutId": "mellow-cpap",
+  "airflowSpecs": {
+    "airflow": 14.7,
+    "staticPressure": 662.6,
+    "rpm": 37000
+  },
+  "electricalSpecs": {
+    "voltage": 24,
+    "current": 2.7,
+    "power": 64.8,
+    "pwmCapable": true,
+    "tachoSignal": true
+  },
+  "noiseSpecs": {
+    "noiseLevel": 73
+  },
+  "physicalSpecs": {
+    "dimensions": "70×40×37mm (blower unit)",
+    "weight": 85,
+    "bearingType": "NMB Ball Bearing",
+    "connectorType": "JST"
+  },
+  "references": [
+    {
+      "label": "Mellow Documentation",
+      "url": "https://mellow.klipper.cn/en/docs/ProductDoc/ExtensionBoard/fly-7040/",
+      "type": "documentation"
+    },
+    {
+      "label": "AliExpress",
+      "url": "https://www.aliexpress.com/i/1005004729010078.html",
+      "type": "product"
+    }
+  ],
+  "unverified": ["airflow", "staticPressure", "rpm", "current", "power", "noiseLevel", "weight"]
 }

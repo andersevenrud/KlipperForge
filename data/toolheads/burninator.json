@@ -14,11 +14,7 @@
       "StealthChanger",
       "MadMax"
     ],
-    "railSystems": [
-      "MGN12H",
-      "MGN9H",
-      "MGN7H"
-    ],
+    "railSystems": ["MGN12H", "MGN9H", "MGN7H"],
     "hotendMounts": [
       "Phaetus Dragon (SF cowl)",
       "Phaetus Dragon UHF",
@@ -30,14 +26,8 @@
       "CHC-XL"
     ],
     "extruderMounts": [],
-    "probeMounts": [
-      "Klicky",
-      "Beacon",
-      "Cartographer"
-    ],
-    "fanMounts": [
-      "4010 blower fans"
-    ]
+    "probeMounts": ["Klicky", "Beacon", "Cartographer"],
+    "fanMounts": ["4010 blower fans"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -60,10 +50,7 @@
       "type": "github"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "relatedArticles": [
     {
       "category": "hotends",

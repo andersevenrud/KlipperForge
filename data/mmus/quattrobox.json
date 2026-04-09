@@ -37,8 +37,16 @@
   ],
   "references": [
     { "label": "GitHub Repository", "url": "https://github.com/Batalhoti/QuattroBox", "type": "github" },
-    { "label": "Happy Hare Quick Start", "url": "https://github.com/moggieuk/Happy-Hare/wiki/Quick-Start-QuattroBox", "type": "documentation" },
-    { "label": "BOM Spreadsheet", "url": "https://docs.google.com/spreadsheets/d/1ZGWbCGkhVMlmwFGOrBHsaueacvJPoY3-_0yoh2NZEvQ/", "type": "documentation" }
+    {
+      "label": "Happy Hare Quick Start",
+      "url": "https://github.com/moggieuk/Happy-Hare/wiki/Quick-Start-QuattroBox",
+      "type": "documentation"
+    },
+    {
+      "label": "BOM Spreadsheet",
+      "url": "https://docs.google.com/spreadsheets/d/1ZGWbCGkhVMlmwFGOrBHsaueacvJPoY3-_0yoh2NZEvQ/",
+      "type": "documentation"
+    }
   ],
   "unverified": ["material"]
 }

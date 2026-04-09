@@ -5,30 +5,12 @@
   "description": "A performance-oriented, configurable toolhead platform for the Monolith Gantry on Voron 2.4 and Trident printers. Achieves zero build volume loss by fitting entirely within the gantry structure, enabling high input shaper results and faster print speeds.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron 2.4 (Monolith Gantry)",
-      "Voron Trident (Monolith Gantry)"
-    ],
-    "railSystems": [
-      "Monolith Gantry"
-    ],
-    "hotendMounts": [
-      "Phaetus Dragon UHF",
-      "Phaetus Dragon ACE UHF",
-      "Phaetus Rapido UHF"
-    ],
-    "extruderMounts": [
-      "DFA (Annex Engineering)",
-      "WristWatch",
-      "Micro-Cosm"
-    ],
-    "probeMounts": [
-      "Beacon"
-    ],
-    "fanMounts": [
-      "CPAP",
-      "2x 5015 blower (part cooling)"
-    ]
+    "targetPrinters": ["Voron 2.4 (Monolith Gantry)", "Voron Trident (Monolith Gantry)"],
+    "railSystems": ["Monolith Gantry"],
+    "hotendMounts": ["Phaetus Dragon UHF", "Phaetus Dragon ACE UHF", "Phaetus Rapido UHF"],
+    "extruderMounts": ["DFA (Annex Engineering)", "WristWatch", "Micro-Cosm"],
+    "probeMounts": ["Beacon"],
+    "fanMounts": ["CPAP", "2x 5015 blower (part cooling)"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -51,12 +33,7 @@
       "type": "github"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions",
-    "canBusIncompatibility",
-    "klickyProbeSupport"
-  ],
+  "unverified": ["weight", "dimensions", "canBusIncompatibility", "klickyProbeSupport"],
   "relatedArticles": [
     {
       "category": "hotends",

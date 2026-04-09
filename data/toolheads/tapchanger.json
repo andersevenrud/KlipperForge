@@ -14,9 +14,7 @@
       "Rapid Burner (experimental)",
       "Xol Toolhead (experimental)"
     ],
-    "probeMounts": [
-      "OptoTap (integrated TAP-style Z probing)"
-    ],
+    "probeMounts": ["OptoTap (integrated TAP-style Z probing)"],
     "fanMounts": []
   },
   "physicalSpecs": {

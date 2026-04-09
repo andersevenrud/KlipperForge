@@ -5,18 +5,8 @@
   "description": "Toolhead using a modified 5015 fan mechanism for part cooling and a 3010 hotend fan, with Neopixel RGBW LED support. Designed for Voron V0.1 and V0.2 with additional adapter mounts for Trident, V2.4, Switchwire, and Legacy printers. Features CFD-optimized cooling ducts.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron V0.1",
-      "Voron V0.2",
-      "Voron Trident",
-      "Voron 2.4",
-      "Voron Switchwire",
-      "Voron Legacy"
-    ],
-    "railSystems": [
-      "MGN7H",
-      "MGN9C"
-    ],
+    "targetPrinters": ["Voron V0.1", "Voron V0.2", "Voron Trident", "Voron 2.4", "Voron Switchwire", "Voron Legacy"],
+    "railSystems": ["MGN7H", "MGN9C"],
     "hotendMounts": [
       "E3D Revo Voron",
       "Phaetus Dragon SF",
@@ -26,23 +16,9 @@
       "Phaetus Dragon UHF (without extender)",
       "NF-Crazy"
     ],
-    "extruderMounts": [
-      "LGX Lite",
-      "Orbiter v1.5",
-      "PocketWatch 2",
-      "RoundHouse",
-      "RoundAbout"
-    ],
-    "probeMounts": [
-      "SlideSwipe",
-      "MiniSlideSwipe",
-      "Klicky",
-      "ZeroClick"
-    ],
-    "fanMounts": [
-      "5015 blower internals (part cooling)",
-      "3010 axial (hotend)"
-    ]
+    "extruderMounts": ["LGX Lite", "Orbiter v1.5", "PocketWatch 2", "RoundHouse", "RoundAbout"],
+    "probeMounts": ["SlideSwipe", "MiniSlideSwipe", "Klicky", "ZeroClick"],
+    "fanMounts": ["5015 blower internals (part cooling)", "3010 axial (hotend)"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -67,10 +43,7 @@
       "type": "github"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "relatedArticles": [
     {
       "category": "extruders",

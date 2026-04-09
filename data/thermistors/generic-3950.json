@@ -17,12 +17,7 @@
   "physicalSpecs": {
     "packageType": "glass bead"
   },
-  "unverified": [
-    "betaValue",
-    "temperatureRange",
-    "resistanceAt25C",
-    "packageType"
-  ],
+  "unverified": ["betaValue", "temperatureRange", "resistanceAt25C", "packageType"],
   "references": [
     {
       "label": "Klipper Config Reference - Thermistors",

@@ -54,12 +54,7 @@
       "type": "documentation"
     }
   ],
-  "unverified": [
-    "weight",
-    "maxFlowRate",
-    "retraction",
-    "heaterPower"
-  ],
+  "unverified": ["weight", "maxFlowRate", "retraction", "heaterPower"],
   "relatedArticles": [
     {
       "category": "thermistors",

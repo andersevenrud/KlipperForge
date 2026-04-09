@@ -1,98 +1,98 @@
 {
-    "id": "btt-manta-m5p",
-    "name": "Bigtreetech Manta M5P",
-    "mcu": "STM32G0B1",
-    "pins": [
-        "PA0",
-        "PA1",
-        "PA2",
-        "PA3",
-        "PA4",
-        "PA5",
-        "PA6",
-        "PA7",
-        "PA8",
-        "PA9",
-        "PA10",
-        "PA11",
-        "PA12",
-        "PA13",
-        "PA14",
-        "PA15",
-        "PB0",
-        "PB1",
-        "PB2",
-        "PB3",
-        "PB4",
-        "PB5",
-        "PB6",
-        "PB7",
-        "PB8",
-        "PB9",
-        "PB10",
-        "PB11",
-        "PB12",
-        "PB13",
-        "PB14",
-        "PB15",
-        "PC0",
-        "PC1",
-        "PC2",
-        "PC3",
-        "PC4",
-        "PC5",
-        "PC6",
-        "PC7",
-        "PC8",
-        "PC9",
-        "PC10",
-        "PC11",
-        "PC12",
-        "PC13",
-        "PC14",
-        "PC15",
-        "PD0",
-        "PD1",
-        "PD2",
-        "PD3",
-        "PD4",
-        "PD5",
-        "PD6"
-    ],
-    "references": [
-        {
-            "label": "GitHub Repository",
-            "url": "https://github.com/bigtreetech/Manta-M5P",
-            "type": "github"
-        },
-        {
-            "label": "Wiki",
-            "url": "https://global.bttwiki.com/M5P.html",
-            "type": "wiki"
-        },
-        {
-            "label": "Schematic",
-            "url": "https://github.com/bigtreetech/Manta-M5P/blob/master/Hardware/BIGTREETECH%20MANTA%20M5P%20V1.0-SCH.pdf",
-            "type": "schematic"
-        },
-        {
-            "label": "Dimensions",
-            "url": "https://github.com/bigtreetech/Manta-M5P/blob/master/Hardware/BIGTREETECH%20MANTA%20M5P%20V1.0-SIZE-top.pdf",
-            "type": "dimensions"
-        },
-        {
-            "label": "User Manual",
-            "url": "https://github.com/bigtreetech/Manta-M5P/blob/master/BIGTREETECH%20MANTA%20M5P%20V1.0%20User%20Manual.pdf",
-            "type": "manual"
-        }
-    ],
-    "drivers": {
-        "count": 5,
-        "connector": "stepstick"
+  "id": "btt-manta-m5p",
+  "name": "Bigtreetech Manta M5P",
+  "mcu": "STM32G0B1",
+  "pins": [
+    "PA0",
+    "PA1",
+    "PA2",
+    "PA3",
+    "PA4",
+    "PA5",
+    "PA6",
+    "PA7",
+    "PA8",
+    "PA9",
+    "PA10",
+    "PA11",
+    "PA12",
+    "PA13",
+    "PA14",
+    "PA15",
+    "PB0",
+    "PB1",
+    "PB2",
+    "PB3",
+    "PB4",
+    "PB5",
+    "PB6",
+    "PB7",
+    "PB8",
+    "PB9",
+    "PB10",
+    "PB11",
+    "PB12",
+    "PB13",
+    "PB14",
+    "PB15",
+    "PC0",
+    "PC1",
+    "PC2",
+    "PC3",
+    "PC4",
+    "PC5",
+    "PC6",
+    "PC7",
+    "PC8",
+    "PC9",
+    "PC10",
+    "PC11",
+    "PC12",
+    "PC13",
+    "PC14",
+    "PC15",
+    "PD0",
+    "PD1",
+    "PD2",
+    "PD3",
+    "PD4",
+    "PD5",
+    "PD6"
+  ],
+  "references": [
+    {
+      "label": "GitHub Repository",
+      "url": "https://github.com/bigtreetech/Manta-M5P",
+      "type": "github"
     },
-    "dimensions": {
-        "width": 137,
-        "height": 95
+    {
+      "label": "Wiki",
+      "url": "https://global.bttwiki.com/M5P.html",
+      "type": "wiki"
     },
-    "maxMotorVoltage": 56
+    {
+      "label": "Schematic",
+      "url": "https://github.com/bigtreetech/Manta-M5P/blob/master/Hardware/BIGTREETECH%20MANTA%20M5P%20V1.0-SCH.pdf",
+      "type": "schematic"
+    },
+    {
+      "label": "Dimensions",
+      "url": "https://github.com/bigtreetech/Manta-M5P/blob/master/Hardware/BIGTREETECH%20MANTA%20M5P%20V1.0-SIZE-top.pdf",
+      "type": "dimensions"
+    },
+    {
+      "label": "User Manual",
+      "url": "https://github.com/bigtreetech/Manta-M5P/blob/master/BIGTREETECH%20MANTA%20M5P%20V1.0%20User%20Manual.pdf",
+      "type": "manual"
+    }
+  ],
+  "drivers": {
+    "count": 5,
+    "connector": "stepstick"
+  },
+  "dimensions": {
+    "width": 137,
+    "height": 95
+  },
+  "maxMotorVoltage": 56
 }

@@ -47,11 +47,7 @@
       "type": "documentation"
     }
   ],
-  "unverified": [
-    "maxFlowRate",
-    "retraction",
-    "thermistorType"
-  ],
+  "unverified": ["maxFlowRate", "retraction", "thermistorType"],
   "relatedArticles": [
     {
       "category": "toolheads",

@@ -1,832 +1,829 @@
 [
-	{
-		"name": "fan",
-		"description": "Print cooling fan.",
-		"namingKind": "fixed",
-		"params": {
-			"pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Output pin controlling the fan. This parameter must be provided.",
-				"required": true
-			},
-			"max_power": {
-				"type": {
-					"kind": "number",
-					"max": 1,
-					"above": 0
-				},
-				"description": "The maximum power (expressed as a value from 0.0 to 1.0) that the pin may be set to. The value 1.0 allows the pin to be set fully enabled for extended periods, while a value of 0.5 would allow the pin to be enabled for no more than half the time. This setting may be used to limit the total power output (over extended periods) to the fan. If this value is less than 1.0 then fan speed requests will be scaled between zero and max_power (for example, if max_power is .9 and a fan speed of 80% is requested then the fan power will be set to 72%). The default is 1.0.",
-				"required": false,
-				"default": 1
-			},
-			"shutdown_speed": {
-				"type": {
-					"kind": "number",
-					"min": 0,
-					"max": 1
-				},
-				"description": "The desired fan speed (expressed as a value from 0.0 to 1.0) if the micro-controller software enters an error state. The default is 0.",
-				"required": false,
-				"default": 0
-			},
-			"cycle_time": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "The amount of time (in seconds) for each PWM power cycle to the fan. It is recommended this be 10 milliseconds or greater when using software based PWM. The default is 0.010 seconds.",
-				"required": false,
-				"default": 0.01
-			},
-			"hardware_pwm": {
-				"type": {
-					"kind": "boolean"
-				},
-				"description": "Enable this to use hardware PWM instead of software PWM. Most fans do not work well with hardware PWM, so it is not recommended to enable this unless there is an electrical requirement to switch at very high speeds. When using hardware PWM the actual cycle time is constrained by the implementation and may be significantly different than the requested cycle_time. The default is False.",
-				"required": false,
-				"default": false
-			},
-			"kick_start_time": {
-				"type": {
-					"kind": "number",
-					"min": 0
-				},
-				"description": "Time (in seconds) to run the fan at full speed when either first enabling or increasing it by more than 50% (helps get the fan spinning). The default is 0.100 seconds.",
-				"required": false,
-				"default": 0.1
-			},
-			"off_below": {
-				"type": {
-					"kind": "number",
-					"min": 0,
-					"max": 1
-				},
-				"description": "The minimum input speed which will power the fan (expressed as a value from 0.0 to 1.0). When a speed lower than off_below is requested the fan will instead be turned off. This setting may be used to prevent fan stalls and to ensure kick starts are effective. The default is 0.0. This setting should be recalibrated whenever max_power is adjusted. To calibrate this setting, start with off_below set to 0.0 and the fan spinning. Gradually lower the fan speed to determine the lowest input speed which reliably drives the fan without stalls. Set off_below to the duty cycle corresponding to this value (for example, 12% -> 0.12) or slightly higher.",
-				"required": false,
-				"default": 0
-			},
-			"tachometer_pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Tachometer input pin for monitoring fan speed. A pullup is generally required. This parameter is optional.",
-				"required": false
-			},
-			"tachometer_ppr": {
-				"type": {
-					"kind": "number",
-					"integer": true,
-					"min": 1
-				},
-				"description": "When tachometer_pin is specified, this is the number of pulses per revolution of the tachometer signal. For a BLDC fan this is normally half the number of poles. The default is 2.",
-				"required": false,
-				"default": 2
-			},
-			"tachometer_poll_interval": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "When tachometer_pin is specified, this is the polling period of the tachometer pin, in seconds. The default is 0.0015, which is fast enough for fans below 10000 RPM at 2 PPR. This must be smaller than 30/(tachometer_ppr*rpm), with some margin, where rpm is the maximum speed (in RPM) of the fan.",
-				"required": false,
-				"default": 0.0015
-			},
-			"enable_pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Optional pin to enable power to the fan. This can be useful for fans with dedicated PWM inputs. Some of these fans stay on even at 0% PWM input. In such a case, the PWM pin can be used normally, and e.g. a ground-switched FET(standard fan pin) can be used to control power to the fan.",
-				"required": false
-			}
-		}
-	},
-	{
-		"name": "heater_fan",
-		"description": "Heater cooling fans (one may define any number of sections with a\n\"heater_fan\" prefix). A \"heater fan\" is a fan that will be enabled\nwhenever its associated heater is active. By default, a heater_fan has\na shutdown_speed equal to max_power.",
-		"namingKind": "fixed",
-		"params": {
-			"pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Output pin controlling the fan. This parameter must be provided.",
-				"required": false
-			},
-			"max_power": {
-				"type": {
-					"kind": "number",
-					"max": 1,
-					"above": 0
-				},
-				"description": "The maximum power (expressed as a value from 0.0 to 1.0) that the pin may be set to. The value 1.0 allows the pin to be set fully enabled for extended periods, while a value of 0.5 would allow the pin to be enabled for no more than half the time. This setting may be used to limit the total power output (over extended periods) to the fan. If this value is less than 1.0 then fan speed requests will be scaled between zero and max_power (for example, if max_power is .9 and a fan speed of 80% is requested then the fan power will be set to 72%). The default is 1.0.",
-				"required": false,
-				"default": 1
-			},
-			"shutdown_speed": {
-				"type": {
-					"kind": "number",
-					"min": 0,
-					"max": 1
-				},
-				"description": "The desired fan speed (expressed as a value from 0.0 to 1.0) if the micro-controller software enters an error state. The default is 0.",
-				"required": false,
-				"default": 0
-			},
-			"cycle_time": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "The amount of time (in seconds) for each PWM power cycle to the fan. It is recommended this be 10 milliseconds or greater when using software based PWM. The default is 0.010 seconds.",
-				"required": false,
-				"default": 0.01
-			},
-			"hardware_pwm": {
-				"type": {
-					"kind": "boolean"
-				},
-				"description": "Enable this to use hardware PWM instead of software PWM. Most fans do not work well with hardware PWM, so it is not recommended to enable this unless there is an electrical requirement to switch at very high speeds. When using hardware PWM the actual cycle time is constrained by the implementation and may be significantly different than the requested cycle_time. The default is False.",
-				"required": false,
-				"default": false
-			},
-			"kick_start_time": {
-				"type": {
-					"kind": "number",
-					"min": 0
-				},
-				"description": "Time (in seconds) to run the fan at full speed when either first enabling or increasing it by more than 50% (helps get the fan spinning). The default is 0.100 seconds.",
-				"required": false,
-				"default": 0.1
-			},
-			"off_below": {
-				"type": {
-					"kind": "number",
-					"min": 0,
-					"max": 1
-				},
-				"description": "The minimum input speed which will power the fan (expressed as a value from 0.0 to 1.0). When a speed lower than off_below is requested the fan will instead be turned off. This setting may be used to prevent fan stalls and to ensure kick starts are effective. The default is 0.0. This setting should be recalibrated whenever max_power is adjusted. To calibrate this setting, start with off_below set to 0.0 and the fan spinning. Gradually lower the fan speed to determine the lowest input speed which reliably drives the fan without stalls. Set off_below to the duty cycle corresponding to this value (for example, 12% -> 0.12) or slightly higher.",
-				"required": false,
-				"default": 0
-			},
-			"tachometer_pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Tachometer input pin for monitoring fan speed. A pullup is generally required. This parameter is optional.",
-				"required": false
-			},
-			"tachometer_ppr": {
-				"type": {
-					"kind": "number",
-					"integer": true,
-					"min": 1
-				},
-				"description": "When tachometer_pin is specified, this is the number of pulses per revolution of the tachometer signal. For a BLDC fan this is normally half the number of poles. The default is 2.",
-				"required": false,
-				"default": 2
-			},
-			"tachometer_poll_interval": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "When tachometer_pin is specified, this is the polling period of the tachometer pin, in seconds. The default is 0.0015, which is fast enough for fans below 10000 RPM at 2 PPR. This must be smaller than 30/(tachometer_ppr*rpm), with some margin, where rpm is the maximum speed (in RPM) of the fan.",
-				"required": false,
-				"default": 0.0015
-			},
-			"enable_pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Optional pin to enable power to the fan. This can be useful for fans with dedicated PWM inputs. Some of these fans stay on even at 0% PWM input. In such a case, the PWM pin can be used normally, and e.g. a ground-switched FET(standard fan pin) can be used to control power to the fan.",
-				"required": false
-			},
-			"heater": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Name of the config section defining the heater that this fan is associated with. If a comma separated list of heater names is provided here, then the fan will be enabled when any of the given heaters are enabled. The default is \"extruder\".",
-				"required": false
-			},
-			"heater_temp": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "A temperature (in Celsius) that the heater must drop below before the fan is disabled. The default is 50 Celsius.",
-				"required": false,
-				"default": 50
-			},
-			"fan_speed": {
-				"type": {
-					"kind": "number",
-					"min": 0,
-					"max": 1
-				},
-				"description": "The fan speed (expressed as a value from 0.0 to 1.0) that the fan will be set to when its associated heater is enabled. The default is 1.0",
-				"required": false,
-				"default": 1
-			}
-		}
-	},
-	{
-		"name": "controller_fan",
-		"description": "Controller cooling fan (one may define any number of sections with a\n\"controller_fan\" prefix). A \"controller fan\" is a fan that will be\nenabled whenever its associated heater or its associated stepper\ndriver is active. The fan will stop whenever an idle_timeout is\nreached to ensure no overheating will occur after deactivating a\nwatched component.",
-		"namingKind": "fixed",
-		"params": {
-			"pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Output pin controlling the fan. This parameter must be provided.",
-				"required": false
-			},
-			"max_power": {
-				"type": {
-					"kind": "number",
-					"max": 1,
-					"above": 0
-				},
-				"description": "The maximum power (expressed as a value from 0.0 to 1.0) that the pin may be set to. The value 1.0 allows the pin to be set fully enabled for extended periods, while a value of 0.5 would allow the pin to be enabled for no more than half the time. This setting may be used to limit the total power output (over extended periods) to the fan. If this value is less than 1.0 then fan speed requests will be scaled between zero and max_power (for example, if max_power is .9 and a fan speed of 80% is requested then the fan power will be set to 72%). The default is 1.0.",
-				"required": false,
-				"default": 1
-			},
-			"shutdown_speed": {
-				"type": {
-					"kind": "number",
-					"min": 0,
-					"max": 1
-				},
-				"description": "The desired fan speed (expressed as a value from 0.0 to 1.0) if the micro-controller software enters an error state. The default is 0.",
-				"required": false,
-				"default": 0
-			},
-			"cycle_time": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "The amount of time (in seconds) for each PWM power cycle to the fan. It is recommended this be 10 milliseconds or greater when using software based PWM. The default is 0.010 seconds.",
-				"required": false,
-				"default": 0.01
-			},
-			"hardware_pwm": {
-				"type": {
-					"kind": "boolean"
-				},
-				"description": "Enable this to use hardware PWM instead of software PWM. Most fans do not work well with hardware PWM, so it is not recommended to enable this unless there is an electrical requirement to switch at very high speeds. When using hardware PWM the actual cycle time is constrained by the implementation and may be significantly different than the requested cycle_time. The default is False.",
-				"required": false,
-				"default": false
-			},
-			"kick_start_time": {
-				"type": {
-					"kind": "number",
-					"min": 0
-				},
-				"description": "Time (in seconds) to run the fan at full speed when either first enabling or increasing it by more than 50% (helps get the fan spinning). The default is 0.100 seconds.",
-				"required": false,
-				"default": 0.1
-			},
-			"off_below": {
-				"type": {
-					"kind": "number",
-					"min": 0,
-					"max": 1
-				},
-				"description": "The minimum input speed which will power the fan (expressed as a value from 0.0 to 1.0). When a speed lower than off_below is requested the fan will instead be turned off. This setting may be used to prevent fan stalls and to ensure kick starts are effective. The default is 0.0. This setting should be recalibrated whenever max_power is adjusted. To calibrate this setting, start with off_below set to 0.0 and the fan spinning. Gradually lower the fan speed to determine the lowest input speed which reliably drives the fan without stalls. Set off_below to the duty cycle corresponding to this value (for example, 12% -> 0.12) or slightly higher.",
-				"required": false,
-				"default": 0
-			},
-			"tachometer_pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Tachometer input pin for monitoring fan speed. A pullup is generally required. This parameter is optional.",
-				"required": false
-			},
-			"tachometer_ppr": {
-				"type": {
-					"kind": "number",
-					"integer": true,
-					"min": 1
-				},
-				"description": "When tachometer_pin is specified, this is the number of pulses per revolution of the tachometer signal. For a BLDC fan this is normally half the number of poles. The default is 2.",
-				"required": false,
-				"default": 2
-			},
-			"tachometer_poll_interval": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "When tachometer_pin is specified, this is the polling period of the tachometer pin, in seconds. The default is 0.0015, which is fast enough for fans below 10000 RPM at 2 PPR. This must be smaller than 30/(tachometer_ppr*rpm), with some margin, where rpm is the maximum speed (in RPM) of the fan.",
-				"required": false,
-				"default": 0.0015
-			},
-			"enable_pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Optional pin to enable power to the fan. This can be useful for fans with dedicated PWM inputs. Some of these fans stay on even at 0% PWM input. In such a case, the PWM pin can be used normally, and e.g. a ground-switched FET(standard fan pin) can be used to control power to the fan.",
-				"required": false
-			},
-			"fan_speed": {
-				"type": {
-					"kind": "number",
-					"min": 0,
-					"max": 1
-				},
-				"description": "The fan speed (expressed as a value from 0.0 to 1.0) that the fan will be set to when a heater or stepper driver is active. The default is 1.0",
-				"required": false,
-				"default": 1
-			},
-			"idle_timeout": {
-				"type": {
-					"kind": "number",
-					"integer": true,
-					"min": 0
-				},
-				"description": "The amount of time (in seconds) after a stepper driver or heater was active and the fan should be kept running. The default is 30 seconds.",
-				"required": false,
-				"default": 30
-			},
-			"idle_speed": {
-				"type": {
-					"kind": "number",
-					"min": 0,
-					"max": 1
-				},
-				"description": "The fan speed (expressed as a value from 0.0 to 1.0) that the fan will be set to when a heater or stepper driver was active and before the idle_timeout is reached. The default is fan_speed.",
-				"required": false
-			},
-			"heater": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "heater parameter",
-				"required": false
-			},
-			"stepper": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Name of the config section defining the heater/stepper that this fan is associated with. If a comma separated list of heater/stepper names is provided here, then the fan will be enabled when any of the given heaters/steppers are enabled. The default heater is \"extruder\", the default stepper is all of them.",
-				"required": false
-			}
-		}
-	},
-	{
-		"name": "temperature_fan",
-		"description": "Temperature-triggered cooling fans (one may define any number of\nsections with a \"temperature_fan\" prefix). A \"temperature fan\" is a\nfan that will be enabled whenever its associated sensor is above a set\ntemperature. By default, a temperature_fan has a shutdown_speed equal\nto max_power.\n\nSee the [command reference](G-Codes.md#temperature_fan) for additional\ninformation.",
-		"namingKind": "fixed",
-		"params": {
-			"pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "pin parameter",
-				"required": false
-			},
-			"max_power": {
-				"type": {
-					"kind": "number",
-					"max": 1,
-					"above": 0
-				},
-				"description": "The maximum power (expressed as a value from 0.0 to 1.0) that the heater_pin may be set to. The value 1.0 allows the pin to be set fully enabled for extended periods, while a value of 0.5 would allow the pin to be enabled for no more than half the time. This setting may be used to limit the total power output (over extended periods) to the heater. The default is 1.0.",
-				"required": false,
-				"default": 1
-			},
-			"shutdown_speed": {
-				"type": {
-					"kind": "number",
-					"min": 0,
-					"max": 1
-				},
-				"description": "shutdown_speed parameter",
-				"required": false
-			},
-			"cycle_time": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "cycle_time parameter",
-				"required": false,
-				"default": 0.01
-			},
-			"hardware_pwm": {
-				"type": {
-					"kind": "boolean"
-				},
-				"description": "hardware_pwm parameter",
-				"required": false,
-				"default": false
-			},
-			"kick_start_time": {
-				"type": {
-					"kind": "number",
-					"min": 0
-				},
-				"description": "kick_start_time parameter",
-				"required": false,
-				"default": 0.1
-			},
-			"off_below": {
-				"type": {
-					"kind": "number",
-					"min": 0,
-					"max": 1
-				},
-				"description": "off_below parameter",
-				"required": false
-			},
-			"tachometer_pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "tachometer_pin parameter",
-				"required": false
-			},
-			"tachometer_ppr": {
-				"type": {
-					"kind": "number",
-					"integer": true,
-					"min": 1
-				},
-				"description": "tachometer_ppr parameter",
-				"required": false,
-				"default": 2
-			},
-			"tachometer_poll_interval": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "tachometer_poll_interval parameter",
-				"required": false,
-				"default": 0.0015
-			},
-			"enable_pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "enable_pin parameter",
-				"required": false
-			},
-			"sensor_type": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Type of sensor - common thermistors are \"EPCOS 100K B57560G104F\", \"ATC Semitec 104GT-2\", \"ATC Semitec 104NT-4-R025H42G\", \"Generic 3950\",\"Honeywell 100K 135-104LAG-J01\", \"NTC 100K MGB18-104F39050L32\", \"SliceEngineering 450\", and \"TDK NTCG104LH104JT1\". See the \"Temperature sensors\" section for other sensors. This parameter must be provided.",
-				"required": false
-			},
-			"sensor_pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Analog input pin connected to the sensor. This parameter must be provided.",
-				"required": false
-			},
-			"control": {
-				"type": {
-					"kind": "choice",
-					"choices": [
-						"pid",
-						"watermark"
-					]
-				},
-				"description": "Control algorithm (either pid or watermark). This parameter must be provided.",
-				"required": false
-			},
-			"max_delta": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "On 'watermark' controlled heaters this is the number of degrees in Celsius above the target temperature before disabling the heater as well as the number of degrees below the target before re-enabling the heater. The default is 2 degrees Celsius.",
-				"required": false,
-				"default": 2
-			},
-			"min_temp": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "min_temp parameter",
-				"required": false
-			},
-			"max_temp": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "The maximum range of valid temperatures (in Celsius) that the heater must remain within. This controls a safety feature implemented in the micro-controller code - should the measured temperature ever fall outside this range then the micro-controller will go into a shutdown state. This check can help detect some heater and sensor hardware failures. Set this range just wide enough so that reasonable temperatures do not result in an error. These parameters must be provided.",
-				"required": false
-			},
-			"pid_kp": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "pid_kp parameter",
-				"required": false
-			},
-			"pid_ki": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "pid_ki parameter",
-				"required": false
-			},
-			"pid_kd": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "The proportional (pid_Kp), integral (pid_Ki), and derivative (pid_Kd) settings for the PID feedback control system. Klipper evaluates the PID settings with the following general formula: fan_pwm = max_power - (Kp*e + Ki*integral(e) - Kd*derivative(e)) / 255 Where \"e\" is \"target_temperature - measured_temperature\" and \"fan_pwm\" is the requested fan rate with 0.0 being full off and 1.0 being full on. The pid_Kp, pid_Ki, and pid_Kd parameters must be provided when the PID control algorithm is enabled.",
-				"required": false
-			},
-			"pid_deriv_time": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "A time value (in seconds) over which temperature measurements will be smoothed when using the PID control algorithm. This may reduce the impact of measurement noise. The default is 2 seconds.",
-				"required": false,
-				"default": 2
-			},
-			"target_temp": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "A temperature (in Celsius) that will be the target temperature. The default is 40 degrees.",
-				"required": false,
-				"default": 40
-			},
-			"max_speed": {
-				"type": {
-					"kind": "number",
-					"max": 1,
-					"above": 0
-				},
-				"description": "The fan speed (expressed as a value from 0.0 to 1.0) that the fan will be set to when the sensor temperature exceeds the set value. The default is 1.0.",
-				"required": false,
-				"default": 1
-			},
-			"min_speed": {
-				"type": {
-					"kind": "number",
-					"min": 0,
-					"max": 1
-				},
-				"description": "The minimum fan speed (expressed as a value from 0.0 to 1.0) that the fan will be set to for PID temperature fans. The default is 0.3.",
-				"required": false,
-				"default": 0.3
-			},
-			"gcode_id": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "If set, the temperature will be reported in M105 queries using the given id. The default is to not report the temperature via M105.",
-				"required": false
-			},
-			"microsteps": {
-				"type": {
-					"kind": "number",
-					"integer": true,
-					"min": 1
-				},
-				"description": "microsteps parameter",
-				"required": false
-			},
-			"rotation_distance": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "rotation_distance parameter",
-				"required": false
-			},
-			"full_steps_per_rotation": {
-				"type": {
-					"kind": "number",
-					"integer": true,
-					"min": 1
-				},
-				"description": "full_steps_per_rotation parameter",
-				"required": false,
-				"default": 200
-			},
-			"nozzle_diameter": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "Diameter of the nozzle orifice (in mm). This parameter must be provided.",
-				"required": false
-			},
-			"filament_diameter": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "The nominal diameter of the raw filament (in mm) as it enters the extruder. This parameter must be provided.",
-				"required": false
-			},
-			"max_extrude_cross_section": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "Maximum area (in mm^2) of an extrusion cross section (eg, extrusion width multiplied by layer height). This setting prevents excessive amounts of extrusion during relatively small XY moves. If a move requests an extrusion rate that would exceed this value it will cause an error to be returned. The default is: 4.0 * nozzle_diameter^2",
-				"required": false
-			},
-			"instantaneous_corner_velocity": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "The maximum instantaneous velocity change (in mm/s) of the extruder during the junction of two moves. The default is 1mm/s.",
-				"required": false,
-				"default": 1
-			},
-			"max_extrude_only_distance": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "Maximum length (in mm of raw filament) that a retraction or extrude-only move may have. If a retraction or extrude-only move requests a distance greater than this value it will cause an error to be returned. The default is 50mm.",
-				"required": false,
-				"default": 50
-			},
-			"max_extrude_only_velocity": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "max_extrude_only_velocity parameter",
-				"required": false
-			},
-			"max_extrude_only_accel": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "Maximum velocity (in mm/s) and acceleration (in mm/s^2) of the extruder motor for retractions and extrude-only moves. These settings do not have any impact on normal printing moves. If not specified then they are calculated to match the limit an XY printing move with a cross section of 4.0*nozzle_diameter^2 would have.",
-				"required": false
-			},
-			"pressure_advance": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "The amount of raw filament to push into the extruder during extruder acceleration. An equal amount of filament is retracted during deceleration. It is measured in millimeters per millimeter/second. The default is 0, which disables pressure advance.",
-				"required": false,
-				"default": 0
-			},
-			"pressure_advance_smooth_time": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "A time range (in seconds) to use when calculating the average extruder velocity for pressure advance. A larger value results in smoother extruder movements. This parameter may not exceed 200ms. This setting only applies if pressure_advance is non-zero. The default is 0.040 (40 milliseconds). The remaining variables describe the extruder heater.",
-				"required": false,
-				"default": 0.04
-			},
-			"heater_pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "PWM output pin controlling the heater. This parameter must be provided.",
-				"required": false
-			},
-			"pullup_resistor": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "The resistance (in ohms) of the pullup attached to the thermistor. This parameter is only valid when the sensor is a thermistor. The default is 4700 ohms.",
-				"required": false,
-				"default": 4700
-			},
-			"smooth_time": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "A time value (in seconds) over which temperature measurements will be smoothed to reduce the impact of measurement noise. The default is 1 seconds.",
-				"required": false,
-				"default": 1
-			},
-			"pwm_cycle_time": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "Time in seconds for each software PWM cycle of the heater. It is not recommended to set this unless there is an electrical requirement to switch the heater faster than 10 times a second. The default is 0.100 seconds.",
-				"required": false,
-				"default": 0.1
-			},
-			"min_extrude_temp": {
-				"type": {
-					"kind": "number"
-				},
-				"description": "The minimum temperature (in Celsius) at which extruder move commands may be issued. The default is 170 Celsius.",
-				"required": false,
-				"default": 170
-			}
-		}
-	},
-	{
-		"name": "fan_generic",
-		"description": "Manually controlled fan (one may define any number of sections with a\n\"fan_generic\" prefix). The speed of a manually controlled fan is set\nwith the SET_FAN_SPEED [gcode command](G-Codes.md#fan_generic).",
-		"namingKind": "fixed",
-		"params": {
-			"pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Output pin controlling the fan. This parameter must be provided.",
-				"required": false
-			},
-			"max_power": {
-				"type": {
-					"kind": "number",
-					"max": 1,
-					"above": 0
-				},
-				"description": "The maximum power (expressed as a value from 0.0 to 1.0) that the pin may be set to. The value 1.0 allows the pin to be set fully enabled for extended periods, while a value of 0.5 would allow the pin to be enabled for no more than half the time. This setting may be used to limit the total power output (over extended periods) to the fan. If this value is less than 1.0 then fan speed requests will be scaled between zero and max_power (for example, if max_power is .9 and a fan speed of 80% is requested then the fan power will be set to 72%). The default is 1.0.",
-				"required": false,
-				"default": 1
-			},
-			"shutdown_speed": {
-				"type": {
-					"kind": "number",
-					"min": 0,
-					"max": 1
-				},
-				"description": "The desired fan speed (expressed as a value from 0.0 to 1.0) if the micro-controller software enters an error state. The default is 0.",
-				"required": false,
-				"default": 0
-			},
-			"cycle_time": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "The amount of time (in seconds) for each PWM power cycle to the fan. It is recommended this be 10 milliseconds or greater when using software based PWM. The default is 0.010 seconds.",
-				"required": false,
-				"default": 0.01
-			},
-			"hardware_pwm": {
-				"type": {
-					"kind": "boolean"
-				},
-				"description": "Enable this to use hardware PWM instead of software PWM. Most fans do not work well with hardware PWM, so it is not recommended to enable this unless there is an electrical requirement to switch at very high speeds. When using hardware PWM the actual cycle time is constrained by the implementation and may be significantly different than the requested cycle_time. The default is False.",
-				"required": false,
-				"default": false
-			},
-			"kick_start_time": {
-				"type": {
-					"kind": "number",
-					"min": 0
-				},
-				"description": "Time (in seconds) to run the fan at full speed when either first enabling or increasing it by more than 50% (helps get the fan spinning). The default is 0.100 seconds.",
-				"required": false,
-				"default": 0.1
-			},
-			"off_below": {
-				"type": {
-					"kind": "number",
-					"min": 0,
-					"max": 1
-				},
-				"description": "The minimum input speed which will power the fan (expressed as a value from 0.0 to 1.0). When a speed lower than off_below is requested the fan will instead be turned off. This setting may be used to prevent fan stalls and to ensure kick starts are effective. The default is 0.0. This setting should be recalibrated whenever max_power is adjusted. To calibrate this setting, start with off_below set to 0.0 and the fan spinning. Gradually lower the fan speed to determine the lowest input speed which reliably drives the fan without stalls. Set off_below to the duty cycle corresponding to this value (for example, 12% -> 0.12) or slightly higher.",
-				"required": false,
-				"default": 0
-			},
-			"tachometer_pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Tachometer input pin for monitoring fan speed. A pullup is generally required. This parameter is optional.",
-				"required": false
-			},
-			"tachometer_ppr": {
-				"type": {
-					"kind": "number",
-					"integer": true,
-					"min": 1
-				},
-				"description": "When tachometer_pin is specified, this is the number of pulses per revolution of the tachometer signal. For a BLDC fan this is normally half the number of poles. The default is 2.",
-				"required": false,
-				"default": 2
-			},
-			"tachometer_poll_interval": {
-				"type": {
-					"kind": "number",
-					"above": 0
-				},
-				"description": "When tachometer_pin is specified, this is the polling period of the tachometer pin, in seconds. The default is 0.0015, which is fast enough for fans below 10000 RPM at 2 PPR. This must be smaller than 30/(tachometer_ppr*rpm), with some margin, where rpm is the maximum speed (in RPM) of the fan.",
-				"required": false,
-				"default": 0.0015
-			},
-			"enable_pin": {
-				"type": {
-					"kind": "string"
-				},
-				"description": "Optional pin to enable power to the fan. This can be useful for fans with dedicated PWM inputs. Some of these fans stay on even at 0% PWM input. In such a case, the PWM pin can be used normally, and e.g. a ground-switched FET(standard fan pin) can be used to control power to the fan.",
-				"required": false
-			}
-		}
-	}
+  {
+    "name": "fan",
+    "description": "Print cooling fan.",
+    "namingKind": "fixed",
+    "params": {
+      "pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Output pin controlling the fan. This parameter must be provided.",
+        "required": true
+      },
+      "max_power": {
+        "type": {
+          "kind": "number",
+          "max": 1,
+          "above": 0
+        },
+        "description": "The maximum power (expressed as a value from 0.0 to 1.0) that the pin may be set to. The value 1.0 allows the pin to be set fully enabled for extended periods, while a value of 0.5 would allow the pin to be enabled for no more than half the time. This setting may be used to limit the total power output (over extended periods) to the fan. If this value is less than 1.0 then fan speed requests will be scaled between zero and max_power (for example, if max_power is .9 and a fan speed of 80% is requested then the fan power will be set to 72%). The default is 1.0.",
+        "required": false,
+        "default": 1
+      },
+      "shutdown_speed": {
+        "type": {
+          "kind": "number",
+          "min": 0,
+          "max": 1
+        },
+        "description": "The desired fan speed (expressed as a value from 0.0 to 1.0) if the micro-controller software enters an error state. The default is 0.",
+        "required": false,
+        "default": 0
+      },
+      "cycle_time": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "The amount of time (in seconds) for each PWM power cycle to the fan. It is recommended this be 10 milliseconds or greater when using software based PWM. The default is 0.010 seconds.",
+        "required": false,
+        "default": 0.01
+      },
+      "hardware_pwm": {
+        "type": {
+          "kind": "boolean"
+        },
+        "description": "Enable this to use hardware PWM instead of software PWM. Most fans do not work well with hardware PWM, so it is not recommended to enable this unless there is an electrical requirement to switch at very high speeds. When using hardware PWM the actual cycle time is constrained by the implementation and may be significantly different than the requested cycle_time. The default is False.",
+        "required": false,
+        "default": false
+      },
+      "kick_start_time": {
+        "type": {
+          "kind": "number",
+          "min": 0
+        },
+        "description": "Time (in seconds) to run the fan at full speed when either first enabling or increasing it by more than 50% (helps get the fan spinning). The default is 0.100 seconds.",
+        "required": false,
+        "default": 0.1
+      },
+      "off_below": {
+        "type": {
+          "kind": "number",
+          "min": 0,
+          "max": 1
+        },
+        "description": "The minimum input speed which will power the fan (expressed as a value from 0.0 to 1.0). When a speed lower than off_below is requested the fan will instead be turned off. This setting may be used to prevent fan stalls and to ensure kick starts are effective. The default is 0.0. This setting should be recalibrated whenever max_power is adjusted. To calibrate this setting, start with off_below set to 0.0 and the fan spinning. Gradually lower the fan speed to determine the lowest input speed which reliably drives the fan without stalls. Set off_below to the duty cycle corresponding to this value (for example, 12% -> 0.12) or slightly higher.",
+        "required": false,
+        "default": 0
+      },
+      "tachometer_pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Tachometer input pin for monitoring fan speed. A pullup is generally required. This parameter is optional.",
+        "required": false
+      },
+      "tachometer_ppr": {
+        "type": {
+          "kind": "number",
+          "integer": true,
+          "min": 1
+        },
+        "description": "When tachometer_pin is specified, this is the number of pulses per revolution of the tachometer signal. For a BLDC fan this is normally half the number of poles. The default is 2.",
+        "required": false,
+        "default": 2
+      },
+      "tachometer_poll_interval": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "When tachometer_pin is specified, this is the polling period of the tachometer pin, in seconds. The default is 0.0015, which is fast enough for fans below 10000 RPM at 2 PPR. This must be smaller than 30/(tachometer_ppr*rpm), with some margin, where rpm is the maximum speed (in RPM) of the fan.",
+        "required": false,
+        "default": 0.0015
+      },
+      "enable_pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Optional pin to enable power to the fan. This can be useful for fans with dedicated PWM inputs. Some of these fans stay on even at 0% PWM input. In such a case, the PWM pin can be used normally, and e.g. a ground-switched FET(standard fan pin) can be used to control power to the fan.",
+        "required": false
+      }
+    }
+  },
+  {
+    "name": "heater_fan",
+    "description": "Heater cooling fans (one may define any number of sections with a\n\"heater_fan\" prefix). A \"heater fan\" is a fan that will be enabled\nwhenever its associated heater is active. By default, a heater_fan has\na shutdown_speed equal to max_power.",
+    "namingKind": "fixed",
+    "params": {
+      "pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Output pin controlling the fan. This parameter must be provided.",
+        "required": false
+      },
+      "max_power": {
+        "type": {
+          "kind": "number",
+          "max": 1,
+          "above": 0
+        },
+        "description": "The maximum power (expressed as a value from 0.0 to 1.0) that the pin may be set to. The value 1.0 allows the pin to be set fully enabled for extended periods, while a value of 0.5 would allow the pin to be enabled for no more than half the time. This setting may be used to limit the total power output (over extended periods) to the fan. If this value is less than 1.0 then fan speed requests will be scaled between zero and max_power (for example, if max_power is .9 and a fan speed of 80% is requested then the fan power will be set to 72%). The default is 1.0.",
+        "required": false,
+        "default": 1
+      },
+      "shutdown_speed": {
+        "type": {
+          "kind": "number",
+          "min": 0,
+          "max": 1
+        },
+        "description": "The desired fan speed (expressed as a value from 0.0 to 1.0) if the micro-controller software enters an error state. The default is 0.",
+        "required": false,
+        "default": 0
+      },
+      "cycle_time": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "The amount of time (in seconds) for each PWM power cycle to the fan. It is recommended this be 10 milliseconds or greater when using software based PWM. The default is 0.010 seconds.",
+        "required": false,
+        "default": 0.01
+      },
+      "hardware_pwm": {
+        "type": {
+          "kind": "boolean"
+        },
+        "description": "Enable this to use hardware PWM instead of software PWM. Most fans do not work well with hardware PWM, so it is not recommended to enable this unless there is an electrical requirement to switch at very high speeds. When using hardware PWM the actual cycle time is constrained by the implementation and may be significantly different than the requested cycle_time. The default is False.",
+        "required": false,
+        "default": false
+      },
+      "kick_start_time": {
+        "type": {
+          "kind": "number",
+          "min": 0
+        },
+        "description": "Time (in seconds) to run the fan at full speed when either first enabling or increasing it by more than 50% (helps get the fan spinning). The default is 0.100 seconds.",
+        "required": false,
+        "default": 0.1
+      },
+      "off_below": {
+        "type": {
+          "kind": "number",
+          "min": 0,
+          "max": 1
+        },
+        "description": "The minimum input speed which will power the fan (expressed as a value from 0.0 to 1.0). When a speed lower than off_below is requested the fan will instead be turned off. This setting may be used to prevent fan stalls and to ensure kick starts are effective. The default is 0.0. This setting should be recalibrated whenever max_power is adjusted. To calibrate this setting, start with off_below set to 0.0 and the fan spinning. Gradually lower the fan speed to determine the lowest input speed which reliably drives the fan without stalls. Set off_below to the duty cycle corresponding to this value (for example, 12% -> 0.12) or slightly higher.",
+        "required": false,
+        "default": 0
+      },
+      "tachometer_pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Tachometer input pin for monitoring fan speed. A pullup is generally required. This parameter is optional.",
+        "required": false
+      },
+      "tachometer_ppr": {
+        "type": {
+          "kind": "number",
+          "integer": true,
+          "min": 1
+        },
+        "description": "When tachometer_pin is specified, this is the number of pulses per revolution of the tachometer signal. For a BLDC fan this is normally half the number of poles. The default is 2.",
+        "required": false,
+        "default": 2
+      },
+      "tachometer_poll_interval": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "When tachometer_pin is specified, this is the polling period of the tachometer pin, in seconds. The default is 0.0015, which is fast enough for fans below 10000 RPM at 2 PPR. This must be smaller than 30/(tachometer_ppr*rpm), with some margin, where rpm is the maximum speed (in RPM) of the fan.",
+        "required": false,
+        "default": 0.0015
+      },
+      "enable_pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Optional pin to enable power to the fan. This can be useful for fans with dedicated PWM inputs. Some of these fans stay on even at 0% PWM input. In such a case, the PWM pin can be used normally, and e.g. a ground-switched FET(standard fan pin) can be used to control power to the fan.",
+        "required": false
+      },
+      "heater": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Name of the config section defining the heater that this fan is associated with. If a comma separated list of heater names is provided here, then the fan will be enabled when any of the given heaters are enabled. The default is \"extruder\".",
+        "required": false
+      },
+      "heater_temp": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "A temperature (in Celsius) that the heater must drop below before the fan is disabled. The default is 50 Celsius.",
+        "required": false,
+        "default": 50
+      },
+      "fan_speed": {
+        "type": {
+          "kind": "number",
+          "min": 0,
+          "max": 1
+        },
+        "description": "The fan speed (expressed as a value from 0.0 to 1.0) that the fan will be set to when its associated heater is enabled. The default is 1.0",
+        "required": false,
+        "default": 1
+      }
+    }
+  },
+  {
+    "name": "controller_fan",
+    "description": "Controller cooling fan (one may define any number of sections with a\n\"controller_fan\" prefix). A \"controller fan\" is a fan that will be\nenabled whenever its associated heater or its associated stepper\ndriver is active. The fan will stop whenever an idle_timeout is\nreached to ensure no overheating will occur after deactivating a\nwatched component.",
+    "namingKind": "fixed",
+    "params": {
+      "pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Output pin controlling the fan. This parameter must be provided.",
+        "required": false
+      },
+      "max_power": {
+        "type": {
+          "kind": "number",
+          "max": 1,
+          "above": 0
+        },
+        "description": "The maximum power (expressed as a value from 0.0 to 1.0) that the pin may be set to. The value 1.0 allows the pin to be set fully enabled for extended periods, while a value of 0.5 would allow the pin to be enabled for no more than half the time. This setting may be used to limit the total power output (over extended periods) to the fan. If this value is less than 1.0 then fan speed requests will be scaled between zero and max_power (for example, if max_power is .9 and a fan speed of 80% is requested then the fan power will be set to 72%). The default is 1.0.",
+        "required": false,
+        "default": 1
+      },
+      "shutdown_speed": {
+        "type": {
+          "kind": "number",
+          "min": 0,
+          "max": 1
+        },
+        "description": "The desired fan speed (expressed as a value from 0.0 to 1.0) if the micro-controller software enters an error state. The default is 0.",
+        "required": false,
+        "default": 0
+      },
+      "cycle_time": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "The amount of time (in seconds) for each PWM power cycle to the fan. It is recommended this be 10 milliseconds or greater when using software based PWM. The default is 0.010 seconds.",
+        "required": false,
+        "default": 0.01
+      },
+      "hardware_pwm": {
+        "type": {
+          "kind": "boolean"
+        },
+        "description": "Enable this to use hardware PWM instead of software PWM. Most fans do not work well with hardware PWM, so it is not recommended to enable this unless there is an electrical requirement to switch at very high speeds. When using hardware PWM the actual cycle time is constrained by the implementation and may be significantly different than the requested cycle_time. The default is False.",
+        "required": false,
+        "default": false
+      },
+      "kick_start_time": {
+        "type": {
+          "kind": "number",
+          "min": 0
+        },
+        "description": "Time (in seconds) to run the fan at full speed when either first enabling or increasing it by more than 50% (helps get the fan spinning). The default is 0.100 seconds.",
+        "required": false,
+        "default": 0.1
+      },
+      "off_below": {
+        "type": {
+          "kind": "number",
+          "min": 0,
+          "max": 1
+        },
+        "description": "The minimum input speed which will power the fan (expressed as a value from 0.0 to 1.0). When a speed lower than off_below is requested the fan will instead be turned off. This setting may be used to prevent fan stalls and to ensure kick starts are effective. The default is 0.0. This setting should be recalibrated whenever max_power is adjusted. To calibrate this setting, start with off_below set to 0.0 and the fan spinning. Gradually lower the fan speed to determine the lowest input speed which reliably drives the fan without stalls. Set off_below to the duty cycle corresponding to this value (for example, 12% -> 0.12) or slightly higher.",
+        "required": false,
+        "default": 0
+      },
+      "tachometer_pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Tachometer input pin for monitoring fan speed. A pullup is generally required. This parameter is optional.",
+        "required": false
+      },
+      "tachometer_ppr": {
+        "type": {
+          "kind": "number",
+          "integer": true,
+          "min": 1
+        },
+        "description": "When tachometer_pin is specified, this is the number of pulses per revolution of the tachometer signal. For a BLDC fan this is normally half the number of poles. The default is 2.",
+        "required": false,
+        "default": 2
+      },
+      "tachometer_poll_interval": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "When tachometer_pin is specified, this is the polling period of the tachometer pin, in seconds. The default is 0.0015, which is fast enough for fans below 10000 RPM at 2 PPR. This must be smaller than 30/(tachometer_ppr*rpm), with some margin, where rpm is the maximum speed (in RPM) of the fan.",
+        "required": false,
+        "default": 0.0015
+      },
+      "enable_pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Optional pin to enable power to the fan. This can be useful for fans with dedicated PWM inputs. Some of these fans stay on even at 0% PWM input. In such a case, the PWM pin can be used normally, and e.g. a ground-switched FET(standard fan pin) can be used to control power to the fan.",
+        "required": false
+      },
+      "fan_speed": {
+        "type": {
+          "kind": "number",
+          "min": 0,
+          "max": 1
+        },
+        "description": "The fan speed (expressed as a value from 0.0 to 1.0) that the fan will be set to when a heater or stepper driver is active. The default is 1.0",
+        "required": false,
+        "default": 1
+      },
+      "idle_timeout": {
+        "type": {
+          "kind": "number",
+          "integer": true,
+          "min": 0
+        },
+        "description": "The amount of time (in seconds) after a stepper driver or heater was active and the fan should be kept running. The default is 30 seconds.",
+        "required": false,
+        "default": 30
+      },
+      "idle_speed": {
+        "type": {
+          "kind": "number",
+          "min": 0,
+          "max": 1
+        },
+        "description": "The fan speed (expressed as a value from 0.0 to 1.0) that the fan will be set to when a heater or stepper driver was active and before the idle_timeout is reached. The default is fan_speed.",
+        "required": false
+      },
+      "heater": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "heater parameter",
+        "required": false
+      },
+      "stepper": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Name of the config section defining the heater/stepper that this fan is associated with. If a comma separated list of heater/stepper names is provided here, then the fan will be enabled when any of the given heaters/steppers are enabled. The default heater is \"extruder\", the default stepper is all of them.",
+        "required": false
+      }
+    }
+  },
+  {
+    "name": "temperature_fan",
+    "description": "Temperature-triggered cooling fans (one may define any number of\nsections with a \"temperature_fan\" prefix). A \"temperature fan\" is a\nfan that will be enabled whenever its associated sensor is above a set\ntemperature. By default, a temperature_fan has a shutdown_speed equal\nto max_power.\n\nSee the [command reference](G-Codes.md#temperature_fan) for additional\ninformation.",
+    "namingKind": "fixed",
+    "params": {
+      "pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "pin parameter",
+        "required": false
+      },
+      "max_power": {
+        "type": {
+          "kind": "number",
+          "max": 1,
+          "above": 0
+        },
+        "description": "The maximum power (expressed as a value from 0.0 to 1.0) that the heater_pin may be set to. The value 1.0 allows the pin to be set fully enabled for extended periods, while a value of 0.5 would allow the pin to be enabled for no more than half the time. This setting may be used to limit the total power output (over extended periods) to the heater. The default is 1.0.",
+        "required": false,
+        "default": 1
+      },
+      "shutdown_speed": {
+        "type": {
+          "kind": "number",
+          "min": 0,
+          "max": 1
+        },
+        "description": "shutdown_speed parameter",
+        "required": false
+      },
+      "cycle_time": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "cycle_time parameter",
+        "required": false,
+        "default": 0.01
+      },
+      "hardware_pwm": {
+        "type": {
+          "kind": "boolean"
+        },
+        "description": "hardware_pwm parameter",
+        "required": false,
+        "default": false
+      },
+      "kick_start_time": {
+        "type": {
+          "kind": "number",
+          "min": 0
+        },
+        "description": "kick_start_time parameter",
+        "required": false,
+        "default": 0.1
+      },
+      "off_below": {
+        "type": {
+          "kind": "number",
+          "min": 0,
+          "max": 1
+        },
+        "description": "off_below parameter",
+        "required": false
+      },
+      "tachometer_pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "tachometer_pin parameter",
+        "required": false
+      },
+      "tachometer_ppr": {
+        "type": {
+          "kind": "number",
+          "integer": true,
+          "min": 1
+        },
+        "description": "tachometer_ppr parameter",
+        "required": false,
+        "default": 2
+      },
+      "tachometer_poll_interval": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "tachometer_poll_interval parameter",
+        "required": false,
+        "default": 0.0015
+      },
+      "enable_pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "enable_pin parameter",
+        "required": false
+      },
+      "sensor_type": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Type of sensor - common thermistors are \"EPCOS 100K B57560G104F\", \"ATC Semitec 104GT-2\", \"ATC Semitec 104NT-4-R025H42G\", \"Generic 3950\",\"Honeywell 100K 135-104LAG-J01\", \"NTC 100K MGB18-104F39050L32\", \"SliceEngineering 450\", and \"TDK NTCG104LH104JT1\". See the \"Temperature sensors\" section for other sensors. This parameter must be provided.",
+        "required": false
+      },
+      "sensor_pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Analog input pin connected to the sensor. This parameter must be provided.",
+        "required": false
+      },
+      "control": {
+        "type": {
+          "kind": "choice",
+          "choices": ["pid", "watermark"]
+        },
+        "description": "Control algorithm (either pid or watermark). This parameter must be provided.",
+        "required": false
+      },
+      "max_delta": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "On 'watermark' controlled heaters this is the number of degrees in Celsius above the target temperature before disabling the heater as well as the number of degrees below the target before re-enabling the heater. The default is 2 degrees Celsius.",
+        "required": false,
+        "default": 2
+      },
+      "min_temp": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "min_temp parameter",
+        "required": false
+      },
+      "max_temp": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "The maximum range of valid temperatures (in Celsius) that the heater must remain within. This controls a safety feature implemented in the micro-controller code - should the measured temperature ever fall outside this range then the micro-controller will go into a shutdown state. This check can help detect some heater and sensor hardware failures. Set this range just wide enough so that reasonable temperatures do not result in an error. These parameters must be provided.",
+        "required": false
+      },
+      "pid_kp": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "pid_kp parameter",
+        "required": false
+      },
+      "pid_ki": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "pid_ki parameter",
+        "required": false
+      },
+      "pid_kd": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "The proportional (pid_Kp), integral (pid_Ki), and derivative (pid_Kd) settings for the PID feedback control system. Klipper evaluates the PID settings with the following general formula: fan_pwm = max_power - (Kp*e + Ki*integral(e) - Kd*derivative(e)) / 255 Where \"e\" is \"target_temperature - measured_temperature\" and \"fan_pwm\" is the requested fan rate with 0.0 being full off and 1.0 being full on. The pid_Kp, pid_Ki, and pid_Kd parameters must be provided when the PID control algorithm is enabled.",
+        "required": false
+      },
+      "pid_deriv_time": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "A time value (in seconds) over which temperature measurements will be smoothed when using the PID control algorithm. This may reduce the impact of measurement noise. The default is 2 seconds.",
+        "required": false,
+        "default": 2
+      },
+      "target_temp": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "A temperature (in Celsius) that will be the target temperature. The default is 40 degrees.",
+        "required": false,
+        "default": 40
+      },
+      "max_speed": {
+        "type": {
+          "kind": "number",
+          "max": 1,
+          "above": 0
+        },
+        "description": "The fan speed (expressed as a value from 0.0 to 1.0) that the fan will be set to when the sensor temperature exceeds the set value. The default is 1.0.",
+        "required": false,
+        "default": 1
+      },
+      "min_speed": {
+        "type": {
+          "kind": "number",
+          "min": 0,
+          "max": 1
+        },
+        "description": "The minimum fan speed (expressed as a value from 0.0 to 1.0) that the fan will be set to for PID temperature fans. The default is 0.3.",
+        "required": false,
+        "default": 0.3
+      },
+      "gcode_id": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "If set, the temperature will be reported in M105 queries using the given id. The default is to not report the temperature via M105.",
+        "required": false
+      },
+      "microsteps": {
+        "type": {
+          "kind": "number",
+          "integer": true,
+          "min": 1
+        },
+        "description": "microsteps parameter",
+        "required": false
+      },
+      "rotation_distance": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "rotation_distance parameter",
+        "required": false
+      },
+      "full_steps_per_rotation": {
+        "type": {
+          "kind": "number",
+          "integer": true,
+          "min": 1
+        },
+        "description": "full_steps_per_rotation parameter",
+        "required": false,
+        "default": 200
+      },
+      "nozzle_diameter": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "Diameter of the nozzle orifice (in mm). This parameter must be provided.",
+        "required": false
+      },
+      "filament_diameter": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "The nominal diameter of the raw filament (in mm) as it enters the extruder. This parameter must be provided.",
+        "required": false
+      },
+      "max_extrude_cross_section": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "Maximum area (in mm^2) of an extrusion cross section (eg, extrusion width multiplied by layer height). This setting prevents excessive amounts of extrusion during relatively small XY moves. If a move requests an extrusion rate that would exceed this value it will cause an error to be returned. The default is: 4.0 * nozzle_diameter^2",
+        "required": false
+      },
+      "instantaneous_corner_velocity": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "The maximum instantaneous velocity change (in mm/s) of the extruder during the junction of two moves. The default is 1mm/s.",
+        "required": false,
+        "default": 1
+      },
+      "max_extrude_only_distance": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "Maximum length (in mm of raw filament) that a retraction or extrude-only move may have. If a retraction or extrude-only move requests a distance greater than this value it will cause an error to be returned. The default is 50mm.",
+        "required": false,
+        "default": 50
+      },
+      "max_extrude_only_velocity": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "max_extrude_only_velocity parameter",
+        "required": false
+      },
+      "max_extrude_only_accel": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "Maximum velocity (in mm/s) and acceleration (in mm/s^2) of the extruder motor for retractions and extrude-only moves. These settings do not have any impact on normal printing moves. If not specified then they are calculated to match the limit an XY printing move with a cross section of 4.0*nozzle_diameter^2 would have.",
+        "required": false
+      },
+      "pressure_advance": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "The amount of raw filament to push into the extruder during extruder acceleration. An equal amount of filament is retracted during deceleration. It is measured in millimeters per millimeter/second. The default is 0, which disables pressure advance.",
+        "required": false,
+        "default": 0
+      },
+      "pressure_advance_smooth_time": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "A time range (in seconds) to use when calculating the average extruder velocity for pressure advance. A larger value results in smoother extruder movements. This parameter may not exceed 200ms. This setting only applies if pressure_advance is non-zero. The default is 0.040 (40 milliseconds). The remaining variables describe the extruder heater.",
+        "required": false,
+        "default": 0.04
+      },
+      "heater_pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "PWM output pin controlling the heater. This parameter must be provided.",
+        "required": false
+      },
+      "pullup_resistor": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "The resistance (in ohms) of the pullup attached to the thermistor. This parameter is only valid when the sensor is a thermistor. The default is 4700 ohms.",
+        "required": false,
+        "default": 4700
+      },
+      "smooth_time": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "A time value (in seconds) over which temperature measurements will be smoothed to reduce the impact of measurement noise. The default is 1 seconds.",
+        "required": false,
+        "default": 1
+      },
+      "pwm_cycle_time": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "Time in seconds for each software PWM cycle of the heater. It is not recommended to set this unless there is an electrical requirement to switch the heater faster than 10 times a second. The default is 0.100 seconds.",
+        "required": false,
+        "default": 0.1
+      },
+      "min_extrude_temp": {
+        "type": {
+          "kind": "number"
+        },
+        "description": "The minimum temperature (in Celsius) at which extruder move commands may be issued. The default is 170 Celsius.",
+        "required": false,
+        "default": 170
+      }
+    }
+  },
+  {
+    "name": "fan_generic",
+    "description": "Manually controlled fan (one may define any number of sections with a\n\"fan_generic\" prefix). The speed of a manually controlled fan is set\nwith the SET_FAN_SPEED [gcode command](G-Codes.md#fan_generic).",
+    "namingKind": "fixed",
+    "params": {
+      "pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Output pin controlling the fan. This parameter must be provided.",
+        "required": false
+      },
+      "max_power": {
+        "type": {
+          "kind": "number",
+          "max": 1,
+          "above": 0
+        },
+        "description": "The maximum power (expressed as a value from 0.0 to 1.0) that the pin may be set to. The value 1.0 allows the pin to be set fully enabled for extended periods, while a value of 0.5 would allow the pin to be enabled for no more than half the time. This setting may be used to limit the total power output (over extended periods) to the fan. If this value is less than 1.0 then fan speed requests will be scaled between zero and max_power (for example, if max_power is .9 and a fan speed of 80% is requested then the fan power will be set to 72%). The default is 1.0.",
+        "required": false,
+        "default": 1
+      },
+      "shutdown_speed": {
+        "type": {
+          "kind": "number",
+          "min": 0,
+          "max": 1
+        },
+        "description": "The desired fan speed (expressed as a value from 0.0 to 1.0) if the micro-controller software enters an error state. The default is 0.",
+        "required": false,
+        "default": 0
+      },
+      "cycle_time": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "The amount of time (in seconds) for each PWM power cycle to the fan. It is recommended this be 10 milliseconds or greater when using software based PWM. The default is 0.010 seconds.",
+        "required": false,
+        "default": 0.01
+      },
+      "hardware_pwm": {
+        "type": {
+          "kind": "boolean"
+        },
+        "description": "Enable this to use hardware PWM instead of software PWM. Most fans do not work well with hardware PWM, so it is not recommended to enable this unless there is an electrical requirement to switch at very high speeds. When using hardware PWM the actual cycle time is constrained by the implementation and may be significantly different than the requested cycle_time. The default is False.",
+        "required": false,
+        "default": false
+      },
+      "kick_start_time": {
+        "type": {
+          "kind": "number",
+          "min": 0
+        },
+        "description": "Time (in seconds) to run the fan at full speed when either first enabling or increasing it by more than 50% (helps get the fan spinning). The default is 0.100 seconds.",
+        "required": false,
+        "default": 0.1
+      },
+      "off_below": {
+        "type": {
+          "kind": "number",
+          "min": 0,
+          "max": 1
+        },
+        "description": "The minimum input speed which will power the fan (expressed as a value from 0.0 to 1.0). When a speed lower than off_below is requested the fan will instead be turned off. This setting may be used to prevent fan stalls and to ensure kick starts are effective. The default is 0.0. This setting should be recalibrated whenever max_power is adjusted. To calibrate this setting, start with off_below set to 0.0 and the fan spinning. Gradually lower the fan speed to determine the lowest input speed which reliably drives the fan without stalls. Set off_below to the duty cycle corresponding to this value (for example, 12% -> 0.12) or slightly higher.",
+        "required": false,
+        "default": 0
+      },
+      "tachometer_pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Tachometer input pin for monitoring fan speed. A pullup is generally required. This parameter is optional.",
+        "required": false
+      },
+      "tachometer_ppr": {
+        "type": {
+          "kind": "number",
+          "integer": true,
+          "min": 1
+        },
+        "description": "When tachometer_pin is specified, this is the number of pulses per revolution of the tachometer signal. For a BLDC fan this is normally half the number of poles. The default is 2.",
+        "required": false,
+        "default": 2
+      },
+      "tachometer_poll_interval": {
+        "type": {
+          "kind": "number",
+          "above": 0
+        },
+        "description": "When tachometer_pin is specified, this is the polling period of the tachometer pin, in seconds. The default is 0.0015, which is fast enough for fans below 10000 RPM at 2 PPR. This must be smaller than 30/(tachometer_ppr*rpm), with some margin, where rpm is the maximum speed (in RPM) of the fan.",
+        "required": false,
+        "default": 0.0015
+      },
+      "enable_pin": {
+        "type": {
+          "kind": "string"
+        },
+        "description": "Optional pin to enable power to the fan. This can be useful for fans with dedicated PWM inputs. Some of these fans stay on even at 0% PWM input. In such a case, the PWM pin can be used normally, and e.g. a ground-switched FET(standard fan pin) can be used to control power to the fan.",
+        "required": false
+      }
+    }
+  }
 ]

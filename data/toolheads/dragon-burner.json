@@ -5,17 +5,8 @@
   "description": "Compact toolhead for the Voron V0.2 using dual 4010 blower fans for part cooling and a single 3010 hotend fan. Supports a wide range of hotends and extruders with screwless fan attachment. Also has adapter mounts for Voron Trident, V2.4, Switchwire, and Legacy printers.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron V0.2",
-      "Voron Trident",
-      "Voron 2.4",
-      "Voron Switchwire",
-      "Voron Legacy"
-    ],
-    "railSystems": [
-      "MGN7H",
-      "MGN9C"
-    ],
+    "targetPrinters": ["Voron V0.2", "Voron Trident", "Voron 2.4", "Voron Switchwire", "Voron Legacy"],
+    "railSystems": ["MGN7H", "MGN9C"],
     "hotendMounts": [
       "Phaetus Dragon SF",
       "Phaetus Dragon HF",
@@ -53,15 +44,8 @@
       "WristWatch G2",
       "Papilio Lite"
     ],
-    "probeMounts": [
-      "SlideSwipe",
-      "Klicky",
-      "ZeroClick"
-    ],
-    "fanMounts": [
-      "2x 4010 blower (part cooling)",
-      "3010 axial (hotend)"
-    ]
+    "probeMounts": ["SlideSwipe", "Klicky", "ZeroClick"],
+    "fanMounts": ["2x 4010 blower (part cooling)", "3010 axial (hotend)"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -87,10 +71,7 @@
       "type": "github"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "relatedArticles": [
     {
       "category": "extruders",

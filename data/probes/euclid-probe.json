@@ -29,12 +29,7 @@
     "mountType": "magnetic dock (6mm magnets)"
   },
   "klipperSection": "probe",
-  "unverified": [
-    "currentDraw",
-    "weight",
-    "dimensions",
-    "repeatability"
-  ],
+  "unverified": ["currentDraw", "weight", "dimensions", "repeatability"],
   "references": [
     {
       "label": "Euclid Probe GitHub Repository",

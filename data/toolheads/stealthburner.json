@@ -5,15 +5,8 @@
   "description": "Voron Design's flagship toolhead for Voron 2.4, Trident, Switchwire, and Legacy printers. Features an integrated Clockwork 2 extruder with dual-gear BMG drive, a single 5015 part cooling blower, a 4010 hotend fan, and RGBW Neopixel LEDs for status indication and nozzle illumination.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron 2.4",
-      "Voron Trident",
-      "Voron Switchwire",
-      "Voron Legacy"
-    ],
-    "railSystems": [
-      "MGN12H"
-    ],
+    "targetPrinters": ["Voron 2.4", "Voron Trident", "Voron Switchwire", "Voron Legacy"],
+    "railSystems": ["MGN12H"],
     "hotendMounts": [
       "Phaetus Dragon SF",
       "Phaetus Dragon HF",
@@ -27,19 +20,9 @@
       "E3D V6",
       "E3D Revo Six"
     ],
-    "extruderMounts": [
-      "Clockwork 2",
-      "Clockwork 1"
-    ],
-    "probeMounts": [
-      "Voron Tap",
-      "Klicky",
-      "Euclid"
-    ],
-    "fanMounts": [
-      "5015 blower (part cooling)",
-      "4010 axial (hotend)"
-    ]
+    "extruderMounts": ["Clockwork 2", "Clockwork 1"],
+    "probeMounts": ["Voron Tap", "Klicky", "Euclid"],
+    "fanMounts": ["5015 blower (part cooling)", "4010 axial (hotend)"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -68,10 +51,7 @@
       "type": "product"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "relatedArticles": [
     {
       "category": "hotends",

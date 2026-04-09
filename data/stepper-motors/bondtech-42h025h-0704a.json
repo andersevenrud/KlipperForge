@@ -19,6 +19,10 @@
     "shaftLength": 24
   },
   "references": [
-    { "label": "Bondtech product page", "url": "https://www.bondtech.se/product/nema17-25mm-stepper-motor-18mm-o-shaft/", "type": "product" }
+    {
+      "label": "Bondtech product page",
+      "url": "https://www.bondtech.se/product/nema17-25mm-stepper-motor-18mm-o-shaft/",
+      "type": "product"
+    }
   ]
 }

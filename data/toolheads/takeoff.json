@@ -5,16 +5,9 @@
   "description": "The only fully open-source SLM (selective laser melting) metal toolhead for Voron printers. Uses dual 3628 fans with a Chube hotend and features an innovative belt self-deflection design that results in no X-axis travel loss.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron 2.4",
-      "Voron Trident",
-      "Monolith",
-      "DoomCube (4040 frame)"
-    ],
+    "targetPrinters": ["Voron 2.4", "Voron Trident", "Monolith", "DoomCube (4040 frame)"],
     "railSystems": [],
-    "hotendMounts": [
-      "Chube (formerly Jaguar)"
-    ],
+    "hotendMounts": ["Chube (formerly Jaguar)"],
     "extruderMounts": [
       "LGX Lite Pro",
       "Vz-Hextrudort",
@@ -25,12 +18,8 @@
       "DFA/Orbital Ascender",
       "A3DP FXD"
     ],
-    "probeMounts": [
-      "Beacon"
-    ],
-    "fanMounts": [
-      "Dual 3628 fans"
-    ]
+    "probeMounts": ["Beacon"],
+    "fanMounts": ["Dual 3628 fans"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -58,10 +47,7 @@
       "type": "product"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "relatedArticles": [
     {
       "category": "extruders",

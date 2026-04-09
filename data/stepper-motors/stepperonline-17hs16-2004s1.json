@@ -20,6 +20,10 @@
   },
   "connectorType": "JST-PH 6-pin",
   "references": [
-    { "label": "StepperOnline product page", "url": "https://www.omc-stepperonline.com/nema-17-bipolar-45ncm-64oz-in-2a-42x42x40mm-4-wires-w-1m-cable-connector-17hs16-2004s1", "type": "product" }
+    {
+      "label": "StepperOnline product page",
+      "url": "https://www.omc-stepperonline.com/nema-17-bipolar-45ncm-64oz-in-2a-42x42x40mm-4-wires-w-1m-cable-connector-17hs16-2004s1",
+      "type": "product"
+    }
   ]
 }

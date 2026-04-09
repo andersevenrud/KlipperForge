@@ -5,14 +5,8 @@
   "description": "A lightweight and stiff printhead designed for VzBoT printers, available in both printed and CNC-aluminum variants. The CNC version weighs just 27g (full aluminum) or 22g (hybrid carbon fiber and aluminum), and features a height-adjustable fan duct that allows configuration changes without reprinting components.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "VzBoT 235",
-      "VzBoT 330",
-      "Rat Rig V-Core 3"
-    ],
-    "railSystems": [
-      "MGN9"
-    ],
+    "targetPrinters": ["VzBoT 235", "VzBoT 330", "Rat Rig V-Core 3"],
+    "railSystems": ["MGN9"],
     "hotendMounts": [
       "Dragon",
       "Rapido",
@@ -24,18 +18,9 @@
       "Volcomosq",
       "DropEffect NeXt-G"
     ],
-    "extruderMounts": [
-      "Vz-HextrudORT",
-      "Orbiter v2.0",
-      "Sherpa Mini",
-      "Sherpa Micro",
-      "Bowden",
-      "LGX Lite"
-    ],
+    "extruderMounts": ["Vz-HextrudORT", "Orbiter v2.0", "Sherpa Mini", "Sherpa Micro", "Bowden", "LGX Lite"],
     "probeMounts": [],
-    "fanMounts": [
-      "Height-adjustable fan duct"
-    ]
+    "fanMounts": ["Height-adjustable fan duct"]
   },
   "physicalSpecs": {
     "weight": null,

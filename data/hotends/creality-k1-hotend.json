@@ -19,10 +19,7 @@
   "nozzleSpecs": {
     "system": "Creality K1 proprietary quick-swap",
     "includedNozzleSizeMm": 0.4,
-    "compatibleNozzles": [
-      "Creality K1 brass nozzles",
-      "Creality K1 hardened steel nozzles"
-    ],
+    "compatibleNozzles": ["Creality K1 brass nozzles", "Creality K1 hardened steel nozzles"],
     "maxFlowRate": "~32mm³/s"
   },
   "physicalSpecs": {

@@ -37,8 +37,16 @@
   ],
   "references": [
     { "label": "GitHub Repository", "url": "https://github.com/ArmoredTurtle/BoxTurtle", "type": "github" },
-    { "label": "AFC-Klipper-Add-On (Klipper Driver)", "url": "https://github.com/ArmoredTurtle/AFC-Klipper-Add-On", "type": "github" },
-    { "label": "Documentation", "url": "https://www.armoredturtle.xyz/docs/boxturtle/index.html", "type": "documentation" }
+    {
+      "label": "AFC-Klipper-Add-On (Klipper Driver)",
+      "url": "https://github.com/ArmoredTurtle/AFC-Klipper-Add-On",
+      "type": "github"
+    },
+    {
+      "label": "Documentation",
+      "url": "https://www.armoredturtle.xyz/docs/boxturtle/index.html",
+      "type": "documentation"
+    }
   ],
   "unverified": ["material"]
 }

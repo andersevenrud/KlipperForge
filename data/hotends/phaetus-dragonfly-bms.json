@@ -17,11 +17,7 @@
   "nozzleSpecs": {
     "system": "V6 threaded (M6)",
     "includedNozzleSizeMm": 0.4,
-    "compatibleNozzles": [
-      "E3D V6 brass nozzles",
-      "E3D V6 hardened steel nozzles",
-      "third-party M6 V6-style nozzles"
-    ],
+    "compatibleNozzles": ["E3D V6 brass nozzles", "E3D V6 hardened steel nozzles", "third-party M6 V6-style nozzles"],
     "maxFlowRate": "~18mm³/s"
   },
   "physicalSpecs": {
@@ -48,11 +44,7 @@
       "type": "documentation"
     }
   ],
-  "unverified": [
-    "weight",
-    "maxFlowRate",
-    "retraction"
-  ],
+  "unverified": ["weight", "maxFlowRate", "retraction"],
   "relatedArticles": [
     {
       "category": "toolheads",

@@ -1,82 +1,82 @@
 {
-    "id": "btt-mmb-can-v1.0",
-    "name": "Bigtreetech MMB CAN V1.0",
-    "mcu": "STM32G0B1",
-    "flash": {
-        "dfuModeInstructions": "Hold the BOOT button and connect the board via USB Type-C to enter DFU mode."
+  "id": "btt-mmb-can-v1.0",
+  "name": "Bigtreetech MMB CAN V1.0",
+  "mcu": "STM32G0B1",
+  "flash": {
+    "dfuModeInstructions": "Hold the BOOT button and connect the board via USB Type-C to enter DFU mode."
+  },
+  "pins": [
+    "PA0",
+    "PA1",
+    "PA2",
+    "PA3",
+    "PA4",
+    "PA8",
+    "PA9",
+    "PA10",
+    "PA11",
+    "PA12",
+    "PA15",
+    "PB0",
+    "PB1",
+    "PB2",
+    "PB3",
+    "PB4",
+    "PB5",
+    "PB6",
+    "PB7",
+    "PB8",
+    "PB9",
+    "PB10",
+    "PB11",
+    "PB12",
+    "PB13",
+    "PB14",
+    "PB15",
+    "PC6",
+    "PC7",
+    "PC13",
+    "PC14",
+    "PC15",
+    "PD0",
+    "PD1",
+    "PD2",
+    "PD3"
+  ],
+  "references": [
+    {
+      "label": "GitHub Repository",
+      "url": "https://github.com/bigtreetech/MMB",
+      "type": "github"
     },
-    "pins": [
-        "PA0",
-        "PA1",
-        "PA2",
-        "PA3",
-        "PA4",
-        "PA8",
-        "PA9",
-        "PA10",
-        "PA11",
-        "PA12",
-        "PA15",
-        "PB0",
-        "PB1",
-        "PB2",
-        "PB3",
-        "PB4",
-        "PB5",
-        "PB6",
-        "PB7",
-        "PB8",
-        "PB9",
-        "PB10",
-        "PB11",
-        "PB12",
-        "PB13",
-        "PB14",
-        "PB15",
-        "PC6",
-        "PC7",
-        "PC13",
-        "PC14",
-        "PC15",
-        "PD0",
-        "PD1",
-        "PD2",
-        "PD3"
-    ],
-    "references": [
-        {
-            "label": "GitHub Repository",
-            "url": "https://github.com/bigtreetech/MMB",
-            "type": "github"
-        },
-        {
-            "label": "Wiki",
-            "url": "https://global.bttwiki.com/MMB%20CAN%20V1.0.html",
-            "type": "wiki"
-        },
-        {
-            "label": "Schematic",
-            "url": "https://github.com/bigtreetech/MMB/blob/master/Hardware/V1.0/BIGTREETECH%20MMB%20CAN%20V1.0-SCH.pdf",
-            "type": "schematic"
-        },
-        {
-            "label": "Dimensions",
-            "url": "https://github.com/bigtreetech/MMB/blob/master/Hardware/V1.0/BIGTREETECH%20MMB%20CAN%20V1.0-SIZE.pdf",
-            "type": "dimensions"
-        },
-        {
-            "label": "User Manual",
-            "url": "https://github.com/bigtreetech/MMB/blob/master/BIGTREETECH%20MMB%20CAN%20V1.0&V1.1%20User%20Manual.pdf",
-            "type": "manual"
-        }
-    ],
-    "drivers": {
-        "count": 4,
-        "connector": "ez"
+    {
+      "label": "Wiki",
+      "url": "https://global.bttwiki.com/MMB%20CAN%20V1.0.html",
+      "type": "wiki"
     },
-    "dimensions": {
-        "width": 125,
-        "height": 54
+    {
+      "label": "Schematic",
+      "url": "https://github.com/bigtreetech/MMB/blob/master/Hardware/V1.0/BIGTREETECH%20MMB%20CAN%20V1.0-SCH.pdf",
+      "type": "schematic"
     },
-    "maxMotorVoltage": 24
+    {
+      "label": "Dimensions",
+      "url": "https://github.com/bigtreetech/MMB/blob/master/Hardware/V1.0/BIGTREETECH%20MMB%20CAN%20V1.0-SIZE.pdf",
+      "type": "dimensions"
+    },
+    {
+      "label": "User Manual",
+      "url": "https://github.com/bigtreetech/MMB/blob/master/BIGTREETECH%20MMB%20CAN%20V1.0&V1.1%20User%20Manual.pdf",
+      "type": "manual"
+    }
+  ],
+  "drivers": {
+    "count": 4,
+    "connector": "ez"
+  },
+  "dimensions": {
+    "width": 125,
+    "height": 54
+  },
+  "maxMotorVoltage": 24
 }

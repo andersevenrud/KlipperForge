@@ -20,9 +20,7 @@
     "dimensions": "1.35mm × 2.0mm glass bead",
     "leadType": "tinned copper"
   },
-  "unverified": [
-    "dimensions"
-  ],
+  "unverified": ["dimensions"],
   "references": [
     {
       "label": "ATC Semitec 104GT-2 Datasheet",

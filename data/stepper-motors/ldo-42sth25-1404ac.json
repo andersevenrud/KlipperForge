@@ -20,6 +20,10 @@
   },
   "connectorType": "JST-PH 4-pin",
   "references": [
-    { "label": "LDO 42mm Hybrid Stepper Series", "url": "http://ldomotors.com/products/show/42mm-hybrid-stepper-series", "type": "product" }
+    {
+      "label": "LDO 42mm Hybrid Stepper Series",
+      "url": "http://ldomotors.com/products/show/42mm-hybrid-stepper-series",
+      "type": "product"
+    }
   ]
 }

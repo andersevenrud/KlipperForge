@@ -37,12 +37,7 @@
       "type": "documentation"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions",
-    "maxFeedRate",
-    "gearRatio"
-  ],
+  "unverified": ["weight", "dimensions", "maxFeedRate", "gearRatio"],
   "relatedArticles": [
     {
       "category": "toolheads",

@@ -12,15 +12,7 @@
   "performanceSpecs": {
     "repeatability": "±0.005mm",
     "triggerDistance": "~4mm (M12), ~8mm (M18)",
-    "bedCompatibility": [
-      "spring steel sheet",
-      "aluminum",
-      "metallic surfaces",
-      "glass",
-      "PEI",
-      "garolite",
-      "FR4"
-    ],
+    "bedCompatibility": ["spring steel sheet", "aluminum", "metallic surfaces", "glass", "PEI", "garolite", "FR4"],
     "temperatureCompensation": false
   },
   "physicalSpecs": {

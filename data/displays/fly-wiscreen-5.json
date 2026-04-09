@@ -22,11 +22,7 @@
     "processor": "Allwinner T113-S3 (dual-core Cortex-A7)",
     "wifi": true
   },
-  "features": [
-    "Standalone WiFi display",
-    "5 inch touchscreen",
-    "No direct connection to host required"
-  ],
+  "features": ["Standalone WiFi display", "5 inch touchscreen", "No direct connection to host required"],
   "unverified": ["dimensions", "weight"],
   "references": [
     {

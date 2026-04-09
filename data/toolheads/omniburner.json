@@ -5,24 +5,10 @@
   "description": "A universal Mini StealthBurner adaptation that supports multiple extruders in a single printed part via clever mounting point design. Uses sliding hex nuts and shared screw holes so users can swap between five different extruders in minutes without rewiring, major disassembly, or reprinting.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron V0",
-      "Voron V0.2",
-      "Printers for Ants"
-    ],
-    "railSystems": [
-      "MGN7H",
-      "MGN9H"
-    ],
+    "targetPrinters": ["Voron V0", "Voron V0.2", "Printers for Ants"],
+    "railSystems": ["MGN7H", "MGN9H"],
     "hotendMounts": [],
-    "extruderMounts": [
-      "Papilio",
-      "Papilio Lite",
-      "Sherpa Mini",
-      "Orbiter V2",
-      "LGX Lite",
-      "TBG Lite"
-    ],
+    "extruderMounts": ["Papilio", "Papilio Lite", "Sherpa Mini", "Orbiter V2", "LGX Lite", "TBG Lite"],
     "probeMounts": [],
     "fanMounts": []
   },
@@ -47,15 +33,7 @@
       "type": "product"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions",
-    "hotendMounts",
-    "probeMounts",
-    "fanMounts",
-    "targetPrinters",
-    "railSystems"
-  ],
+  "unverified": ["weight", "dimensions", "hotendMounts", "probeMounts", "fanMounts", "targetPrinters", "railSystems"],
   "relatedArticles": [
     {
       "category": "extruders",

@@ -5,13 +5,8 @@
   "description": "A compact community variant of the Mini StealthBurner, roughly 5/8 the size of the official design. Uses a modular core-and-shroud architecture where the extruder and hotend mount to a core piece and the shroud slides on, supporting over 13 extruders and 24 hotend configurations with dual 4010 blowers and improved airflow.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron V0.1",
-      "Voron V0.2"
-    ],
-    "railSystems": [
-      "MGN9H"
-    ],
+    "targetPrinters": ["Voron V0.1", "Voron V0.2"],
+    "railSystems": ["MGN9H"],
     "hotendMounts": [
       "Phaetus Rapido HF",
       "Phaetus Rapido UHF",
@@ -32,16 +27,8 @@
       "WristWatch G2SA",
       "Creality K1"
     ],
-    "probeMounts": [
-      "Klicky",
-      "Omron",
-      "Beacon",
-      "Cartographer"
-    ],
-    "fanMounts": [
-      "2x 4010 blower (part cooling)",
-      "1x 3010 or 2510 axial (hotend)"
-    ]
+    "probeMounts": ["Klicky", "Omron", "Beacon", "Cartographer"],
+    "fanMounts": ["2x 4010 blower (part cooling)", "1x 3010 or 2510 axial (hotend)"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -65,10 +52,7 @@
       "type": "github"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "relatedArticles": [
     {
       "category": "extruders",

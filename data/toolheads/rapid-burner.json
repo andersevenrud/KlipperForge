@@ -5,24 +5,9 @@
   "description": "Toolhead specifically designed for ultra-high-flow hotends including Rapido UHF, Dragon UHF, and Goliath hotends. Features CFD-tuned ducts with 60% larger fan coverage than Dragon Burner. Primarily for Voron V0.2 with additional mounts for Trident, V2.4, and Switchwire.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron V0.2",
-      "Voron Trident",
-      "Voron 2.4",
-      "Voron Switchwire",
-      "Voron Legacy"
-    ],
-    "railSystems": [
-      "MGN7H",
-      "MGN9C"
-    ],
-    "hotendMounts": [
-      "Phaetus Rapido UHF",
-      "Phaetus Dragon UHF",
-      "Goliath Air",
-      "Goliath Water",
-      "E3D V6 Volcano"
-    ],
+    "targetPrinters": ["Voron V0.2", "Voron Trident", "Voron 2.4", "Voron Switchwire", "Voron Legacy"],
+    "railSystems": ["MGN7H", "MGN9C"],
+    "hotendMounts": ["Phaetus Rapido UHF", "Phaetus Dragon UHF", "Goliath Air", "Goliath Water", "E3D V6 Volcano"],
     "extruderMounts": [
       "Sherpa Mini",
       "Sherpa Micro",
@@ -37,15 +22,8 @@
       "RoundTrip",
       "Galileo G2SA"
     ],
-    "probeMounts": [
-      "SlideSwipe",
-      "Klicky",
-      "ZeroClick"
-    ],
-    "fanMounts": [
-      "2x 4010 blower (part cooling)",
-      "3010 axial (hotend)"
-    ]
+    "probeMounts": ["SlideSwipe", "Klicky", "ZeroClick"],
+    "fanMounts": ["2x 4010 blower (part cooling)", "3010 axial (hotend)"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -71,10 +49,7 @@
       "type": "github"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "relatedArticles": [
     {
       "category": "extruders",

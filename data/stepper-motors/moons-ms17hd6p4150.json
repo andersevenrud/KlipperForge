@@ -19,6 +19,10 @@
     "shaftLength": 24
   },
   "references": [
-    { "label": "Moons' product page", "url": "https://www.moonsindustries.com/series/nema-17-standard-hybrid-stepper-motors-b020105", "type": "product" }
+    {
+      "label": "Moons' product page",
+      "url": "https://www.moonsindustries.com/series/nema-17-standard-hybrid-stepper-motors-b020105",
+      "type": "product"
+    }
   ]
 }

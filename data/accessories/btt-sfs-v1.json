@@ -11,10 +11,7 @@
     "filamentDiameter": 1.75
   },
   "firmware": ["Klipper", "Marlin", "RRF"],
-  "features": [
-    "Encoder-based detection",
-    "7mm detection length"
-  ],
+  "features": ["Encoder-based detection", "7mm detection length"],
   "references": [
     {
       "label": "BIQU Store - SFS V1.0",

@@ -5,12 +5,8 @@
   "description": "Voron Design's official compact toolhead for the Voron V0.2. Features a low-mass direct-drive extruder using BMG gears and a 20mm pancake motor, with improved part cooling ducts optimized for the smaller Voron Zero platform.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron V0.2"
-    ],
-    "railSystems": [
-      "MGN7H"
-    ],
+    "targetPrinters": ["Voron V0.2"],
+    "railSystems": ["MGN7H"],
     "hotendMounts": [
       "E3D Revo Voron",
       "Phaetus Dragon SF",
@@ -19,14 +15,9 @@
       "DropEffect XG",
       "Creality Spider Pro"
     ],
-    "extruderMounts": [
-      "Mini StealthBurner direct drive"
-    ],
+    "extruderMounts": ["Mini StealthBurner direct drive"],
     "probeMounts": [],
-    "fanMounts": [
-      "4010 blower (part cooling)",
-      "3010 axial (hotend)"
-    ]
+    "fanMounts": ["4010 blower (part cooling)", "3010 axial (hotend)"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -48,11 +39,7 @@
       "type": "github"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions",
-    "fanMounts"
-  ],
+  "unverified": ["weight", "dimensions", "fanMounts"],
   "relatedArticles": [
     {
       "category": "hotends",

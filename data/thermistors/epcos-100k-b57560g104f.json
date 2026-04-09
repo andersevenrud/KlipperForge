@@ -21,9 +21,7 @@
     "dimensions": "2.3mm × 4.1mm",
     "leadType": "dumet wire (copper-clad FeNi)"
   },
-  "unverified": [
-    "responseTime"
-  ],
+  "unverified": ["responseTime"],
   "references": [
     {
       "label": "TDK/EPCOS Product Page",

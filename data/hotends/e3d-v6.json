@@ -56,11 +56,7 @@
       "type": "documentation"
     }
   ],
-  "unverified": [
-    "weight",
-    "heatUpTime",
-    "maxFlowRate"
-  ],
+  "unverified": ["weight", "heatUpTime", "maxFlowRate"],
   "relatedArticles": [
     {
       "category": "printers",

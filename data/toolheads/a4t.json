@@ -5,14 +5,8 @@
   "description": "Another 4010 Toolhead (A4T) for Voron front-rail printers, built around dual 4010 blower fans with CFD-optimized ducts and a 2510 hotend fan. Compatible with Xol-Carriage and standard Voron CW2/Tap carriage, offering wide hotend and extruder modularity with Neopixel LED support.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron 2.4",
-      "Voron Trident"
-    ],
-    "railSystems": [
-      "MGN12H",
-      "MGN9H"
-    ],
+    "targetPrinters": ["Voron 2.4", "Voron Trident"],
+    "railSystems": ["MGN12H", "MGN9H"],
     "hotendMounts": [
       "Phaetus Dragon HF",
       "Phaetus Dragon UHF",
@@ -34,18 +28,8 @@
       "WristWatch G2",
       "Orbiter v2.0"
     ],
-    "probeMounts": [
-      "Voron Tap",
-      "Beacon",
-      "Klicky",
-      "Klicky PCB",
-      "Euclid",
-      "BTT Eddy"
-    ],
-    "fanMounts": [
-      "2x 4010 blower (part cooling)",
-      "2510 axial (hotend)"
-    ]
+    "probeMounts": ["Voron Tap", "Beacon", "Klicky", "Klicky PCB", "Euclid", "BTT Eddy"],
+    "fanMounts": ["2x 4010 blower (part cooling)", "2510 axial (hotend)"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -69,10 +53,7 @@
       "type": "github"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "relatedArticles": [
     {
       "category": "extruders",

@@ -12,14 +12,7 @@
   "performanceSpecs": {
     "repeatability": "±0.001mm (24°C), ±0.003mm (60°C)",
     "triggerDistance": "contact-based",
-    "bedCompatibility": [
-      "glass",
-      "PEI",
-      "textured PEI",
-      "magnetic flex plates",
-      "BuildTak",
-      "aluminum"
-    ],
+    "bedCompatibility": ["glass", "PEI", "textured PEI", "magnetic flex plates", "BuildTak", "aluminum"],
     "temperatureCompensation": false
   },
   "physicalSpecs": {

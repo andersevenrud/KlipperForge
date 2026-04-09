@@ -19,11 +19,7 @@
   "nozzleSpecs": {
     "system": "V6 threaded (M6)",
     "includedNozzleSizeMm": 0.4,
-    "compatibleNozzles": [
-      "E3D V6 brass",
-      "E3D V6 hardened steel",
-      "third-party M6 V6-style nozzles"
-    ],
+    "compatibleNozzles": ["E3D V6 brass", "E3D V6 hardened steel", "third-party M6 V6-style nozzles"],
     "maxFlowRate": "~20mm³/s"
   },
   "physicalSpecs": {
@@ -48,12 +44,7 @@
       "type": "documentation"
     }
   ],
-  "unverified": [
-    "heaterPower",
-    "maxFlowRate",
-    "retraction",
-    "thermistorType"
-  ],
+  "unverified": ["heaterPower", "maxFlowRate", "retraction", "thermistorType"],
   "relatedArticles": [
     {
       "category": "thermistors",

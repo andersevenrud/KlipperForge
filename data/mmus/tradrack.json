@@ -38,9 +38,17 @@
   ],
   "references": [
     { "label": "GitHub Repository", "url": "https://github.com/Annex-Engineering/TradRack", "type": "github" },
-    { "label": "Kalico/Klipper Module", "url": "https://github.com/Annex-Engineering/TradRack/tree/main/Kalico", "type": "github" },
+    {
+      "label": "Kalico/Klipper Module",
+      "url": "https://github.com/Annex-Engineering/TradRack/tree/main/Kalico",
+      "type": "github"
+    },
     { "label": "Happy Hare (Alternative Driver)", "url": "https://github.com/moggieuk/Happy-Hare", "type": "github" },
-    { "label": "BOM / Sourcing Spreadsheet", "url": "https://docs.google.com/spreadsheets/d/1SKBtkgSVPqqGEjftI6v6i6T5Bh3Phx-4YXsJYH17ggs/", "type": "documentation" }
+    {
+      "label": "BOM / Sourcing Spreadsheet",
+      "url": "https://docs.google.com/spreadsheets/d/1SKBtkgSVPqqGEjftI6v6i6T5Bh3Phx-4YXsJYH17ggs/",
+      "type": "documentation"
+    }
   ],
   "unverified": ["filamentCapacity", "bufferType"]
 }

@@ -5,14 +5,8 @@
   "description": "Modular toolhead evolved from the Mantis Xol 2, designed for Voron 2.4, Trident, and other CoreXY printers. Supports a wide range of hotends, extruders, and probes with a focus on modularity, serviceability, and easy installation. Uses dual 4010 blower fans for part cooling with CFD-optimized ducts.",
   "toolheadType": "modular",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron 2.4",
-      "Voron Trident"
-    ],
-    "railSystems": [
-      "MGN12H",
-      "MGN9H"
-    ],
+    "targetPrinters": ["Voron 2.4", "Voron Trident"],
+    "railSystems": ["MGN12H", "MGN9H"],
     "hotendMounts": [
       "Phaetus Dragon SF",
       "Phaetus Dragon HF",
@@ -38,18 +32,8 @@
       "LGX Lite",
       "Double Folded Ascender"
     ],
-    "probeMounts": [
-      "Voron Tap",
-      "Klicky",
-      "Klicky PCB",
-      "Beacon",
-      "Euclid",
-      "BTT Eddy"
-    ],
-    "fanMounts": [
-      "2x 4010 blower (part cooling)",
-      "2510 axial (hotend)"
-    ]
+    "probeMounts": ["Voron Tap", "Klicky", "Klicky PCB", "Beacon", "Euclid", "BTT Eddy"],
+    "fanMounts": ["2x 4010 blower (part cooling)", "2510 axial (hotend)"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -74,10 +58,7 @@
       "type": "github"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "relatedArticles": [
     {
       "category": "extruders",

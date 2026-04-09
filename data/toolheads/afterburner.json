@@ -5,14 +5,8 @@
   "description": "Voron Design's legacy toolhead and predecessor to the StealthBurner. Designed for Voron 2.4, Trident, and Switchwire with the Clockwork 1 extruder using a repackaged BMG dual-gear drive. Still in use on older builds but superseded by the StealthBurner for new builds.",
   "toolheadType": "integrated",
   "compatibilitySpecs": {
-    "targetPrinters": [
-      "Voron 2.4",
-      "Voron Trident",
-      "Voron Switchwire"
-    ],
-    "railSystems": [
-      "MGN12H"
-    ],
+    "targetPrinters": ["Voron 2.4", "Voron Trident", "Voron Switchwire"],
+    "railSystems": ["MGN12H"],
     "hotendMounts": [
       "Phaetus Dragon SF",
       "Phaetus Dragon HF",
@@ -24,17 +18,9 @@
       "E3D V6",
       "Slice Mosquito"
     ],
-    "extruderMounts": [
-      "Clockwork 1"
-    ],
-    "probeMounts": [
-      "Klicky",
-      "Euclid"
-    ],
-    "fanMounts": [
-      "5015 blower (part cooling)",
-      "4010 axial (hotend)"
-    ]
+    "extruderMounts": ["Clockwork 1"],
+    "probeMounts": ["Klicky", "Euclid"],
+    "fanMounts": ["5015 blower (part cooling)", "4010 axial (hotend)"]
   },
   "physicalSpecs": {
     "weight": null,
@@ -57,10 +43,7 @@
       "type": "github"
     }
   ],
-  "unverified": [
-    "weight",
-    "dimensions"
-  ],
+  "unverified": ["weight", "dimensions"],
   "relatedArticles": [
     {
       "category": "hotends",
