@@ -6,7 +6,7 @@ All definitions live in `data/` as JSON files. Each directory has an `index.json
 |---|---|
 | `printers/` | Printer presets (kinematics, bed size, stepper config) |
 | `mcu-boards/` | MCU board definitions (pins, interfaces, MCU type) |
-| `equipment/` | Peripheral hardware — stepper drivers, toolheads, etc. |
+| `equipment/` | Peripheral hardware — stepper drivers, etc. |
 | `accessories/` | Filament sensors, runout detectors |
 | `displays/` | Touchscreens and display modules |
 | `extruders/` | Extruder assemblies (BMG, LGX, Hemera, etc.) |
@@ -17,6 +17,8 @@ All definitions live in `data/` as JSON files. Each directory has an `index.json
 | `probes/` | Bed probes (BLTouch, Beacon, inductive, etc.) |
 | `stepper-motors/` | Stepper motor specifications |
 | `thermistors/` | Thermistor profiles and coefficients |
+| `toolheads/` | Toolhead assemblies (Stealthburner, Dragon Burner, etc.) |
+| `mmus/` | Multi-material units (ERCF, Box Turtle, Tradrack, etc.) |
 | `macros/` | G-code macro templates grouped by category |
 | `firmware-presets/` | Kconfig options per MCU family for firmware compilation |
 | `pcb-layouts/` | Board pin-out visualizations extracted from annotated SVGs |

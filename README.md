@@ -52,6 +52,7 @@ See [docs/contributing.md](docs/contributing.md) for development commands and co
 ## Documentation
 
 - [Architecture](docs/architecture.md)
+- [Deployment](docs/deployment.md)
 - [Contributing](docs/contributing.md)
 - [Adding Definitions](docs/adding-definitions.md)
 

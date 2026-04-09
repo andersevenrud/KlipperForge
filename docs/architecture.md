@@ -23,16 +23,18 @@ KlipperForge is an offline-first web application for generating Klipper 3D print
 ```
 KlipperForge/
 ├── apps/
-│   ├── klipperforge/         # Vite + React frontend
+│   ├── klipperforge/         # Vite + React frontend (main app)
 │   ├── firmware/             # Bun + Hono firmware build server
-│   ├── configs/              # Config sharing/browsing app
-│   └── pcb/                  # PCB layout editor
+│   ├── configs/              # Config storage backend (GitHub OAuth)
+│   └── pcb/                  # PCB layout editor (standalone tool)
 ├── packages/
-│   ├── klipper-config/       # Config parsing, generation, validation
+│   ├── klipper-config/       # Config generation, validation, section definitions
+│   ├── configparser/         # Klipper INI-like config file parser
 │   ├── printer-data/         # Typed loaders for JSON database
 │   ├── editor/               # CodeMirror editor components
-│   ├── configparser/         # Klipper config file parser
-│   └── dfu/                  # DFU flashing utilities
+│   ├── dfu/                  # DFU flashing utilities
+│   ├── moonraker/            # Moonraker API client
+│   └── theme/                # Shared color definitions
 ├── data/                     # JSON database (printers, equipment, macros)
 └── docs/                     # Documentation
 ```
@@ -51,16 +53,37 @@ KlipperForge/
 
 Configurations can span multiple files (e.g., `printer.cfg`, `macros.cfg`). Each `SectionInstance` has an optional `file` property. The serializer groups sections by file, generates `[include]` directives in the main file, and produces a `Map<filename, content>` for the editor tabs.
 
+## Apps
+
+### klipperforge (frontend)
+
+The main web application. Vite + React SPA that runs entirely in the browser for config generation. Connects to the firmware and configs backends when available.
+
+### firmware
+
+Bun + Hono server that compiles Klipper firmware in sandboxed Docker containers. Exposes a REST API for build submission and SSE streaming of build output. See [deployment.md](deployment.md) for production setup.
+
+### configs
+
+Bun + Hono server for storing and sharing user configurations. Authenticates via GitHub OAuth and persists data in SQLite.
+
+### pcb
+
+Standalone PCB layout editor for creating and editing board pin-out visualizations. Built output is served at `/pcb-designer/` in production.
+
 ## Packages
 
 ### @klipperforge/klipper-config
 
 Core library for working with Klipper configuration:
 - **Section definitions** with param types, Zod schemas, and visibility rules
-- **Parser** for Klipper INI-like format into structured `ConfigDocument`
 - **Serializer** with source maps for editor synchronization
 - **Validator** for completeness, type checking, and cross-section rules
 - **Normalizer** for cleaning form data before dispatch
+
+### @klipperforge/configparser
+
+Standalone parser for the Klipper INI-like config format. Parses config text into a structured `ConfigDocument`. Separated from `klipper-config` so it can be used independently without pulling in section definitions and Zod schemas.
 
 ### @klipperforge/printer-data
 
@@ -74,6 +97,18 @@ CodeMirror-based editor components:
 - `ConfigEditor` — main editor with validation decorations, override markers, diff highlighting, and inline editing
 - `JsonViewer` — read-only JSON display
 - Editor scroll context for bidirectional form-editor synchronization
+
+### @klipperforge/dfu
+
+Utilities for DFU firmware flashing via WebUSB.
+
+### @klipperforge/moonraker
+
+Client library for the Moonraker API (Klipper's web interface layer).
+
+### @klipperforge/theme
+
+Shared color definitions and design tokens used across apps and packages.
 
 ## UI Layout
 
