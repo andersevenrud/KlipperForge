@@ -1,0 +1,187 @@
+{
+  "boardId": "prusa-buddy",
+  "name": "Prusa Buddy",
+  "viewBox": {
+    "width": 496,
+    "height": 323
+  },
+  "image": "/data/pcb-layouts/prusa-buddy.png",
+  "connectors": [
+    {
+      "name": "Z",
+      "category": "stepper",
+      "x": 8,
+      "y": 256,
+      "width": 30,
+      "height": 60,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "X",
+      "category": "stepper",
+      "x": 8,
+      "y": 192,
+      "width": 30,
+      "height": 60,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "Y",
+      "category": "stepper",
+      "x": 8,
+      "y": 132,
+      "width": 30,
+      "height": 60,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "E",
+      "category": "stepper",
+      "x": 8,
+      "y": 72,
+      "width": 30,
+      "height": 60,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "MINDA",
+      "category": "probe",
+      "x": 4,
+      "y": 0,
+      "width": 56,
+      "height": 28,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
+    },
+    {
+      "name": "FILAMENT SENSOR",
+      "category": "misc",
+      "x": 64,
+      "y": 0,
+      "width": 44,
+      "height": 28,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
+    },
+    {
+      "name": "PRINT FAN",
+      "category": "fan",
+      "x": 112,
+      "y": 0,
+      "width": 44,
+      "height": 28,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
+    },
+    {
+      "name": "HOTEND FAN",
+      "category": "fan",
+      "x": 156,
+      "y": 0,
+      "width": 32,
+      "height": 44,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "LCD",
+      "category": "display",
+      "x": 192,
+      "y": 4,
+      "width": 112,
+      "height": 36,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
+    },
+    {
+      "name": "EXPANSION",
+      "category": "communication",
+      "x": 260,
+      "y": 288,
+      "width": 108,
+      "height": 28,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
+    },
+    {
+      "name": "RESET BUTTON",
+      "category": "button",
+      "x": 108,
+      "y": 292,
+      "width": 28,
+      "height": 28,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "EXPANSION",
+      "category": "communication",
+      "x": 196,
+      "y": 260,
+      "width": 24,
+      "height": 52,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "HOTEND TEMP",
+      "category": "thermistor",
+      "x": 368,
+      "y": 288,
+      "width": 36,
+      "height": 28,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
+    },
+    {
+      "name": "BED TEMP",
+      "category": "thermistor",
+      "x": 408,
+      "y": 288,
+      "width": 36,
+      "height": 28,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
+    },
+    {
+      "name": "HOTEND",
+      "category": "heater",
+      "x": 360,
+      "y": 216,
+      "width": 56,
+      "height": 40,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
+    },
+    {
+      "name": "BED",
+      "category": "heater",
+      "x": 420,
+      "y": 216,
+      "width": 56,
+      "height": 40,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
+    }
+  ]
+}

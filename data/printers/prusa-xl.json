@@ -4,7 +4,7 @@
   "manufacturer": "Prusa Research",
   "description": "Large-format CoreXY 3D printer with XLBuddy mainboard (STM32F407), TMC2130 SPI drivers (shared software SPI bus: sclk PC10 / mosi PC12 / miso PC11), Nextruder toolhead on Dwarf board, and a 16-zone MODBUS-controlled heated bed. **Experimental — requires the KlipperXL community project** (https://github.com/racoutlaw/KlipperXL) for MODBUS Dwarf communication, loadcell probe, and multi-toolhead control. Standard upstream Klipper does not ship a config for the XL. Pin mappings, motor currents, and bed_mesh parameters are taken from KlipperXL master; Dwarf-side values (extruder heater, hotend thermistor, part-cooling fan, filament sensor) are kept as mainboard placeholders since they actually live on the Dwarf over a custom MODBUS bus and cannot be represented in standard Klipper sections. Verify every value against your hardware before flashing.",
   "equipment": [
-    { "category": "mcu-boards", "label": "XLBuddy Board (STM32F407)", "role": "Main MCU" },
+    { "category": "mcu-boards", "id": "prusa-xbuddy", "label": "Prusa xBuddy Board", "role": "Main MCU" },
     { "category": "hotends", "id": "prusa-nextruder", "label": "Prusa Nextruder", "role": "Hotend" },
     { "category": "extruders", "id": "prusa-nextruder", "label": "Prusa Nextruder", "role": "Extruder" },
     { "category": "probes", "label": "HX717 Loadcell (nozzle)", "role": "Z Probe" }
@@ -16,6 +16,7 @@
       "kinematics": "corexy",
       "bedSize": { "x": 360, "y": 360, "z": 360 },
       "defaults": {
+        "mcuBoards": [{ "boardId": "prusa-xbuddy", "alias": "" }],
         "sections": [
           {
             "definitionId": "printer",
@@ -260,6 +261,7 @@
       "kinematics": "corexy",
       "bedSize": { "x": 360, "y": 360, "z": 360 },
       "defaults": {
+        "mcuBoards": [{ "boardId": "prusa-xbuddy", "alias": "" }],
         "sections": [
           {
             "definitionId": "printer",

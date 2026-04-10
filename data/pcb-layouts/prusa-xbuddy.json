@@ -1,0 +1,165 @@
+{
+  "boardId": "prusa-xbuddy",
+  "name": "Prusa xBuddy",
+  "viewBox": {
+    "width": 783,
+    "height": 528
+  },
+  "image": "/data/pcb-layouts/prusa-xbuddy.png",
+  "connectors": [
+    {
+      "name": "DISPLAY",
+      "category": "display",
+      "x": 160,
+      "y": 20,
+      "width": 200,
+      "height": 30,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
+    },
+    {
+      "name": "NEXTRUDER",
+      "category": "communication",
+      "x": 440,
+      "y": 20,
+      "width": 110,
+      "height": 50,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
+    },
+    {
+      "name": "ACCEL",
+      "category": "communication",
+      "x": 580,
+      "y": 20,
+      "width": 80,
+      "height": 40,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
+    },
+    {
+      "name": "POWER PANIC",
+      "category": "communication",
+      "x": 675,
+      "y": 24,
+      "width": 40,
+      "height": 40,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "HEATBED OUT",
+      "category": "heater",
+      "x": 530,
+      "y": 270,
+      "width": 70,
+      "height": 120,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "RESET",
+      "category": "button",
+      "x": 180,
+      "y": 480,
+      "width": 50,
+      "height": 30,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
+    },
+    {
+      "name": "BED TEMP",
+      "category": "thermistor",
+      "x": 530,
+      "y": 210,
+      "width": 40,
+      "height": 50,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "X",
+      "category": "stepper",
+      "x": 10,
+      "y": 400,
+      "width": 40,
+      "height": 60,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "Y",
+      "category": "stepper",
+      "x": 10,
+      "y": 330,
+      "width": 40,
+      "height": 60,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "Z LEFT",
+      "category": "stepper",
+      "x": 10,
+      "y": 260,
+      "width": 40,
+      "height": 60,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "Z RIGHT",
+      "category": "stepper",
+      "x": 10,
+      "y": 194,
+      "width": 40,
+      "height": 60,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "I2C",
+      "category": "communication",
+      "x": 360,
+      "y": 460,
+      "width": 60,
+      "height": 30,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
+    },
+    {
+      "name": "DOOR SENSOR",
+      "category": "misc",
+      "x": 240,
+      "y": 460,
+      "width": 40,
+      "height": 30,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
+    },
+    {
+      "name": "EXTENSION",
+      "category": "communication",
+      "x": 10,
+      "y": 120,
+      "width": 50,
+      "height": 60,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    }
+  ]
+}

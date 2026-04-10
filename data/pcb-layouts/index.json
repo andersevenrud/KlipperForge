@@ -8,6 +8,8 @@
     { "boardId": "btt-ebb36-can-v1.0", "name": "Bigtreetech EBB36 CAN V1.0", "hasImage": true },
     { "boardId": "btt-ebb36-can-v1.1", "name": "Bigtreetech EBB36 CAN V1.1", "hasImage": true },
     { "boardId": "btt-ebb36-can-v1.2", "name": "Bigtreetech EBB36 CAN V1.2", "hasImage": true },
-    { "boardId": "mellow-cpap", "name": "Mellow FLY-7040 CPAP Controller", "hasImage": true }
+    { "boardId": "mellow-cpap", "name": "Mellow FLY-7040 CPAP Controller", "hasImage": true },
+    { "boardId": "prusa-buddy", "name": "Prusa Buddy", "hasImage": true },
+    { "boardId": "prusa-xbuddy", "name": "Prusa xBuddy", "hasImage": true }
   ]
 }
