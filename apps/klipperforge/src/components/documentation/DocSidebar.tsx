@@ -19,6 +19,7 @@ import {
   Search,
   Thermometer,
   X,
+  Zap,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -174,6 +175,20 @@ export function DocSidebar({
       : indices.motors;
     return groupBy(motors, (m) => m.manufacturer);
   }, [indices.motors, search]);
+
+  const filteredStepperDriverGroups = useMemo(() => {
+    const query = search.toLowerCase().trim();
+    const drivers = query
+      ? indices.stepperDrivers.filter(
+          (d) =>
+            d.name.toLowerCase().includes(query) ||
+            d.manufacturer.toLowerCase().includes(query) ||
+            d.driverInterface.toLowerCase().includes(query) ||
+            d.klipperSection.toLowerCase().includes(query),
+        )
+      : indices.stepperDrivers;
+    return groupBy(drivers, (d) => d.manufacturer);
+  }, [indices.stepperDrivers, search]);
 
   const filteredProbeGroups = useMemo(() => {
     const query = search.toLowerCase().trim();
@@ -528,6 +543,52 @@ export function DocSidebar({
               ))}
               {filteredMotorGroups.length === 0 && (
                 <p className="text-muted-foreground p-4 text-center text-sm">No motors found.</p>
+              )}
+            </CollapsibleContent>
+          </Collapsible>
+        </div>
+
+        <div className={isCategoryDimmed("stepper-drivers") ? "pointer-events-none opacity-40" : ""}>
+          <Collapsible {...categoryOpen("stepper-drivers")}>
+            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+              <Zap className="size-3.5" />
+              <span>Stepper Drivers</span>
+              <span className="text-muted-foreground ml-auto text-xs">{indices.stepperDrivers.length}</span>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              {filteredStepperDriverGroups.map((group) => (
+                <Collapsible
+                  key={group.key}
+                  {...groupOpen(
+                    "stepper-drivers",
+                    group.items.map((d) => d.id),
+                  )}
+                >
+                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                    <span>{group.key}</span>
+                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    {group.items.map((driver) => (
+                      <SidebarItem
+                        key={driver.id}
+                        itemId={driver.id}
+                        category="stepper-drivers"
+                        label={driver.name}
+                        badge={driver.driverInterface}
+                        selected={isSelected(selection, "stepper-drivers", driver.id)}
+                        compareMode={compareMode}
+                        compareChecked={comparePendingIds.includes(driver.id)}
+                        onClick={handleItemClick}
+                      />
+                    ))}
+                  </CollapsibleContent>
+                </Collapsible>
+              ))}
+              {filteredStepperDriverGroups.length === 0 && (
+                <p className="text-muted-foreground p-4 text-center text-sm">No drivers found.</p>
               )}
             </CollapsibleContent>
           </Collapsible>

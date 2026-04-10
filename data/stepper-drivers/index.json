@@ -1,0 +1,46 @@
+{
+  "stepperDrivers": [
+    {
+      "id": "tmc2130",
+      "name": "TMC2130",
+      "manufacturer": "Analog Devices (Trinamic)",
+      "driverInterface": "SPI",
+      "klipperSection": "tmc2130"
+    },
+    {
+      "id": "tmc2208",
+      "name": "TMC2208",
+      "manufacturer": "Analog Devices (Trinamic)",
+      "driverInterface": "UART",
+      "klipperSection": "tmc2208"
+    },
+    {
+      "id": "tmc2209",
+      "name": "TMC2209",
+      "manufacturer": "Analog Devices (Trinamic)",
+      "driverInterface": "UART",
+      "klipperSection": "tmc2209"
+    },
+    {
+      "id": "tmc2240",
+      "name": "TMC2240",
+      "manufacturer": "Analog Devices (Trinamic)",
+      "driverInterface": "SPI",
+      "klipperSection": "tmc2240"
+    },
+    {
+      "id": "tmc2660",
+      "name": "TMC2660",
+      "manufacturer": "Analog Devices (Trinamic)",
+      "driverInterface": "SPI",
+      "klipperSection": "tmc2660"
+    },
+    {
+      "id": "tmc5160",
+      "name": "TMC5160",
+      "manufacturer": "Analog Devices (Trinamic)",
+      "driverInterface": "SPI",
+      "klipperSection": "tmc5160"
+    }
+  ]
+}

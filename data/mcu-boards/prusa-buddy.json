@@ -110,6 +110,11 @@
       "category": "printers",
       "id": "prusa-mini",
       "name": "Prusa Mini+"
+    },
+    {
+      "category": "stepper-drivers",
+      "id": "tmc2209",
+      "name": "TMC2209"
     }
   ]
 }

@@ -59,5 +59,12 @@
   "drivers": {
     "count": 4,
     "model": "TMC2208"
-  }
+  },
+  "relatedArticles": [
+    {
+      "category": "stepper-drivers",
+      "id": "tmc2208",
+      "name": "TMC2208"
+    }
+  ]
 }

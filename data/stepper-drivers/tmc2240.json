@@ -1,0 +1,58 @@
+{
+  "id": "tmc2240",
+  "name": "TMC2240",
+  "manufacturer": "Analog Devices (Trinamic)",
+  "description": "The TMC2240 is a smart high-performance stepper motor driver IC with two fully integrated H-bridges rated at 3.0A full-scale current (5.0A absolute bridge peak limited by over-current protection) and a built-in 256-microstep indexer. It offers both SPI and single-wire UART serial communication, non-dissipative lossless current sensing, stealthChop2, spreadCycle, coolStep, combined stallGuard2 and stallGuard4 sensorless load detection, and on-chip temperature measurement. Found on modern high-end boards such as the LDO Leviathan and Mellow Fly-SHT36 Pro.",
+  "driverInterface": "SPI",
+  "electricalSpecs": {
+    "supplyVoltageMin": 4.5,
+    "supplyVoltageMax": 36,
+    "rmsCurrentMax": 2.1,
+    "peakCurrentMax": 3.0,
+    "logicVoltageMin": 3.0,
+    "logicVoltageMax": 5.25
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard4",
+    "dcStep": false,
+    "sensorlessHoming": true
+  },
+  "klipperSpecs": {
+    "section": "tmc2240",
+    "driverInterface": "SPI",
+    "supportsDiagPin": true,
+    "supportsSensorlessHoming": true
+  },
+  "physicalSpecs": {
+    "packageType": "TQFN-32 or TSSOP-38",
+    "dimensions": "5 × 5 mm (TQFN-32); 9.7 × 4.4 mm (TSSOP-38)",
+    "operatingTemperature": "-40 to 125 °C (junction)"
+  },
+  "references": [
+    {
+      "label": "TMC2240 Datasheet",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/tmc2240_datasheet.pdf",
+      "type": "datasheet"
+    },
+    {
+      "label": "TMC2240 Product Page",
+      "url": "https://www.analog.com/en/products/tmc2240.html",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Config Reference — [tmc2240]",
+      "url": "https://www.klipper3d.org/Config_Reference.html#tmc2240",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper TMC Drivers Guide",
+      "url": "https://www.klipper3d.org/TMC_Drivers.html",
+      "type": "documentation"
+    }
+  ]
+}

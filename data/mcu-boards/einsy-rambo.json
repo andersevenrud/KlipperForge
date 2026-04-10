@@ -116,6 +116,11 @@
       "category": "printers",
       "id": "prusa-mk3s",
       "name": "Prusa MK3S+"
+    },
+    {
+      "category": "stepper-drivers",
+      "id": "tmc2130",
+      "name": "TMC2130"
     }
   ]
 }

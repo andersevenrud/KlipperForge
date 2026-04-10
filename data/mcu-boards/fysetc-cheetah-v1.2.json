@@ -71,5 +71,12 @@
     "count": 4,
     "model": "TMC2208"
   },
-  "maxMotorVoltage": 35
+  "maxMotorVoltage": 35,
+  "relatedArticles": [
+    {
+      "category": "stepper-drivers",
+      "id": "tmc2208",
+      "name": "TMC2208"
+    }
+  ]
 }

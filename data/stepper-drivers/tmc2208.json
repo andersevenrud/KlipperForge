@@ -1,0 +1,100 @@
+{
+  "id": "tmc2208",
+  "name": "TMC2208",
+  "manufacturer": "Analog Devices (Trinamic)",
+  "description": "The TMC2208 is an ultra-silent two-phase stepper motor driver with integrated MOSFETs and a single-wire UART interface for register access in addition to a classic Step/Dir input. It introduces stealthChop2 for smoother and quieter low-velocity motion and spreadCycle for high-velocity operation. Commonly found on budget 3D printer boards such as the Creality silent boards and early BigTreeTech SKR variants. Covered by Trinamic's combined TMC2202/TMC2208/TMC2224 datasheet.",
+  "driverInterface": "UART",
+  "electricalSpecs": {
+    "supplyVoltageMin": 5.5,
+    "supplyVoltageMax": 36,
+    "rmsCurrentMax": 1.4,
+    "peakCurrentMax": 2,
+    "logicVoltageMin": 3,
+    "logicVoltageMax": 5.25
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true,
+    "coolStep": false,
+    "stallGuard": "none",
+    "dcStep": false,
+    "sensorlessHoming": false
+  },
+  "klipperSpecs": {
+    "section": "tmc2208",
+    "driverInterface": "UART",
+    "supportsDiagPin": false,
+    "supportsSensorlessHoming": false
+  },
+  "physicalSpecs": {
+    "packageType": "QFN-28 (TMC2208-LA) or QFN-32 wettable flank",
+    "dimensions": "5 × 5 mm (QFN-28)",
+    "operatingTemperature": "-40 to 125 °C (junction)"
+  },
+  "references": [
+    {
+      "label": "TMC2202 / TMC2208 / TMC2224 Datasheet (Rev 1.14)",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/TMC2202_TMC2208_TMC2224_datasheet_rev1.14.pdf",
+      "type": "datasheet"
+    },
+    {
+      "label": "TMC2208 Product Page",
+      "url": "https://www.analog.com/en/products/tmc2208.html",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Config Reference — [tmc2208]",
+      "url": "https://www.klipper3d.org/Config_Reference.html#tmc2208",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper TMC Drivers Guide",
+      "url": "https://www.klipper3d.org/TMC_Drivers.html",
+      "type": "documentation"
+    }
+  ],
+  "relatedArticles": [
+    {
+      "category": "mcu-boards",
+      "id": "voxelab-aquila",
+      "name": "Aquila Board"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "fysetc-cheetah-v1.2",
+      "name": "Cheetah V1.2"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "creality-cr10-smart-pro",
+      "name": "CR-10 Smart Pro Board"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "creality-v4.2.10",
+      "name": "Creality V4.2.10"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "creality-ender3-s1",
+      "name": "Ender 3 S1 Board"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "creality-ender5-s1",
+      "name": "Ender 5 S1 Board"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "th3d-ezboard-lite-v1.2",
+      "name": "EZBoard Lite V1.2"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "sunlu-t3",
+      "name": "Terminator T3 Board"
+    }
+  ]
+}

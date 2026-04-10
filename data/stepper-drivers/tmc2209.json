@@ -1,0 +1,275 @@
+{
+  "id": "tmc2209",
+  "name": "TMC2209",
+  "manufacturer": "Analog Devices (Trinamic)",
+  "description": "The TMC2209 is a two-phase stepper motor driver with integrated MOSFETs, a single-wire UART interface and Step/Dir input. It builds on the TMC2208 by adding stallGuard4 sensorless load detection for use as a virtual endstop (sensorless homing) together with coolStep adaptive current control, while retaining stealthChop2 and spreadCycle. The TMC2209 is the most common smart driver on modern hobbyist 3D printer control boards.",
+  "driverInterface": "UART",
+  "electricalSpecs": {
+    "supplyVoltageMin": 5.5,
+    "supplyVoltageMax": 29,
+    "rmsCurrentMax": 2,
+    "peakCurrentMax": 2.8,
+    "logicVoltageMin": 3,
+    "logicVoltageMax": 5.25
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard4",
+    "dcStep": false,
+    "sensorlessHoming": true
+  },
+  "klipperSpecs": {
+    "section": "tmc2209",
+    "driverInterface": "UART",
+    "supportsDiagPin": true,
+    "supportsSensorlessHoming": true
+  },
+  "physicalSpecs": {
+    "packageType": "QFN-28",
+    "dimensions": "5 × 5 mm",
+    "operatingTemperature": "-40 to 125 °C (junction)"
+  },
+  "references": [
+    {
+      "label": "TMC2209 Datasheet (Rev 1.09)",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/TMC2209_datasheet_rev1.09.pdf",
+      "type": "datasheet"
+    },
+    {
+      "label": "TMC2209 Product Page",
+      "url": "https://www.analog.com/en/products/tmc2209.html",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Config Reference — [tmc2209]",
+      "url": "https://www.klipper3d.org/Config_Reference.html#tmc2209",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper TMC Drivers Guide",
+      "url": "https://www.klipper3d.org/TMC_Drivers.html",
+      "type": "documentation"
+    }
+  ],
+  "relatedArticles": [
+    {
+      "category": "mcu-boards",
+      "id": "fysetc-cheetah-v1.1",
+      "name": "Cheetah V1.1"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "fysetc-cheetah-v2.0",
+      "name": "Cheetah V2.0"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "fysetc-cheetah-v3.0",
+      "name": "Cheetah V3.0"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-e3-rrf-v1.1",
+      "name": "E3 RRF V1.1"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "mks-eagle-v1.0",
+      "name": "Eagle V1.0"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-ebb-sb2209-can-rp2040-v1.0",
+      "name": "EBB SB2209 CAN V1.0 (RP2040)"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-ebb-sb2209-usb-rp2040-v1.0",
+      "name": "EBB SB2209 USB V1.0 (RP2040)"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-ebb-sb2240-2209-can-v1.0",
+      "name": "EBB SB2240/SB2209 CAN V1.0"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-ebb36-can-v1.0",
+      "name": "EBB36 CAN V1.0"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-ebb36-can-v1.1",
+      "name": "EBB36 CAN V1.1"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-ebb36-can-v1.2",
+      "name": "EBB36 CAN V1.2"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-ebb36-gen2-v1.0",
+      "name": "EBB36 GEN2 V1.0"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-ebb42-can-v1.0",
+      "name": "EBB42 CAN V1.0"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-ebb42-can-v1.1",
+      "name": "EBB42 CAN V1.1"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-ebb42-can-v1.2",
+      "name": "EBB42 CAN V1.2"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-ebb42-gen2-v1.0",
+      "name": "EBB42 GEN2 V1.0"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "th3d-ezboard-v2.0",
+      "name": "EZBoard V2.0"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "mellow-fly-e3-pro-v3",
+      "name": "Fly-E3-Pro V3"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "mellow-fly-rpfmex",
+      "name": "Fly-RPFMEX"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "mellow-fly-sb2040-v3",
+      "name": "Fly-SB2040 V3"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "mellow-fly-sht36-v1",
+      "name": "Fly-SHT36 V1"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "mellow-fly-sht36-v2",
+      "name": "Fly-SHT36 V2"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "mellow-fly-sht36-v3",
+      "name": "Fly-SHT36 V3"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "mellow-fly-sht42-v1",
+      "name": "Fly-SHT42 V1"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "ldo-leviathan-v1.2",
+      "name": "Leviathan V1.2"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "ldo-leviathan-v1.3",
+      "name": "Leviathan V1.3"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "elegoo-neptune4",
+      "name": "Neptune 4"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "prusa-buddy",
+      "name": "Prusa Buddy"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "mks-robin-e3",
+      "name": "Robin E3"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "fysetc-sb-can-th",
+      "name": "SB CAN ToolHead"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "artillery-sidewinder-x3-plus",
+      "name": "Sidewinder X3 Plus Board"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-skr-cr6-v1.0",
+      "name": "SKR CR6 V1.0"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-skr-e3-turbo",
+      "name": "SKR E3 Turbo"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-skr-mini-e3-v1.0",
+      "name": "SKR Mini E3 V1.0"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-skr-mini-e3-v1.2",
+      "name": "SKR Mini E3 V1.2"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-skr-mini-e3-v2.0",
+      "name": "SKR Mini E3 V2.0"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-skr-mini-e3-v3",
+      "name": "SKR Mini E3 V3"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-skr-mini-mz",
+      "name": "SKR Mini MZ"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "btt-skr-pico-v1.0",
+      "name": "SKR Pico V1.0"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "sovol-sv06",
+      "name": "SV06 Board"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "sovol-sv06-plus",
+      "name": "SV06 Plus Board"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "sovol-sv08",
+      "name": "SV08 Board"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "anycubic-vyper",
+      "name": "Vyper Board"
+    }
+  ]
+}

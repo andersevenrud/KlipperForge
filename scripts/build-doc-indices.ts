@@ -26,6 +26,7 @@ const CATEGORIES: CategoryMapping[] = [
   { dir: "toolheads", key: "toolheads", arrayField: "toolheads" },
   { dir: "mmus", key: "mmus", arrayField: "mmus" },
   { dir: "pcb-layouts", key: "pcbLayouts", arrayField: "layouts" },
+  { dir: "stepper-drivers", key: "stepperDrivers", arrayField: "stepperDrivers" },
 ];
 
 async function buildDocIndices() {

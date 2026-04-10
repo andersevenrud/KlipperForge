@@ -1,0 +1,70 @@
+{
+  "id": "tmc2130",
+  "name": "TMC2130",
+  "manufacturer": "Analog Devices (Trinamic)",
+  "description": "The TMC2130 is a high-performance smart stepper motor driver IC for two-phase bipolar stepper motors with an integrated SPI interface and Step/Dir input. It features Trinamic's stealthChop voltage-mode chopper for quiet operation, spreadCycle for dynamic high-torque moves, dcStep load-dependent speed control, and sensorless load measurement via stallGuard2 with coolStep adaptive current control. Widely used on hobbyist 3D printing boards such as the Prusa Einsy RAMBo and Prusa xBuddy.",
+  "driverInterface": "SPI",
+  "electricalSpecs": {
+    "supplyVoltageMin": 5.5,
+    "supplyVoltageMax": 46,
+    "rmsCurrentMax": 1.2,
+    "peakCurrentMax": 2.5,
+    "logicVoltageMin": 3,
+    "logicVoltageMax": 5.25
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard2",
+    "dcStep": true,
+    "sensorlessHoming": true
+  },
+  "klipperSpecs": {
+    "section": "tmc2130",
+    "driverInterface": "SPI",
+    "supportsDiagPin": true,
+    "supportsSensorlessHoming": true
+  },
+  "physicalSpecs": {
+    "packageType": "QFN-36 or TQFP-48",
+    "dimensions": "5 × 6 mm (QFN-36)",
+    "operatingTemperature": "-40 to 125 °C (junction)"
+  },
+  "references": [
+    {
+      "label": "TMC2130 Datasheet (Rev 1.15)",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/tmc2130_datasheet_rev1.15.pdf",
+      "type": "datasheet"
+    },
+    {
+      "label": "TMC2130 Product Page",
+      "url": "https://www.analog.com/en/products/tmc2130.html",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Config Reference — [tmc2130]",
+      "url": "https://www.klipper3d.org/Config_Reference.html#tmc2130",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper TMC Drivers Guide",
+      "url": "https://www.klipper3d.org/TMC_Drivers.html",
+      "type": "documentation"
+    }
+  ],
+  "relatedArticles": [
+    {
+      "category": "mcu-boards",
+      "id": "einsy-rambo",
+      "name": "Einsy RAMBo"
+    },
+    {
+      "category": "mcu-boards",
+      "id": "prusa-xbuddy",
+      "name": "Prusa xBuddy"
+    }
+  ]
+}

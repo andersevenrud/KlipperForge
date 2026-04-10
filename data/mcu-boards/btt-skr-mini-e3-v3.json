@@ -135,6 +135,11 @@
       "category": "printers",
       "id": "ender-3",
       "name": "Ender 3"
+    },
+    {
+      "category": "stepper-drivers",
+      "id": "tmc2209",
+      "name": "TMC2209"
     }
   ]
 }

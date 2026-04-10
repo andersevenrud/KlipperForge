@@ -28,6 +28,8 @@ import type {
   Probe,
   ProbeIndex,
   ResolvedPreset,
+  StepperDriver,
+  StepperDriverIndex,
   StepperMotor,
   StepperMotorIndex,
   Thermistor,
@@ -252,6 +254,14 @@ export async function loadMmuIndex(): Promise<MmuIndex> {
 
 export async function loadMmu(id: string): Promise<Mmu> {
   return fetchJson<Mmu>(`/mmus/${id}.json`);
+}
+
+export async function loadStepperDriverIndex(): Promise<StepperDriverIndex> {
+  return fetchJson<StepperDriverIndex>("/stepper-drivers/index.json");
+}
+
+export async function loadStepperDriver(id: string): Promise<StepperDriver> {
+  return fetchJson<StepperDriver>(`/stepper-drivers/${id}.json`);
 }
 
 export async function loadDocIndices(): Promise<DocIndices> {

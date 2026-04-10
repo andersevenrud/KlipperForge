@@ -55,5 +55,12 @@
   "drivers": {
     "count": 1,
     "model": "TMC5160"
-  }
+  },
+  "relatedArticles": [
+    {
+      "category": "stepper-drivers",
+      "id": "tmc5160",
+      "name": "TMC5160"
+    }
+  ]
 }

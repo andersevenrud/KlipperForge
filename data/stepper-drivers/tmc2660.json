@@ -1,0 +1,58 @@
+{
+  "id": "tmc2660",
+  "name": "TMC2660",
+  "manufacturer": "Analog Devices (Trinamic)",
+  "description": "The TMC2660 is a high-power two-phase stepper motor driver with integrated MOSFETs supporting up to 4A peak motor current, 2.2A RMS continuously (or 2.8A RMS boost), an SPI register interface and Step/Dir input. It provides microPlyer 256-microstep interpolation, spreadCycle chopper, coolStep adaptive current and stallGuard2 sensorless load measurement. Used in high-current industrial stepper systems and Duet-class 3D printer control boards. Note that Klipper's [tmc2660] section does not expose a DIAG/virtual-endstop pin, so sensorless homing via this chip is not supported in Klipper.",
+  "driverInterface": "SPI",
+  "electricalSpecs": {
+    "supplyVoltageMin": 9,
+    "supplyVoltageMax": 29,
+    "rmsCurrentMax": 2.2,
+    "peakCurrentMax": 4.0,
+    "logicVoltageMin": 3.0,
+    "logicVoltageMax": 5.25
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "none",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard2",
+    "dcStep": false,
+    "sensorlessHoming": false
+  },
+  "klipperSpecs": {
+    "section": "tmc2660",
+    "driverInterface": "SPI",
+    "supportsDiagPin": false,
+    "supportsSensorlessHoming": false
+  },
+  "physicalSpecs": {
+    "packageType": "QFP-44",
+    "dimensions": "10 × 10 mm",
+    "operatingTemperature": "-40 to 125 °C (junction)"
+  },
+  "references": [
+    {
+      "label": "TMC2660 Datasheet (Rev 1.07)",
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/TMC2660_datasheet_Rev1.07.pdf",
+      "type": "datasheet"
+    },
+    {
+      "label": "TMC2660 Product Page",
+      "url": "https://www.analog.com/en/products/tmc2660.html",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Config Reference — [tmc2660]",
+      "url": "https://www.klipper3d.org/Config_Reference.html#tmc2660",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper TMC Drivers Guide",
+      "url": "https://www.klipper3d.org/TMC_Drivers.html",
+      "type": "documentation"
+    }
+  ]
+}

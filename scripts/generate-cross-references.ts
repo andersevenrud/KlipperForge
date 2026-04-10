@@ -46,6 +46,7 @@ const CATEGORIES: CategoryMapping[] = [
   { dir: "power-supplies", arrayField: "powerSupplies" },
   { dir: "accessories", arrayField: "accessories" },
   { dir: "filaments", arrayField: "filaments" },
+  { dir: "stepper-drivers", arrayField: "stepperDrivers" },
 ];
 
 const HOTEND_ALIASES: Record<string, string> = {
@@ -419,6 +420,53 @@ async function generateCrossReferences() {
             name: toolheadName,
           });
         }
+      }
+    }
+  }
+
+  // 2D: MCU Board -> Stepper Driver (forward + reverse)
+  //
+  // Boards declare their stepper driver chip in `drivers.model`. Values may be
+  // a single chip ("TMC2209") or a slash-separated list for boards with mixed
+  // stepper stages ("TMC2209/TMC5160"). We only emit refs for chips that have
+  // a matching entry in the stepper-drivers index; unknown chips (A4988,
+  // TMC2160, TMC2225 etc.) are silently ignored so the script stays additive.
+  const stepperDriverIndex = indexMap.get("stepper-drivers");
+  if (stepperDriverIndex && stepperDriverIndex.size > 0) {
+    const boardFiles = await listArticleFiles("mcu-boards");
+    const boardIndex = getIndex(indexMap, "mcu-boards");
+
+    for (const file of boardFiles) {
+      const boardId = file.replace(".json", "");
+      const filePath = join(DATA_DIR, "mcu-boards", file);
+      const data = await loadJsonFile(filePath);
+      const drivers = data.drivers as { model?: string } | undefined;
+      const model = drivers?.model;
+      const boardName = boardIndex.get(boardId);
+      if (!model || !boardName) {
+        continue;
+      }
+
+      for (const rawChip of model.split("/")) {
+        const driverId = rawChip.trim().toLowerCase();
+        const driverName = stepperDriverIndex.get(driverId);
+        if (!driverName) {
+          continue;
+        }
+
+        // Forward: board -> driver
+        addRef(refs, articleKey("mcu-boards", boardId), {
+          category: "stepper-drivers",
+          id: driverId,
+          name: driverName,
+        });
+
+        // Reverse: driver -> board
+        addRef(refs, articleKey("stepper-drivers", driverId), {
+          category: "mcu-boards",
+          id: boardId,
+          name: boardName,
+        });
       }
     }
   }

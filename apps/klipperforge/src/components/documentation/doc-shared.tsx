@@ -23,6 +23,7 @@ import {
   Thermometer,
   TriangleAlert,
   X,
+  Zap,
 } from "lucide-react";
 import { createContext, type ReactNode, useContext, useEffect, useRef } from "react";
 import { Link } from "react-router";
@@ -103,6 +104,7 @@ export const CATEGORY_PARAM_KEY: Record<string, string> = {
   "mcu-boards": "board",
   printers: "printer",
   probes: "probe",
+  "stepper-drivers": "driver",
   "stepper-motors": "motor",
   fans: "fan",
   thermistors: "thermistor",
@@ -118,6 +120,7 @@ export const DOC_CATEGORY_ICONS: Record<CrossReferenceCategory, typeof ExternalL
   displays: Monitor,
   filaments: Layers,
   "mcu-boards": Cpu,
+  "stepper-drivers": Zap,
   "stepper-motors": Cog,
   probes: Crosshair,
   fans: Fan,
@@ -135,6 +138,7 @@ export const DOC_CATEGORY_LABELS: Record<CrossReferenceCategory, string> = {
   displays: "Displays",
   filaments: "Filaments",
   "mcu-boards": "MCU Boards",
+  "stepper-drivers": "Stepper Drivers",
   "stepper-motors": "Stepper Motors",
   probes: "Probes",
   fans: "Fans",

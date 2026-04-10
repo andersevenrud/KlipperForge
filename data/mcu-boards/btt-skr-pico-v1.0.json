@@ -99,5 +99,12 @@
     "width": 85,
     "height": 56
   },
-  "maxMotorVoltage": 24
+  "maxMotorVoltage": 24,
+  "relatedArticles": [
+    {
+      "category": "stepper-drivers",
+      "id": "tmc2209",
+      "name": "TMC2209"
+    }
+  ]
 }

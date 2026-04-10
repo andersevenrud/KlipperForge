@@ -72,6 +72,9 @@ export interface ToolheadReference extends BaseReference<ToolheadReferenceType> 
 export type MmuReferenceType = "datasheet" | "product" | "github" | "documentation" | "other";
 export interface MmuReference extends BaseReference<MmuReferenceType> {}
 
+export type StepperDriverReferenceType = "datasheet" | "product" | "github" | "documentation" | "other";
+export interface StepperDriverReference extends BaseReference<StepperDriverReferenceType> {}
+
 export type AnyReferenceType =
   | PrinterReferenceType
   | McuBoardReferenceType
@@ -86,7 +89,8 @@ export type AnyReferenceType =
   | FilamentReferenceType
   | DisplayReferenceType
   | ToolheadReferenceType
-  | MmuReferenceType;
+  | MmuReferenceType
+  | StepperDriverReferenceType;
 
 // ---------------------------------------------------------------------------
 // Index entry types
@@ -218,6 +222,15 @@ export interface PcbLayoutIndexEntry {
   hasImage?: boolean;
 }
 
+export interface StepperDriverIndexEntry {
+  id: string;
+  name: string;
+  manufacturer: string;
+  driverInterface: "SPI" | "UART" | "Step/Dir";
+  klipperSection: string;
+  hasImage?: boolean;
+}
+
 // ---------------------------------------------------------------------------
 // Equipment / category types
 // ---------------------------------------------------------------------------
@@ -261,6 +274,7 @@ export type PrinterEquipmentCategory =
   | "mmus"
   | "power-supplies"
   | "probes"
+  | "stepper-drivers"
   | "stepper-motors"
   | "thermistors"
   | "toolheads";
@@ -973,6 +987,62 @@ export interface MmuIndex {
   mmus: MmuIndexEntry[];
 }
 
+// ---------------------------------------------------------------------------
+// Stepper Driver types
+// ---------------------------------------------------------------------------
+
+export interface StepperDriverElectricalSpecs {
+  supplyVoltageMin?: number;
+  supplyVoltageMax?: number;
+  rmsCurrentMax?: number;
+  peakCurrentMax?: number;
+  logicVoltageMin?: number;
+  logicVoltageMax?: number;
+}
+
+export interface StepperDriverFeatureSpecs {
+  microstepsMax: number;
+  interpolationTo256?: boolean;
+  stealthChop?: "none" | "stealthChop" | "stealthChop2";
+  spreadCycle?: boolean;
+  coolStep?: boolean;
+  stallGuard?: "none" | "stallGuard" | "stallGuard2" | "stallGuard4";
+  dcStep?: boolean;
+  sensorlessHoming?: boolean;
+}
+
+export interface StepperDriverKlipperSpecs {
+  section: string;
+  driverInterface: "SPI" | "UART" | "Step/Dir";
+  supportsDiagPin?: boolean;
+  supportsSensorlessHoming?: boolean;
+}
+
+export interface StepperDriverPhysicalSpecs {
+  packageType?: string;
+  dimensions?: string;
+  operatingTemperature?: string;
+}
+
+export interface StepperDriver {
+  id: string;
+  name: string;
+  manufacturer: string;
+  description: string;
+  driverInterface: "SPI" | "UART" | "Step/Dir";
+  electricalSpecs: StepperDriverElectricalSpecs;
+  featureSpecs: StepperDriverFeatureSpecs;
+  klipperSpecs: StepperDriverKlipperSpecs;
+  physicalSpecs?: StepperDriverPhysicalSpecs;
+  unverified?: string[];
+  references?: StepperDriverReference[];
+  relatedArticles?: RelatedArticle[];
+}
+
+export interface StepperDriverIndex {
+  stepperDrivers: StepperDriverIndexEntry[];
+}
+
 export interface PcbLayoutIndex {
   layouts: PcbLayoutIndexEntry[];
 }
@@ -993,4 +1063,5 @@ export interface DocIndices {
   toolheads: ToolheadIndexEntry[];
   mmus: MmuIndexEntry[];
   pcbLayouts: PcbLayoutIndexEntry[];
+  stepperDrivers: StepperDriverIndexEntry[];
 }

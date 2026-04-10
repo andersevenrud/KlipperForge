@@ -19,6 +19,7 @@ import { DocPowerSupplyPage } from "./DocPowerSupplyPage";
 import { DocPrinterPage } from "./DocPrinterPage";
 import { DocProbePage } from "./DocProbePage";
 import { DocSidebar } from "./DocSidebar";
+import { DocStepperDriverPage } from "./DocStepperDriverPage";
 import { DocStepperMotorPage } from "./DocStepperMotorPage";
 import { DocThermistorPage } from "./DocThermistorPage";
 import { DocToolheadPage } from "./DocToolheadPage";
@@ -40,6 +41,7 @@ export type DocCategory =
   | "power-supplies"
   | "printers"
   | "probes"
+  | "stepper-drivers"
   | "stepper-motors"
   | "thermistors"
   | "toolheads";
@@ -62,6 +64,7 @@ const PARAM_TO_CATEGORY: Record<string, DocCategory> = {
   board: "mcu-boards",
   display: "displays",
   printer: "printers",
+  driver: "stepper-drivers",
   motor: "stepper-motors",
   probe: "probes",
   fan: "fans",
@@ -95,6 +98,7 @@ const DOC_CATEGORIES: DocCategory[] = [
   "power-supplies",
   "printers",
   "probes",
+  "stepper-drivers",
   "stepper-motors",
   "thermistors",
   "toolheads",
@@ -324,6 +328,8 @@ function DocContent({ selection }: DocContentProps) {
       return <DocBoardPage boardId={selection.itemId} />;
     case "printers":
       return <DocPrinterPage printerId={selection.itemId} />;
+    case "stepper-drivers":
+      return <DocStepperDriverPage driverId={selection.itemId} />;
     case "stepper-motors":
       return <DocStepperMotorPage motorId={selection.itemId} />;
     case "probes":

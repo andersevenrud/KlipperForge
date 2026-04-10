@@ -142,6 +142,11 @@
       "category": "printers",
       "id": "prusa-xl",
       "name": "Prusa XL"
+    },
+    {
+      "category": "stepper-drivers",
+      "id": "tmc2130",
+      "name": "TMC2130"
     }
   ]
 }
