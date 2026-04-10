@@ -16,7 +16,7 @@
  * Output: data/pcb-layouts/<board-id>.json
  */
 
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 const VALID_CATEGORIES = new Set([
@@ -183,6 +183,22 @@ function main() {
     process.exit(1);
   }
 
+  const outputPath = resolve("data/pcb-layouts", `${boardId}.json`);
+
+  // Preserve hand-authored fields (jumperConfigs, imageOffset, image) from existing file
+  // so re-extraction only touches geometry/connectors derived from the SVG.
+  interface ExistingLayout {
+    image?: string;
+    imageOffset?: unknown;
+    jumperConfigs?: unknown;
+  }
+  let existing: ExistingLayout = {};
+  if (existsSync(outputPath)) {
+    existing = JSON.parse(readFileSync(outputPath, "utf-8")) as ExistingLayout;
+  }
+
+  const resolvedImage = imagePath ?? existing.image;
+
   const layout = {
     boardId,
     name: boardName ?? boardId,
@@ -190,12 +206,12 @@ function main() {
       width: Math.round(vbWidth * 100) / 100,
       height: Math.round(vbHeight * 100) / 100,
     },
-    ...(imagePath && { image: imagePath }),
+    ...(resolvedImage && { image: resolvedImage }),
+    ...(existing.imageOffset && { imageOffset: existing.imageOffset }),
     connectors,
+    ...(existing.jumperConfigs && { jumperConfigs: existing.jumperConfigs }),
   };
-
-  const outputPath = resolve("data/pcb-layouts", `${boardId}.json`);
-  writeFileSync(outputPath, `${JSON.stringify(layout, null, "\t")}\n`);
+  writeFileSync(outputPath, `${JSON.stringify(layout, null, 2)}\n`);
 
   console.log(`Extracted ${connectors.length} connectors from SVG`);
   console.log(`Output: ${outputPath}`);
