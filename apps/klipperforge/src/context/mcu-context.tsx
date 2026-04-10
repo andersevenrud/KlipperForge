@@ -261,7 +261,7 @@ export function McuProvider({ children }: McuProviderProps) {
       }
 
       // Infer boards from MCU sections in the document
-      const fallbackBoardId = state.boards[0]?.boardId ?? "generic-stm32f446";
+      const fallbackBoardId = "generic-stm32f446";
       const inferredBoards: { boardId: string; alias: string }[] = [];
 
       for (const section of configDocument.sections) {
@@ -279,7 +279,7 @@ export function McuProvider({ children }: McuProviderProps) {
         dispatch({ type: "RESTORE_BOARDS", payload: { boards: inferredBoards } });
       }
     },
-    [configEpoch, configDocument, state.boards],
+    [configEpoch, configDocument],
   );
 
   // Sync board pin context for pin membership validation

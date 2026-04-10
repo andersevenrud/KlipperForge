@@ -1,9 +1,8 @@
 import type { PrinterPreset } from "@klipperforge/printer-data";
 import { loadPrinterPreset } from "@klipperforge/printer-data";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { FieldWrapper } from "@/components/ui/field-wrapper";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useConfig } from "@/context/config-context";
 import { usePrinterIndexQuery } from "@/hooks/use-queries";
 
 interface PrinterSelectSelection {
@@ -16,7 +15,6 @@ interface PrinterSelectProps {
 }
 
 export function PrinterSelect({ onSelectionChange }: PrinterSelectProps) {
-  const { state } = useConfig();
   const indexQuery = usePrinterIndexQuery();
   const index = indexQuery.data;
   const [vendor, setVendor] = useState<string | null>(null);
@@ -42,9 +40,6 @@ export function PrinterSelect({ onSelectionChange }: PrinterSelectProps) {
     const entry = index.printers.find((p) => p.id === model);
     return entry?.variants ?? [];
   }, [index, model]);
-
-  const { presetId } = state.document;
-  const { configEpoch } = state;
 
   function handleVendorChange(value: string) {
     setVendor(value);
@@ -83,26 +78,6 @@ export function PrinterSelect({ onSelectionChange }: PrinterSelectProps) {
 
   const modelDisabled = !vendor || models.length === 0;
   const variantDisabled = !model || variants.length === 0;
-
-  useEffect(
-    function syncDropdownsEffect() {
-      void configEpoch;
-      if (presetId) {
-        const [baseId, variantId] = presetId.split(":");
-        const entry = index.printers.find((p) => p.id === baseId);
-        if (entry) {
-          setVendor(entry.manufacturer);
-          setModel(entry.id);
-          setVariant(variantId ?? null);
-          return;
-        }
-      }
-      setVendor(null);
-      setModel(null);
-      setVariant(null);
-    },
-    [index, presetId, configEpoch],
-  );
 
   return (
     <div className="flex flex-col gap-4">
