@@ -4,7 +4,13 @@
       "id": "ender-3",
       "name": "Ender 3",
       "manufacturer": "Creality",
-      "hasImage": true
+      "hasImage": true,
+      "variants": [
+        {
+          "id": "stock",
+          "name": "Stock (SKR Mini E3 V3.0)"
+        }
+      ]
     },
     {
       "id": "prusa-core-one",

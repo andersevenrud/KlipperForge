@@ -1,4 +1,4 @@
-import type { ConfigValue, KinematicsType, SectionInstance } from "@klipperforge/klipper-config";
+import type { ConfigValue, KinematicsType, McuBoardAssociation, SectionInstance } from "@klipperforge/klipper-config";
 
 // ---------------------------------------------------------------------------
 // Base types
@@ -18,6 +18,7 @@ export interface BedSize {
 
 export interface PresetDefaults {
   sections: SectionInstance[];
+  mcuBoards?: McuBoardAssociation[];
 }
 
 export interface PinUsage {

@@ -47,7 +47,10 @@ type ConfigAction =
       payload: { header: string; data: Record<string, ConfigValue> };
     }
   | { type: "REMOVE_SECTION"; payload: { header: string } }
-  | { type: "SET_PRESET"; payload: { sections: SectionInstance[]; presetId: string } }
+  | {
+      type: "SET_PRESET";
+      payload: { sections: SectionInstance[]; presetId: string; mcuBoards?: McuBoardAssociation[] };
+    }
   | { type: "SET_MCU_BOARDS"; payload: McuBoardAssociation[] }
   | { type: "LOAD_DOCUMENT"; payload: { document: ConfigDocument } }
   | { type: "RESET_CONFIG" }
@@ -242,6 +245,7 @@ function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
           data: { ...s.data },
         })),
         presetId: action.payload.presetId,
+        mcuBoards: action.payload.mcuBoards,
       };
       bumpEpoch = true;
       break;

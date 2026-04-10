@@ -56,7 +56,14 @@ export function NewConfigDialog({ open, onOpenChange }: NewConfigDialogProps) {
     if (!selection) return;
     const resolved = resolvePresetVariant(selection.preset, selection.variantId);
     const id = selection.variantId ? `${selection.preset.id}:${selection.variantId}` : selection.preset.id;
-    dispatch({ type: "SET_PRESET", payload: { sections: resolved.defaults.sections, presetId: id } });
+    dispatch({
+      type: "SET_PRESET",
+      payload: {
+        sections: resolved.defaults.sections,
+        presetId: id,
+        mcuBoards: resolved.defaults.mcuBoards,
+      },
+    });
     apply();
   }
 

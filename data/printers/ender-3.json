@@ -2,118 +2,196 @@
   "id": "ender-3",
   "name": "Ender 3",
   "manufacturer": "Creality",
-  "kinematics": "cartesian",
-  "description": "Popular budget-friendly cartesian 3D printer",
-  "bedSize": { "x": 235, "y": 235, "z": 250 },
+  "description": "Popular budget-friendly cartesian 3D printer. This preset assumes the stock v4.2.2/v4.2.7 mainboard has been replaced with a BIGTREETECH SKR Mini E3 V3.0, which is the most common Klipper upgrade path.",
   "equipment": [
+    { "category": "mcu-boards", "id": "btt-skr-mini-e3-v3", "label": "BTT SKR Mini E3 V3.0", "role": "Main MCU" },
     { "category": "hotends", "id": "creality-mk8", "label": "Creality MK8", "role": "Hotend" },
     { "category": "extruders", "label": "Stock Plastic Bowden Extruder", "role": "Extruder" },
     { "category": "stepper-motors", "id": "creality-42-34", "label": "Creality 42-34", "role": "X/Y/Z Motors" },
     { "category": "stepper-motors", "id": "creality-42-40", "label": "Creality 42-40", "role": "Extruder Motor" }
   ],
-  "defaults": {
-    "sections": [
-      {
-        "definitionId": "printer",
-        "data": {
-          "kinematics": "cartesian",
-          "max_velocity": 300,
-          "max_accel": 3000,
-          "max_z_velocity": 5,
-          "max_z_accel": 100
-        }
-      },
-      {
-        "definitionId": "mcu",
-        "data": {
-          "serial": "/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0"
-        }
-      },
-      {
-        "definitionId": "stepper",
-        "instanceName": "x",
-        "data": {
-          "step_pin": "PC2",
-          "dir_pin": "PB9",
-          "enable_pin": "!PC3",
-          "microsteps": 16,
-          "rotation_distance": 40,
-          "endstop_pin": "^PA5",
-          "position_endstop": 0,
-          "position_max": 235,
-          "homing_speed": 50
-        }
-      },
-      {
-        "definitionId": "stepper",
-        "instanceName": "y",
-        "data": {
-          "step_pin": "PB8",
-          "dir_pin": "PB7",
-          "enable_pin": "!PC3",
-          "microsteps": 16,
-          "rotation_distance": 40,
-          "endstop_pin": "^PA6",
-          "position_endstop": 0,
-          "position_max": 235,
-          "homing_speed": 50
-        }
-      },
-      {
-        "definitionId": "stepper",
-        "instanceName": "z",
-        "data": {
-          "step_pin": "PB6",
-          "dir_pin": "!PB5",
-          "enable_pin": "!PC3",
-          "microsteps": 16,
-          "rotation_distance": 8,
-          "endstop_pin": "^PA7",
-          "position_endstop": 0,
-          "position_max": 250
-        }
-      },
-      {
-        "definitionId": "extruder",
-        "data": {
-          "step_pin": "PB4",
-          "dir_pin": "PB3",
-          "enable_pin": "!PC3",
-          "microsteps": 16,
-          "rotation_distance": 33.5,
-          "nozzle_diameter": 0.4,
-          "filament_diameter": 1.75,
-          "heater_pin": "PA1",
-          "sensor_type": "EPCOS 100K B57560G104F",
-          "sensor_pin": "PC5",
-          "min_temp": 0,
-          "max_temp": 250,
-          "control": "pid",
-          "pid_kp": 21.527,
-          "pid_ki": 1.063,
-          "pid_kd": 108.982
-        }
-      },
-      {
-        "definitionId": "heater_bed",
-        "data": {
-          "heater_pin": "PA2",
-          "sensor_type": "EPCOS 100K B57560G104F",
-          "sensor_pin": "PC4",
-          "min_temp": 0,
-          "max_temp": 130,
-          "control": "pid",
-          "pid_kp": 54.027,
-          "pid_ki": 0.77,
-          "pid_kd": 948.182
-        }
-      },
-      {
-        "definitionId": "fan",
-        "data": {
-          "pin": "PA0"
-        }
+  "variants": [
+    {
+      "id": "stock",
+      "name": "Stock (SKR Mini E3 V3.0)",
+      "kinematics": "cartesian",
+      "bedSize": { "x": 235, "y": 235, "z": 250 },
+      "defaults": {
+        "mcuBoards": [{ "boardId": "btt-skr-mini-e3-v3", "alias": "" }],
+        "sections": [
+          {
+            "definitionId": "printer",
+            "data": {
+              "kinematics": "cartesian",
+              "max_velocity": 300,
+              "max_accel": 3000,
+              "max_z_velocity": 5,
+              "max_z_accel": 100
+            }
+          },
+          {
+            "definitionId": "mcu",
+            "data": {
+              "serial": "/dev/serial/by-id/usb-Klipper_stm32g0b1xx_placeholder-if00"
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "x",
+            "data": {
+              "step_pin": "PB13",
+              "dir_pin": "!PB12",
+              "enable_pin": "!PB14",
+              "microsteps": 16,
+              "rotation_distance": 40,
+              "endstop_pin": "^PC0",
+              "position_endstop": 0,
+              "position_max": 235,
+              "homing_speed": 50
+            }
+          },
+          {
+            "definitionId": "tmc2209",
+            "instanceName": "stepper_x",
+            "data": {
+              "uart_pin": "PC11",
+              "tx_pin": "PC10",
+              "uart_address": 0,
+              "run_current": 0.58,
+              "stealthchop_threshold": 999999
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "y",
+            "data": {
+              "step_pin": "PB10",
+              "dir_pin": "!PB2",
+              "enable_pin": "!PB11",
+              "microsteps": 16,
+              "rotation_distance": 40,
+              "endstop_pin": "^PC1",
+              "position_endstop": 0,
+              "position_max": 235,
+              "homing_speed": 50
+            }
+          },
+          {
+            "definitionId": "tmc2209",
+            "instanceName": "stepper_y",
+            "data": {
+              "uart_pin": "PC11",
+              "tx_pin": "PC10",
+              "uart_address": 2,
+              "run_current": 0.58,
+              "stealthchop_threshold": 999999
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "z",
+            "data": {
+              "step_pin": "PB0",
+              "dir_pin": "PC5",
+              "enable_pin": "!PB1",
+              "microsteps": 16,
+              "rotation_distance": 8,
+              "endstop_pin": "^PC2",
+              "position_endstop": 0.0,
+              "position_max": 250
+            }
+          },
+          {
+            "definitionId": "tmc2209",
+            "instanceName": "stepper_z",
+            "data": {
+              "uart_pin": "PC11",
+              "tx_pin": "PC10",
+              "uart_address": 1,
+              "run_current": 0.58,
+              "stealthchop_threshold": 999999
+            }
+          },
+          {
+            "definitionId": "extruder",
+            "data": {
+              "step_pin": "PB3",
+              "dir_pin": "!PB4",
+              "enable_pin": "!PD1",
+              "microsteps": 16,
+              "rotation_distance": 33.5,
+              "nozzle_diameter": 0.4,
+              "filament_diameter": 1.75,
+              "heater_pin": "PC8",
+              "sensor_type": "EPCOS 100K B57560G104F",
+              "sensor_pin": "PA0",
+              "min_temp": 0,
+              "max_temp": 250,
+              "control": "pid",
+              "pid_kp": 21.527,
+              "pid_ki": 1.063,
+              "pid_kd": 108.982
+            }
+          },
+          {
+            "definitionId": "tmc2209",
+            "instanceName": "extruder",
+            "data": {
+              "uart_pin": "PC11",
+              "tx_pin": "PC10",
+              "uart_address": 3,
+              "run_current": 0.65
+            }
+          },
+          {
+            "definitionId": "heater_bed",
+            "data": {
+              "heater_pin": "PC9",
+              "sensor_type": "EPCOS 100K B57560G104F",
+              "sensor_pin": "PC4",
+              "min_temp": 0,
+              "max_temp": 130,
+              "control": "pid",
+              "pid_kp": 54.027,
+              "pid_ki": 0.77,
+              "pid_kd": 948.182
+            }
+          },
+          {
+            "definitionId": "fan",
+            "data": {
+              "pin": "PC6"
+            }
+          },
+          {
+            "definitionId": "heater_fan",
+            "instanceName": "heatbreak_cooling_fan",
+            "data": {
+              "pin": "PC7"
+            }
+          },
+          {
+            "definitionId": "controller_fan",
+            "instanceName": "board_fan",
+            "data": {
+              "pin": "PB15"
+            }
+          },
+          {
+            "definitionId": "bed_screws",
+            "data": {
+              "screw1": "30, 30",
+              "screw1_name": "front left",
+              "screw2": "200, 30",
+              "screw2_name": "front right",
+              "screw3": "200, 200",
+              "screw3_name": "back right",
+              "screw4": "30, 200",
+              "screw4_name": "back left"
+            }
+          }
+        ]
       }
-    ]
-  }
+    }
+  ]
 }
