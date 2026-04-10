@@ -1,6 +1,6 @@
 import { Cpu } from "lucide-react";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
-import { useLocation, useNavigate } from "react-router";
+import { Navigate, useLocation, useNavigate } from "react-router";
 import { fetchBuildStatus } from "@/api/firmware";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { featureFlags } from "@/lib/feature-flags";
@@ -102,6 +102,12 @@ export function AppLayout() {
     },
     [navigate],
   );
+
+  const isKnownRoute = location.pathname in pathToView || (shareToken !== null && featureFlags.configStorage);
+
+  if (!isKnownRoute) {
+    return <Navigate to="/" replace />;
+  }
 
   function renderView() {
     switch (activeView) {
