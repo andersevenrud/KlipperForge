@@ -31,6 +31,8 @@ export const SHARED_BUS_PIN_FIELDS = new Set([
   "spi_software_sclk_pin",
   "i2c_software_scl_pin",
   "i2c_software_sda_pin",
+  "uart_pin",
+  "tx_pin",
 ]);
 
 function detectTmc(availableModes: string[], data: Record<string, unknown>): string {

@@ -1045,6 +1045,66 @@ describe("validateDocument", () => {
       expect(pa7Conflicts.length).toBeGreaterThanOrEqual(2);
     });
 
+    it("does not warn when TMC2209 sections share uart_pin and tx_pin", () => {
+      const registry = createDefaultRegistry();
+      const doc = makeMinimalDoc({
+        sections: [
+          {
+            definitionId: "tmc2209",
+            instanceName: "stepper_x",
+            data: { uart_pin: "PC11", tx_pin: "PC10", uart_address: 0, run_current: 0.58 },
+          },
+          {
+            definitionId: "tmc2209",
+            instanceName: "stepper_y",
+            data: { uart_pin: "PC11", tx_pin: "PC10", uart_address: 2, run_current: 0.58 },
+          },
+          {
+            definitionId: "tmc2209",
+            instanceName: "stepper_z",
+            data: { uart_pin: "PC11", tx_pin: "PC10", uart_address: 1, run_current: 0.58 },
+          },
+          {
+            definitionId: "tmc2209",
+            instanceName: "extruder",
+            data: { uart_pin: "PC11", tx_pin: "PC10", uart_address: 3, run_current: 0.65 },
+          },
+        ],
+      });
+
+      const errors = validateDocument(doc, registry);
+      const uartConflicts = errors.filter(
+        (e) =>
+          e.severity === "warning" &&
+          e.message.includes("is also used in") &&
+          (e.message.includes("PC11") || e.message.includes("PC10")),
+      );
+      expect(uartConflicts).toHaveLength(0);
+    });
+
+    it("warns when TMC2209 uart_pin conflicts with a non-bus field", () => {
+      const registry = createDefaultRegistry();
+      const doc = makeMinimalDoc({
+        sections: [
+          {
+            definitionId: "tmc2209",
+            instanceName: "stepper_x",
+            data: { uart_pin: "PC11", tx_pin: "PC10", uart_address: 0, run_current: 0.58 },
+          },
+          {
+            definitionId: "fan",
+            data: { pin: "PC11" }, // fan pin clashes with shared TMC uart_pin
+          },
+        ],
+      });
+
+      const errors = validateDocument(doc, registry);
+      const pc11Conflicts = errors.filter(
+        (e) => e.severity === "warning" && e.message.includes("is also used in") && e.message.includes("PC11"),
+      );
+      expect(pc11Conflicts.length).toBeGreaterThanOrEqual(2);
+    });
+
     it("warns when TMC5160 sections share the same cs_pin", () => {
       const registry = createDefaultRegistry();
       const doc = makeMinimalDoc({
