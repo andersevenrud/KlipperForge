@@ -4,7 +4,7 @@
   "manufacturer": "Prusa Research",
   "description": "Reliable cartesian 3D printer with Einsy RAMBo mainboard (ATmega2560), TMC2130 SPI drivers, Bondtech direct-drive extruder, and SuperPINDA bed probe. Covers MK3 / MK3S / MK3S+ — they share the same board and pinout. Pin mappings are taken from Klipper's upstream generic-einsy-rambo.cfg; motion tuning matches the dz0ny community reference. Note: the stock Einsy's 32u2 USB-serial chip has buggy firmware that prevents Klipper from talking to the board reliably — reflash it using PrusaOwners/mk3-32u2-firmware before using this preset.",
   "equipment": [
-    { "category": "mcu-boards", "label": "Einsy RAMBo", "role": "Main MCU" },
+    { "category": "mcu-boards", "id": "einsy-rambo", "label": "Einsy RAMBo", "role": "Main MCU" },
     { "category": "hotends", "id": "e3d-v6", "label": "E3D V6", "role": "Hotend" },
     { "category": "extruders", "label": "Prusa Extruder (Bondtech gears)", "role": "Extruder" },
     { "category": "probes", "id": "superpinda", "label": "SuperPINDA", "role": "Bed Probe" },
@@ -28,6 +28,7 @@
       "kinematics": "cartesian",
       "bedSize": { "x": 250, "y": 210, "z": 210 },
       "defaults": {
+        "mcuBoards": [{ "boardId": "einsy-rambo", "alias": "" }],
         "sections": [
           {
             "definitionId": "printer",
