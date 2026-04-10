@@ -1,4 +1,5 @@
-import { tmc2130Definition, tmc2208Definition, tmc2240Definition, tmc2660Definition } from "../generated/drivers";
+// TMC driver wrappers with allowedFieldPattern for driver_* register overrides
+// live in ./tmc; we re-export them here instead of using the generated versions.
 import { temperatureFanDefinition } from "../generated/fans";
 import {
   adcTemperatureDefinition,
@@ -93,7 +94,14 @@ import { safeZHomeDefinition } from "./safe-z-home";
 import { shaketuneDefinition } from "./shaketune";
 import { stepperDefinition } from "./stepper";
 import { temperatureSensorDefinition } from "./temperature-sensor";
-import { tmc2209Definition, tmc5160Definition } from "./tmc";
+import {
+  tmc2130Definition,
+  tmc2208Definition,
+  tmc2209Definition,
+  tmc2240Definition,
+  tmc2660Definition,
+  tmc5160Definition,
+} from "./tmc";
 import { autotuneTmcDefinition, motorConstantsDefinition } from "./tmc-autotune";
 
 export { beaconDefinition, beaconSchema } from "./beacon";

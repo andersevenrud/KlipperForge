@@ -13,39 +13,28 @@
       ]
     },
     {
-      "id": "prusa-core-one",
-      "name": "Prusa CORE One",
-      "manufacturer": "Prusa Research",
-      "hasImage": true
-    },
-    {
-      "id": "prusa-core-one-l",
-      "name": "Prusa CORE One L",
-      "manufacturer": "Prusa Research",
-      "hasImage": true
-    },
-    {
-      "id": "prusa-core-one-plus",
-      "name": "Prusa CORE One+",
-      "manufacturer": "Prusa Research"
-    },
-    {
       "id": "prusa-mini",
       "name": "Prusa Mini+",
       "manufacturer": "Prusa Research",
-      "hasImage": true
+      "hasImage": true,
+      "variants": [
+        {
+          "id": "stock",
+          "name": "Stock (Buddy board)"
+        }
+      ]
     },
     {
       "id": "prusa-mk3s",
       "name": "Prusa MK3S+",
       "manufacturer": "Prusa Research",
-      "hasImage": true
-    },
-    {
-      "id": "prusa-mk4s",
-      "name": "Prusa MK4S",
-      "manufacturer": "Prusa Research",
-      "hasImage": true
+      "hasImage": true,
+      "variants": [
+        {
+          "id": "stock",
+          "name": "Stock (Einsy RAMBo)"
+        }
+      ]
     },
     {
       "id": "prusa-xl",

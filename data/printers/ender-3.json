@@ -189,7 +189,13 @@
               "screw4": "30, 200",
               "screw4_name": "back left"
             }
-          }
+          },
+          { "definitionId": "virtual_sdcard", "data": { "path": "~/printer_data/gcodes" } },
+          { "definitionId": "pause_resume", "data": {} },
+          { "definitionId": "display_status", "data": {} },
+          { "definitionId": "exclude_object", "data": {} },
+          { "definitionId": "respond", "data": {} },
+          { "definitionId": "gcode_arcs", "data": {} }
         ]
       }
     }

@@ -40,26 +40,6 @@
   "relatedArticles": [
     {
       "category": "printers",
-      "id": "prusa-core-one",
-      "name": "Prusa CORE One"
-    },
-    {
-      "category": "printers",
-      "id": "prusa-core-one-l",
-      "name": "Prusa CORE One L"
-    },
-    {
-      "category": "printers",
-      "id": "prusa-core-one-plus",
-      "name": "Prusa CORE One+"
-    },
-    {
-      "category": "printers",
-      "id": "prusa-mk4s",
-      "name": "Prusa MK4S"
-    },
-    {
-      "category": "printers",
       "id": "prusa-xl",
       "name": "Prusa XL"
     }

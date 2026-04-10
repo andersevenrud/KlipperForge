@@ -2,9 +2,7 @@
   "id": "prusa-mk3s",
   "name": "Prusa MK3S+",
   "manufacturer": "Prusa Research",
-  "kinematics": "cartesian",
-  "description": "Reliable cartesian 3D printer with auto bed leveling and filament sensor",
-  "bedSize": { "x": 250, "y": 210, "z": 210 },
+  "description": "Reliable cartesian 3D printer with Einsy RAMBo mainboard (ATmega2560), TMC2130 SPI drivers, Bondtech direct-drive extruder, and SuperPINDA bed probe. Covers MK3 / MK3S / MK3S+ — they share the same board and pinout. Pin mappings are taken from Klipper's upstream generic-einsy-rambo.cfg; motion tuning matches the dz0ny community reference. Note: the stock Einsy's 32u2 USB-serial chip has buggy firmware that prevents Klipper from talking to the board reliably — reflash it using PrusaOwners/mk3-32u2-firmware before using this preset.",
   "equipment": [
     { "category": "mcu-boards", "label": "Einsy RAMBo", "role": "Main MCU" },
     { "category": "hotends", "id": "e3d-v6", "label": "E3D V6", "role": "Hotend" },
@@ -23,112 +21,233 @@
       "role": "Bed Thermistor"
     }
   ],
-  "defaults": {
-    "sections": [
-      {
-        "definitionId": "printer",
-        "data": {
-          "kinematics": "cartesian",
-          "max_velocity": 300,
-          "max_accel": 1500,
-          "max_z_velocity": 10,
-          "max_z_accel": 200
-        }
-      },
-      {
-        "definitionId": "mcu",
-        "data": {
-          "serial": "/dev/serial/by-id/usb-Prusa_Research__a.s._Original_Prusa_i3_MK3S_placeholder"
-        }
-      },
-      {
-        "definitionId": "stepper",
-        "instanceName": "x",
-        "data": {
-          "step_pin": "PC0",
-          "dir_pin": "!PL0",
-          "enable_pin": "!PA7",
-          "microsteps": 16,
-          "rotation_distance": 32,
-          "endstop_pin": "^PB6",
-          "position_endstop": 0,
-          "position_max": 250,
-          "homing_speed": 50
-        }
-      },
-      {
-        "definitionId": "stepper",
-        "instanceName": "y",
-        "data": {
-          "step_pin": "PC1",
-          "dir_pin": "PL1",
-          "enable_pin": "!PA6",
-          "microsteps": 16,
-          "rotation_distance": 32,
-          "endstop_pin": "^PB5",
-          "position_endstop": -4,
-          "position_max": 210,
-          "position_min": -4,
-          "homing_speed": 50
-        }
-      },
-      {
-        "definitionId": "stepper",
-        "instanceName": "z",
-        "data": {
-          "step_pin": "PC2",
-          "dir_pin": "PL2",
-          "enable_pin": "!PA5",
-          "microsteps": 16,
-          "rotation_distance": 8,
-          "endstop_pin": "^PB4",
-          "position_endstop": 0.8,
-          "position_max": 210,
-          "position_min": -2,
-          "homing_speed": 13.333
-        }
-      },
-      {
-        "definitionId": "extruder",
-        "data": {
-          "step_pin": "PC3",
-          "dir_pin": "PL6",
-          "enable_pin": "!PA4",
-          "microsteps": 32,
-          "rotation_distance": 22.857,
-          "nozzle_diameter": 0.4,
-          "filament_diameter": 1.75,
-          "heater_pin": "PE5",
-          "sensor_type": "ATC Semitec 104GT-2",
-          "sensor_pin": "PF0",
-          "min_temp": 0,
-          "max_temp": 305,
-          "control": "pid",
-          "pid_kp": 16.13,
-          "pid_ki": 1.1625,
-          "pid_kd": 56.23
-        }
-      },
-      {
-        "definitionId": "heater_bed",
-        "data": {
-          "heater_pin": "PG5",
-          "sensor_type": "EPCOS 100K B57560G104F",
-          "sensor_pin": "PF2",
-          "min_temp": 0,
-          "max_temp": 125,
-          "control": "pid",
-          "pid_kp": 126.13,
-          "pid_ki": 4.3,
-          "pid_kd": 924.76
-        }
-      },
-      {
-        "definitionId": "fan",
-        "data": {
-          "pin": "PH5"
-        }
+  "variants": [
+    {
+      "id": "stock",
+      "name": "Stock (Einsy RAMBo)",
+      "kinematics": "cartesian",
+      "bedSize": { "x": 250, "y": 210, "z": 210 },
+      "defaults": {
+        "sections": [
+          {
+            "definitionId": "printer",
+            "data": {
+              "kinematics": "cartesian",
+              "max_velocity": 300,
+              "max_accel": 1500,
+              "max_z_velocity": 10,
+              "max_z_accel": 200
+            }
+          },
+          {
+            "definitionId": "mcu",
+            "data": {
+              "serial": "/dev/ttyACM0"
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "x",
+            "data": {
+              "step_pin": "PC0",
+              "dir_pin": "!PL0",
+              "enable_pin": "!PA7",
+              "microsteps": 16,
+              "rotation_distance": 32,
+              "endstop_pin": "^PB6",
+              "position_endstop": 0,
+              "position_max": 250,
+              "homing_speed": 50
+            }
+          },
+          {
+            "definitionId": "tmc2130",
+            "instanceName": "stepper_x",
+            "data": {
+              "cs_pin": "PG0",
+              "run_current": 0.5,
+              "sense_resistor": 0.22,
+              "diag1_pin": "!PK2"
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "y",
+            "data": {
+              "step_pin": "PC1",
+              "dir_pin": "PL1",
+              "enable_pin": "!PA6",
+              "microsteps": 16,
+              "rotation_distance": 32,
+              "endstop_pin": "^PB5",
+              "position_endstop": -4,
+              "position_max": 210,
+              "position_min": -4,
+              "homing_speed": 50
+            }
+          },
+          {
+            "definitionId": "tmc2130",
+            "instanceName": "stepper_y",
+            "data": {
+              "cs_pin": "PG2",
+              "run_current": 0.5,
+              "sense_resistor": 0.22,
+              "diag1_pin": "!PK7"
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "z",
+            "data": {
+              "step_pin": "PC2",
+              "dir_pin": "PL2",
+              "enable_pin": "!PA5",
+              "microsteps": 16,
+              "rotation_distance": 8,
+              "endstop_pin": "probe:z_virtual_endstop",
+              "position_max": 210,
+              "position_min": -2,
+              "homing_speed": 13.333
+            }
+          },
+          {
+            "definitionId": "tmc2130",
+            "instanceName": "stepper_z",
+            "data": {
+              "cs_pin": "PK5",
+              "run_current": 0.5,
+              "sense_resistor": 0.22,
+              "diag1_pin": "!PK6"
+            }
+          },
+          {
+            "definitionId": "extruder",
+            "data": {
+              "step_pin": "PC3",
+              "dir_pin": "PL6",
+              "enable_pin": "!PA4",
+              "microsteps": 32,
+              "rotation_distance": 22.857,
+              "nozzle_diameter": 0.4,
+              "filament_diameter": 1.75,
+              "heater_pin": "PE5",
+              "sensor_type": "ATC Semitec 104GT-2",
+              "sensor_pin": "PF0",
+              "min_temp": 0,
+              "max_temp": 305,
+              "control": "pid",
+              "pid_kp": 16.13,
+              "pid_ki": 1.1625,
+              "pid_kd": 56.23
+            }
+          },
+          {
+            "definitionId": "tmc2130",
+            "instanceName": "extruder",
+            "data": {
+              "cs_pin": "PK4",
+              "run_current": 0.5,
+              "sense_resistor": 0.22,
+              "diag1_pin": "!PK3"
+            }
+          },
+          {
+            "definitionId": "heater_bed",
+            "data": {
+              "heater_pin": "PG5",
+              "sensor_type": "EPCOS 100K B57560G104F",
+              "sensor_pin": "PF2",
+              "min_temp": 0,
+              "max_temp": 125,
+              "control": "pid",
+              "pid_kp": 126.13,
+              "pid_ki": 4.3,
+              "pid_kd": 924.76
+            }
+          },
+          {
+            "definitionId": "fan",
+            "data": {
+              "pin": "PH5"
+            }
+          },
+          {
+            "definitionId": "heater_fan",
+            "instanceName": "heatbreak_cooling_fan",
+            "data": {
+              "pin": "PH3"
+            }
+          },
+          {
+            "definitionId": "probe",
+            "data": {
+              "pin": "^!PB4",
+              "x_offset": 23,
+              "y_offset": 5,
+              "z_offset": 1.0,
+              "speed": 8.0
+            }
+          },
+          {
+            "definitionId": "safe_z_home",
+            "data": {
+              "home_xy_position": "102, 100",
+              "speed": 50,
+              "z_hop": 10,
+              "z_hop_speed": 10
+            }
+          },
+          {
+            "definitionId": "bed_mesh",
+            "data": {
+              "speed": 120,
+              "horizontal_move_z": 5,
+              "mesh_min": "35, 6",
+              "mesh_max": "240, 198",
+              "probe_count": "5, 5"
+            }
+          },
+          {
+            "definitionId": "temperature_sensor",
+            "instanceName": "einsy_rambo",
+            "data": {
+              "sensor_type": "TDK NTCG104LH104JT1",
+              "sensor_pin": "PF6",
+              "min_temp": 0,
+              "max_temp": 50
+            }
+          },
+          { "definitionId": "virtual_sdcard", "data": { "path": "~/printer_data/gcodes" } },
+          { "definitionId": "pause_resume", "data": {} },
+          { "definitionId": "display_status", "data": {} },
+          { "definitionId": "exclude_object", "data": {} },
+          { "definitionId": "respond", "data": {} },
+          { "definitionId": "gcode_arcs", "data": {} }
+        ]
       }
-    ]
-  }
+    }
+  ],
+  "references": [
+    {
+      "label": "Prusa MK3S+ Product Page",
+      "url": "https://www.prusa3d.com/product/original-prusa-i3-mk3s-3d-printer-3/",
+      "type": "product"
+    },
+    {
+      "label": "Klipper Generic Einsy RAMBo Config",
+      "url": "https://github.com/Klipper3d/klipper/blob/master/config/generic-einsy-rambo.cfg",
+      "type": "github"
+    },
+    {
+      "label": "dz0ny/klipper-prusa-mk3s (community reference)",
+      "url": "https://github.com/dz0ny/klipper-prusa-mk3s",
+      "type": "github"
+    },
+    {
+      "label": "PrusaOwners/mk3-32u2-firmware (required USB-serial fix)",
+      "url": "https://github.com/PrusaOwners/mk3-32u2-firmware",
+      "type": "github"
+    }
+  ]
 }

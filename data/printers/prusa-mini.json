@@ -2,126 +2,235 @@
   "id": "prusa-mini",
   "name": "Prusa Mini+",
   "manufacturer": "Prusa Research",
-  "kinematics": "cartesian",
-  "description": "Compact cartesian 3D printer with Buddy board (STM32F407, TMC2209 UART drivers), Bowden extruder, SuperPINDA probe, and sensorless homing. Pin mappings verified from official Klipper config (printer-prusa-mini-plus-2020.cfg). Also covers the original Prusa Mini which shares the same board.",
-  "bedSize": { "x": 180, "y": 180, "z": 180 },
+  "description": "Compact cartesian 3D printer with Prusa Buddy board (STM32F407), TMC2209 UART drivers with sensorless X/Y homing, Bowden extruder, and SuperPINDA bed probe. Covers both the original Mini and Mini+. Pin mappings and default tuning are taken verbatim from Klipper's upstream printer-prusa-mini-plus-2020.cfg. Note: flashing Klipper disables the stock LCD — use Mainsail or Fluidd to control the printer.",
   "equipment": [
     { "category": "mcu-boards", "id": "prusa-buddy", "label": "Prusa Buddy Board", "role": "Main MCU" },
     { "category": "hotends", "label": "Stock PTFE-lined Hotend", "role": "Hotend" },
     { "category": "extruders", "label": "Bowden Extruder", "role": "Extruder" },
     { "category": "probes", "id": "superpinda", "label": "SuperPINDA", "role": "Bed Probe" }
   ],
-  "defaults": {
-    "sections": [
-      {
-        "definitionId": "printer",
-        "data": {
-          "kinematics": "cartesian",
-          "max_velocity": 180,
-          "max_accel": 1250,
-          "max_z_velocity": 12,
-          "max_z_accel": 400
-        }
-      },
-      {
-        "definitionId": "mcu",
-        "data": {
-          "serial": "/dev/serial/by-id/usb-Prusa_Research__a.s._Original_Prusa_MINI_placeholder"
-        }
-      },
-      {
-        "definitionId": "stepper",
-        "instanceName": "x",
-        "data": {
-          "step_pin": "PD1",
-          "dir_pin": "PD0",
-          "enable_pin": "!PD3",
-          "microsteps": 16,
-          "rotation_distance": 32,
-          "endstop_pin": "tmc2209_stepper_x:virtual_endstop",
-          "position_endstop": 180.4,
-          "position_min": -2,
-          "position_max": 180.4,
-          "homing_speed": 50,
-          "homing_retract_dist": 0
-        }
-      },
-      {
-        "definitionId": "stepper",
-        "instanceName": "y",
-        "data": {
-          "step_pin": "PD13",
-          "dir_pin": "PD12",
-          "enable_pin": "!PD14",
-          "microsteps": 16,
-          "rotation_distance": 32,
-          "endstop_pin": "tmc2209_stepper_y:virtual_endstop",
-          "position_endstop": -3,
-          "position_min": -3,
-          "position_max": 180,
-          "homing_speed": 50,
-          "homing_retract_dist": 0
-        }
-      },
-      {
-        "definitionId": "stepper",
-        "instanceName": "z",
-        "data": {
-          "step_pin": "PD4",
-          "dir_pin": "!PD15",
-          "enable_pin": "!PD2",
-          "microsteps": 16,
-          "rotation_distance": 4,
-          "endstop_pin": "probe:z_virtual_endstop",
-          "position_min": 0,
-          "position_max": 185,
-          "homing_speed": 6
-        }
-      },
-      {
-        "definitionId": "extruder",
-        "data": {
-          "step_pin": "PD9",
-          "dir_pin": "!PD8",
-          "enable_pin": "!PD10",
-          "microsteps": 16,
-          "rotation_distance": 26.2564,
-          "gear_ratio": "48:18",
-          "nozzle_diameter": 0.4,
-          "filament_diameter": 1.75,
-          "heater_pin": "PB1",
-          "sensor_type": "ATC Semitec 104GT-2",
-          "sensor_pin": "PC0",
-          "min_temp": 10,
-          "max_temp": 305,
-          "control": "pid",
-          "pid_kp": 7,
-          "pid_ki": 0.5,
-          "pid_kd": 45
-        }
-      },
-      {
-        "definitionId": "heater_bed",
-        "data": {
-          "heater_pin": "PB0",
-          "sensor_type": "EPCOS 100K B57560G104F",
-          "sensor_pin": "PA4",
-          "min_temp": 10,
-          "max_temp": 110,
-          "control": "pid",
-          "pid_kp": 120,
-          "pid_ki": 1.5,
-          "pid_kd": 600
-        }
-      },
-      {
-        "definitionId": "fan",
-        "data": {
-          "pin": "PE11"
-        }
+  "variants": [
+    {
+      "id": "stock",
+      "name": "Stock (Buddy board)",
+      "kinematics": "cartesian",
+      "bedSize": { "x": 180, "y": 180, "z": 180 },
+      "defaults": {
+        "mcuBoards": [{ "boardId": "prusa-buddy", "alias": "" }],
+        "sections": [
+          {
+            "definitionId": "printer",
+            "data": {
+              "kinematics": "cartesian",
+              "max_velocity": 180,
+              "max_accel": 1250,
+              "max_z_velocity": 12,
+              "max_z_accel": 400
+            }
+          },
+          {
+            "definitionId": "mcu",
+            "data": {
+              "serial": "/dev/serial/by-id/usb-Klipper_stm32f407xx_placeholder-if00",
+              "restart_method": "command"
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "x",
+            "data": {
+              "step_pin": "PD1",
+              "dir_pin": "PD0",
+              "enable_pin": "!PD3",
+              "microsteps": 16,
+              "rotation_distance": 32,
+              "endstop_pin": "tmc2209_stepper_x:virtual_endstop",
+              "position_endstop": 180.4,
+              "position_min": -2,
+              "position_max": 180.4,
+              "homing_speed": 50,
+              "homing_retract_dist": 0
+            }
+          },
+          {
+            "definitionId": "tmc2209",
+            "instanceName": "stepper_x",
+            "data": {
+              "uart_pin": "PD5",
+              "uart_address": 1,
+              "diag_pin": "^PE2",
+              "driver_SGTHRS": 130,
+              "run_current": 0.35,
+              "sense_resistor": 0.22,
+              "stealthchop_threshold": 999999
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "y",
+            "data": {
+              "step_pin": "PD13",
+              "dir_pin": "PD12",
+              "enable_pin": "!PD14",
+              "microsteps": 16,
+              "rotation_distance": 32,
+              "endstop_pin": "tmc2209_stepper_y:virtual_endstop",
+              "position_endstop": -3,
+              "position_min": -3,
+              "position_max": 180,
+              "homing_speed": 50,
+              "homing_retract_dist": 0
+            }
+          },
+          {
+            "definitionId": "tmc2209",
+            "instanceName": "stepper_y",
+            "data": {
+              "uart_pin": "PD5",
+              "uart_address": 3,
+              "diag_pin": "^PE1",
+              "driver_SGTHRS": 130,
+              "run_current": 0.35,
+              "sense_resistor": 0.22,
+              "stealthchop_threshold": 999999
+            }
+          },
+          {
+            "definitionId": "stepper",
+            "instanceName": "z",
+            "data": {
+              "step_pin": "PD4",
+              "dir_pin": "!PD15",
+              "enable_pin": "!PD2",
+              "microsteps": 16,
+              "rotation_distance": 4,
+              "endstop_pin": "probe:z_virtual_endstop",
+              "position_min": 0,
+              "position_max": 185
+            }
+          },
+          {
+            "definitionId": "tmc2209",
+            "instanceName": "stepper_z",
+            "data": {
+              "uart_pin": "PD5",
+              "uart_address": 0,
+              "diag_pin": "^PE3",
+              "driver_SGTHRS": 100,
+              "run_current": 0.35,
+              "sense_resistor": 0.22,
+              "stealthchop_threshold": 999999
+            }
+          },
+          {
+            "definitionId": "extruder",
+            "data": {
+              "step_pin": "PD9",
+              "dir_pin": "!PD8",
+              "enable_pin": "!PD10",
+              "microsteps": 16,
+              "rotation_distance": 26.2564,
+              "gear_ratio": "48:18",
+              "nozzle_diameter": 0.4,
+              "filament_diameter": 1.75,
+              "heater_pin": "PB1",
+              "sensor_type": "ATC Semitec 104GT-2",
+              "sensor_pin": "PC0",
+              "min_temp": 10,
+              "max_temp": 305,
+              "control": "pid",
+              "pid_kp": 7,
+              "pid_ki": 0.5,
+              "pid_kd": 45
+            }
+          },
+          {
+            "definitionId": "tmc2209",
+            "instanceName": "extruder",
+            "data": {
+              "uart_pin": "PD5",
+              "uart_address": 2,
+              "diag_pin": "^PA15",
+              "driver_SGTHRS": 100,
+              "run_current": 0.4,
+              "sense_resistor": 0.22
+            }
+          },
+          {
+            "definitionId": "heater_bed",
+            "data": {
+              "heater_pin": "PB0",
+              "sensor_type": "EPCOS 100K B57560G104F",
+              "sensor_pin": "PA4",
+              "min_temp": 10,
+              "max_temp": 110,
+              "control": "pid",
+              "pid_kp": 120,
+              "pid_ki": 1.5,
+              "pid_kd": 600
+            }
+          },
+          {
+            "definitionId": "heater_fan",
+            "instanceName": "hotend_fan",
+            "data": {
+              "pin": "PE9",
+              "tachometer_pin": "PE14",
+              "fan_speed": 0.5
+            }
+          },
+          {
+            "definitionId": "fan",
+            "data": {
+              "pin": "PE11",
+              "tachometer_pin": "PE10"
+            }
+          },
+          {
+            "definitionId": "probe",
+            "data": {
+              "pin": "PA8",
+              "x_offset": -29,
+              "y_offset": -3,
+              "z_offset": 0,
+              "speed": 6.0
+            }
+          },
+          {
+            "definitionId": "safe_z_home",
+            "data": {
+              "home_xy_position": "147.4, 21.1",
+              "z_hop": 4
+            }
+          },
+          {
+            "definitionId": "bed_mesh",
+            "data": {
+              "speed": 100,
+              "horizontal_move_z": 5,
+              "mesh_min": "10, 10",
+              "mesh_max": "141, 167",
+              "probe_count": "4, 4"
+            }
+          },
+          {
+            "definitionId": "filament_switch_sensor",
+            "instanceName": "filament_sensor",
+            "data": {
+              "switch_pin": "^PB4",
+              "pause_on_runout": true
+            }
+          },
+          { "definitionId": "virtual_sdcard", "data": { "path": "~/printer_data/gcodes" } },
+          { "definitionId": "pause_resume", "data": {} },
+          { "definitionId": "display_status", "data": {} },
+          { "definitionId": "exclude_object", "data": {} },
+          { "definitionId": "respond", "data": {} },
+          { "definitionId": "gcode_arcs", "data": {} }
+        ]
       }
-    ]
-  },
+    }
+  ],
   "references": [
     {
       "label": "Prusa Mini+ Product Page",
