@@ -34,6 +34,7 @@ export {
   loadThermistorIndex,
   loadToolhead,
   loadToolheadIndex,
+  NotFoundError,
   resolvePresetVariant,
 } from "./loaders.js";
 export type {

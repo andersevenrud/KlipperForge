@@ -2,6 +2,7 @@ import { PanelLeft, Wrench } from "lucide-react";
 import { useCallback, useState } from "react";
 import { Group, Panel, Separator } from "react-resizable-panels";
 import { useSearchParams } from "react-router";
+import { NotFound } from "@/components/NotFound";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-is-mobile";
 import { CalibrationSidebar } from "./CalibrationSidebar";
@@ -59,6 +60,7 @@ export function CalibrationView() {
 
   const guideParam = searchParams.get("guide");
   const selectedGuide: GuideId | null = guideParam && GUIDE_IDS.has(guideParam) ? (guideParam as GuideId) : null;
+  const guideNotFound = guideParam !== null && selectedGuide === null;
 
   const handleSelectGuide = useCallback(
     (id: GuideId) => {
@@ -68,16 +70,30 @@ export function CalibrationView() {
     [setSearchParams, isMobile],
   );
 
+  const handleClearGuide = useCallback(() => {
+    setSearchParams({}, { replace: true });
+  }, [setSearchParams]);
+
   const sidebar = (
     <CalibrationSidebar guides={GUIDES} selectedGuide={selectedGuide} onSelectGuide={handleSelectGuide} />
   );
 
+  const content = (
+    <CalibrationContent
+      guideId={selectedGuide}
+      guideNotFound={guideNotFound}
+      requestedGuideId={guideParam}
+      onClearGuide={handleClearGuide}
+    />
+  );
+
   if (isMobile) {
-    const showSidebar = !selectedGuide || sidebarOpen;
+    const hasContent = selectedGuide !== null || guideNotFound;
+    const showSidebar = !hasContent || sidebarOpen;
 
     return (
       <div className="flex flex-1 flex-col">
-        {selectedGuide && (
+        {hasContent && (
           <div className="flex items-center gap-2 border-b border-border px-3 py-2">
             <Button variant="outline" size="sm" onClick={() => setSidebarOpen((prev) => !prev)}>
               <PanelLeft className="mr-1 h-4 w-4" />
@@ -86,7 +102,7 @@ export function CalibrationView() {
           </div>
         )}
         {showSidebar && sidebar}
-        {selectedGuide && !sidebarOpen && <CalibrationContent guideId={selectedGuide} />}
+        {hasContent && !sidebarOpen && content}
       </div>
     );
   }
@@ -97,18 +113,29 @@ export function CalibrationView() {
         {sidebar}
       </Panel>
       <Separator className="w-1.5 bg-border transition-colors hover:bg-primary/50" />
-      <Panel defaultSize="75%">
-        <CalibrationContent guideId={selectedGuide} />
-      </Panel>
+      <Panel defaultSize="75%">{content}</Panel>
     </Group>
   );
 }
 
 interface CalibrationContentProps {
   guideId: GuideId | null;
+  guideNotFound: boolean;
+  requestedGuideId: string | null;
+  onClearGuide: () => void;
 }
 
-function CalibrationContent({ guideId }: CalibrationContentProps) {
+function CalibrationContent({ guideId, guideNotFound, requestedGuideId, onClearGuide }: CalibrationContentProps) {
+  if (guideNotFound) {
+    return (
+      <NotFound
+        description={`No calibration guide exists for "${requestedGuideId}".`}
+        actionLabel="Back to calibration"
+        onAction={onClearGuide}
+      />
+    );
+  }
+
   if (!guideId) {
     return (
       <div className="flex h-full flex-col items-center justify-center gap-2 text-center">

@@ -3,6 +3,7 @@ import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { Group, Panel, Separator } from "react-resizable-panels";
 import { useSearchParams } from "react-router";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
+import { NotFound, NotFoundBoundary } from "@/components/NotFound";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-is-mobile";
 import { DocAccessoryPage } from "./DocAccessoryPage";
@@ -231,6 +232,11 @@ export function DocumentationView() {
     />
   );
 
+  const handleClearSelection = useCallback(() => {
+    setSelection(null);
+    setSearchParams({}, { replace: true });
+  }, [setSearchParams]);
+
   const content = compareItems ? (
     <DocComparisonView
       category={compareItems.category}
@@ -244,7 +250,22 @@ export function DocumentationView() {
       <p className="text-muted-foreground text-sm">Select at least two items from any category to compare.</p>
     </div>
   ) : (
-    <DocContent selection={selection} />
+    <NotFoundBoundary
+      resetKey={selection?.itemId}
+      fallback={
+        <NotFound
+          description={
+            selection
+              ? `No ${selection.category.replace(/-/g, " ")} documentation exists for "${selection.itemId}".`
+              : "The requested documentation page could not be found."
+          }
+          actionLabel="Back to documentation"
+          onAction={handleClearSelection}
+        />
+      }
+    >
+      <DocContent selection={selection} />
+    </NotFoundBoundary>
   );
 
   if (isMobile) {

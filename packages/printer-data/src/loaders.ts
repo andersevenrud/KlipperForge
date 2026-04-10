@@ -38,12 +38,46 @@ import type {
 
 const DATA_BASE_PATH = "/data";
 
+/**
+ * Thrown by the data loaders when a requested JSON file does not exist
+ * (HTTP 404). Callers can distinguish this from other fetch failures to
+ * render a dedicated "not found" view instead of a generic error.
+ */
+export class NotFoundError extends Error {
+  readonly path: string;
+
+  constructor(path: string) {
+    super(`Not found: ${path}`);
+    this.name = "NotFoundError";
+    this.path = path;
+  }
+}
+
 async function fetchJson<T>(path: string): Promise<T> {
   const response = await fetch(`${DATA_BASE_PATH}${path}`);
+  if (response.status === 404) {
+    throw new NotFoundError(path);
+  }
   if (!response.ok) {
     throw new Error(`Failed to load ${path}: ${response.statusText}`);
   }
-  return response.json() as Promise<T>;
+  // Vite's dev server falls back to index.html (200 OK, text/html) for any
+  // unknown path under /data, so a missing id there looks like a successful
+  // response until JSON.parse chokes. Detect the fallback via the response
+  // content-type when available, and also treat JSON parse failures on this
+  // path as 404s since the only valid payload here is JSON.
+  const contentType = response.headers?.get?.("content-type") ?? "";
+  if (contentType && !contentType.includes("json")) {
+    throw new NotFoundError(path);
+  }
+  try {
+    return (await response.json()) as T;
+  } catch (err) {
+    if (err instanceof SyntaxError) {
+      throw new NotFoundError(path);
+    }
+    throw err;
+  }
 }
 
 export async function loadPrinterIndex(): Promise<PrinterIndex> {
