@@ -1,4 +1,4 @@
-import type { ConfigValue, KinematicsType, McuBoardAssociation, SectionInstance } from "@klipperforge/klipper-config";
+import type { KinematicsType, McuBoardAssociation, SectionInstance } from "@klipperforge/klipper-config";
 
 // ---------------------------------------------------------------------------
 // Base types
@@ -231,34 +231,6 @@ export interface StepperDriverIndexEntry {
   formFactor?: StepperDriverFormFactor;
   baseChip?: string;
   hasImage?: boolean;
-}
-
-// ---------------------------------------------------------------------------
-// Equipment / category types
-// ---------------------------------------------------------------------------
-
-export type EquipmentCategory = "fans" | "probes" | "sensors" | "stepper-drivers";
-
-export interface EquipmentSectionData {
-  definitionId: string;
-  instanceName?: string;
-  data: Record<string, ConfigValue>;
-}
-
-export interface EquipmentItem {
-  id: string;
-  name: string;
-  category: EquipmentCategory;
-  description: string;
-  sections: EquipmentSectionData[];
-}
-
-export interface MacroTemplate {
-  id: string;
-  name: string;
-  category: string;
-  description: string;
-  gcode: string;
 }
 
 // ---------------------------------------------------------------------------

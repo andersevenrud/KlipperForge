@@ -4,8 +4,6 @@ import type {
   Display,
   DisplayIndex,
   DocIndices,
-  EquipmentCategory,
-  EquipmentItem,
   Extruder,
   ExtruderIndex,
   Fan,
@@ -14,7 +12,6 @@ import type {
   FilamentIndex,
   Hotend,
   HotendIndex,
-  MacroTemplate,
   McuBoard,
   McuBoardIndex,
   Mmu,
@@ -88,26 +85,6 @@ export async function loadPrinterIndex(): Promise<PrinterIndex> {
 
 export async function loadPrinterPreset(id: string): Promise<PrinterPreset> {
   return fetchJson<PrinterPreset>(`/printers/${id}.json`);
-}
-
-export async function loadEquipment(category: EquipmentCategory): Promise<EquipmentItem[]> {
-  return fetchJson<EquipmentItem[]>(`/equipment/${category}.json`);
-}
-
-export async function loadAllEquipment(): Promise<EquipmentItem[]> {
-  const categories: EquipmentCategory[] = ["fans", "probes", "sensors", "stepper-drivers"];
-  const results = await Promise.all(categories.map(loadEquipment));
-  return results.flat();
-}
-
-export async function loadMacros(category: string): Promise<MacroTemplate[]> {
-  return fetchJson<MacroTemplate[]>(`/macros/${category}.json`);
-}
-
-export async function loadAllMacros(): Promise<MacroTemplate[]> {
-  const categories = ["print-lifecycle", "movement"];
-  const results = await Promise.all(categories.map(loadMacros));
-  return results.flat();
 }
 
 export async function loadMcuBoardIndex(): Promise<McuBoardIndex> {
