@@ -93,8 +93,7 @@ Preset JSON files in `data/firmware-presets/` define Kconfig options per MCU fam
 
 ## State Management
 
-React Context + useReducer in `apps/klipperforge/src/context/config-context.tsx`.
-State shape: `{ config: Partial<PrinterConfig>, generatedOutput: string, selectedEquipment: string[], selectedMacros: string[] }`.
+React Context + useReducer in `apps/klipperforge/src/context/config-context.tsx`. State is a `ConfigState` shape: the current `ConfigDocument`, generated output strings (per file), source maps, validation errors, board pin aliases, and UI flags like `showHeader` and `omitDefaults`.
 
 ## Data Fetching (React Query)
 
@@ -273,4 +272,4 @@ return null;
 - Config sections are in `apps/klipperforge/src/components/sections/`
 - SVG illustrations are in `apps/klipperforge/src/components/svg/`
 - Path alias `@/` maps to `apps/klipperforge/src/`
-- All config generation goes through `generateKlipperConfig()` from `@klipperforge/klipper-config`
+- All config generation goes through `serializeConfig()` (or `serializeMultiFileConfig()` / `serializeConfigWithSourceMap()`) from `@klipperforge/klipper-config`

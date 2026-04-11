@@ -1,11 +1,6 @@
-// New section schema system
-
-/** @deprecated Use serializeConfig instead */
-export { generateKlipperConfig } from "./generator";
 // Import/export
 export { cfgToDocument, parseMultiFileConfigs } from "./import";
 export type { ParseResult } from "./parser";
-/** @deprecated Use parseKlipperConfig with section registry instead */
 export { COMMENT_SECTION_TYPE, parseKlipperConfig } from "./parser";
 export type { McuPinFamily } from "./pin-formats";
 // Pin format validation
@@ -141,19 +136,4 @@ export {
   type ValidateDocumentOptions,
   validateDocument,
 } from "./sections/validator";
-// Legacy exports (deprecated — use section schema system instead)
-/** @deprecated Use section schema system instead */
-export type {
-  ConfigSection,
-  ExtruderSection,
-  FanSection,
-  HeaterBedSection,
-  KinematicsType,
-  McuSection,
-  PrinterConfig,
-  PrinterSection,
-  ProbeSection,
-  StepperSection,
-} from "./types";
-/** @deprecated Use validateDocument instead */
-export { type ValidationError, validateConfig } from "./validator";
+export type { ConfigSection, KinematicsType } from "./types";
