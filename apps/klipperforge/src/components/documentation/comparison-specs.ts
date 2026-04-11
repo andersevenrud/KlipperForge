@@ -9,6 +9,7 @@ import {
   loadMmu,
   loadPowerSupply,
   loadProbe,
+  loadStepperDriver,
   loadStepperMotor,
   loadThermistor,
 } from "@klipperforge/printer-data";
@@ -159,6 +160,69 @@ export const COMPARISON_CONFIGS: Partial<Record<DocCategory, ComparisonCategoryC
           { label: "Density", accessor: nested("physicalSpecs.density"), suffix: " g/cm\u00B3" },
           { label: "Glass Transition Temp", accessor: nested("physicalSpecs.glassTransitionTemp"), suffix: " \u00B0C" },
           { label: "Melting Point", accessor: nested("physicalSpecs.meltingPoint"), suffix: " \u00B0C" },
+        ],
+      },
+    ],
+  },
+
+  "stepper-drivers": {
+    loader: loadStepperDriver,
+    nameAccessor: (d) => d.name as string,
+    sections: [
+      {
+        title: "Overview",
+        rows: [
+          { label: "Manufacturer", accessor: nested("manufacturer") },
+          { label: "Base Chip", accessor: nested("baseChip") },
+          { label: "Form Factor", accessor: nested("formFactor") },
+          { label: "Interface", accessor: nested("driverInterface") },
+        ],
+      },
+      {
+        title: "Electrical",
+        rows: [
+          { label: "Supply Voltage Min", accessor: nested("electricalSpecs.supplyVoltageMin"), suffix: " V" },
+          { label: "Supply Voltage Max", accessor: nested("electricalSpecs.supplyVoltageMax"), suffix: " V" },
+          { label: "RMS Current Max", accessor: nested("electricalSpecs.rmsCurrentMax"), suffix: " A" },
+          { label: "Peak Current Max", accessor: nested("electricalSpecs.peakCurrentMax"), suffix: " A" },
+          { label: "Logic Voltage Min", accessor: nested("electricalSpecs.logicVoltageMin"), suffix: " V" },
+          { label: "Logic Voltage Max", accessor: nested("electricalSpecs.logicVoltageMax"), suffix: " V" },
+          { label: "Sense Resistor", accessor: nested("electricalSpecs.senseResistor"), suffix: " \u03A9" },
+          { label: "Rref", accessor: nested("electricalSpecs.rref"), suffix: " \u03A9" },
+        ],
+      },
+      {
+        title: "Features",
+        rows: [
+          { label: "Max Microsteps", accessor: nested("featureSpecs.microstepsMax") },
+          { label: "Interpolation to 256", accessor: nested("featureSpecs.interpolationTo256"), format: "boolean" },
+          { label: "StealthChop", accessor: nested("featureSpecs.stealthChop") },
+          { label: "SpreadCycle", accessor: nested("featureSpecs.spreadCycle"), format: "boolean" },
+          { label: "CoolStep", accessor: nested("featureSpecs.coolStep"), format: "boolean" },
+          { label: "StallGuard", accessor: nested("featureSpecs.stallGuard") },
+          { label: "dcStep", accessor: nested("featureSpecs.dcStep"), format: "boolean" },
+          { label: "Sensorless Homing", accessor: nested("featureSpecs.sensorlessHoming"), format: "boolean" },
+        ],
+      },
+      {
+        title: "Klipper",
+        rows: [
+          { label: "Config Section", accessor: nested("klipperSpecs.section") },
+          { label: "Interface", accessor: nested("klipperSpecs.driverInterface") },
+          { label: "Supports DIAG Pin", accessor: nested("klipperSpecs.supportsDiagPin"), format: "boolean" },
+          {
+            label: "Supports Sensorless Homing",
+            accessor: nested("klipperSpecs.supportsSensorlessHoming"),
+            format: "boolean",
+          },
+        ],
+      },
+      {
+        title: "Physical",
+        rows: [
+          { label: "Package Type", accessor: nested("physicalSpecs.packageType") },
+          { label: "Dimensions", accessor: nested("physicalSpecs.dimensions") },
+          { label: "Operating Temperature", accessor: nested("physicalSpecs.operatingTemperature") },
         ],
       },
     ],
