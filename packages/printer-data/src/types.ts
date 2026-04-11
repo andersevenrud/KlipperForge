@@ -756,34 +756,6 @@ export interface McuBoardIndex {
   boards: McuBoardIndexEntry[];
 }
 
-export interface ProbeIndex {
-  probes: ProbeIndexEntry[];
-}
-
-export interface StepperMotorIndex {
-  motors: StepperMotorIndexEntry[];
-}
-
-export interface FanIndex {
-  fans: FanIndexEntry[];
-}
-
-export interface ThermistorIndex {
-  thermistors: ThermistorIndexEntry[];
-}
-
-export interface ExtruderIndex {
-  extruders: ExtruderIndexEntry[];
-}
-
-export interface HotendIndex {
-  hotends: HotendIndexEntry[];
-}
-
-export interface PowerSupplyIndex {
-  powerSupplies: PowerSupplyIndexEntry[];
-}
-
 export interface AccessoryElectricalSpecs {
   voltage?: string;
   signalType?: string;
@@ -808,14 +780,6 @@ export interface Accessory {
   references?: AccessoryReference[];
   unverified?: string[];
   relatedArticles?: RelatedArticle[];
-}
-
-export interface AccessoryIndex {
-  accessories: AccessoryIndexEntry[];
-}
-
-export interface FilamentIndex {
-  filaments: FilamentIndexEntry[];
 }
 
 export interface DisplayScreenSpecs {
@@ -868,10 +832,6 @@ export interface Display {
   relatedArticles?: RelatedArticle[];
 }
 
-export interface DisplayIndex {
-  displays: DisplayIndexEntry[];
-}
-
 // ---------------------------------------------------------------------------
 // Toolhead types
 // ---------------------------------------------------------------------------
@@ -904,10 +864,6 @@ export interface Toolhead {
   references?: ToolheadReference[];
   unverified?: string[];
   relatedArticles?: RelatedArticle[];
-}
-
-export interface ToolheadIndex {
-  toolheads: ToolheadIndexEntry[];
 }
 
 // ---------------------------------------------------------------------------
@@ -956,10 +912,6 @@ export interface Mmu {
   references?: MmuReference[];
   unverified?: string[];
   relatedArticles?: RelatedArticle[];
-}
-
-export interface MmuIndex {
-  mmus: MmuIndexEntry[];
 }
 
 // ---------------------------------------------------------------------------
@@ -1018,10 +970,6 @@ export interface StepperDriver {
   unverified?: string[];
   references?: StepperDriverReference[];
   relatedArticles?: RelatedArticle[];
-}
-
-export interface StepperDriverIndex {
-  stepperDrivers: StepperDriverIndexEntry[];
 }
 
 export interface PcbLayoutIndex {

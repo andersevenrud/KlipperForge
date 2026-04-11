@@ -1,11 +1,8 @@
 import { describe, expect, it, vi } from "vitest";
 import {
   loadAccessory,
-  loadAccessoryIndex,
   loadDisplay,
-  loadDisplayIndex,
   loadFilament,
-  loadFilamentIndex,
   loadMcuBoard,
   loadPrinterIndex,
   resolvePresetVariant,
@@ -62,28 +59,6 @@ describe("loaders", () => {
     expect(globalThis.fetch).toHaveBeenCalledWith("/data/mcu-boards/btt-octopus-pro-1.1.json");
   });
 
-  it("loadAccessoryIndex fetches the accessory index", async () => {
-    const mockData = {
-      accessories: [
-        {
-          id: "btt-sfs-v2",
-          name: "Smart Filament Sensor V2.0",
-          manufacturer: "BIGTREETECH",
-          accessoryType: "filament-sensor",
-        },
-      ],
-    };
-    globalThis.fetch = vi.fn().mockResolvedValue({
-      ok: true,
-      json: () => Promise.resolve(mockData),
-    });
-
-    const result = await loadAccessoryIndex();
-    expect(result.accessories).toHaveLength(1);
-    expect(result.accessories[0].id).toBe("btt-sfs-v2");
-    expect(globalThis.fetch).toHaveBeenCalledWith("/data/accessories/index.json");
-  });
-
   it("loadAccessory fetches an accessory by ID", async () => {
     const mockData = {
       id: "btt-sfs-v2",
@@ -101,28 +76,6 @@ describe("loaders", () => {
     expect(result.id).toBe("btt-sfs-v2");
     expect(result.accessoryType).toBe("filament-sensor");
     expect(globalThis.fetch).toHaveBeenCalledWith("/data/accessories/btt-sfs-v2.json");
-  });
-
-  it("loadFilamentIndex fetches the filament index", async () => {
-    const mockData = {
-      filaments: [
-        {
-          id: "generic-pla",
-          name: "PLA",
-          manufacturer: "Generic",
-          filamentType: "PLA",
-        },
-      ],
-    };
-    globalThis.fetch = vi.fn().mockResolvedValue({
-      ok: true,
-      json: () => Promise.resolve(mockData),
-    });
-
-    const result = await loadFilamentIndex();
-    expect(result.filaments).toHaveLength(1);
-    expect(result.filaments[0].id).toBe("generic-pla");
-    expect(globalThis.fetch).toHaveBeenCalledWith("/data/filaments/index.json");
   });
 
   it("loadFilament fetches a filament by ID", async () => {
@@ -144,28 +97,6 @@ describe("loaders", () => {
     expect(result.id).toBe("generic-pla");
     expect(result.filamentType).toBe("PLA");
     expect(globalThis.fetch).toHaveBeenCalledWith("/data/filaments/generic-pla.json");
-  });
-
-  it("loadDisplayIndex fetches the display index", async () => {
-    const mockData = {
-      displays: [
-        {
-          id: "btt-knomi-v2.0",
-          name: "KNOMI V2.0",
-          manufacturer: "BigTreeTech",
-          displayType: "standalone",
-        },
-      ],
-    };
-    globalThis.fetch = vi.fn().mockResolvedValue({
-      ok: true,
-      json: () => Promise.resolve(mockData),
-    });
-
-    const result = await loadDisplayIndex();
-    expect(result.displays).toHaveLength(1);
-    expect(result.displays[0].id).toBe("btt-knomi-v2.0");
-    expect(globalThis.fetch).toHaveBeenCalledWith("/data/displays/index.json");
   });
 
   it("loadDisplay fetches a display by ID", async () => {

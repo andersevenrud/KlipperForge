@@ -1,38 +1,25 @@
 import type {
   Accessory,
-  AccessoryIndex,
   Display,
-  DisplayIndex,
   DocIndices,
   Extruder,
-  ExtruderIndex,
   Fan,
-  FanIndex,
   Filament,
-  FilamentIndex,
   Hotend,
-  HotendIndex,
   McuBoard,
   McuBoardIndex,
   Mmu,
-  MmuIndex,
   PcbLayout,
   PcbLayoutIndex,
   PowerSupply,
-  PowerSupplyIndex,
   PrinterIndex,
   PrinterPreset,
   Probe,
-  ProbeIndex,
   ResolvedPreset,
   StepperDriver,
-  StepperDriverIndex,
   StepperMotor,
-  StepperMotorIndex,
   Thermistor,
-  ThermistorIndex,
   Toolhead,
-  ToolheadIndex,
 } from "./types.js";
 
 const DATA_BASE_PATH = "/data";
@@ -103,48 +90,24 @@ export async function loadPcbLayout(boardId: string): Promise<PcbLayout> {
   return fetchJson<PcbLayout>(`/pcb-layouts/${boardId}.json`);
 }
 
-export async function loadProbeIndex(): Promise<ProbeIndex> {
-  return fetchJson<ProbeIndex>("/probes/index.json");
-}
-
 export async function loadProbe(id: string): Promise<Probe> {
   return fetchJson<Probe>(`/probes/${id}.json`);
-}
-
-export async function loadStepperMotorIndex(): Promise<StepperMotorIndex> {
-  return fetchJson<StepperMotorIndex>("/stepper-motors/index.json");
 }
 
 export async function loadStepperMotor(id: string): Promise<StepperMotor> {
   return fetchJson<StepperMotor>(`/stepper-motors/${id}.json`);
 }
 
-export async function loadFanIndex(): Promise<FanIndex> {
-  return fetchJson<FanIndex>("/fans/index.json");
-}
-
 export async function loadFan(id: string): Promise<Fan> {
   return fetchJson<Fan>(`/fans/${id}.json`);
-}
-
-export async function loadThermistorIndex(): Promise<ThermistorIndex> {
-  return fetchJson<ThermistorIndex>("/thermistors/index.json");
 }
 
 export async function loadThermistor(id: string): Promise<Thermistor> {
   return fetchJson<Thermistor>(`/thermistors/${id}.json`);
 }
 
-export async function loadExtruderIndex(): Promise<ExtruderIndex> {
-  return fetchJson<ExtruderIndex>("/extruders/index.json");
-}
-
 export async function loadExtruder(id: string): Promise<Extruder> {
   return fetchJson<Extruder>(`/extruders/${id}.json`);
-}
-
-export async function loadHotendIndex(): Promise<HotendIndex> {
-  return fetchJson<HotendIndex>("/hotends/index.json");
 }
 
 export async function loadHotend(id: string): Promise<Hotend> {
@@ -185,56 +148,28 @@ export function resolvePresetVariant(preset: PrinterPreset, variantId?: string):
   };
 }
 
-export async function loadPowerSupplyIndex(): Promise<PowerSupplyIndex> {
-  return fetchJson<PowerSupplyIndex>("/power-supplies/index.json");
-}
-
 export async function loadPowerSupply(id: string): Promise<PowerSupply> {
   return fetchJson<PowerSupply>(`/power-supplies/${id}.json`);
-}
-
-export async function loadAccessoryIndex(): Promise<AccessoryIndex> {
-  return fetchJson<AccessoryIndex>("/accessories/index.json");
 }
 
 export async function loadAccessory(id: string): Promise<Accessory> {
   return fetchJson<Accessory>(`/accessories/${id}.json`);
 }
 
-export async function loadFilamentIndex(): Promise<FilamentIndex> {
-  return fetchJson<FilamentIndex>("/filaments/index.json");
-}
-
 export async function loadFilament(id: string): Promise<Filament> {
   return fetchJson<Filament>(`/filaments/${id}.json`);
-}
-
-export async function loadDisplayIndex(): Promise<DisplayIndex> {
-  return fetchJson<DisplayIndex>("/displays/index.json");
 }
 
 export async function loadDisplay(id: string): Promise<Display> {
   return fetchJson<Display>(`/displays/${id}.json`);
 }
 
-export async function loadToolheadIndex(): Promise<ToolheadIndex> {
-  return fetchJson<ToolheadIndex>("/toolheads/index.json");
-}
-
 export async function loadToolhead(id: string): Promise<Toolhead> {
   return fetchJson<Toolhead>(`/toolheads/${id}.json`);
 }
 
-export async function loadMmuIndex(): Promise<MmuIndex> {
-  return fetchJson<MmuIndex>("/mmus/index.json");
-}
-
 export async function loadMmu(id: string): Promise<Mmu> {
   return fetchJson<Mmu>(`/mmus/${id}.json`);
-}
-
-export async function loadStepperDriverIndex(): Promise<StepperDriverIndex> {
-  return fetchJson<StepperDriverIndex>("/stepper-drivers/index.json");
 }
 
 export async function loadStepperDriver(id: string): Promise<StepperDriver> {
