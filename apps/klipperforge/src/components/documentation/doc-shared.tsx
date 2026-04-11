@@ -187,20 +187,16 @@ export function DocPageShell({ children }: DocPageShellProps) {
 export function DocHeader({ name, manufacturer, description, badges }: DocHeaderProps) {
   return (
     <>
-      <div className="flex items-start gap-3">
-        <div>
-          <h1 className="text-2xl font-bold">{name}</h1>
-          {manufacturer && <p className="text-muted-foreground mt-1 text-sm">{manufacturer}</p>}
-        </div>
-        {badges}
-      </div>
+      <h1 className="text-2xl font-bold">{name}</h1>
+      {manufacturer && <p className="text-muted-foreground mt-1 text-sm">{manufacturer}</p>}
+      {badges && <div className="mt-2 flex flex-wrap gap-1">{badges}</div>}
       {description && <p className="mt-3 text-sm">{description}</p>}
     </>
   );
 }
 
 export function Badge({ children }: BadgeProps) {
-  return <code className="bg-muted mt-1 shrink-0 rounded px-2 py-0.5 text-xs font-medium">{children}</code>;
+  return <code className="bg-muted shrink-0 rounded px-2 py-0.5 text-xs font-medium">{children}</code>;
 }
 
 function UnverifiedBadge() {

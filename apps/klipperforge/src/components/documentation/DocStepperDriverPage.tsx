@@ -43,13 +43,13 @@ export function DocStepperDriverPage({ driverId }: DocStepperDriverPageProps) {
         manufacturer={driver.manufacturer}
         description={driver.description}
         badges={
-          <div className="flex flex-col items-end gap-1">
+          <>
             <Badge>{driver.driverInterface}</Badge>
             <Badge>[{driver.klipperSpecs.section}]</Badge>
             {driver.formFactor && driver.formFactor !== "chip" && (
               <Badge>{FORM_FACTOR_LABELS[driver.formFactor] ?? driver.formFactor}</Badge>
             )}
-          </div>
+          </>
         }
       />
 
