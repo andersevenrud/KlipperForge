@@ -228,6 +228,8 @@ export interface StepperDriverIndexEntry {
   manufacturer: string;
   driverInterface: "SPI" | "UART" | "Step/Dir";
   klipperSection: string;
+  formFactor?: StepperDriverFormFactor;
+  baseChip?: string;
   hasImage?: boolean;
 }
 
@@ -999,6 +1001,8 @@ export interface StepperDriverElectricalSpecs {
   peakCurrentMax?: number;
   logicVoltageMin?: number;
   logicVoltageMax?: number;
+  senseResistor?: number | Record<string, number>;
+  rref?: number;
 }
 
 export interface StepperDriverFeatureSpecs {
@@ -1025,12 +1029,16 @@ export interface StepperDriverPhysicalSpecs {
   operatingTemperature?: string;
 }
 
+export type StepperDriverFormFactor = "chip" | "stepstick" | "ez" | "external" | "integrated";
+
 export interface StepperDriver {
   id: string;
   name: string;
   manufacturer: string;
   description: string;
   driverInterface: "SPI" | "UART" | "Step/Dir";
+  formFactor?: StepperDriverFormFactor;
+  baseChip?: string;
   electricalSpecs: StepperDriverElectricalSpecs;
   featureSpecs: StepperDriverFeatureSpecs;
   klipperSpecs: StepperDriverKlipperSpecs;

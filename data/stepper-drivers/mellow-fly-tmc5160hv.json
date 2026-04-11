@@ -1,0 +1,44 @@
+{
+  "id": "mellow-fly-tmc5160hv",
+  "name": "Mellow Fly-TMC5160HV",
+  "manufacturer": "Mellow",
+  "description": "Mellow's Fly-TMC5160HV is a high-voltage StepStick-compatible variant of the TMC5160 supporting a 12–48 V input range. Maximum current of 4.4 A with a resolution of up to 256 microsteps, suitable for higher-power stepper motors without stepping up to a full external driver.",
+  "driverInterface": "SPI",
+  "formFactor": "stepstick",
+  "baseChip": "tmc5160",
+  "electricalSpecs": {
+    "supplyVoltageMin": 12,
+    "supplyVoltageMax": 48,
+    "peakCurrentMax": 4.4,
+    "senseResistor": 0.075
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard2",
+    "dcStep": true,
+    "sensorlessHoming": true
+  },
+  "klipperSpecs": {
+    "section": "tmc5160",
+    "driverInterface": "SPI",
+    "supportsDiagPin": true,
+    "supportsSensorlessHoming": true
+  },
+  "unverified": ["rmsCurrentMax"],
+  "references": [
+    {
+      "label": "Mellow Klipper Docs — TMC5160HV Module",
+      "url": "https://mellow.klipper.cn/en/docs/ProductDoc/ModuleDrive/tmc5160hv/",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Config Reference — [tmc5160]",
+      "url": "https://www.klipper3d.org/Config_Reference.html#tmc5160",
+      "type": "documentation"
+    }
+  ]
+}

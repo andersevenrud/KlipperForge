@@ -1,0 +1,43 @@
+{
+  "id": "btt-ez2130",
+  "name": "BIGTREETECH EZ2130",
+  "manufacturer": "BIGTREETECH",
+  "description": "BIGTREETECH's EZ-Driver form-factor variant of the TMC2130. EZ drivers use a dual-connector pluggable layout that is less prone to incorrect insertion than legacy StepStick sockets and allows hot-swap on compatible EZ-socket mainboards. Based on Trinamic's TMC2130 chip with SPI and Step/Dir interface.",
+  "driverInterface": "SPI",
+  "formFactor": "ez",
+  "baseChip": "tmc2130",
+  "electricalSpecs": {
+    "supplyVoltageMin": 12,
+    "supplyVoltageMax": 24,
+    "rmsCurrentMax": 1.2,
+    "peakCurrentMax": 2
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard2",
+    "dcStep": true,
+    "sensorlessHoming": true
+  },
+  "klipperSpecs": {
+    "section": "tmc2130",
+    "driverInterface": "SPI",
+    "supportsDiagPin": true,
+    "supportsSensorlessHoming": true
+  },
+  "references": [
+    {
+      "label": "BIGTREETECH EZ2130 Documentation",
+      "url": "https://github.com/bigtreetech/docs/blob/master/docs/EZ2130.md",
+      "type": "documentation"
+    },
+    {
+      "label": "BIGTREETECH-EZ-Driver (EZ2130 V1.0)",
+      "url": "https://github.com/bigtreetech/BIGTREETECH-EZ-Driver/tree/master/BIGTREETECH%20EZ2130%20V1.0",
+      "type": "github"
+    }
+  ]
+}

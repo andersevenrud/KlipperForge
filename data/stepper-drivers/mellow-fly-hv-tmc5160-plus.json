@@ -1,0 +1,44 @@
+{
+  "id": "mellow-fly-hv-tmc5160-plus",
+  "name": "Mellow Fly HV-TMC5160 Plus",
+  "manufacturer": "Mellow",
+  "description": "The Mellow Fly HV-TMC5160 Plus is a high-performance stepper motor driver module that supports the SPI communication protocol. It is suitable for applications requiring precise motion control, such as 3D printers and CNC machines. A distinct product from the HV-TMC5160 Pro: Plus accepts up to 60 V input and delivers up to 10 A maximum current via an FPC-cable-connected adapter board, with onboard RGB LED and 12 V cooling fan.",
+  "driverInterface": "SPI",
+  "formFactor": "external",
+  "baseChip": "tmc5160",
+  "electricalSpecs": {
+    "supplyVoltageMin": 12,
+    "supplyVoltageMax": 60,
+    "peakCurrentMax": 10,
+    "senseResistor": 0.033
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard2",
+    "dcStep": true,
+    "sensorlessHoming": true
+  },
+  "klipperSpecs": {
+    "section": "tmc5160",
+    "driverInterface": "SPI",
+    "supportsDiagPin": true,
+    "supportsSensorlessHoming": true
+  },
+  "unverified": ["rmsCurrentMax"],
+  "references": [
+    {
+      "label": "Mellow Klipper Docs — HV-TMC5160 Plus",
+      "url": "https://mellow.klipper.cn/en/docs/ProductDoc/ModuleDrive/tmc5160_plus/",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Config Reference — [tmc5160]",
+      "url": "https://www.klipper3d.org/Config_Reference.html#tmc5160",
+      "type": "documentation"
+    }
+  ]
+}

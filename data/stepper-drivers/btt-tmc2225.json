@@ -1,0 +1,39 @@
+{
+  "id": "btt-tmc2225",
+  "name": "BIGTREETECH TMC2225",
+  "manufacturer": "BIGTREETECH",
+  "description": "BIGTREETECH's SilentStepStick-compatible TMC2225 driver module. The TMC2225 is an ultra-silent two-phase motor driver IC with pin compatibility to a number of legacy drivers (A4988/DRV8825-style sockets) and single-wire UART + OTP configuration.",
+  "driverInterface": "UART",
+  "formFactor": "stepstick",
+  "baseChip": "tmc2208",
+  "electricalSpecs": {
+    "supplyVoltageMin": 4.75,
+    "supplyVoltageMax": 36,
+    "peakCurrentMax": 2
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true
+  },
+  "klipperSpecs": {
+    "section": "tmc2208",
+    "driverInterface": "UART",
+    "supportsDiagPin": false,
+    "supportsSensorlessHoming": false
+  },
+  "unverified": ["rmsCurrentMax"],
+  "references": [
+    {
+      "label": "BIGTREETECH-Stepper-Motor-Driver (TMC2225)",
+      "url": "https://github.com/bigtreetech/BIGTREETECH-Stepper-Motor-Driver/tree/master/TMC2225",
+      "type": "github"
+    },
+    {
+      "label": "BIGTREETECH EZ2225 Documentation (same underlying TMC2225 chip)",
+      "url": "https://github.com/bigtreetech/docs/blob/master/docs/EZ2225.md",
+      "type": "documentation"
+    }
+  ]
+}

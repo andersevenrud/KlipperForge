@@ -1,0 +1,45 @@
+{
+  "id": "mellow-fly-tmc2209",
+  "name": "Mellow Fly-TMC2209",
+  "manufacturer": "Mellow",
+  "description": "Mellow's Fly-TMC2209 StepStick — a SilentStepStick-compatible driver module based on the Trinamic TMC2209 chip with single-wire UART control. Documented on the Mellow docs hub alongside the Mellow Fly series of control boards.",
+  "driverInterface": "UART",
+  "formFactor": "stepstick",
+  "baseChip": "tmc2209",
+  "electricalSpecs": {
+    "senseResistor": 0.11
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard4",
+    "sensorlessHoming": true
+  },
+  "klipperSpecs": {
+    "section": "tmc2209",
+    "driverInterface": "UART",
+    "supportsDiagPin": true,
+    "supportsSensorlessHoming": true
+  },
+  "unverified": ["supplyVoltageMin", "supplyVoltageMax", "rmsCurrentMax", "peakCurrentMax"],
+  "references": [
+    {
+      "label": "Mellow Fly TMC2209 Documentation",
+      "url": "https://mellow-3d.github.io/fly_tmc2209_general.html",
+      "type": "documentation"
+    },
+    {
+      "label": "Mellow Klipper Docs — TMC2209 Module",
+      "url": "https://mellow.klipper.cn/en/docs/ProductDoc/ModuleDrive/tmc2209/",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Config Reference — [tmc2209]",
+      "url": "https://www.klipper3d.org/Config_Reference.html#tmc2209",
+      "type": "documentation"
+    }
+  ]
+}

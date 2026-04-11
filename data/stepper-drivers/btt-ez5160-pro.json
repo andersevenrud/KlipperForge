@@ -1,0 +1,46 @@
+{
+  "id": "btt-ez5160-pro",
+  "name": "BIGTREETECH EZ5160 Pro",
+  "manufacturer": "BIGTREETECH",
+  "description": "BIGTREETECH's EZ-Driver form-factor variant of the TMC5160. TMC5160 is a high-power stepper motor drive control chip with external MOSFETs — its maximum voltage can reach 48 V on this module, supporting a wider range of stepper motors and higher adaptability than the integrated-MOSFET TMC22xx family.",
+  "driverInterface": "SPI",
+  "formFactor": "ez",
+  "baseChip": "tmc5160",
+  "electricalSpecs": {
+    "supplyVoltageMin": 8,
+    "supplyVoltageMax": 48,
+    "rmsCurrentMax": 2.5,
+    "peakCurrentMax": 3
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard2",
+    "dcStep": true,
+    "sensorlessHoming": true
+  },
+  "klipperSpecs": {
+    "section": "tmc5160",
+    "driverInterface": "SPI",
+    "supportsDiagPin": true,
+    "supportsSensorlessHoming": true
+  },
+  "physicalSpecs": {
+    "dimensions": "18.5 × 20 mm"
+  },
+  "references": [
+    {
+      "label": "BIGTREETECH EZ5160 Pro Documentation",
+      "url": "https://github.com/bigtreetech/docs/blob/master/docs/EZ5160%20Pro.md",
+      "type": "documentation"
+    },
+    {
+      "label": "BIGTREETECH-EZ-Driver (EZ5160 Pro V1.0)",
+      "url": "https://github.com/bigtreetech/BIGTREETECH-EZ-Driver/tree/master/BIGTREETECH%20EZ5160%20Pro%20V1.0",
+      "type": "github"
+    }
+  ]
+}

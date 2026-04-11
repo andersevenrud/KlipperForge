@@ -1,0 +1,42 @@
+{
+  "id": "btt-ez2226",
+  "name": "BIGTREETECH EZ2226",
+  "manufacturer": "BIGTREETECH",
+  "description": "BIGTREETECH's EZ-Driver form-factor variant of the TMC2226. Pluggable dual-connector module based on Trinamic's TMC2226 ultra-silent stepper driver IC — TRINAMICs sophisticated StealthChop2 chopper ensures noiseless operation, maximum efficiency and best motor torque.",
+  "driverInterface": "UART",
+  "formFactor": "ez",
+  "baseChip": "tmc2209",
+  "electricalSpecs": {
+    "supplyVoltageMin": 4.75,
+    "supplyVoltageMax": 29,
+    "rmsCurrentMax": 2,
+    "peakCurrentMax": 2.8
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard4",
+    "sensorlessHoming": true
+  },
+  "klipperSpecs": {
+    "section": "tmc2209",
+    "driverInterface": "UART",
+    "supportsDiagPin": true,
+    "supportsSensorlessHoming": true
+  },
+  "references": [
+    {
+      "label": "BIGTREETECH EZ2226 Documentation",
+      "url": "https://github.com/bigtreetech/docs/blob/master/docs/EZ2226.md",
+      "type": "documentation"
+    },
+    {
+      "label": "BIGTREETECH-EZ-Driver (EZ2226 V1.0)",
+      "url": "https://github.com/bigtreetech/BIGTREETECH-EZ-Driver/tree/master/BIGTREETECH%20EZ2226%20V1.0",
+      "type": "github"
+    }
+  ]
+}

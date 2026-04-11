@@ -1,0 +1,47 @@
+{
+  "id": "btt-tmc2240",
+  "name": "BIGTREETECH TMC2240",
+  "manufacturer": "BIGTREETECH",
+  "description": "BIGTREETECH's SilentStepStick-compatible TMC2240 driver module. The TMC2240 is a smart high-performance stepper motor driver IC with SPI and UART serial communication interfaces and extensive diagnosis capabilities. Supports IRMS = 2.1 A RMS and a sine-wave peak of 3.0 A (bridge peak 5.0 A).",
+  "driverInterface": "SPI",
+  "formFactor": "stepstick",
+  "baseChip": "tmc2240",
+  "electricalSpecs": {
+    "supplyVoltageMin": 4.5,
+    "supplyVoltageMax": 36,
+    "rmsCurrentMax": 2.1,
+    "peakCurrentMax": 3
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard4",
+    "sensorlessHoming": true
+  },
+  "klipperSpecs": {
+    "section": "tmc2240",
+    "driverInterface": "SPI",
+    "supportsDiagPin": true,
+    "supportsSensorlessHoming": true
+  },
+  "references": [
+    {
+      "label": "BIGTREETECH TMC2240 Documentation",
+      "url": "https://github.com/bigtreetech/docs/blob/master/docs/TMC2240.md",
+      "type": "documentation"
+    },
+    {
+      "label": "BIGTREETECH-Stepper-Motor-Driver (TMC2240)",
+      "url": "https://github.com/bigtreetech/BIGTREETECH-Stepper-Motor-Driver/tree/master/TMC2240",
+      "type": "github"
+    },
+    {
+      "label": "Klipper Config Reference — [tmc2240]",
+      "url": "https://www.klipper3d.org/Config_Reference.html#tmc2240",
+      "type": "documentation"
+    }
+  ]
+}

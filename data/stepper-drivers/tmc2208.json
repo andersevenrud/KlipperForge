@@ -4,6 +4,7 @@
   "manufacturer": "Analog Devices (Trinamic)",
   "description": "The TMC2208 is an ultra-silent two-phase stepper motor driver with integrated MOSFETs and a single-wire UART interface for register access in addition to a classic Step/Dir input. It introduces stealthChop2 for smoother and quieter low-velocity motion and spreadCycle for high-velocity operation. Commonly found on budget 3D printer boards such as the Creality silent boards and early BigTreeTech SKR variants. Covered by Trinamic's combined TMC2202/TMC2208/TMC2224 datasheet.",
   "driverInterface": "UART",
+  "formFactor": "chip",
   "electricalSpecs": {
     "supplyVoltageMin": 5.5,
     "supplyVoltageMax": 36,

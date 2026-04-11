@@ -5,42 +5,251 @@
       "name": "TMC2130",
       "manufacturer": "Analog Devices (Trinamic)",
       "driverInterface": "SPI",
-      "klipperSection": "tmc2130"
+      "klipperSection": "tmc2130",
+      "formFactor": "chip"
     },
     {
       "id": "tmc2208",
       "name": "TMC2208",
       "manufacturer": "Analog Devices (Trinamic)",
       "driverInterface": "UART",
-      "klipperSection": "tmc2208"
+      "klipperSection": "tmc2208",
+      "formFactor": "chip"
     },
     {
       "id": "tmc2209",
       "name": "TMC2209",
       "manufacturer": "Analog Devices (Trinamic)",
       "driverInterface": "UART",
-      "klipperSection": "tmc2209"
+      "klipperSection": "tmc2209",
+      "formFactor": "chip"
     },
     {
       "id": "tmc2240",
       "name": "TMC2240",
       "manufacturer": "Analog Devices (Trinamic)",
       "driverInterface": "SPI",
-      "klipperSection": "tmc2240"
+      "klipperSection": "tmc2240",
+      "formFactor": "chip"
     },
     {
       "id": "tmc2660",
       "name": "TMC2660",
       "manufacturer": "Analog Devices (Trinamic)",
       "driverInterface": "SPI",
-      "klipperSection": "tmc2660"
+      "klipperSection": "tmc2660",
+      "formFactor": "chip"
     },
     {
       "id": "tmc5160",
       "name": "TMC5160",
       "manufacturer": "Analog Devices (Trinamic)",
       "driverInterface": "SPI",
-      "klipperSection": "tmc5160"
+      "klipperSection": "tmc5160",
+      "formFactor": "chip"
+    },
+    {
+      "id": "btt-ez2130",
+      "name": "BIGTREETECH EZ2130",
+      "manufacturer": "BIGTREETECH",
+      "driverInterface": "SPI",
+      "klipperSection": "tmc2130",
+      "formFactor": "ez",
+      "baseChip": "tmc2130",
+      "hasImage": true
+    },
+    {
+      "id": "btt-ez2208",
+      "name": "BIGTREETECH EZ2208",
+      "manufacturer": "BIGTREETECH",
+      "driverInterface": "UART",
+      "klipperSection": "tmc2208",
+      "formFactor": "ez",
+      "baseChip": "tmc2208",
+      "hasImage": true
+    },
+    {
+      "id": "btt-ez2209",
+      "name": "BIGTREETECH EZ2209",
+      "manufacturer": "BIGTREETECH",
+      "driverInterface": "UART",
+      "klipperSection": "tmc2209",
+      "formFactor": "ez",
+      "baseChip": "tmc2209",
+      "hasImage": true
+    },
+    {
+      "id": "btt-ez2225",
+      "name": "BIGTREETECH EZ2225",
+      "manufacturer": "BIGTREETECH",
+      "driverInterface": "UART",
+      "klipperSection": "tmc2208",
+      "formFactor": "ez",
+      "baseChip": "tmc2208",
+      "hasImage": true
+    },
+    {
+      "id": "btt-ez2226",
+      "name": "BIGTREETECH EZ2226",
+      "manufacturer": "BIGTREETECH",
+      "driverInterface": "UART",
+      "klipperSection": "tmc2209",
+      "formFactor": "ez",
+      "baseChip": "tmc2209",
+      "hasImage": true
+    },
+    {
+      "id": "btt-ez5160-pro",
+      "name": "BIGTREETECH EZ5160 Pro",
+      "manufacturer": "BIGTREETECH",
+      "driverInterface": "SPI",
+      "klipperSection": "tmc5160",
+      "formFactor": "ez",
+      "baseChip": "tmc5160",
+      "hasImage": true
+    },
+    {
+      "id": "btt-tmc2130",
+      "name": "BIGTREETECH TMC2130",
+      "manufacturer": "BIGTREETECH",
+      "driverInterface": "SPI",
+      "klipperSection": "tmc2130",
+      "formFactor": "stepstick",
+      "baseChip": "tmc2130",
+      "hasImage": true
+    },
+    {
+      "id": "btt-tmc2208",
+      "name": "BIGTREETECH TMC2208",
+      "manufacturer": "BIGTREETECH",
+      "driverInterface": "UART",
+      "klipperSection": "tmc2208",
+      "formFactor": "stepstick",
+      "baseChip": "tmc2208",
+      "hasImage": true
+    },
+    {
+      "id": "btt-tmc2209",
+      "name": "BIGTREETECH TMC2209",
+      "manufacturer": "BIGTREETECH",
+      "driverInterface": "UART",
+      "klipperSection": "tmc2209",
+      "formFactor": "stepstick",
+      "baseChip": "tmc2209",
+      "hasImage": true
+    },
+    {
+      "id": "btt-tmc2225",
+      "name": "BIGTREETECH TMC2225",
+      "manufacturer": "BIGTREETECH",
+      "driverInterface": "UART",
+      "klipperSection": "tmc2208",
+      "formFactor": "stepstick",
+      "baseChip": "tmc2208"
+    },
+    {
+      "id": "btt-tmc2226",
+      "name": "BIGTREETECH TMC2226",
+      "manufacturer": "BIGTREETECH",
+      "driverInterface": "UART",
+      "klipperSection": "tmc2209",
+      "formFactor": "stepstick",
+      "baseChip": "tmc2209"
+    },
+    {
+      "id": "btt-tmc2240",
+      "name": "BIGTREETECH TMC2240",
+      "manufacturer": "BIGTREETECH",
+      "driverInterface": "SPI",
+      "klipperSection": "tmc2240",
+      "formFactor": "stepstick",
+      "baseChip": "tmc2240"
+    },
+    {
+      "id": "btt-tmc5160",
+      "name": "BIGTREETECH TMC5160",
+      "manufacturer": "BIGTREETECH",
+      "driverInterface": "SPI",
+      "klipperSection": "tmc5160",
+      "formFactor": "stepstick",
+      "baseChip": "tmc5160",
+      "hasImage": true
+    },
+    {
+      "id": "btt-tmc5160-pro",
+      "name": "BIGTREETECH TMC5160 Pro",
+      "manufacturer": "BIGTREETECH",
+      "driverInterface": "SPI",
+      "klipperSection": "tmc5160",
+      "formFactor": "stepstick",
+      "baseChip": "tmc5160",
+      "hasImage": true
+    },
+    {
+      "id": "btt-tmc5160t-plus",
+      "name": "BIGTREETECH TMC5160T Plus",
+      "manufacturer": "BIGTREETECH",
+      "driverInterface": "SPI",
+      "klipperSection": "tmc5160",
+      "formFactor": "external",
+      "baseChip": "tmc5160",
+      "hasImage": true
+    },
+    {
+      "id": "mellow-fly-tmc2209",
+      "name": "Mellow Fly-TMC2209",
+      "manufacturer": "Mellow",
+      "driverInterface": "UART",
+      "klipperSection": "tmc2209",
+      "formFactor": "stepstick",
+      "baseChip": "tmc2209",
+      "hasImage": true
+    },
+    {
+      "id": "mellow-fly-tmc2240",
+      "name": "Mellow Fly-TMC2240",
+      "manufacturer": "Mellow",
+      "driverInterface": "SPI",
+      "klipperSection": "tmc2240",
+      "formFactor": "stepstick",
+      "baseChip": "tmc2240"
+    },
+    {
+      "id": "mellow-fly-tmc5160",
+      "name": "Mellow Fly-TMC5160",
+      "manufacturer": "Mellow",
+      "driverInterface": "SPI",
+      "klipperSection": "tmc5160",
+      "formFactor": "stepstick",
+      "baseChip": "tmc5160",
+      "hasImage": true
+    },
+    {
+      "id": "mellow-fly-tmc5160hv",
+      "name": "Mellow Fly-TMC5160HV",
+      "manufacturer": "Mellow",
+      "driverInterface": "SPI",
+      "klipperSection": "tmc5160",
+      "formFactor": "stepstick",
+      "baseChip": "tmc5160"
+    },
+    {
+      "id": "mellow-fly-hv-tmc5160-plus",
+      "name": "Mellow Fly HV-TMC5160 Plus",
+      "manufacturer": "Mellow",
+      "driverInterface": "SPI",
+      "klipperSection": "tmc5160",
+      "formFactor": "external",
+      "baseChip": "tmc5160"
+    },
+    {
+      "id": "mellow-fly-hv-tmc5160-pro",
+      "name": "Mellow Fly HV-TMC5160 Pro",
+      "manufacturer": "Mellow",
+      "driverInterface": "SPI",
+      "klipperSection": "tmc5160",
+      "formFactor": "external",
+      "baseChip": "tmc5160"
     }
   ]
 }

@@ -1,0 +1,52 @@
+{
+  "id": "btt-tmc5160t-plus",
+  "name": "BIGTREETECH TMC5160T Plus",
+  "manufacturer": "BIGTREETECH",
+  "description": "BIGTREETECH's TMC5160T Plus is a high-power stepper motor driver control module built around the Trinamic TMC5160 chip driving eight external MOSFETs for coil currents well beyond what a StepStick can sustain. Supports SPI, SD-card and UART configuration interfaces with a reserved encoder header. Supplied as a standalone heatsinked module rather than a pluggable StepStick.",
+  "driverInterface": "SPI",
+  "formFactor": "external",
+  "baseChip": "tmc5160",
+  "electricalSpecs": {
+    "supplyVoltageMin": 8,
+    "supplyVoltageMax": 56,
+    "rmsCurrentMax": 10.6,
+    "peakCurrentMax": 15,
+    "senseResistor": 0.022
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard2",
+    "dcStep": true,
+    "sensorlessHoming": true
+  },
+  "klipperSpecs": {
+    "section": "tmc5160",
+    "driverInterface": "SPI",
+    "supportsDiagPin": true,
+    "supportsSensorlessHoming": true
+  },
+  "physicalSpecs": {
+    "dimensions": "64 × 56 × 32.55 mm (with case); 58 × 50 × 28 mm (bare)"
+  },
+  "references": [
+    {
+      "label": "BIGTREETECH TMC5160T Plus Documentation",
+      "url": "https://github.com/bigtreetech/docs/blob/master/docs/TMC5160TPlus.md",
+      "type": "documentation"
+    },
+    {
+      "label": "BIGTREETECH-Stepper-Motor-Driver (TMC5160T Plus)",
+      "url": "https://github.com/bigtreetech/BIGTREETECH-Stepper-Motor-Driver/tree/master/TMC5160T%20Plus",
+      "type": "github"
+    },
+    {
+      "label": "Klipper Config Reference — [tmc5160]",
+      "url": "https://www.klipper3d.org/Config_Reference.html#tmc5160",
+      "type": "documentation"
+    }
+  ]
+}

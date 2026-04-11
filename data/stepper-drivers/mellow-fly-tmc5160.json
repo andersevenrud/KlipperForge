@@ -1,0 +1,49 @@
+{
+  "id": "mellow-fly-tmc5160",
+  "name": "Mellow Fly-TMC5160",
+  "manufacturer": "Mellow",
+  "description": "Mellow's Fly-TMC5160 StepStick — the 12–24 V operating voltage version of the TMC5160. Because of component shortages the high-voltage version cannot be made at this time, but this version is sufficient for normal use. Maximum current 4.4 A with 256 microsteps via MicroPlyer interpolation.",
+  "driverInterface": "SPI",
+  "formFactor": "stepstick",
+  "baseChip": "tmc5160",
+  "electricalSpecs": {
+    "supplyVoltageMin": 12,
+    "supplyVoltageMax": 24,
+    "peakCurrentMax": 4.4,
+    "senseResistor": 0.075
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard2",
+    "dcStep": true,
+    "sensorlessHoming": true
+  },
+  "klipperSpecs": {
+    "section": "tmc5160",
+    "driverInterface": "SPI",
+    "supportsDiagPin": true,
+    "supportsSensorlessHoming": true
+  },
+  "unverified": ["rmsCurrentMax"],
+  "references": [
+    {
+      "label": "Mellow Fly TMC5160 Documentation",
+      "url": "https://mellow-3d.github.io/fly_tmc5160_general.html",
+      "type": "documentation"
+    },
+    {
+      "label": "Mellow Klipper Docs — TMC5160 Module",
+      "url": "https://mellow.klipper.cn/en/docs/ProductDoc/ModuleDrive/tmc5160/",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Config Reference — [tmc5160]",
+      "url": "https://www.klipper3d.org/Config_Reference.html#tmc5160",
+      "type": "documentation"
+    }
+  ]
+}

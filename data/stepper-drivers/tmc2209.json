@@ -4,6 +4,7 @@
   "manufacturer": "Analog Devices (Trinamic)",
   "description": "The TMC2209 is a two-phase stepper motor driver with integrated MOSFETs, a single-wire UART interface and Step/Dir input. It builds on the TMC2208 by adding stallGuard4 sensorless load detection for use as a virtual endstop (sensorless homing) together with coolStep adaptive current control, while retaining stealthChop2 and spreadCycle. The TMC2209 is the most common smart driver on modern hobbyist 3D printer control boards.",
   "driverInterface": "UART",
+  "formFactor": "chip",
   "electricalSpecs": {
     "supplyVoltageMin": 5.5,
     "supplyVoltageMax": 29,

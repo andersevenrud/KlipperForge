@@ -4,6 +4,7 @@
   "manufacturer": "Analog Devices (Trinamic)",
   "description": "The TMC2660 is a high-power two-phase stepper motor driver with integrated MOSFETs supporting up to 4A peak motor current, 2.2A RMS continuously (or 2.8A RMS boost), an SPI register interface and Step/Dir input. It provides microPlyer 256-microstep interpolation, spreadCycle chopper, coolStep adaptive current and stallGuard2 sensorless load measurement. Used in high-current industrial stepper systems and Duet-class 3D printer control boards. Note that Klipper's [tmc2660] section does not expose a DIAG/virtual-endstop pin, so sensorless homing via this chip is not supported in Klipper.",
   "driverInterface": "SPI",
+  "formFactor": "chip",
   "electricalSpecs": {
     "supplyVoltageMin": 9,
     "supplyVoltageMax": 29,

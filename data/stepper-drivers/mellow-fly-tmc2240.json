@@ -1,0 +1,43 @@
+{
+  "id": "mellow-fly-tmc2240",
+  "name": "Mellow Fly-TMC2240",
+  "manufacturer": "Mellow",
+  "description": "Mellow's Fly-TMC2240 StepStick based on the Trinamic TMC2240 with SPI/UART control, 12–36 V input, a 3.0 A peak current rating and 256-microstep interpolation. Features stealthChop2, spreadCycle, coolStep and stallGuard4 sensorless homing inherited from the underlying TMC2240 chip.",
+  "driverInterface": "SPI",
+  "formFactor": "stepstick",
+  "baseChip": "tmc2240",
+  "electricalSpecs": {
+    "supplyVoltageMin": 12,
+    "supplyVoltageMax": 36,
+    "peakCurrentMax": 3,
+    "rref": 12300
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard4",
+    "sensorlessHoming": true
+  },
+  "klipperSpecs": {
+    "section": "tmc2240",
+    "driverInterface": "SPI",
+    "supportsDiagPin": true,
+    "supportsSensorlessHoming": true
+  },
+  "unverified": ["rmsCurrentMax"],
+  "references": [
+    {
+      "label": "Mellow Klipper Docs — TMC2240 Module",
+      "url": "https://mellow.klipper.cn/en/docs/ProductDoc/ModuleDrive/tmc2240/",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Config Reference — [tmc2240]",
+      "url": "https://www.klipper3d.org/Config_Reference.html#tmc2240",
+      "type": "documentation"
+    }
+  ]
+}

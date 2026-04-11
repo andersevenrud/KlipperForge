@@ -1,0 +1,52 @@
+{
+  "id": "btt-tmc5160",
+  "name": "BIGTREETECH TMC5160",
+  "manufacturer": "BIGTREETECH",
+  "description": "BIGTREETECH's SilentStepStick-compatible TMC5160 driver module (also branded TMC5160T). Based on Trinamic's TMC5160 chip, which drives external MOSFETs for higher coil currents and wider supply voltage range than the integrated-MOSFET TMC22xx family. Intended for high-torque or high-speed applications.",
+  "driverInterface": "SPI",
+  "formFactor": "stepstick",
+  "baseChip": "tmc5160",
+  "electricalSpecs": {
+    "supplyVoltageMin": 8,
+    "supplyVoltageMax": 40,
+    "rmsCurrentMax": 3.1,
+    "peakCurrentMax": 4.4,
+    "senseResistor": 0.075
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard2",
+    "dcStep": true,
+    "sensorlessHoming": true
+  },
+  "klipperSpecs": {
+    "section": "tmc5160",
+    "driverInterface": "SPI",
+    "supportsDiagPin": true,
+    "supportsSensorlessHoming": true
+  },
+  "physicalSpecs": {
+    "dimensions": "15.3 × 20.4 mm"
+  },
+  "references": [
+    {
+      "label": "BIGTREETECH TMC5160 Documentation",
+      "url": "https://github.com/bigtreetech/docs/blob/master/docs/TMC5160.md",
+      "type": "documentation"
+    },
+    {
+      "label": "BIGTREETECH-Stepper-Motor-Driver (TMC5160(T))",
+      "url": "https://github.com/bigtreetech/BIGTREETECH-Stepper-Motor-Driver/tree/master/TMC5160(T)",
+      "type": "github"
+    },
+    {
+      "label": "Klipper Config Reference — [tmc5160]",
+      "url": "https://www.klipper3d.org/Config_Reference.html#tmc5160",
+      "type": "documentation"
+    }
+  ]
+}

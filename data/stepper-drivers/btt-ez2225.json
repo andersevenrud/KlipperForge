@@ -1,0 +1,39 @@
+{
+  "id": "btt-ez2225",
+  "name": "BIGTREETECH EZ2225",
+  "manufacturer": "BIGTREETECH",
+  "description": "BIGTREETECH's EZ-Driver form-factor variant of the TMC2225. Pluggable dual-connector module based on Trinamic's TMC2225 ultra-silent stepper driver IC, pin-compatible with a number of legacy drivers. Single-wire UART control with OTP configuration.",
+  "driverInterface": "UART",
+  "formFactor": "ez",
+  "baseChip": "tmc2208",
+  "electricalSpecs": {
+    "supplyVoltageMin": 4.75,
+    "supplyVoltageMax": 36,
+    "peakCurrentMax": 2
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true
+  },
+  "klipperSpecs": {
+    "section": "tmc2208",
+    "driverInterface": "UART",
+    "supportsDiagPin": false,
+    "supportsSensorlessHoming": false
+  },
+  "unverified": ["rmsCurrentMax"],
+  "references": [
+    {
+      "label": "BIGTREETECH EZ2225 Documentation",
+      "url": "https://github.com/bigtreetech/docs/blob/master/docs/EZ2225.md",
+      "type": "documentation"
+    },
+    {
+      "label": "BIGTREETECH-EZ-Driver (EZ2225 V1.0)",
+      "url": "https://github.com/bigtreetech/BIGTREETECH-EZ-Driver/tree/master/BIGTREETECH%20EZ2225%20V1.0",
+      "type": "github"
+    }
+  ]
+}

@@ -4,6 +4,7 @@
   "manufacturer": "Analog Devices (Trinamic)",
   "description": "The TMC5160 / TMC5160A is a high-voltage, high-power smart stepper motor controller and driver IC. It drives external MOSFETs so coil currents can range from 1A to several tens of amps depending on the external power stage — the chip itself does not impose a fixed RMS limit. An on-chip SixPoint ramp generator, stealthChop2, spreadCycle, coolStep, stallGuard2 and dcStep make it suitable for both direct-drive servo-like positioning and high-speed 3D printer applications. Commonly shipped SilentStepStick TMC5160 modules are typically rated by their module vendor at 3A RMS for thermal reasons.",
   "driverInterface": "SPI",
+  "formFactor": "chip",
   "electricalSpecs": {
     "supplyVoltageMin": 10,
     "supplyVoltageMax": 60,

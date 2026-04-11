@@ -1,0 +1,52 @@
+{
+  "id": "btt-tmc2209",
+  "name": "BIGTREETECH TMC2209",
+  "manufacturer": "BIGTREETECH",
+  "description": "BIGTREETECH's SilentStepStick-compatible TMC2209 driver module — one of the most common silent driver modules shipped with 3D printer control boards. Based on Trinamic's TMC2209 chip with stealthChop2, stallGuard4 sensorless homing and single-wire UART control. Latest revision is V1.3 (earlier V1.2 also widely shipped). Default VREF of 1.2 V corresponds to roughly 0.9 A RMS.",
+  "driverInterface": "UART",
+  "formFactor": "stepstick",
+  "baseChip": "tmc2209",
+  "electricalSpecs": {
+    "supplyVoltageMin": 4.75,
+    "supplyVoltageMax": 28,
+    "rmsCurrentMax": 2,
+    "peakCurrentMax": 2.8,
+    "senseResistor": 0.11
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard4",
+    "dcStep": false,
+    "sensorlessHoming": true
+  },
+  "klipperSpecs": {
+    "section": "tmc2209",
+    "driverInterface": "UART",
+    "supportsDiagPin": true,
+    "supportsSensorlessHoming": true
+  },
+  "physicalSpecs": {
+    "dimensions": "15.24 × 20.32 mm"
+  },
+  "references": [
+    {
+      "label": "BIGTREETECH TMC2209 Documentation",
+      "url": "https://github.com/bigtreetech/docs/blob/master/docs/TMC2209.md",
+      "type": "documentation"
+    },
+    {
+      "label": "BIGTREETECH-Stepper-Motor-Driver (TMC2209 V1.3)",
+      "url": "https://github.com/bigtreetech/BIGTREETECH-Stepper-Motor-Driver/tree/master/TMC2209/V1.3",
+      "type": "github"
+    },
+    {
+      "label": "Klipper Config Reference — [tmc2209]",
+      "url": "https://www.klipper3d.org/Config_Reference.html#tmc2209",
+      "type": "documentation"
+    }
+  ]
+}

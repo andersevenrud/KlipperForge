@@ -578,6 +578,7 @@ export function DocSidebar({
                         category="stepper-drivers"
                         label={driver.name}
                         badge={driver.driverInterface}
+                        suffix={driver.hasImage ? IMAGE_INDICATOR : undefined}
                         selected={isSelected(selection, "stepper-drivers", driver.id)}
                         compareMode={compareMode}
                         compareChecked={comparePendingIds.includes(driver.id)}

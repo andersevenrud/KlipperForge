@@ -1,0 +1,54 @@
+{
+  "id": "mellow-fly-hv-tmc5160-pro",
+  "name": "Mellow Fly HV-TMC5160 Pro",
+  "manufacturer": "Mellow",
+  "description": "The Mellow Fly HV-TMC5160 Pro is a high-performance external stepper motor driver module that supports the SPI communication protocol, making it suitable for applications requiring precise motion control and high energy efficiency. Two hardware revisions ship — V1.2 and V1.5 — but both use the same 0.033 Ω sense resistor, so `run_current` values are consistent across revisions. Specs on this entry are cited from Mellow's V1.5 documentation; the V1.2 page on mellow.klipper.cn confirms matching electrical characteristics.",
+  "driverInterface": "SPI",
+  "formFactor": "external",
+  "baseChip": "tmc5160",
+  "electricalSpecs": {
+    "supplyVoltageMin": 24,
+    "supplyVoltageMax": 48,
+    "peakCurrentMax": 6,
+    "senseResistor": 0.033
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true,
+    "coolStep": true,
+    "stallGuard": "stallGuard2",
+    "dcStep": true,
+    "sensorlessHoming": true
+  },
+  "klipperSpecs": {
+    "section": "tmc5160",
+    "driverInterface": "SPI",
+    "supportsDiagPin": true,
+    "supportsSensorlessHoming": true
+  },
+  "unverified": ["rmsCurrentMax"],
+  "references": [
+    {
+      "label": "Mellow Klipper Docs — HV-TMC5160 Pro V1.5",
+      "url": "https://mellow.klipper.cn/en/docs/ProductDoc/ModuleDrive/tmc5160_pro_1.5/",
+      "type": "documentation"
+    },
+    {
+      "label": "Mellow Klipper Docs — HV-TMC5160 Pro V1.2",
+      "url": "https://mellow.klipper.cn/en/docs/ProductDoc/ModuleDrive/tmc5160_pro/",
+      "type": "documentation"
+    },
+    {
+      "label": "Mellow Fly HV-TMC5160 Pro (legacy docs)",
+      "url": "https://mellow-3d.github.io/fly_hv-tmc5160pro_general.html",
+      "type": "documentation"
+    },
+    {
+      "label": "Klipper Config Reference — [tmc5160]",
+      "url": "https://www.klipper3d.org/Config_Reference.html#tmc5160",
+      "type": "documentation"
+    }
+  ]
+}

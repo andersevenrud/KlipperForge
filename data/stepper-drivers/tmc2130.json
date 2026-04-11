@@ -4,6 +4,7 @@
   "manufacturer": "Analog Devices (Trinamic)",
   "description": "The TMC2130 is a high-performance smart stepper motor driver IC for two-phase bipolar stepper motors with an integrated SPI interface and Step/Dir input. It features Trinamic's stealthChop voltage-mode chopper for quiet operation, spreadCycle for dynamic high-torque moves, dcStep load-dependent speed control, and sensorless load measurement via stallGuard2 with coolStep adaptive current control. Widely used on hobbyist 3D printing boards such as the Prusa Einsy RAMBo and Prusa xBuddy.",
   "driverInterface": "SPI",
+  "formFactor": "chip",
   "electricalSpecs": {
     "supplyVoltageMin": 5.5,
     "supplyVoltageMax": 46,

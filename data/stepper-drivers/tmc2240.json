@@ -4,6 +4,7 @@
   "manufacturer": "Analog Devices (Trinamic)",
   "description": "The TMC2240 is a smart high-performance stepper motor driver IC with two fully integrated H-bridges rated at 3.0A full-scale current (5.0A absolute bridge peak limited by over-current protection) and a built-in 256-microstep indexer. It offers both SPI and single-wire UART serial communication, non-dissipative lossless current sensing, stealthChop2, spreadCycle, coolStep, combined stallGuard2 and stallGuard4 sensorless load detection, and on-chip temperature measurement. Found on modern high-end boards such as the LDO Leviathan and Mellow Fly-SHT36 Pro.",
   "driverInterface": "SPI",
+  "formFactor": "chip",
   "electricalSpecs": {
     "supplyVoltageMin": 4.5,
     "supplyVoltageMax": 36,

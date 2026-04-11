@@ -1,6 +1,7 @@
 import { loadStepperDriver } from "@klipperforge/printer-data";
-import { Ruler, Settings, Sparkles, Zap } from "lucide-react";
-import { useDocDataQuery } from "@/hooks/use-queries";
+import { Cpu, Puzzle, Ruler, Settings, Sparkles, Zap } from "lucide-react";
+import { Link } from "react-router";
+import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import {
   Badge,
   BooleanSpecRow,
@@ -17,8 +18,23 @@ interface DocStepperDriverPageProps {
   driverId: string;
 }
 
+const FORM_FACTOR_LABELS: Record<string, string> = {
+  chip: "Chip",
+  stepstick: "StepStick",
+  ez: "EZ-Driver",
+  external: "External",
+  integrated: "Integrated",
+};
+
 export function DocStepperDriverPage({ driverId }: DocStepperDriverPageProps) {
   const driver = useDocDataQuery(loadStepperDriver, driverId);
+  const { data: indices } = useDocIndicesQuery();
+
+  const indexEntry = indices.stepperDrivers.find((d) => d.id === driverId);
+  const hasImage = indexEntry?.hasImage;
+  const baseChipEntry = driver.baseChip ? indices.stepperDrivers.find((d) => d.id === driver.baseChip) : undefined;
+  const derivedModules =
+    driver.formFactor === "chip" ? indices.stepperDrivers.filter((d) => d.baseChip === driverId) : [];
 
   return (
     <DocPageShell>
@@ -30,9 +46,33 @@ export function DocStepperDriverPage({ driverId }: DocStepperDriverPageProps) {
           <div className="flex flex-col items-end gap-1">
             <Badge>{driver.driverInterface}</Badge>
             <Badge>[{driver.klipperSpecs.section}]</Badge>
+            {driver.formFactor && driver.formFactor !== "chip" && (
+              <Badge>{FORM_FACTOR_LABELS[driver.formFactor] ?? driver.formFactor}</Badge>
+            )}
           </div>
         }
       />
+
+      {hasImage && (
+        <img
+          src={`/data/stepper-drivers/images/${driverId}.png`}
+          alt={driver.name}
+          className="mt-4 max-h-64 rounded border object-contain"
+        />
+      )}
+
+      {baseChipEntry && (
+        <div className="mt-4 flex items-center gap-2 text-sm">
+          <Cpu className="text-muted-foreground size-4" />
+          <span className="font-medium">Based on:</span>
+          <Link
+            to={`/documentation?driver=${baseChipEntry.id}`}
+            className="text-primary hover:text-primary/80 underline-offset-4 hover:underline"
+          >
+            {baseChipEntry.name}
+          </Link>
+        </div>
+      )}
 
       <UnverifiedBanner unverified={driver.unverified} />
 
@@ -65,6 +105,24 @@ export function DocStepperDriverPage({ driverId }: DocStepperDriverPageProps) {
               value={`${driver.electricalSpecs.logicVoltageMin} – ${driver.electricalSpecs.logicVoltageMax} V`}
             />
           )}
+        {typeof driver.electricalSpecs.senseResistor === "number" && (
+          <SpecRow
+            field="senseResistor"
+            label="Sense Resistor (Rsense)"
+            value={driver.electricalSpecs.senseResistor}
+            suffix=" Ω"
+          />
+        )}
+        {driver.electricalSpecs.senseResistor && typeof driver.electricalSpecs.senseResistor === "object" && (
+          <SpecRow
+            field="senseResistor"
+            label="Sense Resistor (Rsense)"
+            value={Object.entries(driver.electricalSpecs.senseResistor)
+              .map(([rev, val]) => `${rev}: ${val} Ω`)
+              .join(" · ")}
+          />
+        )}
+        <SpecRow field="rref" label="Reference Resistor (Rref)" value={driver.electricalSpecs.rref} suffix=" Ω" />
       </SpecSection>
 
       <SpecSection title="Features" icon={Sparkles} unverified={driver.unverified}>
@@ -131,6 +189,28 @@ export function DocStepperDriverPage({ driverId }: DocStepperDriverPageProps) {
             value={driver.physicalSpecs.operatingTemperature}
           />
         </SpecSection>
+      )}
+
+      {derivedModules.length > 0 && (
+        <div className="mt-6">
+          <h2 className="mb-2 flex items-center gap-2 text-lg font-semibold">
+            <Puzzle className="size-4" />
+            Modules Based on This Chip
+          </h2>
+          <ul className="space-y-0.5">
+            {derivedModules.map((module) => (
+              <li key={module.id} className="text-sm">
+                <Link
+                  to={`/documentation?driver=${module.id}`}
+                  className="text-primary hover:text-primary/80 underline-offset-4 hover:underline"
+                >
+                  {module.name}
+                </Link>
+                <span className="text-muted-foreground ml-2 text-xs">({module.manufacturer})</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
 
       <RelatedArticles articles={driver.relatedArticles} />

@@ -1,0 +1,49 @@
+{
+  "id": "btt-tmc2208",
+  "name": "BIGTREETECH TMC2208",
+  "manufacturer": "BIGTREETECH",
+  "description": "BIGTREETECH's SilentStepStick-compatible TMC2208 driver module. Built around Trinamic's TMC2208 chip, it offers single-wire UART control in addition to Step/Dir and uses stealthChop2 for noiseless operation. Latest revision is V3.0; earlier V1.0 and V2.1 revisions exist in legacy bigtreetech repositories.",
+  "driverInterface": "UART",
+  "formFactor": "stepstick",
+  "baseChip": "tmc2208",
+  "electricalSpecs": {
+    "supplyVoltageMin": 12,
+    "supplyVoltageMax": 24,
+    "rmsCurrentMax": 1.4,
+    "peakCurrentMax": 2,
+    "senseResistor": 0.11
+  },
+  "featureSpecs": {
+    "microstepsMax": 256,
+    "interpolationTo256": true,
+    "stealthChop": "stealthChop2",
+    "spreadCycle": true,
+    "coolStep": false,
+    "stallGuard": "none",
+    "dcStep": false,
+    "sensorlessHoming": false
+  },
+  "klipperSpecs": {
+    "section": "tmc2208",
+    "driverInterface": "UART",
+    "supportsDiagPin": false,
+    "supportsSensorlessHoming": false
+  },
+  "references": [
+    {
+      "label": "BIGTREETECH TMC2208 Documentation",
+      "url": "https://github.com/bigtreetech/docs/blob/master/docs/TMC2208.md",
+      "type": "documentation"
+    },
+    {
+      "label": "BIGTREETECH-Stepper-Motor-Driver (TMC2208)",
+      "url": "https://github.com/bigtreetech/BIGTREETECH-Stepper-Motor-Driver/tree/master/TMC2208",
+      "type": "github"
+    },
+    {
+      "label": "Klipper Config Reference — [tmc2208]",
+      "url": "https://www.klipper3d.org/Config_Reference.html#tmc2208",
+      "type": "documentation"
+    }
+  ]
+}
