@@ -2,7 +2,7 @@
   "id": "mellow-fly-tmc5160",
   "name": "Mellow Fly-TMC5160",
   "manufacturer": "Mellow",
-  "description": "Mellow's Fly-TMC5160 StepStick — the 12–24 V operating voltage version of the TMC5160. Because of component shortages the high-voltage version cannot be made at this time, but this version is sufficient for normal use. Maximum current 4.4 A with 256 microsteps via MicroPlyer interpolation.",
+  "description": "Mellow's Fly-TMC5160 StepStick is based on the Trinamic TMC5160 with SPI control, a 12–24 V input range, a maximum current of 4.4 A and a 0.075 Ω sense resistor. Supports up to 256 microsteps with microPlyer interpolation, stealthChop2 silent operation, spreadCycle chopper, coolStep current control, dcStep load-dependent speed control and stallGuard2 sensorless load detection.",
   "driverInterface": "SPI",
   "formFactor": "stepstick",
   "baseChip": "tmc5160",
@@ -31,13 +31,13 @@
   "unverified": ["rmsCurrentMax"],
   "references": [
     {
-      "label": "Mellow Fly TMC5160 Documentation",
-      "url": "https://mellow-3d.github.io/fly_tmc5160_general.html",
+      "label": "Mellow Klipper Docs — TMC5160 Module",
+      "url": "https://mellow.klipper.cn/en/docs/ProductDoc/ModuleDrive/tmc5160/",
       "type": "documentation"
     },
     {
-      "label": "Mellow Klipper Docs — TMC5160 Module",
-      "url": "https://mellow.klipper.cn/en/docs/ProductDoc/ModuleDrive/tmc5160/",
+      "label": "Mellow Fly TMC5160 Documentation (legacy)",
+      "url": "https://mellow-3d.github.io/fly_tmc5160_general.html",
       "type": "documentation"
     },
     {

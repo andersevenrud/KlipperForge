@@ -2,7 +2,7 @@
   "id": "btt-tmc5160",
   "name": "BIGTREETECH TMC5160",
   "manufacturer": "BIGTREETECH",
-  "description": "BIGTREETECH's SilentStepStick-compatible TMC5160 driver module (also branded TMC5160T). Based on Trinamic's TMC5160 chip, which drives external MOSFETs for higher coil currents and wider supply voltage range than the integrated-MOSFET TMC22xx family. Intended for high-torque or high-speed applications.",
+  "description": "BIGTREETECH's SilentStepStick-compatible TMC5160 driver module (the wiki lists the on-board silicon as \"TMC5160T V1.0\"). It is described by BIGTREETECH as a \"high-power stepper motor driving control chip, which has externally expanded power MOS tube\", giving it a wider supply voltage and higher coil-current headroom than the integrated-MOSFET TMC22xx StepSticks.",
   "driverInterface": "SPI",
   "formFactor": "stepstick",
   "baseChip": "tmc5160",
@@ -33,6 +33,11 @@
     "dimensions": "15.3 × 20.4 mm"
   },
   "references": [
+    {
+      "label": "BIGTREETECH TMC5160 Wiki",
+      "url": "https://global.bttwiki.com/TMC5160.html",
+      "type": "documentation"
+    },
     {
       "label": "BIGTREETECH TMC5160 Documentation",
       "url": "https://github.com/bigtreetech/docs/blob/master/docs/TMC5160.md",

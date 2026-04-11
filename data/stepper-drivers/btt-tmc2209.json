@@ -2,7 +2,7 @@
   "id": "btt-tmc2209",
   "name": "BIGTREETECH TMC2209",
   "manufacturer": "BIGTREETECH",
-  "description": "BIGTREETECH's SilentStepStick-compatible TMC2209 driver module — one of the most common silent driver modules shipped with 3D printer control boards. Based on Trinamic's TMC2209 chip with stealthChop2, stallGuard4 sensorless homing and single-wire UART control. Latest revision is V1.3 (earlier V1.2 also widely shipped). Default VREF of 1.2 V corresponds to roughly 0.9 A RMS.",
+  "description": "BIGTREETECH's SilentStepStick-compatible TMC2209 driver module, built around Trinamic's TMC2209 chip with stealthChop2, spreadCycle, coolStep and StallGuard4 locked-motor test. Supports STEP/DIR and UART operating modes, accepts 4.75–28 V DC input and is rated for 2 A RMS continuous and 2.8 A peak motor current. The factory default VREF of 1.2 V (±0.1) corresponds to roughly 0.9 A RMS.",
   "driverInterface": "UART",
   "formFactor": "stepstick",
   "baseChip": "tmc2209",
@@ -33,6 +33,11 @@
     "dimensions": "15.24 × 20.32 mm"
   },
   "references": [
+    {
+      "label": "BIGTREETECH Wiki — TMC2209",
+      "url": "https://global.bttwiki.com/TMC2209.html",
+      "type": "documentation"
+    },
     {
       "label": "BIGTREETECH TMC2209 Documentation",
       "url": "https://github.com/bigtreetech/docs/blob/master/docs/TMC2209.md",

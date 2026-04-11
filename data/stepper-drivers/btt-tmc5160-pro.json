@@ -2,7 +2,7 @@
   "id": "btt-tmc5160-pro",
   "name": "BIGTREETECH TMC5160 Pro",
   "manufacturer": "BIGTREETECH",
-  "description": "BIGTREETECH's high-power TMC5160 (Pro) StepStick variant with heavier heatsinking and an extended supply range up to 56 V. Retains SPI control and all TMC5160 features (stealthChop2, spreadCycle, coolStep, stallGuard2, dcStep). Two documented revisions exist: V1.0 and V1.1; the V1.1 revision has the same external interface and electrical envelope as the V1.0 documented here.",
+  "description": "BIGTREETECH's TMC5160T Pro V1.0 StepStick-form driver. BIGTREETECH describes it as \"a high-power stepper motor driver control chip that uses external power MOSFETs\", with an 8–56 V supply range and an enhanced-fin heatsink. A later V1.1 revision exists in the BIGTREETECH repository but has no dedicated documentation page; all specs here reflect the documented V1.0 baseline.",
   "driverInterface": "SPI",
   "formFactor": "stepstick",
   "baseChip": "tmc5160",
@@ -32,7 +32,21 @@
   "physicalSpecs": {
     "dimensions": "20.4 × 15.3 × 23.2 mm"
   },
+  "unverified": [
+    "interpolationTo256",
+    "stealthChop",
+    "spreadCycle",
+    "coolStep",
+    "stallGuard",
+    "dcStep",
+    "sensorlessHoming"
+  ],
   "references": [
+    {
+      "label": "BIGTREETECH TMC5160T Pro V1.0 Wiki",
+      "url": "https://global.bttwiki.com/TMC5160T%20Pro%20V1.0.html",
+      "type": "documentation"
+    },
     {
       "label": "BIGTREETECH TMC5160T Pro V1.0 Documentation",
       "url": "https://github.com/bigtreetech/docs/blob/master/docs/TMC5160T%20Pro%20V1.0.md",

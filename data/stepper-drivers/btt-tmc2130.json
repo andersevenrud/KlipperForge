@@ -2,7 +2,7 @@
   "id": "btt-tmc2130",
   "name": "BIGTREETECH TMC2130",
   "manufacturer": "BIGTREETECH",
-  "description": "BIGTREETECH's SilentStepStick-compatible TMC2130 driver module. Based on Trinamic's TMC2130 chip with SPI and Step/Dir control. Latest revision is V3.0; earlier V1.1 and V2.0 revisions have their own dedicated legacy repositories under the bigtreetech GitHub organization. VREF is adjustable via an onboard potentiometer.",
+  "description": "BIGTREETECH's SilentStepStick-compatible TMC2130 driver module. Based on Trinamic's TMC2130 chip with SPI and Step/Dir control, stealthChop for quiet operation and spreadCycle for dynamic motor control. Accepts 12V/24V DC input and is rated for 1.2 A motor current (2 A peak). Logic voltage is 3.3V/5V. VREF is adjustable via an onboard potentiometer and defaults to 1 V (±0.2).",
   "driverInterface": "SPI",
   "formFactor": "stepstick",
   "baseChip": "tmc2130",
@@ -11,6 +11,8 @@
     "supplyVoltageMax": 24,
     "rmsCurrentMax": 1.2,
     "peakCurrentMax": 2,
+    "logicVoltageMin": 3.3,
+    "logicVoltageMax": 5,
     "senseResistor": 0.11
   },
   "featureSpecs": {
@@ -29,7 +31,13 @@
     "supportsDiagPin": true,
     "supportsSensorlessHoming": true
   },
+  "unverified": ["stallGuard", "dcStep", "sensorlessHoming"],
   "references": [
+    {
+      "label": "BIGTREETECH Wiki — TMC2130",
+      "url": "https://global.bttwiki.com/TMC2130.html",
+      "type": "documentation"
+    },
     {
       "label": "BIGTREETECH TMC2130 Documentation",
       "url": "https://github.com/bigtreetech/docs/blob/master/docs/TMC2130.md",

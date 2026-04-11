@@ -2,7 +2,7 @@
   "id": "mellow-fly-hv-tmc5160-pro",
   "name": "Mellow Fly HV-TMC5160 Pro",
   "manufacturer": "Mellow",
-  "description": "The Mellow Fly HV-TMC5160 Pro is a high-performance external stepper motor driver module that supports the SPI communication protocol, making it suitable for applications requiring precise motion control and high energy efficiency. Two hardware revisions ship — V1.2 and V1.5 — but both use the same 0.033 Ω sense resistor, so `run_current` values are consistent across revisions. Specs on this entry are cited from Mellow's V1.5 documentation; the V1.2 page on mellow.klipper.cn confirms matching electrical characteristics.",
+  "description": "The Mellow Fly HV-TMC5160 Pro is an external stepper motor driver module that communicates over SPI and is rated for 24-48 V DC input and up to 6 A maximum current. Two hardware revisions are documented on mellow.klipper.cn (V1.2 and V1.5); both revisions publish the same electrical parameters, including a 0.033 Ω sense resistor, so `run_current` values are consistent across revisions. Mellow lists stealthChop2, spreadCycle, dcStep, stallGuard2, and coolStep as the module's key TMC features, with up to 256 microsteps via the TMC microPlyer step/direction interpolator.",
   "driverInterface": "SPI",
   "formFactor": "external",
   "baseChip": "tmc5160",

@@ -2,7 +2,7 @@
   "id": "btt-tmc2226",
   "name": "BIGTREETECH TMC2226",
   "manufacturer": "BIGTREETECH",
-  "description": "BIGTREETECH's SilentStepStick-compatible TMC2226 driver module. The TMC2226 is an ultra-silent two-phase motor driver IC whose StealthChop2 chopper ensures noiseless operation, maximum efficiency and best motor torque — essentially a TMC2209-class driver in a modernized package.",
+  "description": "BIGTREETECH's SilentStepStick-compatible TMC2226 driver module. The TMC2226 is an ultra-silent motor driver IC for two phase stepper motors whose StealthChop2 chopper ensures noiseless operation and maximum efficiency, paired with CoolStep current control for energy savings up to 75% and StallGuard4 load and stall detection over a Single Wire UART interface.",
   "driverInterface": "UART",
   "formFactor": "stepstick",
   "baseChip": "tmc2209",
@@ -27,16 +27,17 @@
     "supportsDiagPin": true,
     "supportsSensorlessHoming": true
   },
+  "unverified": ["sensorlessHoming"],
   "references": [
+    {
+      "label": "BIGTREETECH Wiki — EZ2226 (same TMC2226 chip)",
+      "url": "https://global.bttwiki.com/EZ2226.html",
+      "type": "documentation"
+    },
     {
       "label": "BIGTREETECH-Stepper-Motor-Driver (TMC2226)",
       "url": "https://github.com/bigtreetech/BIGTREETECH-Stepper-Motor-Driver/tree/master/TMC2226",
       "type": "github"
-    },
-    {
-      "label": "BIGTREETECH EZ2226 Documentation (same underlying TMC2226 chip)",
-      "url": "https://github.com/bigtreetech/docs/blob/master/docs/EZ2226.md",
-      "type": "documentation"
     }
   ]
 }

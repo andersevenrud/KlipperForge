@@ -2,7 +2,7 @@
   "id": "mellow-fly-tmc5160hv",
   "name": "Mellow Fly-TMC5160HV",
   "manufacturer": "Mellow",
-  "description": "Mellow's Fly-TMC5160HV is a high-voltage StepStick-compatible variant of the TMC5160 supporting a 12–48 V input range. Maximum current of 4.4 A with a resolution of up to 256 microsteps, suitable for higher-power stepper motors without stepping up to a full external driver.",
+  "description": "Mellow's Fly-TMC5160HV is the high-voltage variant of the Fly-TMC5160 StepStick, based on the Trinamic TMC5160 with SPI control, a 12–48 V input range, a maximum current of 4.4 A and a 0.075 Ω sense resistor. Supports up to 256 microsteps with microPlyer interpolation, stealthChop2 silent operation, spreadCycle chopper, coolStep current control, dcStep load-dependent speed control and stallGuard2 sensorless load detection.",
   "driverInterface": "SPI",
   "formFactor": "stepstick",
   "baseChip": "tmc5160",

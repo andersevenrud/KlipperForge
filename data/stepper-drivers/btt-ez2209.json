@@ -2,7 +2,7 @@
   "id": "btt-ez2209",
   "name": "BIGTREETECH EZ2209",
   "manufacturer": "BIGTREETECH",
-  "description": "BIGTREETECH's EZ-Driver form-factor variant of the TMC2209. Pluggable dual-connector module for EZ-socket mainboards based on Trinamic's TMC2209 silent stepper driver chip with stealthChop2, stallGuard4 sensorless homing and single-wire UART control. Note that the upstream repository folder is named EZZ2209 (double Z) while BIGTREETECH's own documentation refers to it as EZ2209.",
+  "description": "BIGTREETECH's EZ-form-factor stepper driver module based on the Trinamic TMC2209. The BTT wiki lists a 4.75V-28V DC supply range, 2A RMS current with a 2.8A peak, up to 256 microsteps per full step, and StealthChop2, SpreadCycle, CoolStep and StallGuard4 features over STEP/DIR or UART. The upstream repository folder is named EZZ2209 (double Z) while BIGTREETECH's wiki and documentation refer to the product as EZ2209.",
   "driverInterface": "UART",
   "formFactor": "ez",
   "baseChip": "tmc2209",
@@ -31,7 +31,13 @@
   "physicalSpecs": {
     "dimensions": "15.24 × 20.32 mm"
   },
+  "unverified": ["senseResistor"],
   "references": [
+    {
+      "label": "BIGTREETECH EZ2209 Wiki",
+      "url": "https://global.bttwiki.com/EZ2209.html",
+      "type": "documentation"
+    },
     {
       "label": "BIGTREETECH EZ2209 Documentation",
       "url": "https://github.com/bigtreetech/docs/blob/master/docs/EZ2209.md",

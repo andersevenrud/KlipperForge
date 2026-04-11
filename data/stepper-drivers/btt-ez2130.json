@@ -2,7 +2,7 @@
   "id": "btt-ez2130",
   "name": "BIGTREETECH EZ2130",
   "manufacturer": "BIGTREETECH",
-  "description": "BIGTREETECH's EZ-Driver form-factor variant of the TMC2130. EZ drivers use a dual-connector pluggable layout that is less prone to incorrect insertion than legacy StepStick sockets and allows hot-swap on compatible EZ-socket mainboards. Based on Trinamic's TMC2130 chip with SPI and Step/Dir interface.",
+  "description": "BIGTREETECH's EZ-form-factor stepper driver module based on the Trinamic TMC2130. The BTT wiki lists a 12V/24VDC voltage range, 3.3V/5V logic voltage, 1.2A operating current with a 2A peak, up to 256 microsteps per full step, and stealthChop, spreadCycle and coolStep features over a Step/Dir + SPI interface.",
   "driverInterface": "SPI",
   "formFactor": "ez",
   "baseChip": "tmc2130",
@@ -10,7 +10,9 @@
     "supplyVoltageMin": 12,
     "supplyVoltageMax": 24,
     "rmsCurrentMax": 1.2,
-    "peakCurrentMax": 2
+    "peakCurrentMax": 2,
+    "logicVoltageMin": 3.3,
+    "logicVoltageMax": 5
   },
   "featureSpecs": {
     "microstepsMax": 256,
@@ -28,7 +30,13 @@
     "supportsDiagPin": true,
     "supportsSensorlessHoming": true
   },
+  "unverified": ["senseResistor", "stallGuard", "dcStep", "sensorlessHoming", "dimensions"],
   "references": [
+    {
+      "label": "BIGTREETECH EZ2130 Wiki",
+      "url": "https://global.bttwiki.com/EZ2130.html",
+      "type": "documentation"
+    },
     {
       "label": "BIGTREETECH EZ2130 Documentation",
       "url": "https://github.com/bigtreetech/docs/blob/master/docs/EZ2130.md",
