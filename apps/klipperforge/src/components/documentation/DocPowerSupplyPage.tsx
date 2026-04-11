@@ -69,7 +69,7 @@ export function DocPowerSupplyPage({ powerSupplyId }: DocPowerSupplyPageProps) {
         />
       )}
 
-      <UnverifiedBanner unverified={psu.unverified} />
+      <UnverifiedBanner unverified={psu.unverified} data={psu} />
 
       <SpecSection title="Electrical Specifications" icon={Zap} unverified={psu.unverified}>
         <SpecRow field="outputVoltage" label="Output Voltage" value={psu.electricalSpecs.outputVoltage} suffix="V DC" />

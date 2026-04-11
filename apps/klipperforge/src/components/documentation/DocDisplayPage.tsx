@@ -48,7 +48,7 @@ export function DocDisplayPage({ displayId }: DocDisplayPageProps) {
         />
       )}
 
-      <UnverifiedBanner unverified={display.unverified} />
+      <UnverifiedBanner unverified={display.unverified} data={display} />
 
       <SpecSection title="Screen Specifications" icon={Monitor} unverified={display.unverified}>
         <SpecRow field="size" label="Size" value={display.screenSpecs.size} />

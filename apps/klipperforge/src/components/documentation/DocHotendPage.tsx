@@ -51,7 +51,7 @@ export function DocHotendPage({ hotendId }: DocHotendPageProps) {
         />
       )}
 
-      <UnverifiedBanner unverified={hotend.unverified} />
+      <UnverifiedBanner unverified={hotend.unverified} data={hotend} />
 
       <SpecSection title="Thermal Specifications" icon={Flame} unverified={hotend.unverified}>
         <SpecRow

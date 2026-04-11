@@ -67,6 +67,7 @@ interface ReferenceListProps {
 
 interface UnverifiedBannerProps {
   unverified?: string[];
+  data: object;
 }
 
 interface RelatedArticlesProps {
@@ -207,8 +208,11 @@ function UnverifiedBadge() {
   );
 }
 
-export function UnverifiedBanner({ unverified }: UnverifiedBannerProps) {
+export function UnverifiedBanner({ unverified, data }: UnverifiedBannerProps) {
   if (!unverified || unverified.length === 0) return null;
+  const definedFields = collectDefinedFieldNames(data);
+  const hasVisibleUnverified = unverified.some((field) => definedFields.has(field));
+  if (!hasVisibleUnverified) return null;
   return (
     <div className="mt-4 flex items-start gap-2.5 rounded-md border border-amber-500/20 bg-amber-950/30 px-4 py-3">
       <TriangleAlert className="mt-0.5 size-4 shrink-0 text-amber-500" />
@@ -217,6 +221,25 @@ export function UnverifiedBanner({ unverified }: UnverifiedBannerProps) {
       </p>
     </div>
   );
+}
+
+function collectDefinedFieldNames(data: unknown): Set<string> {
+  const out = new Set<string>();
+  walkDefinedFieldNames(data, out);
+  return out;
+}
+
+function walkDefinedFieldNames(value: unknown, out: Set<string>): void {
+  if (value === null || value === undefined || typeof value !== "object") return;
+  if (Array.isArray(value)) {
+    for (const item of value) walkDefinedFieldNames(item, out);
+    return;
+  }
+  for (const [key, nested] of Object.entries(value)) {
+    if (nested === undefined || nested === null) continue;
+    out.add(key);
+    walkDefinedFieldNames(nested, out);
+  }
 }
 
 export function SpecSection({ title, icon, unverified, children }: SpecSectionProps) {

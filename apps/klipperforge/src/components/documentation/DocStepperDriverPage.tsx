@@ -74,7 +74,7 @@ export function DocStepperDriverPage({ driverId }: DocStepperDriverPageProps) {
         </div>
       )}
 
-      <UnverifiedBanner unverified={driver.unverified} />
+      <UnverifiedBanner unverified={driver.unverified} data={driver} />
 
       <SpecSection title="Electrical" icon={Zap} unverified={driver.unverified}>
         {driver.electricalSpecs.supplyVoltageMin !== undefined &&

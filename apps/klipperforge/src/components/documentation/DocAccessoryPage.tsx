@@ -52,7 +52,7 @@ export function DocAccessoryPage({ accessoryId }: DocAccessoryPageProps) {
         />
       )}
 
-      <UnverifiedBanner unverified={accessory.unverified} />
+      <UnverifiedBanner unverified={accessory.unverified} data={accessory} />
 
       {accessory.electricalSpecs && (
         <SpecSection title="Electrical Specifications" icon={Zap} unverified={accessory.unverified}>

@@ -47,7 +47,7 @@ export function DocProbePage({ probeId }: DocProbePageProps) {
         />
       )}
 
-      <UnverifiedBanner unverified={probe.unverified} />
+      <UnverifiedBanner unverified={probe.unverified} data={probe} />
 
       <SpecSection title="Electrical Specifications" icon={Zap} unverified={probe.unverified}>
         <SpecRow field="operatingVoltage" label="Operating Voltage" value={probe.electricalSpecs.operatingVoltage} />

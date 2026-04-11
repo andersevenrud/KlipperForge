@@ -51,7 +51,7 @@ export function DocMmuPage({ mmuId }: DocMmuPageProps) {
         />
       )}
 
-      <UnverifiedBanner unverified={mmu.unverified} />
+      <UnverifiedBanner unverified={mmu.unverified} data={mmu} />
 
       <SpecSection title="Filament Specifications" icon={Spool} unverified={mmu.unverified}>
         <SpecRow field="filamentCapacity" label="Filament Capacity" value={mmu.filamentSpecs.filamentCapacity} />

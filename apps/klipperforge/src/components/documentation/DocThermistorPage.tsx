@@ -39,7 +39,7 @@ export function DocThermistorPage({ thermistorId }: DocThermistorPageProps) {
         />
       )}
 
-      <UnverifiedBanner unverified={thermistor.unverified} />
+      <UnverifiedBanner unverified={thermistor.unverified} data={thermistor} />
 
       <SpecSection title="Sensing Specifications" icon={Thermometer} unverified={thermistor.unverified}>
         {thermistor.sensingSpecs.resistanceAt25C !== undefined && (

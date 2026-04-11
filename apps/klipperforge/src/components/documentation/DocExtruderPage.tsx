@@ -46,7 +46,7 @@ export function DocExtruderPage({ extruderId }: DocExtruderPageProps) {
         />
       )}
 
-      <UnverifiedBanner unverified={extruder.unverified} />
+      <UnverifiedBanner unverified={extruder.unverified} data={extruder} />
 
       <SpecSection title="Mechanical Specifications" icon={Wrench} unverified={extruder.unverified}>
         <SpecRow field="gearRatio" label="Gear Ratio" value={extruder.mechanicalSpecs.gearRatio} />

@@ -78,7 +78,7 @@ export function DocFanPage({ fanId }: DocFanPageProps) {
         </Tabs>
       )}
 
-      <UnverifiedBanner unverified={fan.unverified} />
+      <UnverifiedBanner unverified={fan.unverified} data={fan} />
 
       <SpecSection title="Airflow Specifications" icon={Wind} unverified={fan.unverified}>
         <SpecRow field="airflow" label="Airflow" value={fan.airflowSpecs.airflow} suffix=" CFM" />

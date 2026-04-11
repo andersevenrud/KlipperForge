@@ -81,7 +81,7 @@ export function DocFilamentPage({ filamentId }: DocFilamentPageProps) {
         />
       )}
 
-      <UnverifiedBanner unverified={filament.unverified} />
+      <UnverifiedBanner unverified={filament.unverified} data={filament} />
 
       {filament.ratings && (
         <div className="mt-6">

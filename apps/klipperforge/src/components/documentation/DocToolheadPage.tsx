@@ -55,7 +55,7 @@ export function DocToolheadPage({ toolheadId }: DocToolheadPageProps) {
         />
       )}
 
-      <UnverifiedBanner unverified={toolhead.unverified} />
+      <UnverifiedBanner unverified={toolhead.unverified} data={toolhead} />
 
       <SpecSection title="Compatibility" icon={Plug} unverified={toolhead.unverified}>
         <SpecRow
