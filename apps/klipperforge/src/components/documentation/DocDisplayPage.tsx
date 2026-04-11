@@ -1,10 +1,11 @@
 import { loadDisplay } from "@klipperforge/printer-data";
 import { Cable, Cpu, FileText, Monitor, Ruler } from "lucide-react";
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
+import { useDocEntityQuery } from "@/hooks/use-queries";
 import {
   Badge,
   BooleanSpecRow,
   DocHeader,
+  DocHeroImage,
   DocPageShell,
   FeatureList,
   ReferenceList,
@@ -27,9 +28,7 @@ interface DocDisplayPageProps {
 }
 
 export function DocDisplayPage({ displayId }: DocDisplayPageProps) {
-  const display = useDocDataQuery(loadDisplay, displayId);
-  const { data: indices } = useDocIndicesQuery();
-  const hasImage = indices.displays.find((d) => d.id === displayId)?.hasImage;
+  const { entity: display, hasImage } = useDocEntityQuery(loadDisplay, "displays", displayId);
 
   return (
     <DocPageShell>
@@ -40,13 +39,7 @@ export function DocDisplayPage({ displayId }: DocDisplayPageProps) {
         badges={<Badge>{DISPLAY_TYPE_LABELS[display.displayType] ?? display.displayType}</Badge>}
       />
 
-      {hasImage && (
-        <img
-          src={`/data/displays/images/${displayId}.png`}
-          alt={display.name}
-          className="mt-4 max-h-64 rounded border object-contain"
-        />
-      )}
+      <DocHeroImage category="displays" id={displayId} name={display.name} hasImage={hasImage} />
 
       <UnverifiedBanner unverified={display.unverified} data={display} />
 

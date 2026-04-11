@@ -2,11 +2,12 @@ import type { PrinterEquipmentCategory, PrinterEquipmentEntry } from "@klipperfo
 import { loadPrinterPreset } from "@klipperforge/printer-data";
 import { Box, Package, Ruler } from "lucide-react";
 import { Link } from "react-router";
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
+import { useDocEntityQuery } from "@/hooks/use-queries";
 import {
   CATEGORY_PARAM_KEY,
   DOC_CATEGORY_ICONS,
   DOC_CATEGORY_LABELS,
+  DocHeroImage,
   DocPageShell,
   ReferenceList,
   RelatedArticles,
@@ -18,23 +19,14 @@ interface DocPrinterPageProps {
 }
 
 export function DocPrinterPage({ printerId }: DocPrinterPageProps) {
-  const printer = useDocDataQuery(loadPrinterPreset, printerId);
-  const { data: indices } = useDocIndicesQuery();
-
-  const hasImage = indices.printers.find((p) => p.id === printerId)?.hasImage;
+  const { entity: printer, hasImage } = useDocEntityQuery(loadPrinterPreset, "printers", printerId);
 
   return (
     <DocPageShell>
       <h1 className="text-2xl font-bold">{printer.name}</h1>
       <p className="text-muted-foreground mt-1 text-sm">{printer.manufacturer}</p>
 
-      {hasImage && (
-        <img
-          src={`/data/printers/images/${printerId}.png`}
-          alt={printer.name}
-          className="mt-4 max-h-64 rounded border object-contain"
-        />
-      )}
+      <DocHeroImage category="printers" id={printerId} name={printer.name} hasImage={hasImage} />
 
       {printer.description && <p className="mt-3 text-sm">{printer.description}</p>}
 

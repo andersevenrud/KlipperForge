@@ -1,10 +1,11 @@
 import { loadHotend } from "@klipperforge/printer-data";
 import { Flame, Ruler } from "lucide-react";
 import { Link } from "react-router";
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
+import { useDocEntityQuery } from "@/hooks/use-queries";
 import {
   Badge,
   DocHeader,
+  DocHeroImage,
   DocPageShell,
   FeatureList,
   ReferenceList,
@@ -24,10 +25,7 @@ interface DocHotendPageProps {
 }
 
 export function DocHotendPage({ hotendId }: DocHotendPageProps) {
-  const hotend = useDocDataQuery(loadHotend, hotendId);
-  const { data: indices } = useDocIndicesQuery();
-
-  const hasImage = indices.hotends.find((h) => h.id === hotendId)?.hasImage;
+  const { entity: hotend, hasImage } = useDocEntityQuery(loadHotend, "hotends", hotendId);
 
   return (
     <DocPageShell>
@@ -43,13 +41,7 @@ export function DocHotendPage({ hotendId }: DocHotendPageProps) {
         }
       />
 
-      {hasImage && (
-        <img
-          src={`/data/hotends/images/${hotendId}.png`}
-          alt={hotend.name}
-          className="mt-4 max-h-64 rounded border object-contain"
-        />
-      )}
+      <DocHeroImage category="hotends" id={hotendId} name={hotend.name} hasImage={hasImage} />
 
       <UnverifiedBanner unverified={hotend.unverified} data={hotend} />
 

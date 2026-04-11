@@ -1,9 +1,10 @@
 import { loadMmu } from "@klipperforge/printer-data";
 import { Code, Cog, ExternalLink, Ruler, Spool } from "lucide-react";
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
+import { useDocEntityQuery } from "@/hooks/use-queries";
 import {
   Badge,
   DocHeader,
+  DocHeroImage,
   DocPageShell,
   FeatureList,
   ReferenceList,
@@ -23,10 +24,7 @@ interface DocMmuPageProps {
 }
 
 export function DocMmuPage({ mmuId }: DocMmuPageProps) {
-  const mmu = useDocDataQuery(loadMmu, mmuId);
-  const { data: indices } = useDocIndicesQuery();
-
-  const hasImage = indices.mmus.find((m) => m.id === mmuId)?.hasImage;
+  const { entity: mmu, hasImage } = useDocEntityQuery(loadMmu, "mmus", mmuId);
 
   return (
     <DocPageShell>
@@ -43,13 +41,7 @@ export function DocMmuPage({ mmuId }: DocMmuPageProps) {
         }
       />
 
-      {hasImage && (
-        <img
-          src={`/data/mmus/images/${mmuId}.png`}
-          alt={mmu.name}
-          className="mt-4 max-h-64 rounded border object-contain"
-        />
-      )}
+      <DocHeroImage category="mmus" id={mmuId} name={mmu.name} hasImage={hasImage} />
 
       <UnverifiedBanner unverified={mmu.unverified} data={mmu} />
 

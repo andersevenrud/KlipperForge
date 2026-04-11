@@ -1,11 +1,12 @@
 import { loadPowerSupply } from "@klipperforge/printer-data";
 import { Ruler, Shield, Star, Thermometer, Zap } from "lucide-react";
 import type { ReactNode } from "react";
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
+import { useDocEntityQuery } from "@/hooks/use-queries";
 import {
   Badge,
   BooleanSpecRow,
   DocHeader,
+  DocHeroImage,
   DocPageShell,
   ReferenceList,
   RelatedArticles,
@@ -14,7 +15,7 @@ import {
   UnverifiedBanner,
 } from "./doc-shared";
 
-const FORM_FACTOR_LABELS: Record<string, string> = {
+const PSU_FORM_FACTOR_LABELS: Record<string, string> = {
   enclosed: "Enclosed",
   "enclosed-slim": "Enclosed (Slim)",
   "open-frame": "Open Frame",
@@ -40,17 +41,14 @@ interface DocPowerSupplyPageProps {
 }
 
 export function DocPowerSupplyPage({ powerSupplyId }: DocPowerSupplyPageProps) {
-  const psu = useDocDataQuery(loadPowerSupply, powerSupplyId);
-  const { data: indices } = useDocIndicesQuery();
+  const { entity: psu, hasImage } = useDocEntityQuery(loadPowerSupply, "powerSupplies", powerSupplyId);
 
-  const hasImage = indices.powerSupplies.find((p) => p.id === powerSupplyId)?.hasImage;
   const rec = RECOMMENDATION_LABELS[psu.communityRecommendation];
-
   const badges: ReactNode = (
     <>
       <Badge>{psu.voltage}V</Badge>
       <Badge>{psu.wattage}W</Badge>
-      <Badge>{FORM_FACTOR_LABELS[psu.formFactor] ?? psu.formFactor}</Badge>
+      <Badge>{PSU_FORM_FACTOR_LABELS[psu.formFactor] ?? psu.formFactor}</Badge>
       {rec && (
         <span className={`mt-1 shrink-0 rounded px-2 py-0.5 text-xs font-medium ${rec.className}`}>{rec.label}</span>
       )}
@@ -61,13 +59,7 @@ export function DocPowerSupplyPage({ powerSupplyId }: DocPowerSupplyPageProps) {
     <DocPageShell>
       <DocHeader name={psu.name} manufacturer={psu.manufacturer} description={psu.description} badges={badges} />
 
-      {hasImage && (
-        <img
-          src={`/data/power-supplies/images/${powerSupplyId}.png`}
-          alt={psu.name}
-          className="mt-4 max-h-64 rounded border object-contain"
-        />
-      )}
+      <DocHeroImage category="power-supplies" id={powerSupplyId} name={psu.name} hasImage={hasImage} />
 
       <UnverifiedBanner unverified={psu.unverified} data={psu} />
 

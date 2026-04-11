@@ -1,10 +1,11 @@
 import { loadProbe } from "@klipperforge/printer-data";
 import { FileText, Ruler, Target, Zap } from "lucide-react";
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
+import { useDocEntityQuery } from "@/hooks/use-queries";
 import {
   Badge,
   BooleanSpecRow,
   DocHeader,
+  DocHeroImage,
   DocPageShell,
   ReferenceList,
   RelatedArticles,
@@ -26,9 +27,7 @@ interface DocProbePageProps {
 }
 
 export function DocProbePage({ probeId }: DocProbePageProps) {
-  const probe = useDocDataQuery(loadProbe, probeId);
-  const { data: indices } = useDocIndicesQuery();
-  const hasImage = indices.probes.find((p) => p.id === probeId)?.hasImage;
+  const { entity: probe, hasImage } = useDocEntityQuery(loadProbe, "probes", probeId);
 
   return (
     <DocPageShell>
@@ -39,13 +38,7 @@ export function DocProbePage({ probeId }: DocProbePageProps) {
         badges={<Badge>{PROBE_TYPE_LABELS[probe.probeType] ?? probe.probeType}</Badge>}
       />
 
-      {hasImage && (
-        <img
-          src={`/data/probes/images/${probeId}.png`}
-          alt={probe.name}
-          className="mt-4 max-h-64 rounded border object-contain"
-        />
-      )}
+      <DocHeroImage category="probes" id={probeId} name={probe.name} hasImage={hasImage} />
 
       <UnverifiedBanner unverified={probe.unverified} data={probe} />
 

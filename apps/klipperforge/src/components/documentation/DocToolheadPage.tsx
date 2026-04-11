@@ -1,10 +1,11 @@
 import { loadToolhead } from "@klipperforge/printer-data";
 import { Plug, Ruler } from "lucide-react";
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
+import { useDocEntityQuery } from "@/hooks/use-queries";
 import {
   Badge,
   BooleanSpecRow,
   DocHeader,
+  DocHeroImage,
   DocPageShell,
   FeatureList,
   ReferenceList,
@@ -33,10 +34,7 @@ interface DocToolheadPageProps {
 }
 
 export function DocToolheadPage({ toolheadId }: DocToolheadPageProps) {
-  const toolhead = useDocDataQuery(loadToolhead, toolheadId);
-  const { data: indices } = useDocIndicesQuery();
-
-  const hasImage = indices.toolheads.find((t) => t.id === toolheadId)?.hasImage;
+  const { entity: toolhead, hasImage } = useDocEntityQuery(loadToolhead, "toolheads", toolheadId);
 
   return (
     <DocPageShell>
@@ -47,13 +45,7 @@ export function DocToolheadPage({ toolheadId }: DocToolheadPageProps) {
         badges={<Badge>{TOOLHEAD_TYPE_LABELS[toolhead.toolheadType] ?? toolhead.toolheadType}</Badge>}
       />
 
-      {hasImage && (
-        <img
-          src={`/data/toolheads/images/${toolheadId}.png`}
-          alt={toolhead.name}
-          className="mt-4 max-h-64 rounded border object-contain"
-        />
-      )}
+      <DocHeroImage category="toolheads" id={toolheadId} name={toolhead.name} hasImage={hasImage} />
 
       <UnverifiedBanner unverified={toolhead.unverified} data={toolhead} />
 

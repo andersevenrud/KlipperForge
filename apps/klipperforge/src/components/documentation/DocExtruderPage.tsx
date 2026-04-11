@@ -1,9 +1,10 @@
 import { loadExtruder } from "@klipperforge/printer-data";
 import { Ruler, Settings, Wrench } from "lucide-react";
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
+import { useDocEntityQuery } from "@/hooks/use-queries";
 import {
   Badge,
   DocHeader,
+  DocHeroImage,
   DocPageShell,
   FeatureList,
   ReferenceList,
@@ -24,10 +25,7 @@ interface DocExtruderPageProps {
 }
 
 export function DocExtruderPage({ extruderId }: DocExtruderPageProps) {
-  const extruder = useDocDataQuery(loadExtruder, extruderId);
-  const { data: indices } = useDocIndicesQuery();
-
-  const hasImage = indices.extruders.find((e) => e.id === extruderId)?.hasImage;
+  const { entity: extruder, hasImage } = useDocEntityQuery(loadExtruder, "extruders", extruderId);
 
   return (
     <DocPageShell>
@@ -38,13 +36,7 @@ export function DocExtruderPage({ extruderId }: DocExtruderPageProps) {
         badges={<Badge>{DRIVE_TYPE_LABELS[extruder.driveType] ?? extruder.driveType}</Badge>}
       />
 
-      {hasImage && (
-        <img
-          src={`/data/extruders/images/${extruderId}.png`}
-          alt={extruder.name}
-          className="mt-4 max-h-64 rounded border object-contain"
-        />
-      )}
+      <DocHeroImage category="extruders" id={extruderId} name={extruder.name} hasImage={hasImage} />
 
       <UnverifiedBanner unverified={extruder.unverified} data={extruder} />
 

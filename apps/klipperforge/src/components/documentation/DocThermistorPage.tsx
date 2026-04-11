@@ -1,9 +1,10 @@
 import { loadThermistor } from "@klipperforge/printer-data";
 import { Ruler, Settings, Thermometer } from "lucide-react";
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
+import { useDocEntityQuery } from "@/hooks/use-queries";
 import {
   Badge,
   DocHeader,
+  DocHeroImage,
   DocPageShell,
   ReferenceList,
   RelatedArticles,
@@ -17,10 +18,7 @@ interface DocThermistorPageProps {
 }
 
 export function DocThermistorPage({ thermistorId }: DocThermistorPageProps) {
-  const thermistor = useDocDataQuery(loadThermistor, thermistorId);
-  const { data: indices } = useDocIndicesQuery();
-
-  const hasImage = indices.thermistors.find((t) => t.id === thermistorId)?.hasImage;
+  const { entity: thermistor, hasImage } = useDocEntityQuery(loadThermistor, "thermistors", thermistorId);
 
   return (
     <DocPageShell>
@@ -31,13 +29,7 @@ export function DocThermistorPage({ thermistorId }: DocThermistorPageProps) {
         badges={<Badge>{thermistor.sensorType}</Badge>}
       />
 
-      {hasImage && (
-        <img
-          src={`/data/thermistors/images/${thermistorId}.png`}
-          alt={thermistor.name}
-          className="mt-4 max-h-64 rounded border object-contain"
-        />
-      )}
+      <DocHeroImage category="thermistors" id={thermistorId} name={thermistor.name} hasImage={hasImage} />
 
       <UnverifiedBanner unverified={thermistor.unverified} data={thermistor} />
 

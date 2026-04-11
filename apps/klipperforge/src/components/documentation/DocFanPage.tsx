@@ -1,7 +1,7 @@
 import { loadFan, loadPcbLayout } from "@klipperforge/printer-data";
 import { Ruler, Volume2, Wind, Zap } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useDocDataQuery, useDocIndicesQuery, useOptionalDocDataQuery } from "@/hooks/use-queries";
+import { useDocEntityQuery, useOptionalDocDataQuery } from "@/hooks/use-queries";
 import { DocPcbViewer } from "./DocPcbViewer";
 import {
   Badge,
@@ -27,11 +27,8 @@ interface DocFanPageProps {
 }
 
 export function DocFanPage({ fanId }: DocFanPageProps) {
-  const fan = useDocDataQuery(loadFan, fanId);
-  const { data: indices } = useDocIndicesQuery();
+  const { entity: fan, hasImage } = useDocEntityQuery(loadFan, "fans", fanId);
   const pcbLayout = useOptionalDocDataQuery(loadPcbLayout, fan.pcbLayoutId);
-
-  const hasImage = indices.fans.find((f) => f.id === fanId)?.hasImage;
 
   return (
     <DocPageShell>

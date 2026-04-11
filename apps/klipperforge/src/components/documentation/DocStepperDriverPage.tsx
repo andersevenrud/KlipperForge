@@ -1,11 +1,12 @@
 import { loadStepperDriver } from "@klipperforge/printer-data";
 import { Cpu, Puzzle, Ruler, Settings, Sparkles, Zap } from "lucide-react";
 import { Link } from "react-router";
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
+import { useDocEntityQuery, useDocIndicesQuery } from "@/hooks/use-queries";
 import {
   Badge,
   BooleanSpecRow,
   DocHeader,
+  DocHeroImage,
   DocPageShell,
   ReferenceList,
   RelatedArticles,
@@ -18,7 +19,7 @@ interface DocStepperDriverPageProps {
   driverId: string;
 }
 
-const FORM_FACTOR_LABELS: Record<string, string> = {
+const STEPPER_DRIVER_FORM_FACTOR_LABELS: Record<string, string> = {
   chip: "Chip",
   stepstick: "StepStick",
   ez: "EZ-Driver",
@@ -27,11 +28,9 @@ const FORM_FACTOR_LABELS: Record<string, string> = {
 };
 
 export function DocStepperDriverPage({ driverId }: DocStepperDriverPageProps) {
-  const driver = useDocDataQuery(loadStepperDriver, driverId);
+  const { entity: driver, hasImage } = useDocEntityQuery(loadStepperDriver, "stepperDrivers", driverId);
   const { data: indices } = useDocIndicesQuery();
 
-  const indexEntry = indices.stepperDrivers.find((d) => d.id === driverId);
-  const hasImage = indexEntry?.hasImage;
   const baseChipEntry = driver.baseChip ? indices.stepperDrivers.find((d) => d.id === driver.baseChip) : undefined;
   const derivedModules =
     driver.formFactor === "chip" ? indices.stepperDrivers.filter((d) => d.baseChip === driverId) : [];
@@ -47,19 +46,13 @@ export function DocStepperDriverPage({ driverId }: DocStepperDriverPageProps) {
             <Badge>{driver.driverInterface}</Badge>
             <Badge>[{driver.klipperSpecs.section}]</Badge>
             {driver.formFactor && driver.formFactor !== "chip" && (
-              <Badge>{FORM_FACTOR_LABELS[driver.formFactor] ?? driver.formFactor}</Badge>
+              <Badge>{STEPPER_DRIVER_FORM_FACTOR_LABELS[driver.formFactor] ?? driver.formFactor}</Badge>
             )}
           </>
         }
       />
 
-      {hasImage && (
-        <img
-          src={`/data/stepper-drivers/images/${driverId}.png`}
-          alt={driver.name}
-          className="mt-4 max-h-64 rounded border object-contain"
-        />
-      )}
+      <DocHeroImage category="stepper-drivers" id={driverId} name={driver.name} hasImage={hasImage} />
 
       {baseChipEntry && (
         <div className="mt-4 flex items-center gap-2 text-sm">

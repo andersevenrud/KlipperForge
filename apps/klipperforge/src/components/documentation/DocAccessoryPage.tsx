@@ -1,9 +1,10 @@
 import { loadAccessory } from "@klipperforge/printer-data";
 import { Ruler, Zap } from "lucide-react";
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
+import { useDocEntityQuery } from "@/hooks/use-queries";
 import {
   Badge,
   DocHeader,
+  DocHeroImage,
   DocPageShell,
   FeatureList,
   ReferenceList,
@@ -23,10 +24,7 @@ interface DocAccessoryPageProps {
 }
 
 export function DocAccessoryPage({ accessoryId }: DocAccessoryPageProps) {
-  const accessory = useDocDataQuery(loadAccessory, accessoryId);
-  const { data: indices } = useDocIndicesQuery();
-
-  const hasImage = indices.accessories.find((a) => a.id === accessoryId)?.hasImage;
+  const { entity: accessory, hasImage } = useDocEntityQuery(loadAccessory, "accessories", accessoryId);
 
   return (
     <DocPageShell>
@@ -44,13 +42,7 @@ export function DocAccessoryPage({ accessoryId }: DocAccessoryPageProps) {
         }
       />
 
-      {hasImage && (
-        <img
-          src={`/data/accessories/images/${accessoryId}.png`}
-          alt={accessory.name}
-          className="mt-4 max-h-64 rounded border object-contain"
-        />
-      )}
+      <DocHeroImage category="accessories" id={accessoryId} name={accessory.name} hasImage={hasImage} />
 
       <UnverifiedBanner unverified={accessory.unverified} data={accessory} />
 

@@ -1,3 +1,4 @@
+import type { DocIndices } from "@klipperforge/printer-data";
 import {
   loadDocIndices,
   loadMcuBoard,
@@ -12,6 +13,16 @@ import { useConfigStorage } from "@/context/config-storage-context";
 interface BoardDataRequest {
   index: number;
   boardId: string;
+}
+
+interface DocEntityResult<T> {
+  entity: T;
+  hasImage: boolean;
+}
+
+interface DocIndexEntry {
+  id: string;
+  hasImage?: boolean;
 }
 
 const BOARD_INDEX_QUERY_KEY = "loadMcuBoardIndex";
@@ -56,6 +67,18 @@ export function useDocDataMultipleQuery<T>(loader: (id: string) => Promise<T>, i
   });
 
   return queries.map((q) => q.data);
+}
+
+export function useDocEntityQuery<T>(
+  loader: (id: string) => Promise<T>,
+  indexKey: keyof DocIndices,
+  id: string,
+): DocEntityResult<T> {
+  const entity = useDocDataQuery(loader, id);
+  const { data: indices } = useDocIndicesQuery();
+  const entries = indices[indexKey] as readonly DocIndexEntry[];
+  const hasImage = entries.find((entry) => entry.id === id)?.hasImage ?? false;
+  return { entity, hasImage };
 }
 
 export function useOptionalDocDataQuery<T>(loader: (id: string) => Promise<T>, id: string | undefined): T | null {

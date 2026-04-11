@@ -1,11 +1,12 @@
 import type { FilamentRatings } from "@klipperforge/printer-data";
 import { loadFilament } from "@klipperforge/printer-data";
 import { Droplets, FlaskConical, Gauge, Ruler, Thermometer } from "lucide-react";
-import { useDocDataQuery, useDocIndicesQuery } from "@/hooks/use-queries";
+import { useDocEntityQuery } from "@/hooks/use-queries";
 import {
   Badge,
   BooleanSpecRow,
   DocHeader,
+  DocHeroImage,
   DocPageShell,
   FeatureList,
   ReferenceList,
@@ -54,10 +55,7 @@ function RatingBar({ label, value }: RatingBarProps) {
 }
 
 export function DocFilamentPage({ filamentId }: DocFilamentPageProps) {
-  const filament = useDocDataQuery(loadFilament, filamentId);
-  const { data: indices } = useDocIndicesQuery();
-
-  const hasImage = indices.filaments.find((f) => f.id === filamentId)?.hasImage;
+  const { entity: filament, hasImage } = useDocEntityQuery(loadFilament, "filaments", filamentId);
 
   return (
     <DocPageShell>
@@ -73,13 +71,7 @@ export function DocFilamentPage({ filamentId }: DocFilamentPageProps) {
         }
       />
 
-      {hasImage && (
-        <img
-          src={`/data/filaments/images/${filamentId}.png`}
-          alt={filament.name}
-          className="mt-4 max-h-64 rounded border object-contain"
-        />
-      )}
+      <DocHeroImage category="filaments" id={filamentId} name={filament.name} hasImage={hasImage} />
 
       <UnverifiedBanner unverified={filament.unverified} data={filament} />
 

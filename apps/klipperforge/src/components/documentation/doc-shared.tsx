@@ -89,6 +89,13 @@ interface DocHeaderProps {
   badges?: ReactNode;
 }
 
+interface DocHeroImageProps {
+  category: string;
+  id: string;
+  name: string;
+  hasImage: boolean;
+}
+
 interface SpecSectionContextValue {
   icon?: typeof ExternalLink;
   unverified?: string[];
@@ -198,6 +205,17 @@ export function DocHeader({ name, manufacturer, description, badges }: DocHeader
 
 export function Badge({ children }: BadgeProps) {
   return <code className="bg-muted shrink-0 rounded px-2 py-0.5 text-xs font-medium">{children}</code>;
+}
+
+export function DocHeroImage({ category, id, name, hasImage }: DocHeroImageProps) {
+  if (!hasImage) return null;
+  return (
+    <img
+      src={`/data/${category}/images/${id}.png`}
+      alt={name}
+      className="mt-4 max-h-64 rounded border object-contain"
+    />
+  );
 }
 
 function UnverifiedBadge() {
