@@ -74,7 +74,8 @@
   ],
   "drivers": {
     "count": 4,
-    "model": "TMC2209"
+    "model": "TMC2209",
+    "modelId": "tmc2209"
   },
   "dimensions": {
     "width": 101,

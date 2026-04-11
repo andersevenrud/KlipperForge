@@ -54,7 +54,8 @@
   ],
   "drivers": {
     "count": 1,
-    "model": "TMC5160"
+    "model": "TMC5160",
+    "modelId": "tmc5160"
   },
   "relatedArticles": [
     {

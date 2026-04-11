@@ -61,7 +61,8 @@
   ],
   "drivers": {
     "count": 4,
-    "model": "TMC2208"
+    "model": "TMC2208",
+    "modelId": "tmc2208"
   },
   "relatedArticles": [
     {

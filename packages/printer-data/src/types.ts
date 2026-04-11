@@ -338,6 +338,7 @@ export interface ResolvedPreset {
 export interface McuBoardDrivers {
   count: number;
   model?: string;
+  modelId?: string;
   connector?: "stepstick" | "ez";
 }
 

@@ -9,7 +9,8 @@
     "heaterType": "ceramic heating ring (360° encircling)",
     "heaterPower": 60,
     "heatUpTime": "~40s to 200°C",
-    "thermistorType": "NTC 100K"
+    "thermistorType": "NTC 100K",
+    "thermistorId": "generic-3950"
   },
   "heatBreakSpecs": {
     "type": "bi-metallic",

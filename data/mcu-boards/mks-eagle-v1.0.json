@@ -103,7 +103,8 @@
   ],
   "drivers": {
     "count": 5,
-    "model": "TMC2209"
+    "model": "TMC2209",
+    "modelId": "tmc2209"
   },
   "relatedArticles": [
     {

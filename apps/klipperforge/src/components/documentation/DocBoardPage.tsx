@@ -2,6 +2,7 @@ import type { JumperOption, PcbConnector, PcbLayout } from "@klipperforge/printe
 import { loadMcuBoard, loadPcbLayout } from "@klipperforge/printer-data";
 import { Cog, Cpu, Ruler, Zap } from "lucide-react";
 import { useMemo } from "react";
+import { Link } from "react-router";
 import { DipSwitchDiagram } from "@/components/svg/pcb/DipSwitchDiagram";
 import { JumperPinDiagram } from "@/components/svg/pcb/JumperPinDiagram";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -170,11 +171,25 @@ export function DocBoardPage({ boardId }: DocBoardPageProps) {
           <SpecRow icon={Cog} label="Drivers" value={String(board.drivers.count)}>
             <span>
               {board.drivers.count}x{" "}
-              {board.drivers.model
-                ? `${board.drivers.model} (integrated)`
-                : board.drivers.connector === "ez"
-                  ? "EZ sockets"
-                  : "stepstick sockets"}
+              {board.drivers.model ? (
+                board.drivers.modelId ? (
+                  <>
+                    <Link
+                      to={`/documentation?driver=${board.drivers.modelId}`}
+                      className="text-primary hover:text-primary/80 underline-offset-4 hover:underline"
+                    >
+                      {board.drivers.model}
+                    </Link>
+                    {" (integrated)"}
+                  </>
+                ) : (
+                  `${board.drivers.model} (integrated)`
+                )
+              ) : board.drivers.connector === "ez" ? (
+                "EZ sockets"
+              ) : (
+                "stepstick sockets"
+              )}
             </span>
           </SpecRow>
         </div>

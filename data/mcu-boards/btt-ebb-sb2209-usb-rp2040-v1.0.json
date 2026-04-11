@@ -79,7 +79,8 @@
   ],
   "drivers": {
     "count": 1,
-    "model": "TMC2209"
+    "model": "TMC2209",
+    "modelId": "tmc2209"
   },
   "maxMotorVoltage": 24,
   "relatedArticles": [

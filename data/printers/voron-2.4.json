@@ -5,8 +5,18 @@
   "description": "Voron Design V2.4 — enclosed CoreXY kit with a 4-corner tri-motor Z, Stealthburner toolhead, and inductive bed probe. Pin mapping is based on the BTT Octopus Pro v1.0 (STM32F446) DRIVER0–DRIVER6 aliases and matches the Voron community reference printer.cfg. Kinematic and QGL defaults are taken from the Voron-Documentation sample configs. All seven TMC2209 drivers run in standalone UART mode via each driver's dedicated CS pin. The MCU serial is a placeholder — replace it with the actual path (usually /dev/serial/by-id/...) after flashing Klipper firmware.",
   "equipment": [
     { "category": "mcu-boards", "id": "btt-octopus-pro-1.0", "label": "BTT Octopus Pro v1.0", "role": "Main MCU" },
-    { "category": "stepper-drivers", "label": "TMC2209 (x7, standalone UART)", "role": "Stepper Drivers" },
-    { "category": "thermistors", "label": "Generic 3950 100K NTC", "role": "Hotend / Bed Thermistor" }
+    {
+      "category": "stepper-drivers",
+      "id": "tmc2209",
+      "label": "TMC2209 (x7, standalone UART)",
+      "role": "Stepper Drivers"
+    },
+    {
+      "category": "thermistors",
+      "id": "generic-3950",
+      "label": "Generic 3950 100K NTC",
+      "role": "Hotend / Bed Thermistor"
+    }
   ],
   "variants": [
     {

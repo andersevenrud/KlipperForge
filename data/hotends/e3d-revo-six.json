@@ -9,7 +9,8 @@
     "heaterType": "RapidChange HeatCore (integrated heater + thermistor)",
     "heaterPower": 60,
     "heatUpTime": "~60s to 200°C",
-    "thermistorType": "integrated in HeatCore (104NT)"
+    "thermistorType": "integrated in HeatCore (104NT)",
+    "thermistorId": "atc-semitec-104nt-4"
   },
   "heatBreakSpecs": {
     "type": "all-metal",

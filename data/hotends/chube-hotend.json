@@ -8,7 +8,8 @@
     "maxTemperature": 500,
     "heaterType": "cartridge",
     "heaterPower": 120,
-    "thermistorType": "NTC 100K or PT1000"
+    "thermistorType": "NTC 100K or PT1000",
+    "thermistorId": "generic-3950"
   },
   "heatBreakSpecs": {
     "type": "all-metal",

@@ -8,7 +8,8 @@
     "maxTemperature": 300,
     "heaterType": "cartridge",
     "heaterPower": 60,
-    "thermistorType": "NTC 100K"
+    "thermistorType": "NTC 100K",
+    "thermistorId": "generic-3950"
   },
   "heatBreakSpecs": {
     "type": "bi-metallic",

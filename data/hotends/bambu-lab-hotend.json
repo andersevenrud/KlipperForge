@@ -8,7 +8,8 @@
     "maxTemperature": 300,
     "heaterType": "ceramic (48W, proprietary connector)",
     "heaterPower": 48,
-    "thermistorType": "NTC 100K (proprietary connector)"
+    "thermistorType": "NTC 100K (proprietary connector)",
+    "thermistorId": "generic-3950"
   },
   "heatBreakSpecs": {
     "type": "bi-metallic",

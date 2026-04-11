@@ -9,7 +9,8 @@
     "heaterType": "RapidChange HeatCore (integrated heater + thermistor)",
     "heaterPower": 40,
     "heatUpTime": "~70s to 200°C",
-    "thermistorType": "Revo integrated (NTC 100K, Creality-compatible response)"
+    "thermistorType": "Revo integrated (NTC 100K, Creality-compatible response)",
+    "thermistorId": "generic-3950"
   },
   "heatBreakSpecs": {
     "type": "all-metal",

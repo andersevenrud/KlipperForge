@@ -8,7 +8,8 @@
     "maxTemperature": 290,
     "heaterType": "ceramic heater plate",
     "heaterPower": 90,
-    "thermistorType": "NTC 100K (104NT) or PT1000 (Plus variant)"
+    "thermistorType": "NTC 100K (104NT) or PT1000 (Plus variant)",
+    "thermistorId": "atc-semitec-104nt-4"
   },
   "heatBreakSpecs": {
     "type": "bi-metallic",

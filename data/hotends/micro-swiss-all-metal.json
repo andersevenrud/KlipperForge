@@ -9,7 +9,8 @@
     "heaterType": "cartridge",
     "heaterPower": 40,
     "heatUpTime": "~90s to 200°C",
-    "thermistorType": "NTC 100K"
+    "thermistorType": "NTC 100K",
+    "thermistorId": "generic-3950"
   },
   "heatBreakSpecs": {
     "type": "all-metal",
