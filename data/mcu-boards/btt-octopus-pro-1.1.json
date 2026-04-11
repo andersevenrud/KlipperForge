@@ -1,6 +1,7 @@
 {
   "id": "btt-octopus-pro-1.1",
-  "name": "Bigtreetech Octopus Pro v1.1",
+  "vendor": "BigTreeTech",
+  "name": "Octopus Pro v1.1",
   "mcu": "STM32H723",
   "pins": [
     "PA0",

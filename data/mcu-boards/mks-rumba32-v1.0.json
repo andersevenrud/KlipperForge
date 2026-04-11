@@ -1,6 +1,7 @@
 {
   "id": "mks-rumba32-v1.0",
-  "name": "MKS Rumba32 V1.0",
+  "vendor": "MKS",
+  "name": "Rumba32 V1.0",
   "mcu": "STM32F446",
   "pins": [
     "PA0",

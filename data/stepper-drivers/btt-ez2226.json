@@ -1,8 +1,8 @@
 {
   "id": "btt-ez2226",
-  "name": "BIGTREETECH EZ2226",
-  "manufacturer": "BIGTREETECH",
-  "description": "BIGTREETECH's EZ-Driver form-factor module built around the TMC2226, an ultra-silent motor driver IC for two phase stepper motors. Operates from 4.75-29 V DC with up to 2.8A coil current (peak) and 2A RMS, featuring StealthChop2 silent operation, SpreadCycle dynamic chopper, CoolStep current control, and StallGuard4 load and stall detection for sensorless homing over single-wire UART.",
+  "name": "BigTreeTech EZ2226",
+  "manufacturer": "BigTreeTech",
+  "description": "BigTreeTech's EZ-Driver form-factor module built around the TMC2226, an ultra-silent motor driver IC for two phase stepper motors. Operates from 4.75-29 V DC with up to 2.8A coil current (peak) and 2A RMS, featuring StealthChop2 silent operation, SpreadCycle dynamic chopper, CoolStep current control, and StallGuard4 load and stall detection for sensorless homing over single-wire UART.",
   "driverInterface": "UART",
   "formFactor": "ez",
   "baseChip": "tmc2209",

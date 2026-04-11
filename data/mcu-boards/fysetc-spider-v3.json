@@ -1,6 +1,7 @@
 {
   "id": "fysetc-spider-v3",
-  "name": "FYSETC Spider V3",
+  "vendor": "FYSETC",
+  "name": "Spider V3",
   "mcu": "STM32F446",
   "pins": [
     "PA0",

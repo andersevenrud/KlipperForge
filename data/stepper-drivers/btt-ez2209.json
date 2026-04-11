@@ -1,8 +1,8 @@
 {
   "id": "btt-ez2209",
-  "name": "BIGTREETECH EZ2209",
-  "manufacturer": "BIGTREETECH",
-  "description": "BIGTREETECH's EZ-form-factor stepper driver module based on the Trinamic TMC2209. The BTT wiki lists a 4.75V-28V DC supply range, 2A RMS current with a 2.8A peak, up to 256 microsteps per full step, and StealthChop2, SpreadCycle, CoolStep and StallGuard4 features over STEP/DIR or UART. The upstream repository folder is named EZZ2209 (double Z) while BIGTREETECH's wiki and documentation refer to the product as EZ2209.",
+  "name": "BigTreeTech EZ2209",
+  "manufacturer": "BigTreeTech",
+  "description": "BigTreeTech's EZ-form-factor stepper driver module based on the Trinamic TMC2209. The BTT wiki lists a 4.75V-28V DC supply range, 2A RMS current with a 2.8A peak, up to 256 microsteps per full step, and StealthChop2, SpreadCycle, CoolStep and StallGuard4 features over STEP/DIR or UART. The upstream repository folder is named EZZ2209 (double Z) while BigTreeTech's wiki and documentation refer to the product as EZ2209.",
   "driverInterface": "UART",
   "formFactor": "ez",
   "baseChip": "tmc2209",

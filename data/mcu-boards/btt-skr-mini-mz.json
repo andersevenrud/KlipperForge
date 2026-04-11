@@ -1,6 +1,7 @@
 {
   "id": "btt-skr-mini-mz",
-  "name": "Bigtreetech SKR Mini MZ",
+  "vendor": "BigTreeTech",
+  "name": "SKR Mini MZ",
   "mcu": "STM32F103",
   "pins": [
     "PA0",

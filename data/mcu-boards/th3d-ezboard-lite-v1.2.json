@@ -1,6 +1,7 @@
 {
   "id": "th3d-ezboard-lite-v1.2",
-  "name": "TH3D EZBoard Lite V1.2",
+  "vendor": "TH3D",
+  "name": "EZBoard Lite V1.2",
   "mcu": "LPC1769",
   "pins": [
     "P0.0",

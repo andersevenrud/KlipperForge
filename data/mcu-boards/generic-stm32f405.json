@@ -1,5 +1,6 @@
 {
   "id": "generic-stm32f405",
+  "vendor": "Generic",
   "name": "Generic STM32F405",
   "mcu": "STM32F405",
   "pins": [

@@ -1,5 +1,6 @@
 {
   "id": "creality-v4.2.2",
+  "vendor": "Creality",
   "name": "Creality V4.2.2",
   "mcu": "STM32F103",
   "pins": [

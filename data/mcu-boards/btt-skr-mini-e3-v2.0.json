@@ -1,6 +1,7 @@
 {
   "id": "btt-skr-mini-e3-v2.0",
-  "name": "Bigtreetech SKR Mini E3 V2.0",
+  "vendor": "BigTreeTech",
+  "name": "SKR Mini E3 V2.0",
   "mcu": "STM32F103",
   "flash": {
     "dfuModeInstructions": "Set the BOOT0 jumper to 3.3V and press the reset button.",

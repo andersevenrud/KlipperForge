@@ -1,6 +1,7 @@
 {
   "id": "mks-robin-nano-v3",
-  "name": "MKS Robin Nano V3",
+  "vendor": "MKS",
+  "name": "Robin Nano V3",
   "mcu": "STM32F407",
   "pins": [
     "PA0",

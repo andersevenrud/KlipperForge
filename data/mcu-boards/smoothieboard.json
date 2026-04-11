@@ -1,5 +1,6 @@
 {
   "id": "smoothieboard",
+  "vendor": "Smoothieboard",
   "name": "Smoothieboard",
   "mcu": "LPC1768",
   "pins": [

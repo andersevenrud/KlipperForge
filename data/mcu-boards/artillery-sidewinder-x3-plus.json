@@ -1,6 +1,7 @@
 {
   "id": "artillery-sidewinder-x3-plus",
-  "name": "Artillery Sidewinder X3 Plus Board",
+  "vendor": "Artillery",
+  "name": "Sidewinder X3 Plus Board",
   "mcu": "STM32F401",
   "pins": [
     "PA0",

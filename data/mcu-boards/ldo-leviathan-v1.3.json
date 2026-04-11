@@ -1,6 +1,7 @@
 {
   "id": "ldo-leviathan-v1.3",
-  "name": "LDO Leviathan V1.3",
+  "vendor": "LDO",
+  "name": "Leviathan V1.3",
   "mcu": "STM32H743",
   "pins": [
     "PA0",

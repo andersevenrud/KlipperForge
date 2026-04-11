@@ -1,6 +1,7 @@
 {
   "id": "fysetc-catalyst",
-  "name": "FYSETC Catalyst",
+  "vendor": "FYSETC",
+  "name": "Catalyst",
   "mcu": "STM32F401",
   "pins": [
     "PA0",

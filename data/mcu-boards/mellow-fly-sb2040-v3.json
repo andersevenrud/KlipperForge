@@ -1,6 +1,7 @@
 {
   "id": "mellow-fly-sb2040-v3",
-  "name": "Mellow Fly-SB2040 V3",
+  "vendor": "Mellow",
+  "name": "Fly-SB2040 V3",
   "mcu": "RP2040",
   "pins": [
     "gpio0",

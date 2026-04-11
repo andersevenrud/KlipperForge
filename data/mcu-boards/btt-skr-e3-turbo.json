@@ -1,6 +1,7 @@
 {
   "id": "btt-skr-e3-turbo",
-  "name": "Bigtreetech SKR E3 Turbo",
+  "vendor": "BigTreeTech",
+  "name": "SKR E3 Turbo",
   "mcu": "LPC1769",
   "pins": [
     "P0.0",

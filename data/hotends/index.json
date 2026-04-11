@@ -97,14 +97,14 @@
     {
       "id": "goliath-air",
       "name": "Goliath Air-Cooled",
-      "manufacturer": "VzBoT / Mellow",
+      "manufacturer": "Mellow",
       "hotendType": "all-metal",
       "hasImage": true
     },
     {
       "id": "goliath-water",
       "name": "Goliath Water-Cooled",
-      "manufacturer": "VzBoT / Mellow",
+      "manufacturer": "Mellow",
       "hotendType": "all-metal"
     },
     {

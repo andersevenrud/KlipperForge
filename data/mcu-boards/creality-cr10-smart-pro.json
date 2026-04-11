@@ -1,6 +1,7 @@
 {
   "id": "creality-cr10-smart-pro",
-  "name": "Creality CR-10 Smart Pro Board",
+  "vendor": "Creality",
+  "name": "CR-10 Smart Pro Board",
   "mcu": "STM32F103",
   "pins": [
     "PA0",

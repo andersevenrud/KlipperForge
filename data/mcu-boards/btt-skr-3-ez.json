@@ -1,6 +1,7 @@
 {
   "id": "btt-skr-3-ez",
-  "name": "Bigtreetech SKR 3 EZ",
+  "vendor": "BigTreeTech",
+  "name": "SKR 3 EZ",
   "mcu": "STM32H743",
   "pins": [
     "PA0",

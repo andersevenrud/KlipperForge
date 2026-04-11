@@ -1,6 +1,7 @@
 {
   "id": "btt-kraken-1.0",
-  "name": "Bigtreetech Kraken V1.0",
+  "vendor": "BigTreeTech",
+  "name": "Kraken V1.0",
   "mcu": "STM32H723",
   "pins": [
     "PA0",

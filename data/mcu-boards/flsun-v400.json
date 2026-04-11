@@ -1,6 +1,7 @@
 {
   "id": "flsun-v400",
-  "name": "FLSUN V400 Board",
+  "vendor": "FLSUN",
+  "name": "V400 Board",
   "mcu": "STM32F103",
   "pins": [
     "PA0",

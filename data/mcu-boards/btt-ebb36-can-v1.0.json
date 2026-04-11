@@ -1,6 +1,7 @@
 {
   "id": "btt-ebb36-can-v1.0",
-  "name": "Bigtreetech EBB36 CAN V1.0",
+  "vendor": "BigTreeTech",
+  "name": "EBB36 CAN V1.0",
   "mcu": "STM32F072",
   "pins": [
     "PA0",

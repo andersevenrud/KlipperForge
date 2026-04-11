@@ -1,5 +1,6 @@
 {
   "id": "generic-stm32f446",
+  "vendor": "Generic",
   "name": "Generic STM32F446",
   "mcu": "STM32F446",
   "pins": [

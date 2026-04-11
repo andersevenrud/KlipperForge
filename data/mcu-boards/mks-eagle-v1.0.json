@@ -1,6 +1,7 @@
 {
   "id": "mks-eagle-v1.0",
-  "name": "MKS Eagle V1.0",
+  "vendor": "MKS",
+  "name": "Eagle V1.0",
   "mcu": "STM32F407",
   "pins": [
     "PA0",

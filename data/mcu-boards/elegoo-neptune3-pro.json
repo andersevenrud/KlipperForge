@@ -1,6 +1,7 @@
 {
   "id": "elegoo-neptune3-pro",
-  "name": "Elegoo Neptune 3 Pro",
+  "vendor": "Elegoo",
+  "name": "Neptune 3 Pro",
   "mcu": "STM32F401",
   "pins": [
     "PA0",

@@ -1,6 +1,7 @@
 {
   "id": "elegoo-neptune4",
-  "name": "Elegoo Neptune 4",
+  "vendor": "Elegoo",
+  "name": "Neptune 4",
   "mcu": "STM32F401",
   "pins": [
     "PA0",

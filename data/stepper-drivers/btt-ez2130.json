@@ -1,8 +1,8 @@
 {
   "id": "btt-ez2130",
-  "name": "BIGTREETECH EZ2130",
-  "manufacturer": "BIGTREETECH",
-  "description": "BIGTREETECH's EZ-form-factor stepper driver module based on the Trinamic TMC2130. The BTT wiki lists a 12V/24VDC voltage range, 3.3V/5V logic voltage, 1.2A operating current with a 2A peak, up to 256 microsteps per full step, and stealthChop, spreadCycle and coolStep features over a Step/Dir + SPI interface.",
+  "name": "BigTreeTech EZ2130",
+  "manufacturer": "BigTreeTech",
+  "description": "BigTreeTech's EZ-form-factor stepper driver module based on the Trinamic TMC2130. The BTT wiki lists a 12V/24VDC voltage range, 3.3V/5V logic voltage, 1.2A operating current with a 2A peak, up to 256 microsteps per full step, and stealthChop, spreadCycle and coolStep features over a Step/Dir + SPI interface.",
   "driverInterface": "SPI",
   "formFactor": "ez",
   "baseChip": "tmc2130",

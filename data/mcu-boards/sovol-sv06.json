@@ -1,6 +1,7 @@
 {
   "id": "sovol-sv06",
-  "name": "Sovol SV06 Board",
+  "vendor": "Sovol",
+  "name": "SV06 Board",
   "mcu": "STM32F103",
   "pins": [
     "PA0",

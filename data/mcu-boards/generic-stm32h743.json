@@ -1,5 +1,6 @@
 {
   "id": "generic-stm32h743",
+  "vendor": "Generic",
   "name": "Generic STM32H743",
   "mcu": "STM32H743",
   "pins": [

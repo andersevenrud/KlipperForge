@@ -1,6 +1,7 @@
 {
   "id": "mks-sgen-l-v2",
-  "name": "MKS SGen L V2",
+  "vendor": "MKS",
+  "name": "SGen L V2",
   "mcu": "LPC1769",
   "pins": [
     "P0.0",

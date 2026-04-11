@@ -1,6 +1,7 @@
 {
   "id": "mellow-fly-407zg",
-  "name": "Mellow Fly-407ZG",
+  "vendor": "Mellow",
+  "name": "Fly-407ZG",
   "mcu": "STM32F407",
   "pins": [
     "PA0",

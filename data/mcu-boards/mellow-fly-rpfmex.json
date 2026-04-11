@@ -1,6 +1,7 @@
 {
   "id": "mellow-fly-rpfmex",
-  "name": "Mellow Fly-RPFMEX",
+  "vendor": "Mellow",
+  "name": "Fly-RPFMEX",
   "mcu": "RP2040",
   "pins": [
     "gpio0",

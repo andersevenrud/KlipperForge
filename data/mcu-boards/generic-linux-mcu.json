@@ -1,5 +1,6 @@
 {
   "id": "generic-linux-mcu",
+  "vendor": "Generic",
   "name": "Linux Host MCU (Raspberry Pi / SBC)",
   "mcu": "linux",
   "pins": [

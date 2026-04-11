@@ -1,6 +1,7 @@
 {
   "id": "mks-robin-e3",
-  "name": "MKS Robin E3",
+  "vendor": "MKS",
+  "name": "Robin E3",
   "mcu": "STM32F103",
   "pins": [
     "PA0",

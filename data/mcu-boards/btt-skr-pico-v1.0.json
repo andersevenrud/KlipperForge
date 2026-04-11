@@ -1,6 +1,7 @@
 {
   "id": "btt-skr-pico-v1.0",
-  "name": "Bigtreetech SKR Pico V1.0",
+  "vendor": "BigTreeTech",
+  "name": "SKR Pico V1.0",
   "mcu": "RP2040",
   "pins": [
     "gpio0",

@@ -1,6 +1,7 @@
 {
   "id": "btt-skr-mini-e3-v1.2",
-  "name": "Bigtreetech SKR Mini E3 V1.2",
+  "vendor": "BigTreeTech",
+  "name": "SKR Mini E3 V1.2",
   "mcu": "STM32F103",
   "pins": [
     "PA0",

@@ -1,6 +1,7 @@
 {
   "id": "fysetc-sb-can-th",
-  "name": "FYSETC SB CAN ToolHead",
+  "vendor": "FYSETC",
+  "name": "SB CAN ToolHead",
   "mcu": "STM32F072",
   "pins": [
     "PA0",

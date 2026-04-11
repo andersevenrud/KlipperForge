@@ -1,6 +1,7 @@
 {
   "id": "elegoo-neptune2-znp-robin-nano",
-  "name": "Elegoo Neptune 2 (ZNP Robin Nano)",
+  "vendor": "Elegoo",
+  "name": "Neptune 2 (ZNP Robin Nano)",
   "mcu": "STM32F103",
   "pins": [
     "PA0",

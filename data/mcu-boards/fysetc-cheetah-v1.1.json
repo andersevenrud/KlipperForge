@@ -1,6 +1,7 @@
 {
   "id": "fysetc-cheetah-v1.1",
-  "name": "FYSETC Cheetah V1.1",
+  "vendor": "FYSETC",
+  "name": "Cheetah V1.1",
   "mcu": "STM32F103",
   "pins": [
     "PA0",

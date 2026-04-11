@@ -1,8 +1,8 @@
 {
   "id": "btt-tmc2208",
-  "name": "BIGTREETECH TMC2208",
-  "manufacturer": "BIGTREETECH",
-  "description": "BIGTREETECH's SilentStepStick-compatible TMC2208 driver module. Built around Trinamic's TMC2208 chip, it offers single-wire UART for advanced configuration in addition to a STEP/DIR compatible mode, and uses stealthChop2 for quiet positioning together with spreadCycle for high-speed dynamics. Accepts 12V/24V DC input. The integrated power MOSFETs handle motor current up to 1.4 A RMS (2 A peak). VREF is adjustable via an onboard potentiometer and defaults to 1 V (+0.2).",
+  "name": "BigTreeTech TMC2208",
+  "manufacturer": "BigTreeTech",
+  "description": "BigTreeTech's SilentStepStick-compatible TMC2208 driver module. Built around Trinamic's TMC2208 chip, it offers single-wire UART for advanced configuration in addition to a STEP/DIR compatible mode, and uses stealthChop2 for quiet positioning together with spreadCycle for high-speed dynamics. Accepts 12V/24V DC input. The integrated power MOSFETs handle motor current up to 1.4 A RMS (2 A peak). VREF is adjustable via an onboard potentiometer and defaults to 1 V (+0.2).",
   "driverInterface": "UART",
   "formFactor": "stepstick",
   "baseChip": "tmc2208",

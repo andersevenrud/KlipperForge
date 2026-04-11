@@ -1,7 +1,7 @@
 {
   "id": "btt-vivid",
   "name": "ViViD",
-  "manufacturer": "Bigtreetech",
+  "manufacturer": "BigTreeTech",
   "description": "The BTT ViViD is a commercial multi-color management system using a selector-based design with a rotating selector mechanism and a separate buffer unit. During a filament change, the system unloads the current filament via high-speed retraction through the selector back to the buffer, rotates the selector to the new slot, and performs high-speed loading. The unit doubles as a filament dryer box with a heated chamber (up to 60C, typical range 45-55C depending on material). It connects to the printer's Klipper host via USB and supports RFID tag reading for open standard protocols.",
   "mmuType": "selector",
   "openSource": false,
@@ -34,10 +34,26 @@
     "Supports Blobifier purge system (Spoolman integration via Happy Hare only)"
   ],
   "references": [
-    { "label": "Wiki", "url": "https://global.bttwiki.com/BIGTREETECH_ViViD.html", "type": "documentation" },
-    { "label": "Product Page", "url": "https://biqu.equipment/products/biqu-vivid", "type": "product" },
-    { "label": "MMS Software", "url": "https://github.com/bigtreetech/BIGTREETECH_MMS", "type": "github" },
-    { "label": "Hardware Repository", "url": "https://github.com/bigtreetech/BIGTREETECH_ViViD", "type": "github" }
+    {
+      "label": "Wiki",
+      "url": "https://global.bttwiki.com/BIGTREETECH_ViViD.html",
+      "type": "documentation"
+    },
+    {
+      "label": "Product Page",
+      "url": "https://biqu.equipment/products/biqu-vivid",
+      "type": "product"
+    },
+    {
+      "label": "MMS Software",
+      "url": "https://github.com/bigtreetech/BIGTREETECH_MMS",
+      "type": "github"
+    },
+    {
+      "label": "Hardware Repository",
+      "url": "https://github.com/bigtreetech/BIGTREETECH_ViViD",
+      "type": "github"
+    }
   ],
   "unverified": ["motorCount", "maxFilaments"]
 }

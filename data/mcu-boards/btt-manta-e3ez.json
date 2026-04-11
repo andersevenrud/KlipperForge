@@ -1,6 +1,7 @@
 {
   "id": "btt-manta-e3ez",
-  "name": "Bigtreetech Manta E3EZ",
+  "vendor": "BigTreeTech",
+  "name": "Manta E3EZ",
   "mcu": "STM32G0B1",
   "pins": [
     "PA0",

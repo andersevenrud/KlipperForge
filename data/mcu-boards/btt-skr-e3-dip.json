@@ -1,6 +1,7 @@
 {
   "id": "btt-skr-e3-dip",
-  "name": "Bigtreetech SKR E3 DIP",
+  "vendor": "BigTreeTech",
+  "name": "SKR E3 DIP",
   "mcu": "STM32F103",
   "pins": [
     "PA0",

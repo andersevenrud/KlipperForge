@@ -1,6 +1,7 @@
 {
   "id": "sovol-sv06-plus",
-  "name": "Sovol SV06 Plus Board",
+  "vendor": "Sovol",
+  "name": "SV06 Plus Board",
   "mcu": "STM32F103",
   "pins": [
     "PA0",

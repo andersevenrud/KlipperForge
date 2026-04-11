@@ -1,7 +1,7 @@
 {
   "id": "goliath-air",
   "name": "Goliath Air-Cooled",
-  "manufacturer": "VzBoT / Mellow",
+  "manufacturer": "Mellow",
   "description": "The Goliath Air-Cooled is a high-flow hotend designed by the VzBoT team and manufactured by Mellow3D. It delivers extreme volumetric throughput without the complexity of a water cooling loop. It uses a large aluminum heatsink for cooling, making it significantly easier to integrate than the water-cooled variant while still achieving very high flow rates. Features a 50mm long melt zone, nickel-plated copper thermal block, and a bi-material copper-zirconia heatbreak.",
   "hotendType": "all-metal",
   "thermalSpecs": {

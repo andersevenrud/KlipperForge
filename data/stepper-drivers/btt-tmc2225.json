@@ -1,8 +1,8 @@
 {
   "id": "btt-tmc2225",
-  "name": "BIGTREETECH TMC2225",
-  "manufacturer": "BIGTREETECH",
-  "description": "BIGTREETECH's SilentStepStick-compatible TMC2225 driver module. The TMC2225 is an ultra-silent motor driver IC for two-phase stepper motors with a StealthChop2 chopper for noiseless operation, a Single Wire UART + OTP configuration interface and a STEP/DIR interface with 4/8/16/32 microstep pin setting that interpolates up to 256 microsteps via MicroPlyer.",
+  "name": "BigTreeTech TMC2225",
+  "manufacturer": "BigTreeTech",
+  "description": "BigTreeTech's SilentStepStick-compatible TMC2225 driver module. The TMC2225 is an ultra-silent motor driver IC for two-phase stepper motors with a StealthChop2 chopper for noiseless operation, a Single Wire UART + OTP configuration interface and a STEP/DIR interface with 4/8/16/32 microstep pin setting that interpolates up to 256 microsteps via MicroPlyer.",
   "driverInterface": "UART",
   "formFactor": "stepstick",
   "baseChip": "tmc2208",

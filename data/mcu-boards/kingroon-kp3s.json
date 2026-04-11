@@ -1,6 +1,7 @@
 {
   "id": "kingroon-kp3s",
-  "name": "Kingroon KP3S Board",
+  "vendor": "Kingroon",
+  "name": "KP3S Board",
   "mcu": "STM32F103",
   "pins": [
     "PA0",

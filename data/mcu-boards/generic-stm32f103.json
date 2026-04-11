@@ -1,5 +1,6 @@
 {
   "id": "generic-stm32f103",
+  "vendor": "Generic",
   "name": "Generic STM32F103",
   "mcu": "STM32F103",
   "pins": [

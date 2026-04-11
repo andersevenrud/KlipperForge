@@ -1,6 +1,7 @@
 {
   "id": "mellow-fly-super-infinity-hv",
-  "name": "Mellow Fly-Super Infinity HV",
+  "vendor": "Mellow",
+  "name": "Fly-Super Infinity HV",
   "mcu": "STM32F407",
   "pins": [
     "PA0",

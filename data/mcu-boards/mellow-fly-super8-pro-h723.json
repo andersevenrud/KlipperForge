@@ -1,6 +1,7 @@
 {
   "id": "mellow-fly-super8-pro-h723",
-  "name": "Mellow Fly-Super8Pro H723",
+  "vendor": "Mellow",
+  "name": "Fly-Super8Pro H723",
   "mcu": "STM32H723",
   "pins": [
     "PA0",

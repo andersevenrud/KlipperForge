@@ -1,6 +1,7 @@
 {
   "id": "mellow-fly-sht36-pro",
-  "name": "Mellow Fly-SHT36 Pro",
+  "vendor": "Mellow",
+  "name": "Fly-SHT36 Pro",
   "mcu": "STM32F072",
   "pins": [
     "PA0",

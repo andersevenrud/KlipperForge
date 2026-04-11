@@ -1,6 +1,7 @@
 {
   "id": "mellow-fly-puppet",
-  "name": "Mellow Fly-Puppet",
+  "vendor": "Mellow",
+  "name": "Fly-Puppet",
   "mcu": "RP2040",
   "pins": [
     "gpio0",

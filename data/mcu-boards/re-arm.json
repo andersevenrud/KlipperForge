@@ -1,6 +1,7 @@
 {
   "id": "re-arm",
-  "name": "Panucatt Re-Arm",
+  "vendor": "Panucatt",
+  "name": "Re-Arm",
   "mcu": "LPC1768",
   "pins": [
     "P0.0",

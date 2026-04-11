@@ -1,6 +1,7 @@
 {
   "id": "btt-mmb-can-v1.0",
-  "name": "Bigtreetech MMB CAN V1.0",
+  "vendor": "BigTreeTech",
+  "name": "MMB CAN V1.0",
   "mcu": "STM32G0B1",
   "flash": {
     "dfuModeInstructions": "Hold the BOOT button and connect the board via USB Type-C to enter DFU mode."

@@ -1,6 +1,7 @@
 {
   "id": "th3d-ezboard-v2.0",
-  "name": "TH3D EZBoard V2.0",
+  "vendor": "TH3D",
+  "name": "EZBoard V2.0",
   "mcu": "STM32F405",
   "pins": [
     "PA0",

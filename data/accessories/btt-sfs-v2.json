@@ -1,7 +1,7 @@
 {
   "id": "btt-sfs-v2",
   "name": "Smart Filament Sensor V2.0",
-  "manufacturer": "BIGTREETECH",
+  "manufacturer": "BigTreeTech",
   "description": "Smart filament sensor detecting runout, breakage, clogging, and tangling.",
   "accessoryType": "filament-sensor",
   "electricalSpecs": {

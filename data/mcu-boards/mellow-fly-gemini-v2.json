@@ -1,6 +1,7 @@
 {
   "id": "mellow-fly-gemini-v2",
-  "name": "Mellow Fly-Gemini V2",
+  "vendor": "Mellow",
+  "name": "Fly-Gemini V2",
   "mcu": "STM32F405",
   "pins": [
     "PA0",

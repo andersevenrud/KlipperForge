@@ -1,6 +1,7 @@
 {
   "id": "btt-ebb-sb2240-2209-can-v1.0",
-  "name": "Bigtreetech EBB SB2240/SB2209 CAN V1.0",
+  "vendor": "BigTreeTech",
+  "name": "EBB SB2240/SB2209 CAN V1.0",
   "mcu": "STM32G0B1",
   "pins": [
     "PA0",

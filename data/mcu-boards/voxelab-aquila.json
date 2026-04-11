@@ -1,6 +1,7 @@
 {
   "id": "voxelab-aquila",
-  "name": "Voxelab Aquila Board",
+  "vendor": "Voxelab",
+  "name": "Aquila Board",
   "mcu": "STM32F103",
   "pins": [
     "PA0",

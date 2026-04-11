@@ -1,6 +1,7 @@
 {
   "id": "btt-octopus-max-ez",
-  "name": "Bigtreetech Octopus Max EZ",
+  "vendor": "BigTreeTech",
+  "name": "Octopus Max EZ",
   "mcu": "STM32H723",
   "pins": [
     "PA0",

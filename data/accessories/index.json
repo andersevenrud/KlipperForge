@@ -10,14 +10,14 @@
     {
       "id": "btt-sfs-v2",
       "name": "Smart Filament Sensor V2.0",
-      "manufacturer": "BIGTREETECH",
+      "manufacturer": "BigTreeTech",
       "accessoryType": "filament-sensor",
       "hasImage": true
     },
     {
       "id": "btt-sfs-v1",
       "name": "Smart Filament Sensor V1.0",
-      "manufacturer": "BIGTREETECH",
+      "manufacturer": "BigTreeTech",
       "accessoryType": "filament-sensor",
       "hasImage": true
     }

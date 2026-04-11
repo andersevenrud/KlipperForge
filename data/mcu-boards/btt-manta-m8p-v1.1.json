@@ -1,6 +1,7 @@
 {
   "id": "btt-manta-m8p-v1.1",
-  "name": "Bigtreetech Manta M8P V1.1",
+  "vendor": "BigTreeTech",
+  "name": "Manta M8P V1.1",
   "mcu": "STM32G0B1",
   "pins": [
     "PA0",

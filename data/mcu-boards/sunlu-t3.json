@@ -1,6 +1,7 @@
 {
   "id": "sunlu-t3",
-  "name": "Sunlu Terminator T3 Board",
+  "vendor": "Sunlu",
+  "name": "Terminator T3 Board",
   "mcu": "STM32F103",
   "pins": [
     "PA0",

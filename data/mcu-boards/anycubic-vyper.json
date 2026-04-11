@@ -1,6 +1,7 @@
 {
   "id": "anycubic-vyper",
-  "name": "Anycubic Vyper Board",
+  "vendor": "Anycubic",
+  "name": "Vyper Board",
   "mcu": "STM32F103",
   "pins": [
     "PA0",

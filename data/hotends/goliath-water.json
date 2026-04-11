@@ -1,7 +1,7 @@
 {
   "id": "goliath-water",
   "name": "Goliath Water-Cooled",
-  "manufacturer": "VzBoT / Mellow",
+  "manufacturer": "Mellow",
   "description": "The Goliath Water-Cooled Hotend is designed by the VzBoT team and manufactured by Mellow3D for extreme volumetric flow rates, targeting ~100mm³/s or more. Water cooling replaces the traditional heat sink and fan, enabling a much larger melt zone without the risk of heat creep at high feed rates. Features a 50mm long melt zone, nickel-plated copper thermal block, 100W heater, and a bi-material copper-zirconia heatbreak. It is aimed at production and high-speed printing environments where maximum throughput is the priority.",
   "hotendType": "all-metal",
   "thermalSpecs": {

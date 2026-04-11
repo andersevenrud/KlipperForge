@@ -1,6 +1,7 @@
 {
   "id": "mellow-fly-super5-pro",
-  "name": "Mellow Fly-Super5Pro",
+  "vendor": "Mellow",
+  "name": "Fly-Super5Pro",
   "mcu": "STM32H723",
   "pins": [
     "PA0",

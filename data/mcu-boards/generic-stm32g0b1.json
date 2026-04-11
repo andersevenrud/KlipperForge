@@ -1,5 +1,6 @@
 {
   "id": "generic-stm32g0b1",
+  "vendor": "Generic",
   "name": "Generic STM32G0B1",
   "mcu": "STM32G0B1",
   "pins": [

@@ -1,6 +1,7 @@
 {
   "id": "btt-ebb-sb2209-can-rp2040-v1.0",
-  "name": "Bigtreetech EBB SB2209 CAN V1.0 (RP2040)",
+  "vendor": "BigTreeTech",
+  "name": "EBB SB2209 CAN V1.0 (RP2040)",
   "mcu": "RP2040",
   "pins": [
     "gpio0",

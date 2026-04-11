@@ -1,5 +1,6 @@
 {
   "id": "artillery-ruby-v1.2",
+  "vendor": "Artillery",
   "name": "Artillery Ruby V1.2",
   "mcu": "STM32F401",
   "pins": [

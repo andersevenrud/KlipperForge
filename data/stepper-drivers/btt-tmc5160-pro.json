@@ -1,8 +1,8 @@
 {
   "id": "btt-tmc5160-pro",
-  "name": "BIGTREETECH TMC5160 Pro",
-  "manufacturer": "BIGTREETECH",
-  "description": "BIGTREETECH's TMC5160T Pro V1.0 StepStick-form driver. BIGTREETECH describes it as \"a high-power stepper motor driver control chip that uses external power MOSFETs\", with an 8–56 V supply range and an enhanced-fin heatsink. A later V1.1 revision exists in the BIGTREETECH repository but has no dedicated documentation page; all specs here reflect the documented V1.0 baseline.",
+  "name": "BigTreeTech TMC5160 Pro",
+  "manufacturer": "BigTreeTech",
+  "description": "BigTreeTech's TMC5160T Pro V1.0 StepStick-form driver. BigTreeTech describes it as \"a high-power stepper motor driver control chip that uses external power MOSFETs\", with an 8–56 V supply range and an enhanced-fin heatsink. A later V1.1 revision exists in the BigTreeTech repository but has no dedicated documentation page; all specs here reflect the documented V1.0 baseline.",
   "driverInterface": "SPI",
   "formFactor": "stepstick",
   "baseChip": "tmc5160",

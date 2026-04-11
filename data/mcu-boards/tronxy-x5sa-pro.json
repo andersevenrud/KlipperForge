@@ -1,6 +1,7 @@
 {
   "id": "tronxy-x5sa-pro",
-  "name": "Tronxy X5SA Pro Board",
+  "vendor": "Tronxy",
+  "name": "X5SA Pro Board",
   "mcu": "STM32F103",
   "pins": [
     "PA0",

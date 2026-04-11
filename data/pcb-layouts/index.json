@@ -1,16 +1,64 @@
 {
   "layouts": [
-    { "boardId": "btt-octopus-pro-1.0", "name": "Bigtreetech Octopus Pro v1.0.x", "hasImage": true },
-    { "boardId": "btt-octopus-pro-1.1", "name": "Bigtreetech Octopus Pro v1.1", "hasImage": true },
-    { "boardId": "btt-skr-mini-e3-v3", "name": "BTT SKR Mini E3 V3", "hasImage": true },
-    { "boardId": "btt-ebb42-can-v1.1", "name": "Bigtreetech EBB42 CAN V1.1", "hasImage": true },
-    { "boardId": "btt-ebb42-can-v1.2", "name": "Bigtreetech EBB42 CAN V1.2", "hasImage": true },
-    { "boardId": "btt-ebb36-can-v1.0", "name": "Bigtreetech EBB36 CAN V1.0", "hasImage": true },
-    { "boardId": "btt-ebb36-can-v1.1", "name": "Bigtreetech EBB36 CAN V1.1", "hasImage": true },
-    { "boardId": "btt-ebb36-can-v1.2", "name": "Bigtreetech EBB36 CAN V1.2", "hasImage": true },
-    { "boardId": "mellow-cpap", "name": "Mellow FLY-7040 CPAP Controller", "hasImage": true },
-    { "boardId": "prusa-buddy", "name": "Prusa Buddy", "hasImage": true },
-    { "boardId": "prusa-xbuddy", "name": "Prusa xBuddy", "hasImage": true },
-    { "boardId": "einsy-rambo", "name": "Einsy RAMBo", "hasImage": true }
+    {
+      "boardId": "btt-octopus-pro-1.0",
+      "name": "BigTreeTech Octopus Pro v1.0.x",
+      "hasImage": true
+    },
+    {
+      "boardId": "btt-octopus-pro-1.1",
+      "name": "BigTreeTech Octopus Pro v1.1",
+      "hasImage": true
+    },
+    {
+      "boardId": "btt-skr-mini-e3-v3",
+      "name": "BTT SKR Mini E3 V3",
+      "hasImage": true
+    },
+    {
+      "boardId": "btt-ebb42-can-v1.1",
+      "name": "BigTreeTech EBB42 CAN V1.1",
+      "hasImage": true
+    },
+    {
+      "boardId": "btt-ebb42-can-v1.2",
+      "name": "BigTreeTech EBB42 CAN V1.2",
+      "hasImage": true
+    },
+    {
+      "boardId": "btt-ebb36-can-v1.0",
+      "name": "BigTreeTech EBB36 CAN V1.0",
+      "hasImage": true
+    },
+    {
+      "boardId": "btt-ebb36-can-v1.1",
+      "name": "BigTreeTech EBB36 CAN V1.1",
+      "hasImage": true
+    },
+    {
+      "boardId": "btt-ebb36-can-v1.2",
+      "name": "BigTreeTech EBB36 CAN V1.2",
+      "hasImage": true
+    },
+    {
+      "boardId": "mellow-cpap",
+      "name": "Mellow FLY-7040 CPAP Controller",
+      "hasImage": true
+    },
+    {
+      "boardId": "prusa-buddy",
+      "name": "Prusa Buddy",
+      "hasImage": true
+    },
+    {
+      "boardId": "prusa-xbuddy",
+      "name": "Prusa xBuddy",
+      "hasImage": true
+    },
+    {
+      "boardId": "einsy-rambo",
+      "name": "Einsy RAMBo",
+      "hasImage": true
+    }
   ]
 }

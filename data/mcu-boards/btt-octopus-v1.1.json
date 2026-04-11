@@ -1,6 +1,7 @@
 {
   "id": "btt-octopus-v1.1",
-  "name": "Bigtreetech Octopus V1.1",
+  "vendor": "BigTreeTech",
+  "name": "Octopus V1.1",
   "mcu": "STM32F446",
   "flash": {
     "dfuModeInstructions": "Hold the BOOT0 button, press and release RESET, then release BOOT0.",

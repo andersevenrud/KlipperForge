@@ -1,5 +1,6 @@
 {
   "id": "prusa-xbuddy",
+  "vendor": "Prusa",
   "name": "Prusa xBuddy",
   "mcu": "STM32F427",
   "pins": [

@@ -1,6 +1,7 @@
 {
   "id": "mellow-fly-e3-v2",
-  "name": "Mellow Fly-E3 V2",
+  "vendor": "Mellow",
+  "name": "Fly-E3 V2",
   "mcu": "STM32F407",
   "pins": [
     "PA0",

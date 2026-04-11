@@ -1,8 +1,8 @@
 {
   "id": "btt-ez5160-pro",
-  "name": "BIGTREETECH EZ5160 Pro",
-  "manufacturer": "BIGTREETECH",
-  "description": "BIGTREETECH's EZ-Driver form-factor module built around the TMC5160-TA. With the external MOSFET it can support higher voltage and larger current, accepting 8-48 V input with a 2.5 A RMS / 3 A peak header rating, and offers low heat generation far lower than that of 2100, 2130, and other drivers. Configured over SPI with a DIAG-based locked-rotor detection output.",
+  "name": "BigTreeTech EZ5160 Pro",
+  "manufacturer": "BigTreeTech",
+  "description": "BigTreeTech's EZ-Driver form-factor module built around the TMC5160-TA. With the external MOSFET it can support higher voltage and larger current, accepting 8-48 V input with a 2.5 A RMS / 3 A peak header rating, and offers low heat generation far lower than that of 2100, 2130, and other drivers. Configured over SPI with a DIAG-based locked-rotor detection output.",
   "driverInterface": "SPI",
   "formFactor": "ez",
   "baseChip": "tmc5160",

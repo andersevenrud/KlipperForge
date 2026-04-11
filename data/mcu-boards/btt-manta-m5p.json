@@ -1,6 +1,7 @@
 {
   "id": "btt-manta-m5p",
-  "name": "Bigtreetech Manta M5P",
+  "vendor": "BigTreeTech",
+  "name": "Manta M5P",
   "mcu": "STM32G0B1",
   "pins": [
     "PA0",

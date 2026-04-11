@@ -1,5 +1,6 @@
 {
   "id": "einsy-rambo",
+  "vendor": "Ultimachine",
   "name": "Einsy RAMBo",
   "mcu": "atmega2560",
   "pins": [

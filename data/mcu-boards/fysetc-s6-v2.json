@@ -1,6 +1,7 @@
 {
   "id": "fysetc-s6-v2",
-  "name": "FYSETC S6 V2",
+  "vendor": "FYSETC",
+  "name": "S6 V2",
   "mcu": "STM32F446",
   "pins": [
     "PA0",

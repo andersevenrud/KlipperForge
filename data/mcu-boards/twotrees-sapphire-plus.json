@@ -1,6 +1,7 @@
 {
   "id": "twotrees-sapphire-plus",
-  "name": "TwoTrees Sapphire Plus Board",
+  "vendor": "TwoTrees",
+  "name": "Sapphire Plus Board",
   "mcu": "STM32F103",
   "pins": [
     "PA0",

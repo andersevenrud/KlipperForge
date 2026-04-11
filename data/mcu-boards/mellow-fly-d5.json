@@ -1,6 +1,7 @@
 {
   "id": "mellow-fly-d5",
-  "name": "Mellow Fly-D5",
+  "vendor": "Mellow",
+  "name": "Fly-D5",
   "mcu": "STM32F072",
   "pins": [
     "PA0",

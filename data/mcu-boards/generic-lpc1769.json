@@ -1,5 +1,6 @@
 {
   "id": "generic-lpc1769",
+  "vendor": "Generic",
   "name": "Generic LPC1769",
   "mcu": "LPC1769",
   "pins": [

@@ -1,6 +1,7 @@
 {
   "id": "btt-skr-v1.4-turbo",
-  "name": "Bigtreetech SKR V1.4 Turbo",
+  "vendor": "BigTreeTech",
+  "name": "SKR V1.4 Turbo",
   "mcu": "LPC1769",
   "pins": [
     "P0.0",

@@ -1,6 +1,7 @@
 {
   "id": "btt-skr-v1.1",
-  "name": "Bigtreetech SKR V1.1",
+  "vendor": "BigTreeTech",
+  "name": "SKR V1.1",
   "mcu": "LPC1768",
   "pins": [
     "P0.0",

@@ -1,8 +1,8 @@
 {
   "id": "btt-ez2225",
-  "name": "BIGTREETECH EZ2225",
-  "manufacturer": "BIGTREETECH",
-  "description": "BIGTREETECH's EZ-Driver form-factor module built around the TMC2225, an ultra-silent motor driver IC for two-phase stepper motors. Supports 2-phase stepper motors up to 2A coil current (peak) over a 4.75-36 V DC range, with StealthChop2 silent operation, SpreadCycle dynamic chopper, and single-wire UART plus OTP for advanced configuration.",
+  "name": "BigTreeTech EZ2225",
+  "manufacturer": "BigTreeTech",
+  "description": "BigTreeTech's EZ-Driver form-factor module built around the TMC2225, an ultra-silent motor driver IC for two-phase stepper motors. Supports 2-phase stepper motors up to 2A coil current (peak) over a 4.75-36 V DC range, with StealthChop2 silent operation, SpreadCycle dynamic chopper, and single-wire UART plus OTP for advanced configuration.",
   "driverInterface": "UART",
   "formFactor": "ez",
   "baseChip": "tmc2208",

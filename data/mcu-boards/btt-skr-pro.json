@@ -1,6 +1,7 @@
 {
   "id": "btt-skr-pro",
-  "name": "Bigtreetech SKR Pro",
+  "vendor": "BigTreeTech",
+  "name": "SKR Pro",
   "mcu": "STM32F407",
   "flash": {
     "dfuModeInstructions": "Hold the BOOT0 button, press and release RESET, then release BOOT0.",

@@ -1,5 +1,6 @@
 {
   "id": "generic-rp2040",
+  "vendor": "Generic",
   "name": "Generic RP2040",
   "mcu": "RP2040",
   "pins": [

@@ -6,7 +6,9 @@
     "height": 139.95
   },
   "image": "/data/pcb-layouts/btt-skr-mini-e3.png",
-  "imageOffset": { "x": 3 },
+  "imageOffset": {
+    "x": 3
+  },
   "connectors": [
     {
       "name": "FAN2",

@@ -1,6 +1,7 @@
 {
   "id": "creality-ender3-s1",
-  "name": "Creality Ender 3 S1 Board",
+  "vendor": "Creality",
+  "name": "Ender 3 S1 Board",
   "mcu": "STM32F401",
   "pins": [
     "PA0",

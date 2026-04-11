@@ -1,5 +1,6 @@
 {
   "id": "prusa-buddy",
+  "vendor": "Prusa",
   "name": "Prusa Buddy",
   "mcu": "STM32F407",
   "pins": [

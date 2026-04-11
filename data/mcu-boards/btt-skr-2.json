@@ -1,6 +1,7 @@
 {
   "id": "btt-skr-2",
-  "name": "Bigtreetech SKR 2",
+  "vendor": "BigTreeTech",
+  "name": "SKR 2",
   "mcu": "STM32F407",
   "pins": [
     "PA0",

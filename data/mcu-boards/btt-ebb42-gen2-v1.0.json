@@ -1,6 +1,7 @@
 {
   "id": "btt-ebb42-gen2-v1.0",
-  "name": "Bigtreetech EBB42 GEN2 V1.0",
+  "vendor": "BigTreeTech",
+  "name": "EBB42 GEN2 V1.0",
   "mcu": "STM32G0B1",
   "pins": [
     "PA0",
