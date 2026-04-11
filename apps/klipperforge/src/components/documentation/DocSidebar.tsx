@@ -68,6 +68,21 @@ function groupBy<T>(items: T[], keyFn: (item: T) => string): ItemGroup<T>[] {
     .map(([key, items]) => ({ key, items }));
 }
 
+function filterAndGroup<T>(
+  items: T[],
+  search: string,
+  getSearchableStrings: (item: T) => (string | undefined)[],
+  getGroupKey: (item: T) => string,
+  preFilter?: (item: T) => boolean,
+): ItemGroup<T>[] {
+  const query = search.toLowerCase().trim();
+  const base = preFilter ? items.filter(preFilter) : items;
+  const filtered = query
+    ? base.filter((item) => getSearchableStrings(item).some((value) => value?.toLowerCase().includes(query)))
+    : base;
+  return groupBy(filtered, getGroupKey);
+}
+
 function isSelected(selection: DocSelection | null, category: DocCategory, itemId: string): boolean {
   return selection?.category === category && selection.itemId === itemId;
 }
@@ -144,196 +159,171 @@ export function DocSidebar({
     [selection],
   );
 
-  const filteredBoardGroups = useMemo(() => {
-    const query = search.toLowerCase().trim();
-    const nonGeneric = indices.boards.filter((b) => b.vendor !== "Generic");
-    const boards = query
-      ? nonGeneric.filter((b) => b.name.toLowerCase().includes(query) || b.vendor.toLowerCase().includes(query))
-      : nonGeneric;
-    return groupBy(boards, (b) => b.vendor);
-  }, [indices.boards, search]);
+  const filteredBoardGroups = useMemo(
+    () =>
+      filterAndGroup(
+        indices.boards,
+        search,
+        (b) => [b.name, b.vendor],
+        (b) => b.vendor,
+        (b) => b.vendor !== "Generic",
+      ),
+    [indices.boards, search],
+  );
 
-  const filteredPrinterGroups = useMemo(() => {
-    const query = search.toLowerCase().trim();
-    const printers = query
-      ? indices.printers.filter(
-          (p) => p.name.toLowerCase().includes(query) || p.manufacturer.toLowerCase().includes(query),
-        )
-      : indices.printers;
-    return groupBy(printers, (p) => p.manufacturer);
-  }, [indices.printers, search]);
+  const filteredPrinterGroups = useMemo(
+    () =>
+      filterAndGroup(
+        indices.printers,
+        search,
+        (p) => [p.name, p.manufacturer],
+        (p) => p.manufacturer,
+      ),
+    [indices.printers, search],
+  );
 
-  const filteredMotorGroups = useMemo(() => {
-    const query = search.toLowerCase().trim();
-    const motors = query
-      ? indices.motors.filter(
-          (m) =>
-            m.name.toLowerCase().includes(query) ||
-            m.manufacturer.toLowerCase().includes(query) ||
-            `nema${m.nemaSize}`.includes(query),
-        )
-      : indices.motors;
-    return groupBy(motors, (m) => m.manufacturer);
-  }, [indices.motors, search]);
+  const filteredMotorGroups = useMemo(
+    () =>
+      filterAndGroup(
+        indices.motors,
+        search,
+        (m) => [m.name, m.manufacturer, `nema${m.nemaSize}`],
+        (m) => m.manufacturer,
+      ),
+    [indices.motors, search],
+  );
 
-  const filteredStepperDriverGroups = useMemo(() => {
-    const query = search.toLowerCase().trim();
-    const drivers = query
-      ? indices.stepperDrivers.filter(
-          (d) =>
-            d.name.toLowerCase().includes(query) ||
-            d.manufacturer.toLowerCase().includes(query) ||
-            d.driverInterface.toLowerCase().includes(query) ||
-            d.klipperSection.toLowerCase().includes(query),
-        )
-      : indices.stepperDrivers;
-    return groupBy(drivers, (d) => d.manufacturer);
-  }, [indices.stepperDrivers, search]);
+  const filteredStepperDriverGroups = useMemo(
+    () =>
+      filterAndGroup(
+        indices.stepperDrivers,
+        search,
+        (d) => [d.name, d.manufacturer, d.driverInterface, d.klipperSection],
+        (d) => d.manufacturer,
+      ),
+    [indices.stepperDrivers, search],
+  );
 
-  const filteredProbeGroups = useMemo(() => {
-    const query = search.toLowerCase().trim();
-    const probes = query
-      ? indices.probes.filter(
-          (p) =>
-            p.name.toLowerCase().includes(query) ||
-            p.manufacturer.toLowerCase().includes(query) ||
-            p.probeType.toLowerCase().includes(query),
-        )
-      : indices.probes;
-    return groupBy(probes, (p) => p.manufacturer);
-  }, [indices.probes, search]);
+  const filteredProbeGroups = useMemo(
+    () =>
+      filterAndGroup(
+        indices.probes,
+        search,
+        (p) => [p.name, p.manufacturer, p.probeType],
+        (p) => p.manufacturer,
+      ),
+    [indices.probes, search],
+  );
 
-  const filteredFanGroups = useMemo(() => {
-    const query = search.toLowerCase().trim();
-    const fans = query
-      ? indices.fans.filter(
-          (f) =>
-            f.name.toLowerCase().includes(query) ||
-            f.manufacturer.toLowerCase().includes(query) ||
-            f.size.toLowerCase().includes(query) ||
-            f.fanType.toLowerCase().includes(query),
-        )
-      : indices.fans;
-    return groupBy(fans, (f) => f.manufacturer);
-  }, [indices.fans, search]);
+  const filteredFanGroups = useMemo(
+    () =>
+      filterAndGroup(
+        indices.fans,
+        search,
+        (f) => [f.name, f.manufacturer, f.size, f.fanType],
+        (f) => f.manufacturer,
+      ),
+    [indices.fans, search],
+  );
 
-  const filteredThermistorGroups = useMemo(() => {
-    const query = search.toLowerCase().trim();
-    const thermistors = query
-      ? indices.thermistors.filter(
-          (t) =>
-            t.name.toLowerCase().includes(query) ||
-            t.manufacturer.toLowerCase().includes(query) ||
-            t.sensorType.toLowerCase().includes(query),
-        )
-      : indices.thermistors;
-    return groupBy(thermistors, (t) => t.manufacturer);
-  }, [indices.thermistors, search]);
+  const filteredThermistorGroups = useMemo(
+    () =>
+      filterAndGroup(
+        indices.thermistors,
+        search,
+        (t) => [t.name, t.manufacturer, t.sensorType],
+        (t) => t.manufacturer,
+      ),
+    [indices.thermistors, search],
+  );
 
-  const filteredExtruderGroups = useMemo(() => {
-    const query = search.toLowerCase().trim();
-    const extruders = query
-      ? indices.extruders.filter(
-          (e) =>
-            e.name.toLowerCase().includes(query) ||
-            e.manufacturer.toLowerCase().includes(query) ||
-            e.driveType.toLowerCase().includes(query),
-        )
-      : indices.extruders;
-    return groupBy(extruders, (e) => e.manufacturer);
-  }, [indices.extruders, search]);
+  const filteredExtruderGroups = useMemo(
+    () =>
+      filterAndGroup(
+        indices.extruders,
+        search,
+        (e) => [e.name, e.manufacturer, e.driveType],
+        (e) => e.manufacturer,
+      ),
+    [indices.extruders, search],
+  );
 
-  const filteredHotendGroups = useMemo(() => {
-    const query = search.toLowerCase().trim();
-    const hotends = query
-      ? indices.hotends.filter(
-          (h) =>
-            h.name.toLowerCase().includes(query) ||
-            h.manufacturer.toLowerCase().includes(query) ||
-            h.hotendType.toLowerCase().includes(query),
-        )
-      : indices.hotends;
-    return groupBy(hotends, (h) => h.manufacturer);
-  }, [indices.hotends, search]);
+  const filteredHotendGroups = useMemo(
+    () =>
+      filterAndGroup(
+        indices.hotends,
+        search,
+        (h) => [h.name, h.manufacturer, h.hotendType],
+        (h) => h.manufacturer,
+      ),
+    [indices.hotends, search],
+  );
 
-  const filteredPowerSupplyGroups = useMemo(() => {
-    const query = search.toLowerCase().trim();
-    const powerSupplies = query
-      ? indices.powerSupplies.filter(
-          (p) =>
-            p.name.toLowerCase().includes(query) ||
-            p.manufacturer.toLowerCase().includes(query) ||
-            `${p.voltage}v`.includes(query) ||
-            `${p.wattage}w`.includes(query),
-        )
-      : indices.powerSupplies;
-    return groupBy(powerSupplies, (p) => p.manufacturer);
-  }, [indices.powerSupplies, search]);
+  const filteredPowerSupplyGroups = useMemo(
+    () =>
+      filterAndGroup(
+        indices.powerSupplies,
+        search,
+        (p) => [p.name, p.manufacturer, `${p.voltage}v`, `${p.wattage}w`],
+        (p) => p.manufacturer,
+      ),
+    [indices.powerSupplies, search],
+  );
 
-  const filteredAccessoryGroups = useMemo(() => {
-    const query = search.toLowerCase().trim();
-    const accessories = query
-      ? indices.accessories.filter(
-          (a) =>
-            a.name.toLowerCase().includes(query) ||
-            a.manufacturer.toLowerCase().includes(query) ||
-            a.accessoryType.toLowerCase().includes(query),
-        )
-      : indices.accessories;
-    return groupBy(accessories, (a) => a.manufacturer);
-  }, [indices.accessories, search]);
+  const filteredAccessoryGroups = useMemo(
+    () =>
+      filterAndGroup(
+        indices.accessories,
+        search,
+        (a) => [a.name, a.manufacturer, a.accessoryType],
+        (a) => a.manufacturer,
+      ),
+    [indices.accessories, search],
+  );
 
-  const filteredDisplayGroups = useMemo(() => {
-    const query = search.toLowerCase().trim();
-    const displays = query
-      ? indices.displays.filter(
-          (d) =>
-            d.name.toLowerCase().includes(query) ||
-            d.manufacturer.toLowerCase().includes(query) ||
-            d.displayType.toLowerCase().includes(query),
-        )
-      : indices.displays;
-    return groupBy(displays, (d) => d.manufacturer);
-  }, [indices.displays, search]);
+  const filteredDisplayGroups = useMemo(
+    () =>
+      filterAndGroup(
+        indices.displays,
+        search,
+        (d) => [d.name, d.manufacturer, d.displayType],
+        (d) => d.manufacturer,
+      ),
+    [indices.displays, search],
+  );
 
-  const filteredFilamentGroups = useMemo(() => {
-    const query = search.toLowerCase().trim();
-    const filaments = query
-      ? indices.filaments.filter(
-          (f) =>
-            f.name.toLowerCase().includes(query) ||
-            f.manufacturer.toLowerCase().includes(query) ||
-            f.filamentType.toLowerCase().includes(query),
-        )
-      : indices.filaments;
-    return groupBy(filaments, (f) => f.manufacturer);
-  }, [indices.filaments, search]);
+  const filteredFilamentGroups = useMemo(
+    () =>
+      filterAndGroup(
+        indices.filaments,
+        search,
+        (f) => [f.name, f.manufacturer, f.filamentType],
+        (f) => f.manufacturer,
+      ),
+    [indices.filaments, search],
+  );
 
-  const filteredToolheadGroups = useMemo(() => {
-    const query = search.toLowerCase().trim();
-    const toolheads = query
-      ? indices.toolheads.filter(
-          (t) =>
-            t.name.toLowerCase().includes(query) ||
-            t.manufacturer.toLowerCase().includes(query) ||
-            t.toolheadType.toLowerCase().includes(query),
-        )
-      : indices.toolheads;
-    return groupBy(toolheads, (t) => t.manufacturer);
-  }, [indices.toolheads, search]);
+  const filteredToolheadGroups = useMemo(
+    () =>
+      filterAndGroup(
+        indices.toolheads,
+        search,
+        (t) => [t.name, t.manufacturer, t.toolheadType],
+        (t) => t.manufacturer,
+      ),
+    [indices.toolheads, search],
+  );
 
-  const filteredMmuGroups = useMemo(() => {
-    const query = search.toLowerCase().trim();
-    const mmus = query
-      ? indices.mmus.filter(
-          (m) =>
-            m.name.toLowerCase().includes(query) ||
-            m.manufacturer.toLowerCase().includes(query) ||
-            m.mmuType.toLowerCase().includes(query),
-        )
-      : indices.mmus;
-    return groupBy(mmus, (m) => m.manufacturer);
-  }, [indices.mmus, search]);
+  const filteredMmuGroups = useMemo(
+    () =>
+      filterAndGroup(
+        indices.mmus,
+        search,
+        (m) => [m.name, m.manufacturer, m.mmuType],
+        (m) => m.manufacturer,
+      ),
+    [indices.mmus, search],
+  );
 
   const forceOpen = search.trim() ? { open: true as const } : {};
 
