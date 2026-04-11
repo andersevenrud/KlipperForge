@@ -51,6 +51,11 @@
   "unverified": ["maxFlowRate", "retraction", "thermistorType"],
   "relatedArticles": [
     {
+      "category": "thermistors",
+      "id": "generic-3950",
+      "name": "Generic NTC 100K 3950"
+    },
+    {
       "category": "toolheads",
       "id": "a4t",
       "name": "A4T"

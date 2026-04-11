@@ -47,5 +47,12 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "heatUpTime", "maxFlowRate", "retraction", "thermistorType"]
+  "unverified": ["weight", "heatUpTime", "maxFlowRate", "retraction", "thermistorType"],
+  "relatedArticles": [
+    {
+      "category": "thermistors",
+      "id": "generic-3950",
+      "name": "Generic NTC 100K 3950"
+    }
+  ]
 }

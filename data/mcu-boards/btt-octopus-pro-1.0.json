@@ -203,5 +203,12 @@
     "height": 100
   },
   "maxMotorVoltage": 60,
-  "mcuVariants": ["STM32F429", "STM32H723"]
+  "mcuVariants": ["STM32F429", "STM32H723"],
+  "relatedArticles": [
+    {
+      "category": "printers",
+      "id": "voron-2.4",
+      "name": "Voron 2.4"
+    }
+  ]
 }

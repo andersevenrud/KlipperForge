@@ -270,6 +270,11 @@
       "category": "mcu-boards",
       "id": "anycubic-vyper",
       "name": "Vyper Board"
+    },
+    {
+      "category": "printers",
+      "id": "voron-2.4",
+      "name": "Voron 2.4"
     }
   ]
 }

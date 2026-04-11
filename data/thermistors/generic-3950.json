@@ -33,8 +33,48 @@
   "relatedArticles": [
     {
       "category": "hotends",
+      "id": "micro-swiss-all-metal",
+      "name": "All Metal Hotend Kit"
+    },
+    {
+      "category": "hotends",
+      "id": "bambu-lab-hotend",
+      "name": "Bambu Lab Hotend"
+    },
+    {
+      "category": "hotends",
+      "id": "chube-hotend",
+      "name": "Chube"
+    },
+    {
+      "category": "hotends",
       "id": "creality-mk8",
       "name": "Creality MK8"
+    },
+    {
+      "category": "hotends",
+      "id": "creality-k1-hotend",
+      "name": "K1 Hotend"
+    },
+    {
+      "category": "hotends",
+      "id": "mellow-nf-crazy",
+      "name": "NF-Crazy"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-revo-cr",
+      "name": "Revo CR"
+    },
+    {
+      "category": "hotends",
+      "id": "creality-spider-3",
+      "name": "Spider 3.0"
+    },
+    {
+      "category": "printers",
+      "id": "voron-2.4",
+      "name": "Voron 2.4"
     }
   ]
 }

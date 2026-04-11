@@ -70,13 +70,48 @@
     },
     {
       "category": "hotends",
+      "id": "dropeffect-nextg",
+      "name": "neXt-G"
+    },
+    {
+      "category": "hotends",
       "id": "prusa-nextruder",
       "name": "Prusa Nextruder Hotend"
     },
     {
       "category": "hotends",
+      "id": "phaetus-rapido-hf",
+      "name": "Rapido HF"
+    },
+    {
+      "category": "hotends",
+      "id": "phaetus-rapido-uhf",
+      "name": "Rapido UHF"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-revo-micro",
+      "name": "Revo Micro"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-revo-six",
+      "name": "Revo Six"
+    },
+    {
+      "category": "hotends",
+      "id": "e3d-revo-voron",
+      "name": "Revo Voron"
+    },
+    {
+      "category": "hotends",
       "id": "phaetus-taichi",
       "name": "Taichi"
+    },
+    {
+      "category": "hotends",
+      "id": "trianglelab-td6s",
+      "name": "TD6S"
     }
   ]
 }
