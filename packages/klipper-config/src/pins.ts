@@ -1,4 +1,5 @@
 import { isVirtualEndstop } from "./pin-formats";
+import { isBoardPinsSection } from "./sections/schemas/board-pins";
 import type { ConfigDocument, ConfigValue } from "./sections/types";
 
 export interface BoardPinAlias {
@@ -48,7 +49,7 @@ export function extractBoardPinAliases(doc: ConfigDocument): BoardPinAlias[] {
   const result: BoardPinAlias[] = [];
 
   for (const section of doc.sections) {
-    if (section.definitionId !== "board_pins" && section.definitionId !== "board_pins_named") {
+    if (!isBoardPinsSection(section.definitionId)) {
       continue;
     }
 
@@ -145,7 +146,7 @@ export function convertDocumentPins(
 
   const newSections = doc.sections.map((section) => {
     // Don't convert pin values inside board_pins sections themselves
-    if (section.definitionId === "board_pins" || section.definitionId === "board_pins_named") {
+    if (isBoardPinsSection(section.definitionId)) {
       return section;
     }
 

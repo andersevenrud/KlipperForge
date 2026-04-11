@@ -108,10 +108,13 @@ export { beaconDefinition, beaconSchema } from "./beacon";
 export { bedMeshDefinition, bedMeshSchema } from "./bed-mesh";
 export { bltouchDefinition, bltouchSchema } from "./bltouch";
 export {
+  BOARD_PINS_NAMED_SECTION,
+  BOARD_PINS_SECTION,
   boardPinsDefinition,
   boardPinsNamedDefinition,
   boardPinsParams,
   boardPinsSchema,
+  isBoardPinsSection,
 } from "./board-pins";
 export {
   cartographerCoilDefinition,

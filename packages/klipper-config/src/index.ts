@@ -48,6 +48,8 @@ export type {
 export { resolveHeader, SectionRegistry } from "./sections/registry";
 export { createSchemaFromParams } from "./sections/schema-from-params";
 export {
+  BOARD_PINS_NAMED_SECTION,
+  BOARD_PINS_SECTION,
   beaconDefinition,
   beaconSchema,
   bedMeshDefinition,
@@ -85,6 +87,7 @@ export {
   heaterFanSchema,
   inputShaperDefinition,
   inputShaperSchema,
+  isBoardPinsSection,
   mcuDefinition,
   mcuNamedDefinition,
   mcuSchema,

@@ -2,6 +2,7 @@ import { formatMultilineValue, formatValue } from "@klipperforge/configparser";
 import { COMMENT_SECTION_TYPE } from "../parser";
 import { computeHiddenFields } from "./normalize";
 import { resolveHeader, type SectionRegistry } from "./registry";
+import { isBoardPinsSection } from "./schemas/board-pins";
 import { getSectionModeConfig } from "./section-modes";
 import type { ConfigDocument, ConfigValue, SaveConfigSection, SectionInstance } from "./types";
 
@@ -301,8 +302,7 @@ export function serializeConfigWithSourceMap(
         lines.push(`${key}:\n${indented}`);
         // Add per-line source map entries for board_pins aliases
         const isBoardPinsAlias =
-          (instance.definitionId === "board_pins" || instance.definitionId === "board_pins_named") &&
-          (key === "aliases" || key.startsWith("aliases_"));
+          isBoardPinsSection(instance.definitionId) && (key === "aliases" || key.startsWith("aliases_"));
         if (isBoardPinsAlias) {
           const aliasLines = trimmed.split("\n");
           for (let i = 0; i < aliasLines.length; i++) {

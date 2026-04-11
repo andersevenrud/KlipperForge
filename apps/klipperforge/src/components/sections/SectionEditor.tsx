@@ -8,6 +8,7 @@ import {
   type FieldGroup,
   getFieldGroup,
   getSectionModeConfig,
+  isBoardPinsSection,
   isTmcSection,
   KNOWN_SENSOR_TYPES,
   normalizeSectionData,
@@ -123,7 +124,7 @@ export function SectionEditor({ section, header }: SectionEditorProps) {
     [watch],
   );
 
-  const isBoardPins = section.definitionId === "board_pins" || section.definitionId === "board_pins_named";
+  const isBoardPins = isBoardPinsSection(section.definitionId);
 
   const initialAliasEntries = useMemo(() => {
     if (!isBoardPins) return [];

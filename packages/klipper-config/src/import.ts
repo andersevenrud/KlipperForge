@@ -3,6 +3,7 @@ import { COMMENT_SECTION_TYPE, parseKlipperConfig } from "./parser";
 import { parsePinAliasString } from "./pins";
 import { computeHiddenFields } from "./sections/normalize";
 import type { SectionRegistry } from "./sections/registry";
+import { isBoardPinsSection } from "./sections/schemas/board-pins";
 import { getSectionModeConfig } from "./sections/section-modes";
 import type {
   ConfigDocument,
@@ -153,16 +154,13 @@ export function cfgToDocument(
       if (section.comments && Object.keys(section.comments).length > 0) {
         instance.comments = { ...section.comments };
       }
-      if (
-        section.annotation?.startsWith("board-aliases:") &&
-        (definitionId === "board_pins" || definitionId === "board_pins_named")
-      ) {
+      if (section.annotation?.startsWith("board-aliases:") && isBoardPinsSection(definitionId)) {
         instance.meta = {
           _boardSource: section.annotation.slice("board-aliases:".length),
         };
       }
       // Normalize board_pins aliases to one-per-line format
-      if (definitionId === "board_pins" || definitionId === "board_pins_named") {
+      if (isBoardPinsSection(definitionId)) {
         for (const key of Object.keys(instance.data)) {
           if ((key === "aliases" || key.startsWith("aliases_")) && typeof instance.data[key] === "string") {
             const parsed = parsePinAliasString(instance.data[key] as string);

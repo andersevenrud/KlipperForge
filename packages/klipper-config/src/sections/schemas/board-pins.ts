@@ -2,6 +2,13 @@ import type { SectionParams } from "../param-types";
 import { createSchemaFromParams } from "../schema-from-params";
 import type { SectionDefinition } from "../types";
 
+export const BOARD_PINS_SECTION = "board_pins" as const;
+export const BOARD_PINS_NAMED_SECTION = "board_pins_named" as const;
+
+export function isBoardPinsSection(definitionId: string): boolean {
+  return definitionId === BOARD_PINS_SECTION || definitionId === BOARD_PINS_NAMED_SECTION;
+}
+
 export const boardPinsParams: SectionParams = {
   mcu: {
     type: { kind: "string" },
@@ -18,8 +25,8 @@ export const boardPinsParams: SectionParams = {
 export const boardPinsSchema = createSchemaFromParams(boardPinsParams);
 
 export const boardPinsDefinition: SectionDefinition<typeof boardPinsSchema> = {
-  id: "board_pins",
-  naming: { kind: "custom", header: "board_pins" },
+  id: BOARD_PINS_SECTION,
+  naming: { kind: "custom", header: BOARD_PINS_SECTION },
   schema: boardPinsSchema,
   params: boardPinsParams,
   metaFields: ["_boardSource"],
@@ -29,8 +36,8 @@ export const boardPinsDefinition: SectionDefinition<typeof boardPinsSchema> = {
 };
 
 export const boardPinsNamedDefinition: SectionDefinition<typeof boardPinsSchema> = {
-  id: "board_pins_named",
-  naming: { kind: "named", prefix: "board_pins" },
+  id: BOARD_PINS_NAMED_SECTION,
+  naming: { kind: "named", prefix: BOARD_PINS_SECTION },
   schema: boardPinsSchema,
   params: boardPinsParams,
   metaFields: ["_boardSource"],
