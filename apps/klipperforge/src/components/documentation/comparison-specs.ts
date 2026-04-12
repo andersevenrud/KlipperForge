@@ -575,3 +575,7 @@ export const COMPARISON_CONFIGS: Partial<Record<DocCategory, ComparisonCategoryC
     ],
   },
 };
+
+export function isComparableCategory(category: DocCategory): boolean {
+  return category in COMPARISON_CONFIGS;
+}

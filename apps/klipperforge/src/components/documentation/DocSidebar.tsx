@@ -27,6 +27,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Input } from "@/components/ui/input";
 import { useDocIndicesQuery } from "@/hooks/use-queries";
+import { isComparableCategory } from "./comparison-specs";
 import type { DocCategory, DocSelection } from "./DocumentationView";
 
 // ---------------------------------------------------------------------------
@@ -437,12 +438,14 @@ export function DocSidebar({
   }
 
   function isCategoryDimmed(category: DocCategory): boolean {
-    return compareMode && compareCategory !== null && compareCategory !== category;
+    if (!compareMode) return false;
+    if (!isComparableCategory(category)) return true;
+    return compareCategory !== null && compareCategory !== category;
   }
 
   function handleItemClick(category: DocCategory, itemId: string) {
     if (compareMode) {
-      if (category === "printers") return;
+      if (!isComparableCategory(category)) return;
       if (compareCategory !== null && compareCategory !== category) return;
       onCompareItemToggle(category, itemId);
     } else {
@@ -525,7 +528,7 @@ export function DocSidebar({
           totalCount={indices.printers.length}
           groups={filtered.printers}
           emptyLabel="No printers found."
-          dimmed={compareMode}
+          dimmed={isCategoryDimmed("printers")}
           searchActive={searchActive}
           categoryOpenProps={categoryOpen("printers")}
           groupOpenFn={(gk, ids) => groupOpen("printers", gk, ids)}
