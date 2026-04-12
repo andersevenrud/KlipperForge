@@ -87,6 +87,8 @@ function isSelected(selection: DocSelection | null, category: DocCategory, itemI
   return selection?.category === category && selection.itemId === itemId;
 }
 
+function noop() {}
+
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
@@ -146,6 +148,8 @@ export function DocSidebar({
   const pcbBoardIds = useMemo(() => new Set(indices.pcbLayouts.map((l) => l.boardId)), [indices.pcbLayouts]);
 
   const [search, setSearch] = useState("");
+  const [categoryOverrides, setCategoryOverrides] = useState<Partial<Record<DocCategory, boolean>>>({});
+  const [groupOverrides, setGroupOverrides] = useState<Record<string, boolean>>({});
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(
@@ -155,6 +159,32 @@ export function DocSidebar({
       if (el) {
         el.scrollIntoView({ block: "nearest" });
       }
+    },
+    [selection],
+  );
+
+  useEffect(
+    function clearOverridesOnSelectionEffect() {
+      if (!selection) return;
+      setCategoryOverrides((prev) => {
+        if (!(selection.category in prev)) return prev;
+        const next = { ...prev };
+        delete next[selection.category];
+        return next;
+      });
+      setGroupOverrides((prev) => {
+        const prefix = `${selection.category}__`;
+        const next: Record<string, boolean> = {};
+        let changed = false;
+        for (const key of Object.keys(prev)) {
+          if (key.startsWith(prefix)) {
+            changed = true;
+          } else {
+            next[key] = prev[key];
+          }
+        }
+        return changed ? next : prev;
+      });
     },
     [selection],
   );
@@ -325,24 +355,33 @@ export function DocSidebar({
     [indices.mmus, search],
   );
 
-  const forceOpen = search.trim() ? { open: true as const } : {};
+  const searchActive = search.trim().length > 0;
 
   function categoryOpen(category: DocCategory) {
-    if (forceOpen.open) return forceOpen;
-    if (selection?.category === category) return { open: true as const };
-    if (compareMode && compareCategory === category) return { open: true as const };
-    return {};
+    if (searchActive) return { open: true as const, onOpenChange: noop };
+    const override = categoryOverrides[category];
+    const autoOpen = selection?.category === category || (compareMode && compareCategory === category);
+    return {
+      open: override ?? autoOpen,
+      onOpenChange: (open: boolean) => {
+        setCategoryOverrides((prev) => ({ ...prev, [category]: open }));
+      },
+    };
   }
 
-  function groupOpen(category: DocCategory, itemIds: string[]) {
-    if (forceOpen.open) return forceOpen;
-    if (selection?.category === category && itemIds.includes(selection.itemId)) {
-      return { open: true as const };
-    }
-    if (compareMode && compareCategory === category && itemIds.some((id) => comparePendingIds.includes(id))) {
-      return { open: true as const };
-    }
-    return {};
+  function groupOpen(category: DocCategory, groupKey: string, itemIds: string[]) {
+    if (searchActive) return { open: true as const, onOpenChange: noop };
+    const stateKey = `${category}__${groupKey}`;
+    const override = groupOverrides[stateKey];
+    const autoOpen =
+      (selection?.category === category && itemIds.includes(selection.itemId)) ||
+      (compareMode && compareCategory === category && itemIds.some((id) => comparePendingIds.includes(id)));
+    return {
+      open: override ?? autoOpen,
+      onOpenChange: (open: boolean) => {
+        setGroupOverrides((prev) => ({ ...prev, [stateKey]: open }));
+      },
+    };
   }
 
   function isCategoryDimmed(category: DocCategory): boolean {
@@ -398,6 +437,7 @@ export function DocSidebar({
                   key={group.key}
                   {...groupOpen(
                     "mcu-boards",
+                    group.key,
                     group.items.map((b) => b.id),
                   )}
                 >
@@ -459,6 +499,7 @@ export function DocSidebar({
                   key={group.key}
                   {...groupOpen(
                     "printers",
+                    group.key,
                     group.items.map((p) => p.id),
                   )}
                 >
@@ -505,6 +546,7 @@ export function DocSidebar({
                   key={group.key}
                   {...groupOpen(
                     "stepper-motors",
+                    group.key,
                     group.items.map((m) => m.id),
                   )}
                 >
@@ -552,6 +594,7 @@ export function DocSidebar({
                   key={group.key}
                   {...groupOpen(
                     "stepper-drivers",
+                    group.key,
                     group.items.map((d) => d.id),
                   )}
                 >
@@ -599,6 +642,7 @@ export function DocSidebar({
                   key={group.key}
                   {...groupOpen(
                     "probes",
+                    group.key,
                     group.items.map((p) => p.id),
                   )}
                 >
@@ -646,6 +690,7 @@ export function DocSidebar({
                   key={group.key}
                   {...groupOpen(
                     "fans",
+                    group.key,
                     group.items.map((f) => f.id),
                   )}
                 >
@@ -693,6 +738,7 @@ export function DocSidebar({
                   key={group.key}
                   {...groupOpen(
                     "thermistors",
+                    group.key,
                     group.items.map((t) => t.id),
                   )}
                 >
@@ -740,6 +786,7 @@ export function DocSidebar({
                   key={group.key}
                   {...groupOpen(
                     "extruders",
+                    group.key,
                     group.items.map((e) => e.id),
                   )}
                 >
@@ -787,6 +834,7 @@ export function DocSidebar({
                   key={group.key}
                   {...groupOpen(
                     "hotends",
+                    group.key,
                     group.items.map((h) => h.id),
                   )}
                 >
@@ -834,6 +882,7 @@ export function DocSidebar({
                   key={group.key}
                   {...groupOpen(
                     "toolheads",
+                    group.key,
                     group.items.map((t) => t.id),
                   )}
                 >
@@ -881,6 +930,7 @@ export function DocSidebar({
                   key={group.key}
                   {...groupOpen(
                     "mmus",
+                    group.key,
                     group.items.map((m) => m.id),
                   )}
                 >
@@ -928,6 +978,7 @@ export function DocSidebar({
                   key={group.key}
                   {...groupOpen(
                     "filaments",
+                    group.key,
                     group.items.map((f) => f.id),
                   )}
                 >
@@ -975,6 +1026,7 @@ export function DocSidebar({
                   key={group.key}
                   {...groupOpen(
                     "power-supplies",
+                    group.key,
                     group.items.map((p) => p.id),
                   )}
                 >
@@ -1022,6 +1074,7 @@ export function DocSidebar({
                   key={group.key}
                   {...groupOpen(
                     "accessories",
+                    group.key,
                     group.items.map((a) => a.id),
                   )}
                 >
@@ -1069,6 +1122,7 @@ export function DocSidebar({
                   key={group.key}
                   {...groupOpen(
                     "displays",
+                    group.key,
                     group.items.map((d) => d.id),
                   )}
                 >
