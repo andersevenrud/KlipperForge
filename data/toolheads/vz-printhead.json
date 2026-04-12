@@ -19,7 +19,15 @@
       "DropEffect NeXt-G"
     ],
     "extruderMounts": ["Vz-HextrudORT", "Orbiter v2.0", "Sherpa Mini", "Sherpa Micro", "Bowden", "LGX Lite"],
-    "probeMounts": [],
+    "probeMounts": [
+      "8mm inductive probe",
+      "Beacon",
+      "Cartographer",
+      "BLTouch",
+      "Quickdraw",
+      "Klicky (community mod)",
+      "CR Touch (community mod)"
+    ],
     "fanMounts": ["Height-adjustable fan duct"]
   },
   "physicalSpecs": {
@@ -102,6 +110,21 @@
       "category": "hotends",
       "id": "dropeffect-nextg",
       "name": "neXt-G"
+    },
+    {
+      "category": "probes",
+      "id": "beacon",
+      "name": "Beacon"
+    },
+    {
+      "category": "probes",
+      "id": "bltouch-v3.1",
+      "name": "BLTouch V3.1"
+    },
+    {
+      "category": "probes",
+      "id": "cartographer-3d",
+      "name": "Cartographer 3D"
     }
   ]
 }
