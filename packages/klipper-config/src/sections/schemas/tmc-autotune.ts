@@ -1,6 +1,5 @@
 import type { SectionParams } from "../param-types";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
 const autotuneTmcParams: SectionParams = {
   motor: {
@@ -121,25 +120,18 @@ const motorConstantsParams: SectionParams = {
   },
 };
 
-const autotuneTmcSchema = createSchemaFromParams(autotuneTmcParams);
-const motorConstantsSchema = createSchemaFromParams(motorConstantsParams);
-
-export const autotuneTmcDefinition: SectionDefinition<typeof autotuneTmcSchema> = {
+export const { definition: autotuneTmcDefinition } = defineSection(autotuneTmcParams, {
   id: "autotune_tmc",
   naming: { kind: "suffixed", prefix: "autotune_tmc" },
-  schema: autotuneTmcSchema,
-  params: autotuneTmcParams,
   order: 82,
   category: "Plugins",
   label: "TMC Autotune",
-};
+});
 
-export const motorConstantsDefinition: SectionDefinition<typeof motorConstantsSchema> = {
+export const { definition: motorConstantsDefinition } = defineSection(motorConstantsParams, {
   id: "motor_constants",
   naming: { kind: "named", prefix: "motor_constants" },
-  schema: motorConstantsSchema,
-  params: motorConstantsParams,
   order: 83,
   category: "Plugins",
   label: "Motor Constants",
-};
+});

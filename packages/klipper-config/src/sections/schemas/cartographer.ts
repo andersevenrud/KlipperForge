@@ -1,6 +1,5 @@
 import type { SectionParams } from "../param-types";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
 const cartographerParams: SectionParams = {
   mcu: {
@@ -48,13 +47,9 @@ const cartographerParams: SectionParams = {
   },
 };
 
-export const cartographerSchema = createSchemaFromParams(cartographerParams);
-
-export const cartographerDefinition: SectionDefinition<typeof cartographerSchema> = {
+export const { schema: cartographerSchema, definition: cartographerDefinition } = defineSection(cartographerParams, {
   id: "cartographer",
   naming: { kind: "custom", header: "cartographer" },
-  schema: cartographerSchema,
-  params: cartographerParams,
   order: 60,
   category: "Probing",
   label: "Cartographer",
@@ -67,7 +62,7 @@ export const cartographerDefinition: SectionDefinition<typeof cartographerSchema
       },
     },
   ],
-};
+});
 
 // --- [cartographer scan] ---
 
@@ -113,17 +108,16 @@ const cartographerScanParams: SectionParams = {
   },
 };
 
-export const cartographerScanSchema = createSchemaFromParams(cartographerScanParams);
-
-export const cartographerScanDefinition: SectionDefinition<typeof cartographerScanSchema> = {
-  id: "cartographer_scan",
-  naming: { kind: "fixed", header: "cartographer scan" },
-  schema: cartographerScanSchema,
-  params: cartographerScanParams,
-  order: 61,
-  category: "Probing",
-  label: "Cartographer Scan",
-};
+export const { schema: cartographerScanSchema, definition: cartographerScanDefinition } = defineSection(
+  cartographerScanParams,
+  {
+    id: "cartographer_scan",
+    naming: { kind: "fixed", header: "cartographer scan" },
+    order: 61,
+    category: "Probing",
+    label: "Cartographer Scan",
+  },
+);
 
 // --- [cartographer touch] ---
 
@@ -172,17 +166,16 @@ const cartographerTouchParams: SectionParams = {
   },
 };
 
-export const cartographerTouchSchema = createSchemaFromParams(cartographerTouchParams);
-
-export const cartographerTouchDefinition: SectionDefinition<typeof cartographerTouchSchema> = {
-  id: "cartographer_touch",
-  naming: { kind: "fixed", header: "cartographer touch" },
-  schema: cartographerTouchSchema,
-  params: cartographerTouchParams,
-  order: 61,
-  category: "Probing",
-  label: "Cartographer Touch",
-};
+export const { schema: cartographerTouchSchema, definition: cartographerTouchDefinition } = defineSection(
+  cartographerTouchParams,
+  {
+    id: "cartographer_touch",
+    naming: { kind: "fixed", header: "cartographer touch" },
+    order: 61,
+    category: "Probing",
+    label: "Cartographer Touch",
+  },
+);
 
 // --- [cartographer coil] ---
 
@@ -207,14 +200,13 @@ const cartographerCoilParams: SectionParams = {
   },
 };
 
-export const cartographerCoilSchema = createSchemaFromParams(cartographerCoilParams);
-
-export const cartographerCoilDefinition: SectionDefinition<typeof cartographerCoilSchema> = {
-  id: "cartographer_coil",
-  naming: { kind: "fixed", header: "cartographer coil" },
-  schema: cartographerCoilSchema,
-  params: cartographerCoilParams,
-  order: 61,
-  category: "Probing",
-  label: "Cartographer Coil",
-};
+export const { schema: cartographerCoilSchema, definition: cartographerCoilDefinition } = defineSection(
+  cartographerCoilParams,
+  {
+    id: "cartographer_coil",
+    naming: { kind: "fixed", header: "cartographer coil" },
+    order: 61,
+    category: "Probing",
+    label: "Cartographer Coil",
+  },
+);

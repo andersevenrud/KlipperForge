@@ -28,6 +28,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { resolveHeader, useConfig } from "@/context/config-context";
 import type { TimerId } from "@/types";
+import { BooleanSelect } from "./BooleanSelect";
 import { ParamField } from "./ParamField";
 import { getFieldType, numericSetValueAs, unwrapType } from "./section-editor-utils";
 
@@ -523,25 +524,7 @@ export function SectionEditor({ section, header }: SectionEditorProps) {
                 name={name}
                 control={control}
                 render={({ field }) => (
-                  <Select
-                    value={field.value === true ? "True" : field.value === false ? "False" : "__unset__"}
-                    onValueChange={(v) => field.onChange(v === "True" ? true : v === "False" ? false : undefined)}
-                  >
-                    <SelectTrigger id={id} className="h-7 text-xs">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="__unset__" className="text-xs text-muted-foreground">
-                        —
-                      </SelectItem>
-                      <SelectItem value="True" className="text-xs">
-                        True
-                      </SelectItem>
-                      <SelectItem value="False" className="text-xs">
-                        False
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <BooleanSelect id={id} value={field.value as boolean | null | undefined} onChange={field.onChange} />
                 )}
               />
             ) : (

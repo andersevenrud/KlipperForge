@@ -1,6 +1,5 @@
 import type { SectionParams } from "../param-types";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
 const ledEffectParams: SectionParams = {
   autostart: {
@@ -63,14 +62,10 @@ const ledEffectParams: SectionParams = {
   },
 };
 
-const ledEffectSchema = createSchemaFromParams(ledEffectParams);
-
-export const ledEffectDefinition: SectionDefinition<typeof ledEffectSchema> = {
+export const { definition: ledEffectDefinition } = defineSection(ledEffectParams, {
   id: "led_effect",
   naming: { kind: "named", prefix: "led_effect" },
-  schema: ledEffectSchema,
-  params: ledEffectParams,
   order: 80,
   category: "Plugins",
   label: "LED Effect",
-};
+});

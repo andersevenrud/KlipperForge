@@ -1,15 +1,10 @@
 import { heater_fanParams } from "../generated/fans";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
-export const heaterFanSchema = createSchemaFromParams(heater_fanParams);
-
-export const heaterFanDefinition: SectionDefinition<typeof heaterFanSchema> = {
+export const { schema: heaterFanSchema, definition: heaterFanDefinition } = defineSection(heater_fanParams, {
   id: "heater_fan",
   naming: { kind: "named", prefix: "heater_fan" },
-  schema: heaterFanSchema,
-  params: heater_fanParams,
   order: 36,
   category: "Fans",
   label: "Heater Fan",
-};
+});

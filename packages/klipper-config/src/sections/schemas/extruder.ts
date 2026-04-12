@@ -1,7 +1,6 @@
 import { extruderParams as generatedExtruderParams } from "../generated/heating";
 import type { SectionParams } from "../param-types";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
 const extruderParams: SectionParams = {
   ...generatedExtruderParams,
@@ -13,14 +12,10 @@ const extruderParams: SectionParams = {
   },
 };
 
-export const extruderSchema = createSchemaFromParams(extruderParams);
-
-export const extruderDefinition: SectionDefinition<typeof extruderSchema> = {
+export const { schema: extruderSchema, definition: extruderDefinition } = defineSection(extruderParams, {
   id: "extruder",
   naming: { kind: "fixed", header: "extruder" },
-  schema: extruderSchema,
-  params: extruderParams,
   order: 25,
   category: "Heating",
   label: "Extruder",
-};
+});

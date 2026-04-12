@@ -1,7 +1,6 @@
 import { printerParams } from "../generated/motion";
 import type { SectionParams } from "../param-types";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
 const overriddenPrinterParams: SectionParams = {
   ...printerParams,
@@ -26,14 +25,10 @@ const overriddenPrinterParams: SectionParams = {
   },
 };
 
-export const printerSchema = createSchemaFromParams(overriddenPrinterParams);
-
-export const printerDefinition: SectionDefinition<typeof printerSchema> = {
+export const { schema: printerSchema, definition: printerDefinition } = defineSection(overriddenPrinterParams, {
   id: "printer",
   naming: { kind: "fixed", header: "printer" },
-  schema: printerSchema,
-  params: overriddenPrinterParams,
   order: 10,
   category: "Motion",
   label: "Printer",
-};
+});

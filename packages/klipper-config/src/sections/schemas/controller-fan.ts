@@ -1,15 +1,13 @@
 import { controller_fanParams } from "../generated/fans";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
-export const controllerFanSchema = createSchemaFromParams(controller_fanParams);
-
-export const controllerFanDefinition: SectionDefinition<typeof controllerFanSchema> = {
-  id: "controller_fan",
-  naming: { kind: "named", prefix: "controller_fan" },
-  schema: controllerFanSchema,
-  params: controller_fanParams,
-  order: 37,
-  category: "Fans",
-  label: "Controller Fan",
-};
+export const { schema: controllerFanSchema, definition: controllerFanDefinition } = defineSection(
+  controller_fanParams,
+  {
+    id: "controller_fan",
+    naming: { kind: "named", prefix: "controller_fan" },
+    order: 37,
+    category: "Fans",
+    label: "Controller Fan",
+  },
+);

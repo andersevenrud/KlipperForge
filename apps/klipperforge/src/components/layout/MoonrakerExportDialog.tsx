@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useMoonrakerConnection } from "@/hooks/use-moonraker-connection";
 
 interface MoonrakerExportDialogProps {
   open: boolean;
@@ -33,16 +34,10 @@ interface UploadError {
 
 type DialogStep = "connect" | "confirm" | "uploading" | "done";
 
-const STORAGE_KEY_URL = "klipperforge:moonraker-url";
-const STORAGE_KEY_API_KEY = "klipperforge:moonraker-api-key";
-
 export function MoonrakerExportDialog({ open, onOpenChange, files }: MoonrakerExportDialogProps) {
+  const { url, setUrl, apiKey, setApiKey, showApiKey, setShowApiKey, isConnecting, connectionError, reset, connect } =
+    useMoonrakerConnection();
   const [step, setStep] = useState<DialogStep>("connect");
-  const [url, setUrl] = useState("");
-  const [apiKey, setApiKey] = useState("");
-  const [isConnecting, setIsConnecting] = useState(false);
-  const [connectionError, setConnectionError] = useState<string | null>(null);
-  const [showApiKey, setShowApiKey] = useState(false);
   const [existingFiles, setExistingFiles] = useState<Set<string>>(new Set());
   const [selectedFiles, setSelectedFiles] = useState<Set<string>>(new Set());
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -53,10 +48,8 @@ export function MoonrakerExportDialog({ open, onOpenChange, files }: MoonrakerEx
   useEffect(
     function loadStoredValuesEffect() {
       if (open) {
-        setUrl(localStorage.getItem(STORAGE_KEY_URL) ?? "");
-        setApiKey(localStorage.getItem(STORAGE_KEY_API_KEY) ?? "");
+        reset();
         setStep("connect");
-        setConnectionError(null);
         setExistingFiles(new Set());
         setSelectedFiles(new Set());
         setUploadProgress(0);
@@ -65,41 +58,17 @@ export function MoonrakerExportDialog({ open, onOpenChange, files }: MoonrakerEx
         setUploadedFiles([]);
       }
     },
-    [open],
+    [open, reset],
   );
 
   const handleConnect = useCallback(async () => {
-    const normalized = normalizeUrl(url);
-    if (!normalized) return;
-
-    setIsConnecting(true);
-    setConnectionError(null);
-
-    try {
-      const options: MoonrakerConnectionOptions = {
-        baseUrl: normalized,
-        apiKey: apiKey || undefined,
-      };
-
+    await connect(async (options) => {
       const fileList = await fetchFileList(options);
-      const existing = new Set(fileList.map((f) => f.path));
-
-      localStorage.setItem(STORAGE_KEY_URL, url);
-      if (apiKey) {
-        localStorage.setItem(STORAGE_KEY_API_KEY, apiKey);
-      } else {
-        localStorage.removeItem(STORAGE_KEY_API_KEY);
-      }
-
-      setExistingFiles(existing);
+      setExistingFiles(new Set(fileList.map((f) => f.path)));
       setSelectedFiles(new Set(files.keys()));
       setStep("confirm");
-    } catch (err) {
-      setConnectionError(getMoonrakerErrorMessage(err));
-    } finally {
-      setIsConnecting(false);
-    }
-  }, [url, apiKey, files]);
+    });
+  }, [connect, files]);
 
   const handleToggleFile = useCallback((path: string) => {
     setSelectedFiles((prev) => {

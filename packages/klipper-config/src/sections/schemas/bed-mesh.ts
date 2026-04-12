@@ -1,7 +1,6 @@
 import { bed_meshParams } from "../generated/leveling";
 import type { SectionParams } from "../param-types";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
 const overriddenBedMeshParams: SectionParams = {
   ...bed_meshParams,
@@ -11,14 +10,10 @@ const overriddenBedMeshParams: SectionParams = {
   },
 };
 
-export const bedMeshSchema = createSchemaFromParams(overriddenBedMeshParams);
-
-export const bedMeshDefinition: SectionDefinition<typeof bedMeshSchema> = {
+export const { schema: bedMeshSchema, definition: bedMeshDefinition } = defineSection(overriddenBedMeshParams, {
   id: "bed_mesh",
   naming: { kind: "fixed", header: "bed_mesh" },
-  schema: bedMeshSchema,
-  params: overriddenBedMeshParams,
   order: 45,
   category: "Leveling",
   label: "Bed Mesh",
-};
+});

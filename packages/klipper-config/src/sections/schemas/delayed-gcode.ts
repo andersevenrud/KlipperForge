@@ -1,16 +1,11 @@
 import { delayed_gcodeParams } from "../generated/macros";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
-const delayedGcodeSchema = createSchemaFromParams(delayed_gcodeParams);
-
-export const delayedGcodeDefinition: SectionDefinition<typeof delayedGcodeSchema> = {
+export const { definition: delayedGcodeDefinition } = defineSection(delayed_gcodeParams, {
   id: "delayed_gcode",
   naming: { kind: "named", prefix: "delayed_gcode" },
-  schema: delayedGcodeSchema,
-  params: delayed_gcodeParams,
   namePattern: /^[A-Za-z_][A-Za-z0-9_]*$/,
   order: 60,
   category: "Macros",
   label: "Delayed G-Code",
-};
+});

@@ -1,10 +1,7 @@
 import {
   fetchFile,
   fetchFileList,
-  getMoonrakerErrorMessage,
   type IncludeError,
-  type MoonrakerConnectionOptions,
-  normalizeUrl,
   type ResolvedFile,
   resolveIncludes,
 } from "@klipperforge/moonraker";
@@ -22,6 +19,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useMoonrakerConnection } from "@/hooks/use-moonraker-connection";
 
 interface MoonrakerImportDialogProps {
   open: boolean;
@@ -31,85 +29,50 @@ interface MoonrakerImportDialogProps {
 
 type DialogStep = "connect" | "select";
 
-const STORAGE_KEY_URL = "klipperforge:moonraker-url";
-const STORAGE_KEY_API_KEY = "klipperforge:moonraker-api-key";
-
 export function MoonrakerImportDialog({ open, onOpenChange, onImport }: MoonrakerImportDialogProps) {
+  const { url, setUrl, apiKey, setApiKey, showApiKey, setShowApiKey, isConnecting, connectionError, reset, connect } =
+    useMoonrakerConnection();
   const [step, setStep] = useState<DialogStep>("connect");
-  const [url, setUrl] = useState("");
-  const [apiKey, setApiKey] = useState("");
   const [rootFile, setRootFile] = useState("printer.cfg");
-  const [isConnecting, setIsConnecting] = useState(false);
-  const [connectionError, setConnectionError] = useState<string | null>(null);
   const [resolvedFiles, setResolvedFiles] = useState<ResolvedFile[]>([]);
   const [resolveErrors, setResolveErrors] = useState<IncludeError[]>([]);
   const [selectedFiles, setSelectedFiles] = useState<Set<string>>(new Set());
-  const [showApiKey, setShowApiKey] = useState(false);
 
   useEffect(
     function loadStoredValuesEffect() {
       if (open) {
-        setUrl(localStorage.getItem(STORAGE_KEY_URL) ?? "");
-        setApiKey(localStorage.getItem(STORAGE_KEY_API_KEY) ?? "");
+        reset();
         setStep("connect");
-        setConnectionError(null);
         setResolvedFiles([]);
         setResolveErrors([]);
         setSelectedFiles(new Set());
       }
     },
-    [open],
+    [open, reset],
   );
 
   const handleConnect = useCallback(async () => {
-    const normalized = normalizeUrl(url);
-    if (!normalized) return;
-
-    setIsConnecting(true);
-    setConnectionError(null);
-
-    try {
-      const options: MoonrakerConnectionOptions = {
-        baseUrl: normalized,
-        apiKey: apiKey || undefined,
-      };
-
+    await connect(async (options) => {
       const fileList = await fetchFileList(options);
       const availablePaths = fileList.map((f) => f.path);
 
       if (!availablePaths.includes(rootFile)) {
-        setConnectionError(
+        const cfgFiles = availablePaths.filter((p) => p.endsWith(".cfg"));
+        throw new Error(
           `Could not find "${rootFile}" in the config directory. ` +
-            `Available .cfg files: ${availablePaths
-              .filter((p) => p.endsWith(".cfg"))
-              .slice(0, 5)
-              .join(", ")}${availablePaths.filter((p) => p.endsWith(".cfg")).length > 5 ? "..." : ""}`,
+            `Available .cfg files: ${cfgFiles.slice(0, 5).join(", ")}${cfgFiles.length > 5 ? "..." : ""}`,
         );
-        setIsConnecting(false);
-        return;
       }
 
       const rootContent = await fetchFile(options, rootFile);
-
       const result = await resolveIncludes(rootFile, rootContent, availablePaths, (path) => fetchFile(options, path));
-
-      localStorage.setItem(STORAGE_KEY_URL, url);
-      if (apiKey) {
-        localStorage.setItem(STORAGE_KEY_API_KEY, apiKey);
-      } else {
-        localStorage.removeItem(STORAGE_KEY_API_KEY);
-      }
 
       setResolvedFiles(result.files);
       setResolveErrors(result.errors);
       setSelectedFiles(new Set(result.files.map((f) => f.path)));
       setStep("select");
-    } catch (err) {
-      setConnectionError(getMoonrakerErrorMessage(err));
-    } finally {
-      setIsConnecting(false);
-    }
-  }, [url, apiKey, rootFile]);
+    });
+  }, [connect, rootFile]);
 
   const handleToggleFile = useCallback((path: string) => {
     setSelectedFiles((prev) => {

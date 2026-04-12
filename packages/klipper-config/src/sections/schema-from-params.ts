@@ -1,5 +1,24 @@
 import { z } from "zod";
 import type { ParamType, SectionParams } from "./param-types";
+import type { SectionDefinition, SectionNaming, SectionOverride } from "./types";
+
+interface DefineSectionConfig {
+  id: string;
+  naming: SectionNaming;
+  order: number;
+  category: string;
+  label: string;
+  metaFields?: string[];
+  allowedFieldPattern?: RegExp;
+  namePattern?: RegExp;
+  namePatternMessage?: string;
+  overrides?: SectionOverride[];
+}
+
+interface DefinedSection<S extends z.ZodTypeAny> {
+  schema: S;
+  definition: SectionDefinition<S>;
+}
 
 function zodTypeForParam(paramType: ParamType): z.ZodTypeAny {
   switch (paramType.kind) {
@@ -42,4 +61,15 @@ export function createSchemaFromParams(params: SectionParams) {
   }
 
   return z.object(shape).passthrough();
+}
+
+export function defineSection(
+  params: SectionParams,
+  config: DefineSectionConfig,
+): DefinedSection<ReturnType<typeof createSchemaFromParams>> {
+  const schema = createSchemaFromParams(params);
+  return {
+    schema,
+    definition: { ...config, schema, params },
+  };
 }

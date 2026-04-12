@@ -66,53 +66,26 @@ async function fetchJson<T>(path: string): Promise<T> {
   }
 }
 
-export async function loadPrinterIndex(): Promise<PrinterIndex> {
-  return fetchJson<PrinterIndex>("/printers/index.json");
+function createItemLoader<T>(path: string): (id: string) => Promise<T> {
+  return (id) => fetchJson<T>(`/${path}/${id}.json`);
 }
 
-export async function loadPrinterPreset(id: string): Promise<PrinterPreset> {
-  return fetchJson<PrinterPreset>(`/printers/${id}.json`);
+function createIndexLoader<T>(path: string): () => Promise<T> {
+  return () => fetchJson<T>(`/${path}/index.json`);
 }
 
-export async function loadMcuBoardIndex(): Promise<McuBoardIndex> {
-  return fetchJson<McuBoardIndex>("/mcu-boards/index.json");
-}
-
-export async function loadMcuBoard(id: string): Promise<McuBoard> {
-  return fetchJson<McuBoard>(`/mcu-boards/${id}.json`);
-}
-
-export async function loadPcbLayoutIndex(): Promise<PcbLayoutIndex> {
-  return fetchJson<PcbLayoutIndex>("/pcb-layouts/index.json");
-}
-
-export async function loadPcbLayout(boardId: string): Promise<PcbLayout> {
-  return fetchJson<PcbLayout>(`/pcb-layouts/${boardId}.json`);
-}
-
-export async function loadProbe(id: string): Promise<Probe> {
-  return fetchJson<Probe>(`/probes/${id}.json`);
-}
-
-export async function loadStepperMotor(id: string): Promise<StepperMotor> {
-  return fetchJson<StepperMotor>(`/stepper-motors/${id}.json`);
-}
-
-export async function loadFan(id: string): Promise<Fan> {
-  return fetchJson<Fan>(`/fans/${id}.json`);
-}
-
-export async function loadThermistor(id: string): Promise<Thermistor> {
-  return fetchJson<Thermistor>(`/thermistors/${id}.json`);
-}
-
-export async function loadExtruder(id: string): Promise<Extruder> {
-  return fetchJson<Extruder>(`/extruders/${id}.json`);
-}
-
-export async function loadHotend(id: string): Promise<Hotend> {
-  return fetchJson<Hotend>(`/hotends/${id}.json`);
-}
+export const loadPrinterIndex = createIndexLoader<PrinterIndex>("printers");
+export const loadPrinterPreset = createItemLoader<PrinterPreset>("printers");
+export const loadMcuBoardIndex = createIndexLoader<McuBoardIndex>("mcu-boards");
+export const loadMcuBoard = createItemLoader<McuBoard>("mcu-boards");
+export const loadPcbLayoutIndex = createIndexLoader<PcbLayoutIndex>("pcb-layouts");
+export const loadPcbLayout = createItemLoader<PcbLayout>("pcb-layouts");
+export const loadProbe = createItemLoader<Probe>("probes");
+export const loadStepperMotor = createItemLoader<StepperMotor>("stepper-motors");
+export const loadFan = createItemLoader<Fan>("fans");
+export const loadThermistor = createItemLoader<Thermistor>("thermistors");
+export const loadExtruder = createItemLoader<Extruder>("extruders");
+export const loadHotend = createItemLoader<Hotend>("hotends");
 
 export function resolvePresetVariant(preset: PrinterPreset, variantId?: string): ResolvedPreset {
   const { id, name, manufacturer, description } = preset;
@@ -148,33 +121,13 @@ export function resolvePresetVariant(preset: PrinterPreset, variantId?: string):
   };
 }
 
-export async function loadPowerSupply(id: string): Promise<PowerSupply> {
-  return fetchJson<PowerSupply>(`/power-supplies/${id}.json`);
-}
-
-export async function loadAccessory(id: string): Promise<Accessory> {
-  return fetchJson<Accessory>(`/accessories/${id}.json`);
-}
-
-export async function loadFilament(id: string): Promise<Filament> {
-  return fetchJson<Filament>(`/filaments/${id}.json`);
-}
-
-export async function loadDisplay(id: string): Promise<Display> {
-  return fetchJson<Display>(`/displays/${id}.json`);
-}
-
-export async function loadToolhead(id: string): Promise<Toolhead> {
-  return fetchJson<Toolhead>(`/toolheads/${id}.json`);
-}
-
-export async function loadMmu(id: string): Promise<Mmu> {
-  return fetchJson<Mmu>(`/mmus/${id}.json`);
-}
-
-export async function loadStepperDriver(id: string): Promise<StepperDriver> {
-  return fetchJson<StepperDriver>(`/stepper-drivers/${id}.json`);
-}
+export const loadPowerSupply = createItemLoader<PowerSupply>("power-supplies");
+export const loadAccessory = createItemLoader<Accessory>("accessories");
+export const loadFilament = createItemLoader<Filament>("filaments");
+export const loadDisplay = createItemLoader<Display>("displays");
+export const loadToolhead = createItemLoader<Toolhead>("toolheads");
+export const loadMmu = createItemLoader<Mmu>("mmus");
+export const loadStepperDriver = createItemLoader<StepperDriver>("stepper-drivers");
 
 export async function loadDocIndices(): Promise<DocIndices> {
   return fetchJson<DocIndices>("/doc-indices.json");

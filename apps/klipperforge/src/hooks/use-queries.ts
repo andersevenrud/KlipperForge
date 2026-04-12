@@ -33,21 +33,17 @@ const BOARD_DATA_QUERY_KEY = "loadBoardData";
 const CONFIG_LIST_QUERY_KEY = "configList";
 const _SHARED_CONFIG_QUERY_KEY = "sharedConfig";
 
-export function useBoardIndexQuery() {
-  return useSuspenseQuery({ queryKey: [BOARD_INDEX_QUERY_KEY], queryFn: loadMcuBoardIndex });
-}
+export const useBoardIndexQuery = () =>
+  useSuspenseQuery({ queryKey: [BOARD_INDEX_QUERY_KEY], queryFn: loadMcuBoardIndex });
 
-export function usePcbLayoutIndexQuery() {
-  return useSuspenseQuery({ queryKey: [PCB_LAYOUT_INDEX_QUERY_KEY], queryFn: loadPcbLayoutIndex });
-}
+export const usePcbLayoutIndexQuery = () =>
+  useSuspenseQuery({ queryKey: [PCB_LAYOUT_INDEX_QUERY_KEY], queryFn: loadPcbLayoutIndex });
 
-export function usePrinterIndexQuery() {
-  return useSuspenseQuery({ queryKey: [PRINTER_INDEX_QUERY_KEY], queryFn: loadPrinterIndex });
-}
+export const usePrinterIndexQuery = () =>
+  useSuspenseQuery({ queryKey: [PRINTER_INDEX_QUERY_KEY], queryFn: loadPrinterIndex });
 
-export function useDocIndicesQuery() {
-  return useSuspenseQuery({ queryKey: [DOC_INDICES_QUERY_KEY], queryFn: loadDocIndices });
-}
+export const useDocIndicesQuery = () =>
+  useSuspenseQuery({ queryKey: [DOC_INDICES_QUERY_KEY], queryFn: loadDocIndices });
 
 export function useDocDataQuery<T>(loader: (id: string) => Promise<T>, id: string): T {
   const query = useSuspenseQuery({

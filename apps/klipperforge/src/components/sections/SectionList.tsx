@@ -8,10 +8,11 @@ import {
   EyeOff,
   GripVertical,
   LocateFixed,
+  type LucideIcon,
   Pencil,
   Search,
 } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { type MouseEvent, useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { Button } from "@/components/ui/button";
@@ -111,6 +112,41 @@ function addCommentPrefixes(text: string): string {
     .split("\n")
     .map((line) => (line.trim() === "" ? "#" : `# ${line}`))
     .join("\n");
+}
+
+const SECTION_ACTION_BUTTON_CLASS =
+  "hidden h-8 w-8 items-center justify-center rounded-md text-muted-foreground hover:bg-accent hover:text-foreground md:inline-flex md:h-6 md:w-6";
+
+interface SectionActionButtonProps {
+  icon: LucideIcon;
+  onClick: (e: MouseEvent<HTMLButtonElement>) => void;
+}
+
+interface SectionActionLinkProps {
+  icon: LucideIcon;
+  href: string;
+}
+
+function SectionActionButton({ icon: Icon, onClick }: SectionActionButtonProps) {
+  return (
+    <button type="button" className={SECTION_ACTION_BUTTON_CLASS} onClick={onClick}>
+      <Icon className="h-3 w-3" />
+    </button>
+  );
+}
+
+function SectionActionLink({ icon: Icon, href }: SectionActionLinkProps) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={(e) => e.stopPropagation()}
+      className={SECTION_ACTION_BUTTON_CLASS}
+    >
+      <Icon className="h-3 w-3" />
+    </a>
+  );
 }
 
 interface CommentSectionEditorProps {
@@ -346,48 +382,30 @@ export function SectionList({ autoExpandHeader }: SectionListProps) {
                   const isRenamable = def?.naming.kind === "named" || def?.naming.kind === "suffixed";
                   if (!isRenamable) return <span className="hidden h-8 w-8 md:inline-block md:h-6 md:w-6" />;
                   return (
-                    <button
-                      type="button"
-                      className="hidden h-8 w-8 items-center justify-center rounded-md text-muted-foreground hover:bg-accent hover:text-foreground md:inline-flex md:h-6 md:w-6"
+                    <SectionActionButton
+                      icon={Pencil}
                       onClick={(e) => {
                         e.stopPropagation();
                         setRenamingSection(section);
                       }}
-                    >
-                      <Pencil className="h-3 w-3" />
-                    </button>
+                    />
                   );
                 })()}
                 {(() => {
                   const url = getConfigReferenceUrl(section);
-                  if (!url) return null;
-                  return (
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="hidden h-8 w-8 items-center justify-center rounded-md text-muted-foreground hover:bg-accent hover:text-foreground md:inline-flex md:h-6 md:w-6"
-                    >
-                      <ExternalLink className="h-3 w-3" />
-                    </a>
-                  );
+                  return url ? <SectionActionLink icon={ExternalLink} href={url} /> : null;
                 })()}
                 {(() => {
                   const calcUrl = buildCalibrationUrl(section, state.document.sections);
-                  if (!calcUrl) return null;
-                  return (
-                    <button
-                      type="button"
-                      className="hidden h-8 w-8 items-center justify-center rounded-md text-muted-foreground hover:bg-accent hover:text-foreground md:inline-flex md:h-6 md:w-6"
+                  return calcUrl ? (
+                    <SectionActionButton
+                      icon={Calculator}
                       onClick={(e) => {
                         e.stopPropagation();
                         navigate(calcUrl);
                       }}
-                    >
-                      <Calculator className="h-3 w-3" />
-                    </button>
-                  );
+                    />
+                  ) : null;
                 })()}
                 <Button
                   variant="ghost"

@@ -1,6 +1,5 @@
 import type { SectionParams } from "../param-types";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
 const beaconParams: SectionParams = {
   serial: {
@@ -65,13 +64,9 @@ const beaconParams: SectionParams = {
   },
 };
 
-export const beaconSchema = createSchemaFromParams(beaconParams);
-
-export const beaconDefinition: SectionDefinition<typeof beaconSchema> = {
+export const { schema: beaconSchema, definition: beaconDefinition } = defineSection(beaconParams, {
   id: "beacon",
   naming: { kind: "custom", header: "beacon" },
-  schema: beaconSchema,
-  params: beaconParams,
   order: 60,
   category: "Probing",
   label: "Beacon",
@@ -84,4 +79,4 @@ export const beaconDefinition: SectionDefinition<typeof beaconSchema> = {
       },
     },
   ],
-};
+});

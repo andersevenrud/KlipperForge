@@ -1,8 +1,7 @@
 import { KNOWN_SENSOR_TYPES } from "../generated/heating";
 import { temperature_sensorParams as generatedParams } from "../generated/sensors";
 import type { SectionParams } from "../param-types";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
 const temperature_sensorParams: SectionParams = {
   ...generatedParams,
@@ -40,14 +39,13 @@ const temperature_sensorParams: SectionParams = {
   },
 };
 
-export const temperatureSensorSchema = createSchemaFromParams(temperature_sensorParams);
-
-export const temperatureSensorDefinition: SectionDefinition<typeof temperatureSensorSchema> = {
-  id: "temperature_sensor",
-  naming: { kind: "named", prefix: "temperature_sensor" },
-  schema: temperatureSensorSchema,
-  params: temperature_sensorParams,
-  order: 51,
-  category: "Sensors",
-  label: "Temperature Sensor",
-};
+export const { schema: temperatureSensorSchema, definition: temperatureSensorDefinition } = defineSection(
+  temperature_sensorParams,
+  {
+    id: "temperature_sensor",
+    naming: { kind: "named", prefix: "temperature_sensor" },
+    order: 51,
+    category: "Sensors",
+    label: "Temperature Sensor",
+  },
+);

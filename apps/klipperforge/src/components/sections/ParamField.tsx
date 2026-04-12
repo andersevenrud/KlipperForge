@@ -6,6 +6,7 @@ import { PinSelect } from "@/components/sections/PinSelect";
 import { FieldWrapper } from "@/components/ui/field-wrapper";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { BooleanSelect } from "./BooleanSelect";
 import { ListMultiSelect } from "./ListMultiSelect";
 import { formatPlaceholder, isPinField, numericSetValueAs } from "./section-editor-utils";
 
@@ -65,26 +66,12 @@ export function ParamField({
               name={name}
               control={control}
               render={({ field }) => (
-                <Select
+                <BooleanSelect
+                  id={id}
                   disabled={disabled}
-                  value={field.value === true ? "True" : field.value === false ? "False" : "__unset__"}
-                  onValueChange={(v) => field.onChange(v === "True" ? true : v === "False" ? false : null)}
-                >
-                  <SelectTrigger id={id} className="h-7 text-xs">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="__unset__" className="text-xs text-muted-foreground">
-                      —
-                    </SelectItem>
-                    <SelectItem value="True" className="text-xs">
-                      True
-                    </SelectItem>
-                    <SelectItem value="False" className="text-xs">
-                      False
-                    </SelectItem>
-                  </SelectContent>
-                </Select>
+                  value={field.value as boolean | null | undefined}
+                  onChange={field.onChange}
+                />
               )}
             />
           ) : type.kind === "choice" ? (

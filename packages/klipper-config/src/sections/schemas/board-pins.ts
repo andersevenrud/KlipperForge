@@ -1,6 +1,5 @@
 import type { SectionParams } from "../param-types";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
 export const BOARD_PINS_SECTION = "board_pins" as const;
 export const BOARD_PINS_NAMED_SECTION = "board_pins_named" as const;
@@ -22,26 +21,20 @@ export const boardPinsParams: SectionParams = {
   },
 };
 
-export const boardPinsSchema = createSchemaFromParams(boardPinsParams);
-
-export const boardPinsDefinition: SectionDefinition<typeof boardPinsSchema> = {
+export const { schema: boardPinsSchema, definition: boardPinsDefinition } = defineSection(boardPinsParams, {
   id: BOARD_PINS_SECTION,
   naming: { kind: "custom", header: BOARD_PINS_SECTION },
-  schema: boardPinsSchema,
-  params: boardPinsParams,
   metaFields: ["_boardSource"],
   order: 14,
   category: "MCU",
   label: "Board Pins",
-};
+});
 
-export const boardPinsNamedDefinition: SectionDefinition<typeof boardPinsSchema> = {
+export const { definition: boardPinsNamedDefinition } = defineSection(boardPinsParams, {
   id: BOARD_PINS_NAMED_SECTION,
   naming: { kind: "named", prefix: BOARD_PINS_SECTION },
-  schema: boardPinsSchema,
-  params: boardPinsParams,
   metaFields: ["_boardSource"],
   order: 14,
   category: "MCU",
   label: "Board Pins (Named)",
-};
+});

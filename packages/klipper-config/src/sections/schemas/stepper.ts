@@ -1,7 +1,6 @@
 import { stepperParams } from "../generated/motion";
 import type { SectionParams } from "../param-types";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
 const stepperParamsWithMeta: SectionParams = {
   _name: {
@@ -12,15 +11,11 @@ const stepperParamsWithMeta: SectionParams = {
   ...stepperParams,
 };
 
-export const stepperSchema = createSchemaFromParams(stepperParamsWithMeta);
-
-export const stepperDefinition: SectionDefinition<typeof stepperSchema> = {
+export const { schema: stepperSchema, definition: stepperDefinition } = defineSection(stepperParamsWithMeta, {
   id: "stepper",
   naming: { kind: "suffixed", prefix: "stepper" },
-  schema: stepperSchema,
-  params: stepperParamsWithMeta,
   metaFields: ["_name"],
   order: 20,
   category: "Motion",
   label: "Stepper",
-};
+});

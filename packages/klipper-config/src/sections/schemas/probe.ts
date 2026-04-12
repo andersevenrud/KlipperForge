@@ -1,15 +1,10 @@
 import { probeParams } from "../generated/probing";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
-export const probeSchema = createSchemaFromParams(probeParams);
-
-export const probeDefinition: SectionDefinition<typeof probeSchema> = {
+export const { schema: probeSchema, definition: probeDefinition } = defineSection(probeParams, {
   id: "probe",
   naming: { kind: "fixed", header: "probe" },
-  schema: probeSchema,
-  params: probeParams,
   order: 40,
   category: "Probing",
   label: "Probe",
-};
+});

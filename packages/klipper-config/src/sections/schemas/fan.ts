@@ -1,15 +1,10 @@
 import { fanParams } from "../generated/fans";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
-export const fanSchema = createSchemaFromParams(fanParams);
-
-export const fanDefinition: SectionDefinition<typeof fanSchema> = {
+export const { schema: fanSchema, definition: fanDefinition } = defineSection(fanParams, {
   id: "fan",
   naming: { kind: "fixed", header: "fan" },
-  schema: fanSchema,
-  params: fanParams,
   order: 35,
   category: "Fans",
   label: "Part Cooling Fan",
-};
+});

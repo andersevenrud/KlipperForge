@@ -1,15 +1,10 @@
 import { input_shaperParams } from "../generated/tuning";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
-export const inputShaperSchema = createSchemaFromParams(input_shaperParams);
-
-export const inputShaperDefinition: SectionDefinition<typeof inputShaperSchema> = {
+export const { schema: inputShaperSchema, definition: inputShaperDefinition } = defineSection(input_shaperParams, {
   id: "input_shaper",
   naming: { kind: "fixed", header: "input_shaper" },
-  schema: inputShaperSchema,
-  params: input_shaperParams,
   order: 47,
   category: "Tuning",
   label: "Input Shaper",
-};
+});

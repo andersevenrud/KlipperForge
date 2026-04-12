@@ -1,6 +1,5 @@
 import type { SectionParams } from "../param-types";
-import { createSchemaFromParams } from "../schema-from-params";
-import type { SectionDefinition } from "../types";
+import { defineSection } from "../schema-from-params";
 
 const shaketuneParams: SectionParams = {
   result_folder: {
@@ -53,14 +52,10 @@ const shaketuneParams: SectionParams = {
   },
 };
 
-const shaketuneSchema = createSchemaFromParams(shaketuneParams);
-
-export const shaketuneDefinition: SectionDefinition<typeof shaketuneSchema> = {
+export const { definition: shaketuneDefinition } = defineSection(shaketuneParams, {
   id: "shaketune",
   naming: { kind: "fixed", header: "shaketune" },
-  schema: shaketuneSchema,
-  params: shaketuneParams,
   order: 81,
   category: "Plugins",
   label: "Shake&Tune",
-};
+});
