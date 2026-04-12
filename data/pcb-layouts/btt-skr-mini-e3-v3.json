@@ -1,6 +1,6 @@
 {
   "boardId": "btt-skr-mini-e3-v3",
-  "name": "SKR Mini E3 V3",
+  "name": "btt-skr-mini-e3-v3",
   "viewBox": {
     "width": 888,
     "height": 600
@@ -17,7 +17,10 @@
       "y": 540,
       "width": 69,
       "height": 51,
-      "pins": ["<24V>", "PB15"],
+      "pins": [
+        "<24V>",
+        "PB15"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -28,7 +31,10 @@
       "y": 540,
       "width": 69,
       "height": 51,
-      "pins": ["<24V>", "PC6"],
+      "pins": [
+        "<24V>",
+        "PC6"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -39,7 +45,10 @@
       "y": 540,
       "width": 69,
       "height": 51,
-      "pins": ["<GND>", "PC0"],
+      "pins": [
+        "<GND>",
+        "PC0"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -50,7 +59,10 @@
       "y": 540,
       "width": 69,
       "height": 51,
-      "pins": ["<GND>", "PC1"],
+      "pins": [
+        "<GND>",
+        "PC1"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -61,7 +73,10 @@
       "y": 540,
       "width": 69,
       "height": 51,
-      "pins": ["<GND>", "PC2"],
+      "pins": [
+        "<GND>",
+        "PC2"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -72,7 +87,10 @@
       "y": 540,
       "width": 69,
       "height": 51,
-      "pins": ["<GND>", "PC4"],
+      "pins": [
+        "<GND>",
+        "PC4"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -83,7 +101,10 @@
       "y": 540,
       "width": 69,
       "height": 51,
-      "pins": ["<GND>", "PA0"],
+      "pins": [
+        "<GND>",
+        "PA0"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -94,7 +115,18 @@
       "y": 363,
       "width": 68,
       "height": 168,
-      "pins": ["PB5", "TX1", "RX1", "PB8", "<GND>", "PA15", "<RST>", "PB9", "PD6", "<5V>"],
+      "pins": [
+        "PB5",
+        "TX1",
+        "RX1",
+        "PB8",
+        "<GND>",
+        "PA15",
+        "<RST>",
+        "PB9",
+        "PD6",
+        "<5V>"
+      ],
       "orientation": "vertical",
       "rows": 2
     },
@@ -105,7 +137,13 @@
       "y": 357,
       "width": 49,
       "height": 129,
-      "pins": ["PC14", "<GND>", "PA1", "<PWR>", "<GND>"],
+      "pins": [
+        "PC14",
+        "<GND>",
+        "PA1",
+        "<PWR>",
+        "<GND>"
+      ],
       "orientation": "vertical",
       "rows": 1
     },
@@ -116,7 +154,11 @@
       "y": 338,
       "width": 86,
       "height": 49,
-      "pins": ["<GND>", "PA8", "<PWR>"],
+      "pins": [
+        "<GND>",
+        "PA8",
+        "<PWR>"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -127,7 +169,11 @@
       "y": 430,
       "width": 86,
       "height": 49,
-      "pins": ["PC15", "<GND>", "<5V>"],
+      "pins": [
+        "PC15",
+        "<GND>",
+        "<5V>"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -138,7 +184,11 @@
       "y": 430,
       "width": 86,
       "height": 49,
-      "pins": ["PC12", "<GND>", "<NC>"],
+      "pins": [
+        "PC12",
+        "<GND>",
+        "<NC>"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -149,7 +199,10 @@
       "y": 430,
       "width": 65,
       "height": 49,
-      "pins": ["<GND>", "PC13"],
+      "pins": [
+        "<GND>",
+        "PC13"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -160,7 +213,10 @@
       "y": 430,
       "width": 65,
       "height": 49,
-      "pins": ["<24V>", "PC7"],
+      "pins": [
+        "<24V>",
+        "PC7"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -171,7 +227,13 @@
       "y": 190,
       "width": 114,
       "height": 26,
-      "pins": ["PD0", "PD2", "PD3", "PD4", "PD5"],
+      "pins": [
+        "PD0",
+        "PD2",
+        "PD3",
+        "PD4",
+        "PD5"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -182,8 +244,20 @@
       "y": 10,
       "width": 107,
       "height": 52,
-      "pins": ["PB14", "PB13", "PB12", "PC11", "PC10"],
-      "pinHints": ["EN", "STEP", "DIR", "RX", "TX"],
+      "pins": [
+        "PB14",
+        "PB13",
+        "PB12",
+        "PC11",
+        "PC10"
+      ],
+      "pinHints": [
+        "EN",
+        "STEP",
+        "DIR",
+        "RX",
+        "TX"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -194,8 +268,20 @@
       "y": 10,
       "width": 107,
       "height": 52,
-      "pins": ["PB11", "PB10", "PB2", "PC11", "PC10"],
-      "pinHints": ["EN", "STEP", "DIR", "RX", "TX"],
+      "pins": [
+        "PB11",
+        "PB10",
+        "PB2",
+        "PC11",
+        "PC10"
+      ],
+      "pinHints": [
+        "EN",
+        "STEP",
+        "DIR",
+        "RX",
+        "TX"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -206,8 +292,20 @@
       "y": 10,
       "width": 107,
       "height": 52,
-      "pins": ["PB1", "PB0", "PC5", "PC11", "PC10"],
-      "pinHints": ["EN", "STEP", "DIR", "RX", "TX"],
+      "pins": [
+        "PB1",
+        "PB0",
+        "PC5",
+        "PC11",
+        "PC10"
+      ],
+      "pinHints": [
+        "EN",
+        "STEP",
+        "DIR",
+        "RX",
+        "TX"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -218,8 +316,20 @@
       "y": 10,
       "width": 107,
       "height": 52,
-      "pins": ["PB1", "PB0", "PC5", "PC11", "PC10"],
-      "pinHints": ["EN", "STEP", "DIR", "RX", "TX"],
+      "pins": [
+        "PB1",
+        "PB0",
+        "PC5",
+        "PC11",
+        "PC10"
+      ],
+      "pinHints": [
+        "EN",
+        "STEP",
+        "DIR",
+        "RX",
+        "TX"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -230,8 +340,20 @@
       "y": 10,
       "width": 107,
       "height": 52,
-      "pins": ["PD1", "PB3", "PB4", "PC11", "PC10"],
-      "pinHints": ["EN", "STEP", "DIR", "RX", "TX"],
+      "pins": [
+        "PD1",
+        "PB3",
+        "PB4",
+        "PC11",
+        "PC10"
+      ],
+      "pinHints": [
+        "EN",
+        "STEP",
+        "DIR",
+        "RX",
+        "TX"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -242,7 +364,10 @@
       "y": 500,
       "width": 89,
       "height": 87,
-      "pins": ["PC6", "<24V>"],
+      "pins": [
+        "PC6",
+        "<24V>"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -253,7 +378,10 @@
       "y": 500,
       "width": 89,
       "height": 87,
-      "pins": ["PC9", "<24V>"],
+      "pins": [
+        "PC9",
+        "<24V>"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -308,7 +436,13 @@
       "y": 390,
       "width": 100,
       "height": 30,
-      "pins": ["<RST>", "<RX2>", "<TX2>", "<GND>", "<5V>"],
+      "pins": [
+        "<RST>",
+        "<RX2>",
+        "<TX2>",
+        "<GND>",
+        "<5V>"
+      ],
       "orientation": "horizontal",
       "rows": 1
     },
@@ -341,7 +475,16 @@
       "y": 280,
       "width": 50,
       "height": 80,
-      "pins": ["<5V>", "<NSS>", "<MOSI>", "<3.3V>", "<GND>", "<CLK>", "<MISO>", "<GND>"],
+      "pins": [
+        "<5V>",
+        "<NSS>",
+        "<MOSI>",
+        "<3.3V>",
+        "<GND>",
+        "<CLK>",
+        "<MISO>",
+        "<GND>"
+      ],
       "orientation": "vertical",
       "rows": 2
     },
@@ -366,47 +509,101 @@
       "pins": [],
       "orientation": "vertical",
       "rows": 1
+    },
+    {
+      "name": "POWER_MCU",
+      "category": "power",
+      "x": 30,
+      "y": 500,
+      "width": 90,
+      "height": 100,
+      "pins": [
+        "<24V>",
+        "<GND>"
+      ],
+      "orientation": "vertical",
+      "rows": 1
     }
   ],
   "jumperConfigs": {
     "X_DIAG": [
       {
         "label": "OFF",
-        "pattern": [[0, 0]]
+        "pattern": [
+          [
+            0,
+            0
+          ]
+        ]
       },
       {
         "label": "ON",
-        "pattern": [[1, 1]]
+        "pattern": [
+          [
+            1,
+            1
+          ]
+        ]
       }
     ],
     "Y_DIAG": [
       {
         "label": "OFF",
-        "pattern": [[0, 0]]
+        "pattern": [
+          [
+            0,
+            0
+          ]
+        ]
       },
       {
         "label": "ON",
-        "pattern": [[1, 1]]
+        "pattern": [
+          [
+            1,
+            1
+          ]
+        ]
       }
     ],
     "Z_DIAG": [
       {
         "label": "OFF",
-        "pattern": [[0, 0]]
+        "pattern": [
+          [
+            0,
+            0
+          ]
+        ]
       },
       {
         "label": "ON",
-        "pattern": [[1, 1]]
+        "pattern": [
+          [
+            1,
+            1
+          ]
+        ]
       }
     ],
     "E0_DIAG": [
       {
         "label": "OFF",
-        "pattern": [[0, 0]]
+        "pattern": [
+          [
+            0,
+            0
+          ]
+        ]
       },
       {
         "label": "ON",
-        "pattern": [[1, 1]]
+        "pattern": [
+          [
+            1,
+            1
+          ]
+        ]
       }
     ]
   }
