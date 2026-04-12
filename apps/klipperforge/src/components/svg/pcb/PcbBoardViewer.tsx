@@ -155,6 +155,7 @@ export function PcbBoardViewer() {
   const hasLayout = pcbBoardIds.has(boardId);
   const hasImage = imageBoardIds.has(boardId);
   const boardImageUrl = hasImage ? `/data/mcu-boards/images/${boardId}.png` : undefined;
+  const designerImageUrl = layout?.image ?? boardImageUrl;
 
   // Load PCB layout when board changes
   useEffect(
@@ -200,7 +201,7 @@ export function PcbBoardViewer() {
         )}
         {layout && boardId && (
           <a
-            href={`/pcb-designer/?${boardImageUrl ? `image=${encodeURIComponent(boardImageUrl)}&` : ""}layout=${boardId}`}
+            href={`/pcb-designer/?${designerImageUrl ? `image=${encodeURIComponent(designerImageUrl)}&` : ""}layout=${boardId}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1 rounded px-1.5 py-0.5 text-xs text-muted-foreground hover:bg-muted hover:text-foreground"
