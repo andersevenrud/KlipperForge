@@ -66,6 +66,7 @@ import { ImportLocalConfigsDialog } from "../storage/ImportLocalConfigsDialog";
 import { RevisionHistoryDialog } from "../storage/RevisionHistoryDialog";
 import { SaveConfigDialog } from "../storage/SaveConfigDialog";
 import { ShareDialog } from "../storage/ShareDialog";
+import { useConfirmDiscard } from "./ConfirmDiscardDialog";
 import { MoonrakerExportDialog } from "./MoonrakerExportDialog";
 import { MoonrakerImportDialog } from "./MoonrakerImportDialog";
 import { NewConfigDialog } from "./NewConfigDialog";
@@ -184,6 +185,7 @@ function ImportWarningsDialog({ warnings, onClose }: ImportWarningsDialogProps) 
 
 function StorageStatusBar() {
   const { state } = useStorage();
+  const { state: configState } = useConfig();
   const { adapter } = useConfigStorage();
 
   if (!state.configId) return null;
@@ -202,7 +204,7 @@ function StorageStatusBar() {
           ? "Saving..."
           : state.saveStatus === "error"
             ? "Save failed"
-            : state.isDirty
+            : configState.isDirty
               ? "Modified"
               : "Saved"}
       </span>
@@ -217,6 +219,7 @@ function StorageActions() {
   const { adapter } = useConfigStorage();
   const queryClient = useQueryClient();
   const { scrollToTop } = useEditorScroll();
+  const { confirmDiscardIfDirty } = useConfirmDiscard();
 
   const localDetection = useLocalConfigDetection();
 
@@ -247,6 +250,7 @@ function StorageActions() {
       try {
         const result = await adapter.createConfig(name, getDocumentJson(), comment);
         storage.markSaved(result.id, name, result.revision);
+        dispatch({ type: "MARK_CLEAN" });
         queryClient.invalidateQueries({ queryKey: ["configList"] });
         setSaveDialogOpen(false);
       } catch (err) {
@@ -256,7 +260,7 @@ function StorageActions() {
         setIsSaving(false);
       }
     },
-    [adapter, getDocumentJson, storage, queryClient],
+    [adapter, getDocumentJson, storage, queryClient, dispatch],
   );
 
   const handleQuickSave = useCallback(async () => {
@@ -270,6 +274,7 @@ function StorageActions() {
     try {
       const result = await adapter.updateConfigRevision(storage.state.configId, getDocumentJson());
       storage.markSaved(result.id, storage.state.configName ?? "Untitled", result.revision);
+      dispatch({ type: "MARK_CLEAN" });
       queryClient.invalidateQueries({ queryKey: ["configList"] });
     } catch (err) {
       storage.setError();
@@ -281,15 +286,16 @@ function StorageActions() {
     } finally {
       setIsSaving(false);
     }
-  }, [adapter, storage, getDocumentJson, queryClient]);
+  }, [adapter, storage, getDocumentJson, queryClient, dispatch]);
 
   const handleLoad = useCallback(
     async (id: string) => {
+      if (!(await confirmDiscardIfDirty())) return;
       try {
         const config = await adapter.fetchConfig(id);
         const project = JSON.parse(config.latestRevision.document);
         const imported = importProject(project);
-        dispatch({ type: "LOAD_DOCUMENT", payload: { document: imported.document } });
+        dispatch({ type: "LOAD_DOCUMENT", payload: { document: imported.document, dirty: false } });
         storage.markSaved(config.id, config.name, config.currentRevision);
         scrollToTop();
         setConfigListOpen(false);
@@ -297,7 +303,7 @@ function StorageActions() {
         console.error("Load failed:", err);
       }
     },
-    [adapter, dispatch, storage, scrollToTop],
+    [adapter, dispatch, storage, scrollToTop, confirmDiscardIfDirty],
   );
 
   const handleDelete = useCallback(
@@ -370,6 +376,7 @@ function StorageActions() {
   const handleRestoreRevision = useCallback(
     async (revisionNumber: number) => {
       if (!storage.state.configId) return;
+      if (!(await confirmDiscardIfDirty())) return;
       try {
         const revision = await adapter.fetchRevision(storage.state.configId, revisionNumber);
         // Save the old revision's content as a new revision
@@ -381,7 +388,7 @@ function StorageActions() {
         // Load it into the editor
         const project = JSON.parse(revision.document);
         const imported = importProject(project);
-        dispatch({ type: "LOAD_DOCUMENT", payload: { document: imported.document } });
+        dispatch({ type: "LOAD_DOCUMENT", payload: { document: imported.document, dirty: false } });
         const updatedRevisions = await adapter.fetchRevisionList(storage.state.configId);
         setRevisions(updatedRevisions.revisions);
         storage.markSaved(
@@ -395,7 +402,7 @@ function StorageActions() {
         console.error("Restore failed:", err);
       }
     },
-    [adapter, storage, dispatch, queryClient, scrollToTop],
+    [adapter, storage, dispatch, queryClient, scrollToTop, confirmDiscardIfDirty],
   );
 
   const handleImportLocalComplete = useCallback(() => {
@@ -425,6 +432,15 @@ function StorageActions() {
           <button type="button" onClick={localDetection.dismiss} className="rounded-sm p-0.5 hover:bg-muted">
             <X className="h-3 w-3" />
           </button>
+        </div>
+      )}
+      {configState.isDirty && (
+        <div
+          className="flex items-center gap-2 border-b border-border bg-amber-500/5 px-3 py-2 text-xs text-muted-foreground"
+          title="Your changes auto-save to this browser tab's storage every second. They survive page refresh and dev-server restarts, but are lost if you close the tab or open the app in a new tab."
+        >
+          <TriangleAlert className="h-3.5 w-3.5 shrink-0 text-amber-500" />
+          <span className="flex-1">You have unsaved changes in this draft.</span>
         </div>
       )}
       <div className="flex items-center gap-2 border-b border-border px-3 py-2">
@@ -482,7 +498,7 @@ function StorageActions() {
         onCreateShare={handleCreateShare}
         onDeleteShare={handleDeleteShare}
         isCreating={isCreatingShare}
-        isDirty={storage.state.isDirty}
+        isDirty={configState.isDirty}
       />
 
       <RevisionHistoryDialog
@@ -506,8 +522,8 @@ function StorageActions() {
 export function SidebarActions() {
   const { state, dispatch } = useConfig();
   const { scrollToTop } = useEditorScroll();
-  const storage = useStorage();
   const queryClient = useQueryClient();
+  const { confirmDiscardIfDirty } = useConfirmDiscard();
   const localDetection = useLocalConfigDetection();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const folderInputRef = useRef<HTMLInputElement>(null);
@@ -551,12 +567,24 @@ export function SidebarActions() {
     setTimeout(() => setCopied(false), 2000);
   }
 
-  function handleImportFiles() {
+  async function handleImportFiles() {
+    if (!(await confirmDiscardIfDirty())) return;
     fileInputRef.current?.click();
   }
 
-  function handleImportFolder() {
+  async function handleImportFolder() {
+    if (!(await confirmDiscardIfDirty())) return;
     folderInputRef.current?.click();
+  }
+
+  async function handleOpenPasteDialog() {
+    if (!(await confirmDiscardIfDirty())) return;
+    setPasteDialogOpen(true);
+  }
+
+  async function handleOpenMoonrakerDialog() {
+    if (!(await confirmDiscardIfDirty())) return;
+    setMoonrakerDialogOpen(true);
   }
 
   async function importCfgFiles(cfgFiles: File[], nameMapper: (f: File) => string) {
@@ -567,8 +595,7 @@ export function SidebarActions() {
       })),
     );
     const doc = parseMultiFileConfigs(fileContents, defaultRegistry);
-    dispatch({ type: "LOAD_DOCUMENT", payload: { document: doc } });
-    storage.markDirty();
+    dispatch({ type: "LOAD_DOCUMENT", payload: { document: doc, dirty: true } });
     scrollToTop();
     if (doc.importWarnings) {
       setImportWarnings(doc.importWarnings);
@@ -586,8 +613,7 @@ export function SidebarActions() {
       if (files.length === 1 && files[0].name.endsWith(".json")) {
         const text = await readFileAsText(files[0]);
         const project = importProject(JSON.parse(text));
-        dispatch({ type: "LOAD_DOCUMENT", payload: { document: project.document } });
-        storage.markDirty();
+        dispatch({ type: "LOAD_DOCUMENT", payload: { document: project.document, dirty: true } });
         scrollToTop();
         return;
       }
@@ -605,8 +631,7 @@ export function SidebarActions() {
           result.presetId,
           warnings,
         );
-        dispatch({ type: "LOAD_DOCUMENT", payload: { document: doc } });
-        storage.markDirty();
+        dispatch({ type: "LOAD_DOCUMENT", payload: { document: doc, dirty: true } });
         scrollToTop();
         if (warnings.length > 0) {
           setImportWarnings(warnings);
@@ -657,9 +682,8 @@ export function SidebarActions() {
       );
       dispatch({
         type: "LOAD_DOCUMENT",
-        payload: { document: doc },
+        payload: { document: doc, dirty: true },
       });
-      storage.markDirty();
       scrollToTop();
       setPasteDialogOpen(false);
       setPasteContent("");
@@ -674,15 +698,14 @@ export function SidebarActions() {
   const handleMoonrakerImport = useCallback(
     (files: { name: string; content: string }[]) => {
       const doc = parseMultiFileConfigs(files, defaultRegistry);
-      dispatch({ type: "LOAD_DOCUMENT", payload: { document: doc } });
-      storage.markDirty();
+      dispatch({ type: "LOAD_DOCUMENT", payload: { document: doc, dirty: true } });
       scrollToTop();
       setMoonrakerDialogOpen(false);
       if (doc.importWarnings) {
         setImportWarnings(doc.importWarnings);
       }
     },
-    [dispatch, storage, scrollToTop],
+    [dispatch, scrollToTop],
   );
 
   const handleImportLocalComplete = useCallback(() => {
@@ -692,7 +715,19 @@ export function SidebarActions() {
 
   return (
     <div className="shrink-0">
-      {featureFlags.configStorage && <StorageActions />}
+      {featureFlags.configStorage ? (
+        <StorageActions />
+      ) : (
+        state.isDirty && (
+          <div
+            className="flex items-center gap-2 border-t border-border bg-amber-500/5 px-3 py-2 text-xs text-muted-foreground"
+            title="Your changes auto-save to this browser tab's storage every second. They survive page refresh and dev-server restarts, but are lost if you close the tab or open the app in a new tab."
+          >
+            <TriangleAlert className="h-3.5 w-3.5 shrink-0 text-amber-500" />
+            <span className="flex-1">You have unsaved changes in this draft.</span>
+          </div>
+        )
+      )}
       <div className="flex items-center gap-2 border-t border-border bg-card/50 px-3 py-2">
         <input
           ref={fileInputRef}
@@ -731,7 +766,7 @@ export function SidebarActions() {
               <Folder className="mr-1 h-3 w-3" />
               Import folder...
             </DropdownMenuItem>
-            <DropdownMenuItem onSelect={() => setPasteDialogOpen(true)}>
+            <DropdownMenuItem onSelect={handleOpenPasteDialog}>
               <Clipboard className="mr-1 h-3 w-3" />
               Paste from clipboard...
             </DropdownMenuItem>
@@ -747,7 +782,7 @@ export function SidebarActions() {
             {featureFlags.moonrakerImport && (
               <>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onSelect={() => setMoonrakerDialogOpen(true)}>
+                <DropdownMenuItem onSelect={handleOpenMoonrakerDialog}>
                   <Server className="mr-1 h-3 w-3" />
                   Import from Moonraker...
                 </DropdownMenuItem>

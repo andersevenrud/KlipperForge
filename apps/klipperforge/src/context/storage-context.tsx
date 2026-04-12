@@ -6,14 +6,12 @@ interface StorageState {
   configId: string | null;
   configName: string | null;
   currentRevision: number | null;
-  isDirty: boolean;
   saveStatus: SaveStatus;
   lastSavedAt: string | null;
 }
 
 type StorageAction =
   | { type: "MARK_SAVED"; payload: { id: string; name: string; revision: number } }
-  | { type: "MARK_DIRTY" }
   | { type: "SET_SAVING" }
   | { type: "SET_ERROR" }
   | { type: "RENAME"; payload: { name: string } }
@@ -22,7 +20,6 @@ type StorageAction =
 interface StorageContextValue {
   state: StorageState;
   markSaved: (id: string, name: string, revision: number) => void;
-  markDirty: () => void;
   setSaving: () => void;
   setError: () => void;
   rename: (name: string) => void;
@@ -33,7 +30,6 @@ const initialState: StorageState = {
   configId: null,
   configName: null,
   currentRevision: null,
-  isDirty: false,
   saveStatus: "idle",
   lastSavedAt: null,
 };
@@ -46,15 +42,8 @@ function storageReducer(state: StorageState, action: StorageAction): StorageStat
         configId: action.payload.id,
         configName: action.payload.name,
         currentRevision: action.payload.revision,
-        isDirty: false,
         saveStatus: "saved",
         lastSavedAt: new Date().toISOString(),
-      };
-    case "MARK_DIRTY":
-      return {
-        ...state,
-        isDirty: true,
-        saveStatus: state.saveStatus === "saved" ? "idle" : state.saveStatus,
       };
     case "SET_SAVING":
       return { ...state, saveStatus: "saving" };
@@ -82,10 +71,6 @@ export function StorageProvider({ children }: StorageProviderProps) {
     dispatch({ type: "MARK_SAVED", payload: { id, name, revision } });
   }, []);
 
-  const markDirty = useCallback(() => {
-    dispatch({ type: "MARK_DIRTY" });
-  }, []);
-
   const setSaving = useCallback(() => {
     dispatch({ type: "SET_SAVING" });
   }, []);
@@ -103,8 +88,8 @@ export function StorageProvider({ children }: StorageProviderProps) {
   }, []);
 
   const value = useMemo(
-    () => ({ state, markSaved, markDirty, setSaving, setError, rename, clear }),
-    [state, markSaved, markDirty, setSaving, setError, rename, clear],
+    () => ({ state, markSaved, setSaving, setError, rename, clear }),
+    [state, markSaved, setSaving, setError, rename, clear],
   );
 
   return <StorageContext.Provider value={value}>{children}</StorageContext.Provider>;

@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router";
 import { useConfig } from "@/context/config-context";
 import { useConfigStorage } from "@/context/config-storage-context";
 import { useStorage } from "@/context/storage-context";
-import { clearDraft, loadDraft, saveDraft } from "@/lib/draft-storage";
+import { loadDraft, saveDraft } from "@/lib/draft-storage";
 import { featureFlags } from "@/lib/feature-flags";
 import type { TimerId } from "@/types";
 
@@ -18,7 +18,10 @@ export function useConfigPersistence() {
   const lastSyncedConfigIdRef = useRef<string | null>(null);
   const draftTimerRef = useRef<TimerId | null>(null);
 
-  // A) On mount — restore from URL param or sessionStorage draft
+  // A) On mount — restore remote config from URL param, or restore draft
+  // storage metadata (configId/revision) so the remote-save flow still works
+  // after a refresh. The draft's document has already been loaded
+  // synchronously by ConfigProvider's reducer lazy-init.
   useEffect(
     function restoreConfigOnMountEffect() {
       if (mountedRef.current) return;
@@ -32,11 +35,12 @@ export function useConfigPersistence() {
           (config) => {
             const project = JSON.parse(config.latestRevision.document);
             const imported = importProject(project);
-            dispatch({ type: "LOAD_DOCUMENT", payload: { document: imported.document } });
+            // Remote fetch is authoritative and matches the server — clean.
+            dispatch({ type: "LOAD_DOCUMENT", payload: { document: imported.document, dirty: false } });
             storage.markSaved(config.id, config.name, config.currentRevision);
           },
           () => {
-            // Config not found or fetch failed — clear URL param, fall through to draft
+            // Config not found or fetch failed — clear URL param, fall through to draft metadata
             setSearchParams(
               (prev) => {
                 prev.delete("config");
@@ -44,30 +48,20 @@ export function useConfigPersistence() {
               },
               { replace: true },
             );
-            restoreFromDraft();
+            restoreDraftMetadata();
           },
         );
         return;
       }
 
-      restoreFromDraft();
+      restoreDraftMetadata();
 
-      function restoreFromDraft() {
+      function restoreDraftMetadata() {
         const draft = loadDraft();
         if (!draft) return;
-
-        try {
-          const project = importProject(JSON.parse(draft.document));
-          dispatch({ type: "LOAD_DOCUMENT", payload: { document: project.document } });
-
-          if (draft.configId && draft.configName && draft.currentRevision !== null) {
-            lastSyncedConfigIdRef.current = draft.configId;
-            storage.markSaved(draft.configId, draft.configName, draft.currentRevision);
-            storage.markDirty();
-          }
-        } catch {
-          // Corrupt draft — discard it
-          clearDraft();
+        if (draft.configId && draft.configName && draft.currentRevision !== null) {
+          lastSyncedConfigIdRef.current = draft.configId;
+          storage.markSaved(draft.configId, draft.configName, draft.currentRevision);
         }
       }
       // mountedRef guard ensures this only runs once — deps are all stable references
@@ -116,6 +110,7 @@ export function useConfigPersistence() {
           configName: storage.state.configName,
           currentRevision: storage.state.currentRevision,
           savedAt: new Date().toISOString(),
+          isDirty: configState.isDirty,
         });
       }, 1000);
 
@@ -125,7 +120,13 @@ export function useConfigPersistence() {
         }
       };
     },
-    [configState.document, storage.state.configId, storage.state.configName, storage.state.currentRevision],
+    [
+      configState.document,
+      configState.isDirty,
+      storage.state.configId,
+      storage.state.configName,
+      storage.state.currentRevision,
+    ],
   );
 
   // D) beforeunload — last-chance save + unsaved warning
@@ -139,9 +140,10 @@ export function useConfigPersistence() {
           configName: storage.state.configName,
           currentRevision: storage.state.currentRevision,
           savedAt: new Date().toISOString(),
+          isDirty: configState.isDirty,
         });
 
-        if (storage.state.isDirty) {
+        if (configState.isDirty) {
           e.preventDefault();
         }
       }
@@ -151,10 +153,10 @@ export function useConfigPersistence() {
     },
     [
       configState.document,
+      configState.isDirty,
       storage.state.configId,
       storage.state.configName,
       storage.state.currentRevision,
-      storage.state.isDirty,
     ],
   );
 }

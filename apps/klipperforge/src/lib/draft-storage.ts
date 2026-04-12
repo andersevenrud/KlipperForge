@@ -6,6 +6,7 @@ interface DraftData {
   configName: string | null;
   currentRevision: number | null;
   savedAt: string;
+  isDirty: boolean;
 }
 
 export function saveDraft(data: DraftData): void {
@@ -20,7 +21,16 @@ export function loadDraft(): DraftData | null {
   try {
     const raw = sessionStorage.getItem(DRAFT_KEY);
     if (!raw) return null;
-    return JSON.parse(raw) as DraftData;
+    const parsed = JSON.parse(raw) as Partial<DraftData>;
+    if (typeof parsed.document !== "string") return null;
+    return {
+      document: parsed.document,
+      configId: parsed.configId ?? null,
+      configName: parsed.configName ?? null,
+      currentRevision: parsed.currentRevision ?? null,
+      savedAt: parsed.savedAt ?? "",
+      isDirty: parsed.isDirty ?? false,
+    };
   } catch {
     return null;
   }

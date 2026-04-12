@@ -11,6 +11,7 @@ import { Separator } from "@/components/ui/separator";
 import { useConfig } from "@/context/config-context";
 import { useStorage } from "@/context/storage-context";
 import { clearDraft } from "@/lib/draft-storage";
+import { useConfirmDiscard } from "./ConfirmDiscardDialog";
 
 interface NewConfigDialogProps {
   open: boolean;
@@ -33,6 +34,7 @@ export function NewConfigDialog({ open, onOpenChange }: NewConfigDialogProps) {
   const { dispatch } = useConfig();
   const storage = useStorage();
   const { scrollToTop } = useEditorScroll();
+  const { confirmDiscardIfDirty } = useConfirmDiscard();
   const [selection, setSelection] = useState<PresetSelection | null>(null);
 
   const handleSelectionChange = useCallback((sel: PresetSelection | null) => {
@@ -47,13 +49,15 @@ export function NewConfigDialog({ open, onOpenChange }: NewConfigDialogProps) {
     setSelection(null);
   }
 
-  function handleBlankConfig() {
+  async function handleBlankConfig() {
+    if (!(await confirmDiscardIfDirty())) return;
     dispatch({ type: "LOAD_DOCUMENT", payload: { document: BLANK_DOCUMENT } });
     apply();
   }
 
-  function handleCreatePreset() {
+  async function handleCreatePreset() {
     if (!selection) return;
+    if (!(await confirmDiscardIfDirty())) return;
     const resolved = resolvePresetVariant(selection.preset, selection.variantId);
     const id = selection.variantId ? `${selection.preset.id}:${selection.variantId}` : selection.preset.id;
     dispatch({

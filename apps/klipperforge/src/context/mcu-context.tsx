@@ -3,6 +3,7 @@ import {
   BOARD_PINS_SECTION,
   type BoardPinContext,
   isBoardPinsSection,
+  type McuBoardAssociation,
   resolvePinAlias,
   SHARED_BUS_PIN_FIELDS,
 } from "@klipperforge/klipper-config";
@@ -58,6 +59,22 @@ const defaultState: McuState = {
   boards: [{ boardId: "generic-stm32f446", alias: "", board: null }],
   activePcbBoard: 0,
 };
+
+function initMcuStateFromDocument(mcuBoards: McuBoardAssociation[] | undefined): McuState {
+  if (mcuBoards && mcuBoards.length > 0) {
+    return {
+      boards: mcuBoards.map((b) => ({
+        boardId: b.boardId,
+        alias: b.alias,
+        selectedMcu: b.selectedMcu,
+        jumperSelections: b.jumperSelections,
+        board: null,
+      })),
+      activePcbBoard: 0,
+    };
+  }
+  return defaultState;
+}
 
 const McuContext = createContext<McuContextValue | null>(null);
 
@@ -162,8 +179,13 @@ interface McuProviderProps {
 }
 
 export function McuProvider({ children }: McuProviderProps) {
-  const [state, dispatch] = useReducer(mcuReducer, defaultState);
   const { state: configState, dispatch: configDispatch } = useConfig();
+  const [state, dispatch] = useReducer(mcuReducer, configState.document.mcuBoards, initMcuStateFromDocument);
+
+  // Most recent mcuBoards signature we wrote to ConfigDocument. Skips redundant
+  // dispatches (e.g. from SET_BOARD_DATA which only updates non-serialized
+  // fields) and flags the first dispatch of a session as non-dirty.
+  const lastSyncedBoardsRef = useRef<string | null>(null);
 
   const boardIndexQuery = useBoardIndexQuery();
   const pcbIndexQuery = usePcbLayoutIndexQuery();
@@ -237,7 +259,12 @@ export function McuProvider({ children }: McuProviderProps) {
     [boardDataQueries.data],
   );
 
-  // Sync MCU board associations to ConfigDocument for serialization
+  // Sync MCU board associations to ConfigDocument for serialization. Skips
+  // when the proposed payload already matches the document (so RESTORE_BOARDS
+  // from a fresh document load is a no-op) and when the signature hasn't
+  // changed since the last dispatch (so SET_BOARD_DATA doesn't cause writes).
+  // The very first dispatch of a session is non-dirty; user actions after
+  // that mark the document dirty.
   useEffect(
     function syncMcuBoardsEffect() {
       const mcuBoards = state.boards.map((b) => ({
@@ -246,7 +273,24 @@ export function McuProvider({ children }: McuProviderProps) {
         ...(b.selectedMcu ? { selectedMcu: b.selectedMcu } : {}),
         ...(b.jumperSelections ? { jumperSelections: b.jumperSelections } : {}),
       }));
-      configDispatch({ type: "SET_MCU_BOARDS", payload: mcuBoards });
+      const signature = JSON.stringify(mcuBoards);
+      if (signature === lastSyncedBoardsRef.current) return;
+
+      const docMcuBoards = configDocumentRef.current.mcuBoards;
+      const docSignature = docMcuBoards ? JSON.stringify(docMcuBoards) : null;
+      if (signature === docSignature) {
+        // Document already carries these boards (lazy-init seed or
+        // restore-boards reflecting the document). Record and skip.
+        lastSyncedBoardsRef.current = signature;
+        return;
+      }
+
+      const isInitialSync = lastSyncedBoardsRef.current === null;
+      lastSyncedBoardsRef.current = signature;
+      configDispatch({
+        type: "SET_MCU_BOARDS",
+        payload: { mcuBoards, markDirty: !isInitialSync },
+      });
     },
     [state.boards, configDispatch],
   );
@@ -260,6 +304,10 @@ export function McuProvider({ children }: McuProviderProps) {
     function restoreBoardsOnDocumentLoadEffect() {
       if (configEpoch === lastEpochRef.current) return;
       lastEpochRef.current = configEpoch;
+      // A document load (import, preset, remote fetch) re-establishes the
+      // baseline for board sync. Clear the last-synced signature so the next
+      // sync after RESTORE_BOARDS is treated as an initial (non-dirty) sync.
+      lastSyncedBoardsRef.current = null;
 
       if (configDocument.mcuBoards && configDocument.mcuBoards.length > 0) {
         // Imported document had board annotations — use them directly

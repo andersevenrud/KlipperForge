@@ -38,6 +38,7 @@ interface ConfigState {
   boardPinContext: BoardPinContext[];
   activeFile: string;
   baselineOutputs: Map<string, string>;
+  isDirty: boolean;
 }
 
 type ConfigAction =
@@ -51,9 +52,10 @@ type ConfigAction =
       type: "SET_PRESET";
       payload: { sections: SectionInstance[]; presetId: string; mcuBoards?: McuBoardAssociation[] };
     }
-  | { type: "SET_MCU_BOARDS"; payload: McuBoardAssociation[] }
-  | { type: "LOAD_DOCUMENT"; payload: { document: ConfigDocument } }
+  | { type: "SET_MCU_BOARDS"; payload: { mcuBoards: McuBoardAssociation[]; markDirty: boolean } }
+  | { type: "LOAD_DOCUMENT"; payload: { document: ConfigDocument; dirty?: boolean } }
   | { type: "RESET_CONFIG" }
+  | { type: "MARK_CLEAN" }
   | { type: "TOGGLE_HEADER" }
   | { type: "TOGGLE_HEADER_MAIN_ONLY" }
   | { type: "TOGGLE_SECTION_DISABLED"; payload: { header: string } }
@@ -128,28 +130,29 @@ function buildMultiFileState(
   };
 }
 
-const initialMulti = buildMultiFileState(defaultDocument, true, false, false);
-
-const initialValidationErrors = validateDocument(defaultDocument, defaultRegistry);
-appendDefaultMatchInfoEntries(initialValidationErrors, initialMulti.defaultMatches);
-
-const initialState: ConfigState = {
-  document: defaultDocument,
-  generatedOutput: initialMulti.generatedOutput,
-  generatedOutputs: initialMulti.generatedOutputs,
-  sourceMap: initialMulti.sourceMap,
-  sourceMaps: initialMulti.sourceMaps,
-  validationErrors: initialValidationErrors,
-  overrideMap: collectActiveOverrides(defaultDocument, defaultRegistry),
-  boardPinAliases: extractBoardPinAliases(defaultDocument),
-  showHeader: true,
-  headerMainOnly: false,
-  omitDefaults: false,
-  configEpoch: 0,
-  boardPinContext: [],
-  activeFile: initialMulti.activeFile,
-  baselineOutputs: initialMulti.generatedOutputs,
-};
+function buildStateForDocument(doc: ConfigDocument, isDirty: boolean): ConfigState {
+  const multi = buildMultiFileState(doc, true, false, false);
+  const validationErrors = validateDocument(doc, defaultRegistry);
+  appendDefaultMatchInfoEntries(validationErrors, multi.defaultMatches);
+  return {
+    document: doc,
+    generatedOutput: multi.generatedOutput,
+    generatedOutputs: multi.generatedOutputs,
+    sourceMap: multi.sourceMap,
+    sourceMaps: multi.sourceMaps,
+    validationErrors,
+    overrideMap: collectActiveOverrides(doc, defaultRegistry),
+    boardPinAliases: extractBoardPinAliases(doc),
+    showHeader: true,
+    headerMainOnly: false,
+    omitDefaults: false,
+    configEpoch: 0,
+    boardPinContext: [],
+    activeFile: multi.activeFile,
+    baselineOutputs: multi.generatedOutputs,
+    isDirty,
+  };
+}
 
 const ConfigContext = createContext<ConfigContextValue | null>(null);
 
@@ -187,6 +190,8 @@ function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
   let newDoc: ConfigDocument;
   let bumpEpoch = false;
   let nextActiveFile: string | undefined;
+  // undefined → use default (true = "mutating action, mark dirty")
+  let nextIsDirty: boolean | undefined;
 
   switch (action.type) {
     case "SET_SECTION": {
@@ -248,18 +253,26 @@ function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
         mcuBoards: action.payload.mcuBoards,
       };
       bumpEpoch = true;
+      nextIsDirty = false;
       break;
     }
     case "SET_MCU_BOARDS": {
       newDoc = {
         ...state.document,
-        mcuBoards: action.payload,
+        mcuBoards: action.payload.mcuBoards,
       };
+      // The sync effect distinguishes its initial-sync (reflecting McuContext's
+      // default state) from later syncs caused by real user actions. Only the
+      // latter should dirty the document.
+      if (!action.payload.markDirty) {
+        nextIsDirty = state.isDirty;
+      }
       break;
     }
     case "LOAD_DOCUMENT":
       newDoc = action.payload.document;
       bumpEpoch = true;
+      nextIsDirty = action.payload.dirty === true;
       break;
     case "RESET_CONFIG":
       newDoc = {
@@ -269,7 +282,10 @@ function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
         })),
       };
       bumpEpoch = true;
+      nextIsDirty = false;
       break;
+    case "MARK_CLEAN":
+      return { ...state, isDirty: false };
     case "TOGGLE_SECTION_DISABLED": {
       const newSections = state.document.sections.map((s) => {
         if (resolveHeader(s) === action.payload.header) {
@@ -489,6 +505,7 @@ function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
     configEpoch: bumpEpoch ? state.configEpoch + 1 : state.configEpoch,
     boardPinContext: state.boardPinContext,
     baselineOutputs: bumpEpoch ? multi.generatedOutputs : state.baselineOutputs,
+    isDirty: nextIsDirty ?? true,
   };
 }
 
@@ -496,8 +513,36 @@ interface ConfigProviderProps {
   children: ReactNode;
 }
 
+function loadInitialConfigState(): ConfigState {
+  const restored = tryLoadDraftSync();
+  if (restored) {
+    return buildStateForDocument(restored.document, restored.isDirty);
+  }
+  return buildStateForDocument(defaultDocument, false);
+}
+
+function tryLoadDraftSync(): { document: ConfigDocument; isDirty: boolean } | null {
+  if (typeof sessionStorage === "undefined") return null;
+  try {
+    const raw = sessionStorage.getItem("klipperforge:draft");
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as { document?: unknown; isDirty?: unknown };
+    if (typeof parsed.document !== "string") return null;
+    const project = JSON.parse(parsed.document) as { version?: unknown; document?: ConfigDocument };
+    if (project.version !== 1 || !project.document || !Array.isArray(project.document.sections)) {
+      return null;
+    }
+    return {
+      document: project.document,
+      isDirty: parsed.isDirty === true,
+    };
+  } catch {
+    return null;
+  }
+}
+
 export function ConfigProvider({ children }: ConfigProviderProps) {
-  const [state, dispatch] = useReducer(configReducer, initialState);
+  const [state, dispatch] = useReducer(configReducer, undefined, loadInitialConfigState);
 
   return <ConfigContext.Provider value={{ state, dispatch }}>{children}</ConfigContext.Provider>;
 }
