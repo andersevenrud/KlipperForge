@@ -145,7 +145,8 @@
       "driverInterface": "UART",
       "klipperSection": "tmc2208",
       "formFactor": "stepstick",
-      "baseChip": "tmc2208"
+      "baseChip": "tmc2208",
+      "hasImage": true
     },
     {
       "id": "btt-tmc2226",
@@ -154,7 +155,8 @@
       "driverInterface": "UART",
       "klipperSection": "tmc2209",
       "formFactor": "stepstick",
-      "baseChip": "tmc2209"
+      "baseChip": "tmc2209",
+      "hasImage": true
     },
     {
       "id": "btt-tmc2240",
@@ -163,7 +165,8 @@
       "driverInterface": "SPI",
       "klipperSection": "tmc2240",
       "formFactor": "stepstick",
-      "baseChip": "tmc2240"
+      "baseChip": "tmc2240",
+      "hasImage": true
     },
     {
       "id": "btt-tmc5160",
@@ -212,7 +215,8 @@
       "driverInterface": "SPI",
       "klipperSection": "tmc2240",
       "formFactor": "stepstick",
-      "baseChip": "tmc2240"
+      "baseChip": "tmc2240",
+      "hasImage": true
     },
     {
       "id": "mellow-fly-tmc5160",
@@ -231,7 +235,8 @@
       "driverInterface": "SPI",
       "klipperSection": "tmc5160",
       "formFactor": "stepstick",
-      "baseChip": "tmc5160"
+      "baseChip": "tmc5160",
+      "hasImage": true
     },
     {
       "id": "mellow-fly-hv-tmc5160-plus",
@@ -240,7 +245,8 @@
       "driverInterface": "SPI",
       "klipperSection": "tmc5160",
       "formFactor": "external",
-      "baseChip": "tmc5160"
+      "baseChip": "tmc5160",
+      "hasImage": true
     },
     {
       "id": "mellow-fly-hv-tmc5160-pro",
@@ -249,7 +255,8 @@
       "driverInterface": "SPI",
       "klipperSection": "tmc5160",
       "formFactor": "external",
-      "baseChip": "tmc5160"
+      "baseChip": "tmc5160",
+      "hasImage": true
     }
   ]
 }
