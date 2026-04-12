@@ -1,3 +1,4 @@
+import type { DataLoader } from "@klipperforge/printer-data";
 import {
   loadAccessory,
   loadDisplay,
@@ -35,7 +36,7 @@ interface ComparisonSpecSection {
 }
 
 export interface ComparisonCategoryConfig {
-  loader: (id: string) => Promise<unknown>;
+  loader: DataLoader<unknown>;
   nameAccessor: (data: DataRecord) => string;
   sections: ComparisonSpecSection[];
 }

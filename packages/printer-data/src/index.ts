@@ -1,3 +1,4 @@
+export type { DataLoader, IndexLoader } from "./loaders.js";
 export {
   loadAccessory,
   loadDisplay,

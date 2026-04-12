@@ -1,4 +1,4 @@
-import type { DocIndices } from "@klipperforge/printer-data";
+import type { DataLoader, DocIndices } from "@klipperforge/printer-data";
 import {
   loadDocIndices,
   loadMcuBoard,
@@ -45,19 +45,19 @@ export const usePrinterIndexQuery = () =>
 export const useDocIndicesQuery = () =>
   useSuspenseQuery({ queryKey: [DOC_INDICES_QUERY_KEY], queryFn: loadDocIndices });
 
-export function useDocDataQuery<T>(loader: (id: string) => Promise<T>, id: string): T {
+export function useDocDataQuery<T>(loader: DataLoader<T>, id: string): T {
   const query = useSuspenseQuery({
-    queryKey: [loader.name, id],
+    queryKey: [loader.loaderKey, id],
     queryFn: () => loader(id),
   });
 
   return query.data;
 }
 
-export function useDocDataMultipleQuery<T>(loader: (id: string) => Promise<T>, ids: string[]): T[] {
+export function useDocDataMultipleQuery<T>(loader: DataLoader<T>, ids: string[]): T[] {
   const queries = useSuspenseQueries({
     queries: ids.map((id) => ({
-      queryKey: [loader.name, id],
+      queryKey: [loader.loaderKey, id],
       queryFn: () => loader(id),
     })),
   });
@@ -66,7 +66,7 @@ export function useDocDataMultipleQuery<T>(loader: (id: string) => Promise<T>, i
 }
 
 export function useDocEntityQuery<T>(
-  loader: (id: string) => Promise<T>,
+  loader: DataLoader<T>,
   indexKey: keyof DocIndices,
   id: string,
 ): DocEntityResult<T> {
@@ -77,10 +77,10 @@ export function useDocEntityQuery<T>(
   return { entity, hasImage };
 }
 
-export function useOptionalDocDataQuery<T>(loader: (id: string) => Promise<T>, id: string | undefined): T | null {
+export function useOptionalDocDataQuery<T>(loader: DataLoader<T>, id: string | undefined): T | null {
   const resolvedId = id ?? "";
   const query = useQuery({
-    queryKey: [loader.name, resolvedId],
+    queryKey: [loader.loaderKey, resolvedId],
     queryFn: () => loader(resolvedId),
     enabled: !!id,
   });

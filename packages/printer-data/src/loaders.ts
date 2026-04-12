@@ -66,12 +66,22 @@ async function fetchJson<T>(path: string): Promise<T> {
   }
 }
 
-function createItemLoader<T>(path: string): (id: string) => Promise<T> {
-  return (id) => fetchJson<T>(`/${path}/${id}.json`);
+export interface DataLoader<T> {
+  (id: string): Promise<T>;
+  loaderKey: string;
 }
 
-function createIndexLoader<T>(path: string): () => Promise<T> {
-  return () => fetchJson<T>(`/${path}/index.json`);
+export interface IndexLoader<T> {
+  (): Promise<T>;
+  loaderKey: string;
+}
+
+function createItemLoader<T>(path: string): DataLoader<T> {
+  return Object.assign((id: string) => fetchJson<T>(`/${path}/${id}.json`), { loaderKey: `item:${path}` });
+}
+
+function createIndexLoader<T>(path: string): IndexLoader<T> {
+  return Object.assign(() => fetchJson<T>(`/${path}/index.json`), { loaderKey: `index:${path}` });
 }
 
 export const loadPrinterIndex = createIndexLoader<PrinterIndex>("printers");
