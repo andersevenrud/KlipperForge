@@ -214,6 +214,7 @@ function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
         const newDef = defaultRegistry.get(action.payload.definitionId);
         const newOrder = newDef?.order ?? 999;
         const insertIdx = newSections.findIndex((s) => {
+          if (s.definitionId === COMMENT_SECTION_TYPE) return false;
           const def = defaultRegistry.get(s.definitionId);
           return (def?.order ?? 999) > newOrder;
         });

@@ -129,10 +129,10 @@ export function useConfigPersistence() {
     ],
   );
 
-  // D) beforeunload — last-chance save + unsaved warning
+  // D) beforeunload — last-chance save to catch sub-1s debounce window
   useEffect(
     function beforeUnloadEffect() {
-      function handleBeforeUnload(e: BeforeUnloadEvent) {
+      function handleBeforeUnload() {
         const project = exportProject(configState.document);
         saveDraft({
           document: JSON.stringify(project),
@@ -142,10 +142,6 @@ export function useConfigPersistence() {
           savedAt: new Date().toISOString(),
           isDirty: configState.isDirty,
         });
-
-        if (configState.isDirty) {
-          e.preventDefault();
-        }
       }
 
       window.addEventListener("beforeunload", handleBeforeUnload);
