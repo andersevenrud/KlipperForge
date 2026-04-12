@@ -49,6 +49,11 @@
       "category": "toolheads",
       "id": "herome-gen7",
       "name": "HeroMe Gen7"
+    },
+    {
+      "category": "toolheads",
+      "id": "vz-printhead",
+      "name": "Vz-Printhead"
     }
   ]
 }
