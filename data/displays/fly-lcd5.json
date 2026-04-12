@@ -1,6 +1,6 @@
 {
   "id": "fly-lcd5",
-  "name": "FLY-LCD5",
+  "name": "Fly-LCD5",
   "manufacturer": "Mellow",
   "description": "A modular 5 inch display with swappable core boards. Supports both HDMI and DSI (MIPI) core boards, allowing flexible connection options. Features 10-level brightness, 180-degree flip, and power-off memory.",
   "displayType": "klipperscreen",

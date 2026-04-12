@@ -1,6 +1,6 @@
 {
   "id": "mellow-fly-tmc2209",
-  "name": "Mellow Fly-TMC2209",
+  "name": "Fly-TMC2209",
   "manufacturer": "Mellow",
   "description": "Mellow's Fly-TMC2209 StepStick module is based on the Trinamic TMC2209 chip with single-wire UART control, a 12–24 V input range and a 0.110 Ω sense resistor. Compatible with Marlin, Klipper and RRF firmware. Chip-level features (stealthChop2, spreadCycle, coolStep and stallGuard4 sensorless homing) are inherited from the underlying TMC2209.",
   "driverInterface": "UART",

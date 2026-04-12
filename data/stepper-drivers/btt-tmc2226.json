@@ -1,6 +1,6 @@
 {
   "id": "btt-tmc2226",
-  "name": "BigTreeTech TMC2226",
+  "name": "TMC2226",
   "manufacturer": "BigTreeTech",
   "description": "BigTreeTech's SilentStepStick-compatible TMC2226 driver module. The TMC2226 is an ultra-silent motor driver IC for two phase stepper motors whose StealthChop2 chopper ensures noiseless operation and maximum efficiency, paired with CoolStep current control for energy savings up to 75% and StallGuard4 load and stall detection over a Single Wire UART interface.",
   "driverInterface": "UART",

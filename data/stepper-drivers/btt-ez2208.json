@@ -1,6 +1,6 @@
 {
   "id": "btt-ez2208",
-  "name": "BigTreeTech EZ2208",
+  "name": "EZ2208",
   "manufacturer": "BigTreeTech",
   "description": "BigTreeTech's EZ-form-factor stepper driver module based on the Trinamic TMC2208. The BTT wiki lists a 12V/24VDC voltage range, 1.2A built-in drive current with a 2A peak, 256 microsteps per full step with interpolation, and stealthChop2 plus spreadCycle chopper modes over a single-wire UART interface.",
   "driverInterface": "UART",

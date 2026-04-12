@@ -1,6 +1,6 @@
 {
   "id": "fly-halo",
-  "name": "FLY-Halo",
+  "name": "Fly-Halo",
   "manufacturer": "Mellow",
   "description": "A 1.28 inch round WiFi display with ESP32-S3 processor, similar in concept to the BTT KNOMI. Shows real-time print status via WiFi connection to the Klipper host.",
   "displayType": "standalone",

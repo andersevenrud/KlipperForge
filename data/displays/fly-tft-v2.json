@@ -1,6 +1,6 @@
 {
   "id": "fly-tft-v2",
-  "name": "FLY-TFT-V2",
+  "name": "Fly-TFT-V2",
   "manufacturer": "Mellow",
   "description": "A 3.5 inch SPI TFT display with ST7796 driver designed for Raspberry Pi. Supports KlipperScreen for full Klipper control via touchscreen interface.",
   "displayType": "klipperscreen",

@@ -25,8 +25,8 @@
       "manufacturer": "Cartographer3D",
       "probeType": "eddy-current"
     },
-    { "id": "btt-eddy-usb", "name": "BTT Eddy USB", "manufacturer": "BigTreeTech", "probeType": "eddy-current" },
-    { "id": "btt-eddy-coil", "name": "BTT Eddy Coil", "manufacturer": "BigTreeTech", "probeType": "eddy-current" },
+    { "id": "btt-eddy-usb", "name": "Eddy USB", "manufacturer": "BigTreeTech", "probeType": "eddy-current" },
+    { "id": "btt-eddy-coil", "name": "Eddy Coil", "manufacturer": "BigTreeTech", "probeType": "eddy-current" },
     { "id": "beacon", "name": "Beacon", "manufacturer": "Beacon3D", "probeType": "eddy-current", "hasImage": true },
     { "id": "beacon-revh", "name": "Beacon RevH", "manufacturer": "Beacon3D", "probeType": "eddy-current" },
     {

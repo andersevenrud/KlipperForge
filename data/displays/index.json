@@ -147,70 +147,70 @@
     },
     {
       "id": "fly-tft-v1",
-      "name": "FLY-TFT-V1",
+      "name": "Fly-TFT-V1",
       "manufacturer": "Mellow",
       "displayType": "klipperscreen",
       "hasImage": true
     },
     {
       "id": "fly-tft-v2",
-      "name": "FLY-TFT-V2",
+      "name": "Fly-TFT-V2",
       "manufacturer": "Mellow",
       "displayType": "klipperscreen",
       "hasImage": true
     },
     {
       "id": "fly-hdmi5",
-      "name": "FLY-HDMI5",
+      "name": "Fly-HDMI5",
       "manufacturer": "Mellow",
       "displayType": "klipperscreen"
     },
     {
       "id": "fly-hdmi7",
-      "name": "FLY-HDMI7",
+      "name": "Fly-HDMI7",
       "manufacturer": "Mellow",
       "displayType": "klipperscreen"
     },
     {
       "id": "fly-lcd5",
-      "name": "FLY-LCD5",
+      "name": "Fly-LCD5",
       "manufacturer": "Mellow",
       "displayType": "klipperscreen"
     },
     {
       "id": "fly-lcd7",
-      "name": "FLY-LCD7",
+      "name": "Fly-LCD7",
       "manufacturer": "Mellow",
       "displayType": "klipperscreen"
     },
     {
       "id": "fly-nova35",
-      "name": "FLY-Nova35",
+      "name": "Fly-Nova35",
       "manufacturer": "Mellow",
       "displayType": "standalone"
     },
     {
       "id": "fly-wiscreen-7",
-      "name": "FLY-WiScreen 7\"",
+      "name": "Fly-WiScreen 7\"",
       "manufacturer": "Mellow",
       "displayType": "standalone"
     },
     {
       "id": "fly-wiscreen-5",
-      "name": "FLY-WiScreen 5\"",
+      "name": "Fly-WiScreen 5\"",
       "manufacturer": "Mellow",
       "displayType": "standalone",
       "hasImage": true
     },
     {
       "id": "fly-halo",
-      "name": "FLY-Halo",
+      "name": "Fly-Halo",
       "manufacturer": "Mellow",
       "displayType": "standalone"
     },
     {
       "id": "fly-mini-pad",
-      "name": "FLY-MINI-Pad",
+      "name": "Fly-MINI-Pad",
       "manufacturer": "Mellow",
       "displayType": "all-in-one",
       "hasImage": true

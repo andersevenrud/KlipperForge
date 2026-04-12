@@ -1,6 +1,6 @@
 {
   "id": "mellow-fly-tmc2240",
-  "name": "Mellow Fly-TMC2240",
+  "name": "Fly-TMC2240",
   "manufacturer": "Mellow",
   "description": "Mellow's Fly-TMC2240 StepStick is based on the Trinamic TMC2240 with SPI or UART control, a 12–36 V input range and a 3.0 A maximum current rating. Features 256-microstep interpolation via microPlyer, combined stealthChop and spreadCycle chopper, and integrated stallGuard2 / stallGuard4 sensorless motor load detection.",
   "driverInterface": "SPI",

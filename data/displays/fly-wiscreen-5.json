@@ -1,6 +1,6 @@
 {
   "id": "fly-wiscreen-5",
-  "name": "FLY-WiScreen 5\"",
+  "name": "Fly-WiScreen 5\"",
   "manufacturer": "Mellow",
   "description": "A standalone 5 inch WiFi display for Klipper control. Connects wirelessly to the Klipper host via Moonraker API.",
   "displayType": "standalone",

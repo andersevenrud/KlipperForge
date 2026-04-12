@@ -50,7 +50,7 @@
     },
     {
       "id": "btt-ez2130",
-      "name": "BigTreeTech EZ2130",
+      "name": "EZ2130",
       "manufacturer": "BigTreeTech",
       "driverInterface": "SPI",
       "klipperSection": "tmc2130",
@@ -60,7 +60,7 @@
     },
     {
       "id": "btt-ez2208",
-      "name": "BigTreeTech EZ2208",
+      "name": "EZ2208",
       "manufacturer": "BigTreeTech",
       "driverInterface": "UART",
       "klipperSection": "tmc2208",
@@ -70,7 +70,7 @@
     },
     {
       "id": "btt-ez2209",
-      "name": "BigTreeTech EZ2209",
+      "name": "EZ2209",
       "manufacturer": "BigTreeTech",
       "driverInterface": "UART",
       "klipperSection": "tmc2209",
@@ -80,7 +80,7 @@
     },
     {
       "id": "btt-ez2225",
-      "name": "BigTreeTech EZ2225",
+      "name": "EZ2225",
       "manufacturer": "BigTreeTech",
       "driverInterface": "UART",
       "klipperSection": "tmc2208",
@@ -90,7 +90,7 @@
     },
     {
       "id": "btt-ez2226",
-      "name": "BigTreeTech EZ2226",
+      "name": "EZ2226",
       "manufacturer": "BigTreeTech",
       "driverInterface": "UART",
       "klipperSection": "tmc2209",
@@ -100,7 +100,7 @@
     },
     {
       "id": "btt-ez5160-pro",
-      "name": "BigTreeTech EZ5160 Pro",
+      "name": "EZ5160 Pro",
       "manufacturer": "BigTreeTech",
       "driverInterface": "SPI",
       "klipperSection": "tmc5160",
@@ -110,7 +110,7 @@
     },
     {
       "id": "btt-tmc2130",
-      "name": "BigTreeTech TMC2130",
+      "name": "TMC2130",
       "manufacturer": "BigTreeTech",
       "driverInterface": "SPI",
       "klipperSection": "tmc2130",
@@ -120,7 +120,7 @@
     },
     {
       "id": "btt-tmc2208",
-      "name": "BigTreeTech TMC2208",
+      "name": "TMC2208",
       "manufacturer": "BigTreeTech",
       "driverInterface": "UART",
       "klipperSection": "tmc2208",
@@ -130,7 +130,7 @@
     },
     {
       "id": "btt-tmc2209",
-      "name": "BigTreeTech TMC2209",
+      "name": "TMC2209",
       "manufacturer": "BigTreeTech",
       "driverInterface": "UART",
       "klipperSection": "tmc2209",
@@ -140,7 +140,7 @@
     },
     {
       "id": "btt-tmc2225",
-      "name": "BigTreeTech TMC2225",
+      "name": "TMC2225",
       "manufacturer": "BigTreeTech",
       "driverInterface": "UART",
       "klipperSection": "tmc2208",
@@ -150,7 +150,7 @@
     },
     {
       "id": "btt-tmc2226",
-      "name": "BigTreeTech TMC2226",
+      "name": "TMC2226",
       "manufacturer": "BigTreeTech",
       "driverInterface": "UART",
       "klipperSection": "tmc2209",
@@ -160,7 +160,7 @@
     },
     {
       "id": "btt-tmc2240",
-      "name": "BigTreeTech TMC2240",
+      "name": "TMC2240",
       "manufacturer": "BigTreeTech",
       "driverInterface": "SPI",
       "klipperSection": "tmc2240",
@@ -170,7 +170,7 @@
     },
     {
       "id": "btt-tmc5160",
-      "name": "BigTreeTech TMC5160",
+      "name": "TMC5160",
       "manufacturer": "BigTreeTech",
       "driverInterface": "SPI",
       "klipperSection": "tmc5160",
@@ -180,7 +180,7 @@
     },
     {
       "id": "btt-tmc5160-pro",
-      "name": "BigTreeTech TMC5160 Pro",
+      "name": "TMC5160 Pro",
       "manufacturer": "BigTreeTech",
       "driverInterface": "SPI",
       "klipperSection": "tmc5160",
@@ -190,7 +190,7 @@
     },
     {
       "id": "btt-tmc5160t-plus",
-      "name": "BigTreeTech TMC5160T Plus",
+      "name": "TMC5160T Plus",
       "manufacturer": "BigTreeTech",
       "driverInterface": "SPI",
       "klipperSection": "tmc5160",
@@ -200,7 +200,7 @@
     },
     {
       "id": "mellow-fly-tmc2209",
-      "name": "Mellow Fly-TMC2209",
+      "name": "Fly-TMC2209",
       "manufacturer": "Mellow",
       "driverInterface": "UART",
       "klipperSection": "tmc2209",
@@ -210,7 +210,7 @@
     },
     {
       "id": "mellow-fly-tmc2240",
-      "name": "Mellow Fly-TMC2240",
+      "name": "Fly-TMC2240",
       "manufacturer": "Mellow",
       "driverInterface": "SPI",
       "klipperSection": "tmc2240",
@@ -220,7 +220,7 @@
     },
     {
       "id": "mellow-fly-tmc5160",
-      "name": "Mellow Fly-TMC5160",
+      "name": "Fly-TMC5160",
       "manufacturer": "Mellow",
       "driverInterface": "SPI",
       "klipperSection": "tmc5160",
@@ -230,7 +230,7 @@
     },
     {
       "id": "mellow-fly-tmc5160hv",
-      "name": "Mellow Fly-TMC5160HV",
+      "name": "Fly-TMC5160HV",
       "manufacturer": "Mellow",
       "driverInterface": "SPI",
       "klipperSection": "tmc5160",
@@ -240,7 +240,7 @@
     },
     {
       "id": "mellow-fly-hv-tmc5160-plus",
-      "name": "Mellow Fly HV-TMC5160 Plus",
+      "name": "Fly HV-TMC5160 Plus",
       "manufacturer": "Mellow",
       "driverInterface": "SPI",
       "klipperSection": "tmc5160",
@@ -250,7 +250,7 @@
     },
     {
       "id": "mellow-fly-hv-tmc5160-pro",
-      "name": "Mellow Fly HV-TMC5160 Pro",
+      "name": "Fly HV-TMC5160 Pro",
       "manufacturer": "Mellow",
       "driverInterface": "SPI",
       "klipperSection": "tmc5160",

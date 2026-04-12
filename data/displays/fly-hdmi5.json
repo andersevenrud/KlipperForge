@@ -1,6 +1,6 @@
 {
   "id": "fly-hdmi5",
-  "name": "FLY-HDMI5",
+  "name": "Fly-HDMI5",
   "manufacturer": "Mellow",
   "description": "A 5 inch IPS HDMI touchscreen display with USB-C touch interface. Supports direct FPC connection to FLY host boards (FLY-PI-V2, FLY-C8, FLY-PRO-X10) as well as standard HDMI cable connection to any SBC.",
   "displayType": "klipperscreen",

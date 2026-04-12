@@ -1,6 +1,6 @@
 {
   "id": "btt-eddy-usb",
-  "name": "BTT Eddy USB",
+  "name": "Eddy USB",
   "manufacturer": "BigTreeTech",
   "description": "The BTT Eddy USB is an eddy current bed probe that connects directly to the host via USB. It provides non-contact bed probing with temperature compensation and supports rapid multi-point surface scanning. The USB version includes its own RP2040 MCU for signal processing.",
   "probeType": "eddy-current",

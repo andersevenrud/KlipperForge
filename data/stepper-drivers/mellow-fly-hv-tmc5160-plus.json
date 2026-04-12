@@ -1,6 +1,6 @@
 {
   "id": "mellow-fly-hv-tmc5160-plus",
-  "name": "Mellow Fly HV-TMC5160 Plus",
+  "name": "Fly HV-TMC5160 Plus",
   "manufacturer": "Mellow",
   "description": "The Mellow Fly HV-TMC5160 Plus is an external stepper motor driver module that communicates over SPI and is rated for 12-60 V DC input and up to 10 A maximum current — a distinct product from the HV-TMC5160 Pro, with a higher voltage ceiling and a higher current rating. Mellow's documentation describes an FPC cable connection, RGB lighting effect control, and a 12 V fan wiring option, and lists stealthChop2, spreadCycle, dcStep, stallGuard2, and coolStep as the key TMC features, with up to 256 microsteps via the TMC microPlyer step/direction interpolator.",
   "driverInterface": "SPI",

@@ -1,6 +1,6 @@
 {
   "id": "btt-tmc2130",
-  "name": "BigTreeTech TMC2130",
+  "name": "TMC2130",
   "manufacturer": "BigTreeTech",
   "description": "BigTreeTech's SilentStepStick-compatible TMC2130 driver module. Based on Trinamic's TMC2130 chip with SPI and Step/Dir control, stealthChop for quiet operation and spreadCycle for dynamic motor control. Accepts 12V/24V DC input and is rated for 1.2 A motor current (2 A peak). Logic voltage is 3.3V/5V. VREF is adjustable via an onboard potentiometer and defaults to 1 V (±0.2).",
   "driverInterface": "SPI",

@@ -1,6 +1,6 @@
 {
   "id": "fly-lcd7",
-  "name": "FLY-LCD7",
+  "name": "Fly-LCD7",
   "manufacturer": "Mellow",
   "description": "A modular 7 inch display with swappable HDMI core board. The 7 inch variant only supports the HDMI core board (not DSI). Features 10-level brightness, 180-degree flip, and power-off memory.",
   "displayType": "klipperscreen",

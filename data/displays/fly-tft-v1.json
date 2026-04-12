@@ -1,6 +1,6 @@
 {
   "id": "fly-tft-v1",
-  "name": "FLY-TFT-V1",
+  "name": "Fly-TFT-V1",
   "manufacturer": "Mellow",
   "description": "A 3.5 inch SPI TFT display with resistive touchscreen for Raspberry Pi and FLY host boards. The predecessor to the FLY-TFT-V2, supporting KlipperScreen at up to 50fps via SPI.",
   "displayType": "klipperscreen",

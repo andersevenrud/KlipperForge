@@ -1,6 +1,6 @@
 {
   "id": "btt-eddy-coil",
-  "name": "BTT Eddy Coil",
+  "name": "Eddy Coil",
   "manufacturer": "BigTreeTech",
   "description": "The BTT Eddy Coil is a compact eddy current sensor that connects to a printer's existing MCU via I2C rather than using its own USB connection. This makes it lighter and simpler to wire, though it relies on the host MCU for signal processing. It is designed to be mounted directly on the toolhead PCB or carriage.",
   "probeType": "eddy-current",

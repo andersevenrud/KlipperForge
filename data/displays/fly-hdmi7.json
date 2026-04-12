@@ -1,6 +1,6 @@
 {
   "id": "fly-hdmi7",
-  "name": "FLY-HDMI7",
+  "name": "Fly-HDMI7",
   "manufacturer": "Mellow",
   "description": "A 7 inch IPS HDMI capacitive touchscreen display with USB-C touch interface and 3.5mm headphone jack. Supports direct FPC connection to FLY host boards as well as standard HDMI cable connection to any SBC. Features tempered glass and 500 nits brightness.",
   "displayType": "klipperscreen",

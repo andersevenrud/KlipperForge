@@ -1,6 +1,6 @@
 {
   "id": "mellow-cpap",
-  "name": "FLY-7040 CPAP Fan Kit",
+  "name": "Fly-7040 CPAP Fan Kit",
   "manufacturer": "Mellow",
   "description": "High-airflow part-cooling system using a WS7040 brushless centrifugal blower connected via a flexible CPAP hose to the toolhead. The kit includes a driver/controller board with JST connectors for 24V power input and PWM signal from the MCU. Delivers significantly higher airflow than conventional 5015 blowers, making it suitable for high-speed printing.",
   "fanType": "cpap",

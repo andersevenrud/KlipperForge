@@ -1,6 +1,6 @@
 {
   "id": "btt-tmc2240",
-  "name": "BigTreeTech TMC2240",
+  "name": "TMC2240",
   "manufacturer": "BigTreeTech",
   "description": "BigTreeTech's SilentStepStick-compatible TMC2240 driver module. The TMC2240 is a smart high-performance stepper motor driver IC with SPI and Single Wire UART serial communication interfaces and extensive diagnosis capabilities, operating from 4.5–36V DC and delivering IRMS = 2.1 A RMS (3 A sine-wave peak) with IMAX = 5.0 A bridge peak current and up to 256 microsteps per full step.",
   "driverInterface": "SPI",

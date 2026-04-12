@@ -1,6 +1,6 @@
 {
   "id": "fly-mini-pad",
-  "name": "FLY-MINI-Pad",
+  "name": "Fly-MINI-Pad",
   "manufacturer": "Mellow",
   "description": "A compact all-in-one Klipper host with integrated 3.5 inch touchscreen display. Features an Allwinner H3 processor and 512MB RAM with a pre-installed Klipper software stack.",
   "displayType": "all-in-one",

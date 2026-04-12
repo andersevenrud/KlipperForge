@@ -1,6 +1,6 @@
 {
   "id": "mellow-fly-tmc5160",
-  "name": "Mellow Fly-TMC5160",
+  "name": "Fly-TMC5160",
   "manufacturer": "Mellow",
   "description": "Mellow's Fly-TMC5160 StepStick is based on the Trinamic TMC5160 with SPI control, a 12–24 V input range, a maximum current of 4.4 A and a 0.075 Ω sense resistor. Supports up to 256 microsteps with microPlyer interpolation, stealthChop2 silent operation, spreadCycle chopper, coolStep current control, dcStep load-dependent speed control and stallGuard2 sensorless load detection.",
   "driverInterface": "SPI",
