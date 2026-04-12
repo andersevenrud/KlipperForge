@@ -1,0 +1,35 @@
+{
+  "id": "ldo-42sth60-3004mac",
+  "name": "LDO-42STH60-3004MAC (Kraken V1)",
+  "manufacturer": "LDO",
+  "description": "High-resolution 0.9° variant of the D3vil Design Kraken V1 stepper. Same 60mm body and 3.0A rating as the 1.8° version with integrated PT1000 thermistor. Finer stepping for improved surface quality in demanding applications.",
+  "nemaSize": 17,
+  "electricalSpecs": {
+    "ratedCurrent": 3.0,
+    "holdingTorque": 78,
+    "stepAngle": 0.9,
+    "phaseResistance": 1.1,
+    "phaseInductance": 3.5,
+    "ratedVoltage": 3.3
+  },
+  "physicalSpecs": {
+    "bodyLength": 60,
+    "weight": 500,
+    "shaftDiameter": 5,
+    "shaftLength": 40
+  },
+  "connectorType": "JST-XH 4-pin",
+  "temperatureRating": 130,
+  "references": [
+    {
+      "label": "D3vil Design Kraken Stepper GitHub",
+      "url": "https://github.com/D3vil-Design/Kraken-Stepper",
+      "type": "github"
+    },
+    {
+      "label": "LDO-42STH60-3004MAC Datasheet (PDF)",
+      "url": "https://github.com/D3vil-Design/Kraken-Stepper/blob/main/Data%20Sheet/Kraken%200.9%20%5BLDO-42STH60-3004MAC%20(S40)%5D%20RevA.pdf",
+      "type": "datasheet"
+    }
+  ]
+}

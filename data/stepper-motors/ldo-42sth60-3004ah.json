@@ -1,0 +1,35 @@
+{
+  "id": "ldo-42sth60-3004ah",
+  "name": "LDO-42STH60-3004AH (Kraken V2)",
+  "manufacturer": "LDO",
+  "description": "High-temperature Class H variant of the D3vil Design Kraken V2 stepper. Features 3.0A rating, 37mm shaft, 180°C temperature rating, and integrated thermistor. Runs significantly cooler than V1 and is suitable for enclosed high-temperature printers.",
+  "nemaSize": 17,
+  "electricalSpecs": {
+    "ratedCurrent": 3.0,
+    "holdingTorque": 80,
+    "stepAngle": 1.8,
+    "phaseResistance": 1.0,
+    "phaseInductance": 1.6,
+    "ratedVoltage": 3.0
+  },
+  "physicalSpecs": {
+    "bodyLength": 60,
+    "weight": 500,
+    "shaftDiameter": 5,
+    "shaftLength": 37
+  },
+  "connectorType": "JST-XH 4-pin",
+  "temperatureRating": 180,
+  "references": [
+    {
+      "label": "D3vil Design Kraken Stepper GitHub",
+      "url": "https://github.com/D3vil-Design/Kraken-Stepper",
+      "type": "github"
+    },
+    {
+      "label": "LDO-42STH60-3004AH Datasheet (PDF)",
+      "url": "https://github.com/D3vil-Design/Kraken-Stepper/blob/main/Data%20Sheet/Kraken%20V2%20Datasheet.pdf",
+      "type": "datasheet"
+    }
+  ]
+}

@@ -34,6 +34,27 @@
       "nemaSize": 17
     },
     {
+      "id": "ldo-42sth60-3004ac",
+      "name": "LDO-42STH60-3004AC (Kraken V1)",
+      "manufacturer": "LDO",
+      "nemaSize": 17,
+      "hasImage": true
+    },
+    {
+      "id": "ldo-42sth60-3004mac",
+      "name": "LDO-42STH60-3004MAC (Kraken V1)",
+      "manufacturer": "LDO",
+      "nemaSize": 17,
+      "hasImage": true
+    },
+    {
+      "id": "ldo-42sth60-3004ah",
+      "name": "LDO-42STH60-3004AH (Kraken V2)",
+      "manufacturer": "LDO",
+      "nemaSize": 17,
+      "hasImage": true
+    },
+    {
       "id": "ldo-42sth40-2004mah",
       "name": "LDO-42STH40-2004MAH",
       "manufacturer": "LDO",
