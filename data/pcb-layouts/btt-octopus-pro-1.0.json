@@ -1056,6 +1056,111 @@
       "pins": ["<VIN>", "<DC>", "<12V>", "<DC>", "<5V>", "<DC>"],
       "orientation": "vertical",
       "rows": 3
+    },
+    {
+      "name": "JUMPER_VBUS",
+      "title": "V-BUS (USB Power)",
+      "category": "jumper",
+      "x": 310,
+      "y": 320,
+      "width": 30,
+      "height": 20,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
+    },
+    {
+      "name": "CANBUS",
+      "category": "communication",
+      "x": 850,
+      "y": 430,
+      "width": 130,
+      "height": 90,
+      "pins": ["<NC>", "PD1", "<NC>", "<NC>", "PD0<NC>"],
+      "orientation": "horizontal",
+      "rows": 2
+    },
+    {
+      "name": "WIFI",
+      "category": "misc",
+      "x": 810,
+      "y": 190,
+      "width": 130,
+      "height": 140,
+      "pins": [
+        "<3.3V>",
+        "PC3",
+        "PC2",
+        "PB13",
+        "<NC>",
+        "PG8",
+        "<BC>",
+        "PG7",
+        "<GND>",
+        "PB12",
+        "<NC>",
+        "PD7",
+        "PD10",
+        "PD8",
+        "PD9"
+      ],
+      "orientation": "horizontal",
+      "rows": 2
+    },
+    {
+      "name": "USB-A",
+      "category": "communication",
+      "x": 880,
+      "y": 340,
+      "width": 90,
+      "height": 80,
+      "pins": ["<GND>", "PB15", "PB14", "<5V>"],
+      "orientation": "horizontal",
+      "rows": 1
+    },
+    {
+      "name": "USB-C",
+      "category": "misc",
+      "x": 920,
+      "y": 110,
+      "width": 50,
+      "height": 60,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "POWER_BED",
+      "category": "power",
+      "x": 0,
+      "y": 315,
+      "width": 93,
+      "height": 117,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "POWER_MCU",
+      "category": "power",
+      "x": 0,
+      "y": 199,
+      "width": 93,
+      "height": 117,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
+    },
+    {
+      "name": "POWER_MOTOR",
+      "category": "power",
+      "x": 0,
+      "y": 79,
+      "width": 93,
+      "height": 117,
+      "pins": [],
+      "orientation": "vertical",
+      "rows": 1
     }
   ],
   "jumperConfigs": {
@@ -1339,6 +1444,16 @@
       {
         "label": "PNP",
         "pattern": [[0], [0]]
+      }
+    ],
+    "JUMPER_VBUS": [
+      {
+        "label": "OFF",
+        "pattern": [[0, 0]]
+      },
+      {
+        "label": "ON",
+        "pattern": [[1, 1]]
       }
     ],
     "JUMPER_MOTOR0_MODE": [
