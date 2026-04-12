@@ -1,0 +1,44 @@
+{
+  "id": "delta-asb02505sha",
+  "name": "ASB02505SHA-AY6B",
+  "manufacturer": "Delta",
+  "description": "The Delta ASB02505SHA-AY6B is a 25×10mm axial fan designed for compact cooling applications. Its small form factor makes it suitable for space-constrained toolhead designs. Includes a tachometer signal on the third wire for speed monitoring.",
+  "fanType": "axial",
+  "size": "2510",
+  "airflowSpecs": {
+    "airflow": 4.31,
+    "staticPressure": 8.13,
+    "rpm": 15000
+  },
+  "electricalSpecs": {
+    "voltage": 5,
+    "current": 0.12,
+    "power": 0.6,
+    "pwmCapable": false,
+    "tachoSignal": true
+  },
+  "noiseSpecs": {
+    "noiseLevel": 31
+  },
+  "physicalSpecs": {
+    "dimensions": "25×25×10mm",
+    "weight": 5.6,
+    "bearingType": "Sleeve Bearing",
+    "connectorType": "3-Pin",
+    "material": "Plastic (UL 94V-0)",
+    "operatingTemperature": "-10°C to +70°C"
+  },
+  "references": [
+    {
+      "label": "Delta ASB02505SHA-AY6B Datasheet (PDF)",
+      "url": "https://www.delta-fan.com/Download/Spec/ASB02505SHA-AY6B.pdf",
+      "type": "datasheet"
+    },
+    {
+      "label": "Delta ASB02505SHA-AY6B Product Page",
+      "url": "https://www.delta-fan.com/ASB02505SHA-AY6B.html",
+      "type": "product"
+    }
+  ],
+  "unverified": []
+}

@@ -102,6 +102,14 @@
       "hasImage": true
     },
     {
+      "id": "delta-asb02505sha",
+      "name": "ASB02505SHA-AY6B",
+      "manufacturer": "Delta",
+      "fanType": "axial",
+      "size": "2510",
+      "hasImage": true
+    },
+    {
       "id": "delta-bfb0412hha",
       "name": "BFB0412HHA",
       "manufacturer": "Delta",
