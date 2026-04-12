@@ -357,6 +357,24 @@ export function DocSidebar({
 
   const searchActive = search.trim().length > 0;
 
+  const noResults =
+    searchActive &&
+    filteredBoardGroups.length === 0 &&
+    filteredPrinterGroups.length === 0 &&
+    filteredMotorGroups.length === 0 &&
+    filteredStepperDriverGroups.length === 0 &&
+    filteredProbeGroups.length === 0 &&
+    filteredFanGroups.length === 0 &&
+    filteredThermistorGroups.length === 0 &&
+    filteredExtruderGroups.length === 0 &&
+    filteredHotendGroups.length === 0 &&
+    filteredPowerSupplyGroups.length === 0 &&
+    filteredAccessoryGroups.length === 0 &&
+    filteredDisplayGroups.length === 0 &&
+    filteredFilamentGroups.length === 0 &&
+    filteredToolheadGroups.length === 0 &&
+    filteredMmuGroups.length === 0;
+
   function categoryOpen(category: DocCategory) {
     if (searchActive) return { open: true as const, onOpenChange: noop };
     const override = categoryOverrides[category];
@@ -423,738 +441,770 @@ export function DocSidebar({
         </div>
       </div>
       <div ref={scrollRef} className="relative flex-1 overflow-y-auto p-1">
-        <div className={isCategoryDimmed("mcu-boards") ? "pointer-events-none opacity-40" : ""}>
-          <Collapsible {...categoryOpen("mcu-boards")}>
-            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
-              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
-              <Cpu className="size-3.5" />
-              <span>MCU Boards</span>
-              <span className="text-muted-foreground ml-auto text-xs">{indices.boards.length}</span>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              {filteredBoardGroups.map((group) => (
-                <Collapsible
-                  key={group.key}
-                  {...groupOpen(
-                    "mcu-boards",
-                    group.key,
-                    group.items.map((b) => b.id),
-                  )}
-                >
-                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
-                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
-                    <span>{group.key}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    {group.items.map((board) => (
-                      <SidebarItem
-                        key={board.id}
-                        itemId={board.id}
-                        category="mcu-boards"
-                        label={board.name}
-                        suffix={
-                          pcbBoardIds.has(board.id) || board.hasImage ? (
-                            <span className="ml-auto flex shrink-0 gap-1">
-                              {pcbBoardIds.has(board.id) && (
-                                <span title="Has interactive PCB layout">
-                                  <CircuitBoard className="size-3 text-muted-foreground" />
-                                </span>
-                              )}
-                              {board.hasImage && (
-                                <span title="Has product image">
-                                  <Image className="size-3 text-muted-foreground" />
-                                </span>
-                              )}
-                            </span>
-                          ) : undefined
-                        }
-                        selected={isSelected(selection, "mcu-boards", board.id)}
-                        compareMode={compareMode}
-                        compareChecked={comparePendingIds.includes(board.id)}
-                        onClick={handleItemClick}
-                      />
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              ))}
-              {filteredBoardGroups.length === 0 && (
-                <p className="text-muted-foreground p-4 text-center text-sm">No boards found.</p>
-              )}
-            </CollapsibleContent>
-          </Collapsible>
-        </div>
+        {!(searchActive && filteredBoardGroups.length === 0) && (
+          <div className={isCategoryDimmed("mcu-boards") ? "pointer-events-none opacity-40" : ""}>
+            <Collapsible {...categoryOpen("mcu-boards")}>
+              <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+                <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+                <Cpu className="size-3.5" />
+                <span>MCU Boards</span>
+                <span className="text-muted-foreground ml-auto text-xs">{indices.boards.length}</span>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                {filteredBoardGroups.map((group) => (
+                  <Collapsible
+                    key={group.key}
+                    {...groupOpen(
+                      "mcu-boards",
+                      group.key,
+                      group.items.map((b) => b.id),
+                    )}
+                  >
+                    <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                      <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                      <span>{group.key}</span>
+                      <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      {group.items.map((board) => (
+                        <SidebarItem
+                          key={board.id}
+                          itemId={board.id}
+                          category="mcu-boards"
+                          label={board.name}
+                          suffix={
+                            pcbBoardIds.has(board.id) || board.hasImage ? (
+                              <span className="ml-auto flex shrink-0 gap-1">
+                                {pcbBoardIds.has(board.id) && (
+                                  <span title="Has interactive PCB layout">
+                                    <CircuitBoard className="size-3 text-muted-foreground" />
+                                  </span>
+                                )}
+                                {board.hasImage && (
+                                  <span title="Has product image">
+                                    <Image className="size-3 text-muted-foreground" />
+                                  </span>
+                                )}
+                              </span>
+                            ) : undefined
+                          }
+                          selected={isSelected(selection, "mcu-boards", board.id)}
+                          compareMode={compareMode}
+                          compareChecked={comparePendingIds.includes(board.id)}
+                          onClick={handleItemClick}
+                        />
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+                ))}
+                {filteredBoardGroups.length === 0 && (
+                  <p className="text-muted-foreground p-4 text-center text-sm">No boards found.</p>
+                )}
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        )}
 
-        <div className={compareMode ? "pointer-events-none opacity-40" : ""}>
-          <Collapsible {...categoryOpen("printers")}>
-            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
-              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
-              <Printer className="size-3.5" />
-              <span>Printers</span>
-              <span className="text-muted-foreground ml-auto text-xs">{indices.printers.length}</span>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              {filteredPrinterGroups.map((group) => (
-                <Collapsible
-                  key={group.key}
-                  {...groupOpen(
-                    "printers",
-                    group.key,
-                    group.items.map((p) => p.id),
-                  )}
-                >
-                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
-                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
-                    <span>{group.key}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    {group.items.map((printer) => (
-                      <button
-                        key={printer.id}
-                        data-item-id={printer.id}
-                        type="button"
-                        className={`w-full truncate rounded px-8 py-1 text-left text-sm hover:bg-accent ${
-                          isSelected(selection, "printers", printer.id) ? "bg-accent font-medium" : ""
-                        }`}
-                        onClick={() => onSelect({ category: "printers", itemId: printer.id })}
-                      >
-                        {printer.name}
-                      </button>
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              ))}
-              {filteredPrinterGroups.length === 0 && (
-                <p className="text-muted-foreground p-4 text-center text-sm">No printers found.</p>
-              )}
-            </CollapsibleContent>
-          </Collapsible>
-        </div>
+        {!(searchActive && filteredPrinterGroups.length === 0) && (
+          <div className={compareMode ? "pointer-events-none opacity-40" : ""}>
+            <Collapsible {...categoryOpen("printers")}>
+              <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+                <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+                <Printer className="size-3.5" />
+                <span>Printers</span>
+                <span className="text-muted-foreground ml-auto text-xs">{indices.printers.length}</span>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                {filteredPrinterGroups.map((group) => (
+                  <Collapsible
+                    key={group.key}
+                    {...groupOpen(
+                      "printers",
+                      group.key,
+                      group.items.map((p) => p.id),
+                    )}
+                  >
+                    <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                      <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                      <span>{group.key}</span>
+                      <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      {group.items.map((printer) => (
+                        <button
+                          key={printer.id}
+                          data-item-id={printer.id}
+                          type="button"
+                          className={`w-full truncate rounded px-8 py-1 text-left text-sm hover:bg-accent ${
+                            isSelected(selection, "printers", printer.id) ? "bg-accent font-medium" : ""
+                          }`}
+                          onClick={() => onSelect({ category: "printers", itemId: printer.id })}
+                        >
+                          {printer.name}
+                        </button>
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+                ))}
+                {filteredPrinterGroups.length === 0 && (
+                  <p className="text-muted-foreground p-4 text-center text-sm">No printers found.</p>
+                )}
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        )}
 
-        <div className={isCategoryDimmed("stepper-motors") ? "pointer-events-none opacity-40" : ""}>
-          <Collapsible {...categoryOpen("stepper-motors")}>
-            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
-              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
-              <Cog className="size-3.5" />
-              <span>Stepper Motors</span>
-              <span className="text-muted-foreground ml-auto text-xs">{indices.motors.length}</span>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              {filteredMotorGroups.map((group) => (
-                <Collapsible
-                  key={group.key}
-                  {...groupOpen(
-                    "stepper-motors",
-                    group.key,
-                    group.items.map((m) => m.id),
-                  )}
-                >
-                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
-                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
-                    <span>{group.key}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    {group.items.map((motor) => (
-                      <SidebarItem
-                        key={motor.id}
-                        itemId={motor.id}
-                        category="stepper-motors"
-                        label={motor.name}
-                        badge={`NEMA${motor.nemaSize}`}
-                        suffix={"hasImage" in motor && motor.hasImage ? IMAGE_INDICATOR : undefined}
-                        selected={isSelected(selection, "stepper-motors", motor.id)}
-                        compareMode={compareMode}
-                        compareChecked={comparePendingIds.includes(motor.id)}
-                        onClick={handleItemClick}
-                      />
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              ))}
-              {filteredMotorGroups.length === 0 && (
-                <p className="text-muted-foreground p-4 text-center text-sm">No motors found.</p>
-              )}
-            </CollapsibleContent>
-          </Collapsible>
-        </div>
+        {!(searchActive && filteredMotorGroups.length === 0) && (
+          <div className={isCategoryDimmed("stepper-motors") ? "pointer-events-none opacity-40" : ""}>
+            <Collapsible {...categoryOpen("stepper-motors")}>
+              <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+                <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+                <Cog className="size-3.5" />
+                <span>Stepper Motors</span>
+                <span className="text-muted-foreground ml-auto text-xs">{indices.motors.length}</span>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                {filteredMotorGroups.map((group) => (
+                  <Collapsible
+                    key={group.key}
+                    {...groupOpen(
+                      "stepper-motors",
+                      group.key,
+                      group.items.map((m) => m.id),
+                    )}
+                  >
+                    <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                      <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                      <span>{group.key}</span>
+                      <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      {group.items.map((motor) => (
+                        <SidebarItem
+                          key={motor.id}
+                          itemId={motor.id}
+                          category="stepper-motors"
+                          label={motor.name}
+                          badge={`NEMA${motor.nemaSize}`}
+                          suffix={"hasImage" in motor && motor.hasImage ? IMAGE_INDICATOR : undefined}
+                          selected={isSelected(selection, "stepper-motors", motor.id)}
+                          compareMode={compareMode}
+                          compareChecked={comparePendingIds.includes(motor.id)}
+                          onClick={handleItemClick}
+                        />
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+                ))}
+                {filteredMotorGroups.length === 0 && (
+                  <p className="text-muted-foreground p-4 text-center text-sm">No motors found.</p>
+                )}
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        )}
 
-        <div className={isCategoryDimmed("stepper-drivers") ? "pointer-events-none opacity-40" : ""}>
-          <Collapsible {...categoryOpen("stepper-drivers")}>
-            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
-              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
-              <Zap className="size-3.5" />
-              <span>Stepper Drivers</span>
-              <span className="text-muted-foreground ml-auto text-xs">{indices.stepperDrivers.length}</span>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              {filteredStepperDriverGroups.map((group) => (
-                <Collapsible
-                  key={group.key}
-                  {...groupOpen(
-                    "stepper-drivers",
-                    group.key,
-                    group.items.map((d) => d.id),
-                  )}
-                >
-                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
-                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
-                    <span>{group.key}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    {group.items.map((driver) => (
-                      <SidebarItem
-                        key={driver.id}
-                        itemId={driver.id}
-                        category="stepper-drivers"
-                        label={driver.name}
-                        badge={driver.driverInterface}
-                        suffix={driver.hasImage ? IMAGE_INDICATOR : undefined}
-                        selected={isSelected(selection, "stepper-drivers", driver.id)}
-                        compareMode={compareMode}
-                        compareChecked={comparePendingIds.includes(driver.id)}
-                        onClick={handleItemClick}
-                      />
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              ))}
-              {filteredStepperDriverGroups.length === 0 && (
-                <p className="text-muted-foreground p-4 text-center text-sm">No drivers found.</p>
-              )}
-            </CollapsibleContent>
-          </Collapsible>
-        </div>
+        {!(searchActive && filteredStepperDriverGroups.length === 0) && (
+          <div className={isCategoryDimmed("stepper-drivers") ? "pointer-events-none opacity-40" : ""}>
+            <Collapsible {...categoryOpen("stepper-drivers")}>
+              <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+                <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+                <Zap className="size-3.5" />
+                <span>Stepper Drivers</span>
+                <span className="text-muted-foreground ml-auto text-xs">{indices.stepperDrivers.length}</span>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                {filteredStepperDriverGroups.map((group) => (
+                  <Collapsible
+                    key={group.key}
+                    {...groupOpen(
+                      "stepper-drivers",
+                      group.key,
+                      group.items.map((d) => d.id),
+                    )}
+                  >
+                    <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                      <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                      <span>{group.key}</span>
+                      <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      {group.items.map((driver) => (
+                        <SidebarItem
+                          key={driver.id}
+                          itemId={driver.id}
+                          category="stepper-drivers"
+                          label={driver.name}
+                          badge={driver.driverInterface}
+                          suffix={driver.hasImage ? IMAGE_INDICATOR : undefined}
+                          selected={isSelected(selection, "stepper-drivers", driver.id)}
+                          compareMode={compareMode}
+                          compareChecked={comparePendingIds.includes(driver.id)}
+                          onClick={handleItemClick}
+                        />
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+                ))}
+                {filteredStepperDriverGroups.length === 0 && (
+                  <p className="text-muted-foreground p-4 text-center text-sm">No drivers found.</p>
+                )}
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        )}
 
-        <div className={isCategoryDimmed("probes") ? "pointer-events-none opacity-40" : ""}>
-          <Collapsible {...categoryOpen("probes")}>
-            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
-              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
-              <Crosshair className="size-3.5" />
-              <span>Probes</span>
-              <span className="text-muted-foreground ml-auto text-xs">{indices.probes.length}</span>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              {filteredProbeGroups.map((group) => (
-                <Collapsible
-                  key={group.key}
-                  {...groupOpen(
-                    "probes",
-                    group.key,
-                    group.items.map((p) => p.id),
-                  )}
-                >
-                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
-                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
-                    <span>{group.key}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    {group.items.map((probe) => (
-                      <SidebarItem
-                        key={probe.id}
-                        itemId={probe.id}
-                        category="probes"
-                        label={probe.name}
-                        badge={PROBE_TYPE_LABELS[probe.probeType] ?? probe.probeType}
-                        suffix={"hasImage" in probe && probe.hasImage ? IMAGE_INDICATOR : undefined}
-                        selected={isSelected(selection, "probes", probe.id)}
-                        compareMode={compareMode}
-                        compareChecked={comparePendingIds.includes(probe.id)}
-                        onClick={handleItemClick}
-                      />
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              ))}
-              {filteredProbeGroups.length === 0 && (
-                <p className="text-muted-foreground p-4 text-center text-sm">No probes found.</p>
-              )}
-            </CollapsibleContent>
-          </Collapsible>
-        </div>
+        {!(searchActive && filteredProbeGroups.length === 0) && (
+          <div className={isCategoryDimmed("probes") ? "pointer-events-none opacity-40" : ""}>
+            <Collapsible {...categoryOpen("probes")}>
+              <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+                <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+                <Crosshair className="size-3.5" />
+                <span>Probes</span>
+                <span className="text-muted-foreground ml-auto text-xs">{indices.probes.length}</span>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                {filteredProbeGroups.map((group) => (
+                  <Collapsible
+                    key={group.key}
+                    {...groupOpen(
+                      "probes",
+                      group.key,
+                      group.items.map((p) => p.id),
+                    )}
+                  >
+                    <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                      <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                      <span>{group.key}</span>
+                      <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      {group.items.map((probe) => (
+                        <SidebarItem
+                          key={probe.id}
+                          itemId={probe.id}
+                          category="probes"
+                          label={probe.name}
+                          badge={PROBE_TYPE_LABELS[probe.probeType] ?? probe.probeType}
+                          suffix={"hasImage" in probe && probe.hasImage ? IMAGE_INDICATOR : undefined}
+                          selected={isSelected(selection, "probes", probe.id)}
+                          compareMode={compareMode}
+                          compareChecked={comparePendingIds.includes(probe.id)}
+                          onClick={handleItemClick}
+                        />
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+                ))}
+                {filteredProbeGroups.length === 0 && (
+                  <p className="text-muted-foreground p-4 text-center text-sm">No probes found.</p>
+                )}
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        )}
 
-        <div className={isCategoryDimmed("fans") ? "pointer-events-none opacity-40" : ""}>
-          <Collapsible {...categoryOpen("fans")}>
-            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
-              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
-              <Fan className="size-3.5" />
-              <span>Fans</span>
-              <span className="text-muted-foreground ml-auto text-xs">{indices.fans.length}</span>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              {filteredFanGroups.map((group) => (
-                <Collapsible
-                  key={group.key}
-                  {...groupOpen(
-                    "fans",
-                    group.key,
-                    group.items.map((f) => f.id),
-                  )}
-                >
-                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
-                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
-                    <span>{group.key}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    {group.items.map((fan) => (
-                      <SidebarItem
-                        key={fan.id}
-                        itemId={fan.id}
-                        category="fans"
-                        label={fan.name}
-                        badge={fan.size}
-                        suffix={"hasImage" in fan && fan.hasImage ? IMAGE_INDICATOR : undefined}
-                        selected={isSelected(selection, "fans", fan.id)}
-                        compareMode={compareMode}
-                        compareChecked={comparePendingIds.includes(fan.id)}
-                        onClick={handleItemClick}
-                      />
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              ))}
-              {filteredFanGroups.length === 0 && (
-                <p className="text-muted-foreground p-4 text-center text-sm">No fans found.</p>
-              )}
-            </CollapsibleContent>
-          </Collapsible>
-        </div>
+        {!(searchActive && filteredFanGroups.length === 0) && (
+          <div className={isCategoryDimmed("fans") ? "pointer-events-none opacity-40" : ""}>
+            <Collapsible {...categoryOpen("fans")}>
+              <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+                <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+                <Fan className="size-3.5" />
+                <span>Fans</span>
+                <span className="text-muted-foreground ml-auto text-xs">{indices.fans.length}</span>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                {filteredFanGroups.map((group) => (
+                  <Collapsible
+                    key={group.key}
+                    {...groupOpen(
+                      "fans",
+                      group.key,
+                      group.items.map((f) => f.id),
+                    )}
+                  >
+                    <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                      <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                      <span>{group.key}</span>
+                      <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      {group.items.map((fan) => (
+                        <SidebarItem
+                          key={fan.id}
+                          itemId={fan.id}
+                          category="fans"
+                          label={fan.name}
+                          badge={fan.size}
+                          suffix={"hasImage" in fan && fan.hasImage ? IMAGE_INDICATOR : undefined}
+                          selected={isSelected(selection, "fans", fan.id)}
+                          compareMode={compareMode}
+                          compareChecked={comparePendingIds.includes(fan.id)}
+                          onClick={handleItemClick}
+                        />
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+                ))}
+                {filteredFanGroups.length === 0 && (
+                  <p className="text-muted-foreground p-4 text-center text-sm">No fans found.</p>
+                )}
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        )}
 
-        <div className={isCategoryDimmed("thermistors") ? "pointer-events-none opacity-40" : ""}>
-          <Collapsible {...categoryOpen("thermistors")}>
-            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
-              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
-              <Thermometer className="size-3.5" />
-              <span>Thermistors</span>
-              <span className="text-muted-foreground ml-auto text-xs">{indices.thermistors.length}</span>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              {filteredThermistorGroups.map((group) => (
-                <Collapsible
-                  key={group.key}
-                  {...groupOpen(
-                    "thermistors",
-                    group.key,
-                    group.items.map((t) => t.id),
-                  )}
-                >
-                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
-                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
-                    <span>{group.key}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    {group.items.map((thermistor) => (
-                      <SidebarItem
-                        key={thermistor.id}
-                        itemId={thermistor.id}
-                        category="thermistors"
-                        label={thermistor.name}
-                        badge={thermistor.sensorType}
-                        suffix={"hasImage" in thermistor && thermistor.hasImage ? IMAGE_INDICATOR : undefined}
-                        selected={isSelected(selection, "thermistors", thermistor.id)}
-                        compareMode={compareMode}
-                        compareChecked={comparePendingIds.includes(thermistor.id)}
-                        onClick={handleItemClick}
-                      />
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              ))}
-              {filteredThermistorGroups.length === 0 && (
-                <p className="text-muted-foreground p-4 text-center text-sm">No thermistors found.</p>
-              )}
-            </CollapsibleContent>
-          </Collapsible>
-        </div>
+        {!(searchActive && filteredThermistorGroups.length === 0) && (
+          <div className={isCategoryDimmed("thermistors") ? "pointer-events-none opacity-40" : ""}>
+            <Collapsible {...categoryOpen("thermistors")}>
+              <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+                <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+                <Thermometer className="size-3.5" />
+                <span>Thermistors</span>
+                <span className="text-muted-foreground ml-auto text-xs">{indices.thermistors.length}</span>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                {filteredThermistorGroups.map((group) => (
+                  <Collapsible
+                    key={group.key}
+                    {...groupOpen(
+                      "thermistors",
+                      group.key,
+                      group.items.map((t) => t.id),
+                    )}
+                  >
+                    <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                      <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                      <span>{group.key}</span>
+                      <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      {group.items.map((thermistor) => (
+                        <SidebarItem
+                          key={thermistor.id}
+                          itemId={thermistor.id}
+                          category="thermistors"
+                          label={thermistor.name}
+                          badge={thermistor.sensorType}
+                          suffix={"hasImage" in thermistor && thermistor.hasImage ? IMAGE_INDICATOR : undefined}
+                          selected={isSelected(selection, "thermistors", thermistor.id)}
+                          compareMode={compareMode}
+                          compareChecked={comparePendingIds.includes(thermistor.id)}
+                          onClick={handleItemClick}
+                        />
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+                ))}
+                {filteredThermistorGroups.length === 0 && (
+                  <p className="text-muted-foreground p-4 text-center text-sm">No thermistors found.</p>
+                )}
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        )}
 
-        <div className={isCategoryDimmed("extruders") ? "pointer-events-none opacity-40" : ""}>
-          <Collapsible {...categoryOpen("extruders")}>
-            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
-              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
-              <CircleDot className="size-3.5" />
-              <span>Extruders</span>
-              <span className="text-muted-foreground ml-auto text-xs">{indices.extruders.length}</span>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              {filteredExtruderGroups.map((group) => (
-                <Collapsible
-                  key={group.key}
-                  {...groupOpen(
-                    "extruders",
-                    group.key,
-                    group.items.map((e) => e.id),
-                  )}
-                >
-                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
-                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
-                    <span>{group.key}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    {group.items.map((extruder) => (
-                      <SidebarItem
-                        key={extruder.id}
-                        itemId={extruder.id}
-                        category="extruders"
-                        label={extruder.name}
-                        badge={extruder.driveType}
-                        suffix={"hasImage" in extruder && extruder.hasImage ? IMAGE_INDICATOR : undefined}
-                        selected={isSelected(selection, "extruders", extruder.id)}
-                        compareMode={compareMode}
-                        compareChecked={comparePendingIds.includes(extruder.id)}
-                        onClick={handleItemClick}
-                      />
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              ))}
-              {filteredExtruderGroups.length === 0 && (
-                <p className="text-muted-foreground p-4 text-center text-sm">No extruders found.</p>
-              )}
-            </CollapsibleContent>
-          </Collapsible>
-        </div>
+        {!(searchActive && filteredExtruderGroups.length === 0) && (
+          <div className={isCategoryDimmed("extruders") ? "pointer-events-none opacity-40" : ""}>
+            <Collapsible {...categoryOpen("extruders")}>
+              <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+                <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+                <CircleDot className="size-3.5" />
+                <span>Extruders</span>
+                <span className="text-muted-foreground ml-auto text-xs">{indices.extruders.length}</span>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                {filteredExtruderGroups.map((group) => (
+                  <Collapsible
+                    key={group.key}
+                    {...groupOpen(
+                      "extruders",
+                      group.key,
+                      group.items.map((e) => e.id),
+                    )}
+                  >
+                    <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                      <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                      <span>{group.key}</span>
+                      <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      {group.items.map((extruder) => (
+                        <SidebarItem
+                          key={extruder.id}
+                          itemId={extruder.id}
+                          category="extruders"
+                          label={extruder.name}
+                          badge={extruder.driveType}
+                          suffix={"hasImage" in extruder && extruder.hasImage ? IMAGE_INDICATOR : undefined}
+                          selected={isSelected(selection, "extruders", extruder.id)}
+                          compareMode={compareMode}
+                          compareChecked={comparePendingIds.includes(extruder.id)}
+                          onClick={handleItemClick}
+                        />
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+                ))}
+                {filteredExtruderGroups.length === 0 && (
+                  <p className="text-muted-foreground p-4 text-center text-sm">No extruders found.</p>
+                )}
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        )}
 
-        <div className={isCategoryDimmed("hotends") ? "pointer-events-none opacity-40" : ""}>
-          <Collapsible {...categoryOpen("hotends")}>
-            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
-              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
-              <Flame className="size-3.5" />
-              <span>Hotends</span>
-              <span className="text-muted-foreground ml-auto text-xs">{indices.hotends.length}</span>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              {filteredHotendGroups.map((group) => (
-                <Collapsible
-                  key={group.key}
-                  {...groupOpen(
-                    "hotends",
-                    group.key,
-                    group.items.map((h) => h.id),
-                  )}
-                >
-                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
-                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
-                    <span>{group.key}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    {group.items.map((hotend) => (
-                      <SidebarItem
-                        key={hotend.id}
-                        itemId={hotend.id}
-                        category="hotends"
-                        label={hotend.name}
-                        badge={hotend.hotendType}
-                        suffix={"hasImage" in hotend && hotend.hasImage ? IMAGE_INDICATOR : undefined}
-                        selected={isSelected(selection, "hotends", hotend.id)}
-                        compareMode={compareMode}
-                        compareChecked={comparePendingIds.includes(hotend.id)}
-                        onClick={handleItemClick}
-                      />
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              ))}
-              {filteredHotendGroups.length === 0 && (
-                <p className="text-muted-foreground p-4 text-center text-sm">No hotends found.</p>
-              )}
-            </CollapsibleContent>
-          </Collapsible>
-        </div>
+        {!(searchActive && filteredHotendGroups.length === 0) && (
+          <div className={isCategoryDimmed("hotends") ? "pointer-events-none opacity-40" : ""}>
+            <Collapsible {...categoryOpen("hotends")}>
+              <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+                <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+                <Flame className="size-3.5" />
+                <span>Hotends</span>
+                <span className="text-muted-foreground ml-auto text-xs">{indices.hotends.length}</span>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                {filteredHotendGroups.map((group) => (
+                  <Collapsible
+                    key={group.key}
+                    {...groupOpen(
+                      "hotends",
+                      group.key,
+                      group.items.map((h) => h.id),
+                    )}
+                  >
+                    <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                      <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                      <span>{group.key}</span>
+                      <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      {group.items.map((hotend) => (
+                        <SidebarItem
+                          key={hotend.id}
+                          itemId={hotend.id}
+                          category="hotends"
+                          label={hotend.name}
+                          badge={hotend.hotendType}
+                          suffix={"hasImage" in hotend && hotend.hasImage ? IMAGE_INDICATOR : undefined}
+                          selected={isSelected(selection, "hotends", hotend.id)}
+                          compareMode={compareMode}
+                          compareChecked={comparePendingIds.includes(hotend.id)}
+                          onClick={handleItemClick}
+                        />
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+                ))}
+                {filteredHotendGroups.length === 0 && (
+                  <p className="text-muted-foreground p-4 text-center text-sm">No hotends found.</p>
+                )}
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        )}
 
-        <div className={isCategoryDimmed("toolheads") ? "pointer-events-none opacity-40" : ""}>
-          <Collapsible {...categoryOpen("toolheads")}>
-            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
-              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
-              <Combine className="size-3.5" />
-              <span>Toolheads</span>
-              <span className="text-muted-foreground ml-auto text-xs">{indices.toolheads.length}</span>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              {filteredToolheadGroups.map((group) => (
-                <Collapsible
-                  key={group.key}
-                  {...groupOpen(
-                    "toolheads",
-                    group.key,
-                    group.items.map((t) => t.id),
-                  )}
-                >
-                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
-                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
-                    <span>{group.key}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    {group.items.map((toolhead) => (
-                      <SidebarItem
-                        key={toolhead.id}
-                        itemId={toolhead.id}
-                        category="toolheads"
-                        label={toolhead.name}
-                        badge={TOOLHEAD_TYPE_LABELS[toolhead.toolheadType] ?? toolhead.toolheadType}
-                        suffix={"hasImage" in toolhead && toolhead.hasImage ? IMAGE_INDICATOR : undefined}
-                        selected={isSelected(selection, "toolheads", toolhead.id)}
-                        compareMode={compareMode}
-                        compareChecked={comparePendingIds.includes(toolhead.id)}
-                        onClick={handleItemClick}
-                      />
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              ))}
-              {filteredToolheadGroups.length === 0 && (
-                <p className="text-muted-foreground p-4 text-center text-sm">No toolheads found.</p>
-              )}
-            </CollapsibleContent>
-          </Collapsible>
-        </div>
+        {!(searchActive && filteredToolheadGroups.length === 0) && (
+          <div className={isCategoryDimmed("toolheads") ? "pointer-events-none opacity-40" : ""}>
+            <Collapsible {...categoryOpen("toolheads")}>
+              <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+                <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+                <Combine className="size-3.5" />
+                <span>Toolheads</span>
+                <span className="text-muted-foreground ml-auto text-xs">{indices.toolheads.length}</span>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                {filteredToolheadGroups.map((group) => (
+                  <Collapsible
+                    key={group.key}
+                    {...groupOpen(
+                      "toolheads",
+                      group.key,
+                      group.items.map((t) => t.id),
+                    )}
+                  >
+                    <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                      <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                      <span>{group.key}</span>
+                      <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      {group.items.map((toolhead) => (
+                        <SidebarItem
+                          key={toolhead.id}
+                          itemId={toolhead.id}
+                          category="toolheads"
+                          label={toolhead.name}
+                          badge={TOOLHEAD_TYPE_LABELS[toolhead.toolheadType] ?? toolhead.toolheadType}
+                          suffix={"hasImage" in toolhead && toolhead.hasImage ? IMAGE_INDICATOR : undefined}
+                          selected={isSelected(selection, "toolheads", toolhead.id)}
+                          compareMode={compareMode}
+                          compareChecked={comparePendingIds.includes(toolhead.id)}
+                          onClick={handleItemClick}
+                        />
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+                ))}
+                {filteredToolheadGroups.length === 0 && (
+                  <p className="text-muted-foreground p-4 text-center text-sm">No toolheads found.</p>
+                )}
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        )}
 
-        <div className={isCategoryDimmed("mmus") ? "pointer-events-none opacity-40" : ""}>
-          <Collapsible {...categoryOpen("mmus")}>
-            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
-              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
-              <GitBranch className="size-3.5" />
-              <span>MMUs</span>
-              <span className="text-muted-foreground ml-auto text-xs">{indices.mmus.length}</span>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              {filteredMmuGroups.map((group) => (
-                <Collapsible
-                  key={group.key}
-                  {...groupOpen(
-                    "mmus",
-                    group.key,
-                    group.items.map((m) => m.id),
-                  )}
-                >
-                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
-                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
-                    <span>{group.key}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    {group.items.map((mmu) => (
-                      <SidebarItem
-                        key={mmu.id}
-                        itemId={mmu.id}
-                        category="mmus"
-                        label={mmu.name}
-                        badge={MMU_TYPE_LABELS[mmu.mmuType] ?? mmu.mmuType}
-                        suffix={"hasImage" in mmu && mmu.hasImage ? IMAGE_INDICATOR : undefined}
-                        selected={isSelected(selection, "mmus", mmu.id)}
-                        compareMode={compareMode}
-                        compareChecked={comparePendingIds.includes(mmu.id)}
-                        onClick={handleItemClick}
-                      />
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              ))}
-              {filteredMmuGroups.length === 0 && (
-                <p className="text-muted-foreground p-4 text-center text-sm">No MMUs found.</p>
-              )}
-            </CollapsibleContent>
-          </Collapsible>
-        </div>
+        {!(searchActive && filteredMmuGroups.length === 0) && (
+          <div className={isCategoryDimmed("mmus") ? "pointer-events-none opacity-40" : ""}>
+            <Collapsible {...categoryOpen("mmus")}>
+              <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+                <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+                <GitBranch className="size-3.5" />
+                <span>MMUs</span>
+                <span className="text-muted-foreground ml-auto text-xs">{indices.mmus.length}</span>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                {filteredMmuGroups.map((group) => (
+                  <Collapsible
+                    key={group.key}
+                    {...groupOpen(
+                      "mmus",
+                      group.key,
+                      group.items.map((m) => m.id),
+                    )}
+                  >
+                    <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                      <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                      <span>{group.key}</span>
+                      <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      {group.items.map((mmu) => (
+                        <SidebarItem
+                          key={mmu.id}
+                          itemId={mmu.id}
+                          category="mmus"
+                          label={mmu.name}
+                          badge={MMU_TYPE_LABELS[mmu.mmuType] ?? mmu.mmuType}
+                          suffix={"hasImage" in mmu && mmu.hasImage ? IMAGE_INDICATOR : undefined}
+                          selected={isSelected(selection, "mmus", mmu.id)}
+                          compareMode={compareMode}
+                          compareChecked={comparePendingIds.includes(mmu.id)}
+                          onClick={handleItemClick}
+                        />
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+                ))}
+                {filteredMmuGroups.length === 0 && (
+                  <p className="text-muted-foreground p-4 text-center text-sm">No MMUs found.</p>
+                )}
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        )}
 
-        <div className={isCategoryDimmed("filaments") ? "pointer-events-none opacity-40" : ""}>
-          <Collapsible {...categoryOpen("filaments")}>
-            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
-              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
-              <Layers className="size-3.5" />
-              <span>Filaments</span>
-              <span className="text-muted-foreground ml-auto text-xs">{indices.filaments.length}</span>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              {filteredFilamentGroups.map((group) => (
-                <Collapsible
-                  key={group.key}
-                  {...groupOpen(
-                    "filaments",
-                    group.key,
-                    group.items.map((f) => f.id),
-                  )}
-                >
-                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
-                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
-                    <span>{group.key}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    {group.items.map((filament) => (
-                      <SidebarItem
-                        key={filament.id}
-                        itemId={filament.id}
-                        category="filaments"
-                        label={filament.name}
-                        badge={filament.filamentType}
-                        suffix={"hasImage" in filament && filament.hasImage ? IMAGE_INDICATOR : undefined}
-                        selected={isSelected(selection, "filaments", filament.id)}
-                        compareMode={compareMode}
-                        compareChecked={comparePendingIds.includes(filament.id)}
-                        onClick={handleItemClick}
-                      />
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              ))}
-              {filteredFilamentGroups.length === 0 && (
-                <p className="text-muted-foreground p-4 text-center text-sm">No filaments found.</p>
-              )}
-            </CollapsibleContent>
-          </Collapsible>
-        </div>
+        {!(searchActive && filteredFilamentGroups.length === 0) && (
+          <div className={isCategoryDimmed("filaments") ? "pointer-events-none opacity-40" : ""}>
+            <Collapsible {...categoryOpen("filaments")}>
+              <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+                <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+                <Layers className="size-3.5" />
+                <span>Filaments</span>
+                <span className="text-muted-foreground ml-auto text-xs">{indices.filaments.length}</span>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                {filteredFilamentGroups.map((group) => (
+                  <Collapsible
+                    key={group.key}
+                    {...groupOpen(
+                      "filaments",
+                      group.key,
+                      group.items.map((f) => f.id),
+                    )}
+                  >
+                    <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                      <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                      <span>{group.key}</span>
+                      <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      {group.items.map((filament) => (
+                        <SidebarItem
+                          key={filament.id}
+                          itemId={filament.id}
+                          category="filaments"
+                          label={filament.name}
+                          badge={filament.filamentType}
+                          suffix={"hasImage" in filament && filament.hasImage ? IMAGE_INDICATOR : undefined}
+                          selected={isSelected(selection, "filaments", filament.id)}
+                          compareMode={compareMode}
+                          compareChecked={comparePendingIds.includes(filament.id)}
+                          onClick={handleItemClick}
+                        />
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+                ))}
+                {filteredFilamentGroups.length === 0 && (
+                  <p className="text-muted-foreground p-4 text-center text-sm">No filaments found.</p>
+                )}
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        )}
 
-        <div className={isCategoryDimmed("power-supplies") ? "pointer-events-none opacity-40" : ""}>
-          <Collapsible {...categoryOpen("power-supplies")}>
-            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
-              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
-              <PlugZap className="size-3.5" />
-              <span>Power Supplies</span>
-              <span className="text-muted-foreground ml-auto text-xs">{indices.powerSupplies.length}</span>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              {filteredPowerSupplyGroups.map((group) => (
-                <Collapsible
-                  key={group.key}
-                  {...groupOpen(
-                    "power-supplies",
-                    group.key,
-                    group.items.map((p) => p.id),
-                  )}
-                >
-                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
-                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
-                    <span>{group.key}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    {group.items.map((psu) => (
-                      <SidebarItem
-                        key={psu.id}
-                        itemId={psu.id}
-                        category="power-supplies"
-                        label={psu.name}
-                        badges={[`${psu.voltage}V`, `${psu.wattage}W`]}
-                        suffix={"hasImage" in psu && psu.hasImage ? IMAGE_INDICATOR : undefined}
-                        selected={isSelected(selection, "power-supplies", psu.id)}
-                        compareMode={compareMode}
-                        compareChecked={comparePendingIds.includes(psu.id)}
-                        onClick={handleItemClick}
-                      />
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              ))}
-              {filteredPowerSupplyGroups.length === 0 && (
-                <p className="text-muted-foreground p-4 text-center text-sm">No power supplies found.</p>
-              )}
-            </CollapsibleContent>
-          </Collapsible>
-        </div>
+        {!(searchActive && filteredPowerSupplyGroups.length === 0) && (
+          <div className={isCategoryDimmed("power-supplies") ? "pointer-events-none opacity-40" : ""}>
+            <Collapsible {...categoryOpen("power-supplies")}>
+              <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+                <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+                <PlugZap className="size-3.5" />
+                <span>Power Supplies</span>
+                <span className="text-muted-foreground ml-auto text-xs">{indices.powerSupplies.length}</span>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                {filteredPowerSupplyGroups.map((group) => (
+                  <Collapsible
+                    key={group.key}
+                    {...groupOpen(
+                      "power-supplies",
+                      group.key,
+                      group.items.map((p) => p.id),
+                    )}
+                  >
+                    <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                      <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                      <span>{group.key}</span>
+                      <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      {group.items.map((psu) => (
+                        <SidebarItem
+                          key={psu.id}
+                          itemId={psu.id}
+                          category="power-supplies"
+                          label={psu.name}
+                          badges={[`${psu.voltage}V`, `${psu.wattage}W`]}
+                          suffix={"hasImage" in psu && psu.hasImage ? IMAGE_INDICATOR : undefined}
+                          selected={isSelected(selection, "power-supplies", psu.id)}
+                          compareMode={compareMode}
+                          compareChecked={comparePendingIds.includes(psu.id)}
+                          onClick={handleItemClick}
+                        />
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+                ))}
+                {filteredPowerSupplyGroups.length === 0 && (
+                  <p className="text-muted-foreground p-4 text-center text-sm">No power supplies found.</p>
+                )}
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        )}
 
-        <div className={isCategoryDimmed("accessories") ? "pointer-events-none opacity-40" : ""}>
-          <Collapsible {...categoryOpen("accessories")}>
-            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
-              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
-              <Puzzle className="size-3.5" />
-              <span>Accessories</span>
-              <span className="text-muted-foreground ml-auto text-xs">{indices.accessories.length}</span>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              {filteredAccessoryGroups.map((group) => (
-                <Collapsible
-                  key={group.key}
-                  {...groupOpen(
-                    "accessories",
-                    group.key,
-                    group.items.map((a) => a.id),
-                  )}
-                >
-                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
-                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
-                    <span>{group.key}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    {group.items.map((accessory) => (
-                      <SidebarItem
-                        key={accessory.id}
-                        itemId={accessory.id}
-                        category="accessories"
-                        label={accessory.name}
-                        badge={ACCESSORY_TYPE_LABELS[accessory.accessoryType] ?? accessory.accessoryType}
-                        suffix={accessory.hasImage ? IMAGE_INDICATOR : undefined}
-                        selected={isSelected(selection, "accessories", accessory.id)}
-                        compareMode={compareMode}
-                        compareChecked={comparePendingIds.includes(accessory.id)}
-                        onClick={handleItemClick}
-                      />
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              ))}
-              {filteredAccessoryGroups.length === 0 && (
-                <p className="text-muted-foreground p-4 text-center text-sm">No accessories found.</p>
-              )}
-            </CollapsibleContent>
-          </Collapsible>
-        </div>
+        {!(searchActive && filteredAccessoryGroups.length === 0) && (
+          <div className={isCategoryDimmed("accessories") ? "pointer-events-none opacity-40" : ""}>
+            <Collapsible {...categoryOpen("accessories")}>
+              <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+                <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+                <Puzzle className="size-3.5" />
+                <span>Accessories</span>
+                <span className="text-muted-foreground ml-auto text-xs">{indices.accessories.length}</span>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                {filteredAccessoryGroups.map((group) => (
+                  <Collapsible
+                    key={group.key}
+                    {...groupOpen(
+                      "accessories",
+                      group.key,
+                      group.items.map((a) => a.id),
+                    )}
+                  >
+                    <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                      <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                      <span>{group.key}</span>
+                      <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      {group.items.map((accessory) => (
+                        <SidebarItem
+                          key={accessory.id}
+                          itemId={accessory.id}
+                          category="accessories"
+                          label={accessory.name}
+                          badge={ACCESSORY_TYPE_LABELS[accessory.accessoryType] ?? accessory.accessoryType}
+                          suffix={accessory.hasImage ? IMAGE_INDICATOR : undefined}
+                          selected={isSelected(selection, "accessories", accessory.id)}
+                          compareMode={compareMode}
+                          compareChecked={comparePendingIds.includes(accessory.id)}
+                          onClick={handleItemClick}
+                        />
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+                ))}
+                {filteredAccessoryGroups.length === 0 && (
+                  <p className="text-muted-foreground p-4 text-center text-sm">No accessories found.</p>
+                )}
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        )}
 
-        <div className={isCategoryDimmed("displays") ? "pointer-events-none opacity-40" : ""}>
-          <Collapsible {...categoryOpen("displays")}>
-            <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
-              <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
-              <Monitor className="size-3.5" />
-              <span>Displays</span>
-              <span className="text-muted-foreground ml-auto text-xs">{indices.displays.length}</span>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              {filteredDisplayGroups.map((group) => (
-                <Collapsible
-                  key={group.key}
-                  {...groupOpen(
-                    "displays",
-                    group.key,
-                    group.items.map((d) => d.id),
-                  )}
-                >
-                  <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
-                    <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
-                    <span>{group.key}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    {group.items.map((display) => (
-                      <SidebarItem
-                        key={display.id}
-                        itemId={display.id}
-                        category="displays"
-                        label={display.name}
-                        badge={DISPLAY_TYPE_LABELS[display.displayType] ?? display.displayType}
-                        suffix={"hasImage" in display && display.hasImage ? IMAGE_INDICATOR : undefined}
-                        selected={isSelected(selection, "displays", display.id)}
-                        compareMode={compareMode}
-                        compareChecked={comparePendingIds.includes(display.id)}
-                        onClick={handleItemClick}
-                      />
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              ))}
-              {filteredDisplayGroups.length === 0 && (
-                <p className="text-muted-foreground p-4 text-center text-sm">No displays found.</p>
-              )}
-            </CollapsibleContent>
-          </Collapsible>
-        </div>
+        {!(searchActive && filteredDisplayGroups.length === 0) && (
+          <div className={isCategoryDimmed("displays") ? "pointer-events-none opacity-40" : ""}>
+            <Collapsible {...categoryOpen("displays")}>
+              <CollapsibleTrigger className="group flex w-full items-center gap-1.5 rounded px-2 py-1.5 text-sm font-semibold hover:bg-accent">
+                <ChevronRight className="size-3.5 transition-transform group-data-[state=open]:rotate-90" />
+                <Monitor className="size-3.5" />
+                <span>Displays</span>
+                <span className="text-muted-foreground ml-auto text-xs">{indices.displays.length}</span>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                {filteredDisplayGroups.map((group) => (
+                  <Collapsible
+                    key={group.key}
+                    {...groupOpen(
+                      "displays",
+                      group.key,
+                      group.items.map((d) => d.id),
+                    )}
+                  >
+                    <CollapsibleTrigger className="group flex w-full items-center gap-1 rounded px-4 py-1 text-sm font-medium hover:bg-accent">
+                      <ChevronRight className="size-3 transition-transform group-data-[state=open]:rotate-90" />
+                      <span>{group.key}</span>
+                      <span className="text-muted-foreground ml-auto text-xs">{group.items.length}</span>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      {group.items.map((display) => (
+                        <SidebarItem
+                          key={display.id}
+                          itemId={display.id}
+                          category="displays"
+                          label={display.name}
+                          badge={DISPLAY_TYPE_LABELS[display.displayType] ?? display.displayType}
+                          suffix={"hasImage" in display && display.hasImage ? IMAGE_INDICATOR : undefined}
+                          selected={isSelected(selection, "displays", display.id)}
+                          compareMode={compareMode}
+                          compareChecked={comparePendingIds.includes(display.id)}
+                          onClick={handleItemClick}
+                        />
+                      ))}
+                    </CollapsibleContent>
+                  </Collapsible>
+                ))}
+                {filteredDisplayGroups.length === 0 && (
+                  <p className="text-muted-foreground p-4 text-center text-sm">No displays found.</p>
+                )}
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+        )}
+
+        {noResults && <p className="text-muted-foreground p-4 text-center text-sm">No results found.</p>}
       </div>
     </div>
   );
