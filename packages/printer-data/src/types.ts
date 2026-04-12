@@ -498,6 +498,9 @@ export interface FanPhysicalSpecs {
   bearingType?: string;
   connectorType?: string;
   leadWireLength?: number;
+  material?: string;
+  ipRating?: string;
+  operatingTemperature?: string;
 }
 
 export interface Fan {

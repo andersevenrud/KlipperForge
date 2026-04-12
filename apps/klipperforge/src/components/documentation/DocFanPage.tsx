@@ -113,6 +113,13 @@ export function DocFanPage({ fanId }: DocFanPageProps) {
         <SpecRow field="bearingType" label="Bearing Type" value={fan.physicalSpecs.bearingType} />
         <SpecRow field="connectorType" label="Connector" value={fan.physicalSpecs.connectorType} />
         <SpecRow field="leadWireLength" label="Lead Wire Length" value={fan.physicalSpecs.leadWireLength} suffix="mm" />
+        <SpecRow field="material" label="Material" value={fan.physicalSpecs.material} />
+        <SpecRow field="ipRating" label="IP Rating" value={fan.physicalSpecs.ipRating} />
+        <SpecRow
+          field="operatingTemperature"
+          label="Operating Temperature"
+          value={fan.physicalSpecs.operatingTemperature}
+        />
       </SpecSection>
 
       <RelatedArticles articles={fan.relatedArticles} />

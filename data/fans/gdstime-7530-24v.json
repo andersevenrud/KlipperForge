@@ -1,0 +1,46 @@
+{
+  "id": "gdstime-7530-24v",
+  "name": "GDB7530 24V Blower",
+  "manufacturer": "GDSTime",
+  "description": "The GDSTime GDB7530 24V is a 75×30mm radial blower fan suitable for part cooling on 24V 3D printer setups. Its larger size compared to common 5015 blowers provides higher airflow. Available in sleeve or dual ball bearing configurations and 2-pin, 3-pin (tachometer), or 4-pin (PWM) connector options.",
+  "fanType": "blower",
+  "size": "7530",
+  "airflowSpecs": {
+    "airflow": 11.6,
+    "staticPressure": 11.43,
+    "rpm": 3500
+  },
+  "electricalSpecs": {
+    "voltage": 24,
+    "current": 0.14,
+    "power": 3.36,
+    "pwmCapable": false,
+    "tachoSignal": false
+  },
+  "noiseSpecs": {
+    "noiseLevel": 43
+  },
+  "physicalSpecs": {
+    "dimensions": "75×75×30mm",
+    "weight": 80,
+    "bearingType": "Sleeve / Dual Ball Bearing",
+    "connectorType": "XH2.54 2-Pin / 3-Pin / 4-Pin",
+    "leadWireLength": 250,
+    "material": "PBT (UL94V-0)",
+    "ipRating": "IP55-68",
+    "operatingTemperature": "-20°C to 70°C"
+  },
+  "references": [
+    {
+      "label": "GDSTime GDB7530 24V Product Page (Amazon)",
+      "url": "https://www.amazon.com/GDSTIME-Blower-Brushless-Cooling-7530S/dp/B07PK376PQ",
+      "type": "product"
+    },
+    {
+      "label": "GDSTime GDB7530-A Blower Fan Datasheet (Official)",
+      "url": "http://gdstime.com/list_45/86.html",
+      "type": "datasheet"
+    }
+  ],
+  "unverified": ["power"]
+}

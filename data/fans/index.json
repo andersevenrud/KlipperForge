@@ -78,6 +78,30 @@
       "size": "5015"
     },
     {
+      "id": "gdstime-7530-5v",
+      "name": "GDB7530 5V Blower",
+      "manufacturer": "GDSTime",
+      "fanType": "blower",
+      "size": "7530",
+      "hasImage": true
+    },
+    {
+      "id": "gdstime-7530-12v",
+      "name": "GDB7530 12V Blower",
+      "manufacturer": "GDSTime",
+      "fanType": "blower",
+      "size": "7530",
+      "hasImage": true
+    },
+    {
+      "id": "gdstime-7530-24v",
+      "name": "GDB7530 24V Blower",
+      "manufacturer": "GDSTime",
+      "fanType": "blower",
+      "size": "7530",
+      "hasImage": true
+    },
+    {
       "id": "delta-bfb0412hha",
       "name": "BFB0412HHA",
       "manufacturer": "Delta",
