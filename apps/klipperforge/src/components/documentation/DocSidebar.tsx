@@ -27,6 +27,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Input } from "@/components/ui/input";
 import { useDocIndicesQuery } from "@/hooks/use-queries";
+import { expandQueryWithAliases } from "@/lib/manufacturer-aliases";
 import { isComparableCategory } from "./comparison-specs";
 import type { DocCategory, DocSelection } from "./DocumentationView";
 
@@ -107,11 +108,16 @@ function filterAndGroup<T>(
   getGroupKey: (item: T) => string,
   preFilter?: (item: T) => boolean,
 ): ItemGroup<T>[] {
-  const query = search.toLowerCase().trim();
+  const queries = expandQueryWithAliases(search);
   const base = preFilter ? items.filter(preFilter) : items;
-  const filtered = query
-    ? base.filter((item) => getSearchableStrings(item).some((value) => value?.toLowerCase().includes(query)))
-    : base;
+  const filtered =
+    queries.length > 0
+      ? base.filter((item) =>
+          getSearchableStrings(item).some(
+            (value) => value !== undefined && queries.some((q) => value.toLowerCase().includes(q)),
+          ),
+        )
+      : base;
   return groupBy(filtered, getGroupKey);
 }
 
