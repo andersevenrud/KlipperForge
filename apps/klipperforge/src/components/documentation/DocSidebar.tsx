@@ -309,192 +309,105 @@ export function DocSidebar({
     [selection],
   );
 
-  const filteredBoardGroups = useMemo(
-    () =>
-      filterAndGroup(
+  const filtered = useMemo(
+    () => ({
+      boards: filterAndGroup(
         indices.boards,
         search,
         (b) => [b.name, b.vendor],
         (b) => b.vendor,
         (b) => b.vendor !== "Generic",
       ),
-    [indices.boards, search],
-  );
-
-  const filteredPrinterGroups = useMemo(
-    () =>
-      filterAndGroup(
+      printers: filterAndGroup(
         indices.printers,
         search,
         (p) => [p.name, p.manufacturer],
         (p) => p.manufacturer,
       ),
-    [indices.printers, search],
-  );
-
-  const filteredMotorGroups = useMemo(
-    () =>
-      filterAndGroup(
+      motors: filterAndGroup(
         indices.motors,
         search,
         (m) => [m.name, m.manufacturer, `nema${m.nemaSize}`],
         (m) => m.manufacturer,
       ),
-    [indices.motors, search],
-  );
-
-  const filteredStepperDriverGroups = useMemo(
-    () =>
-      filterAndGroup(
+      stepperDrivers: filterAndGroup(
         indices.stepperDrivers,
         search,
         (d) => [d.name, d.manufacturer, d.driverInterface, d.klipperSection],
         (d) => d.manufacturer,
       ),
-    [indices.stepperDrivers, search],
-  );
-
-  const filteredProbeGroups = useMemo(
-    () =>
-      filterAndGroup(
+      probes: filterAndGroup(
         indices.probes,
         search,
         (p) => [p.name, p.manufacturer, p.probeType],
         (p) => p.manufacturer,
       ),
-    [indices.probes, search],
-  );
-
-  const filteredFanGroups = useMemo(
-    () =>
-      filterAndGroup(
+      fans: filterAndGroup(
         indices.fans,
         search,
         (f) => [f.name, f.manufacturer, f.size, f.fanType],
         (f) => f.manufacturer,
       ),
-    [indices.fans, search],
-  );
-
-  const filteredThermistorGroups = useMemo(
-    () =>
-      filterAndGroup(
+      thermistors: filterAndGroup(
         indices.thermistors,
         search,
         (t) => [t.name, t.manufacturer, t.sensorType],
         (t) => t.manufacturer,
       ),
-    [indices.thermistors, search],
-  );
-
-  const filteredExtruderGroups = useMemo(
-    () =>
-      filterAndGroup(
+      extruders: filterAndGroup(
         indices.extruders,
         search,
         (e) => [e.name, e.manufacturer, e.driveType],
         (e) => e.manufacturer,
       ),
-    [indices.extruders, search],
-  );
-
-  const filteredHotendGroups = useMemo(
-    () =>
-      filterAndGroup(
+      hotends: filterAndGroup(
         indices.hotends,
         search,
         (h) => [h.name, h.manufacturer, h.hotendType],
         (h) => h.manufacturer,
       ),
-    [indices.hotends, search],
-  );
-
-  const filteredPowerSupplyGroups = useMemo(
-    () =>
-      filterAndGroup(
+      powerSupplies: filterAndGroup(
         indices.powerSupplies,
         search,
         (p) => [p.name, p.manufacturer, `${p.voltage}v`, `${p.wattage}w`],
         (p) => p.manufacturer,
       ),
-    [indices.powerSupplies, search],
-  );
-
-  const filteredAccessoryGroups = useMemo(
-    () =>
-      filterAndGroup(
+      accessories: filterAndGroup(
         indices.accessories,
         search,
         (a) => [a.name, a.manufacturer, a.accessoryType],
         (a) => a.manufacturer,
       ),
-    [indices.accessories, search],
-  );
-
-  const filteredDisplayGroups = useMemo(
-    () =>
-      filterAndGroup(
+      displays: filterAndGroup(
         indices.displays,
         search,
         (d) => [d.name, d.manufacturer, d.displayType],
         (d) => d.manufacturer,
       ),
-    [indices.displays, search],
-  );
-
-  const filteredFilamentGroups = useMemo(
-    () =>
-      filterAndGroup(
+      filaments: filterAndGroup(
         indices.filaments,
         search,
         (f) => [f.name, f.manufacturer, f.filamentType],
         (f) => f.manufacturer,
       ),
-    [indices.filaments, search],
-  );
-
-  const filteredToolheadGroups = useMemo(
-    () =>
-      filterAndGroup(
+      toolheads: filterAndGroup(
         indices.toolheads,
         search,
         (t) => [t.name, t.manufacturer, t.toolheadType],
         (t) => t.manufacturer,
       ),
-    [indices.toolheads, search],
-  );
-
-  const filteredMmuGroups = useMemo(
-    () =>
-      filterAndGroup(
+      mmus: filterAndGroup(
         indices.mmus,
         search,
         (m) => [m.name, m.manufacturer, m.mmuType],
         (m) => m.manufacturer,
       ),
-    [indices.mmus, search],
+    }),
+    [indices, search],
   );
 
   const searchActive = search.trim().length > 0;
-
-  const allFilteredGroups = [
-    filteredBoardGroups,
-    filteredPrinterGroups,
-    filteredMotorGroups,
-    filteredStepperDriverGroups,
-    filteredProbeGroups,
-    filteredFanGroups,
-    filteredThermistorGroups,
-    filteredExtruderGroups,
-    filteredHotendGroups,
-    filteredPowerSupplyGroups,
-    filteredAccessoryGroups,
-    filteredDisplayGroups,
-    filteredFilamentGroups,
-    filteredToolheadGroups,
-    filteredMmuGroups,
-  ];
-  const noResults = searchActive && allFilteredGroups.every((g) => g.length === 0);
+  const noResults = searchActive && Object.values(filtered).every((g) => g.length === 0);
 
   function categoryOpen(category: DocCategory): CollapsibleState {
     if (searchActive) return { open: true as const, onOpenChange: noop };
@@ -570,7 +483,7 @@ export function DocSidebar({
           icon={Cpu}
           label="MCU Boards"
           totalCount={indices.boards.length}
-          groups={filteredBoardGroups}
+          groups={filtered.boards}
           emptyLabel="No boards found."
           dimmed={isCategoryDimmed("mcu-boards")}
           searchActive={searchActive}
@@ -610,7 +523,7 @@ export function DocSidebar({
           icon={Printer}
           label="Printers"
           totalCount={indices.printers.length}
-          groups={filteredPrinterGroups}
+          groups={filtered.printers}
           emptyLabel="No printers found."
           dimmed={compareMode}
           searchActive={searchActive}
@@ -635,7 +548,7 @@ export function DocSidebar({
           icon={Cog}
           label="Stepper Motors"
           totalCount={indices.motors.length}
-          groups={filteredMotorGroups}
+          groups={filtered.motors}
           emptyLabel="No motors found."
           dimmed={isCategoryDimmed("stepper-motors")}
           searchActive={searchActive}
@@ -661,7 +574,7 @@ export function DocSidebar({
           icon={Zap}
           label="Stepper Drivers"
           totalCount={indices.stepperDrivers.length}
-          groups={filteredStepperDriverGroups}
+          groups={filtered.stepperDrivers}
           emptyLabel="No drivers found."
           dimmed={isCategoryDimmed("stepper-drivers")}
           searchActive={searchActive}
@@ -687,7 +600,7 @@ export function DocSidebar({
           icon={Crosshair}
           label="Probes"
           totalCount={indices.probes.length}
-          groups={filteredProbeGroups}
+          groups={filtered.probes}
           emptyLabel="No probes found."
           dimmed={isCategoryDimmed("probes")}
           searchActive={searchActive}
@@ -713,7 +626,7 @@ export function DocSidebar({
           icon={Fan}
           label="Fans"
           totalCount={indices.fans.length}
-          groups={filteredFanGroups}
+          groups={filtered.fans}
           emptyLabel="No fans found."
           dimmed={isCategoryDimmed("fans")}
           searchActive={searchActive}
@@ -739,7 +652,7 @@ export function DocSidebar({
           icon={Thermometer}
           label="Thermistors"
           totalCount={indices.thermistors.length}
-          groups={filteredThermistorGroups}
+          groups={filtered.thermistors}
           emptyLabel="No thermistors found."
           dimmed={isCategoryDimmed("thermistors")}
           searchActive={searchActive}
@@ -765,7 +678,7 @@ export function DocSidebar({
           icon={CircleDot}
           label="Extruders"
           totalCount={indices.extruders.length}
-          groups={filteredExtruderGroups}
+          groups={filtered.extruders}
           emptyLabel="No extruders found."
           dimmed={isCategoryDimmed("extruders")}
           searchActive={searchActive}
@@ -791,7 +704,7 @@ export function DocSidebar({
           icon={Flame}
           label="Hotends"
           totalCount={indices.hotends.length}
-          groups={filteredHotendGroups}
+          groups={filtered.hotends}
           emptyLabel="No hotends found."
           dimmed={isCategoryDimmed("hotends")}
           searchActive={searchActive}
@@ -817,7 +730,7 @@ export function DocSidebar({
           icon={Combine}
           label="Toolheads"
           totalCount={indices.toolheads.length}
-          groups={filteredToolheadGroups}
+          groups={filtered.toolheads}
           emptyLabel="No toolheads found."
           dimmed={isCategoryDimmed("toolheads")}
           searchActive={searchActive}
@@ -843,7 +756,7 @@ export function DocSidebar({
           icon={GitBranch}
           label="MMUs"
           totalCount={indices.mmus.length}
-          groups={filteredMmuGroups}
+          groups={filtered.mmus}
           emptyLabel="No MMUs found."
           dimmed={isCategoryDimmed("mmus")}
           searchActive={searchActive}
@@ -869,7 +782,7 @@ export function DocSidebar({
           icon={Layers}
           label="Filaments"
           totalCount={indices.filaments.length}
-          groups={filteredFilamentGroups}
+          groups={filtered.filaments}
           emptyLabel="No filaments found."
           dimmed={isCategoryDimmed("filaments")}
           searchActive={searchActive}
@@ -895,7 +808,7 @@ export function DocSidebar({
           icon={PlugZap}
           label="Power Supplies"
           totalCount={indices.powerSupplies.length}
-          groups={filteredPowerSupplyGroups}
+          groups={filtered.powerSupplies}
           emptyLabel="No power supplies found."
           dimmed={isCategoryDimmed("power-supplies")}
           searchActive={searchActive}
@@ -921,7 +834,7 @@ export function DocSidebar({
           icon={Puzzle}
           label="Accessories"
           totalCount={indices.accessories.length}
-          groups={filteredAccessoryGroups}
+          groups={filtered.accessories}
           emptyLabel="No accessories found."
           dimmed={isCategoryDimmed("accessories")}
           searchActive={searchActive}
@@ -947,7 +860,7 @@ export function DocSidebar({
           icon={Monitor}
           label="Displays"
           totalCount={indices.displays.length}
-          groups={filteredDisplayGroups}
+          groups={filtered.displays}
           emptyLabel="No displays found."
           dimmed={isCategoryDimmed("displays")}
           searchActive={searchActive}
