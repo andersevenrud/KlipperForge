@@ -5,7 +5,7 @@
     "width": 980,
     "height": 604
   },
-  "image": "/data/pcb-layouts/btt-octopus-pro-1.0.png",
+  "image": "/data/pcb-layouts/images/btt-octopus-pro-1.0.png",
   "connectors": [
     {
       "name": "HE0",

@@ -5,7 +5,7 @@
     "width": 721,
     "height": 471
   },
-  "image": "/data/pcb-layouts/mellow-cpap.png",
+  "image": "/data/pcb-layouts/images/mellow-cpap.png",
   "connectors": [
     {
       "name": "FAN",

@@ -5,7 +5,7 @@
     "width": 496,
     "height": 323
   },
-  "image": "/data/pcb-layouts/prusa-buddy.png",
+  "image": "/data/pcb-layouts/images/prusa-buddy.png",
   "connectors": [
     {
       "name": "Z",

@@ -5,7 +5,7 @@
     "width": 1017,
     "height": 680
   },
-  "image": "/data/pcb-layouts/einsy-rambo.png",
+  "image": "/data/pcb-layouts/images/einsy-rambo.png",
   "connectors": [
     {
       "name": "X",

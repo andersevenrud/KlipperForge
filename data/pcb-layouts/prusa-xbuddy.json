@@ -5,7 +5,7 @@
     "width": 783,
     "height": 528
   },
-  "image": "/data/pcb-layouts/prusa-xbuddy.png",
+  "image": "/data/pcb-layouts/images/prusa-xbuddy.png",
   "connectors": [
     {
       "name": "DISPLAY",

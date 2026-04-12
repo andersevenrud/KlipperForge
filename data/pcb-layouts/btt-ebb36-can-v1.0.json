@@ -5,7 +5,7 @@
     "width": 730,
     "height": 565
   },
-  "image": "/data/pcb-layouts/btt-ebb36-can-v1.0.png",
+  "image": "/data/pcb-layouts/images/btt-ebb36-can-v1.0.png",
   "connectors": [
     {
       "name": "RGB",

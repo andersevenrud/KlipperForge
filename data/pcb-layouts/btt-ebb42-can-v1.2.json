@@ -5,7 +5,7 @@
     "width": 559,
     "height": 586
   },
-  "image": "/data/pcb-layouts/btt-ebb42-can-v1.2.png",
+  "image": "/data/pcb-layouts/images/btt-ebb42-can-v1.2.png",
   "connectors": [
     {
       "name": "PROBE",
