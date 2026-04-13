@@ -21,7 +21,18 @@
     "mountType": "2x M2 screw (custom compact mount)"
   },
   "klipperSection": "bltouch",
-  "unverified": ["currentDraw"],
+  "unverified": [
+    "operatingVoltage",
+    "signalType",
+    "currentDraw",
+    "repeatability",
+    "triggerDistance",
+    "bedCompatibility",
+    "temperatureCompensation",
+    "dimensions",
+    "weight",
+    "mountType"
+  ],
   "references": [
     {
       "label": "BIQU MicroProbe V2 Product Page",

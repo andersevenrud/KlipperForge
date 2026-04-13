@@ -23,7 +23,20 @@
     "mountType": "adhesive or screw mount"
   },
   "klipperSection": "probe_eddy_current",
-  "unverified": ["weight", "dimensions"],
+  "unverified": [
+    "operatingVoltage",
+    "signalType",
+    "currentDraw",
+    "repeatability",
+    "triggerDistance",
+    "bedCompatibility",
+    "bedCompatibilityNote",
+    "temperatureCompensation",
+    "multiPoint",
+    "dimensions",
+    "weight",
+    "mountType"
+  ],
   "references": [
     {
       "label": "BigTreeTech Eddy Product Page",

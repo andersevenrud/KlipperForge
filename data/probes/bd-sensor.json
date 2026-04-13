@@ -23,7 +23,21 @@
     "mountType": "adhesive mount to hotend"
   },
   "klipperSection": "BDsensor",
-  "unverified": ["currentDraw", "weight", "dimensions"],
+  "unverified": [
+    "operatingVoltage",
+    "signalType",
+    "currentDraw",
+    "repeatability",
+    "triggerDistance",
+    "bedCompatibility",
+    "bedCompatibilityNote",
+    "temperatureCompensation",
+    "multiPoint",
+    "dimensions",
+    "weight",
+    "mountType",
+    "klipperSection"
+  ],
   "references": [
     {
       "label": "BD Sensor GitHub Repository",

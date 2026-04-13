@@ -21,7 +21,18 @@
     "mountType": "BLTouch standard (2x M3 screw, 18mm spacing)"
   },
   "klipperSection": "bltouch",
-  "unverified": ["dimensions", "weight"],
+  "unverified": [
+    "operatingVoltage",
+    "signalType",
+    "currentDraw",
+    "repeatability",
+    "triggerDistance",
+    "bedCompatibility",
+    "temperatureCompensation",
+    "dimensions",
+    "weight",
+    "mountType"
+  ],
   "references": [
     {
       "label": "ANTCLABS Official Product Page",

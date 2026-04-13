@@ -332,6 +332,7 @@ export interface McuBoard {
   dimensions?: McuBoardDimensions;
   maxMotorVoltage?: number;
   mcuVariants?: string[];
+  unverified?: string[];
   relatedArticles?: RelatedArticle[];
 }
 

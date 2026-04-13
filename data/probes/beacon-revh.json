@@ -23,7 +23,21 @@
     "mountType": "2x M3 screw"
   },
   "klipperSection": "beacon",
-  "unverified": ["currentDraw", "dimensions", "repeatability"],
+  "unverified": [
+    "operatingVoltage",
+    "signalType",
+    "currentDraw",
+    "repeatability",
+    "triggerDistance",
+    "bedCompatibility",
+    "bedCompatibilityNote",
+    "temperatureCompensation",
+    "multiPoint",
+    "dimensions",
+    "weight",
+    "mountType",
+    "klipperSection"
+  ],
   "references": [
     {
       "label": "Beacon3D Official Website",
