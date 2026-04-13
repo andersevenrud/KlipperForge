@@ -1161,6 +1161,17 @@
       "pins": [],
       "orientation": "vertical",
       "rows": 1
+    },
+    {
+      "name": "SDCARD",
+      "category": "misc",
+      "x": 880,
+      "y": 220,
+      "width": 80,
+      "height": 70,
+      "pins": [],
+      "orientation": "horizontal",
+      "rows": 1
     }
   ],
   "jumperConfigs": {
@@ -1568,6 +1579,5 @@
         "pattern": [[0, 0, 1], [0, 0, 1]]
       }
     ]
-  },
-  "unverified": ["connectors[*].pins"]
+  }
 }
