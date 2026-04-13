@@ -32,13 +32,13 @@ function SwitchToggle({ on, color, size }: SwitchToggleProps) {
     >
       {on ? (
         <>
+          <span className={`${thumbSize} rounded-sm mt-0.5`} style={{ backgroundColor: color }} />
           <span className="flex-1" />
-          <span className={`${thumbSize} rounded-sm mb-0.5`} style={{ backgroundColor: color }} />
         </>
       ) : (
         <>
-          <span className={`${thumbSize} rounded-sm mt-0.5 bg-muted-foreground/30`} />
           <span className="flex-1" />
+          <span className={`${thumbSize} rounded-sm mb-0.5 bg-muted-foreground/30`} />
         </>
       )}
     </span>
