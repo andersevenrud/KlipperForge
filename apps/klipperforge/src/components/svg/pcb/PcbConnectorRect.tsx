@@ -50,7 +50,8 @@ export const PcbConnectorRect = memo(function PcbConnectorRect({
   const colors = PCB_CATEGORY_COLORS[connector.category];
   const fill = highlighted ? colors.active : isActive ? colors.active : colors.base;
   const opacity = highlighted ? 0.95 : isActive ? 0.85 : 0.4;
-  const strokeWidth = highlighted ? 1 : isActive ? 0.6 : 0.3;
+  const stroke = highlighted || isActive ? "#fff" : colors.active;
+  const strokeWidth = highlighted ? 1 : isActive ? 0.6 : 1.5;
 
   const handleMouseEnter = (e: React.MouseEvent) => {
     onHover(connector, assignments, e);
@@ -85,7 +86,7 @@ export const PcbConnectorRect = memo(function PcbConnectorRect({
         rx={0.5}
         fill={fill}
         fillOpacity={opacity}
-        stroke={isActive ? "#fff" : "#666"}
+        stroke={stroke}
         strokeWidth={strokeWidth}
       />
       {connector.category !== "jumper" && (
