@@ -1,11 +1,11 @@
 {
   "boardId": "btt-octopus-pro-1.1",
-  "name": "Octopus Pro v1.1",
+  "name": "BTT Octopus Pro v1.1",
   "viewBox": {
     "width": 565,
     "height": 346
   },
-  "image": "/data/pcb-layouts/images/btt-octopus-pro-1.1.png",
+  "image": "_docs/Octopus_Pro_Title.png",
   "connectors": [
     {
       "name": "HE0",
@@ -1089,7 +1089,7 @@
       "width": 22,
       "height": 22,
       "pins": ["PD0", "PD1"],
-      "pinHints": ["&amp;lt;RX&amp;gt;", "&amp;lt;TX&amp;gt;"],
+      "pinHints": ["<RX>", "<TX>"],
       "orientation": "vertical",
       "rows": 1
     },

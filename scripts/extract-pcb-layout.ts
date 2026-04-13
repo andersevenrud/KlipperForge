@@ -151,7 +151,7 @@ function main() {
       : [];
 
     const pinHints = hintsRaw
-      ? hintsRaw
+      ? decodeXmlEntities(hintsRaw)
           .split(",")
           .map((p) => p.trim())
           .filter(Boolean)
