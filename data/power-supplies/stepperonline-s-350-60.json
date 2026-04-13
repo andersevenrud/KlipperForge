@@ -36,10 +36,16 @@
       "type": "product"
     },
     {
-      "label": "Amazon Product Page",
-      "url": "https://www.amazon.com/Switching-Power-Supply-Router-S-350-60/dp/B00XTHM6TO",
-      "type": "product"
+      "label": "StepperOnline S-350-60 Datasheet",
+      "url": "https://www.omc-stepperonline.com/download/S-350-60.pdf",
+      "type": "datasheet"
     }
   ],
-  "unverified": []
+  "unverified": [
+    "physicalSpecs.dimensions",
+    "physicalSpecs.weight",
+    "certifications",
+    "typicalUseCases",
+    "communityRecommendation"
+  ]
 }

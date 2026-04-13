@@ -113,5 +113,6 @@
       "id": "tmc2209",
       "name": "TMC2209"
     }
-  ]
+  ],
+  "unverified": ["pins", "references[1]", "references[2]"]
 }

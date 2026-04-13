@@ -34,17 +34,15 @@
       "label": "MeanWell SE-600 Datasheet",
       "url": "https://www.meanwell.com/Upload/PDF/SE-600/SE-600-SPEC.PDF",
       "type": "datasheet"
-    },
-    {
-      "label": "DigiKey Product Page",
-      "url": "https://www.digikey.com/en/products/detail/mean-well-usa-inc/SE-600-24/7706615",
-      "type": "product"
-    },
-    {
-      "label": "Amazon Product Page",
-      "url": "https://www.amazon.com/MEAN-WELL-SE-600-24-Supply-Single/dp/B00DEDB2U2",
-      "type": "product"
     }
   ],
-  "unverified": ["weight"]
+  "unverified": [
+    "electricalSpecs.efficiency",
+    "physicalSpecs.weight",
+    "certifications",
+    "protections",
+    "operatingTemperature",
+    "typicalUseCases",
+    "communityRecommendation"
+  ]
 }

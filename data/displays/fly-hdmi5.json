@@ -27,7 +27,7 @@
     "Brightness buttons",
     "180-degree flip support"
   ],
-  "unverified": ["dimensions", "weight"],
+  "unverified": ["dimensions", "weight", "screenSpecs.resolution"],
   "references": [
     {
       "label": "Mellow FLY HDMI Documentation",

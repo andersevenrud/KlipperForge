@@ -52,5 +52,6 @@
     "PC13",
     "PC14",
     "PC15"
-  ]
+  ],
+  "unverified": ["pins"]
 }

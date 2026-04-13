@@ -27,7 +27,7 @@
     "supportsDiagPin": true,
     "supportsSensorlessHoming": true
   },
-  "unverified": ["sensorlessHoming"],
+  "unverified": ["interpolationTo256", "sensorlessHoming"],
   "references": [
     {
       "label": "BIGTREETECH Wiki — TMC2240",

@@ -23,7 +23,20 @@
     "mountType": "2x M3 screw"
   },
   "klipperSection": "cartographer",
-  "unverified": ["currentDraw", "weight", "dimensions"],
+  "unverified": [
+    "operatingVoltage",
+    "signalType",
+    "currentDraw",
+    "repeatability",
+    "triggerDistance",
+    "bedCompatibility",
+    "temperatureCompensation",
+    "multiPoint",
+    "dimensions",
+    "weight",
+    "mountType",
+    "klipperSection"
+  ],
   "references": [
     {
       "label": "Cartographer3D Official Website",

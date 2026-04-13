@@ -28,7 +28,7 @@
     "supportsDiagPin": true,
     "supportsSensorlessHoming": true
   },
-  "unverified": ["rmsCurrentMax"],
+  "unverified": ["rmsCurrentMax", "interpolationTo256", "spreadCycle", "dcStep", "sensorlessHoming"],
   "references": [
     {
       "label": "Mellow Klipper Docs — TMC5160HV Module",

@@ -26,7 +26,7 @@
     "Rotary encoder with push button",
     "Standard EXP1/EXP2 interface"
   ],
-  "unverified": ["dimensions", "weight"],
+  "unverified": ["dimensions", "weight", "screenSpecs.size", "screenSpecs.driver", "features[1]"],
   "references": [
     {
       "label": "Mellow FLY Documentation",

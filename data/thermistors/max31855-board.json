@@ -17,7 +17,7 @@
     "packageType": "breakout board",
     "dimensions": "14 × 21mm (Adafruit variant)"
   },
-  "unverified": ["dimensions"],
+  "unverified": ["temperatureRange", "accuracy", "dimensions", "packageType"],
   "references": [
     {
       "label": "Maxim MAX31855 Datasheet",

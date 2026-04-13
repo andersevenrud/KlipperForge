@@ -23,7 +23,7 @@
     "wifi": true
   },
   "features": ["Standalone WiFi display", "5 inch touchscreen", "No direct connection to host required"],
-  "unverified": ["dimensions", "weight"],
+  "unverified": ["dimensions", "weight", "screenSpecs.size", "screenSpecs.resolution", "computeSpecs.processor"],
   "references": [
     {
       "label": "Mellow FLY Documentation",

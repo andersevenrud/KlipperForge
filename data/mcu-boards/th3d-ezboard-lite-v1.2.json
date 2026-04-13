@@ -87,9 +87,9 @@
       "type": "wiki"
     },
     {
-      "label": "Installation Guide",
-      "url": "https://support.th3dstudio.com/helpcenter/ezboard-lite-v1-x-installation-guide/",
-      "type": "manual"
+      "label": "EZBoard Lite TMC2208 vs TMC2209 (TH3D blog)",
+      "url": "https://www.th3dstudio.com/2019/12/11/ezboard-lite-why-do-you-use-the-tmc-2208-instead-of-tmc-2209-drivers/",
+      "type": "other"
     }
   ],
   "drivers": {
@@ -104,5 +104,6 @@
       "id": "tmc2208",
       "name": "TMC2208"
     }
-  ]
+  ],
+  "unverified": ["pins", "drivers.count", "maxMotorVoltage"]
 }

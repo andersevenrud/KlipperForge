@@ -40,5 +40,5 @@
       "type": "github"
     }
   ],
-  "unverified": ["material"]
+  "unverified": ["material", "filamentCapacity", "motorCount", "bufferType"]
 }

@@ -100,5 +100,6 @@
   "drivers": {
     "count": 5,
     "model": "A5984"
-  }
+  },
+  "unverified": ["mcu", "pins", "drivers.count"]
 }

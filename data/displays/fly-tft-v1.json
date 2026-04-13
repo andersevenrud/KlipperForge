@@ -25,7 +25,7 @@
     "Resistive touchscreen",
     "Up to 50fps via SPI"
   ],
-  "unverified": ["dimensions", "weight"],
+  "unverified": ["dimensions", "weight", "screenSpecs.size", "screenSpecs.resolution", "features[3]"],
   "references": [
     {
       "label": "GitHub - FLY-TFT",

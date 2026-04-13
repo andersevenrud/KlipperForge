@@ -40,7 +40,7 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "dimensions"],
+  "unverified": ["weight", "dimensions", "compatibilitySpecs.targetPrinters[0]"],
   "relatedArticles": [
     {
       "category": "extruders",

@@ -211,5 +211,6 @@
       "id": "voron-2.4",
       "name": "Voron 2.4"
     }
-  ]
+  ],
+  "unverified": ["pins", "aliases.CAN_RX", "aliases.CAN_TX", "aliases.PS_ON", "relatedArticles"]
 }

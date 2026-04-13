@@ -48,5 +48,5 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["material"]
+  "unverified": ["material", "motorCount", "filamentCapacity", "bufferType"]
 }

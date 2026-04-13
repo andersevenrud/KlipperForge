@@ -39,7 +39,7 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["dimensions", "maxFeedRate"],
+  "unverified": ["dimensions", "maxFeedRate", "gearRatio", "gripType"],
   "relatedArticles": [
     {
       "category": "toolheads",

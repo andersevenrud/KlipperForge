@@ -35,12 +35,15 @@
       "label": "MeanWell LRS-350 Datasheet",
       "url": "https://www.meanwell.com/Upload/PDF/LRS-350/LRS-350-SPEC.PDF",
       "type": "datasheet"
-    },
-    {
-      "label": "Amazon Product Page",
-      "url": "https://www.amazon.com/MEAN-WELL-LRS-350-12-Computer-Project/dp/B07VTLJS18",
-      "type": "product"
     }
   ],
-  "unverified": []
+  "unverified": [
+    "electricalSpecs.efficiency",
+    "physicalSpecs.weight",
+    "certifications",
+    "protections",
+    "operatingTemperature",
+    "typicalUseCases",
+    "communityRecommendation"
+  ]
 }

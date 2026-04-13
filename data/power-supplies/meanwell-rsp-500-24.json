@@ -39,12 +39,18 @@
       "label": "MeanWell RSP-500-24 Product Page",
       "url": "https://meanwell-ps.com/products/rsp-500-24",
       "type": "product"
-    },
-    {
-      "label": "Amazon Product Page",
-      "url": "https://www.amazon.com/MEAN-WELL-RSP-500-24-Printer-Industrial/dp/B085FXZRDH",
-      "type": "product"
     }
   ],
-  "unverified": []
+  "unverified": [
+    "wattage",
+    "electricalSpecs.outputPower",
+    "electricalSpecs.efficiency",
+    "physicalSpecs.dimensions",
+    "physicalSpecs.weight",
+    "certifications",
+    "protections",
+    "operatingTemperature",
+    "typicalUseCases",
+    "communityRecommendation"
+  ]
 }

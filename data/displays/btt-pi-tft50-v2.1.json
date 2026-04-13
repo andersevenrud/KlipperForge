@@ -25,7 +25,7 @@
     "5 inch display area",
     "No HDMI port required"
   ],
-  "unverified": ["dimensions", "weight"],
+  "unverified": ["dimensions", "weight", "name", "screenSpecs.resolution"],
   "references": [
     {
       "label": "GitHub - BTT TouchScreen Hardware",

@@ -20,7 +20,7 @@
     "dimensions": "3mm diameter × 10mm length",
     "leadType": "PTFE sleeved"
   },
-  "unverified": ["dimensions", "leadType"],
+  "unverified": ["betaValue", "temperatureRange", "accuracy", "dimensions", "leadType", "packageType"],
   "references": [
     {
       "label": "TriangleLab Store",

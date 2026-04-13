@@ -23,7 +23,18 @@
     "mountType": "2x M3 screw"
   },
   "klipperSection": "probe_eddy_current",
-  "unverified": [],
+  "unverified": [
+    "operatingVoltage",
+    "currentDraw",
+    "repeatability",
+    "triggerDistance",
+    "bedCompatibility",
+    "temperatureCompensation",
+    "multiPoint",
+    "dimensions",
+    "weight",
+    "mountType"
+  ],
   "references": [
     {
       "label": "BigTreeTech Eddy Product Page",

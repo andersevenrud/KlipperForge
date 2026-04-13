@@ -29,6 +29,22 @@
     "OEM supply for various 3D printer manufacturers"
   ],
   "communityRecommendation": "budget",
-  "references": [],
-  "unverified": []
+  "references": [
+    {
+      "label": "Sompom S-360-24 Product Page",
+      "url": "https://spympower.com/product/s-360-24/",
+      "type": "product"
+    }
+  ],
+  "unverified": [
+    "FABRICATED?",
+    "electricalSpecs.efficiency",
+    "physicalSpecs.dimensions",
+    "physicalSpecs.weight",
+    "certifications",
+    "protections",
+    "operatingTemperature",
+    "typicalUseCases",
+    "communityRecommendation"
+  ]
 }

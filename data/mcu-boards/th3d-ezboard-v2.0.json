@@ -90,11 +90,6 @@
       "label": "Product Page",
       "url": "https://www.th3dstudio.com/product/ezboard-v2/",
       "type": "wiki"
-    },
-    {
-      "label": "Installation Guide",
-      "url": "https://support.th3dstudio.com/helpcenter/ezboard-v2-installation-guide/",
-      "type": "manual"
     }
   ],
   "drivers": {
@@ -109,5 +104,6 @@
       "id": "tmc2209",
       "name": "TMC2209"
     }
-  ]
+  ],
+  "unverified": ["pins"]
 }

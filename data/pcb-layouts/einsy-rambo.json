@@ -260,5 +260,6 @@
       "orientation": "horizontal",
       "rows": 1
     }
-  ]
+  ],
+  "unverified": ["connectors[*].pins"]
 }

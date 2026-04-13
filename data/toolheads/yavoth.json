@@ -53,7 +53,15 @@
       "type": "github"
     }
   ],
-  "unverified": ["weight", "dimensions"],
+  "unverified": [
+    "weight",
+    "dimensions",
+    "compatibilitySpecs.targetPrinters[1]",
+    "compatibilitySpecs.targetPrinters[2]",
+    "compatibilitySpecs.targetPrinters[3]",
+    "compatibilitySpecs.railSystems[0]",
+    "compatibilitySpecs.railSystems[1]"
+  ],
   "relatedArticles": [
     {
       "category": "extruders",

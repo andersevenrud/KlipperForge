@@ -128,5 +128,27 @@
     "count": 5,
     "connector": "stepstick"
   },
-  "maxMotorVoltage": 24
+  "maxMotorVoltage": 24,
+  "unverified": [
+    "aliases.DRIVER4_CS",
+    "aliases.DRIVER4_DIR",
+    "aliases.DRIVER4_EN",
+    "aliases.DRIVER4_STEP",
+    "aliases.EXP1_5",
+    "aliases.EXP1_6",
+    "aliases.FAN2",
+    "aliases.HE1",
+    "aliases.PROBE_SENSOR",
+    "aliases.PROBE_SERVO",
+    "aliases.T1",
+    "drivers.connector",
+    "drivers.count",
+    "id",
+    "maxMotorVoltage",
+    "name",
+    "pins",
+    "references[0]",
+    "references[1]",
+    "references[2]"
+  ]
 }

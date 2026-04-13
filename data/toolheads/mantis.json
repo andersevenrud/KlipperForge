@@ -42,7 +42,7 @@
       "type": "github"
     }
   ],
-  "unverified": ["dimensions"],
+  "unverified": ["dimensions", "weight", "compatibilitySpecs.targetPrinters[0]", "compatibilitySpecs.hotendMounts[5]"],
   "relatedArticles": [
     {
       "category": "extruders",

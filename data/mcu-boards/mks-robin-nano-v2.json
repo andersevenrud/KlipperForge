@@ -71,5 +71,6 @@
   "drivers": {
     "count": 5,
     "connector": "stepstick"
-  }
+  },
+  "unverified": ["pins", "drivers.connector", "references[1]"]
 }

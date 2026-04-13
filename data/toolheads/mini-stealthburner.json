@@ -39,7 +39,14 @@
       "type": "github"
     }
   ],
-  "unverified": ["weight", "dimensions", "fanMounts"],
+  "unverified": [
+    "weight",
+    "dimensions",
+    "fanMounts",
+    "compatibilitySpecs.railSystems[0]",
+    "compatibilitySpecs.hotendMounts[3]",
+    "compatibilitySpecs.extruderMounts[0]"
+  ],
   "relatedArticles": [
     {
       "category": "hotends",

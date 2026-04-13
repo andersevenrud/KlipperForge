@@ -25,7 +25,7 @@
     "Large 7 inch display",
     "No HDMI port required"
   ],
-  "unverified": ["dimensions", "weight", "resolution"],
+  "unverified": ["dimensions", "weight", "resolution", "name"],
   "references": [
     {
       "label": "GitHub - BTT TouchScreen Hardware",

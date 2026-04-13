@@ -30,7 +30,7 @@
     "supportsDiagPin": true,
     "supportsSensorlessHoming": true
   },
-  "unverified": ["senseResistor", "stallGuard", "dcStep", "sensorlessHoming", "dimensions"],
+  "unverified": ["senseResistor", "interpolationTo256", "stallGuard", "dcStep", "sensorlessHoming", "dimensions"],
   "references": [
     {
       "label": "BIGTREETECH EZ2130 Wiki",

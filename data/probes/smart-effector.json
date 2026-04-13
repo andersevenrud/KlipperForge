@@ -28,8 +28,8 @@
     "weight": 20,
     "mountType": "replaces delta effector plate (3x ball joint mount)"
   },
-  "klipperSection": "probe",
-  "unverified": ["currentDraw", "weight", "dimensions"],
+  "klipperSection": "smart_effector",
+  "unverified": ["operatingVoltage", "currentDraw", "repeatability", "dimensions", "weight", "mountType"],
   "references": [
     {
       "label": "Duet3D Smart Effector Product Page",

@@ -36,5 +36,5 @@
       "type": "datasheet"
     }
   ],
-  "unverified": ["weight"]
+  "unverified": ["airflow", "staticPressure", "rpm", "noiseLevel", "current", "power", "weight", "dimensions"]
 }

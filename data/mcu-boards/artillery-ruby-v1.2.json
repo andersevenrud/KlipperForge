@@ -63,5 +63,6 @@
   "drivers": {
     "count": 5,
     "connector": "stepstick"
-  }
+  },
+  "unverified": ["mcu", "pins", "drivers.count", "drivers.connector"]
 }

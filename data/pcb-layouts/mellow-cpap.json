@@ -42,5 +42,6 @@
       "orientation": "vertical",
       "rows": 1
     }
-  ]
+  ],
+  "unverified": ["connectors[*].pins"]
 }

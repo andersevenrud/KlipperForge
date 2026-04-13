@@ -34,17 +34,15 @@
       "label": "MeanWell UHP-200 Product Page",
       "url": "https://www.meanwell.com/webapp/product/search.aspx?prod=UHP-200(R)",
       "type": "product"
-    },
-    {
-      "label": "West3D Product Page",
-      "url": "https://west3d.com/products/mean-well-uhp-200-48-200w-48v-4-2a-power-supply-psu-1",
-      "type": "product"
-    },
-    {
-      "label": "DigiKey Product Page",
-      "url": "https://www.digikey.com/en/products/detail/mean-well-usa-inc/UHP-200-48/7707239",
-      "type": "product"
     }
   ],
-  "unverified": []
+  "unverified": [
+    "electricalSpecs.efficiency",
+    "physicalSpecs.dimensions",
+    "certifications",
+    "protections",
+    "operatingTemperature",
+    "typicalUseCases",
+    "communityRecommendation"
+  ]
 }

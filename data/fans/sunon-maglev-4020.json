@@ -35,5 +35,5 @@
       "type": "product"
     }
   ],
-  "unverified": ["staticPressure", "weight"]
+  "unverified": ["airflow", "staticPressure", "rpm", "noiseLevel", "current", "power", "weight"]
 }

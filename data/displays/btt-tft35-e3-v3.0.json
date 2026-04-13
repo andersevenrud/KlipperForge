@@ -26,7 +26,7 @@
     "Resistive touchscreen (Marlin mode only)",
     "SD card slot"
   ],
-  "unverified": ["dimensions", "weight"],
+  "unverified": ["dimensions", "weight", "screenSpecs.resolution"],
   "references": [
     {
       "label": "GitHub - BTT TouchScreen Firmware",

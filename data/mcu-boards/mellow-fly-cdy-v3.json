@@ -140,5 +140,36 @@
   "drivers": {
     "count": 6,
     "connector": "stepstick"
-  }
+  },
+  "unverified": [
+    "aliases.DRIVER0_CS",
+    "aliases.DRIVER1_CS",
+    "aliases.DRIVER2_CS",
+    "aliases.DRIVER3_CS",
+    "aliases.DRIVER4_CS",
+    "aliases.DRIVER4_DIR",
+    "aliases.DRIVER4_EN",
+    "aliases.DRIVER4_STEP",
+    "aliases.DRIVER5_CS",
+    "aliases.DRIVER5_DIR",
+    "aliases.DRIVER5_EN",
+    "aliases.DRIVER5_STEP",
+    "aliases.EXP2_7",
+    "aliases.FAN1",
+    "aliases.FAN2",
+    "aliases.HE1",
+    "aliases.HE2",
+    "aliases.PROBE_SENSOR",
+    "aliases.PROBE_SERVO",
+    "aliases.T1",
+    "aliases.T2",
+    "drivers.connector",
+    "drivers.count",
+    "id",
+    "name",
+    "pins",
+    "references[0]",
+    "references[1]",
+    "references[2]"
+  ]
 }

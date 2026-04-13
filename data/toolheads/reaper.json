@@ -55,7 +55,13 @@
       "type": "product"
     }
   ],
-  "unverified": ["weight", "dimensions"],
+  "unverified": [
+    "weight",
+    "dimensions",
+    "compatibilitySpecs.targetPrinters[0]",
+    "compatibilitySpecs.targetPrinters[1]",
+    "compatibilitySpecs.railSystems[0]"
+  ],
   "relatedArticles": [
     {
       "category": "extruders",

@@ -29,6 +29,7 @@
     "supportsDiagPin": false,
     "supportsSensorlessHoming": false
   },
+  "unverified": ["rmsCurrentMax", "interpolationTo256"],
   "references": [
     {
       "label": "BIGTREETECH Wiki — TMC2208",

@@ -101,6 +101,7 @@
     "count": 7,
     "model": "TMC2209/TMC5160"
   },
+  "unverified": ["drivers.count"],
   "relatedArticles": [
     {
       "category": "stepper-drivers",

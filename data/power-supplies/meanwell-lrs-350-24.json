@@ -36,12 +36,7 @@
       "label": "MeanWell LRS-350 Datasheet",
       "url": "https://www.meanwell.com/Upload/PDF/LRS-350/LRS-350-SPEC.PDF",
       "type": "datasheet"
-    },
-    {
-      "label": "DigiKey Product Page",
-      "url": "https://www.digikey.com/en/products/detail/mean-well-usa-inc/LRS-350-24/7705034",
-      "type": "product"
     }
   ],
-  "unverified": []
+  "unverified": ["physicalSpecs.weight", "certifications", "protections", "typicalUseCases", "communityRecommendation"]
 }

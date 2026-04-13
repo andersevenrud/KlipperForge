@@ -55,5 +55,6 @@
     "PD0",
     "PD1",
     "PD2"
-  ]
+  ],
+  "unverified": ["pins"]
 }

@@ -29,7 +29,7 @@
     "Click encoder with push button for menu navigation",
     "Onboard Neopixel LED"
   ],
-  "unverified": ["dimensions", "weight"],
+  "unverified": ["dimensions", "weight", "screenSpecs.size", "screenSpecs.driver", "features[6]"],
   "references": [
     {
       "label": "Fysetc Voron V0 OLED Product Page",

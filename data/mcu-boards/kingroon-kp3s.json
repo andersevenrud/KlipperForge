@@ -72,5 +72,6 @@
     "count": 4,
     "connector": "stepstick"
   },
-  "maxMotorVoltage": 24
+  "maxMotorVoltage": 24,
+  "unverified": ["mcu", "pins", "drivers.count", "drivers.connector", "maxMotorVoltage"]
 }

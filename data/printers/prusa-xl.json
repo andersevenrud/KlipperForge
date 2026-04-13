@@ -528,5 +528,11 @@
       "type": "github"
     }
   ],
-  "unverified": ["extruder_dwarf_pins", "heater_bed_modbus_pins", "loadcell_probe"]
+  "unverified": [
+    "variants[0].defaults.sections[*].data.*",
+    "variants[1].defaults.sections[*].data.*",
+    "extruder_dwarf_pins",
+    "heater_bed_modbus_pins",
+    "loadcell_probe"
+  ]
 }

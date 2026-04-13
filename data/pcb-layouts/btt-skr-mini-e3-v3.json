@@ -420,5 +420,6 @@
         "pattern": [[1, 1]]
       }
     ]
-  }
+  },
+  "unverified": ["connectors[*].pins"]
 }

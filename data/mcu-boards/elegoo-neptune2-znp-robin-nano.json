@@ -71,5 +71,6 @@
   "drivers": {
     "count": 5,
     "model": "TMC2225"
-  }
+  },
+  "unverified": ["mcu", "pins", "drivers.count", "drivers.model"]
 }

@@ -44,5 +44,12 @@
       "type": "product"
     }
   ],
-  "unverified": ["weight", "dimensions", "ERCF and Box Turtle compatibility", "targetPrinters"]
+  "unverified": [
+    "weight",
+    "dimensions",
+    "ERCF and Box Turtle compatibility",
+    "targetPrinters",
+    "compatibilitySpecs.fanMounts[0]",
+    "compatibilitySpecs.fanMounts[1]"
+  ]
 }

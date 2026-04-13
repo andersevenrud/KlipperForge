@@ -28,7 +28,7 @@
     "mountType": "replaces X carriage (Voron 2.4/Trident compatible)"
   },
   "klipperSection": "probe",
-  "unverified": ["currentDraw", "weight", "dimensions"],
+  "unverified": ["currentDraw", "dimensions", "mountType"],
   "references": [
     {
       "label": "Voron Tap GitHub Repository",

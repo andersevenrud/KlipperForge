@@ -95,5 +95,6 @@
     "width": 137,
     "height": 95
   },
-  "maxMotorVoltage": 56
+  "maxMotorVoltage": 56,
+  "unverified": ["name", "pins", "drivers.count", "drivers.connector", "dimensions", "maxMotorVoltage"]
 }

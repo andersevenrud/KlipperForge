@@ -91,5 +91,6 @@
       "url": "https://reprap.org/wiki/Re-ARM",
       "type": "wiki"
     }
-  ]
+  ],
+  "unverified": ["pins"]
 }

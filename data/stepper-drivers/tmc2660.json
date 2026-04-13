@@ -34,6 +34,25 @@
     "dimensions": "10 × 10 mm",
     "operatingTemperature": "-40 to 125 °C (junction)"
   },
+  "unverified": [
+    "supplyVoltageMin",
+    "supplyVoltageMax",
+    "rmsCurrentMax",
+    "peakCurrentMax",
+    "logicVoltageMin",
+    "logicVoltageMax",
+    "microstepsMax",
+    "interpolationTo256",
+    "stealthChop",
+    "spreadCycle",
+    "coolStep",
+    "stallGuard",
+    "dcStep",
+    "sensorlessHoming",
+    "packageType",
+    "dimensions",
+    "operatingTemperature"
+  ],
   "references": [
     {
       "label": "TMC2660 Datasheet (Rev 1.07)",

@@ -26,7 +26,7 @@
     "supportsDiagPin": true,
     "supportsSensorlessHoming": true
   },
-  "unverified": ["rmsCurrentMax", "coolStep"],
+  "unverified": ["rmsCurrentMax", "coolStep", "microstepsMax", "interpolationTo256", "sensorlessHoming"],
   "references": [
     {
       "label": "Mellow Klipper Docs — TMC2240 Module",

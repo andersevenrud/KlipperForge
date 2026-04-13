@@ -106,5 +106,6 @@
     "count": 6,
     "connector": "stepstick"
   },
-  "maxMotorVoltage": 35
+  "maxMotorVoltage": 35,
+  "unverified": ["pins", "drivers.connector", "maxMotorVoltage", "references[1]", "references[2]"]
 }

@@ -83,6 +83,7 @@
     "height": 70
   },
   "maxMotorVoltage": 24,
+  "unverified": ["name", "pins", "dimensions", "maxMotorVoltage", "relatedArticles"],
   "relatedArticles": [
     {
       "category": "stepper-drivers",

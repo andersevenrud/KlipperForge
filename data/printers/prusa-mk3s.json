@@ -2,7 +2,7 @@
   "id": "prusa-mk3s",
   "name": "Prusa MK3S+",
   "manufacturer": "Prusa Research",
-  "description": "Reliable cartesian 3D printer with Einsy RAMBo mainboard (ATmega2560), TMC2130 SPI drivers, Bondtech direct-drive extruder, and SuperPINDA bed probe. Covers MK3 / MK3S / MK3S+ — they share the same board and pinout. Pin mappings are taken from Klipper's upstream generic-einsy-rambo.cfg; motion tuning matches the dz0ny community reference. Note: the stock Einsy's 32u2 USB-serial chip has buggy firmware that prevents Klipper from talking to the board reliably — reflash it using PrusaOwners/mk3-32u2-firmware before using this preset.",
+  "description": "Reliable cartesian 3D printer with Einsy RAMBo mainboard (ATmega2560), TMC2130 SPI drivers, Bondtech direct-drive extruder, and SuperPINDA bed probe. Covers MK3 / MK3S / MK3S+ — they share the same board and pinout. Pin mappings are taken from Klipper's upstream generic-einsy-rambo.cfg; motion limits and several MK3S-specific values (extruder thermistor/max_temp, heater_bed max_temp, position_endstop -4 on Y, sensorless homing options) come from the dz0ny community reference. Some extruder/heater_bed PID values, bed_mesh region, safe_z_home position, probe inversion, and rotation_distance/microsteps for the Bondtech extruder differ from both upstream and dz0ny and have not been verified against an authoritative source — see the unverified[] list and tune for your specific build. Note: the stock Einsy's 32u2 USB-serial chip has buggy firmware that prevents Klipper from talking to the board reliably — reflash it using PrusaOwners/mk3-32u2-firmware before using this preset.",
   "equipment": [
     { "category": "mcu-boards", "id": "einsy-rambo", "label": "Einsy RAMBo", "role": "Main MCU" },
     { "category": "hotends", "id": "e3d-v6", "label": "E3D V6", "role": "Hotend" },
@@ -250,5 +250,31 @@
       "url": "https://github.com/PrusaOwners/mk3-32u2-firmware",
       "type": "github"
     }
+  ],
+  "unverified": [
+    "variants[0].defaults.sections[6].data.position_max",
+    "variants[0].defaults.sections[8].data.microsteps",
+    "variants[0].defaults.sections[8].data.rotation_distance",
+    "variants[0].defaults.sections[8].data.pid_kp",
+    "variants[0].defaults.sections[8].data.pid_ki",
+    "variants[0].defaults.sections[8].data.pid_kd",
+    "variants[0].defaults.sections[8].data.control",
+    "variants[0].defaults.sections[10].data.pid_kp",
+    "variants[0].defaults.sections[10].data.pid_ki",
+    "variants[0].defaults.sections[10].data.pid_kd",
+    "variants[0].defaults.sections[13].data.pin",
+    "variants[0].defaults.sections[13].data.z_offset",
+    "variants[0].defaults.sections[13].data.speed",
+    "variants[0].defaults.sections[14].data.home_xy_position",
+    "variants[0].defaults.sections[14].data.speed",
+    "variants[0].defaults.sections[14].data.z_hop",
+    "variants[0].defaults.sections[14].data.z_hop_speed",
+    "variants[0].defaults.sections[15].data.speed",
+    "variants[0].defaults.sections[15].data.horizontal_move_z",
+    "variants[0].defaults.sections[15].data.mesh_min",
+    "variants[0].defaults.sections[15].data.mesh_max",
+    "variants[0].defaults.sections[15].data.probe_count",
+    "variants[0].defaults.sections[16].data.sensor_type",
+    "variants[0].defaults.sections[16].data.sensor_pin"
   ]
 }

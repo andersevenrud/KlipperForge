@@ -37,5 +37,16 @@
       "type": "datasheet"
     }
   ],
-  "unverified": []
+  "unverified": [
+    "airflow",
+    "staticPressure",
+    "rpm",
+    "noiseLevel",
+    "voltage",
+    "current",
+    "power",
+    "weight",
+    "bearingType",
+    "tachoSignal"
+  ]
 }

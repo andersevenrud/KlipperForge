@@ -21,7 +21,16 @@
     "mountType": "M8 threaded barrel"
   },
   "klipperSection": "probe",
-  "unverified": ["currentDraw", "repeatability"],
+  "unverified": [
+    "operatingVoltage",
+    "signalType",
+    "currentDraw",
+    "repeatability",
+    "triggerDistance",
+    "dimensions",
+    "weight",
+    "mountType"
+  ],
   "references": [
     {
       "label": "Prusa SuperPINDA Spare Part (PINDA V2 replacement)",

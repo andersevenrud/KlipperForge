@@ -81,6 +81,16 @@
     "model": "TMC2209",
     "modelId": "tmc2209"
   },
+  "unverified": [
+    "name",
+    "mcu",
+    "pins",
+    "aliases",
+    "drivers.count",
+    "drivers.model",
+    "drivers.modelId",
+    "relatedArticles"
+  ],
   "relatedArticles": [
     {
       "category": "stepper-drivers",

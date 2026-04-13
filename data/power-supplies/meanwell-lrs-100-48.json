@@ -34,12 +34,7 @@
       "label": "MeanWell LRS-100 Datasheet",
       "url": "https://www.meanwell.com/Upload/PDF/LRS-100/LRS-100-SPEC.PDF",
       "type": "datasheet"
-    },
-    {
-      "label": "DigiKey Product Page",
-      "url": "https://www.digikey.com/en/products/detail/mean-well-usa-inc/LRS-100-48/7705007",
-      "type": "product"
     }
   ],
-  "unverified": []
+  "unverified": ["physicalSpecs.weight", "protections", "typicalUseCases", "communityRecommendation"]
 }

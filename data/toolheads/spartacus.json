@@ -33,7 +33,12 @@
       "type": "product"
     }
   ],
-  "unverified": ["dimensions", "railSystems"],
+  "unverified": [
+    "dimensions",
+    "railSystems",
+    "compatibilitySpecs.hotendMounts[2]",
+    "compatibilitySpecs.hotendMounts[3]"
+  ],
   "relatedArticles": [
     {
       "category": "hotends",

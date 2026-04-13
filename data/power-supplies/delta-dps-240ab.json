@@ -36,5 +36,20 @@
       "type": "product"
     }
   ],
-  "unverified": ["weight", "operatingTemperature", "certifications"]
+  "unverified": [
+    "name",
+    "electricalSpecs.outputCurrent",
+    "electricalSpecs.inputVoltageRange",
+    "electricalSpecs.efficiency",
+    "electricalSpecs.powerFactorCorrection",
+    "physicalSpecs.dimensions",
+    "physicalSpecs.weight",
+    "physicalSpecs.coolingMethod",
+    "physicalSpecs.hasFan",
+    "certifications",
+    "protections",
+    "operatingTemperature",
+    "typicalUseCases",
+    "communityRecommendation"
+  ]
 }

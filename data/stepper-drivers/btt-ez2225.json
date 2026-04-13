@@ -24,6 +24,7 @@
     "supportsDiagPin": false,
     "supportsSensorlessHoming": false
   },
+  "unverified": ["rmsCurrentMax", "senseResistor", "dimensions"],
   "references": [
     {
       "label": "BIGTREETECH EZ2225 Wiki",

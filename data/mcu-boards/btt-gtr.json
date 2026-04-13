@@ -110,5 +110,6 @@
   "drivers": {
     "count": 6,
     "connector": "stepstick"
-  }
+  },
+  "unverified": ["pins", "drivers.count"]
 }

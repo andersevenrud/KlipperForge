@@ -52,5 +52,24 @@
       "url": "https://www.simplify3d.com/resources/materials-guide/hips/",
       "type": "documentation"
     }
+  ],
+  "unverified": [
+    "printSpecs.nozzleTempRange",
+    "printSpecs.bedTempRange",
+    "printSpecs.printSpeedRange",
+    "printSpecs.coolingFan",
+    "printSpecs.firstLayerTemp",
+    "mechanicalSpecs.tensileStrength",
+    "mechanicalSpecs.heatDeflectionTemp",
+    "mechanicalSpecs.elongationAtBreak",
+    "mechanicalSpecs.impactStrength",
+    "environmentalSpecs.moistureSensitivity",
+    "environmentalSpecs.uvResistance",
+    "environmentalSpecs.foodSafe",
+    "environmentalSpecs.dryingTemp",
+    "environmentalSpecs.dryingTime",
+    "physicalSpecs.density",
+    "physicalSpecs.glassTransitionTemp",
+    "physicalSpecs.meltingPoint"
   ]
 }

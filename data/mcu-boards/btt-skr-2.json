@@ -111,5 +111,6 @@
     "count": 5,
     "connector": "stepstick"
   },
-  "mcuVariants": ["STM32F429"]
+  "mcuVariants": ["STM32F429"],
+  "unverified": ["pins", "drivers.count"]
 }

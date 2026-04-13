@@ -32,6 +32,7 @@
   "physicalSpecs": {
     "dimensions": "15.24 × 20.32 mm"
   },
+  "unverified": ["interpolationTo256", "dcStep"],
   "references": [
     {
       "label": "BIGTREETECH Wiki — TMC2209",

@@ -394,6 +394,7 @@ export interface PcbLayout {
   imageOffset?: PcbImageOffset;
   connectors: PcbConnector[];
   jumperConfigs?: Record<string, JumperOption[]>;
+  unverified?: string[];
 }
 
 // ---------------------------------------------------------------------------

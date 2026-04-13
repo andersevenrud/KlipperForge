@@ -26,7 +26,7 @@
     "SPI connection for compact wiring",
     "Works with CB1 and Raspberry Pi"
   ],
-  "unverified": ["dimensions", "weight"],
+  "unverified": ["dimensions", "weight", "screenSpecs.resolution", "features[0]"],
   "references": [
     {
       "label": "GitHub - BTT TFT35 SPI",

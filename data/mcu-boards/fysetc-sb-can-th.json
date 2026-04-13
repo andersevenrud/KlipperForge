@@ -75,6 +75,7 @@
     "model": "TMC2209",
     "modelId": "tmc2209"
   },
+  "unverified": ["pins", "references[2]"],
   "relatedArticles": [
     {
       "category": "stepper-drivers",

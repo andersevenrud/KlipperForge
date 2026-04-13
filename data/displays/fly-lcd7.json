@@ -26,7 +26,7 @@
     "180-degree display flip",
     "Power-off memory for settings"
   ],
-  "unverified": ["dimensions", "weight"],
+  "unverified": ["dimensions", "weight", "screenSpecs.resolution"],
   "references": [
     {
       "label": "GitHub - FLY-LCD",

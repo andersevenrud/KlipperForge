@@ -38,9 +38,14 @@
   ],
   "references": [
     {
-      "label": "DropEffect neXtG on 3DJake",
-      "url": "https://www.3djake.com/dropeffect/nextg-hotend",
+      "label": "DropEffect neXtG Hotend Product Page",
+      "url": "https://www.dropeffect.com/products/nextg-hotend",
       "type": "product"
+    },
+    {
+      "label": "DropEffect neXt-G Hotend GitHub",
+      "url": "https://github.com/Dropeffect/neXt-G-Hotend",
+      "type": "documentation"
     },
     {
       "label": "Klipper Extruder Configuration",

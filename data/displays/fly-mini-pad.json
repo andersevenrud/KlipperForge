@@ -33,7 +33,14 @@
     "Compact form factor",
     "No separate SBC required"
   ],
-  "unverified": ["dimensions", "weight"],
+  "unverified": [
+    "dimensions",
+    "weight",
+    "screenSpecs.size",
+    "screenSpecs.resolution",
+    "computeSpecs.processor",
+    "computeSpecs.ram"
+  ],
   "references": [
     {
       "label": "Mellow FLY Documentation",

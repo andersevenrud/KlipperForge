@@ -41,5 +41,5 @@
     { "label": "Happy Hare (Klipper Driver)", "url": "https://github.com/moggieuk/Happy-Hare", "type": "github" },
     { "label": "Happy Hare Wiki", "url": "https://github.com/moggieuk/Happy-Hare/wiki", "type": "documentation" }
   ],
-  "unverified": ["material", "filamentCapacity"]
+  "unverified": ["material", "filamentCapacity", "motorCount"]
 }

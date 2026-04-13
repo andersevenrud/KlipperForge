@@ -58,5 +58,24 @@
       "url": "https://um-support-files.ultimaker.com/materials/2.85mm/tds/TPU-95A/Ultimaker-TPU95A-TDS-v5.00.pdf",
       "type": "datasheet"
     }
+  ],
+  "unverified": [
+    "printSpecs.nozzleTempRange",
+    "printSpecs.bedTempRange",
+    "printSpecs.printSpeedRange",
+    "printSpecs.coolingFan",
+    "printSpecs.firstLayerTemp",
+    "mechanicalSpecs.tensileStrength",
+    "mechanicalSpecs.heatDeflectionTemp",
+    "mechanicalSpecs.elongationAtBreak",
+    "mechanicalSpecs.impactStrength",
+    "environmentalSpecs.moistureSensitivity",
+    "environmentalSpecs.uvResistance",
+    "environmentalSpecs.foodSafe",
+    "environmentalSpecs.dryingTemp",
+    "environmentalSpecs.dryingTime",
+    "physicalSpecs.density",
+    "physicalSpecs.glassTransitionTemp",
+    "physicalSpecs.meltingPoint"
   ]
 }

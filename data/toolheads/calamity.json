@@ -38,7 +38,18 @@
       "type": "product"
     }
   ],
-  "unverified": ["weight", "dimensions"],
+  "unverified": [
+    "weight",
+    "dimensions",
+    "compatibilitySpecs.targetPrinters[0]",
+    "compatibilitySpecs.targetPrinters[1]",
+    "compatibilitySpecs.targetPrinters[2]",
+    "compatibilitySpecs.hotendMounts[0]",
+    "compatibilitySpecs.hotendMounts[1]",
+    "compatibilitySpecs.hotendMounts[2]",
+    "compatibilitySpecs.extruderMounts[2]",
+    "compatibilitySpecs.extruderMounts[3]"
+  ],
   "relatedArticles": [
     {
       "category": "extruders",

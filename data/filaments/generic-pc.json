@@ -57,5 +57,24 @@
       "url": "https://www.stratasys.com/siteassets/materials/materials-catalog/fdm-materials/pc/mds_fdm_pc_0422a.pdf",
       "type": "datasheet"
     }
+  ],
+  "unverified": [
+    "printSpecs.nozzleTempRange",
+    "printSpecs.bedTempRange",
+    "printSpecs.printSpeedRange",
+    "printSpecs.coolingFan",
+    "printSpecs.firstLayerTemp",
+    "mechanicalSpecs.tensileStrength",
+    "mechanicalSpecs.heatDeflectionTemp",
+    "mechanicalSpecs.elongationAtBreak",
+    "mechanicalSpecs.impactStrength",
+    "environmentalSpecs.moistureSensitivity",
+    "environmentalSpecs.uvResistance",
+    "environmentalSpecs.foodSafe",
+    "environmentalSpecs.dryingTemp",
+    "environmentalSpecs.dryingTime",
+    "physicalSpecs.density",
+    "physicalSpecs.glassTransitionTemp",
+    "physicalSpecs.meltingPoint"
   ]
 }

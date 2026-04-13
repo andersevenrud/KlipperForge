@@ -29,5 +29,5 @@
       "type": "documentation"
     }
   ],
-  "unverified": []
+  "unverified": ["filamentDiameter", "dimensions", "weight"]
 }

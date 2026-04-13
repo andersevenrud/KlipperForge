@@ -120,5 +120,6 @@
     "width": 170,
     "height": 102
   },
-  "maxMotorVoltage": 60
+  "maxMotorVoltage": 60,
+  "unverified": ["pins", "dimensions.height"]
 }

@@ -27,6 +27,7 @@
     "supportsDiagPin": true,
     "supportsSensorlessHoming": true
   },
+  "unverified": ["sensorlessHoming", "senseResistor", "dimensions"],
   "references": [
     {
       "label": "BIGTREETECH EZ2226 Wiki",

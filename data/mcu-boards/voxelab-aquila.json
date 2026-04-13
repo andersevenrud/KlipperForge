@@ -68,5 +68,6 @@
       "id": "tmc2208",
       "name": "TMC2208"
     }
-  ]
+  ],
+  "unverified": ["FABRICATED?", "mcu", "pins", "drivers.count", "drivers.model", "drivers.modelId"]
 }

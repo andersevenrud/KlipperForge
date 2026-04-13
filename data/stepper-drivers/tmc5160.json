@@ -32,6 +32,23 @@
     "dimensions": "7 × 7 mm body (TQFP-48); 8 × 8 mm (QFN)",
     "operatingTemperature": "-40 to 125 °C (junction)"
   },
+  "unverified": [
+    "supplyVoltageMin",
+    "supplyVoltageMax",
+    "logicVoltageMin",
+    "logicVoltageMax",
+    "microstepsMax",
+    "interpolationTo256",
+    "stealthChop",
+    "spreadCycle",
+    "coolStep",
+    "stallGuard",
+    "dcStep",
+    "sensorlessHoming",
+    "packageType",
+    "dimensions",
+    "operatingTemperature"
+  ],
   "references": [
     {
       "label": "TMC5160 / TMC5160A Datasheet (Rev 1.17)",

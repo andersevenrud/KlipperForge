@@ -120,5 +120,6 @@
   "drivers": {
     "count": 8,
     "connector": "stepstick"
-  }
+  },
+  "unverified": ["pins", "flash.dfuModeInstructions", "flash.serialFlashBaud", "flash.serialFlashParity"]
 }

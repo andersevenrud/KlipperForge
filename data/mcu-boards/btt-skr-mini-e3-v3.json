@@ -132,6 +132,7 @@
     "modelId": "tmc2209"
   },
   "maxMotorVoltage": 24,
+  "unverified": ["name", "pins", "maxMotorVoltage", "relatedArticles"],
   "relatedArticles": [
     {
       "category": "printers",

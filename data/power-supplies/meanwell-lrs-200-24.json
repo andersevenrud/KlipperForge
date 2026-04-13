@@ -36,17 +36,14 @@
       "label": "MeanWell LRS-200-24 Datasheet",
       "url": "https://www.meanwell.com/Upload/PDF/LRS-200/LRS-200-SPEC.PDF",
       "type": "datasheet"
-    },
-    {
-      "label": "DigiKey Product Page",
-      "url": "https://www.digikey.com/en/products/detail/mean-well-usa-inc/LRS-200-24/7705026",
-      "type": "product"
-    },
-    {
-      "label": "Fabreeko (Voron vendor)",
-      "url": "https://www.fabreeko.com/products/mean-well-lrs-200-24-power-supply",
-      "type": "product"
     }
   ],
-  "unverified": []
+  "unverified": [
+    "physicalSpecs.weight",
+    "certifications",
+    "protections",
+    "operatingTemperature",
+    "typicalUseCases",
+    "communityRecommendation"
+  ]
 }

@@ -40,5 +40,5 @@
       "type": "product"
     }
   ],
-  "unverified": []
+  "unverified": ["filamentCapacity", "maxFilaments", "motorCount", "driveType", "features"]
 }

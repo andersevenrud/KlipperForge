@@ -34,12 +34,16 @@
       "label": "MeanWell RSP-320 Datasheet",
       "url": "https://www.meanwell.com/Upload/PDF/RSP-320/RSP-320-SPEC.PDF",
       "type": "datasheet"
-    },
-    {
-      "label": "Prusa Forum Discussion",
-      "url": "https://forum.prusa3d.com/forum/original-prusa-i3-mk3s-mk3-user-mods-octoprint-enclosures-nozzles/alternate-power-supply-meanwell-rsp-320-24/",
-      "type": "other"
     }
   ],
-  "unverified": []
+  "unverified": [
+    "electricalSpecs.inputVoltageRange",
+    "electricalSpecs.efficiency",
+    "physicalSpecs.weight",
+    "certifications",
+    "protections",
+    "operatingTemperature",
+    "typicalUseCases",
+    "communityRecommendation"
+  ]
 }

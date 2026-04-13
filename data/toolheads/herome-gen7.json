@@ -62,7 +62,27 @@
       "type": "other"
     }
   ],
-  "unverified": ["weight", "dimensions"],
+  "unverified": [
+    "weight",
+    "dimensions",
+    "compatibilitySpecs.targetPrinters[2]",
+    "compatibilitySpecs.targetPrinters[3]",
+    "compatibilitySpecs.targetPrinters[4]",
+    "compatibilitySpecs.targetPrinters[5]",
+    "compatibilitySpecs.targetPrinters[6]",
+    "compatibilitySpecs.hotendMounts[2]",
+    "compatibilitySpecs.hotendMounts[4]",
+    "compatibilitySpecs.hotendMounts[5]",
+    "compatibilitySpecs.hotendMounts[6]",
+    "compatibilitySpecs.hotendMounts[7]",
+    "compatibilitySpecs.hotendMounts[8]",
+    "compatibilitySpecs.extruderMounts[1]",
+    "compatibilitySpecs.extruderMounts[3]",
+    "compatibilitySpecs.extruderMounts[4]",
+    "compatibilitySpecs.fanMounts[1]",
+    "compatibilitySpecs.fanMounts[3]",
+    "compatibilitySpecs.fanMounts[4]"
+  ],
   "relatedArticles": [
     {
       "category": "extruders",

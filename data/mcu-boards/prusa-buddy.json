@@ -118,5 +118,6 @@
       "id": "tmc2209",
       "name": "TMC2209"
     }
-  ]
+  ],
+  "unverified": ["pins", "drivers", "references[2]"]
 }

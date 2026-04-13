@@ -150,5 +150,6 @@
       "id": "tmc2130",
       "name": "TMC2130"
     }
-  ]
+  ],
+  "unverified": ["pins", "drivers"]
 }

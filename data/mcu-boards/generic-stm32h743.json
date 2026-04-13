@@ -84,5 +84,6 @@
     "PE13",
     "PE14",
     "PE15"
-  ]
+  ],
+  "unverified": ["pins"]
 }

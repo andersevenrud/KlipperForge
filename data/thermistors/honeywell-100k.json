@@ -19,7 +19,7 @@
     "packageType": "glass bead",
     "leadType": "tinned copper-clad steel"
   },
-  "unverified": [],
+  "unverified": ["temperatureRange", "accuracy", "packageType", "leadType"],
   "references": [
     {
       "label": "Honeywell Sensing Product Page",

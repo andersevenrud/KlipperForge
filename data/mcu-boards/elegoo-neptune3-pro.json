@@ -68,5 +68,6 @@
   "drivers": {
     "count": 5,
     "model": "MS35774"
-  }
+  },
+  "unverified": ["mcu", "pins", "drivers.count", "drivers.model"]
 }

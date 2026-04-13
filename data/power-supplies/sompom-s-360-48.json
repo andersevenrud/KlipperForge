@@ -25,6 +25,23 @@
   "operatingTemperature": "-10 to +60C",
   "typicalUseCases": ["Budget 48V 3D printer builds", "48V stepper driver setups (TMC5160)"],
   "communityRecommendation": "budget",
-  "references": [],
-  "unverified": []
+  "references": [
+    {
+      "label": "Sompom S-360-48 Product Page",
+      "url": "https://spympower.com/product/s-360-48/",
+      "type": "product"
+    }
+  ],
+  "unverified": [
+    "FABRICATED?",
+    "electricalSpecs.inputVoltageRange",
+    "electricalSpecs.efficiency",
+    "physicalSpecs.dimensions",
+    "physicalSpecs.weight",
+    "certifications",
+    "protections",
+    "operatingTemperature",
+    "typicalUseCases",
+    "communityRecommendation"
+  ]
 }

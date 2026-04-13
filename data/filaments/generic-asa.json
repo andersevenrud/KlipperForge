@@ -57,5 +57,24 @@
       "url": "https://colorfabb.com/media/datasheets/tds/colorfabb/TDS_E_ColorFabb_ASA.pdf",
       "type": "datasheet"
     }
+  ],
+  "unverified": [
+    "printSpecs.nozzleTempRange",
+    "printSpecs.bedTempRange",
+    "printSpecs.printSpeedRange",
+    "printSpecs.coolingFan",
+    "printSpecs.firstLayerTemp",
+    "mechanicalSpecs.tensileStrength",
+    "mechanicalSpecs.heatDeflectionTemp",
+    "mechanicalSpecs.elongationAtBreak",
+    "mechanicalSpecs.impactStrength",
+    "environmentalSpecs.moistureSensitivity",
+    "environmentalSpecs.uvResistance",
+    "environmentalSpecs.foodSafe",
+    "environmentalSpecs.dryingTemp",
+    "environmentalSpecs.dryingTime",
+    "physicalSpecs.density",
+    "physicalSpecs.glassTransitionTemp",
+    "physicalSpecs.meltingPoint"
   ]
 }

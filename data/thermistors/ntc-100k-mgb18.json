@@ -18,7 +18,7 @@
     "packageType": "cartridge",
     "dimensions": "3mm diameter × 10mm length"
   },
-  "unverified": ["temperatureRange", "dimensions"],
+  "unverified": ["temperatureRange", "dimensions", "packageType"],
   "references": [
     {
       "label": "Klipper Config Reference - Thermistors",

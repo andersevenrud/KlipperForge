@@ -27,7 +27,7 @@
     "FPC direct-connect to FLY host boards",
     "Standard HDMI connection for any SBC"
   ],
-  "unverified": ["dimensions", "weight"],
+  "unverified": ["dimensions", "weight", "screenSpecs.resolution", "features[0]"],
   "references": [
     {
       "label": "Mellow FLY HDMI Documentation",

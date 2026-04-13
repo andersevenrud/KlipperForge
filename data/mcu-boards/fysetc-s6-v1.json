@@ -105,5 +105,6 @@
     "width": 117,
     "height": 87
   },
-  "maxMotorVoltage": 28
+  "maxMotorVoltage": 28,
+  "unverified": ["pins"]
 }

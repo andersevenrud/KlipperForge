@@ -41,5 +41,5 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "dimensions", "maxFeedRate"]
+  "unverified": ["weight", "dimensions", "maxFeedRate", "gearRatio", "gripType"]
 }

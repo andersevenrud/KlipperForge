@@ -38,5 +38,5 @@
     { "label": "Documentation", "url": "https://3ms.3dcoded.xyz/", "type": "documentation" },
     { "label": "Happy Hare (Klipper Driver)", "url": "https://github.com/moggieuk/Happy-Hare", "type": "github" }
   ],
-  "unverified": ["material"]
+  "unverified": ["motorCount", "driveType"]
 }

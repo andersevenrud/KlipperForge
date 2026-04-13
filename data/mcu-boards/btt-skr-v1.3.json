@@ -109,5 +109,6 @@
   "dimensions": {
     "width": 110,
     "height": 85
-  }
+  },
+  "unverified": ["pins", "drivers.count", "dimensions.width", "dimensions.height"]
 }

@@ -34,6 +34,25 @@
     "dimensions": "5 × 6 mm (QFN-36)",
     "operatingTemperature": "-40 to 125 °C (junction)"
   },
+  "unverified": [
+    "supplyVoltageMin",
+    "supplyVoltageMax",
+    "rmsCurrentMax",
+    "peakCurrentMax",
+    "logicVoltageMin",
+    "logicVoltageMax",
+    "microstepsMax",
+    "interpolationTo256",
+    "stealthChop",
+    "spreadCycle",
+    "coolStep",
+    "stallGuard",
+    "dcStep",
+    "sensorlessHoming",
+    "packageType",
+    "dimensions",
+    "operatingTemperature"
+  ],
   "references": [
     {
       "label": "TMC2130 Datasheet (Rev 1.15)",

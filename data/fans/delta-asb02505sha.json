@@ -40,5 +40,5 @@
       "type": "product"
     }
   ],
-  "unverified": []
+  "unverified": ["airflow", "staticPressure", "rpm", "noiseLevel", "weight", "operatingTemperature", "material"]
 }

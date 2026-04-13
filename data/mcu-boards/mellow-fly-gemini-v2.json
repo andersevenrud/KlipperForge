@@ -107,5 +107,22 @@
   "drivers": {
     "count": 4,
     "connector": "stepstick"
-  }
+  },
+  "unverified": [
+    "aliases.DRIVER0_CS",
+    "aliases.DRIVER1_CS",
+    "aliases.DRIVER2_CS",
+    "aliases.DRIVER3_CS",
+    "aliases.FAN1",
+    "aliases.PROBE_SENSOR",
+    "aliases.PROBE_SERVO",
+    "drivers.connector",
+    "drivers.count",
+    "id",
+    "name",
+    "pins",
+    "references[0]",
+    "references[1]",
+    "references[2]"
+  ]
 }

@@ -32,6 +32,7 @@
   "physicalSpecs": {
     "dimensions": "15.3 × 20.4 mm"
   },
+  "unverified": ["interpolationTo256", "sensorlessHoming"],
   "references": [
     {
       "label": "BIGTREETECH TMC5160 Wiki",

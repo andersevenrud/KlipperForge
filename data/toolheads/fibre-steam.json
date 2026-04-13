@@ -39,7 +39,23 @@
       "type": "github"
     }
   ],
-  "unverified": ["weight", "dimensions"],
+  "unverified": [
+    "weight",
+    "dimensions",
+    "compatibilitySpecs.targetPrinters[0]",
+    "compatibilitySpecs.targetPrinters[1]",
+    "compatibilitySpecs.railSystems[0]",
+    "compatibilitySpecs.hotendMounts[0]",
+    "compatibilitySpecs.hotendMounts[1]",
+    "compatibilitySpecs.hotendMounts[2]",
+    "compatibilitySpecs.hotendMounts[3]",
+    "compatibilitySpecs.extruderMounts[0]",
+    "compatibilitySpecs.extruderMounts[1]",
+    "compatibilitySpecs.extruderMounts[2]",
+    "compatibilitySpecs.extruderMounts[3]",
+    "compatibilitySpecs.probeMounts[0]",
+    "compatibilitySpecs.fanMounts[0]"
+  ],
   "relatedArticles": [
     {
       "category": "extruders",

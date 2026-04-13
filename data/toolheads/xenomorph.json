@@ -35,7 +35,7 @@
       "type": "product"
     }
   ],
-  "unverified": ["weight", "dimensions"],
+  "unverified": ["weight", "dimensions", "compatibilitySpecs.railSystems[0]"],
   "relatedArticles": [
     {
       "category": "hotends",

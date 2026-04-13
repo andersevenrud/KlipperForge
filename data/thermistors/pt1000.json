@@ -18,7 +18,7 @@
     "packageType": "thin film or wire wound",
     "leadType": "2-wire, 3-wire, or 4-wire"
   },
-  "unverified": [],
+  "unverified": ["resistanceAt25C", "temperatureRange", "accuracy", "packageType", "leadType"],
   "references": [
     {
       "label": "Klipper Config Reference - PT1000",

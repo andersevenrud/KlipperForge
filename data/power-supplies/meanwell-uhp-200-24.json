@@ -36,17 +36,15 @@
       "label": "MeanWell UHP-200 Product Page",
       "url": "https://www.meanwell.com/webapp/product/search.aspx?prod=UHP-200(R)",
       "type": "product"
-    },
-    {
-      "label": "Fabreeko Product Page",
-      "url": "https://www.fabreeko.com/products/mean-well-uhp-200-24",
-      "type": "product"
-    },
-    {
-      "label": "West3D Product Page",
-      "url": "https://west3d.com/products/mean-well-uhp-200-24-200w-24v-8-4a-power-supply-psu",
-      "type": "product"
     }
   ],
-  "unverified": ["weight"]
+  "unverified": [
+    "electricalSpecs.efficiency",
+    "physicalSpecs.weight",
+    "certifications",
+    "protections",
+    "operatingTemperature",
+    "typicalUseCases",
+    "communityRecommendation"
+  ]
 }

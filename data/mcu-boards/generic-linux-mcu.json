@@ -39,5 +39,6 @@
       "title": "Klipper RPi Microcontroller",
       "url": "https://www.klipper3d.org/RPi_microcontroller.html"
     }
-  ]
+  ],
+  "unverified": ["pins"]
 }

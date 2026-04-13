@@ -71,7 +71,7 @@
       "type": "github"
     }
   ],
-  "unverified": ["weight", "dimensions"],
+  "unverified": ["weight", "dimensions", "compatibilitySpecs.railSystems[0]", "compatibilitySpecs.railSystems[1]"],
   "relatedArticles": [
     {
       "category": "extruders",

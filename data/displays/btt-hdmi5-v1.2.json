@@ -26,7 +26,7 @@
     "USB-C touch interface",
     "Updated V1.2 hardware revision"
   ],
-  "unverified": ["dimensions", "weight", "connector"],
+  "unverified": ["dimensions", "weight", "connector", "screenSpecs.resolution"],
   "references": [
     {
       "label": "GitHub - BTT TouchScreen Hardware",

@@ -27,7 +27,7 @@
     "Rotary encoder for 12864 mode",
     "WiFi module support"
   ],
-  "unverified": ["dimensions", "weight"],
+  "unverified": ["dimensions", "weight", "screenSpecs.resolution"],
   "references": [
     {
       "label": "GitHub - BTT TouchScreen Firmware",

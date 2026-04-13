@@ -26,7 +26,7 @@
     "Standard EXP1/EXP2 interface",
     "Buzzer for alerts"
   ],
-  "unverified": ["dimensions", "weight"],
+  "unverified": ["dimensions", "weight", "screenSpecs.size", "screenSpecs.driver"],
   "references": [
     {
       "label": "GitHub - BTT Mini 12864",

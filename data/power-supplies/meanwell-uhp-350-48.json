@@ -35,17 +35,15 @@
       "label": "MeanWell UHP-350 Product Page",
       "url": "https://www.meanwell.com/webapp/product/search.aspx?prod=UHP-350(R)",
       "type": "product"
-    },
-    {
-      "label": "KB-3D Product Page",
-      "url": "https://kb-3d.com/store/power-supplies-converters/985-meanwell-uhp-350-48-power-supply-48v-350w-1667063247077.html",
-      "type": "product"
-    },
-    {
-      "label": "DigiKey Product Page",
-      "url": "https://www.digikey.com/en/products/detail/mean-well-usa-inc/UHP-350-48/7707258",
-      "type": "product"
     }
   ],
-  "unverified": ["weight"]
+  "unverified": [
+    "electricalSpecs.efficiency",
+    "physicalSpecs.weight",
+    "certifications",
+    "protections",
+    "operatingTemperature",
+    "typicalUseCases",
+    "communityRecommendation"
+  ]
 }

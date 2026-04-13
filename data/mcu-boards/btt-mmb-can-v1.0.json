@@ -79,5 +79,6 @@
     "width": 125,
     "height": 54
   },
-  "maxMotorVoltage": 24
+  "maxMotorVoltage": 24,
+  "unverified": ["name", "mcu", "flash", "pins", "drivers.count", "drivers.connector", "dimensions", "maxMotorVoltage"]
 }

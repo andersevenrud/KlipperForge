@@ -35,17 +35,17 @@
       "label": "MeanWell RS-25 Datasheet",
       "url": "https://www.meanwell.com/Upload/PDF/RS-25/RS-25-SPEC.PDF",
       "type": "datasheet"
-    },
-    {
-      "label": "DigiKey Product Page",
-      "url": "https://www.digikey.com/en/products/detail/mean-well-usa-inc/RS-25-5/7706180",
-      "type": "product"
-    },
-    {
-      "label": "KB-3D Product Page",
-      "url": "https://kb-3d.com/store/power-supplies-converters/186-meanwell-rs-25-5-power-supply-5v-25w.html",
-      "type": "product"
     }
   ],
-  "unverified": []
+  "unverified": [
+    "physicalSpecs.dimensions",
+    "physicalSpecs.weight",
+    "electricalSpecs.efficiency",
+    "electricalSpecs.inputVoltageRange",
+    "certifications",
+    "protections",
+    "operatingTemperature",
+    "typicalUseCases",
+    "communityRecommendation"
+  ]
 }

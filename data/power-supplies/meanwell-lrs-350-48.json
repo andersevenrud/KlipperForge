@@ -34,12 +34,14 @@
       "label": "MeanWell LRS-350 Datasheet",
       "url": "https://www.meanwell.com/Upload/PDF/LRS-350/LRS-350-SPEC.PDF",
       "type": "datasheet"
-    },
-    {
-      "label": "KB-3D Product Page",
-      "url": "https://kb-3d.com/store/power-supplies-converters/987-meanwell-lrs-350-48-power-supply-48v-350w-1694545951225.html",
-      "type": "product"
     }
   ],
-  "unverified": ["weight"]
+  "unverified": [
+    "physicalSpecs.weight",
+    "certifications",
+    "protections",
+    "operatingTemperature",
+    "typicalUseCases",
+    "communityRecommendation"
+  ]
 }

@@ -40,5 +40,5 @@
       "type": "github"
     }
   ],
-  "unverified": ["weight", "dimensions"]
+  "unverified": ["weight", "dimensions", "compatibilitySpecs.railSystems[0]"]
 }

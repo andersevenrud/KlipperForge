@@ -33,7 +33,14 @@
       "type": "github"
     }
   ],
-  "unverified": ["weight", "dimensions"],
+  "unverified": [
+    "weight",
+    "dimensions",
+    "compatibilitySpecs.railSystems[0]",
+    "compatibilitySpecs.railSystems[1]",
+    "compatibilitySpecs.fanMounts[0]",
+    "compatibilitySpecs.fanMounts[1]"
+  ],
   "relatedArticles": [
     {
       "category": "hotends",

@@ -50,5 +50,5 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["filamentCapacity", "bufferType"]
+  "unverified": ["filamentCapacity", "bufferType", "license"]
 }

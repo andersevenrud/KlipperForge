@@ -26,7 +26,7 @@
     "HDMI input works with any SBC",
     "USB-C touch interface"
   ],
-  "unverified": ["dimensions", "weight", "connector"],
+  "unverified": ["dimensions", "weight", "connector", "screenSpecs.resolution"],
   "references": [
     {
       "label": "GitHub - BTT TouchScreen Hardware",

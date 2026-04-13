@@ -34,6 +34,25 @@
     "dimensions": "5 × 5 mm (TQFN-32); 9.7 × 4.4 mm (TSSOP-38)",
     "operatingTemperature": "-40 to 125 °C (junction)"
   },
+  "unverified": [
+    "supplyVoltageMin",
+    "supplyVoltageMax",
+    "rmsCurrentMax",
+    "peakCurrentMax",
+    "logicVoltageMin",
+    "logicVoltageMax",
+    "microstepsMax",
+    "interpolationTo256",
+    "stealthChop",
+    "spreadCycle",
+    "coolStep",
+    "stallGuard",
+    "dcStep",
+    "sensorlessHoming",
+    "packageType",
+    "dimensions",
+    "operatingTemperature"
+  ],
   "references": [
     {
       "label": "TMC2240 Datasheet",

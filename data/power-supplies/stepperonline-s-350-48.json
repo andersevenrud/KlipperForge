@@ -36,10 +36,10 @@
       "type": "product"
     },
     {
-      "label": "Amazon Product Page",
-      "url": "https://www.amazon.com/STEPPERONLINE-Switching-Supply-Router-S-350-48/dp/B00XTHKIGM",
-      "type": "product"
+      "label": "StepperOnline S-350-48 Datasheet",
+      "url": "https://www.omc-stepperonline.com/download/S-350-48.pdf",
+      "type": "datasheet"
     }
   ],
-  "unverified": []
+  "unverified": ["physicalSpecs.dimensions", "certifications", "typicalUseCases", "communityRecommendation"]
 }

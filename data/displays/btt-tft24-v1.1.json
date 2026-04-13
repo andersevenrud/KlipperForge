@@ -26,7 +26,7 @@
     "SD card slot",
     "Rotary encoder for 12864 mode"
   ],
-  "unverified": ["dimensions", "weight"],
+  "unverified": ["dimensions", "weight", "screenSpecs.size", "screenSpecs.resolution"],
   "references": [
     {
       "label": "GitHub - BTT TouchScreen Firmware",

@@ -26,5 +26,14 @@
       "type": "github"
     }
   ],
-  "unverified": ["weight", "dimensions", "hotendMounts", "extruderMounts", "probeMounts", "fanMounts"]
+  "unverified": [
+    "weight",
+    "dimensions",
+    "hotendMounts",
+    "extruderMounts",
+    "probeMounts",
+    "fanMounts",
+    "compatibilitySpecs.targetPrinters[0]",
+    "compatibilitySpecs.targetPrinters[1]"
+  ]
 }

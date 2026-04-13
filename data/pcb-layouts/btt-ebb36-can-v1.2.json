@@ -254,5 +254,6 @@
         "pattern": [[0, 0]]
       }
     ]
-  }
+  },
+  "unverified": ["connectors"]
 }

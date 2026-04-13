@@ -21,7 +21,16 @@
     "mountType": "M12 or M18 threaded barrel"
   },
   "klipperSection": "probe",
-  "unverified": ["currentDraw", "repeatability", "dimensions", "weight"],
+  "unverified": [
+    "operatingVoltage",
+    "signalType",
+    "currentDraw",
+    "repeatability",
+    "triggerDistance",
+    "dimensions",
+    "weight",
+    "mountType"
+  ],
   "references": [
     {
       "label": "TH3D EZABL Pro Product Page",

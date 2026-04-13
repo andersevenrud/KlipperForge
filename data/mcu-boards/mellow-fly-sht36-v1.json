@@ -82,5 +82,17 @@
       "id": "tmc2209",
       "name": "TMC2209"
     }
+  ],
+  "unverified": [
+    "drivers.count",
+    "id",
+    "maxMotorVoltage",
+    "mcu",
+    "name",
+    "pins",
+    "references[0]",
+    "references[1]",
+    "references[2]",
+    "vendor"
   ]
 }

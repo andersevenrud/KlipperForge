@@ -39,11 +39,6 @@
       "type": "product"
     },
     {
-      "label": "E3D Lite6 Collection",
-      "url": "https://e3d-online.com/collections/lite-6-spares",
-      "type": "documentation"
-    },
-    {
       "label": "Klipper Extruder Configuration",
       "url": "https://www.klipper3d.org/Config_Reference.html#extruder",
       "type": "documentation"

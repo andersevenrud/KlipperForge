@@ -34,17 +34,15 @@
       "label": "MeanWell SE-450 Datasheet",
       "url": "https://www.meanwell.com/Upload/PDF/SE-450/SE-450-SPEC.PDF",
       "type": "datasheet"
-    },
-    {
-      "label": "Amazon Product Page (BLV MGN Cube)",
-      "url": "https://www.amazon.com/Quality-Printer-Geniune-Meanwell-SE-450-24/dp/B0894RZQD1",
-      "type": "product"
-    },
-    {
-      "label": "StepperOnline Product Page",
-      "url": "https://www.omc-stepperonline.com/se-450-24-mean-well-451-2w-18-8a-24v-single-output-power-supply-se-450-24",
-      "type": "product"
     }
   ],
-  "unverified": []
+  "unverified": [
+    "electricalSpecs.efficiency",
+    "physicalSpecs.weight",
+    "certifications",
+    "protections",
+    "operatingTemperature",
+    "typicalUseCases",
+    "communityRecommendation"
+  ]
 }

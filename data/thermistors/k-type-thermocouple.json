@@ -16,7 +16,7 @@
   "physicalSpecs": {
     "leadType": "Type K alloy (nickel-chromium / nickel-aluminium)"
   },
-  "unverified": [],
+  "unverified": ["sensorType", "temperatureRange", "accuracy", "leadType"],
   "references": [
     {
       "label": "Klipper Config Reference - Thermocouples",

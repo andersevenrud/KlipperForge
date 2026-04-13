@@ -21,7 +21,15 @@
     "mountType": "BLTouch-compatible (2x M3 screw, 18mm spacing)"
   },
   "klipperSection": "bltouch",
-  "unverified": ["currentDraw", "dimensions"],
+  "unverified": [
+    "operatingVoltage",
+    "currentDraw",
+    "repeatability",
+    "bedCompatibility",
+    "dimensions",
+    "weight",
+    "mountType"
+  ],
   "references": [
     {
       "label": "Creality CR-Touch Product Page",

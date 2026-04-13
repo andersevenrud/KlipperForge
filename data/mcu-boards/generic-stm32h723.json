@@ -118,5 +118,6 @@
     "PG15",
     "PH0",
     "PH1"
-  ]
+  ],
+  "unverified": ["pins"]
 }

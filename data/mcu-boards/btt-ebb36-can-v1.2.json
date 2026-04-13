@@ -105,6 +105,7 @@
     "modelId": "tmc2209"
   },
   "maxMotorVoltage": 24,
+  "unverified": ["name", "pins", "aliases", "maxMotorVoltage", "relatedArticles"],
   "relatedArticles": [
     {
       "category": "stepper-drivers",

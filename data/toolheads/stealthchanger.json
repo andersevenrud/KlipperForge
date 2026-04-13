@@ -53,5 +53,12 @@
       "type": "product"
     }
   ],
-  "unverified": ["weight", "dimensions", "toolCountPerBuildSize"]
+  "unverified": [
+    "weight",
+    "dimensions",
+    "toolCountPerBuildSize",
+    "compatibilitySpecs.targetPrinters[0]",
+    "compatibilitySpecs.railSystems[0]",
+    "compatibilitySpecs.railSystems[1]"
+  ]
 }

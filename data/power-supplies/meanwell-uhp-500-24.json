@@ -39,12 +39,16 @@
       "label": "MeanWell UHP-500-24 Product Page",
       "url": "https://meanwell-ps.com/products/uhp-500-24",
       "type": "product"
-    },
-    {
-      "label": "Amazon Product Page",
-      "url": "https://www.amazon.com/MEAN-WELL-UHP-500-24-Switching-Encapsulated/dp/B0796WZBBX",
-      "type": "product"
     }
   ],
-  "unverified": ["weight"]
+  "unverified": [
+    "electricalSpecs.efficiency",
+    "physicalSpecs.dimensions",
+    "physicalSpecs.weight",
+    "certifications",
+    "protections",
+    "operatingTemperature",
+    "typicalUseCases",
+    "communityRecommendation"
+  ]
 }

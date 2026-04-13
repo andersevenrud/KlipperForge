@@ -94,7 +94,7 @@
   "references": [
     {
       "label": "Einsy Rambo Board (Ultimachine)",
-      "url": "https://github.com/ultimachine/EinsyRambo",
+      "url": "https://github.com/ultimachine/Einsy-Rambo",
       "type": "github"
     },
     {
@@ -124,5 +124,6 @@
       "id": "tmc2130",
       "name": "TMC2130"
     }
-  ]
+  ],
+  "unverified": ["pins"]
 }

@@ -26,7 +26,16 @@
     "supportsDiagPin": true,
     "supportsSensorlessHoming": true
   },
-  "unverified": ["rmsCurrentMax", "peakCurrentMax"],
+  "unverified": [
+    "rmsCurrentMax",
+    "peakCurrentMax",
+    "microstepsMax",
+    "interpolationTo256",
+    "stealthChop",
+    "spreadCycle",
+    "coolStep",
+    "stallGuard"
+  ],
   "references": [
     {
       "label": "Mellow Klipper Docs — TMC2209 Module",

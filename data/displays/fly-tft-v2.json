@@ -26,7 +26,7 @@
     "Capacitive or resistive touchscreen (variant dependent)",
     "Compact form factor"
   ],
-  "unverified": ["dimensions", "weight"],
+  "unverified": ["dimensions", "weight", "screenSpecs.size", "screenSpecs.resolution", "screenSpecs.driver"],
   "references": [
     {
       "label": "GitHub - FLY-TFT",

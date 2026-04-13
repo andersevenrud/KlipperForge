@@ -32,10 +32,10 @@
       "type": "product"
     },
     {
-      "label": "Amazon Product Page",
-      "url": "https://www.amazon.com/Switching-Power-Supply-Printer-S-400-12/dp/B00XTHNUYY",
-      "type": "product"
+      "label": "StepperOnline S-400-12 Datasheet",
+      "url": "https://www.omc-stepperonline.com/download/S-400-12.pdf",
+      "type": "datasheet"
     }
   ],
-  "unverified": []
+  "unverified": ["certifications", "protections", "typicalUseCases", "communityRecommendation"]
 }

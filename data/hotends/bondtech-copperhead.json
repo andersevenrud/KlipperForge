@@ -13,7 +13,7 @@
   },
   "heatBreakSpecs": {
     "type": "bi-metallic",
-    "material": "stainless steel / copper alloy composite (Slice Engineering Copperhead)",
+    "material": "stainless steel / copper alloy composite",
     "retraction": "1-2mm (direct drive)"
   },
   "nozzleSpecs": {
@@ -46,7 +46,14 @@
       "type": "documentation"
     }
   ],
-  "unverified": ["weight", "retraction", "heaterPower", "thermistorType"],
+  "unverified": [
+    "weight",
+    "retraction",
+    "heaterPower",
+    "thermistorType",
+    "heatBreakSpecs.material",
+    "heatBreakSpecs.type"
+  ],
   "relatedArticles": [
     {
       "category": "thermistors",

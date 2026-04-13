@@ -114,5 +114,6 @@
   "dimensions": {
     "width": 110,
     "height": 85
-  }
+  },
+  "unverified": ["pins"]
 }

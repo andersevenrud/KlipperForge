@@ -64,5 +64,6 @@
       "id": "tmc5160",
       "name": "TMC5160"
     }
-  ]
+  ],
+  "unverified": ["drivers.count", "id", "mcu", "name", "pins", "vendor"]
 }

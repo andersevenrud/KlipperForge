@@ -42,5 +42,5 @@
       "type": "datasheet"
     }
   ],
-  "unverified": ["power", "noiseLevel"]
+  "unverified": ["airflow", "staticPressure", "rpm", "noiseLevel", "current", "power", "weight", "ipRating"]
 }

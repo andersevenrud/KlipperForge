@@ -193,5 +193,6 @@
     "width": 160,
     "height": 100
   },
-  "maxMotorVoltage": 60
+  "maxMotorVoltage": 60,
+  "unverified": ["pins", "aliases.CAN_RX", "aliases.CAN_TX", "aliases.PS_ON"]
 }

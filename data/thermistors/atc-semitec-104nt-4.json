@@ -19,7 +19,7 @@
     "packageType": "glass bead",
     "leadType": "tinned copper"
   },
-  "unverified": [],
+  "unverified": ["betaValue", "temperatureRange", "accuracy", "packageType", "leadType"],
   "references": [
     {
       "label": "ATC Semitec NT-4 Datasheet (PDF)",
