@@ -59,15 +59,6 @@ export function SectionEditor({ section, header }: SectionEditorProps) {
 
   const fieldOverrides = useMemo(() => state.overrideMap.get(header), [state.overrideMap, header]);
 
-  const overrideValues = useMemo(() => {
-    if (!fieldOverrides) return {};
-    const vals: Record<string, unknown> = {};
-    for (const [key, override] of fieldOverrides) {
-      vals[key] = override.overriddenValue;
-    }
-    return vals;
-  }, [fieldOverrides]);
-
   const {
     register,
     control,
@@ -78,7 +69,7 @@ export function SectionEditor({ section, header }: SectionEditorProps) {
     // biome-ignore lint/suspicious/noExplicitAny: Zod 4 compat layer type mismatch with zodResolver
     resolver: zodResolver((definition?.schema ?? z.object({}).passthrough()) as any),
     mode: "onChange",
-    defaultValues: { ...section.data, ...section.meta, ...overrideValues } as Record<string, unknown>,
+    defaultValues: { ...section.data, ...section.meta } as Record<string, unknown>,
   });
 
   const formValues = watch();
@@ -468,13 +459,13 @@ export function SectionEditor({ section, header }: SectionEditorProps) {
       const serialized = JSON.stringify(section.data);
       if (serialized !== lastDispatchedRef.current) {
         lastDispatchedRef.current = serialized;
-        reset({ ...section.data, ...section.meta, ...overrideValues }, { keepDirty: false });
+        reset({ ...section.data, ...section.meta }, { keepDirty: false });
         if (modeConfig) {
           setMode((section.meta?._mode as string) ?? modeConfig.detect(section.data));
         }
       }
     },
-    [section.data, section.meta, overrideValues, reset, modeConfig],
+    [section.data, section.meta, reset, modeConfig],
   );
 
   if (!definition) return null;
