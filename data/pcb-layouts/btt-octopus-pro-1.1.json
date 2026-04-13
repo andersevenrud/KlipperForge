@@ -1,11 +1,11 @@
 {
   "boardId": "btt-octopus-pro-1.1",
-  "name": "BTT Octopus Pro v1.1",
+  "name": "Octopus Pro v1.1",
   "viewBox": {
     "width": 565,
     "height": 346
   },
-  "image": "_docs/Octopus_Pro_Title.png",
+  "image": "/data/pcb-layouts/images/btt-octopus-pro-1.1.png",
   "connectors": [
     {
       "name": "HE0",
