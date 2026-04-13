@@ -27,7 +27,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Input } from "@/components/ui/input";
 import { useDocIndicesQuery } from "@/hooks/use-queries";
-import { expandQueryWithAliases } from "@/lib/manufacturer-aliases";
+import { tokenizeQueryWithAliases } from "@/lib/manufacturer-aliases";
 import { isComparableCategory } from "./comparison-specs";
 import type { DocCategory, DocSelection } from "./DocumentationView";
 
@@ -108,15 +108,18 @@ function filterAndGroup<T>(
   getGroupKey: (item: T) => string,
   preFilter?: (item: T) => boolean,
 ): ItemGroup<T>[] {
-  const queries = expandQueryWithAliases(search);
+  const tokenGroups = tokenizeQueryWithAliases(search);
   const base = preFilter ? items.filter(preFilter) : items;
   const filtered =
-    queries.length > 0
-      ? base.filter((item) =>
-          getSearchableStrings(item).some(
-            (value) => value !== undefined && queries.some((q) => value.toLowerCase().includes(q)),
-          ),
-        )
+    tokenGroups.length > 0
+      ? base.filter((item) => {
+          const haystack = getSearchableStrings(item)
+            .filter((value): value is string => value !== undefined)
+            .map((value) => value.toLowerCase());
+          return tokenGroups.every((alternatives) =>
+            alternatives.some((token) => haystack.some((value) => value.includes(token))),
+          );
+        })
       : base;
   return groupBy(filtered, getGroupKey);
 }
