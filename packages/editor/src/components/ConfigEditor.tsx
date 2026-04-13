@@ -308,14 +308,14 @@ export function ConfigEditor({
           height="100%"
           theme={editorTheme}
           extensions={extensions}
-          readOnly
+          editable={false}
           onCreateEditor={onCreateEditor}
           basicSetup={{
             lineNumbers: true,
             foldGutter: true,
             highlightActiveLine: false,
           }}
-          className="h-full [&_.cm-editor]:h-full [&_.cm-scroller]:!overflow-auto"
+          className="h-full [&_.cm-editor]:h-full [&_.cm-scroller]:!overflow-auto [&_.cm-content]:cursor-default [&_.cm-scroller]:cursor-default"
         />
         <ValidationStatusPopup errors={validationErrors} onNavigateToError={onNavigateToError} />
       </div>

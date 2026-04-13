@@ -18,6 +18,7 @@ interface SingleLineEditState {
   lineNumber: number;
   header: string;
   field: string;
+  originalValue: string;
 }
 
 interface MultilineEditState {
@@ -26,6 +27,7 @@ interface MultilineEditState {
   keyLineNumber: number;
   header: string;
   field: string;
+  originalValue: string;
 }
 
 type InlineEditState = SingleLineEditState | MultilineEditState;
@@ -74,6 +76,11 @@ function isEditableLine(
   // Skip save_config block lines
   if (lineText.startsWith(SAVE_CONFIG_PREFIX)) return null;
 
+  // Skip empty-value multiline keys (e.g. "gcode:") — those belong to the
+  // multiline editor, and opening a single-line input here would commit an
+  // empty value on blur and wipe the key entirely.
+  if (MULTILINE_KEY_PATTERN.test(lineText)) return null;
+
   // Look up in inverse map (raw section fields are not in the inverse map)
   const entry = inverseMap.get(lineNumber);
   if (!entry?.field) return null;
@@ -121,14 +128,9 @@ function isMultilineEditable(
     }
     if (keyLineNumber === -1) return null;
   } else if (MULTILINE_KEY_PATTERN.test(lineText)) {
-    // Key line with empty value (e.g. "gcode:")
-    // Verify there are continuation lines below
-    if (lineNumber < doc.lines) {
-      const nextLine = doc.line(lineNumber + 1).text;
-      if (!nextLine.startsWith(" ") && !nextLine.startsWith("\t")) return null;
-    } else {
-      return null;
-    }
+    // Key line with empty value (e.g. "gcode:"). Allow editing even when no
+    // continuation lines exist yet — this is the only way to add content to
+    // an empty multiline field.
     keyLineNumber = lineNumber;
   } else {
     return null;
@@ -258,7 +260,7 @@ export function createInlineEditExtension(
         input.focus();
         input.select();
 
-        this.state = { kind: "single", input, lineNumber, header, field };
+        this.state = { kind: "single", input, lineNumber, header, field, originalValue: currentValue };
       }
 
       startMultilineEdit(
@@ -337,7 +339,7 @@ export function createInlineEditExtension(
           textarea.selectionStart = textarea.selectionEnd = charOffset;
         }
 
-        this.state = { kind: "multiline", textarea, keyLineNumber, header, field };
+        this.state = { kind: "multiline", textarea, keyLineNumber, header, field, originalValue: content };
       }
 
       private reposition() {
@@ -406,9 +408,14 @@ export function createInlineEditExtension(
       private commit() {
         if (!this.state) return;
 
-        const { header, field } = this.state;
+        const { header, field, originalValue } = this.state;
         const newValue = this.state.kind === "single" ? this.state.input.value : this.state.textarea.value;
         this.removeOverlay();
+
+        // Skip no-op commits. In particular, blurring an untouched empty
+        // multiline field (e.g. "gcode:") would otherwise commit "" and the
+        // section reducer would delete the field entirely.
+        if (newValue === originalValue) return;
 
         callbackRef.current?.({ header, field, newValue });
       }
