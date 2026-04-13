@@ -19,6 +19,7 @@ interface FieldWrapperProps {
   error?: string;
   validationError?: string;
   warning?: string;
+  hint?: string;
   matchesDefault?: boolean;
   override?: ActiveOverride;
   children: (props: FieldChildProps) => ReactNode;
@@ -42,6 +43,7 @@ export function FieldWrapper({
   error,
   validationError,
   warning,
+  hint,
   matchesDefault,
   override,
   children,
@@ -70,6 +72,7 @@ export function FieldWrapper({
         {description && <FieldHelpPopover description={description} />}
       </span>
       {children({ id: resolvedId, disabled })}
+      {hint && <p className="text-xs text-muted-foreground">{hint}</p>}
       {error && <p className="text-xs text-destructive">{error}</p>}
       {validationError && <p className="text-xs text-destructive">{validationError}</p>}
       {warning && (

@@ -8,6 +8,7 @@ export { EditorScrollProvider, useEditorScroll } from "./context/editor-scroll-c
 export { defaultMatchExtension, dispatchDefaultMatches } from "./extensions/default-match-extension";
 export { diffExtension, dispatchDiffLines } from "./extensions/diff-extension";
 export { editorTheme } from "./extensions/editor-theme";
+export { dispatchFieldHints, type FieldHint, fieldHintExtension } from "./extensions/field-hint-extension";
 export { flashLineEffect, flashLineExtension } from "./extensions/flash-line-extension";
 export { klipperFoldService } from "./extensions/fold-extension";
 export type { InlineEditRequest } from "./extensions/inline-edit-extension";

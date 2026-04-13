@@ -7,6 +7,7 @@ import { createClipboardExtension } from "../extensions/clipboard-extension";
 import { defaultMatchExtension, dispatchDefaultMatches } from "../extensions/default-match-extension";
 import { diffExtension, dispatchDiffLines } from "../extensions/diff-extension";
 import { editorTheme } from "../extensions/editor-theme";
+import { dispatchFieldHints, type FieldHint, fieldHintExtension } from "../extensions/field-hint-extension";
 import { flashLineExtension } from "../extensions/flash-line-extension";
 import { createFoldPersistExtension, klipperFoldService, reapplyFolds } from "../extensions/fold-extension";
 import { createInlineEditExtension, type InlineEditRequest } from "../extensions/inline-edit-extension";
@@ -22,6 +23,7 @@ export interface ConfigEditorProps {
   validationErrors: SectionValidationError[];
   sourceMap: ConfigSourceMap;
   overrideMap: OverrideMap;
+  fieldHints?: FieldHint[];
   diffLines?: number[];
   onValueEdit?: (edit: InlineEditRequest) => void;
   onSectionsCut?: (headers: string[]) => void;
@@ -34,6 +36,7 @@ export function ConfigEditor({
   validationErrors,
   sourceMap,
   overrideMap,
+  fieldHints,
   diffLines,
   onValueEdit,
   onSectionsCut,
@@ -63,6 +66,7 @@ export function ConfigEditor({
       try {
         dispatchDiagnostics(view, validationErrors, sourceMap);
         dispatchOverrides(view, overrideMap, sourceMap);
+        dispatchFieldHints(view, fieldHints ?? [], sourceMap);
         dispatchDefaultMatches(view, validationErrors, sourceMap);
         dispatchUnmanagedSections(view, sourceMap);
         dispatchDiffLines(view, diffLines ?? []);
@@ -70,7 +74,7 @@ export function ConfigEditor({
         // View may be in a transient state during tab switches
       }
     },
-    [editorViewRef, validationErrors, overrideMap, sourceMap, diffLines],
+    [editorViewRef, validationErrors, overrideMap, fieldHints, sourceMap, diffLines],
   );
 
   // Build inverse source map: line number → { header, field? }
@@ -184,6 +188,7 @@ export function ConfigEditor({
       flashLineExtension,
       validationExtension,
       overrideExtension,
+      fieldHintExtension,
       defaultMatchExtension,
       unmanagedExtension,
       inlineEditExtension,
@@ -216,6 +221,7 @@ export function ConfigEditor({
         try {
           dispatchDiagnostics(view, validationErrors, sourceMap);
           dispatchOverrides(view, overrideMap, sourceMap);
+          dispatchFieldHints(view, fieldHints ?? [], sourceMap);
           dispatchDefaultMatches(view, validationErrors, sourceMap);
           dispatchUnmanagedSections(view, sourceMap);
           reapplyFolds(view, foldedSectionsRef.current);
@@ -290,6 +296,7 @@ export function ConfigEditor({
     [
       validationErrors,
       overrideMap,
+      fieldHints,
       sourceMap,
       value,
       pendingScrollFieldRef,

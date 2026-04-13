@@ -1,4 +1,10 @@
-import { ConfigEditor, computeChangedLines, type InlineEditRequest, JsonViewer } from "@klipperforge/editor";
+import {
+  ConfigEditor,
+  computeChangedLines,
+  type FieldHint,
+  type InlineEditRequest,
+  JsonViewer,
+} from "@klipperforge/editor";
 import {
   type ConfigValue,
   cfgToDocument,
@@ -26,6 +32,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { resolveHeader, useConfig } from "@/context/config-context";
 import { featureFlags } from "@/lib/feature-flags";
+import { getTmcModeHint } from "@/lib/tmc-mode-hint";
 
 const FILENAME_PATTERN = /^[a-zA-Z0-9_-]+$/;
 
@@ -127,6 +134,19 @@ export function EditorPanel() {
     }
     return map;
   }, [state.validationErrors, sectionFileMap, files, mainFile]);
+
+  const fieldHints = useMemo(() => {
+    const hints: FieldHint[] = [];
+    for (const section of state.document.sections) {
+      if (!section.definitionId.startsWith("tmc")) continue;
+      const header = resolveHeader(section);
+      for (const field of ["stealthchop_threshold", "coolstep_threshold"]) {
+        const text = getTmcModeHint(header, field, section.data[field]);
+        if (text) hints.push({ header, field, text });
+      }
+    }
+    return hints;
+  }, [state.document.sections]);
 
   const diffLines = useMemo(() => {
     if (!diffEnabled) return undefined;
@@ -328,6 +348,7 @@ export function EditorPanel() {
             validationErrors={fileValidationErrors.get(file) ?? []}
             sourceMap={state.sourceMap}
             overrideMap={state.overrideMap}
+            fieldHints={fieldHints}
             diffLines={diffLines}
             onValueEdit={handleValueEdit}
             onSectionsCut={handleSectionsCut}

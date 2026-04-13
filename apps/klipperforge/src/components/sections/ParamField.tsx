@@ -6,6 +6,7 @@ import { PinSelect } from "@/components/sections/PinSelect";
 import { FieldWrapper } from "@/components/ui/field-wrapper";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { getTmcModeHint } from "@/lib/tmc-mode-hint";
 import { BooleanSelect } from "./BooleanSelect";
 import { ListMultiSelect } from "./ListMultiSelect";
 import { formatPlaceholder, isPinField, numericSetValueAs } from "./section-editor-utils";
@@ -42,6 +43,7 @@ export function ParamField({
   const placeholder = formatPlaceholder(param.default);
   const matchesDefault =
     value !== undefined && value !== null && value !== "" && param.default !== undefined && value === param.default;
+  const hint = getTmcModeHint(header, name, value);
 
   return (
     <div
@@ -57,6 +59,7 @@ export function ParamField({
         error={error}
         validationError={validationError}
         warning={warning}
+        hint={hint}
         matchesDefault={matchesDefault}
         override={override}
       >
