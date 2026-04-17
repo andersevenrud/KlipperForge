@@ -76,6 +76,17 @@ See [docs/contributing.md](docs/contributing.md) for development commands and co
 - [Contributing](docs/contributing.md)
 - [Adding Definitions](docs/adding-definitions.md)
 
+## Configuration
+
+Each app has its own `.env` for local development. The repo-root `.env` is only consumed by Docker Compose.
+
+- `apps/klipperforge/.env` — frontend feature flags
+- `apps/firmware/.env` — firmware build server (adapter, Docker, cache, rate limits)
+- `apps/configs/.env` — config storage server (GitHub OAuth, session, quotas)
+- `.env` (repo root) — Docker Compose orchestration only
+
+See the accompanying `.env.example` files for available options. When running via `docker compose up`, the root `.env` is passed through to containers — the per-app `.env` files are not read inside containers.
+
 ## Built with Claude Code
 
 This project was built collaboratively with [Claude Code](https://claude.com/claude-code).
