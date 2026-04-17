@@ -36,7 +36,27 @@ Select from a database of printers, MCU boards, equipment, and macros — or sta
 ## Requirements
 
 - [Bun](https://bun.sh)
-- [Docker](https://www.docker.com) — for firmware compilation
+
+## Firmware builder
+
+Firmware compilation runs through a pluggable adapter.
+
+### Docker
+
+The default. Builds run inside a sandboxed container with no network access and enforced memory, CPU, and pid limits.
+
+- [Docker](https://www.docker.com) with the daemon running
+
+### Host Process
+
+Runs `make` directly on the host. Not sandboxed and only recommended for self-hosted deployments.
+
+- `make`, `gcc`, `binutils`, `python3` (for Klipper's kconfig)
+- `arm-none-eabi-gcc` / `arm-none-eabi-binutils` — STM32, SAM, RP2040, LPC176x
+- `gcc-avr`, `avr-libc` — AVR boards (ATmega, AT90USB)
+- `gcc-riscv64-unknown-elf` (or equivalent) — RISC-V boards (CH32V, HC32)
+
+On macOS the Homebrew `arm-none-eabi-gcc` formula works; on Debian/Ubuntu the `gcc-arm-none-eabi`, `gcc-avr`, and `avr-libc` packages cover most targets. Refer to [Klipper's build docs](https://www.klipper3d.org/FAQ.html#how-do-i-upgrade-to-the-latest-software) for the authoritative list.
 
 ## Setup
 

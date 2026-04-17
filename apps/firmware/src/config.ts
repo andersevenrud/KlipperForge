@@ -1,5 +1,16 @@
+export type BuildAdapterKind = "docker" | "process";
+
+function resolveBuildAdapter(): BuildAdapterKind {
+  const raw = process.env.BUILD_ADAPTER ?? "docker";
+  if (raw !== "docker" && raw !== "process") {
+    throw new Error(`Invalid BUILD_ADAPTER "${raw}": expected "docker" or "process"`);
+  }
+  return raw;
+}
+
 export const config = {
   port: Number(process.env.PORT ?? 3001),
+  buildAdapter: resolveBuildAdapter(),
   dockerSocket: process.env.DOCKER_SOCKET ?? "/var/run/docker.sock",
   klipperSourcePath: process.env.KLIPPER_SOURCE_PATH ?? "./data/klipper",
   dbPath: process.env.DB_PATH ?? "./data/db/firmware.sqlite",

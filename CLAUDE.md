@@ -76,13 +76,14 @@ On first run, init services automatically clone the Klipper source and build the
 | Variable | Default | Description |
 |---|---|---|
 | `PORT` | `3001` | Server port |
-| `DOCKER_SOCKET` | `/var/run/docker.sock` | Docker daemon socket |
+| `BUILD_ADAPTER` | `docker` | Build backend: `docker` (sandboxed container) or `process` (direct host spawn). `process` assumes a trusted host — no network isolation, memory/CPU caps, or pid limits are enforced, and `make` plus the target toolchain must be on `PATH`. |
+| `DOCKER_SOCKET` | `/var/run/docker.sock` | Docker daemon socket (ignored when `BUILD_ADAPTER=process`) |
 | `KLIPPER_SOURCE_PATH` | `./data/klipper` | Klipper git clone location |
-| `BUILDER_IMAGE` | `klipperforge-builder:latest` | Docker image for builds |
+| `BUILDER_IMAGE` | `klipperforge-builder:latest` | Docker image for builds (ignored when `BUILD_ADAPTER=process`) |
 | `MAX_CONCURRENT_BUILDS` | `2` | Parallel build slots |
 | `MAX_PENDING_BUILDS` | `20` | Max queued builds |
-| `BUILD_CPUS` | `1` | CPU cores per build container |
-| `BUILD_MEMORY_MB` | `384` | Memory limit per build container (MB) |
+| `BUILD_CPUS` | `1` | CPU cores per build container (Docker adapter only) |
+| `BUILD_MEMORY_MB` | `384` | Memory limit per build container, MB (Docker adapter only) |
 | `BUILD_TIMEOUT_MS` | `120000` | Per-build timeout (ms) |
 | `RATE_LIMIT_MAX_REQUESTS` | `5` | Requests per window per IP |
 | `RATE_LIMIT_WINDOW_SECONDS` | `60` | Rate limit window |

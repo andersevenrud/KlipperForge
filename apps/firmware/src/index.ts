@@ -9,7 +9,7 @@ import { errorHandler } from "./middleware/error-handler";
 import { boardsRouter } from "./routes/boards";
 import { buildRouter } from "./routes/build";
 import { healthRouter } from "./routes/health";
-import { getActiveContainers } from "./services/build-executor";
+import { getBuildAdapter } from "./services/adapters";
 import { cleanupStaleLogs } from "./services/build-log";
 import { runCacheEviction } from "./services/cache";
 import { ensureKlipperSource } from "./services/klipper-source";
@@ -52,7 +52,10 @@ async function start(): Promise<void> {
     console.log(`Recovered ${staleCount} stale build(s) from previous run`);
   }
 
-  await checkDocker();
+  console.log(`Build adapter: ${config.buildAdapter}`);
+  if (config.buildAdapter === "docker") {
+    await checkDocker();
+  }
 
   console.log("Initializing Klipper source...");
   await ensureKlipperSource();
@@ -79,19 +82,7 @@ async function shutdown(signal: string): Promise<void> {
   console.log(`${signal} received, shutting down...`);
   clearInterval(cleanupInterval);
 
-  const containers = getActiveContainers();
-  if (containers.size > 0) {
-    console.log(`Killing ${containers.size} active build container(s)...`);
-    await Promise.allSettled(
-      [...containers.entries()].map(([jobId, container]) =>
-        container.kill().catch((err: unknown) => {
-          console.warn(
-            `Failed to kill container for ${jobId.slice(0, 8)}: ${err instanceof Error ? err.message : err}`,
-          );
-        }),
-      ),
-    );
-  }
+  await getBuildAdapter().cancelAll();
 
   failStaleBuilds();
   closeDb();
