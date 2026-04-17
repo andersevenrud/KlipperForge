@@ -12,8 +12,13 @@ const flashLineField = StateField.define<DecorationSet>({
   update(decorations, tr) {
     for (const effect of tr.effects) {
       if (effect.is(flashLineEffect)) {
-        return Decoration.set([flashLineMark.range(effect.value)]);
+        const pos = effect.value;
+        if (pos < 0 || pos > tr.state.doc.length) return Decoration.none;
+        return Decoration.set([flashLineMark.range(pos)]);
       }
+    }
+    if (tr.docChanged) {
+      return decorations.map(tr.changes);
     }
     return decorations;
   },
