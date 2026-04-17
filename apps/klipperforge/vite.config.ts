@@ -2,6 +2,7 @@ import { resolve } from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig, loadEnv, type Plugin } from "vite";
+import pkg from "./package.json" with { type: "json" };
 
 function analyticsPlugin(enabled: boolean): Plugin {
   return {
@@ -21,6 +22,9 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react(), tailwindcss(), analyticsPlugin(analyticsEnabled)],
+    define: {
+      __APP_VERSION__: JSON.stringify(pkg.version),
+    },
     resolve: {
       alias: {
         "@": resolve(__dirname, "./src"),
