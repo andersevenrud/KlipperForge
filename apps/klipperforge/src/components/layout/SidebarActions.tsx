@@ -27,10 +27,12 @@ import {
   HardDrive,
   Info,
   Link,
+  Redo2,
   Save,
   Server,
   Share,
   TriangleAlert,
+  Undo2,
   Upload,
   X,
 } from "lucide-react";
@@ -521,7 +523,7 @@ function StorageActions() {
 }
 
 export function SidebarActions() {
-  const { state, dispatch } = useConfig();
+  const { state, dispatch, canUndo, canRedo } = useConfig();
   const { scrollToTop } = useEditorScroll();
   const queryClient = useQueryClient();
   const { confirmDiscardIfDirty } = useConfirmDiscard();
@@ -745,6 +747,26 @@ export function SidebarActions() {
           className="hidden"
           onChange={handleFolderChange}
         />
+        <Button
+          variant="outline"
+          size="icon-sm"
+          onClick={() => dispatch({ type: "UNDO" })}
+          disabled={!canUndo}
+          title="Undo (⌘Z)"
+          aria-label="Undo"
+        >
+          <Undo2 className="h-3 w-3" />
+        </Button>
+        <Button
+          variant="outline"
+          size="icon-sm"
+          onClick={() => dispatch({ type: "REDO" })}
+          disabled={!canRedo}
+          title="Redo (⇧⌘Z)"
+          aria-label="Redo"
+        >
+          <Redo2 className="h-3 w-3" />
+        </Button>
         <Button variant="outline" size="sm" onClick={() => setNewConfigOpen(true)}>
           <FilePlus className="mr-1 h-3 w-3" />
           New

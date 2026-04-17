@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Group, Panel, Separator } from "react-resizable-panels";
 import { useConfigPersistence } from "@/hooks/use-config-persistence";
 import { useIsMobile } from "@/hooks/use-is-mobile";
+import { useUndoRedoHotkeys } from "@/hooks/use-undo-redo-hotkeys";
 import { ErrorBoundary } from "../ErrorBoundary";
 import { ConfigPanel } from "./ConfigPanel";
 import { EditorPanel } from "./EditorPanel";
@@ -101,6 +102,7 @@ function DesktopConfigurationLayout() {
 
 export function ConfigurationView() {
   useConfigPersistence();
+  useUndoRedoHotkeys();
   const isMobile = useIsMobile();
 
   return isMobile ? <MobileConfigurationLayout /> : <DesktopConfigurationLayout />;

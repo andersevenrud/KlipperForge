@@ -35,19 +35,25 @@ interface ConfigState {
   headerMainOnly: boolean;
   omitDefaults: boolean;
   configEpoch: number;
+  historyEpoch: number;
   boardPinContext: BoardPinContext[];
   activeFile: string;
   baselineOutputs: Map<string, string>;
   isDirty: boolean;
+  past: ConfigDocument[];
+  future: ConfigDocument[];
+  lastHistoryActionType: string | null;
+  lastHistorySectionHeader: string | null;
+  lastHistoryTimestamp: number;
 }
 
 type ConfigAction =
-  | { type: "SET_SECTION"; payload: SectionInstance }
+  | { type: "SET_SECTION"; payload: SectionInstance; skipHistory?: boolean }
   | {
       type: "UPDATE_SECTION";
       payload: { header: string; data: Record<string, ConfigValue> };
     }
-  | { type: "REMOVE_SECTION"; payload: { header: string } }
+  | { type: "REMOVE_SECTION"; payload: { header: string }; skipHistory?: boolean }
   | {
       type: "SET_PRESET";
       payload: { sections: SectionInstance[]; presetId: string; mcuBoards?: McuBoardAssociation[] };
@@ -68,11 +74,15 @@ type ConfigAction =
   | { type: "TOGGLE_OMIT_DEFAULTS" }
   | { type: "REMOVE_SECTIONS"; payload: { headers: string[] } }
   | { type: "ADD_SECTIONS"; payload: { sections: SectionInstance[]; afterHeader?: string } }
-  | { type: "MOVE_SECTION"; payload: { header: string; toIndex: number } };
+  | { type: "MOVE_SECTION"; payload: { header: string; toIndex: number } }
+  | { type: "UNDO" }
+  | { type: "REDO" };
 
 interface ConfigContextValue {
   state: ConfigState;
   dispatch: React.Dispatch<ConfigAction>;
+  canUndo: boolean;
+  canRedo: boolean;
 }
 
 const defaultDocument: ConfigDocument = {
@@ -130,7 +140,7 @@ function buildMultiFileState(
   };
 }
 
-function buildStateForDocument(doc: ConfigDocument, isDirty: boolean): ConfigState {
+export function buildStateForDocument(doc: ConfigDocument, isDirty: boolean): ConfigState {
   const multi = buildMultiFileState(doc, true, false, false);
   const validationErrors = validateDocument(doc, defaultRegistry);
   appendDefaultMatchInfoEntries(validationErrors, multi.defaultMatches);
@@ -147,10 +157,16 @@ function buildStateForDocument(doc: ConfigDocument, isDirty: boolean): ConfigSta
     headerMainOnly: false,
     omitDefaults: false,
     configEpoch: 0,
+    historyEpoch: 0,
     boardPinContext: [],
     activeFile: multi.activeFile,
     baselineOutputs: multi.generatedOutputs,
     isDirty,
+    past: [],
+    future: [],
+    lastHistoryActionType: null,
+    lastHistorySectionHeader: null,
+    lastHistoryTimestamp: 0,
   };
 }
 
@@ -192,6 +208,92 @@ interface DisplayFlags {
   omitDefaults: boolean;
 }
 
+const MAX_HISTORY = 50;
+const COALESCE_WINDOW_MS = 500;
+
+type HistoryMode = "push" | "clear" | "skip";
+
+function classifyHistory(action: ConfigAction): HistoryMode {
+  if ((action.type === "SET_SECTION" || action.type === "REMOVE_SECTION") && action.skipHistory) {
+    return "skip";
+  }
+  switch (action.type) {
+    case "SET_PRESET":
+    case "LOAD_DOCUMENT":
+    case "RESET_CONFIG":
+      return "clear";
+    case "SET_MCU_BOARDS":
+      return action.payload.markDirty ? "push" : "skip";
+    case "SET_SECTION":
+    case "UPDATE_SECTION":
+    case "REMOVE_SECTION":
+    case "TOGGLE_SECTION_DISABLED":
+    case "RENAME_SECTION":
+    case "ADD_FILE":
+    case "REMOVE_FILE":
+    case "CONVERT_PINS":
+    case "REMOVE_SECTIONS":
+    case "ADD_SECTIONS":
+    case "MOVE_SECTION":
+      return "push";
+    default:
+      return "skip";
+  }
+}
+
+function withHistory(prevState: ConfigState, nextState: ConfigState, action: ConfigAction): ConfigState {
+  const mode = classifyHistory(action);
+  switch (mode) {
+    case "clear":
+      return {
+        ...nextState,
+        past: [],
+        future: [],
+        lastHistoryActionType: null,
+        lastHistorySectionHeader: null,
+        lastHistoryTimestamp: 0,
+      };
+    case "skip":
+      return nextState;
+    case "push": {
+      const now = Date.now();
+      const coalesce =
+        action.type === "UPDATE_SECTION" &&
+        prevState.lastHistoryActionType === "UPDATE_SECTION" &&
+        prevState.lastHistorySectionHeader === action.payload.header &&
+        now - prevState.lastHistoryTimestamp < COALESCE_WINDOW_MS;
+      const pushed = coalesce ? prevState.past : [...prevState.past, prevState.document];
+      const past = pushed.length > MAX_HISTORY ? pushed.slice(pushed.length - MAX_HISTORY) : pushed;
+      const sectionHeader = action.type === "UPDATE_SECTION" ? action.payload.header : null;
+      return {
+        ...nextState,
+        past,
+        future: [],
+        lastHistoryActionType: action.type,
+        lastHistorySectionHeader: sectionHeader,
+        lastHistoryTimestamp: now,
+      };
+    }
+  }
+}
+
+function restoreDocument(state: ConfigState, document: ConfigDocument): ConfigState {
+  const mainFile = document.files?.[0] ?? "printer.cfg";
+  const hasActive = document.files ? document.files.includes(state.activeFile) : state.activeFile === mainFile;
+  const activeFile = hasActive ? state.activeFile : mainFile;
+  const multi = buildMultiFileState(document, state.showHeader, state.headerMainOnly, state.omitDefaults, activeFile);
+  const validationErrors = validateDocument(document, defaultRegistry, { boards: state.boardPinContext });
+  appendDefaultMatchInfoEntries(validationErrors, multi.defaultMatches);
+  return {
+    ...state,
+    document,
+    ...multi,
+    validationErrors,
+    overrideMap: collectActiveOverrides(document, defaultRegistry),
+    boardPinAliases: extractBoardPinAliases(document),
+  };
+}
+
 function updateSectionByHeader(
   sections: SectionInstance[],
   header: string,
@@ -226,7 +328,7 @@ function applyDisplayFlags(state: ConfigState, flags: DisplayFlags, options: { r
   return next;
 }
 
-function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
+export function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
   let newDoc: ConfigDocument;
   let bumpEpoch = false;
   let nextActiveFile: string | undefined;
@@ -474,6 +576,36 @@ function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
       newDoc = convertDocumentPins(state.document, state.boardPinAliases, action.payload.direction);
       break;
     }
+    case "UNDO": {
+      if (state.past.length === 0) return state;
+      const prev = state.past[state.past.length - 1];
+      const restored = restoreDocument(state, prev);
+      return {
+        ...restored,
+        past: state.past.slice(0, -1),
+        future: [...state.future, state.document],
+        lastHistoryActionType: null,
+        lastHistorySectionHeader: null,
+        lastHistoryTimestamp: 0,
+        historyEpoch: state.historyEpoch + 1,
+        isDirty: true,
+      };
+    }
+    case "REDO": {
+      if (state.future.length === 0) return state;
+      const next = state.future[state.future.length - 1];
+      const restored = restoreDocument(state, next);
+      return {
+        ...restored,
+        past: [...state.past, state.document],
+        future: state.future.slice(0, -1),
+        lastHistoryActionType: null,
+        lastHistorySectionHeader: null,
+        lastHistoryTimestamp: 0,
+        historyEpoch: state.historyEpoch + 1,
+        isDirty: true,
+      };
+    }
     default:
       return state;
   }
@@ -487,7 +619,7 @@ function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
   });
   appendDefaultMatchInfoEntries(validationErrors, multi.defaultMatches);
 
-  return {
+  const nextState: ConfigState = {
     document: newDoc,
     ...multi,
     validationErrors,
@@ -497,10 +629,18 @@ function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
     headerMainOnly: state.headerMainOnly,
     omitDefaults: state.omitDefaults,
     configEpoch: bumpEpoch ? state.configEpoch + 1 : state.configEpoch,
+    historyEpoch: state.historyEpoch,
     boardPinContext: state.boardPinContext,
     baselineOutputs: bumpEpoch ? multi.generatedOutputs : state.baselineOutputs,
     isDirty: nextIsDirty ?? true,
+    past: state.past,
+    future: state.future,
+    lastHistoryActionType: state.lastHistoryActionType,
+    lastHistorySectionHeader: state.lastHistorySectionHeader,
+    lastHistoryTimestamp: state.lastHistoryTimestamp,
   };
+
+  return withHistory(state, nextState, action);
 }
 
 interface ConfigProviderProps {
@@ -537,8 +677,10 @@ function tryLoadDraftSync(): { document: ConfigDocument; isDirty: boolean } | nu
 
 export function ConfigProvider({ children }: ConfigProviderProps) {
   const [state, dispatch] = useReducer(configReducer, undefined, loadInitialConfigState);
+  const canUndo = state.past.length > 0;
+  const canRedo = state.future.length > 0;
 
-  return <ConfigContext.Provider value={{ state, dispatch }}>{children}</ConfigContext.Provider>;
+  return <ConfigContext.Provider value={{ state, dispatch, canUndo, canRedo }}>{children}</ConfigContext.Provider>;
 }
 
 export function useConfig() {
