@@ -4,9 +4,13 @@ test.describe("Extruder control mode switching", () => {
   test("switching between pid and watermark shows correct fields and preserves values", async ({ app }) => {
     await app.goto();
 
-    // The default config includes an extruder with control: pid and pid values.
-    // Expand the extruder section in the sidebar to access its form.
-    await app.page.getByRole("button", { name: "[extruder]" }).click();
+    // Seed an [extruder] section by loading the Ender 3 preset; the blank default has only [printer] + [mcu].
+    await app.openNewConfigDialog();
+    await app.selectFromRadixSelect("vendor-select", "Creality");
+    await app.selectFromRadixSelect("model-select", "Ender 3");
+    await app.page.getByRole("button", { name: "Create" }).click();
+
+    await app.page.getByRole("button", { name: "[extruder]", exact: true }).click();
 
     // Initial state: control is "pid" — pid fields visible, watermark fields hidden
     await expect(app.sectionField("extruder", "pid_kp")).toBeVisible();
@@ -15,9 +19,9 @@ test.describe("Extruder control mode switching", () => {
     await expect(app.sectionField("extruder", "max_delta")).toBeHidden();
 
     // Step 1: Fill in custom pid values
-    await app.sectionField("extruder", "pid_kp").fill("1");
-    await app.sectionField("extruder", "pid_ki").fill("2");
-    await app.sectionField("extruder", "pid_kd").fill("3");
+    await app.sectionFieldInput("extruder", "pid_kp").fill("1");
+    await app.sectionFieldInput("extruder", "pid_ki").fill("2");
+    await app.sectionFieldInput("extruder", "pid_kd").fill("3");
 
     // Verify extruder has our pid values in the editor
     await app.expectEditorSectionContains("extruder", "pid_kp: 1");
@@ -33,7 +37,7 @@ test.describe("Extruder control mode switching", () => {
     await app.expectEditorSectionContains("extruder", "control: watermark");
 
     // Step 3: Fill in the watermark value
-    await app.sectionField("extruder", "max_delta").fill("123");
+    await app.sectionFieldInput("extruder", "max_delta").fill("123");
     await app.expectEditorSectionContains("extruder", "max_delta: 123");
 
     // Step 4: Switch back to pid — pid values should be remembered, visibility correct
@@ -53,7 +57,7 @@ test.describe("Extruder control mode switching", () => {
     await app.expectEditorSectionContains("extruder", "max_delta: 123");
 
     // Step 6: Erase the watermark value
-    await app.sectionField("extruder", "max_delta").clear();
+    await app.sectionFieldInput("extruder", "max_delta").clear();
 
     // The extruder should show control: watermark but no max_delta
     const editor = app.editorContent();

@@ -11,9 +11,11 @@ test.describe("Configuration flow", () => {
 
     await app.expectEditorContains("[printer]");
     await app.expectEditorContains("kinematics: cartesian");
-    await app.expectEditorContains("[stepper_x]");
-    await app.expectEditorContains("[stepper_y]");
-    await app.expectEditorContains("[stepper_z]");
+    // CodeMirror virtualizes — off-screen headers aren't in .cm-content innerText.
+    // Verify sections exist via the sidebar instead.
+    await app.expectSidebarSection("stepper_x");
+    await app.expectSidebarSection("stepper_y");
+    await app.expectSidebarSection("stepper_z");
   });
 
   test("changing manufacturer updates the config", async ({ app }) => {
@@ -29,6 +31,9 @@ test.describe("Configuration flow", () => {
     await app.selectFromRadixSelect("vendor-select", "VORON Design");
     await app.selectFromRadixSelect("model-select", "Voron 2.4");
     await app.page.getByRole("button", { name: "Create" }).click();
+    // board_pins autopopulation from the first preset dirties the doc,
+    // so the second Create triggers the discard-confirm dialog.
+    await app.confirmDiscardIfPrompted();
 
     await app.expectEditorContains("kinematics: corexy");
   });

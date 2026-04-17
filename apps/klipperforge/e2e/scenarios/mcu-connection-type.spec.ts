@@ -16,7 +16,7 @@ test.describe("MCU connection type switching", () => {
     await expect(app.sectionField("mcu", "canbus_interface")).toBeHidden();
 
     // Step 1: Fill a custom serial value
-    await app.sectionField("mcu", "serial").fill("/dev/ttyUSB0");
+    await app.sectionFieldInput("mcu", "serial").fill("/dev/ttyUSB0");
     await app.expectEditorSectionContains("mcu", "serial: /dev/ttyUSB0");
 
     // Step 2: Switch to CAN Bus — serial hidden, canbus fields visible
@@ -28,7 +28,7 @@ test.describe("MCU connection type switching", () => {
     await expect(app.sectionField("mcu", "restart_method")).toBeVisible();
 
     // Step 3: Fill canbus values
-    await app.sectionField("mcu", "canbus_uuid").fill("abc123");
+    await app.sectionFieldInput("mcu", "canbus_uuid").fill("abc123");
     await app.expectEditorSectionContains("mcu", "canbus_uuid: abc123");
 
     // Step 4: Switch back to Serial — serial visible with remembered value, canbus hidden

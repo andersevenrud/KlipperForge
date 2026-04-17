@@ -82,7 +82,7 @@ export function PrinterSelect({ onSelectionChange }: PrinterSelectProps) {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex min-w-0 flex-col gap-2">
-        <FieldWrapper name="Manufacturer">
+        <FieldWrapper name="Manufacturer" id="vendor-select">
           {({ id }) => (
             <Select value={vendor ?? undefined} onValueChange={handleVendorChange}>
               <SelectTrigger id={id} className="w-full">
@@ -100,7 +100,7 @@ export function PrinterSelect({ onSelectionChange }: PrinterSelectProps) {
         </FieldWrapper>
       </div>
       <div className="flex min-w-0 flex-col gap-2">
-        <FieldWrapper name="Model" disabled={modelDisabled}>
+        <FieldWrapper name="Model" id="model-select" disabled={modelDisabled}>
           {({ id, disabled }) => (
             <Select value={model ?? ""} onValueChange={handleModelChange} disabled={disabled}>
               <SelectTrigger id={id} className="w-full">
@@ -118,7 +118,7 @@ export function PrinterSelect({ onSelectionChange }: PrinterSelectProps) {
         </FieldWrapper>
       </div>
       <div className="flex min-w-0 flex-col gap-2">
-        <FieldWrapper name="Variant" disabled={variantDisabled || variants.length === 0}>
+        <FieldWrapper name="Variant" id="variant-select" disabled={variantDisabled || variants.length === 0}>
           {({ id, disabled }) => (
             <Select value={variant ?? ""} onValueChange={handleVariantChange} disabled={disabled}>
               <SelectTrigger id={id} className="w-full">

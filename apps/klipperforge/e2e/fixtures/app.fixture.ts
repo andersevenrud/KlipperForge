@@ -20,6 +20,17 @@ class AppHelper {
     await this.page.getByRole("button", { name: "New" }).click();
   }
 
+  async confirmDiscardIfPrompted() {
+    const discard = this.page.getByRole("button", { name: "Discard and continue" });
+    if (await discard.isVisible().catch(() => false)) {
+      await discard.click();
+    }
+  }
+
+  expectSidebarSection(header: string) {
+    return expect(this.page.locator(`[data-section-header="${header}"]`)).toBeVisible();
+  }
+
   async selectFromRadixSelect(triggerId: string, optionText: string) {
     const trigger = this.page.locator(`#${triggerId}`);
     await trigger.click();
@@ -27,12 +38,15 @@ class AppHelper {
   }
 
   sectionField(sectionHeader: string, fieldName: string) {
-    return this.page.locator(`#${sectionHeader}-${fieldName}`);
+    return this.page.locator(`[data-field-id="${sectionHeader}-${fieldName}"]`);
+  }
+
+  sectionFieldInput(sectionHeader: string, fieldName: string) {
+    return this.sectionField(sectionHeader, fieldName).locator("input, textarea").first();
   }
 
   async selectFieldOption(sectionHeader: string, fieldName: string, optionText: string) {
-    const wrapper = this.page.locator(`[for="${sectionHeader}-${fieldName}"]`).locator("..");
-    const combobox = wrapper.locator("..").getByRole("combobox");
+    const combobox = this.sectionField(sectionHeader, fieldName).getByRole("combobox");
     await combobox.click();
     await this.page.getByRole("option", { name: optionText, exact: true }).click();
   }
