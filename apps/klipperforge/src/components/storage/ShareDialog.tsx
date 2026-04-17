@@ -1,5 +1,4 @@
 import { Check, Copy, Link, Trash2 } from "lucide-react";
-import { useState } from "react";
 import type { ShareInfo } from "@/api/config-storage-types";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,6 +10,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import { useCopyFeedback } from "@/hooks/use-copy-feedback";
 
 interface ShareDialogProps {
   open: boolean;
@@ -35,12 +35,10 @@ export function ShareDialog({
   isCreating,
   isDirty,
 }: ShareDialogProps) {
-  const [copiedToken, setCopiedToken] = useState<string | null>(null);
+  const { copiedKey, copy } = useCopyFeedback();
 
   function handleCopy(shareToken: string) {
-    navigator.clipboard.writeText(getShareUrl(shareToken));
-    setCopiedToken(shareToken);
-    setTimeout(() => setCopiedToken(null), 2000);
+    copy(getShareUrl(shareToken), shareToken);
   }
 
   return (
@@ -63,7 +61,7 @@ export function ShareDialog({
                 onClick={(e) => (e.target as HTMLInputElement).select()}
               />
               <Button size="icon-sm" variant="outline" onClick={() => handleCopy(share.shareToken)}>
-                {copiedToken === share.shareToken ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                {copiedKey === share.shareToken ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
               </Button>
               <Button size="icon-sm" variant="outline" onClick={() => onDeleteShare(share.id)}>
                 <Trash2 className="h-3 w-3" />

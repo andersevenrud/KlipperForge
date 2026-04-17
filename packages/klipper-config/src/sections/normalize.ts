@@ -1,5 +1,6 @@
 import { applyControlVisibility, applyFieldGroups, applySensorTypeVisibility } from "./field-groups";
 import type { ParamDefinition, SectionParams } from "./param-types";
+import { getMetaFieldSet } from "./registry";
 import { getSectionModeConfig } from "./section-modes";
 import type { ConfigValue, SectionDefinition } from "./types";
 
@@ -83,7 +84,7 @@ export function normalizeSectionData(
   options: NormalizeSectionOptions,
 ): NormalizeSectionResult {
   const { definition, overriddenFields } = options;
-  const metaFields = new Set(definition.metaFields ?? []);
+  const metaFields = getMetaFieldSet(definition);
 
   const multilineFields = new Set<string>();
   if (definition.params) {

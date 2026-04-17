@@ -1,7 +1,7 @@
 import { formatMultilineValue, formatValue } from "@klipperforge/configparser";
 import { COMMENT_SECTION_TYPE } from "../parser";
 import { computeHiddenFields } from "./normalize";
-import { resolveHeader, type SectionRegistry } from "./registry";
+import { getMetaFieldSet, resolveHeader, type SectionRegistry } from "./registry";
 import { isBoardPinsSection } from "./schemas/board-pins";
 import { getSectionModeConfig } from "./section-modes";
 import type { ConfigDocument, ConfigValue, SaveConfigSection, SectionInstance } from "./types";
@@ -105,28 +105,30 @@ function buildFullHeader(options: SerializeOptions | undefined, annotationLines:
   return parts.join("\n");
 }
 
-export function serializeConfig(doc: ConfigDocument, registry: SectionRegistry, options?: SerializeOptions): string {
+function cloneInstancesWithOverrides(doc: ConfigDocument, registry: SectionRegistry): SectionInstance[] {
   const instances = doc.sections.map((s) => ({
     ...s,
     data: { ...s.data },
   }));
 
-  // Collect and apply overrides (skip disabled sections)
   for (const instance of instances) {
     if (instance.disabled) continue;
     const def = registry.get(instance.definitionId);
     if (!def?.overrides) continue;
 
     for (const override of def.overrides) {
-      const target = instances.find((inst) => {
-        const header = resolveHeader(inst, registry);
-        return header === override.target;
-      });
+      const target = instances.find((inst) => resolveHeader(inst, registry) === override.target);
       if (target) {
         Object.assign(target.data, override.values);
       }
     }
   }
+
+  return instances;
+}
+
+export function serializeConfig(doc: ConfigDocument, registry: SectionRegistry, options?: SerializeOptions): string {
+  const instances = cloneInstancesWithOverrides(doc, registry);
 
   const sections: string[] = [];
 
@@ -143,7 +145,7 @@ export function serializeConfig(doc: ConfigDocument, registry: SectionRegistry, 
     if (!header) continue;
 
     const def = registry.get(instance.definitionId);
-    const metaFields = new Set(def?.metaFields ?? []);
+    const metaFields = getMetaFieldSet(def);
 
     const modeConfig = getSectionModeConfig(instance.definitionId);
     const sectionMode = modeConfig ? ((instance.meta?._mode as string) ?? modeConfig.detect(instance.data)) : undefined;
@@ -201,26 +203,7 @@ export function serializeConfigWithSourceMap(
   registry: SectionRegistry,
   options?: SerializeOptions,
 ): { text: string; sourceMap: ConfigSourceMap; defaultMatches: DefaultMatch[] } {
-  const instances = doc.sections.map((s) => ({
-    ...s,
-    data: { ...s.data },
-  }));
-
-  for (const instance of instances) {
-    if (instance.disabled) continue;
-    const def = registry.get(instance.definitionId);
-    if (!def?.overrides) continue;
-
-    for (const override of def.overrides) {
-      const target = instances.find((inst) => {
-        const header = resolveHeader(inst, registry);
-        return header === override.target;
-      });
-      if (target) {
-        Object.assign(target.data, override.values);
-      }
-    }
-  }
+  const instances = cloneInstancesWithOverrides(doc, registry);
 
   const sourceMap: ConfigSourceMap = {
     sectionLines: new Map(),
@@ -257,7 +240,7 @@ export function serializeConfigWithSourceMap(
     if (!header) continue;
 
     const def = registry.get(instance.definitionId);
-    const metaFields = new Set(def?.metaFields ?? []);
+    const metaFields = getMetaFieldSet(def);
 
     if (sectionBlocks.length > 0) {
       const prevIsInclude = sectionBlocks[sectionBlocks.length - 1].startsWith("[include ");

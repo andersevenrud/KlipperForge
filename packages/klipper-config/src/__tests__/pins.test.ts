@@ -4,8 +4,11 @@ import {
   buildReverseAliasMap,
   convertDocumentPins,
   extractBoardPinAliases,
+  isPinFieldKey,
   parsePinAliasString,
   resolvePinAlias,
+  splitMcuPrefix,
+  stripPinModifiers,
 } from "../pins";
 import type { ConfigDocument } from "../sections/types";
 
@@ -290,5 +293,74 @@ describe("convertDocumentPins", () => {
     const result = convertDocumentPins(doc, aliases, "aliases");
     expect(result.sections[0].data.sensor_type).toBe("PA8");
     expect(result.sections[0].data.heater_pin).toBe("FAN0");
+  });
+});
+
+describe("splitMcuPrefix", () => {
+  it("returns empty mcu when no colon is present", () => {
+    expect(splitMcuPrefix("PA8")).toEqual({ mcu: "", name: "PA8" });
+  });
+
+  it("splits on the first colon", () => {
+    expect(splitMcuPrefix("mcu2:PA8")).toEqual({ mcu: "mcu2", name: "PA8" });
+  });
+
+  it("preserves additional colons in the name", () => {
+    expect(splitMcuPrefix("mcu:a:b")).toEqual({ mcu: "mcu", name: "a:b" });
+  });
+
+  it("handles leading colon as empty mcu", () => {
+    expect(splitMcuPrefix(":PA1")).toEqual({ mcu: "", name: "PA1" });
+  });
+
+  it("returns empty fields for empty input", () => {
+    expect(splitMcuPrefix("")).toEqual({ mcu: "", name: "" });
+  });
+});
+
+describe("stripPinModifiers", () => {
+  it("returns the pin unchanged when there is no modifier", () => {
+    expect(stripPinModifiers("PA8")).toBe("PA8");
+  });
+
+  it.each([
+    ["!PA8", "PA8"],
+    ["^PA8", "PA8"],
+    ["~PA8", "PA8"],
+  ])("strips single modifier %s", (input, expected) => {
+    expect(stripPinModifiers(input)).toBe(expected);
+  });
+
+  it("strips combinations of modifiers", () => {
+    expect(stripPinModifiers("!^PA8")).toBe("PA8");
+    expect(stripPinModifiers("~!PA8")).toBe("PA8");
+  });
+
+  it("does not touch modifier-like characters after the prefix", () => {
+    expect(stripPinModifiers("PA!8")).toBe("PA!8");
+  });
+
+  it("keeps MCU prefix intact (only strips leading modifier chars)", () => {
+    // MCU prefix comes before the modifier, so this leaves mcu2: alone.
+    expect(stripPinModifiers("mcu2:!PA8")).toBe("mcu2:!PA8");
+  });
+});
+
+describe("isPinFieldKey", () => {
+  it.each(["pin", "endstop_pin", "heater_pin", "step_pin"])("returns true for %s", (key) => {
+    expect(isPinFieldKey(key)).toBe(true);
+  });
+
+  it.each([
+    "sensor_type",
+    "control",
+    "pin_up_reports_not_triggered",
+    "rotation_distance",
+  ])("returns false for %s (suffix must be _pin)", (key) => {
+    expect(isPinFieldKey(key)).toBe(false);
+  });
+
+  it("returns false for empty string", () => {
+    expect(isPinFieldKey("")).toBe(false);
   });
 });

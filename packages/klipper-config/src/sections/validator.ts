@@ -1,8 +1,15 @@
 import { isVirtualEndstop, matchesKnownPinFormat } from "../pin-formats";
-import { extractBoardPinAliases, isReservedPin, resolvePinAlias } from "../pins";
+import {
+  extractBoardPinAliases,
+  isPinFieldKey,
+  isReservedPin,
+  resolvePinAlias,
+  splitMcuPrefix,
+  stripPinModifiers,
+} from "../pins";
 import { applyControlVisibility, applyFieldGroups, applySensorTypeVisibility } from "./field-groups";
 import type { ParamDefinition } from "./param-types";
-import { resolveHeader as resolveHeaderBase, type SectionRegistry } from "./registry";
+import { getMetaFieldSet, resolveHeader as resolveHeaderBase, type SectionRegistry } from "./registry";
 import { SHARED_BUS_PIN_FIELDS } from "./section-modes";
 import type { ConfigDocument, SectionInstance } from "./types";
 
@@ -30,6 +37,7 @@ interface PinUsageEntry {
   originalPin: string;
 }
 
+// Fallback to definitionId keeps error messages meaningful for unknown/comment sections.
 function resolveHeader(instance: SectionInstance, registry: SectionRegistry): string {
   return resolveHeaderBase(instance, registry) ?? instance.definitionId;
 }
@@ -69,7 +77,7 @@ export function validateDocument(
 
     // Unknown field detection
     if (def.params) {
-      const metaFields = new Set(def.metaFields ?? []);
+      const metaFields = getMetaFieldSet(def);
       for (const key of Object.keys(instance.data)) {
         if (!def.params[key] && !metaFields.has(key) && !def.allowedFieldPattern?.test(key)) {
           errors.push({
@@ -210,8 +218,8 @@ export function validateDocument(
     if (instance.disabled) continue;
     const header = resolveHeader(instance, registry);
     for (const [key, value] of Object.entries(instance.data)) {
-      if ((key.endsWith("_pin") || key === "pin") && typeof value === "string" && value !== "") {
-        const strippedPin = value.replace(/^[!^~]*/, "");
+      if (isPinFieldKey(key) && typeof value === "string" && value !== "") {
+        const strippedPin = stripPinModifiers(value);
         const resolvedPin = resolvePinAlias(strippedPin, boardAliases);
         const existing = pinUsage.get(resolvedPin);
         if (existing) {
@@ -246,30 +254,22 @@ export function validateDocument(
     if (instance.disabled) continue;
     const header = resolveHeader(instance, registry);
     for (const [key, value] of Object.entries(instance.data)) {
-      if (!((key.endsWith("_pin") || key === "pin") && typeof value === "string" && value !== "")) {
+      if (!(isPinFieldKey(key) && typeof value === "string" && value !== "")) {
         continue;
       }
 
-      const strippedPin = value.replace(/^[!^~]*/, "");
+      const strippedPin = stripPinModifiers(value);
 
       // Skip virtual endstops and reserved pins
       if (isVirtualEndstop(strippedPin) || isReservedPin(strippedPin)) {
         continue;
       }
 
-      // Extract MCU prefix if present
-      const colonIdx = strippedPin.indexOf(":");
-      let mcuPrefix = "";
-      let pinName = strippedPin;
-
-      if (colonIdx !== -1) {
-        mcuPrefix = strippedPin.slice(0, colonIdx);
-        pinName = strippedPin.slice(colonIdx + 1);
-      }
+      const { mcu: mcuPrefix, name: pinName } = splitMcuPrefix(strippedPin);
 
       // Resolve through document-level board_pins aliases
       const resolvedPin = resolvePinAlias(strippedPin, boardAliases);
-      const resolvedPinName = colonIdx !== -1 ? resolvedPin.slice(resolvedPin.indexOf(":") + 1) : resolvedPin;
+      const resolvedPinName = mcuPrefix ? splitMcuPrefix(resolvedPin).name : resolvedPin;
 
       // Check if the resolved pin is itself an alias in any board_pins section
       const isDocAlias = boardAliases.some((ba) => pinName in ba.aliases);

@@ -186,6 +186,46 @@ function appendDefaultMatchInfoEntries(errors: SectionValidationError[], default
   }
 }
 
+interface DisplayFlags {
+  showHeader: boolean;
+  headerMainOnly: boolean;
+  omitDefaults: boolean;
+}
+
+function updateSectionByHeader(
+  sections: SectionInstance[],
+  header: string,
+  updater: (section: SectionInstance) => SectionInstance,
+): SectionInstance[] {
+  return sections.map((s) => (resolveHeader(s) === header ? updater(s) : s));
+}
+
+function applyDisplayFlags(state: ConfigState, flags: DisplayFlags, options: { revalidate: boolean }): ConfigState {
+  const multi = buildMultiFileState(
+    state.document,
+    flags.showHeader,
+    flags.headerMainOnly,
+    flags.omitDefaults,
+    state.activeFile,
+  );
+  const next: ConfigState = {
+    ...state,
+    ...flags,
+    ...multi,
+    overrideMap: collectActiveOverrides(state.document, defaultRegistry),
+    baselineOutputs: state.baselineOutputs,
+    boardPinAliases: state.boardPinAliases,
+  };
+  if (options.revalidate) {
+    const validationErrors = validateDocument(state.document, defaultRegistry, {
+      boards: state.boardPinContext,
+    });
+    appendDefaultMatchInfoEntries(validationErrors, multi.defaultMatches);
+    next.validationErrors = validationErrors;
+  }
+  return next;
+}
+
 function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
   let newDoc: ConfigDocument;
   let bumpEpoch = false;
@@ -228,12 +268,10 @@ function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
       break;
     }
     case "UPDATE_SECTION": {
-      const newSections = state.document.sections.map((s) => {
-        if (resolveHeader(s) === action.payload.header) {
-          return { ...s, data: { ...s.data, ...action.payload.data } };
-        }
-        return s;
-      });
+      const newSections = updateSectionByHeader(state.document.sections, action.payload.header, (s) => ({
+        ...s,
+        data: { ...s.data, ...action.payload.data },
+      }));
       newDoc = { ...state.document, sections: newSections };
       break;
     }
@@ -288,84 +326,39 @@ function configReducer(state: ConfigState, action: ConfigAction): ConfigState {
     case "MARK_CLEAN":
       return { ...state, isDirty: false };
     case "TOGGLE_SECTION_DISABLED": {
-      const newSections = state.document.sections.map((s) => {
-        if (resolveHeader(s) === action.payload.header) {
-          return { ...s, disabled: !s.disabled };
-        }
-        return s;
-      });
+      const newSections = updateSectionByHeader(state.document.sections, action.payload.header, (s) => ({
+        ...s,
+        disabled: !s.disabled,
+      }));
       newDoc = { ...state.document, sections: newSections };
       break;
     }
     case "RENAME_SECTION": {
-      const newSections = state.document.sections.map((s) => {
-        if (resolveHeader(s) === action.payload.header) {
-          return { ...s, instanceName: action.payload.newInstanceName };
-        }
-        return s;
-      });
+      const newSections = updateSectionByHeader(state.document.sections, action.payload.header, (s) => ({
+        ...s,
+        instanceName: action.payload.newInstanceName,
+      }));
       newDoc = { ...state.document, sections: newSections };
       break;
     }
-    case "TOGGLE_HEADER": {
-      const newShowHeader = !state.showHeader;
-      const multi = buildMultiFileState(
-        state.document,
-        newShowHeader,
-        state.headerMainOnly,
-        state.omitDefaults,
-        state.activeFile,
+    case "TOGGLE_HEADER":
+      return applyDisplayFlags(
+        state,
+        { showHeader: !state.showHeader, headerMainOnly: state.headerMainOnly, omitDefaults: state.omitDefaults },
+        { revalidate: false },
       );
-      return {
-        ...state,
-        showHeader: newShowHeader,
-        ...multi,
-        overrideMap: collectActiveOverrides(state.document, defaultRegistry),
-        baselineOutputs: state.baselineOutputs,
-        boardPinAliases: state.boardPinAliases,
-      };
-    }
-    case "TOGGLE_OMIT_DEFAULTS": {
-      const newOmitDefaults = !state.omitDefaults;
-      const multi = buildMultiFileState(
-        state.document,
-        state.showHeader,
-        state.headerMainOnly,
-        newOmitDefaults,
-        state.activeFile,
+    case "TOGGLE_OMIT_DEFAULTS":
+      return applyDisplayFlags(
+        state,
+        { showHeader: state.showHeader, headerMainOnly: state.headerMainOnly, omitDefaults: !state.omitDefaults },
+        { revalidate: true },
       );
-      const validationErrors = validateDocument(state.document, defaultRegistry, {
-        boards: state.boardPinContext,
-      });
-      appendDefaultMatchInfoEntries(validationErrors, multi.defaultMatches);
-      return {
-        ...state,
-        omitDefaults: newOmitDefaults,
-        ...multi,
-        validationErrors,
-        overrideMap: collectActiveOverrides(state.document, defaultRegistry),
-        baselineOutputs: state.baselineOutputs,
-        boardPinAliases: state.boardPinAliases,
-      };
-    }
-    case "TOGGLE_HEADER_MAIN_ONLY": {
-      const newHeaderMainOnly = !state.headerMainOnly;
-      const multi = buildMultiFileState(
-        state.document,
-        state.showHeader,
-        newHeaderMainOnly,
-        state.omitDefaults,
-        state.activeFile,
+    case "TOGGLE_HEADER_MAIN_ONLY":
+      return applyDisplayFlags(
+        state,
+        { showHeader: state.showHeader, headerMainOnly: !state.headerMainOnly, omitDefaults: state.omitDefaults },
+        { revalidate: false },
       );
-      return {
-        ...state,
-        headerMainOnly: newHeaderMainOnly,
-        ...multi,
-        overrideMap: collectActiveOverrides(state.document, defaultRegistry),
-        baselineOutputs: state.baselineOutputs,
-        boardPinAliases: state.boardPinAliases,
-      };
-    }
     case "SET_BOARD_PIN_CONTEXT": {
       const boardPinContext = action.payload;
       const multi = buildMultiFileState(

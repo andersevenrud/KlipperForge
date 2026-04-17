@@ -8,6 +8,21 @@ export interface BoardPinAlias {
 }
 
 const RESERVED_PINS = new Set(["<GND>", "<5V>", "<RST>"]);
+const PIN_MODIFIER_RE = /^[!^~]+/;
+
+export function splitMcuPrefix(pin: string): { mcu: string; name: string } {
+  const idx = pin.indexOf(":");
+  if (idx === -1) return { mcu: "", name: pin };
+  return { mcu: pin.slice(0, idx), name: pin.slice(idx + 1) };
+}
+
+export function stripPinModifiers(pin: string): string {
+  return pin.replace(PIN_MODIFIER_RE, "");
+}
+
+export function isPinFieldKey(key: string): boolean {
+  return key === "pin" || key.endsWith("_pin");
+}
 
 /**
  * Parse "NAME=PIN, NAME2=PIN2, ..." format.
@@ -78,22 +93,12 @@ export function extractBoardPinAliases(doc: ConfigDocument): BoardPinAlias[] {
 export function resolvePinAlias(pin: string, aliases: BoardPinAlias[]): string {
   if (!pin || RESERVED_PINS.has(pin)) return pin;
 
-  // Check for MCU prefix
-  const colonIdx = pin.indexOf(":");
-  let mcuPrefix = "";
-  let pinName = pin;
+  const { mcu: mcuPrefix, name: pinName } = splitMcuPrefix(pin);
 
-  if (colonIdx !== -1) {
-    mcuPrefix = pin.slice(0, colonIdx);
-    pinName = pin.slice(colonIdx + 1);
-  }
-
-  // Try to find alias match
   for (const board of aliases) {
     const matchesMcu = mcuPrefix === "" ? board.mcu === "" : board.mcu === mcuPrefix;
     if (matchesMcu && pinName in board.aliases) {
       const resolved = board.aliases[pinName];
-      // Preserve MCU prefix on resolved pin
       return mcuPrefix ? `${mcuPrefix}:${resolved}` : resolved;
     }
   }
@@ -154,7 +159,7 @@ export function convertDocumentPins(
     const newData: Record<string, ConfigValue> = {};
 
     for (const [key, value] of Object.entries(section.data)) {
-      if ((key === "pin" || key.endsWith("_pin")) && typeof value === "string" && value !== "") {
+      if (isPinFieldKey(key) && typeof value === "string" && value !== "") {
         const converted = convertSinglePin(value, lookupMap);
         newData[key] = converted;
         if (converted !== value) changed = true;
@@ -176,17 +181,8 @@ export function convertDocumentPins(
 function convertSinglePin(pin: string, aliases: BoardPinAlias[]): string {
   if (isSpecialPinValue(pin)) return pin;
 
-  // Handle MCU prefix (e.g., "mcu2:!PA8")
-  const colonIdx = pin.indexOf(":");
-  let mcuPrefix = "";
-  let rest = pin;
+  const { mcu: mcuPrefix, name: rest } = splitMcuPrefix(pin);
 
-  if (colonIdx !== -1) {
-    mcuPrefix = pin.slice(0, colonIdx);
-    rest = pin.slice(colonIdx + 1);
-  }
-
-  // Strip pin modifiers (!, ^, ~)
   const match = PIN_PREFIX_RE.exec(rest);
   if (!match) return pin;
 
@@ -195,23 +191,13 @@ function convertSinglePin(pin: string, aliases: BoardPinAlias[]): string {
 
   if (!pinName) return pin;
 
-  // Reconstruct pin with MCU prefix for alias lookup
   const lookupPin = mcuPrefix ? `${mcuPrefix}:${pinName}` : pinName;
   const resolved = resolvePinAlias(lookupPin, aliases);
 
-  // If no conversion happened, return original
   if (resolved === lookupPin) return pin;
 
-  // Strip MCU prefix from resolved value if present (resolvePinAlias preserves it)
-  let resolvedName = resolved;
-  if (mcuPrefix) {
-    const rColonIdx = resolved.indexOf(":");
-    if (rColonIdx !== -1) {
-      resolvedName = resolved.slice(rColonIdx + 1);
-    }
-  }
+  const resolvedName = mcuPrefix ? splitMcuPrefix(resolved).name : resolved;
 
-  // Reconstruct with original modifiers and MCU prefix
   const withModifiers = `${modifiers}${resolvedName}`;
   return mcuPrefix ? `${mcuPrefix}:${withModifiers}` : withModifiers;
 }

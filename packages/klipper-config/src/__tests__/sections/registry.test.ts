@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { z } from "zod";
-import { SectionRegistry } from "../../sections/registry";
+import { getMetaFieldSet, SectionRegistry } from "../../sections/registry";
 import type { SectionDefinition } from "../../sections/types";
 
 const testSchema = z
@@ -89,5 +89,25 @@ describe("SectionRegistry", () => {
   it("validate throws on unknown definition", () => {
     const registry = new SectionRegistry();
     expect(() => registry.validate("unknown", {})).toThrow("Unknown section definition: unknown");
+  });
+});
+
+describe("getMetaFieldSet", () => {
+  it("returns an empty Set when definition is undefined", () => {
+    expect(getMetaFieldSet(undefined)).toEqual(new Set());
+  });
+
+  it("returns an empty Set when metaFields is missing", () => {
+    const def: SectionDefinition = {
+      id: "x",
+      naming: { kind: "fixed", header: "x" },
+      schema: z.object({}).passthrough(),
+      order: 0,
+    };
+    expect(getMetaFieldSet(def)).toEqual(new Set());
+  });
+
+  it("returns a Set of the metaFields entries", () => {
+    expect(getMetaFieldSet(testDef)).toEqual(new Set(["_name"]));
   });
 });

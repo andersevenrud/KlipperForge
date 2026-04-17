@@ -2,7 +2,7 @@ import type { ParseResult } from "./parser";
 import { COMMENT_SECTION_TYPE, parseKlipperConfig } from "./parser";
 import { parsePinAliasString } from "./pins";
 import { computeHiddenFields } from "./sections/normalize";
-import type { SectionRegistry } from "./sections/registry";
+import { getMetaFieldSet, type SectionRegistry } from "./sections/registry";
 import { isBoardPinsSection } from "./sections/schemas/board-pins";
 import { getSectionModeConfig } from "./sections/section-modes";
 import type {
@@ -123,7 +123,7 @@ export function cfgToDocument(
 
       // Detect unknown fields
       if (warnings && def?.params) {
-        const metaFields = new Set(def.metaFields ?? []);
+        const metaFields = getMetaFieldSet(def);
         for (const key of Object.keys(section.values)) {
           if (!def.params[key] && !metaFields.has(key) && !def.allowedFieldPattern?.test(key)) {
             warnings.push({

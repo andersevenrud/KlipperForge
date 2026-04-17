@@ -23,7 +23,7 @@ export class SectionRegistry {
 
     const result = def.schema.safeParse(data);
     const parsed = result.success ? result.data : data;
-    const metaFields = new Set(def.metaFields ?? []);
+    const metaFields = getMetaFieldSet(def);
     const instanceData: Record<string, ConfigValue> = {};
     const meta: Record<string, ConfigValue> = {};
 
@@ -67,4 +67,8 @@ export function resolveHeader(instance: SectionInstance, registry: SectionRegist
     case "custom":
       return def.naming.header;
   }
+}
+
+export function getMetaFieldSet(def: SectionDefinition | undefined): Set<string> {
+  return new Set(def?.metaFields ?? []);
 }

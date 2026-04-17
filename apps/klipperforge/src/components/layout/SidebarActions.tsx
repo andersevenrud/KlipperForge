@@ -57,6 +57,7 @@ import { useAuth } from "@/context/auth-context";
 import { useConfig } from "@/context/config-context";
 import { useConfigStorage } from "@/context/config-storage-context";
 import { useStorage } from "@/context/storage-context";
+import { useCopyFeedback } from "@/hooks/use-copy-feedback";
 import { useLocalConfigDetection } from "@/hooks/use-local-config-detection";
 import { useConfigListQuery } from "@/hooks/use-queries";
 import { featureFlags } from "@/lib/feature-flags";
@@ -527,7 +528,8 @@ export function SidebarActions() {
   const localDetection = useLocalConfigDetection();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const folderInputRef = useRef<HTMLInputElement>(null);
-  const [copied, setCopied] = useState(false);
+  const { copiedKey, copy } = useCopyFeedback();
+  const copied = copiedKey !== null;
   const [newConfigOpen, setNewConfigOpen] = useState(false);
   const [pasteDialogOpen, setPasteDialogOpen] = useState(false);
   const [pasteContent, setPasteContent] = useState("");
@@ -562,9 +564,7 @@ export function SidebarActions() {
   }
 
   function handleCopyToClipboard() {
-    navigator.clipboard.writeText(state.generatedOutput);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    copy(state.generatedOutput, "config");
   }
 
   async function handleImportFiles() {
