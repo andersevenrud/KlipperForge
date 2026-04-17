@@ -49,13 +49,13 @@
     },
     {
       "category": "probes",
-      "id": "btt-eddy-coil",
-      "name": "Eddy Coil"
+      "id": "cartographer-3d",
+      "name": "Cartographer 3D"
     },
     {
       "category": "probes",
-      "id": "cartographer-3d",
-      "name": "Cartographer 3D"
+      "id": "btt-eddy-coil",
+      "name": "Eddy Coil"
     },
     {
       "category": "probes",
