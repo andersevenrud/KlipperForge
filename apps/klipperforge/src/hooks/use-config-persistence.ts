@@ -31,12 +31,16 @@ export function useConfigPersistence() {
 
       if (configId && featureFlags.configStorage) {
         lastSyncedConfigIdRef.current = configId;
+        const draft = loadDraft();
+        const preserveLocalEdits = draft?.configId === configId && draft.isDirty === true;
         adapter.fetchConfig(configId).then(
           (config) => {
-            const project = JSON.parse(config.latestRevision.document);
-            const imported = importProject(project);
-            // Remote fetch is authoritative and matches the server — clean.
-            dispatch({ type: "LOAD_DOCUMENT", payload: { document: imported.document, dirty: false } });
+            if (!preserveLocalEdits) {
+              const project = JSON.parse(config.latestRevision.document);
+              const imported = importProject(project);
+              // Remote fetch is authoritative and matches the server — clean.
+              dispatch({ type: "LOAD_DOCUMENT", payload: { document: imported.document, dirty: false } });
+            }
             storage.markSaved(config.id, config.name, config.currentRevision);
           },
           () => {
@@ -129,10 +133,10 @@ export function useConfigPersistence() {
     ],
   );
 
-  // D) beforeunload — last-chance save to catch sub-1s debounce window
+  // D) beforeunload — last-chance save + unsaved warning
   useEffect(
     function beforeUnloadEffect() {
-      function handleBeforeUnload() {
+      function handleBeforeUnload(e: BeforeUnloadEvent) {
         const project = exportProject(configState.document);
         saveDraft({
           document: JSON.stringify(project),
@@ -142,6 +146,9 @@ export function useConfigPersistence() {
           savedAt: new Date().toISOString(),
           isDirty: configState.isDirty,
         });
+        if (configState.isDirty && import.meta.env.PROD) {
+          e.preventDefault();
+        }
       }
 
       window.addEventListener("beforeunload", handleBeforeUnload);

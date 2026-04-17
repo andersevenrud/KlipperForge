@@ -146,6 +146,20 @@ describe("configReducer history", () => {
     expect(newEdit.past).toHaveLength(1);
   });
 
+  it("clears past and future and unsets isDirty on MARK_CLEAN", () => {
+    const initial = buildStateForDocument(baseDocument(), false);
+    const edited = configReducer(initial, {
+      type: "UPDATE_SECTION",
+      payload: { header: "printer", data: { kinematics: "corexy" } },
+    });
+    expect(edited.past).toHaveLength(1);
+    expect(edited.isDirty).toBe(true);
+    const cleaned = configReducer(edited, { type: "MARK_CLEAN" });
+    expect(cleaned.isDirty).toBe(false);
+    expect(cleaned.past).toHaveLength(0);
+    expect(cleaned.future).toHaveLength(0);
+  });
+
   it("skips history for SET_MCU_BOARDS when markDirty is false", () => {
     const initial = buildStateForDocument(baseDocument(), false);
     const result = configReducer(initial, {

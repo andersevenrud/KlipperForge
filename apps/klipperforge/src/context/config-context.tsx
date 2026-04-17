@@ -426,7 +426,15 @@ export function configReducer(state: ConfigState, action: ConfigAction): ConfigS
       nextIsDirty = false;
       break;
     case "MARK_CLEAN":
-      return { ...state, isDirty: false };
+      return {
+        ...state,
+        isDirty: false,
+        past: [],
+        future: [],
+        lastHistoryActionType: null,
+        lastHistorySectionHeader: null,
+        lastHistoryTimestamp: 0,
+      };
     case "TOGGLE_SECTION_DISABLED": {
       const newSections = updateSectionByHeader(state.document.sections, action.payload.header, (s) => ({
         ...s,
