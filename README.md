@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://klipperforge.andersevenrud.net/">Live Demo</a> · <a href="https://discord.gg/ygYWzq46">Discord</a>
+  <a href="https://klipperforge.andersevenrud.net/">Live Demo</a> · <a href="https://discord.gg/ecEq9s6RE">Discord</a>
 </p>
 
 ---
